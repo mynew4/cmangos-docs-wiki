@@ -1,0 +1,9 @@
+Backports which require additional testing and fixing:
+
+https://github.com/cmangos/mangos-tbc/commit/d94054abab9541586bf1fbecb6c8a3edb2a464e7
+https://github.com/cmangos/mangos-tbc/commit/28c09bce045722ccaab0a8c3765d8c22c4f0e792
+
+
+Commits which required research before backporting:
+
+https://github.com/cmangos/mangos-wotlk/commit/8953e34 <- SpellAttributes
