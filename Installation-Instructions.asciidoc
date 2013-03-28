@@ -1,0 +1,487 @@
+Installation Instructions
+=========================
+
+How to install C-MaNGOS from scratch and how to update it.
+
+Addresses
+---------
+- C-MaNGOS: http://www.cmangos.net[forum] | https://github.com/cmangos/mangos-wotlk[git repository] | http://qchat.rizon.net/?channels=%23cmangos[irc] (irc.rizon.net #cmangos)
+- ScriptDev2: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/scriptdev2[git repository]
+- ACID: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/acid[git repository]
+- UDB: http://udb.no-ip.org/index.php[forum] | https://unifieddb.svn.sourceforge.net/svnroot/unifieddb[svn repository]
+- YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
+- PSDB: http://project-silvermoon.forumotion.com/[forum] | http://subversion.assembla.com/svn/psmdb_wotlk/[svn repository]
+
+Software requirements (Windows)
+-------------------------------
+- World of Warcraft client for WotLK (3.3.5a)
+- Git: http://code.google.com/p/msysgit/downloads/list[MySysGit] (http://i49.tinypic.com/v45smh.jpg[install with "Git bash here" support])
+- Visual C++ 2008 or newer: http://www.microsoft.com/express/Downloads/[Visual Studio Express]
+- MySQL server: http://dev.mysql.com/downloads/mysql/[MySQL server community edition]
+- MySQL client (optional, for easy database access): http://dev.mysql.com/downloads/workbench/[MySQL Workbench]
+- SVN (optional, for easy database download): http://tortoisesvn.net/downloads[Tortoise SVN]
+
+Software requirements (*nix)
+----------------------------
+You will need: Git, GCC, CMake, MySQL, SVN
+
+Essentials
+----------
+C-MaNGOS::
+  is the server, also called "core", which manages all the game inquiries and accesses your SQL Database to get the information needed.
+
+ScriptDev2::
+  is an optional library which contains C++ scripts that, when added to C-MaNGOS, handle special events, quests, encounters and bosses.
+
+ACID::
+  stands for "Advanced Creature Intelligence Database". It is an optional SQL database that handles regular mobs and bosses. ACID and ScriptDev2 complement each other and you should use both. ACID is usually already included in the database shipped by the database providers.
+
+Database::
+  With "database" in terms of C-MaNGOS installation is usually referred to the so-called world-database, into which the content is filled that populates the world run by C-MaNGOS.
+  There are three main database providers out there, namely
+  - UDB
+  - YTDB
+  - PSDB
+
+  All three have their own advantages and disadvantages. Which you use is your choice!
+
+World Of Warcraft Client::
+  is a client to connect to the server. It's your own copy of the game.
+
+Tools
+-----
+Git::
+  is a free distributed revision control or source code management tool which allows you to easily manage a virtual filesystem. With this tool, you'll download the code from C-MaNGOS, ScriptDev2, and ACID.
+
+SVN::
+   has a similar purpose as Git but for a different type of support. With this tool, you'll download the database from the database providers.
+
+Microsoft Visual C++::
+  is used to created, modify and compile the code using C and C++ programming languages. With this tool, you'll compile C-MaNGOS and ScriptDev2.
+
+MySQL server::
+  is a relational database management system (RDBMS) that runs as a server providing multi-user access to a number of databases. After you've created the databases and imported the data, they will contain your entire world for World of Warcraft.
+
+MySQL client::
+  allows you to connect to the MySQL server by providing an easy-to-use interface to import and change the data in the database.
+
+IRC::
+  is a simple chat system that is used by supporters and developers of C-MaNGOS.
+
+How things fit together
+-----------------------
+The following parts exist:
+
+a. Server services: The binary files mangosd.exe and realmd.exe manage the communication with the client
+b. World database: This database is filled by the database provider and contains content like NPCs, quests and objects
+c. Characters database: Contains the information about characters like player-name, level and items
+d. Realmd database: This database contains account-information (account-name, password and such)
+e. Client: Which will, with adapted realmlist, connect to your server
+
+Get the remote data to your system
+----------------------------------
+We personally use some directory structure to be able to keep overview of things we have. For this guide we will assume that you will use C:\Mangos as base directory under which you put everything (For *nix just place it under ~/Mangos).
+
+For Windows all shell commands are expected to be typed from a "Git bash" started from the C:\Mangos directory. To do so, right-click onto C:\Mangos in the windows explorer, and select "Git bash here" from the context menu.
+
+Clone C-MaNGOS
+~~~~~~~~~~~~~~
+After having opened Git bash, simply type:
+
+++git clone git://github.com/cmangos/mangos-wotlk.git mangos++
+
+And submit this git command with return. This will take a little time, but after you will have created a subdirectory into C:\Mangos named "mangos" into which the C-MaNGOS sources are cloned.
+
+Clone ScriptDev2
+~~~~~~~~~~~~~~~~
+++git clone git://github.com/scriptdev2/scriptdev2.git mangos/src/bindings/ScriptDev2++
+
+If you are on *nix, also do
+
+* ++cd mangos++
+* ++git am src/bindings/ScriptDev2/patches/MaNGOS-11167-ScriptDev2.patch++
+* ++cd ..++
+
+Clone ACID
+~~~~~~~~~~
+++git clone git://github.com/scriptdev2/acid.git++
+
+This is considered optional, as ACID is usually included by the database providers.
+
+Get the world-database stuff
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UDB
+^^^
+*On Windows*
+
+* Open C:\Mangos in the explorer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++https://unifieddb.svn.sourceforge.net/svnroot/unifieddb++
+
+*On *nix:*
+
+++svn co https://unifieddb.svn.sourceforge.net/svnroot/unifieddb++
+
+This will create a new folder (likely C:\Mangos\unifieddb) in which UDB SQL-files are located
+
+YTDB
+^^^^
+*On Windows*
+
+* Open C:\Mangos in the explorer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://svn2.assembla.com/svn/ytdbase/++
+
+*On *nix*
+
+++svn co http://svn2.assembla.com/svn/ytdbase/++
+
+This will create a new folder (likely C:\Mangos\ytdbase) in which YTDB SQL-files are located.
+
+PSDB
+^^^^
+*On Windows*
+
+* Open C:\Mangos in the explorer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://svn.assembla.com/svn/psmdb_wotlk/++
+
+*On *nix*
+
+++svn co http://svn.assembla.com/svn/psmdb_wotlk/++
+
+This will create a new folder (likely C:\Mangos\psmdb_wotlk) in which PSDB SQL-files are located.
+
+Directory structure
+~~~~~~~~~~~~~~~~~~~
+
+Now you should have the following subfolders:
+
+- mangos (containing the sources of C-MaNGOS and optionally ScriptDev2)
+- acid (containing the content of ACID, this is optional)
+- unifieddb OR ytdbase OR psmdb_wotlk containing the content of your database-provider
+
+For windows we suggest creating an additional "run" folder, on *nix this can be useful if you don't want to install to /opt or so
+
+- run
+
+For *nix or cmake compile we suggest creating an additional "build" folder, this is not required for Visual C++
+
+- build
+
+Compiling C-MaNGOS and ScriptDev2
+---------------------------------
+Compiling C-MaNGOS (Windows)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Go to your C:\Mangos\mangos\win folder
+* Open the "sln" file that fits your version of Visual C++
+  - mangosdVC100.sln for Visual C++ 2010
+  - mangosdVC90.sln for Visual C++ 2008
+* Wait for Visual C++ to finish loading.
+* Open the menu "Build" -> "Configuration Manager"
+  - Choose "Release" in the drop down box for "Active Solution Configuration"
+  - The drop down box "Active Solution Platform" should already be set to "Win32"
+  - Close the window
+* Click the menu "Build" -> "Build Solution"
+  - This will take some time.
+  - You might get some warning messages. Don't worry about it, that's normal.
+  - You must not get any error messages, although if you do so, you could click the menu "Build" -> "Clean Solution" to restart the compile. If you cannot solve an error, please use the official forums or IRC channels to ask for help
+
+Compiling ScriptDev2 (Windows)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Go to your C:\Mangos\mangos\src\bindings\ScriptDev2 folder
+* Open the "sln" file that fits your version of Visual C++
+  - scriptVC100.sln for Visual C++ 2010
+  - scriptVC90.sln for Visual C++ 2008
+* Wait for Visual C++ to finish loading.
+* Open the menu "Build" -> "Configuration Manager"
+  - Choose "Release" in the drop down box for "Active Solution Configuration"
+  - The drop down box "Active Solution Platform" should already be set to "Win32"
+  - Close the window
+* Click the menu "Build" -> "Build Solution"
+
+Compiling C-MaNGOS and ScriptDev2 (*nix)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Go to your ~/Mangos folder
+* Enter the build folder: ++cd build++
+* Invoke ++cmake ../mangos++, suggested options are:
+  - ++-DCMAKE_INSTALL_PREFIX=\~/Mangos/run++ to install into the "run" subfolder of ~/Mangos folder, otherwise this will install to /opt/mangos
+  - ++-DPDC=1++ to compile with PCH mode (much faster after updates)
+  - ++-DDEBUG=0++ to remove debug mode from compiling
+* Invoke ++make++ to compile C-MaNGOS (and ScriptDev2 if installed)
+* Invoke ++make install++ to install to your "run" directory
+
+Install C-MaNGOS binary files
+-----------------------------
+* Transfer the files from your compile folder (C:\Mangos\mangos\bin\Win32_Release) into C:\Mangos\run
+* Go to C:\Mangos\mangos\src\mangosd and copy "mangosd.conf.dist.in" to C:\Mangos\run and rename it to "mangosd.conf"
+* Go to C:\Mangos\mangos\src\realmd and copy "realmd.conf.dist.in" to C:\Mangos\run and rename it to "realmd.conf"
+* Go to C:\Mangos\mangos\src\bindings\ScriptDev2 and copy "scriptdev2.conf.dist.in" to C:\Mangos\run and rename it to "scriptdev2.conf"
+
+On *nix this is done with the ++make install++ command (from the build directory)
+
+Extract files from the client
+-----------------------------
+* Copy the content of C:\Mangos\mangos\contrib\extractor_binary\ into your C:\World of Warcraft folder
+* Run ExtractResources.sh from your C:\World of Warcraft.
++
+For this you can open a "Git Bash" on your C:\World of Warcraft folder and type ++sh ExtractResources.sh++
++
+You must extract DBC/maps and vmaps for C-MaNGOS to work, mmaps are optional (and take very long)
+
+* When finish, move the folders maps, dbc and vmaps - optionally mmaps - that have been created in your  C:\World of Warcraft to your C:\Mangos\run
+
+On *nix this step is more complicated, it is actually suggested to extract the client files from a Windows system.
+Also it is possible that the folders must be moved to ~/Mangos/run/data (TODO-Check!)
+
+Install databases
+-----------------
+For this section it is assumed you have already installed your MySQL server, and have a password for "root" user.
+
+Create empty databases
+~~~~~~~~~~~~~~~~~~~~~~
+Either use a GUI tool for mysql and open the SQL-files, or do it by command-line as this guide shows.
+
+From the C:\Mangos folder invoke (in Git bash):
+
+* ++mysql -uroot -p < mangos/sql/create_mysql.sql++
++
+And enter your password in the following dialogue (similar in all other next steps)
++
+This will create a user (name mangos, password mangos) with rights to the databases "mangos" (world-db), characters and realmd
+
+* ++mysql -uroot -p < mangos/src/bindings/ScriptDev2/sql/scriptdev2_create_database.sql++
++
+This will create the database "scriptdev2" which can be used by the "mangos" user created with the commands above
+
+* ++mysql -uroot -p scriptdev2 < mangos/src/bindings/ScriptDev2/sql/scriptdev2_create_structure_mysql.sql++
+
+Initialize characters database:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+From the C:\Mangos folder invoke (in Git bash):
+
+* ++mysql -uroot -p characters < mangos/sql/characters.sql++
++
+This will create an empty characters database.
+
+Initialize realmd database:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+From the C:\Mangos folder invoke (in Git bash):
+
+* ++mysql -uroot -p realmd < mangos/sql/realmd.sql++
++
+This will create an empty realmd database.
+
+Fill world database:
+~~~~~~~~~~~~~~~~~~~~
+*Support for UDB.*
+
+* Unzip the zip file in C:\Mangos\unifieddb\trunk\Full_DB
+
+From the C:\Mangos folder invoke (in Git bash)
+
+* ++cd unifieddb/trunk++
+* ++sh InstallFullUDB.sh++
++
+This will create a config file named "InstallFullUDB.config", looking like:
++
+-----------------------
+####################################################################################################
+# This is the config file for the 'InstallFullUDB.sh' script
+#
+# You need to insert
+#   DATABASE:     Your database
+#   USERNAME:     Your username
+#   PASSWORD:     Your password
+#   CORE_PATH:    Your path to core's directory (OPTIONAL: Use if you want to apply remaining core updates automatically)
+#   SD2_UPDATES:  If you want to disable adding ScriptDev2 updates (Has only meaning if CORE_PATH above is set
+#   MYSQL:        Your mysql command (usually mysql)
+#
+####################################################################################################
+
+## Define the database in which you want to add clean UDB
+DATABASE="mangos"
+
+## Define your username
+USERNAME="mangos"
+
+## Define your password (It is suggested to restrict read access to this file!)
+PASSWORD="mangos"
+
+## Define the path to your core's folder (This is optional)
+##   If set the core updates located under sql/updates from this mangos-directory will be added automatically
+CORE_PATH=""
+
+## Include ScriptDev2 updates? (If set, the SD2-Updates are expected to be located in the place defined at CORE_PATH)
+##   NOTE: They are only applied if CORE_PATH is set!
+##   Set to 0 if you want core updates BUT no SD2-updates
+SD2_UPDATES="1"
+
+## Define your mysql programm if this differs
+MYSQL="mysql"
+
+# Enjoy using the tool
+-----------------------
+
+* Change configuration in any text-editor
++
+With the default configuration, you only need to change CORE_PATH to:
++
+-----------------------
+CORE_PATH="/c/Mangos/mangos"
+(for *nix ~/Mangos/mangos)
+-----------------------
+
+* Now the helper tool is configured, and you only need to run the helper script, whenever you want to set your world database to a clear state!
+* ++sh InstallFullUDB.sh++
++
+And check the output if the database could be set up correctly
+
+* ++cd ../..++
+
+*Support for PSDB.*
+
+* Execute PSDB_Installer in psmdb_wotlk svn folder.
+* Type your info when prompted.
+* You can also edit PSDB_Installer.bat for quick re-install of PSDB & Scriptdev2 DB by changing "set   quick=on" & "set pass=".
++
+Example of PSDB_Installer.bat:
++
+-----------------------
+####################################################################################################
+8888888b.   .d8888b.  8888888b.  888888b.  (LK)
+888   Y88b d88P  Y88b 888  "Y88b 888  "88b
+888    888 Y88b.      888    888 888  .88P
+888   d88P  "Y888b.   888    888 8888888K.
+8888888P"      "Y88b. 888    888 888  "Y88b
+888              "888 888    888 888    888
+888        Y88b  d88P 888  .d88P 888   d88P
+888         "Y8888P"  8888888P"  8888888P"
+
+Credits to: Factionwars, Nemok and BrainDedd
+
+What is your MySQL host name?           [localhost]   :
+What is your MySQL user name?           [root]        : 
+What is your MySQL password?            [ ]           : 
+What is your MySQL port?                [3306]        :
+What is your World database name?       [mangos]      : 
+What is your ScriptDev2 database name?  [scriptdev2]  : 
+What is your Characters database name?  [characters]  : 
+What is your Realmd database name?      [realmd]      :
+
+This will wipe out your current World database and replace it.
+Do you wish to continue? (y/n) 
+
+This will wipe out your current ScriptDev2 database and replace it.
+Do you wish to continue? (y/n) 
+
+This will wipe out your current Characters database and replace it.
+Do you wish to continue? (y/n) 
+
+This will wipe out your current Realm database and replace it.
+Do you wish to continue? (y/n) 
+
+This will optimize your current database.
+Do you wish to continue? (y/n)
+####################################################################################################
+-----------------------
+*Support for YTDB Needed.*
+
+Fill ScriptDev2 database:
+~~~~~~~~~~~~~~~~~~~~~~~~~
+* Invoke ++mysql -uroot -p scriptdev2 < mangos/src/bindings/ScriptDev2/sql/scriptdev2_script_full.sql++
+
+Fill ACID to world-database:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is considered optional, as ACID is usually included by the database providers.
+
+But if you prefer bleeding edge, invoke (from C:\Mangos)
+
+* ++mysql -uroot -p mangos < acid/acid_wotlk.sql++
+
+Basic concept of database filling
+---------------------------------
+The database providers provide
+
+A full-dump release file::
+  This file contains the whole database content of one point
+Updatepacks::
+  An updatepack consist of
+  - collected core updates for the mangos (world) database
+  - collected core updates for the characters database
+  - collected core updates for the realmd database
+  - content fixes
+
+So you need to:
+
+* Apply the latest release file
+* Apply all following updatepack files (always corepatches before updatepacks)
+* Apply the remaining updates from the core (located in C:\Mangos\mangos\sql\updates
+
+Configuring C-MaNGOS
+--------------------
+This part should be an extra wiki-page:
+Meaning of config files from mangos/sd2
+
+With these default installations, however i am pretty sure it should be good to go..
+
+Required database entry into realmd.realmlist?
+
+
+Configuring your WoW-Client
+---------------------------
+* Copy C:\World Of Warcraft\Data\enEN\realmlist.wtf to realmlist.old within the same folder
++
+Your locale folder may be named differently according to your region ("enUS", "enGB", "frFR", "deDE", etc)
+* Open realmlist.wtf in Notepad and change the contents to the following:
++
+-------------
+set realmlist 127.0.0.1
+-------------
+
+Running your Server
+-------------------
+Launch C:\Mangos\run\mangosd.exe and C:\Mangos\run\realmd.exe
+On *nix run the corresponding binary files
+
+Creating first account:
+-----------------------
+* Once everything in mangosd has loaded, here are some commands you can use.
++
+In your Mangosd window, there is tons of text; not to worry, keep typing anyway, it doesn't matter
+
+* Creating the actual account
++
+account create [username] [password]
++
+Example: ++account create MyNewAccount MyPassword++
+
+* Enabling expansions for a user
++
+account set addon [username] [0 to 2]
++
+0) Basic version
++
+1) The Burning Crusade
++
+2) Wrath of the Litch King
++
+Example: ++account set addon MyNewAccount 2++
+
+* Changing GM levels
++
+account set gmlevel [username] [0 to 3]
++
+0) Player
++
+3) Administrator
++
+Example: ++account set gmlevel MyNewAccount 3++
+
+* Shutdown your server
++
+++.server shutdown [delay]++
++
+The delay is the number of seconds
+
+*Enjoy running and messing with your C-MaNGOS server!*

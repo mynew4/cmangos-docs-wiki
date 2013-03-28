@@ -1,0 +1,11 @@
+h2. C(ontinued)-MaNGOS Development
+
+* "About C(ontinued) MaNGOS":https://github.com/cmangos/mangos-wotlk#readme
+
+* [[Installation Instructions]]
+* "Bug reports and patches":https://github.com/cmangos/issues/issues
+** "Contributing Guidelines":https://github.com/cmangos/mangos-wotlk/blob/master/CONTRIBUTING.md
+** [[Coding Standards]]
+** "Git tutorials & such stuff":http://getmangos.com/community/viewforum.php?id=27
+
+* "Roadmap":https://github.com/cmangos/issues/issues/1
