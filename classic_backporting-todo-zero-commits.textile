@@ -48,13 +48,6 @@ bq. [REMOVE] cala : see commit below
 bq. [REMOVE] cala : this one and the previous one are correct. In their current state, mods are needed for two purposes: TBC PvP diminishing returns (no need for classic) and modifying a paladin spell. This last one is moved into core by previous commit. If it is not broken, don't fix it.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/205862d 205862d * Salja (committer Sidsukana)<pre><code>[z1803] Fix Nightfall with changes. Thx Salja.
-  88.3% src/game/
-  11.6% src/shared/
-
-bq. [OK] cala : Nightfall never trigger without this commit. It triggers normally with it.
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/7962b72 7962b72 * Sidsukana (committer Sidsukana)<pre><code>[z1804] Fix CMSG_CHAT_IGNORED. Also fixed kick players if ignored player writing to them.
   66.8% src/game/
   33.1% src/shared/
