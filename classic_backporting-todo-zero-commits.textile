@@ -1,10 +1,5 @@
-bq. stfx: Tthere are some classic-only related commits but all others which dont exist on master but would theoretically fit there need to be added on master first (if proper) ;)
-cala : commented some of the commits.
-
-***
-
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/7746ed3 7746ed3 * Sidsukana (committer Sidsukana)<pre><code>[z1770] Fix spell Deep Wounds
+* "zero":http://github.com/mangos-zero/server-old/commit/7746ed3 7746ed3 * Sidsukana (committer Sidsukana)<pre><code>[z1770] Fix spell Deep Wounds
   80.8% src/game/
   19.1% src/shared/
 
@@ -12,7 +7,7 @@ bq. stfx: Correct fix, but shouldnt Deep Wounds code be in UnitAuraProcHandler.c
 Xfurry: good question. The code is in both places. I'll check DBC to see which one should be dropped.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/5a5169b 5a5169b * Sidsukana (committer Sidsukana)<pre><code>[z1774] Fix speed modifiers for spells Permafrost, Improved Curse of Exhaustion, Camouflage, Pathfinding, Amplify Curse, Cheetah Sprint.
+* "zero":http://github.com/mangos-zero/server-old/commit/5a5169b 5a5169b * Sidsukana (committer Sidsukana)<pre><code>[z1774] Fix speed modifiers for spells Permafrost, Improved Curse of Exhaustion, Camouflage, Pathfinding, Amplify Curse, Cheetah Sprint.
   95.8% src/game/
    4.1% src/shared/
 
@@ -20,7 +15,7 @@ bq. [TEST] cala : Surprising one. I will also test it.
 cala (March 13-13) : Commit tested. I don't see difference with and without it. Don't know what to do.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/c653a66 c653a66 * Sidsukana (committer Sidsukana)<pre><code>[z1795] Fix take ammo for most ranged spells.
+* "zero":http://github.com/mangos-zero/server-old/commit/c653a66 c653a66 * Sidsukana (committer Sidsukana)<pre><code>[z1795] Fix take ammo for most ranged spells.
   97.4% src/game/
 
 bq. [TBC] stfx: not sure whats this about, should theoretically also apply to TBC but never heard of an issue there
@@ -30,14 +25,14 @@ stfx: was this behavior ever changed? it should be tested/fixed on tbc also if n
 cala (march 13-13): this fix does allow all spells to take ammo. It should be applied to TBC firsthand, then backported to classic.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/4d68c37 4d68c37 * Salja (committer Salja)<pre><code>[z1798] Combustion (remove main aura) and (remove triggered aura stack) by Unlern Talents.
+* "zero":http://github.com/mangos-zero/server-old/commit/4d68c37 4d68c37 * Salja (committer Salja)<pre><code>[z1798] Combustion (remove main aura) and (remove triggered aura stack) by Unlern Talents.
   91.2% src/game/
    8.7% src/shared/
 
 bq. [OK] cala : Tested on z2040, without this fix it is possible to take advantage of the unlearn mechanics to use combustion aura even after unlearning the talent. This commit fixes it.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/b7a8540 b7a8540 * Sidsukana (committer Sidsukana)<pre><code>[z1799] Remove extra mods code.
+* "zero":http://github.com/mangos-zero/server-old/commit/b7a8540 b7a8540 * Sidsukana (committer Sidsukana)<pre><code>[z1799] Remove extra mods code.
   87.7% src/game/extras/
    5.3% src/game/
    6.3% src/mangosd/
@@ -45,7 +40,7 @@ bq. [OK] cala : Tested on z2040, without this fix it is possible to take advanta
 bq. [REMOVE] cala : see commit below
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/139075f 139075f * TheLuda (committer TheLuda)<pre><code>[z1800] Remove all remains of TBC spell modifications.
+* "zero":http://github.com/mangos-zero/server-old/commit/139075f 139075f * TheLuda (committer TheLuda)<pre><code>[z1800] Remove all remains of TBC spell modifications.
   37.3% src/game/
   43.9% win/VC100/
   18.7% win/VC90/
@@ -53,14 +48,14 @@ bq. [REMOVE] cala : see commit below
 bq. [REMOVE] cala : this one and the previous one are correct. In their current state, mods are needed for two purposes: TBC PvP diminishing returns (no need for classic) and modifying a paladin spell. This last one is moved into core by previous commit. If it is not broken, don't fix it.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/205862d 205862d * Salja (committer Sidsukana)<pre><code>[z1803] Fix Nightfall with changes. Thx Salja.
+* "zero":http://github.com/mangos-zero/server-old/commit/205862d 205862d * Salja (committer Sidsukana)<pre><code>[z1803] Fix Nightfall with changes. Thx Salja.
   88.3% src/game/
   11.6% src/shared/
 
 bq. [OK] cala : Nightfall never trigger without this commit. It triggers normally with it.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/7962b72 7962b72 * Sidsukana (committer Sidsukana)<pre><code>[z1804] Fix CMSG_CHAT_IGNORED. Also fixed kick players if ignored player writing to them.
+* "zero":http://github.com/mangos-zero/server-old/commit/7962b72 7962b72 * Sidsukana (committer Sidsukana)<pre><code>[z1804] Fix CMSG_CHAT_IGNORED. Also fixed kick players if ignored player writing to them.
   66.8% src/game/
   33.1% src/shared/
 
@@ -69,7 +64,7 @@ stfx: it might very well be useful as backports have nothing to do with it.
 cala : tested on z2194 and was not able to see any issue: ignoring is working as intended and without kicking anyone.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/482ca12 482ca12 * Sidsukana (committer Sidsukana)<pre><code>[z1805] Fix Improved Sprint.
+* "zero":http://github.com/mangos-zero/server-old/commit/482ca12 482ca12 * Sidsukana (committer Sidsukana)<pre><code>[z1805] Fix Improved Sprint.
   76.2% src/game/
   23.7% src/shared/
 
@@ -77,7 +72,7 @@ bq. [OK] cala : This one looks ok but I will test it because I'm surprised it is
 On z2194, improved sprint is indeed broken (not working and breaking sprint along). This commit fixes it.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/e0a0426 e0a0426 * Sidsukana (committer Sidsukana)<pre><code>[z1806] Fix HP change in bear forms.
+* "zero":http://github.com/mangos-zero/server-old/commit/e0a0426 e0a0426 * Sidsukana (committer Sidsukana)<pre><code>[z1806] Fix HP change in bear forms.
   84.3% src/game/
   15.6% src/shared/
 
@@ -85,7 +80,7 @@ bq. [OK] cala : Seems ok but need to be tested. I'll do it.
 On z2194, shapeshifting into bear form, druids do not keep the same percentage of HP. This commit fixes it.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/84e3d1c 84e3d1c * Sidsukana (committer Sidsukana)<pre><code>[z1807] Fix spell 6346.
+* "zero":http://github.com/mangos-zero/server-old/commit/84e3d1c 84e3d1c * Sidsukana (committer Sidsukana)<pre><code>[z1807] Fix spell 6346.
   51.2% sql/updates/
   18.4% sql/
   30.2% src/shared/
@@ -95,7 +90,7 @@ stfx: There are some tables which are managed by mangos and not the database pro
 cala : tested on z2194 (and mangos-zero DB), this spell is already flagged as intented. This commit should be applied nonetheless to keep track of the fix.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/b2d8643 b2d8643 * Sidsukana (committer Sidsukana)<pre><code>[z1809] Fix item 23197.
+* "zero":http://github.com/mangos-zero/server-old/commit/b2d8643 b2d8643 * Sidsukana (committer Sidsukana)<pre><code>[z1809] Fix item 23197.
   27.7% sql/updates/
   18.0% sql/
   29.3% src/game/
@@ -104,7 +99,7 @@ cala : tested on z2194 (and mangos-zero DB), this spell is already flagged as in
 bq. [OK] cala : Without this commit, druids with item 23197 deals to much damage with moonfire spells. This commit fixes this.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/621a2de 621a2de * Sidsukana (committer TheLuda)<pre><code>[z1824] Fix item 23197.
+* "zero":http://github.com/mangos-zero/server-old/commit/621a2de 621a2de * Sidsukana (committer TheLuda)<pre><code>[z1824] Fix item 23197.
   40.2% sql/updates/
   23.9% sql/
   35.8% src/shared/
@@ -114,39 +109,39 @@ stfx: There are some tables which are managed by mangos and not the database pro
 cala: I did not know, my apologies :) . Yet this SQL query is already done in above commit b2d8643 and the sole result of this commit would be to alter db_version. This is why I advice to remove it.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/f026561 f026561 * Cala Haryon (committer Cala Haryon)<pre><code>Modify the mana regeneration rate to be correct for 1.12 and below.
+* "zero":http://github.com/mangos-zero/server-old/commit/f026561 f026561 * Cala Haryon (committer Cala Haryon)<pre><code>Modify the mana regeneration rate to be correct for 1.12 and below.
  100.0% src/game/
 
 bq. [OK] cala : this one is only half correct. The mana regen should occur every 2 sec See * "Mana regenaration":http://www.wowwiki.com/Talk:Mana_regeneration *, so the part fixed by this commit is correct. However, the mana regen formula was not the same for all spell casters in 1.12, it was uniformed in 2.4. I will propose a fix later to this issue and document it. In the meantime, I advice to still apply this commit, at least it will prevent casters from gaining mana twice faster than expected
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/c041d59 c041d59 * Cala Haryon (committer Cala Haryon)<pre><code>Fix glancing blows formula for zero.
+* "zero":http://github.com/mangos-zero/server-old/commit/c041d59 c041d59 * Cala Haryon (committer Cala Haryon)<pre><code>Fix glancing blows formula for zero.
  100.0% src/game/
 
 bq. [OK] cala : this one is ok. See * "Glancing blow":http://www.wowwiki.com/Glancing_blow *
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/06f5bb3 06f5bb3 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Druid Enrage Armor. Thanks to Salja
+* "zero":http://github.com/mangos-zero/server-old/commit/06f5bb3 06f5bb3 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Druid Enrage Armor. Thanks to Salja
  100.0% src/game/
 
 bq. [REMOVE] cala : Spell id and armor reduction values are correct (see * "rage generation - druid subsection":http://www.wowwiki.com/Rage *). Not sure about the aura id. However, Zakarumite stated that this spell is already in dbc and don't need to be done in core. I'll test it.
 On z2194, Spell does the same with and without the commit. However, armor reduction is indeed an issue as it is not reduced when casting Druid Enrage.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/6cffeff 6cffeff * Cala Haryon (committer Cala Haryon)<pre><code>Fix Sheeped/Feared Targets Bugging. Thanks Zataron & Salja
+* "zero":http://github.com/mangos-zero/server-old/commit/6cffeff 6cffeff * Cala Haryon (committer Cala Haryon)<pre><code>Fix Sheeped/Feared Targets Bugging. Thanks Zataron & Salja
  100.0% src/game/
 
 bq. [REMOVE] cala : With all the recent backports from TBC to classic related to similar issues, I'm note sure this one is still needed. I will also test it.
 cala (March 19-13) : sheeped and feared target behavior is the same with and without this commit.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/65baeed 65baeed * Cala Haryon (committer Cala Haryon)<pre><code>Lower Stealth Detection of Creatures. Thanks Zataron & Salja
+* "zero":http://github.com/mangos-zero/server-old/commit/65baeed 65baeed * Cala Haryon (committer Cala Haryon)<pre><code>Lower Stealth Detection of Creatures. Thanks Zataron & Salja
  100.0% src/game/
 
 bq. [REMOVE] cala : No documentation about this one. Furthermore, the issue should be exactly the same in WotLK and TBC but nothing was reported.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/22d7054 22d7054 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Aggro issues of Npc Summons. Thanks Zataron & Salja
+* "zero":http://github.com/mangos-zero/server-old/commit/22d7054 22d7054 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Aggro issues of Npc Summons. Thanks Zataron & Salja
  100.0% src/game/
 
 bq. [REMOVE] cala : With all the recents TBC backports about pets, this one should no longer be needed.
@@ -154,16 +149,16 @@ stfx: backports have probably nothing to do with it
 cala (March 19-13): cannot see if there is an issue. So, if it is not broken, don't fix it...
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/f7debc1 f7debc1 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Druid Attackpower in Cat and Bear Form. Patch by Zataron & Salja
+* "zero":http://github.com/mangos-zero/server-old/commit/f7debc1 f7debc1 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Druid Attackpower in Cat and Bear Form. Patch by Zataron & Salja
  100.0% src/game/
 
 bq. [REMOVE] cala: Core currently use TBC values for druid AP (see * "Attack Power as of April 18th 2008":http://www.wowwiki.com/Attack_power?diff=1317844&oldid=1308858 *). However, I'm unable to find if they were different in classic. I guess so as feral druids got a big "up" in TBC but without correct 1.12 values, we should trash this commit and but put a note in StatSystem.cpp stating these values need to be confirmed.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server/commit/e45f908 e45f908 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Beastslayer Damage Bonus. Thanks Zataron & Salja
+* "zero":http://github.com/mangos-zero/server-old/commit/e45f908 e45f908 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Beastslayer Damage Bonus. Thanks Zataron & Salja
  100.0% src/game/
 
 bq. [OK] cala : Tested: without this commit damages on beasts with a weapon are the same with or without the beastslayer enchantment.
 
 </code></pre>
-FILE LAST UPDATED BASED ON... "zero":http://github.com/mangos-zero/server/commit/9293a6d 9293a6d * TheLuda (committer TheLuda)
+FILE LAST UPDATED BASED ON... "zero":http://github.com/mangos-zero/server-old/commit/9293a6d 9293a6d * TheLuda (committer TheLuda)
