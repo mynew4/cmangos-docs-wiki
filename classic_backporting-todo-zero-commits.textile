@@ -99,16 +99,6 @@ cala : tested on z2194 (and mangos-zero DB), this spell is already flagged as in
 bq. [OK] cala : Without this commit, druids with item 23197 deals to much damage with moonfire spells. This commit fixes this.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/621a2de 621a2de * Sidsukana (committer TheLuda)<pre><code>[z1824] Fix item 23197.
-  40.2% sql/updates/
-  23.9% sql/
-  35.8% src/shared/
-
-bq. [REMOVE] cala : Can be trashed: DB only update and already handled by previous commit.
-stfx: There are some tables which are managed by mangos and not the database providers. this one is one of them.
-cala: I did not know, my apologies :) . Yet this SQL query is already done in above commit b2d8643 and the sole result of this commit would be to alter db_version. This is why I advice to remove it.
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/f026561 f026561 * Cala Haryon (committer Cala Haryon)<pre><code>Modify the mana regeneration rate to be correct for 1.12 and below.
  100.0% src/game/
 
@@ -119,34 +109,6 @@ bq. [OK] cala : this one is only half correct. The mana regen should occur every
  100.0% src/game/
 
 bq. [OK] cala : this one is ok. See * "Glancing blow":http://www.wowwiki.com/Glancing_blow *
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/06f5bb3 06f5bb3 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Druid Enrage Armor. Thanks to Salja
- 100.0% src/game/
-
-bq. [REMOVE] cala : Spell id and armor reduction values are correct (see * "rage generation - druid subsection":http://www.wowwiki.com/Rage *). Not sure about the aura id. However, Zakarumite stated that this spell is already in dbc and don't need to be done in core. I'll test it.
-On z2194, Spell does the same with and without the commit. However, armor reduction is indeed an issue as it is not reduced when casting Druid Enrage.
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/6cffeff 6cffeff * Cala Haryon (committer Cala Haryon)<pre><code>Fix Sheeped/Feared Targets Bugging. Thanks Zataron & Salja
- 100.0% src/game/
-
-bq. [REMOVE] cala : With all the recent backports from TBC to classic related to similar issues, I'm note sure this one is still needed. I will also test it.
-cala (March 19-13) : sheeped and feared target behavior is the same with and without this commit.
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/65baeed 65baeed * Cala Haryon (committer Cala Haryon)<pre><code>Lower Stealth Detection of Creatures. Thanks Zataron & Salja
- 100.0% src/game/
-
-bq. [REMOVE] cala : No documentation about this one. Furthermore, the issue should be exactly the same in WotLK and TBC but nothing was reported.
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/22d7054 22d7054 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Aggro issues of Npc Summons. Thanks Zataron & Salja
- 100.0% src/game/
-
-bq. [REMOVE] cala : With all the recents TBC backports about pets, this one should no longer be needed.
-stfx: backports have probably nothing to do with it
-cala (March 19-13): cannot see if there is an issue. So, if it is not broken, don't fix it...
 
 </code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/f7debc1 f7debc1 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Druid Attackpower in Cat and Bear Form. Patch by Zataron & Salja
