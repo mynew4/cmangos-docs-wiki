@@ -1,12 +1,4 @@
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/7746ed3 7746ed3 * Sidsukana (committer Sidsukana)<pre><code>[z1770] Fix spell Deep Wounds
-  80.8% src/game/
-  19.1% src/shared/
-
-bq. stfx: Correct fix, but shouldnt Deep Wounds code be in UnitAuraProcHandler.cpp as it is on master/tbc?
-Xfurry: good question. The code is in both places. I'll check DBC to see which one should be dropped.
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/5a5169b 5a5169b * Sidsukana (committer Sidsukana)<pre><code>[z1774] Fix speed modifiers for spells Permafrost, Improved Curse of Exhaustion, Camouflage, Pathfinding, Amplify Curse, Cheetah Sprint.
   95.8% src/game/
    4.1% src/shared/
