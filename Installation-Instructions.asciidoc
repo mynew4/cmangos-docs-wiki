@@ -89,20 +89,26 @@ Clone C-MaNGOS
 After having opened Git bash, simply type:
 
 ++git clone git://github.com/cmangos/mangos-wotlk.git mangos++
+
 Versions for different clients:
-++git clone git://github.com/cmangos/mangos-classic.git mangos++
-++git clone git://github.com/cmangos/mangos-tbc.git mangos++
-++git clone git://github.com/cmangos/mangos-cata.git mangos++
+-------------------
+git clone git://github.com/cmangos/mangos-classic.git mangos
+git clone git://github.com/cmangos/mangos-tbc.git mangos
+git clone git://github.com/cmangos/mangos-cata.git mangos
+-------------------
 
 And submit this git command with return. This will take a little time, but after you will have created a subdirectory into C:\Mangos named "mangos" into which the C-MaNGOS sources are cloned.
 
 Clone ScriptDev2
 ~~~~~~~~~~~~~~~~
 ++git clone git://github.com/scriptdev2/scriptdev2.git mangos/src/bindings/ScriptDev2++
+
 Versions for different clients:
-++git clone git://github.com/scriptdev2/scriptdev2-classic.git mangos/src/bindings/ScriptDev2++
-++git clone git://github.com/scriptdev2/scriptdev2-tbc.git mangos/src/bindings/ScriptDev2++
-++git clone git://github.com/scriptdev2/scriptdev2-cata.git mangos/src/bindings/ScriptDev2++
+-------------------
+git clone git://github.com/scriptdev2/scriptdev2-classic.git mangos/src/bindings/ScriptDev2
+git clone git://github.com/scriptdev2/scriptdev2-tbc.git mangos/src/bindings/ScriptDev2
+git clone git://github.com/scriptdev2/scriptdev2-cata.git mangos/src/bindings/ScriptDev2
+-------------------
 
 If you are on *nix, also do
 
@@ -113,10 +119,13 @@ If you are on *nix, also do
 Clone ACID
 ~~~~~~~~~~
 ++git clone git://github.com/scriptdev2/acid.git++
+
 Versions for different clients:
-++git clone -b classic git://github.com/scriptdev2/acid.git++
-++git clone -b tbc git://github.com/scriptdev2/acid.git++
-++git clone -b cata git://github.com/scriptdev2/acid.git++
+-------------------
+git clone -b classic git://github.com/scriptdev2/acid.git
+git clone -b tbc git://github.com/scriptdev2/acid.git
+git clone -b cata git://github.com/scriptdev2/acid.git
+-------------------
 
 This is considered optional, as ACID is usually included by the database providers.
 
