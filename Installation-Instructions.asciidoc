@@ -446,8 +446,22 @@ Meaning of config files from mangos/sd2
 
 With these default installations, however i am pretty sure it should be good to go..
 
-Required database entry into realmd.realmlist?
+Update realmd.realmlist
+~~~~~~~~~~~~~~~~~~~~~~~
 
+You need to update your realmlist in the realmd database.
+This is required so that the realmd "knows" to which mangosd he should forward a player after authentification
+
+Apply this code to your realmd database:
+---------------------
+DELETE FROM realmlist WHERE id=1;
+INSERT INTO realmlist (id, name, address, port, icon, realmflags, timezone, allowedSecurityLevel) VALUES
+('1', 'MaNGOS', '127.0.0.1', '8085', '1', '0', '1', '0');
+---------------------
+
+Where of course the data must match the configs:
+* port (above 8085) must match the value in the mangosd.conf (Config option: "WorldServerPort")
+* id (above 1) must match the value in the mangosd.conf (Config option: "RealmID") 
 
 Configuring your WoW-Client
 ---------------------------
