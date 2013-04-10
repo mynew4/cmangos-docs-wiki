@@ -444,15 +444,17 @@ Configuring C-MaNGOS
 This part should be an extra wiki-page:
 Meaning of config files from mangos/sd2
 
-With these default installations, however i am pretty sure it should be good to go..
+With these default installations, however i am pretty sure it should be good to go :)
 
-Update realmd.realmlist
-~~~~~~~~~~~~~~~~~~~~~~~
 
-You need to update your realmlist in the realmd database.
-This is required so that the realmd "knows" to which mangosd he should forward a player after authentification
+(OPTIONAL) Update realmd.realmlist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Apply this code to your realmd database:
+You need to change this only if you changed the mangosd.conf settings "WorldServerPort" or "RealmID"
+
+This information is required so that the realmd "knows" to which mangosd he should forward a player after authentification
+
+Apply code to realmd database, adapt to your wishes
 ---------------------
 DELETE FROM realmlist WHERE id=1;
 INSERT INTO realmlist (id, name, address, port, icon, realmflags, timezone, allowedSecurityLevel) VALUES
@@ -460,6 +462,7 @@ INSERT INTO realmlist (id, name, address, port, icon, realmflags, timezone, allo
 ---------------------
 
 Where of course the data must match the configs:
+
 * port (above 8085) must match the value in the mangosd.conf (Config option: "WorldServerPort")
 * id (above 1) must match the value in the mangosd.conf (Config option: "RealmID") 
 
