@@ -441,10 +441,24 @@ So you need to:
 
 Configuring C-MaNGOS
 --------------------
-This part should be an extra wiki-page:
-Meaning of config files from mangos/sd2
+This part should be an extra wiki-page: Meaning of config files from mangos/sd2
 
-With these default installations, however i am pretty sure it should be good to go :)
+With the default installations, you should get a working environment out of the box :)
+
+(OPTIONAL) Update *.conf files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You will need to manually update the configuration files within your "run" directory (ie C:\Mangos\run ).
+
+The files are:
+* mangosd.conf: Holds configuration for the mangosd executable
+* realmd.conf: Holds configuration for the realmd exectuable
+* scriptdev2.conf: Holds configuration for ScriptDev2's settings
+* (Very optional) ahbot.conf: Holds configuration for AHBot (by default disabled)
+
+Most important to configure are the database settings. You will need this if you decided to use a different password/user then the "default" combination of mangos/mangos.
+
+These settings are relatively self-explaining, you should look for the settings of "LoginDatabaseInfo", "WorldDatabaseInfo", "CharacterDatabaseInfo" and "ScriptDev2DatabaseInfo" (no file contains all of these options)
 
 
 (OPTIONAL) Update realmd.realmlist
