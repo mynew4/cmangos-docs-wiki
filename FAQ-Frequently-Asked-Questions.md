@@ -17,6 +17,9 @@ See the part about Howto Install
 ### I play TBC or WotLK and cannot access the Blood Elves, Draenei, Worgen or Goblins
 * You need to set the expansion of your account to 1/2/3 (for TBC/WotLK/Cata). See [[Installation Instructions]]
 
+### MaNGOSd or/and Realmd instantly closes when i start them!
+* Run mangos in command line instead, if you have git bash that's also fine. Then you will see the onscreen error output and be able to continue from there.
+
 ### I play WotLK/Cata and cannot access the Death Knight
 * You need to the expansion of your account to 2 or 3 (2 for TBC, 3 for Cata)
 * You need to level a character to level 50 OR
