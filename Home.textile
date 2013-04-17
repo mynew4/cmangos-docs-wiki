@@ -11,8 +11,21 @@ h1. C(ontinued)-MaNGOS Development
 
 * "Roadmap":https://github.com/cmangos/issues/issues/1
 
-h2. Database structure (TODO)
+h2. Database structure
 
+* "Description of the CMaNGOS database structure":mangosdb_struct
+* "Description of the Characters database structure":charactersdb_struct
+* "Description of the Realm database structure":realmdb_struct
+
+h2. External data
+
+Other useful data like small dbc contents used to populate some MaNGOS tables can be found here. These pages are also used as template for some MaNGOS field description when needed to list the content. We can then update all information about contained data from these pages when a change occurs, and this change is reflected in all pages that include these templates.
+
+* "Description of dbc files content":dbc_files
+
+* "Description of wdb files content":wdb_files
+
+* "Description of the data field in the `character` table":character_data
 
 h2. Client dependend information
 
