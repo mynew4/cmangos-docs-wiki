@@ -1,0 +1,38 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `game&#95;event&#95;creature&#95;data` table
+
+Contains all creature instances that need to change display id and/or equipment during defined game events.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"guid":Game_event_creature_data#guid|int(11) unsigned|NO|PRI|||
+|"id":Game_event_creature_data#id|mediumint(8) unsigned|NO|PRI|||
+|"modelid":Game_event_creature_data#modelid|mediumint(8) unsigned|NO||0||
+|"equipment_id":Game_event_creature_data#equipment_id|mediumint(8) unsigned|NO||0||
+|"spell_start":Game_event_creature_data#spell_start|mediumint(8) unsigned|NO||0||
+|"spell_end":Game_event_creature_data#spell_end|mediumint(8) unsigned|NO||0||
+|"event":Game_event_creature_data#event|mediumint(9) unsigned|NO||0||
+
+
+h3. Description of the fields
+
+h4. guid
+
+Guid of the creature participating in the event ("creature.guid":creature#guid)
+
+h4. modelid
+
+New model to be used while the event is active (Refers to "creature&#95;model&#95;info.modelid":creature_model_info#modelid) Use 0 if only the "equipment":#equipment_id is to be changed during event.
+
+h4. equipment&#95;id
+
+New equipment to be used during the event (Refers to "creature&#95;equip&#95;template.entry":creature_equip_template#entry)) Use 0 if only the "model":#modelid is to be changed during event.
+
+h4. event
+
+Entry of the event ("game&#95;event.entry":game_event#entry)
+
+* In this table, event entry can only be positive

@@ -1,0 +1,34 @@
+Back to "dbc files":dbc_files list.
+
+h3. AreaGroup.dbc
+
+This DBC stores Glyph IDs used in "Character&#95;glyphs":Character glyphs table.
+
+*Version is : 3.3.5a*
+
+h3. *Structure*
+
+
+|*Column*|*Name*|*Type*|
+|1|ID|Integer|
+|2|Entry1|iRefID|
+|3|Entry2|iRefID|
+|4|Entry3|iRefID|
+|5|Entry4|iRefID|
+|6|Entry5|iRefID|
+|7|Entry6|iRefID|
+|8|Entry7|iRefID|
+
+
+
+
+
+<hr />
+
+h4. ID
+
+Area ID's used from "AreaTable.dbc.":AreaTable.dbc.
+
+h4. Entry1-7
+
+Area ID's used from "AreaTable.dbc.Not":AreaTable.dbc.Not sure what these are used for, possibly to group several small areas into one larger area or category.

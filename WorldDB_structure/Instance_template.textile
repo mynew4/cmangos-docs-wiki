@@ -1,0 +1,68 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `instance&#95;template` table
+
+This table has all the templates for every instance. When a group enters an instance, a new copy of that instance is made from the values in these fields.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"map":Instance_template#map|int(10) unsigned|NO|PRI|||
+|"parent":Instance_template#parent|int(11) unsigned|NO||||
+|"levelMin":Instance_template#levelmin|int(10) unsigned|NO||0||
+|"levelMax":Instance_template#levelmax|int(10) unsigned|NO||0||
+|"maxPlayers":Instance_template#maxplayers|int(10) unsigned|NO||0||
+|"reset_delay":Instance_template#reset_delay|int(10) unsigned|NO||0||
+|"startLocX":Instance_template#startlocx|float|YES||None||
+|"startLocY":Instance_template#startlocy|float|YES||None||
+|"startLocZ":Instance_template#startlocz|float|YES||None||
+|"startLocO":Instance_template#startloco|float|YES||None||
+|"script":Instance_template#script|varchar(255)|NO||||
+
+
+h3. Description of the fields
+
+h4. map
+
+The map ID of the instance. See Map.dbc
+
+h4. parent
+
+If the instance is a subinstance of another instance, this field has the parent instance's map ID.
+
+h4. levelMin
+
+The minimum level required to enter the instance.
+
+h4. levelMax
+
+The maximum level required to be able to be summoned by the meeting stone for this instance.
+
+h4. maxPlayers
+
+The maximum number of players that can enter as a group/raid in the instance.
+
+h4. reset&#95;delay
+
+The number of days between each global reset for the map. If zero, the value is taken from DBC files. The resulting value is multiplied by the Rate.InstanceResetTime config.
+
+h4. startLocX
+
+Defines the starting X location where players will be ported (if different from default).
+
+h4. startLocY
+
+Defines the starting Y location where players will be ported (if different from default).
+
+h4. startLocZ
+
+Defines the starting Z location where players will be ported (if different from default).
+
+h4. startLocO
+
+Defines the starting orientation that players will face. (if different from default).
+
+h4. script
+
+The name of the instance script that the instance will use and apply (if any).

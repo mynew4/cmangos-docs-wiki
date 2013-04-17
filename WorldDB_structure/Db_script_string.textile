@@ -1,0 +1,48 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `db&#95;script&#95;string` table
+
+Holds texts for scripts.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"entry":Db_script_string#entry|int(11) unsigned|NO|PRI|0||
+|"content_default":Db_script_string#content_default|text|NO||||
+|"content_loc1":Db_script_string#content_loc|text|YES||NULL||
+|"content_loc2":Db_script_string#content_loc|text|YES||NULL||
+|"content_loc3":Db_script_string#content_loc|text|YES||NULL||
+|"content_loc4":Db_script_string#content_loc|text|YES||NULL||
+|"content_loc5":Db_script_string#content_loc|text|YES||NULL||
+|"content_loc6":Db_script_string#content_loc|text|YES||NULL||
+|"content_loc7":Db_script_string#content_loc|text|YES||NULL||
+|"content_loc8":Db_script_string#content_loc|text|YES||NULL||
+
+
+h3. Description of the fields
+
+h4. entry
+
+The ID to identify the text. Referenced by "event&#95;scripts":event_scripts#dataint, "gameobject&#95;scripts":gameobject_scripts#dataint, "quest&#95;start&#95;scripts":quest_start_scripts#dataint, "quest&#95;end&#95;scripts":quest_end_scripts#dataint, "spell&#95;scripts":spell_scripts#dataint and "creature&#95;movement":creature_movement#text.
+
+Entries must be between 2000000000 and 2000010000.
+
+h4. content&#95;default
+
+The text for default language. UDB provides english, see e.g. GMDB"1":http://sourceforge.net/projects/gm-db/|GMDB for german support.
+
+h4. content&#95;loc
+
+The translation in another language depending on the locale ID of that language.
+
+
+|*locale ID*|*language*|
+|1|Korean (koKR)|
+|2|French (frFR)|
+|3|German (deDE)|
+|4|Chinese (zhCN)|
+|5|Taiwan (zhTW)|
+|6|Spanish (esES) / Mexico (esMX)|
+|7|Russian (ruRU)|
+

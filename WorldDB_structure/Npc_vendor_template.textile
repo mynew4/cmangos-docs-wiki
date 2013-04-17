@@ -1,0 +1,38 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `npc&#95;vendor&#95;(template)` table
+
+This table holds the vendor data for all NPCs that sell items. The gold price for each item is in its item template as "BuyPrice":item_template#BuyPrice.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"entry":Npc_vendor_template#entry|int(10) unsigned|NO|PRI|0||
+|"item":Npc_vendor_template#item|int(10) unsigned|NO|PRI|0||
+|"maxcount":Npc_vendor_template#maxcount|int(10) unsigned|NO||0||
+|"incrtime":Npc_vendor_template#incrtime|int(10) unsigned|NO||0||
+|"ExtendedCost":Npc_vendor_template#extendedcost|mediumint(8) unsigned|NO||0||
+
+
+h3. Description of the fields
+
+h4. entry
+
+The ID of the creature. See "creature&#95;template.entry":creature_template#entry. In case of npc&#95;vendor&#95;template its the id of a vending&#95;list. Used in "creature&#95;template.vendor&#95;id":creature_template#vendor_id
+
+h4. item
+
+The item ID. See "item&#95;template.entry":item_template#entry
+
+h4. maxcount
+
+The maximum number of copies of the item the vendor has available to be sold. If 0, then it is an unlimited number of copies.
+
+h4. incrtime
+
+Combined with "maxcount":#maxcount, this field tells how often (in seconds) the vendor list is refreshed and the limited item copies are restocked. For limited item copies, every refresh, the quantity is increased by "item&#95;template.BuyCount":item_template#BuyCount
+
+h4. ExtendedCost
+
+The value here corresponds to the ID in ItemExtendedCost.dbc and that ID controls the item's non monetary price, be it honor points, arena points, different types of badges or any combination of the above.

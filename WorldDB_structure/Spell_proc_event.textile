@@ -1,0 +1,113 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `spell&#95;proc&#95;event` table
+
+This table holds information on what events (or procs) certain spells are activated. All spells in this table must have apply a SPELL&#95;AURA&#95;PROC&#95;TRIGGER&#95;SPELL (42) aura. Any entries in this table will overwrite the existing proc settings in the spell's DBC entry.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"entry":Spell_proc_event#entry|smallint(6) unsigned|NO|PRI|0||
+|"SchoolMask":Spell_proc_event#schoolmask|tinyint(4)|NO||0||
+|"Category":Spell_proc_event#category|smallint(6)|NO||0||
+|"SkillID":Spell_proc_event#skillid|smallint(6)|NO||0||
+|"SpellFamilyName":Spell_proc_event#spellfamilyname|smallint(6) unsigned|NO||0||
+|"SpellFamilyMask":Spell_proc_event#spellfamilymask|bigint(40) unsigned|NO||0||
+|"procFlags":Spell_proc_event#procflags|int(11) unsigned|NO||0||
+|"ppmRate":Spell_proc_event#ppmrate|float|NO||0||
+
+
+h3. Description of the fields
+
+h4. entry
+
+The spell ID that is capable to proc on an event.
+
+h4. SchoolMask
+
+This field contains a bitmask that controls on what types of spell damages the proc can be triggered. For example if an aura procs only when the unit it is casted upon is hit by shadow spells (spell 34914). To combine spell schools, just add the bit values.
+
+|_. School ID|_. Bit|_. Name|
+|0|1|Physical|
+|1|2|Holy|
+|2|4|Fire|
+|3|8|Nature|
+|4|16|Frost|
+|5|32|Shadow|
+|6|64|Arcane|
+
+
+h4. Category
+
+This field controls what spell categories can proc the aura's triggered spell.
+
+h4. SkillID
+
+This field controls what spells' skill IDs can proc the triggered spell. For example all talent spells in a tab share a certain skill ID. See SkillLine.dbc
+
+h4. SpellFamilyName
+
+This field controls what family name spells can proc the triggered spell.
+
+|_. ID|_. Family Name|
+|0|Generic|
+|3|Mage|
+|4|Warrior|
+|5|Warlock|
+|6|Priest|
+|7|Druid|
+|8|Rogue|
+|9|Hunter|
+|10|Paladin|
+|11|Shaman|
+|13|Potion|
+
+
+h4. SpellFamilyMask
+
+This field controls what spells' family flags can proc the triggered spell.
+
+h4. procFlags
+
+A bitmask controlling what events trigger the spell. To combine possible events, add the proc bits together.
+
+|_. Proc Name|_. Bit|_. Comments|
+|0|PROC&#95;FLAG&#95;NONE|None|
+|1|PROC&#95;FLAG&#95;HIT&#95;MELEE|On melee hit|
+|2|PROC&#95;FLAG&#95;STRUCK&#95;MELEE|On being hit by melee damage|
+|4|PROC&#95;FLAG&#95;KILL&#95;XP&#95;GIVER|On kill target giving XP or honor|
+|8|PROC&#95;FLAG&#95;SPECIAL&#95;DROP||
+|16|PROC&#95;FLAG&#95;DODGE|On dodge melee attack|
+|32|PROC&#95;FLAG&#95;PARRY|On parry melee attack|
+|64|PROC&#95;FLAG&#95;BLOCK|On block attack|
+|128|PROC&#95;FLAG&#95;TOUCH|On being touched (for bombs, probably?)|
+|256|PROC&#95;FLAG&#95;TARGET&#95;LOW&#95;HEALTH|On deal damage to enemy with 20% or less health|
+|512|PROC&#95;FLAG&#95;LOW&#95;HEALTH|On health dropped below 20%|
+|1024|PROC&#95;FLAG&#95;STRUCK&#95;RANGED|On being struck ranged|
+|2048|PROC&#95;FLAG&#95;HIT&#95;SPECIAL|(!)Removed, may be reassigned in future|
+|4096|PROC&#95;FLAG&#95;CRIT&#95;MELEE|On crit melee|
+|8192|PROC&#95;FLAG&#95;STRUCK&#95;CRIT&#95;MELEE|On being critically struck in melee|
+|16384|PROC&#95;FLAG&#95;CAST&#95;SPELL|On spell cast|
+|32768|PROC&#95;FLAG&#95;TAKE&#95;DAMAGE|On damage taken|
+|65536|PROC&#95;FLAG&#95;CRIT&#95;SPELL|On spell critical hit|
+|131072|PROC&#95;FLAG&#95;HIT&#95;SPELL|On spell hit|
+|262144|PROC&#95;FLAG&#95;STRUCK&#95;CRIT&#95;SPELL|On being critically struck by a spell|
+|524288|PROC&#95;FLAG&#95;HIT&#95;RANGED|On getting ranged hit|
+|1048576|PROC&#95;FLAG&#95;STRUCK&#95;SPELL|On being struck by a spell|
+|2097152|PROC&#95;FLAG&#95;TRAP|On trap activation|
+|4194304|PROC&#95;FLAG&#95;CRIT&#95;RANGED|On getting ranged crit|
+|8388608|PROC&#95;FLAG&#95;STRUCK&#95;CRIT&#95;RANGED|On being critically struck by a ranged attack|
+|16777216|PROC&#95;FLAG&#95;RESIST&#95;SPELL|On resist enemy spell|
+|33554432|PROC&#95;FLAG&#95;TARGET&#95;RESISTS|On enemy resisted spell|
+|67108864|PROC&#95;FLAG&#95;TARGET&#95;AVOID&#95;ATTACK|On enemy blocks/dodges/parries|
+|134217728|PROC&#95;FLAG&#95;HEAL|On heal of someone|
+|268435456|PROC&#95;FLAG&#95;CRIT&#95;HEAL|On critical healing effect|
+|536870912|PROC&#95;FLAG&#95;HEALED|On healed by someone|
+|1073741824|PROC&#95;FLAG&#95;TARGET&#95;BLOCK|On enemy blocks|
+|2147483648|PROC&#95;FLAG&#95;MISS|On miss melee attack|
+
+
+h4. ppmRate
+
+This field controls the times per minute that the spell should proc. If zero, then the value is taken from the DBC entry.

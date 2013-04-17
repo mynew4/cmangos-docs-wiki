@@ -1,0 +1,42 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `gossip&#95;menu&#95;option` table
+
+This table holds infos about menu options a gossip NPC can have. Examples of options : &quot;Train me!&quot;, &quot;I want to unlearn my talents&quot;, ...
+
+h3. Structure
+
+
+|*Field*|*Type*|*Attributes*|*Key*|*Null*|*Default*|
+|"faction":Reputation_spillover_template#faction|smallint(6)|unsigned|PRI|NO|0|
+|"faction1":Reputation_spillover_template#faction1/2/3|smallint(6)|unsigned||NO|0|
+|"rate_1":Reputation_spillover_template#rate|float(0)|signed||NO|0|
+|"rank_1":Reputation_spillover_template#rank|tinyint(3)|unsigned||NO|0|
+|"faction2":Reputation_spillover_template#faction1/2/3|smallint(6)|unsigned||NO|0|
+|"rate_2":Reputation_spillover_template#rate|float(0)|signed||NO|0|
+|"rank_2":Reputation_spillover_template#rank|tinyint(3)|unsigned||NO|0|
+|"faction3":Reputation_spillover_template#faction1/2/3|smallint(6)|unsigned||NO|0|
+|"rate_3":Reputation_spillover_template#rate|float(0)|signed||NO|0|
+|"rank_3":Reputation_spillover_template#rank|tinyint(3)|unsigned||NO|0|
+
+
+h3. Description of the fields
+
+h4. faction
+
+h4. faction1/2/3
+
+h4. rate
+
+h4. rank
+
+|_. Value|_. Rank|
+|0|Hated|
+|1|Hostil|
+|2|Unfriendly|
+|3|Neutral|
+|4|Friendly|
+|5|Honored|
+|6|Revered|
+|7|Exalted|
+

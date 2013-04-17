@@ -1,0 +1,194 @@
+Back to "world database":mangosdb_struct list of tables.
+
+With this table and the new conditions it is possible to create tree like and very complicated combined conditions (like HasAura &amp;&amp; (HasItem &#124;&#124; HasQuest))
+
+h2. The `conditions` table
+
+h3. Structure
+
+
+|*Field*|*Type*|*Attributes*|*Key*|*Null*|*Default*|
+|"condition_entry":Conditions#condition_entry|mediumint(8)|unsigned|PRI|YES|NULL|
+|"type":Conditions#type|tinyint(3)|signed||NO|0|
+|"value1":Conditions#value1|mediumint(8)|unsigned||NO|0|
+|"value2":Conditions#value2|mediumint(8)|unsigned||NO|0|
+
+
+h3. Description of the fields
+
+h4. condition&#95;entry
+
+Identifier
+
+h4. type
+
+Type of the condition
+
+h4. value1
+
+data field one for the condition
+
+h4. value2
+
+data field one for the condition
+
+h4. condition
+
+"condition&#95;value1-2":#condition_value fields can provide conditions on when the gossip is aktive.
+
+|_. Value|_. Condition|_. Comments|
+|-3|CONDITION&#95;NOT|NOT combination ob 2 other condition&#95;entry &#42;|
+|-2|CONDITION&#95;OR|OR combination ob 2 other condition&#95;entry &#42;|
+|-1|CONDITION&#95;AND|AND combination ob 2 other condition&#95;entry &#42;|
+|0|CONDITION&#95;NONE|Regular drop|
+|1|CONDITION&#95;AURA|Player looting must have an aura active|
+|2|CONDITION&#95;ITEM|Player must have a number of items in his/her inventory|
+|3|CONDITION&#95;ITEM&#95;EQUIPPED|Player must have an item equipped|
+|4|CONDITION&#95;ZONEID|Player must be in a certain zone|
+|5|CONDITION&#95;REPUTATION&#95;RANK|Player must have a certain reputation rank with a certain faction|
+|6|CONDITION&#95;TEAM|Player must be part of the specified team (Alliance or Horde)|
+|7|CONDITION&#95;SKILL|Player must have a certain skill value|
+|8|CONDITION&#95;QUESTREWARDED|Player must have completed a quest first|
+|9|CONDITION&#95;QUESTTAKEN|Players must have the quest in the quest log and not completed yet|
+|10|CONDITION&#95;AD&#95;COMMISSION&#95;AURA||
+|11|CONDITION&#95;NO&#95;AURA|Miss some aura.|
+|12|CONDITION&#95;ACTIVE&#95;EVENT|event]] is active.|
+|13|CONDITION&#95;AREA&#95;FLAG||
+|14|CONDITION&#95;RACE&#95;CLASS|Has special race or class.|
+|15|CONDITION&#95;LEVEL|Has special level.|
+|16|CONDITION&#95;NOITEM|Has not enouth items yet.|
+|17|CONDITION&#95;SPELL|Knows some spell.|
+|18|CONDITION&#95;INSTANCE&#95;SCRIPT|SD2-Based condition|
+|19|CONDITION&#95;QUESTAVAILABLE|Some quest is availible.|
+|20|CONDITION&#95;ACHIEVEMENT|Has or has no special achievement.|
+|21|CONDITION&#95;ACHIEVEMENT&#95;REALM|Realm-wideversion of 20.|
+|22|CONDITION&#95;QUEST&#95;NONE|Has not taken a quest yet.|
+|23|CONDITION&#95;ITEM&#95;WITH&#95;BANK|Check's presens of req. amount of items in inventory or bank.|
+|24|CONDITION&#95;NOITEM&#95;WITH&#95;BANK|Check's absentee of req. amount of items in inventory or bank.|
+|25|CONDITION&#95;NOT&#95;ACTIVE&#95;GAME&#95;EVENT||
+|26|CONDITION&#95;ACTIVE&#95;HOLIDAY||
+|27|CONDITION&#95;NOT&#95;ACTIVE&#95;HOLIDAY||
+|28|CONDITION&#95;LEARNABLE&#95;ABILITY|Check's if the palyer has high enought skilllevel and may check if a special item is in the inventory.|
+
+
+(&#42;) Meta-Condition types CONDITION&#95;AND (-1) and CONDITION&#95;OR (-2) which are used as: value1 (as condition&#95;entry) AND / OR value2 (as condition&#95;entry). With these meta-conditions it is possible to create tree like and very complicated combined conditions (like HasAura &amp;&amp; (HasItem &#124;&#124; HasQuest))
+
+h3. condition&#95;value
+
+The values in the condition&#95;value1 and condition&#95;value2 fields depend on what condition was put in "condition":#condition.
+
+* CONDITION&#95;AND
+** value1: condition&#95;entry
+** value2: condition&#95;entry
+
+* CONDITION&#95;OR
+** value1: condition&#95;entry
+** value2: condition&#95;entry
+
+* CONDITION&#95;AURA
+** value1: The spell ID from where the aura came from.
+** value2: The effect index of the spell that applied the aura (0, 1, or 2)
+
+* CONDITION&#95;ITEM
+** value1: Item ID
+** value2: Count
+
+* CONDITION&#95;ITEM&#95;EQUIPPED
+** value1: Item ID
+** value2: Always 0
+
+* CONDITION&#95;ZONEID
+** value1: Zone ID
+** value2: Always 0
+
+* CONDITION&#95;REPUTATION&#95;RANK
+** value1: Faction ID
+** value2: Minimum rank
+
+* CONDITION&#95;TEAM
+** value1: Player team (469 - Alliance, 67 - Horde)
+** value2: Always 0
+
+* CONDITION&#95;SKILL
+** value1: Skill ID (SkillLine.dbc)
+** value2: Skill value needed
+
+* CONDITION&#95;QUESTREWARDED
+** value1: Quest ID
+** value2: Always 0
+
+* CONDITION&#95;QUESTTAKEN
+** value1: Quest ID
+** value2: Always 0
+
+* CONDITION&#95;AD&#95;COMMISSION&#95;AURA
+** value1: Always 0
+** value2: Always 0
+
+* CONDITION&#95;NO&#95;AURA
+** value1: spellid
+** value2: EffectIndex
+
+* CONDITION&#95;ACTIVE&#95;EVENT
+** value1: "event":game_event
+** value2: Always 0
+
+* CONDITION&#95;AREA&#95;FLAG
+** value1: area&#95;flag
+** value2: not&#95;have&#95;flag
+
+* CONDITION&#95;RACE&#95;CLASS
+** value1: race&#95;mask
+** value2: class&#95;mask
+
+* CONDITION&#95;LEVEL
+** value1: level
+** value2: 0: equal to, 1: equal or higher than, 2: equal or less than
+
+* CONDITION&#95;NOITEM
+** value1: itemid
+** value2: count
+
+* CONDITION&#95;SPELL
+** value1: spellid
+** value2: 0: has spell, 1: has no spell
+
+* CONDITION&#95;QUESTAVAILABLE
+** value1: questid
+** value2: 0
+
+* CONDITION&#95;ACHIEVEMENT
+** value1: achievementid
+** value2: 0: has achievement, 1: has no achievement
+
+* CONDITION&#95;ACHIEVEMENT&#95;REALM
+** value1: achievementid
+** value2: 0: has achievement, 1: has no achievement
+
+* CONDITION&#95;QUEST&#95;NONE
+** value1: questid
+** value2: Always 0
+
+* CONDITION&#95;ITEM&#95;WITH&#95;BANK
+** value1: item&#95;id
+** value2: count
+
+* CONDITION&#95;NOITEM&#95;WITH&#95;BANK
+** value1: item&#95;id
+** value2: count
+
+* CONDITION&#95;NOT&#95;ACTIVE&#95;GAME&#95;EVENT
+** value1: event&#95;id
+** value2: 0
+
+* CONDITION&#95;ACTIVE&#95;HOLIDAY
+** value1: holiday&#95;id
+** value2: 0
+
+* CONDITION&#95;NOT&#95;ACTIVE&#95;HOLIDAY
+** value1: holiday&#95;id
+** value2: 0
+
+* CONDITION&#95;LEARNABLE&#95;ABILITY
+** value1: spell&#95;id
+** value2: 0 or item&#95;id

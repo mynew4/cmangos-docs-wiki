@@ -1,0 +1,43 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `npc&#95;trainer&#95;(template)` table
+
+This table holds all the information on training NPCs. All spells listed in the table are learning spells. This means that the main effect of the spells listed here is to teach spells to the target (which is the player in this case). Any other spell that is not a learning spell will be ignored and an error message will be shown in the console window. Learning spells usually have the same name as their actual spell counterparts and are listed as Uncategorized in Wowhead.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"entry":Npc_trainer_template#entry|int(11)|NO|PRI|0||
+|"spell":Npc_trainer_template#spell|int(11)|NO|PRI|0||
+|"spellcost":Npc_trainer_template#spellcost|int(11)|YES||0||
+|"reqskill":Npc_trainer_template#reqskill|int(10) unsigned|YES||0||
+|"reqskillvalue":Npc_trainer_template#reqskillvalue|int(10) unsigned|YES||0||
+|"reqlevel":Npc_trainer_template#reqlevel|int(10) unsigned|YES||0||
+
+
+h3. Description of the fields
+
+h4. entry
+
+The template ID of the creature. See "creature&#95;template.entry":creature_template#entry. In case of npc&#95;trainer&#95;template its the id of a list of to-lean-spells. Used in "creature&#95;template.trainer&#95;id":creature_template#trainer_id.
+
+h4. spell
+
+The learning spell ID.
+
+h4. spellcost
+
+The cost that the player needs to pay in order to learn the spell.
+
+h4. reqskill
+
+The required skill the player needs to have in order to be able to learn the spell. See ID in SkillLine.dbc
+
+h4. reqskillvalue
+
+The proficiency in the skill from "reqskill":#reqskill that the player needs to meet in order to learn the spell.
+
+h4. reqlevel
+
+The level the player needs to be in order to learn the spell.

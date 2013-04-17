@@ -1,0 +1,112 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `creature` table
+
+Contains individual creature spawn data. Spawn of a creature is an instance of the creature object in the world.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"guid":Creature#guid|int(10) unsigned|NO|PRI|None|auto&#95;increment|
+|"id":Creature#id|mediumint(8) unsigned|NO|MUL|0||
+|"map":Creature#map|smallint(5) unsigned|NO|MUL|0||
+|"spawnMask":Creature#spawnmask|tinyint(3) unsigned|NO||1||
+|"phaseMask":Creature#phasemask|smallint(5) unsigned|NO||1||
+|"modelid":Creature#modelid|mediumint(8) unsigned|YES||0||
+|"equipment_id":Creature#equipment_id|mediumint(9)|NO||0||
+|"position_x":Creature#position_x|float|NO||0||
+|"position_y":Creature#position_y|float|NO||0||
+|"position_z":Creature#position_z|float|NO||0||
+|"orientation":Creature#orientation|float|NO||0||
+|"spawntimesecs":Creature#spawntimesecs|int(10) unsigned|NO||120||
+|"spawndist":Creature#spawndist|float|NO||5||
+|"currentwaypoint":Creature#currentwaypoint|mediumint(8) unsigned|NO||0||
+|"curhealth":Creature#curhealth|int(10) unsigned|NO||1||
+|"curmana":Creature#curmana|int(10) unsigned|NO||0||
+|"DeathState":Creature#deathstate|tinyint(3) unsigned|NO||0||
+|"MovementType":Creature#movementtype|tinyint(3) unsigned|NO||0||
+
+
+h3. Description of the fields
+
+h4. guid
+
+A unique identifier given to each creature to distinguish one creature from another. Two creatures can NOT have same GUID.
+
+h4. id
+
+The id of the template that is used when instantiating this creature. See "creature&#95;template.entry":creature_template#entry
+
+h4. map
+
+The Map ID of the position of the creature. See "Map.dbc":Map.dbc
+
+h4. spawnMask
+
+Controls under which difficulties the creature will be spawned.
+
+|_. Value|_. Comment|
+|0|Not spawned|
+|1|Spawned only in 10-man-normal versions of maps (includes maps without a heroic mode)|
+|2|Spawned only in 25-man-normal versions of maps (or heroics pre 3.2)|
+|4|Spawned only in 10-man heroic versions of maps|
+|8|Spawned only in 25-man-heroic versions of maps|
+|15|Spawned in all versions of maps|
+
+
+h4. phaseMask
+
+Defines which phase the creature belongs. 1 is default phase, rest are from spell's aura 261, (Aura #261) (4) = phasemask = 4.
+
+h4. modelid
+
+The model ID associated with this creature. Note that two creatures that use the same template can have different models. See "creature_model_info":creature_model_info for more information on model-specific characteristics.
+
+h4. equipment&#95;id
+
+The ID of the equipment that the creature is using. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
+
+h4. position&#95;x
+
+The X position of the creature.
+
+h4. position&#95;y
+
+The Y position of the creature.
+
+h4. position&#95;z
+
+The Z position of the creature.
+
+h4. orientation
+
+The orientation of the creature. (North = 0.0; South = pi (3.14159))
+
+h4. spawntimesecs
+
+The respawn time of the creature in seconds.
+
+h4. spawndist
+
+The maximum distance that the creature should spawn from its spawn point. Also controls how far away the creature can walk from its spawn point if its "MovementType":creature#MovementType = 1.
+
+h4. currentwaypoint
+
+The current waypoint number that the creature is on, if any. See "creature&#95;movement.point":creature_movement#point
+
+h4. curhealth
+
+The current health that the creature has.
+
+h4. curmana
+
+The current mana that the creature has.
+
+h4. DeathState
+
+The creature's death state. A boolean, 0 = Alive, 1 = Corpse lying dead around (no gossip possible when dead, if you need corpse-gossip use dynamicflags&#124;32)
+
+h4. MovementType
+
+The movement type associated with this creature. Usually the same as "creature&#95;template.MovementType":creature_template#MovementType but can be different. See "creature&#95;template.MovementType":creature_template#MovementType for possible values.

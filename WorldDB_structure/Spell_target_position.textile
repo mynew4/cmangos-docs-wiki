@@ -1,0 +1,43 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `spell&#95;teleport` table
+
+This table holds coordinate information on where the player should be teleported to when a spell with effect SPELL&#95;EFFECT&#95;TELEPORT&#95;UNITS.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"id":Spell_target_position#id|int(11) unsigned|NO|PRI|0||
+|"target_map":Spell_target_position#target_map|int(11) unsigned|NO||0||
+|"target_position_x":Spell_target_position#target_position_x|float|NO||0||
+|"target_position_y":Spell_target_position#target_position_y|float|NO||0||
+|"target_position_z":Spell_target_position#target_position_z|float|NO||0||
+|"target_orientation":Spell_target_position#target_orientation|float|NO||0||
+
+
+h3. Description of the fields
+
+h4. id
+
+The spell ID. See Spell.dbc
+
+h4. target&#95;map
+
+Map where the player should be teleported to. (See "Map.dbc":Map.dbc)
+
+h4. target&#95;position&#95;x
+
+X coordinate for the target destination of the spell.
+
+h4. target&#95;position&#95;y
+
+Y coordinate for the target destination of the spell.
+
+h4. target&#95;position&#95;z
+
+Z coordinate for the target destination of the spell.
+
+h4. target&#95;orientation
+
+Orientation the player will get when appearing at this location
