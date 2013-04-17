@@ -1,11 +1,11 @@
 Installation Instructions
 =========================
 
-How to install C-MaNGOS from scratch and how to update it.
+How to install CMaNGOS from scratch and how to update it.
 
 Addresses
 ---------
-- C-MaNGOS: http://www.cmangos.net[forum] | https://github.com/cmangos/mangos-wotlk[git repository] | http://qchat.rizon.net/?channels=%23cmangos[irc] (irc.rizon.net #cmangos)
+- CMaNGOS: http://www.cmangos.net[forum] | https://github.com/cmangos/mangos-wotlk[git repository] | http://qchat.rizon.net/?channels=%23cmangos[irc] (irc.rizon.net #cmangos)
 - ScriptDev2: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/scriptdev2[git repository]
 - ACID: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/acid[git repository]
 - UDB: http://udb.no-ip.org/index.php[forum] | https://unifieddb.svn.sourceforge.net/svnroot/unifieddb[svn repository]
@@ -27,21 +27,23 @@ You will need: Git, GCC, CMake, MySQL, SVN
 
 Essentials
 ----------
-C-MaNGOS::
+CMaNGOS::
   is the server, also called "core", which manages all the game inquiries and accesses your SQL Database to get the information needed.
 
 ScriptDev2::
-  is an optional library which contains C++ scripts that, when added to C-MaNGOS, handle special events, quests, encounters and bosses.
+  is an optional library which contains C++ scripts that, when added to CMaNGOS, handle special events, quests, encounters and bosses.
 
 ACID::
   stands for "Advanced Creature Intelligence Database". It is an optional SQL database that handles regular mobs and bosses. ACID and ScriptDev2 complement each other and you should use both. ACID is usually already included in the database shipped by the database providers.
 
 Database::
-  With "database" in terms of C-MaNGOS installation is usually referred to the so-called world-database, into which the content is filled that populates the world run by C-MaNGOS.
-  There are three main database providers out there, namely
-  - UDB
-  - YTDB
-  - PSDB
+  With "database" in terms of CMaNGOS installation is usually referred to the so-called world-database, into which the content is filled that populates the world run by CMaNGOS.
+  There are mainly these database providers out there, namely
+  - UDB (for WotLK)
+  - YTDB (for WotLK)
+  - PSDB (for WotLK)
+  - TBCDB (for TBC)
+  - ClassicDB (for Classic)
 
   All three have their own advantages and disadvantages. Which you use is your choice!
 
@@ -51,13 +53,13 @@ World Of Warcraft Client::
 Tools
 -----
 Git::
-  is a free distributed revision control or source code management tool which allows you to easily manage a virtual filesystem. With this tool, you'll download the code from C-MaNGOS, ScriptDev2, and ACID.
+  is a free distributed revision control or source code management tool which allows you to easily manage a virtual filesystem. With this tool, you'll download the code from CMaNGOS, ScriptDev2, and ACID.
 
 SVN::
    has a similar purpose as Git but for a different type of support. With this tool, you'll download the database from the database providers.
 
 Microsoft Visual C++::
-  is used to created, modify and compile the code using C and C++ programming languages. With this tool, you'll compile C-MaNGOS and ScriptDev2.
+  is used to created, modify and compile the code using C and C++ programming languages. With this tool, you'll compile CMaNGOS and ScriptDev2.
 
 MySQL server::
   is a relational database management system (RDBMS) that runs as a server providing multi-user access to a number of databases. After you've created the databases and imported the data, they will contain your entire world for World of Warcraft.
@@ -66,7 +68,7 @@ MySQL client::
   allows you to connect to the MySQL server by providing an easy-to-use interface to import and change the data in the database.
 
 IRC::
-  is a simple chat system that is used by supporters and developers of C-MaNGOS.
+  is a simple chat system that is used by supporters and developers of CMaNGOS.
 
 How things fit together
 -----------------------
@@ -84,8 +86,8 @@ We personally use some directory structure to be able to keep overview of things
 
 For Windows all shell commands are expected to be typed from a "Git bash" started from the C:\Mangos directory. To do so, right-click onto C:\Mangos in the windows explorer, and select "Git bash here" from the context menu.
 
-Clone C-MaNGOS
-~~~~~~~~~~~~~~
+Clone CMaNGOS
+~~~~~~~~~~~~~
 After having opened Git bash, simply type:
 
 ++git clone git://github.com/cmangos/mangos-wotlk.git mangos++
@@ -97,7 +99,7 @@ git clone git://github.com/cmangos/mangos-tbc.git mangos
 git clone git://github.com/cmangos/mangos-cata.git mangos
 -------------------
 
-And submit this git command with return. This will take a little time, but after you will have created a subdirectory into C:\Mangos named "mangos" into which the C-MaNGOS sources are cloned.
+And submit this git command with return. This will take a little time, but after you will have created a subdirectory into C:\Mangos named "mangos" into which the CMaNGOS sources are cloned.
 
 Clone ScriptDev2
 ~~~~~~~~~~~~~~~~
@@ -131,8 +133,8 @@ This is considered optional, as ACID is usually included by the database provide
 
 Get the world-database stuff
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-UDB
-^^^
+UDB (WotLK)
+^^^^^^^^^^^
 *On Windows*
 
 * Open C:\Mangos in the explorer, right-click on the right hand side
@@ -145,8 +147,8 @@ UDB
 
 This will create a new folder (likely C:\Mangos\unifieddb) in which UDB SQL-files are located
 
-YTDB
-^^^^
+YTDB (WotLK)
+^^^^^^^^^^^^
 *On Windows*
 
 * Open C:\Mangos in the explorer, right-click on the right hand side
@@ -159,8 +161,8 @@ YTDB
 
 This will create a new folder (likely C:\Mangos\ytdbase) in which YTDB SQL-files are located.
 
-PSDB
-^^^^
+PSDB (WotLK)
+^^^^^^^^^^^^
 *On Windows*
 
 * Open C:\Mangos in the explorer, right-click on the right hand side
@@ -173,12 +175,34 @@ PSDB
 
 This will create a new folder (likely C:\Mangos\psmdb_wotlk) in which PSDB SQL-files are located.
 
+TBCDB (TBC)
+^^^^^^^^^^^
+*On Windows*
+
+* Open C:\Mangos in the exporer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://tbc-db.svn.sourceforge.net/viewvc/tbc-db/++
+
+*On *nix*
+
+++svn co ttp://tbc-db.svn.sourceforge.net/viewvc/tbc-db/++
+
+This will create a new folder (likely C:\Mangos\tbcdb) in which TBCDB SQL-files are located.
+
+ClassicDB (Classic)
+^^^^^^^^^^^^^^^^^^^
+
+* Open C:\Mangos with git bash.
+* ++git clone git://github.com/classicdb/database.git classicdb++
+
+This will create a new subfolder "classicdb" in which the ClassicDB SQL-files are located.
+
 Directory structure
 ~~~~~~~~~~~~~~~~~~~
 
 Now you should have the following subfolders:
 
-- mangos (containing the sources of C-MaNGOS and optionally ScriptDev2)
+- mangos (containing the sources of CMaNGOS and optionally ScriptDev2)
 - acid (containing the content of ACID, this is optional)
 - unifieddb OR ytdbase OR psmdb_wotlk containing the content of your database-provider
 
@@ -190,10 +214,10 @@ For *nix or cmake compile we suggest creating an additional "build" folder, this
 
 - build
 
-Compiling C-MaNGOS and ScriptDev2
----------------------------------
-Compiling C-MaNGOS (Windows)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Compiling CMaNGOS and ScriptDev2
+--------------------------------
+Compiling CMaNGOS (Windows)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your C:\Mangos\mangos\win folder
 * Open the "sln" file that fits your version of Visual C++
   - mangosdVC100.sln for Visual C++ 2010
@@ -221,19 +245,19 @@ Compiling ScriptDev2 (Windows)
   - Close the window
 * Click the menu "Build" -> "Build Solution"
 
-Compiling C-MaNGOS and ScriptDev2 (*nix)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Compiling CMaNGOS and ScriptDev2 (*nix)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your ~/Mangos folder
 * Enter the build folder: ++cd build++
 * Invoke ++cmake ../mangos++, suggested options are:
   - ++-DCMAKE_INSTALL_PREFIX=\~/Mangos/run++ to install into the "run" subfolder of ~/Mangos folder, otherwise this will install to /opt/mangos
   - ++-DPDC=1++ to compile with PCH mode (much faster after updates)
   - ++-DDEBUG=0++ to remove debug mode from compiling
-* Invoke ++make++ to compile C-MaNGOS (and ScriptDev2 if installed)
+* Invoke ++make++ to compile CMaNGOS (and ScriptDev2 if installed)
 * Invoke ++make install++ to install to your "run" directory
 
-Install C-MaNGOS binary files
------------------------------
+Install CMaNGOS binary files
+----------------------------
 * Transfer the files from your compile folder (C:\Mangos\mangos\bin\Win32_Release) into C:\Mangos\run
 * Go to C:\Mangos\mangos\src\mangosd and copy "mangosd.conf.dist.in" to C:\Mangos\run and rename it to "mangosd.conf"
 * Go to C:\Mangos\mangos\src\realmd and copy "realmd.conf.dist.in" to C:\Mangos\run and rename it to "realmd.conf"
@@ -248,7 +272,7 @@ Extract files from the client
 +
 For this you can open a "Git Bash" on your C:\World of Warcraft folder and type ++sh ExtractResources.sh++
 +
-You must extract DBC/maps and vmaps for C-MaNGOS to work, mmaps are optional (and take very long)
+You must extract DBC/maps and vmaps for CMaNGOS to work, mmaps are optional (and take very long)
 
 * When finish, move the folders maps, dbc and vmaps - optionally mmaps - that have been created in your  C:\World of Warcraft to your C:\Mangos\run
 
@@ -439,7 +463,7 @@ So you need to:
 * Apply all following updatepack files (always corepatches before updatepacks)
 * Apply the remaining updates from the core (located in C:\Mangos\mangos\sql\updates
 
-Configuring C-MaNGOS
+Configuring CMaNGOS
 --------------------
 This part should be an extra wiki-page: Meaning of config files from mangos/sd2
 
@@ -536,4 +560,4 @@ Example: ++account set gmlevel MyNewAccount 3++
 +
 The delay is the number of seconds
 
-*Enjoy running and messing with your C-MaNGOS server!*
+*Enjoy running and messing with your CMaNGOS server!*
