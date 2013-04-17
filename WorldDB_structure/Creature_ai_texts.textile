@@ -1,0 +1,82 @@
+Back to "creature_ai_scripts":creature_ai_scripts tables.
+
+h2. The `creature&#95;ai&#95;texts` table
+
+This table holds all the texts used within the eventai (ACID) scripts. This table handles the actual text, display type (say/yell/emote) and corresponding sounds or emote (if any).
+
+h3. Structure
+
+
+|Field|Type|Attributes|Can be null|Default|Comments|
+|"entry":Creature_ai_texts#entry|int(11)|signed|NO|0|Text Entry|
+|"content_default":Creature_ai_texts#content_default|text||YES|NULL|Default Locale Text|
+|"content_loc1":Creature_ai_texts#content_loc|text||YES|NULL|Locale 1 Text|
+|"content_loc2":Creature_ai_texts#content_loc|text||YES|NULL|Locale 2 Text|
+|"content_loc3":Creature_ai_texts#content_loc|text||YES|NULL|Locale 3 Text|
+|"content_loc4":Creature_ai_texts#content_loc|text||YES|NULL|Locale 4 Text|
+|"content_loc5":Creature_ai_texts#content_loc|text||YES|NULL|Locale 5 Text|
+|"content_loc6":Creature_ai_texts#content_loc|text||YES|NULL|Locale 6 Text|
+|"content_loc7":Creature_ai_texts#content_loc|text||YES|NULL|Locale 7 Text|
+|"content_loc8":Creature_ai_texts#content_loc|text||YES|NULL|Locale 8 Text|
+|"sound":Creature_ai_texts#sound|int(11)|unsigned|NO|0|Sound Id|
+|"type":Creature_ai_texts#type|int(11)|unsigned|NO|0|Text Type|
+|"language":Creature_ai_texts#language|int(11)|unsigned|NO|0|Text Language|
+|"emote":Creature_ai_texts#emote|int(11)|unsigned|NO|0|Emote Id|
+|"comment":Creature_ai_texts#comment|text||YES|NULL|Comment|
+
+
+h3. Description of the fields
+
+h4. entry
+
+This is the entry of the text. It corresponds to a script using Action 1 (ACTION&#95;T&#95;SAY) in the "eventai&#95;scripts":Event_AI table. This number is always negative.
+
+h4. content&#95;default
+
+This is the actual text presented in the default language (English).
+
+h4. content&#95;loc
+
+This is the actual text presented in the Localization #(1-8) Clients
+
+
+|Value|Localization|
+|1|Korean|
+|2|French|
+|3|German|
+|4|Chinese|
+|5|Taiwanese|
+|6|Spanish|
+|7|Spanish Mexico|
+|8|Russian|
+
+
+h4. sound
+
+This is the sound Id that will play with along with the corresponding text. All sounds are from sounds.dbc.
+
+h4. type
+
+This is the method the text is displayed.
+
+
+|Value|Type|
+|0|Say|
+|1|Yell|
+|2|Text Emote|
+|3|Boss Emote|
+|4|Whisper|
+|5|Boss Whisper|
+
+
+h4. language
+
+This is the ingame language of the text. Languages are from "Languages.dbc.":Languages.dbc.
+
+h4. emote
+
+This is the emote that the creature performs along with the corresponding text.
+
+h4. comment
+
+This field allows you to label a text entry.

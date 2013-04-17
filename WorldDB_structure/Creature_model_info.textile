@@ -1,0 +1,47 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `creature&#95;model&#95;info` table
+
+This table contains all models of mobs, their gender and other information that are model related. This means that when a creature uses another model, this information will change as well.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"modelid":Creature_model_info#modelid|mediumint(8) unsigned|NO|PRI|0||
+|"bounding_radius":Creature_model_info#bounding_radius|float|NO||0||
+|"combat_reach":Creature_model_info#combat_reach|float|NO||0||
+|"gender":Creature_model_info#gender|tinyint(3) unsigned|NO||2||
+|"modelid_other_gender":Creature_model_info#modelid_other_gender|mediumint(8) unsigned|NO||0||
+|"modelid_alternative":Creature_model_info#modelid_alternative|mediumint(8) unsigned|NO||0||
+
+
+h3. Description of the fields
+
+h4. modelid
+
+Display ID from CreatureDisplayInfo.dbc
+
+h4. bounding&#95;radius
+
+This is the distance the creature stands from the player to attack him while in melee.
+
+h4. combat&#95;reach
+
+This is the maximum distance the creature can reach the player in ranged attack.
+
+h4. gender
+
+Gender of the creature
+
+* 0: Male
+* 1: Female
+* 2: None
+
+h4. modelid&#95;other&#95;gender
+
+Point to "Creature&#95;model&#95;info.modelid":Creature_model_info#modelid. When the entry is gender male (0) or female (1), this value can point to the display id of the other gender.
+
+h3. modelid&#95;alternative
+
+Alternative to the current model.

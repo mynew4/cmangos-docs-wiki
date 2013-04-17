@@ -1,0 +1,80 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `areatrigger&#95;teleport` table
+
+Contains all the teleport triggers definition. This table is used to complete .dbc file information.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"id":Areatrigger_teleport#id|mediumint(8) unsigned|NO|PRI|0||
+|"name":Areatrigger_teleport#name|text|YES||||
+|"required_level":Areatrigger_teleport#required_level|tinyint(3) unsigned|NO||0||
+|"required_item":Areatrigger_teleport#required_item|mediumint(8) unsigned|NO||0||
+|"required_item2":Areatrigger_teleport#required_item|mediumint(8) unsigned|NO||0||
+|"heroic_key":Areatrigger_teleport#heroic_key|mediumint(8) unsigned|NO||0||
+|"heroic_key2":Areatrigger_teleport#heroic_key|mediumint(8) unsigned|NO||0||
+|"required_quest_done":Areatrigger_teleport#required_quest_done|int(11) unsigned|NO||0||
+|"required_quest_done_heroic":Areatrigger_teleport#required_quest_done_heroic|int(11) unsigned|NO||0||
+|"required_failed_text":Areatrigger_teleport#required_failed_text|text|YES||||
+|"target_map":Areatrigger_teleport#target_map|smallint(5) unsigned|NO||0||
+|"target_position_x":Areatrigger_teleport#target_position_x|float|NO||0||
+|"target_position_y":Areatrigger_teleport#target_position_y|float|NO||0||
+|"target_position_z":Areatrigger_teleport#target_position_z|float|NO||0||
+|"target_orientation":Areatrigger_teleport#target_orientation|float|NO||0||
+
+
+h3. Description of the fields
+
+h4. id
+
+This is the trigger identifier, it must match with the one from AreaTrigger.dbc
+
+h4. name
+
+Name of the trigger. This can be an arbitrary name, and is for descriptive purposes only.
+
+h4. required&#95;level
+
+Level necessary to activate this trigger
+
+h4. required&#95;item
+
+The necessary item(s) to activate this trigger (see "item&#95;template.entry":item_template#entry)
+
+h4. heroic&#95;key
+
+The key that unlocks heroic version for a trigger leading to an instatiable map with heroic mode support. If two are specified, you only need one to activate heroic mode.
+
+h4. required&#95;quest&#95;done
+
+Required quest done as attunement to use the trigger (see "quest&#95;template.entry":quest_template#entry).
+
+h4. required&#95;quest&#95;done&#95;heroic
+
+Required Heroic quest done as attunement to use the trigger (see "quest&#95;template.entry":quest_template#entry).
+
+h4. required&#95;failed&#95;text
+
+Failed text shown to players who do have not done the attunement quest yet.
+
+h4. target&#95;map
+
+Target map of the trigger (See "Map.dbc":Map.dbc)
+
+h4. target&#95;position&#95;x
+
+X coordinate for the target destination of the trigger
+
+h4. target&#95;position&#95;y
+
+Y coordinate for the target destination of the trigger
+
+h4. target&#95;position&#95;z
+
+Z coordinate for the target destination of the trigger
+
+h4. target&#95;orientation
+
+Orientation the player will get when appearing at this location

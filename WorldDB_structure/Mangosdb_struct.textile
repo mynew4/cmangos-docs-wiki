@@ -1,0 +1,273 @@
+h3. This is the list of tables in the regular 'mangos' database
+
+(Reloadable) - Reloadable in-game with the .reload command.
+(CMaNGOS) - CMaNGOS table. These tables are either used by MaNGOS internally, or they are maintained by the CMaNGOS team. Either way, the DB teams do not touch them.
+(ScriptLibrary) - Script library tables. These tables are maintained by script library projects (such as ScriptDev2). The DB teams do not touch them.
+
+* "achievement_criteria_requirement":achievement_criteria_requirement
+
+* "achievement_reward":achievement_reward
+
+* "areatrigger_involvedrelation":areatrigger_involvedrelation (Reloadable)
+
+* "areatrigger_tavern":areatrigger_tavern (Reloadable)
+
+* "areatrigger_teleport":areatrigger_teleport (Reloadable)
+
+* "battleground_events":battleground_events
+
+* "battleground_template":battleground_template
+
+* "battlemaster_entry":battlemaster_entry
+
+* "command":command (Reloadable) (CMaNGOS)
+
+* "conditions":conditions
+
+* "creature":creature
+
+* "creature_addon":creature_template_addon
+
+* "creature_ai_scripts":creature_ai_scripts (Reloadable)
+
+* "creature_ai_summons":creature_ai_summons (Reloadable)
+
+* "creature_ai_texts":creature_ai_texts (Reloadable)
+
+* "creature_battleground":creature_battleground
+
+* "creature_equip_template":creature_equip_template
+
+* "creature_involvedrelation":creature_involvedrelation (Reloadable)
+
+* "creature_loot_template":creature_loot_template (Reloadable)
+
+* "creature_model_info":creature_model_info
+
+* "creature_model_race":creature_model_race
+
+* "creature_movement":creature_movement
+
+* "creature_movement_scripts":creature_movement_scripts
+
+* "creature_movement_template":creature_movement_template
+
+* "creature_onkill_reputation":creature_onkill_reputation
+
+* "creature_questrelation":creature_questrelation (Reloadable)
+
+* "creature_template":creature_template
+
+* "creature_template_addon":creature_template_addon
+
+* "creature_linking_template":creature_linking_template
+
+* "creature_template_addon":creature_template_addon
+
+* "db_script_string":db_script_string
+
+* "db_version":db_version
+
+* "dbscripts_on_creature_death":DBScripts (Reloadable)
+
+* "dbscripts_on_creature_movement":DBScripts (Reloadable)
+
+* "dbscripts_on_event":DBScripts (Reloadable)
+
+* "dbscripts_on_go_template_use":DBScripts (Reloadable)
+
+* "dbscripts_on_go_use":DBScripts (Reloadable)
+
+* "dbscripts_on_gossip":DBScripts (Reloadable)
+
+* "dbscripts_on_quest_end":DBScripts (Reloadable)
+
+* "dbscripts_on_quest_start":DBScripts (Reloadable)
+
+* "dbscripts_on_spell":DBScripts (Reloadable)
+
+* "disenchant_loot_template":disenchant_loot_template (Reloadable)
+
+* "exploration_basexp":exploration_basexp
+
+* "fishing_loot_template":fishing_loot_template (Reloadable)
+
+* "game_event":game_event
+
+* "game_event_creature":game_event_creature
+
+* "game_event_creature_data":game_event_creature_data
+
+* "game_event_gameobject":game_event_gameobject
+
+* "game_event_mail":game_event_mail
+
+* "game_event_quest":game_event_quest
+
+* "game_graveyard_zone":game_graveyard_zone (Reloadable)
+
+* "game_tele":game_tele
+
+* "game_weather":game_weather
+
+* "gameobject":gameobject
+
+* "gameobject_addon":gameobject_addon
+
+* "gameobject_battleground":gameobject_battleground
+
+* "gameobject_involvedrelation":gameobject_involvedrelation (Reloadable)
+
+* "gameobject_loot_template":gameobject_loot_template (Reloadable)
+
+* "gameobject_questrelation":gameobject_questrelation (Reloadable)
+
+* "gameobject_scripts":gameobject_scripts (Reloadable)
+
+* "gameobject_template":gameobject_template
+
+* "gossip_menu":gossip_menu (Reloadable)
+
+* "gossip_menu_option":gossip_menu_option (Reloadable)
+
+* "instance_template":instance_template
+
+* "item_convert":item_convert
+
+* "item_enchantment_template":item_enchantment_template
+
+* "item_expire_convert":item_expire_convert (CMaNGOS) (Reloadable)
+
+* "item_loot_template":item_loot_template (Reloadable)
+
+* "item_required_target":item_required_target (Reloadable)
+
+* "item_template":item_template
+
+* "locales_creature":locales_creature
+
+* "locales_gameobject":locales_gameobject
+
+* "locales_item":locales_item
+
+* "locales_npc_text":locales_npc_text
+
+* "locales_page_text":locales_page_text
+
+* "locales_quest":locales_quest
+
+* "mail_level_reward":mail_level_reward (Reloadable)
+
+* "mail_loot_template":mail_loot_template (Reloadable)
+
+* "mangos_string":mangos_string
+
+* "milling_loot_template":milling_loot_template
+
+* "npc_gossip":npc_gossip
+
+* "npc_spellclick_spells":npc_spellclick_spells (Reloadable)
+
+* "npc_text":npc_text
+
+* "npc_trainer":npc_trainer
+
+* "npc_trainer_template":npc_trainer_template
+
+* "npc_vendor":npc_vendor
+
+* "npc_vendor_template":npc_vendor_template
+
+* "page_text":page_text
+
+* "pet_levelstats":pet_levelstats
+
+* "pet_name_generation":pet_name_generation
+
+* "pickpocketing_loot_template":pickpocketing_loot_template (Reloadable)
+
+* "player_classlevelstats":player_classlevelstats (CMaNGOS)
+
+* "player_levelstats":player_levelstats (CMaNGOS)
+
+* "player_xp_for_level":player_xp_for_level (CMaNGOS)
+
+* "playercreateinfo":playercreateinfo (CMaNGOS)
+
+* "playercreateinfo_action":playercreateinfo_action (CMaNGOS)
+
+* "playercreateinfo_item":playercreateinfo_item (CMaNGOS)
+
+* "playercreateinfo_spell":playercreateinfo_spell (CMaNGOS)
+
+* "points_of_interest":points_of_interest (Reloadable)
+
+* "pool_creature":pool_creature
+
+* "pool_creature_template":pool_creature_template
+
+* "pool_gameobject":pool_gameobject
+
+* "pool_gameobject_template":pool_gameobject_template
+
+* "pool_pool":pool_pool
+
+* "pool_template":pool_template
+
+* "prospecting_loot_template":prospecting_loot_template (Reloadable)
+
+* "quest_poi":quest_poi (Reloadable)
+
+* "quest_poi_points":quest_poi_points (Reloadable)
+
+* "quest_template":quest_template (Reloadable)
+
+* "reference_loot_template":reference_loot_template (Reloadable)
+
+* "reputation_reward_rate":reputation_reward_rate (Reloadable)
+
+* "reputation_spillover_template":reputation_spillover_template
+
+* "reserved_name":reserved_name (Reloadable)
+
+* "scripted_areatrigger":scripted_areatrigger (ScriptLibrary)
+
+* "scripted_event_id":scripted_event_id (ScriptLibrary)
+
+* "skill_discovery_template":skill_discovery_template (Reloadable)
+
+* "skill_extra_item_template":skill_extra_item_template
+
+* "skill_fishing_base_level":skill_fishing_base_level
+
+* "skinning_loot_template":skinning_loot_template
+
+* "spell_affect":spell_affect (Reloadable) (CMaNGOS)
+
+* "spell_area":spell_area (Reloadable)
+
+* "spell_bonus_data":spell_bonus_data (Reloadable) (CMaNGOS)
+
+* "spell_chain":spell_chain (Reloadable) (CMaNGOS)
+
+* "spell_check":spell_check (CMaNGOS)
+
+* "spell_elixir":spell_elixir (Reloadable) (CMaNGOS)
+
+* "spell_learn_spell":spell_learn_spell (Reloadable) (CMaNGOS)
+
+* "spell_loot_template":spell_loot_template (Reloadable)
+
+* "spell_pet_auras":spell_pet_auras
+
+* "spell_proc_event":spell_proc_event (Reloadable) (CMaNGOS)
+
+* "spell_proc_item_enchant":spell_proc_item_enchant (Reloadable) (CMaNGOS)
+
+* "spell_script_target":spell_script_target (Reloadable)
+
+* "spell_target_position":spell_target_position (Reloadable)
+
+* "spell_threat":spell_threat (Reloadable) (CMaNGOS)
+
+* "transports":transports

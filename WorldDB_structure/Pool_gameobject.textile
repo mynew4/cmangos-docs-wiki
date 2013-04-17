@@ -1,0 +1,28 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `pool&#95;gameobject` table
+
+Contains all pool instances that participate to any game event.
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"guid":Pool_gameobject#guid|int(10) unsigned|NO|PRI|0||
+|"pool_entry":Pool_gameobject#pool_entry|mediumint(8) unsigned|NO|PRI|0||
+|"chance":Pool_gameobject#chance|float unsigned|NO||0||
+
+
+h3. Description of the fields
+
+h4. guid
+
+Gameobject's GUID. A reference to "Gameobject":Gameobject#guid.
+
+h4. pool&#95;entry
+
+Pool's ID. See "pool_template":pool_template
+
+h4. chance
+
+Chance the gameobject will be spawned in the pool.

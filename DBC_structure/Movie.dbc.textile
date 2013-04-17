@@ -1,0 +1,25 @@
+Back to "dbc files":dbc_files list.
+
+h3. `Movie` dbc
+
+This dbc contains all movies used by the client.
+
+*Version is : 3.3.5a*
+
+h3. Structure
+
+
+|*Field Nb*|*Name*|*Type*|
+|1|ID|Int|
+|2|Name|String|
+
+
+h3. Content
+
+
+|*Value*|*Type*|
+|1|InterfaceCinematicsLogo|
+|2|InterfaceCinematicsWOW&#95;Intro|
+|14|Wrathgate|
+|16|Fall of LK|
+
