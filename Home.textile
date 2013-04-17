@@ -22,9 +22,7 @@ h2. External data
 Other useful data like small dbc contents used to populate some MaNGOS tables can be found here. These pages are also used as template for some MaNGOS field description when needed to list the content. We can then update all information about contained data from these pages when a change occurs, and this change is reflected in all pages that include these templates.
 
 * "Description of dbc files content":dbc_files
-
 * "Description of wdb files content":wdb_files
-
 * "Description of the data field in the `character` table":character_data
 
 h2. Client dependend information
