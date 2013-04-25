@@ -72,6 +72,9 @@ MySQL server::
 MySQL client::
   allows you to connect to the MySQL server by providing an easy-to-use interface to import and change the data in the database.
 
+SQLyog:
+  allows you to connect to the MySQL server by providing an easy-to-use interface to import and change the data in the database (build to be user friendly, perfect for beginners )
+
 IRC::
   is a simple chat system that is used by supporters and developers of CMaNGOS.
 
