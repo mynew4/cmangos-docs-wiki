@@ -13,6 +13,9 @@ See the part about Howto Install
 * realmd database, table `realmlist` set to match the values in your mangosd.conf?
 * realmlist set to your localhost? (set realmlist 127.0.0.1)
 * User account created? (See [[Installation Instructions]] again)
+* don't use email as login
+* delete or rename wow.mfil and wow.tfil files
+* use ONLY patched wow.exe to start up the client (never use launcher.exe)
 
 ### My client still connect to a different host/address
 * Add in your /WTF/config.wtf (SET realmlist "127.0.0.1") before (SET accountName "youraccount")
