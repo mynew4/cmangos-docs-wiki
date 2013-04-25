@@ -14,6 +14,9 @@ See the part about Howto Install
 * realmlist set to your localhost? (set realmlist 127.0.0.1)
 * User account created? (See [[Installation Instructions]] again)
 
+### My client still connect to a different host/address
+* Add in your /WTF/config.wtf (SET realmlist "127.0.0.1") before (SET accountName "youraccount")
+
 ### I play TBC or WotLK and cannot access the Blood Elves, Draenei, Worgen or Goblins
 * You need to set the expansion of your account to 1/2/3 (for TBC/WotLK/Cata). See [[Installation Instructions]]
 
