@@ -6,15 +6,19 @@ How to install CMaNGOS from scratch and how to update it.
 Addresses
 ---------
 - CMaNGOS: http://www.cmangos.net[forum] | https://github.com/cmangos/mangos-wotlk[git repository] | http://qchat.rizon.net/?channels=%23cmangos[irc] (irc.rizon.net #cmangos)
-- ScriptDev2: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/scriptdev2[git repository]
-- ACID: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/acid[git repository]
+- ScriptDev2: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/scriptdev2[git repository] | http://qchat.rizon.net/?channels=%23scriptdev2[irc] (irc.rizon.net #scriptdev2)
+- ACID: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/acid[git repository] | http://qchat.rizon.net/?channels=%23aciddev[irc] (irc.rizon.net #aciddev)
 - UDB: http://udb.no-ip.org/index.php[forum] | https://unifieddb.svn.sourceforge.net/svnroot/unifieddb[svn repository]
 - YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
 - PSDB: http://project-silvermoon.forumotion.com/[forum] | http://subversion.assembla.com/svn/psmdb_wotlk/[svn repository]
 
 Software requirements (Windows)
 -------------------------------
+- World of Warcraft client for Classic (1.12.x)
+- World of Warcraft client for TBC (2.4.3)
 - World of Warcraft client for WotLK (3.3.5a)
+- World of Warcraft client for Cataclysm (4.3.4)
+
 - Git: http://code.google.com/p/msysgit/downloads/list[MySysGit] (http://i49.tinypic.com/v45smh.jpg[install with "Git bash here" support])
 - Visual C++ 2008 or newer: http://www.microsoft.com/express/Downloads/[Visual Studio Express]
 - MySQL server: http://dev.mysql.com/downloads/mysql/[MySQL server community edition]
