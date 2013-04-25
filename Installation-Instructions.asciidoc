@@ -525,7 +525,6 @@ You should:
 1. Use a patched wow.exe
 2. Add ++set patchlist localhost++ line in addition to realmlist line in realmlist.wtf
 3. Delete or rename wow.mfil and wow.tfil files
-4. Use your account name (and not email) as login
 
 Running your Server
 -------------------
@@ -577,7 +576,7 @@ First login:
 
 *Always use the wow.exe and NOT the launcher to start your WoW-Client*
 
-Start your WoW-Client with the wow.exe and login with your previously created account name and password.
+Start your WoW-Client with the wow.exe and login with your previously created account name (NOT email) and password.
 
 Note that if this account is GM-Account, you can use lots of nice commands to get around, (remark the . with which they all start) ie:
 
