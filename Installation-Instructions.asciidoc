@@ -515,6 +515,8 @@ Your locale folder may be named differently according to your region ("enUS", "e
 set realmlist 127.0.0.1
 -------------
 
+*Always use the wow.exe and NOT the launcher to start your WoW-Client*
+
 Additional settings for Cata client:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -550,7 +552,7 @@ account set addon [username] [0 to 2]
 +
 1) The Burning Crusade
 +
-2) Wrath of the Litch King
+2) Wrath of the Lich King
 +
 Example: ++account set addon MyNewAccount 2++
 
@@ -569,5 +571,21 @@ Example: ++account set gmlevel MyNewAccount 3++
 ++.server shutdown [delay]++
 +
 The delay is the number of seconds
+
+First login:
+------------
+
+*Always use the wow.exe and NOT the launcher to start your WoW-Client*
+
+Start your WoW-Client with the wow.exe and login with your previously created account name and password.
+
+Note that if this account is GM-Account, you can use lots of nice commands to get around, (remark the . with which they all start) ie:
+
+* .tele <location>
+* .lookup
+* .npc info and .npc aiinfo
+* .modify speed <rate>
+* .gm fly on
+
 
 *Enjoy running and messing with your CMaNGOS server!*
