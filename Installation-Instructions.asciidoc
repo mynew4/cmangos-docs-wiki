@@ -24,6 +24,7 @@ Software requirements (Windows)
 - MySQL server: http://dev.mysql.com/downloads/mysql/[MySQL server community edition]
 - MySQL client (optional, for easy database access): http://dev.mysql.com/downloads/workbench/[MySQL Workbench]
 - SVN (optional, for easy database download): http://tortoisesvn.net/downloads[Tortoise SVN]
+- SQLyog (MySQL GUI Tool, for ease manage of your database: http://code.google.com/p/sqlyog/downloads/list[SQLyog]
 
 Software requirements (*nix)
 ----------------------------
