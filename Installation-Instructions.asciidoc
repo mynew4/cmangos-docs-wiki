@@ -515,6 +515,16 @@ Your locale folder may be named differently according to your region ("enUS", "e
 set realmlist 127.0.0.1
 -------------
 
+Additional settings for Cata client:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You should:
+
+1. Use a patched wow.exe
+2. Add ++set patchlist localhost++ line in addition to realmlist line in realmlist.wtf
+3. Delete or rename wow.mfil and wow.tfil files
+4. Use your account name (and not email) as login
+
 Running your Server
 -------------------
 Launch C:\Mangos\run\mangosd.exe and C:\Mangos\run\realmd.exe
