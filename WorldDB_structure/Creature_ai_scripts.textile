@@ -6,6 +6,10 @@ h3. Event AI Tables
 
 "creature_ai_texts":creature_ai_texts
 
+h2. Event AI Documentation
+
+The Manual-like and most-recent documentation for EventAI can be found in "doc/EventAI.txt":https://github.com/cmangos/mangos-wotlk/blob/master/doc/EventAI.txt
+
 h2. Event AI Guide
 
 *<span style="color:red">NOTICE: This guide will assume that you have ScriptDev2 Rev 220+ successfully and completely installed. It is in no way designed to help in the installation procedures of ScriptDev2.</span>*
