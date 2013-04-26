@@ -26,7 +26,7 @@ See the part about Howto Install
 
 ### MaNGOSd or/and Realmd instantly closes when i start them!
 * Run mangos in command line instead, if you have git bash that's also fine. Then you will see the onscreen error output and be able to continue from there.
-* Make shure there are no other processes using the required ports (default 8085 & 3724).
+* Make sure there are no other processes using the required ports (default 8085 & 3724).
 
 ### I play WotLK/Cata and cannot access the Death Knight
 * You need to the expansion of your account to 2 or 3 (2 for TBC, 3 for Cata)
