@@ -10,7 +10,7 @@ h2. Event AI Documentation
 
 The Manual-like and most-recent documentation for EventAI can be found in "doc/EventAI.txt":https://github.com/cmangos/mangos-wotlk/blob/master/doc/EventAI.txt
 
-Also you will find resources at SD2's forums: http://www.scriptdev2.com
+Also you will find resources at "SD2's forums":http://www.scriptdev2.com
 
 h2. Event AI Guide
 
