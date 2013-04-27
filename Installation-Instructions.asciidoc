@@ -143,7 +143,8 @@ UDB (WotLK)
 
 * Open C:\Mangos in the explorer, right-click on the right hand side
 * Select "Tortoise SVN Checkout" from the context menu.
-* Insert as SVN-URL: ++https://unifieddb.svn.sourceforge.net/svnroot/unifieddb++
+* (All versions) Insert as SVN-URL: ++https://unifieddb.svn.sourceforge.net/svnroot/unifieddb++
+* (Latest version) Insert as SVN-URL: ++https://unifieddb.svn.sourceforge.net/svnroot/unifieddb/trunk++
 
 *On *nix:*
 
