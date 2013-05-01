@@ -1,6 +1,6 @@
 Back to "world database":mangosdb_struct list of tables.
 
-With this table and the new conditions it is possible to create tree like and very complicated combined conditions (like HasAura &amp;&amp; (HasItem &#124;&#124; HasQuest))
+With this table and the new conditions it is possible to create tree like and very complicated combined conditions (like HasAura && (HasItem || HasQuest))
 
 h2. The `conditions` table
 
@@ -16,7 +16,7 @@ h3. Structure
 
 h3. Description of the fields
 
-h4. condition&#95;entry
+h4. condition_entry
 
 Identifier
 
@@ -32,163 +32,251 @@ h4. value2
 
 data field one for the condition
 
-h4. condition
+h3. Possible condition types
 
-"condition&#95;value1-2":#condition_value fields can provide conditions on when the gossip is active.
+This is a description of the values in "type":Conditions#type
 
-|_. Value|_. Condition|_. Comments|
-|-3|CONDITION&#95;NOT|NOT combination of another condition&#95;entry &#42;|
-|-2|CONDITION&#95;OR|OR combination of 2 other condition&#95;entry &#42;|
-|-1|CONDITION&#95;AND|AND combination of 2 other condition&#95;entry &#42;|
-|0|CONDITION&#95;NONE|Regular drop|
-|1|CONDITION&#95;AURA|Player must have an aura active|
-|2|CONDITION&#95;ITEM|Player must have a number of items in his/her inventory|
-|3|CONDITION&#95;ITEM&#95;EQUIPPED|Player must have an item equipped|
-|4|CONDITION&#95;ZONEID|Player must be in a certain zone|
-|5|CONDITION&#95;REPUTATION&#95;RANK|Player must have a certain reputation rank with a certain faction|
-|6|CONDITION&#95;TEAM|Player must be part of the specified team (Alliance or Horde)|
-|7|CONDITION&#95;SKILL|Player must have a certain skill value|
-|8|CONDITION&#95;QUESTREWARDED|Player must have completed a quest first|
-|9|CONDITION&#95;QUESTTAKEN|Players must have the quest in the quest log and not completed yet|
-|10|CONDITION&#95;AD&#95;COMMISSION&#95;AURA||
-|11|CONDITION&#95;NO&#95;AURA|Miss some aura.|
-|12|CONDITION&#95;ACTIVE&#95;EVENT|Event is active.|
-|13|CONDITION&#95;AREA&#95;FLAG||
-|14|CONDITION&#95;RACE&#95;CLASS|Has special race or class.|
-|15|CONDITION&#95;LEVEL|Has special level.|
-|16|CONDITION&#95;NOITEM|Has not enough items yet.|
-|17|CONDITION&#95;SPELL|Knows some spell.|
-|18|CONDITION&#95;INSTANCE&#95;SCRIPT|SD2-Based condition|
-|19|CONDITION&#95;QUESTAVAILABLE|Some quest is available.|
-|20|CONDITION&#95;ACHIEVEMENT|Has or has no special achievement.|
-|21|CONDITION&#95;ACHIEVEMENT&#95;REALM|Realm-wideversion of 20.|
-|22|CONDITION&#95;QUEST&#95;NONE|Has not taken a quest yet.|
-|23|CONDITION&#95;ITEM&#95;WITH&#95;BANK|Checks presence of required amount of items in inventory or bank.|
-|24|CONDITION&#95;NOITEM&#95;WITH&#95;BANK|Checks absence of required amount of items in inventory or bank.|
-|25|CONDITION&#95;NOT&#95;ACTIVE&#95;GAME&#95;EVENT||
-|26|CONDITION&#95;ACTIVE&#95;HOLIDAY||
-|27|CONDITION&#95;NOT&#95;ACTIVE&#95;HOLIDAY||
-|28|CONDITION&#95;LEARNABLE&#95;ABILITY|Checks if the player has high enough skill level and may check if a special item is in the inventory.|
+|_. Value of type |_. Condition|_. Comments|
+|-3|CONDITION_NOT|NOT combination of another condition_entry *|
+|-2|CONDITION_OR|OR combination of 2 other condition_entry *|
+|-1|CONDITION_AND|AND combination of 2 other condition_entry *|
+|0|CONDITION_NONE|No condition, returns always true|
+|1|CONDITION_AURA|Player must have an aura active|
+|2|CONDITION_ITEM|Player must have a number of items in his/her inventory|
+|3|CONDITION_ITEM_EQUIPPED|Player must have an item equipped|
+|4|CONDITION_AREAID|Player must be in a certain area/zone|
+|5|CONDITION_REPUTATION_RANK_MIN|Player must have a certain reputation rank with a certain faction|
+|6|CONDITION_TEAM|Player must be part of the specified team (Alliance or Horde)|
+|7|CONDITION_SKILL|Player must have a certain skill value|
+|8|CONDITION_QUESTREWARDED|Player must have completed a quest first|
+|9|CONDITION_QUESTTAKEN|Players must have the quest in the quest log and not completed yet|
+|10|CONDITION_AD_COMMISSION_AURA||
+|11|CONDITION_NO_AURA|Miss some aura.|
+|12|CONDITION_ACTIVE_EVENT|Event is active.|
+|13|CONDITION_AREA_FLAG||
+|14|CONDITION_RACE_CLASS|Has special race or class.|
+|15|CONDITION_LEVEL|Has special level.|
+|16|CONDITION_NOITEM|Has not enough items yet.|
+|17|CONDITION_SPELL|Knows some spell.|
+|18|CONDITION_INSTANCE_SCRIPT|SD2-Based condition|
+|19|CONDITION_QUESTAVAILABLE|Some quest is available.|
+|20|CONDITION_ACHIEVEMENT|Has or has no special achievement.|
+|21|CONDITION_ACHIEVEMENT_REALM|Realm-wideversion of 20.|
+|22|CONDITION_QUEST_NONE|Has not taken a quest yet.|
+|23|CONDITION_ITEM_WITH_BANK|Checks presence of required amount of items in inventory or bank.|
+|24|CONDITION_NOITEM_WITH_BANK|Checks absence of required amount of items in inventory or bank.|
+|25|CONDITION_NOT_ACTIVE_GAME_EVENT||
+|26|CONDITION_ACTIVE_HOLIDAY||
+|27|CONDITION_NOT_ACTIVE_HOLIDAY||
+|28|CONDITION_LEARNABLE_ABILITY|Checks if the player has high enough skill level and may check if a special item is in the inventory.|
+|29|CONDITION_SKILL_BELOW||
+|30|CONDITION_REPUTATION_RANK_MAX||
+|31|CONDITION_COMPLETED_ENCOUNTER|Checks if some encounter is completed|
+|32|CONDITION_SOURCE_AURA|Checks if the source of the condition (like looted npc) has an aura|
+|33|CONDITION_LAST_WAYPOINT|Checks the waypoint-state of the source of the condition|
+|34|CONDITION_XP_USER|Checks if a player has turned XP earning on/off|
+|35|CONDITION_GENDER|Checks the gender of a player|
+|36|CONDITION_DEAD_OR_AWAY||
 
 
-(&#42;) Meta-Condition types CONDITION&#95;AND (-1) and CONDITION&#95;OR (-2) which are used as: value1 (as condition&#95;entry) AND / OR value2 (as condition&#95;entry). With these meta-conditions it is possible to create tree like and very complicated combined conditions (like HasAura &amp;&amp; (HasItem &#124;&#124; HasQuest))
+(&#42;) Meta-Condition types CONDITION_AND (-1) and CONDITION_OR (-2) which are used as: value1 (as condition_entry) AND / OR value2 (as condition_entry). With these meta-conditions it is possible to create tree like and very complicated combined conditions (like HasAura && (HasItem || HasQuest))
 
-h3. condition&#95;value
+h3. Detailed description of available condition types
 
-The values in the condition&#95;value1 and condition&#95;value2 fields depend on what condition was put in "condition":#condition.
+The meaning of the values in "value1":Conditions#value1 / "value2":Conditions#value2 depend of the "type":Possible-condition-types of the condition
 
-* CONDITION&#95;AND
-** value1: condition&#95;entry
-** value2: condition&#95;entry
+* CONDITION_NOT (-3)
+** value1: condition_entry
+Returns NOT condidition (of value1)
 
-* CONDITION&#95;OR
-** value1: condition&#95;entry
-** value2: condition&#95;entry
+* CONDITION_OR (-2)
+** value1: condition_entry
+** value2: condition_entry
+Returns condidition (of value1) OR condidition (of value2)
 
-* CONDITION&#95;AURA
+* CONDITION_AND (-1)
+** value1: condition_entry
+** value2: condition_entry
+Returns condidition (of value1) AND condidition (of value2)
+
+* CONDITION_NONE (0)
+No condition - is always met
+
+* CONDITION_AURA (1)
 ** value1: The spell ID from where the aura came from.
 ** value2: The effect index of the spell that applied the aura (0, 1, or 2)
+Returns if a player has an aura
 
-* CONDITION&#95;ITEM
+* CONDITION_ITEM (2)
 ** value1: Item ID
 ** value2: Count
+Returns if a player has Count items in his inventory
 
-* CONDITION&#95;ITEM&#95;EQUIPPED
+* CONDITION_ITEM_EQUIPPED (3)
 ** value1: Item ID
-** value2: Always 0
+Returns if a player has an item equipped
 
-* CONDITION&#95;ZONEID
-** value1: Zone ID
-** value2: Always 0
+* CONDITION_AREAID (4)
+** value1: Area ID
+** value2: 0, 1 (0: in (sub)area, 1: not in (sub)area)
+Returns if (or if not depending on value2) a player is in an area/zone
 
-* CONDITION&#95;REPUTATION&#95;RANK
+* CONDITION_REPUTATION_RANK_MIN (5)
 ** value1: Faction ID
 ** value2: Minimum rank
+Retuns if a player has at least (>=) minum rank at the given faction
 
-* CONDITION&#95;TEAM
+* CONDITION_TEAM (6)
 ** value1: Player team (469 - Alliance, 67 - Horde)
-** value2: Always 0
+Returns if a player has the team of value1
 
-* CONDITION&#95;SKILL
+* CONDITION_SKILL (7)
 ** value1: Skill ID (SkillLine.dbc)
 ** value2: Skill value needed
+Returns if a player has Skill ID of value
 
-* CONDITION&#95;QUESTREWARDED
+* CONDITION_QUESTREWARDED (8)
 ** value1: Quest ID
-** value2: Always 0
+Returns if a player already got a quest rewarded
 
-* CONDITION&#95;QUESTTAKEN
+* CONDITION_QUESTTAKEN (9)
 ** value1: Quest ID
-** value2: Always 0
+Returns if a player has a quest taken
 
-* CONDITION&#95;AD&#95;COMMISSION&#95;AURA
-** value1: Always 0
-** value2: Always 0
+* CONDITION_AD_COMMISSION_AURA (10)
+Returns if a player has one from AD commission aura active
 
-* CONDITION&#95;NO&#95;AURA
+* CONDITION_NO_AURA (11)
 ** value1: spellid
 ** value2: EffectIndex
+Returns if a player has not an aura
 
-* CONDITION&#95;ACTIVE&#95;EVENT
+* CONDITION_ACTIVE_EVENT (12)
 ** value1: "event":game_event
-** value2: Always 0
+Returns if a event is active
 
-* CONDITION&#95;AREA&#95;FLAG
-** value1: area&#95;flag
-** value2: not&#95;have&#95;flag
+* CONDITION_AREA_FLAG (13)
+** value1: area_flag
+** value2: not_have_flag
+Returns if area_flag is present in current area (if area_flag set != 0) AND if not_have_flag is not present in current area (if not_have_flag != 0)
 
-* CONDITION&#95;RACE&#95;CLASS
-** value1: race&#95;mask
-** value2: class&#95;mask
+* CONDITION_RACE_CLASS (14)
+** value1: race_mask
+** value2: class_mask
+Returns if a player is of race (if race_mask set != 0) AND if a player is of class (if class_mask != 0)
 
-* CONDITION&#95;LEVEL
+* CONDITION_LEVEL (15)
 ** value1: level
 ** value2: 0: equal to, 1: equal or higher than, 2: equal or less than
+Returns if a player is of/ has a higher/ has a lower level
 
-* CONDITION&#95;NOITEM
+* CONDITION_NOITEM (16)
 ** value1: itemid
 ** value2: count
+Returns if a player has not count items
 
-* CONDITION&#95;SPELL
+* CONDITION_SPELL (17)
 ** value1: spellid
 ** value2: 0: has spell, 1: has no spell
+Returns if a player has (not) learned a spell
 
-* CONDITION&#95;QUESTAVAILABLE
+* CONDITION_INSTANCE_SCRIPT (18)
+** value1: instance_condition_id (see InstanceData.h enum InstanceConditionIDs)
+Returns the result of the current instance's instance-script function CheckConditionCriteriaMeet (which must be implemented for such an instance)
+To ''communicate'' with the instance script, there are a few instance_condition_id predefined, which can be used:
+  for hard-mode loot (0 normal; 1,2... hard,harder... mode)
+  *** INSTANCE_CONDITION_ID_NORMAL_MODE       = 0,
+  *** INSTANCE_CONDITION_ID_HARD_MODE         = 1,
+  *** INSTANCE_CONDITION_ID_HARD_MODE_2       = 2,
+  *** INSTANCE_CONDITION_ID_HARD_MODE_3       = 3,
+  *** INSTANCE_CONDITION_ID_HARD_MODE_4       = 4,
+  to check for which team the instance is doing scripts
+  *** INSTANCE_CONDITION_ID_TEAM_HORDE        = 67,
+  *** INSTANCE_CONDITION_ID_TEAM_ALLIANCE     = 469,
+
+* CONDITION_QUESTAVAILABLE (19)
 ** value1: questid
-** value2: 0
+Returns if a player could start a quest (ie. if all requirements for accepting like pre-quests are met)
 
-* CONDITION&#95;ACHIEVEMENT
+* CONDITION_ACHIEVEMENT (20)
 ** value1: achievementid
 ** value2: 0: has achievement, 1: has no achievement
+Returns if a player has (not) earned an achievement
 
-* CONDITION&#95;ACHIEVEMENT&#95;REALM
+* CONDITION_ACHIEVEMENT_REALM (21)
 ** value1: achievementid
 ** value2: 0: has achievement, 1: has no achievement
+Returns if an achivement was (not) already earned by any player on the realm
 
-* CONDITION&#95;QUEST&#95;NONE
+* CONDITION_QUEST_NONE (22)
 ** value1: questid
-** value2: Always 0
+Returns if a player has a quest neither taken nor ever rewarded
 
-* CONDITION&#95;ITEM&#95;WITH&#95;BANK
-** value1: item&#95;id
+* CONDITION_ITEM_WITH_BANK (23)
+** value1: item_id
 ** value2: count
+Returns if a player has at least count of items (including inventory stored in the bank)
 
-* CONDITION&#95;NOITEM&#95;WITH&#95;BANK
-** value1: item&#95;id
+* CONDITION_NOITEM_WITH_BANK (24)
+** value1: item_id
 ** value2: count
+Returns if a player has less than count of items (including inventory stored in the bank)
 
-* CONDITION&#95;NOT&#95;ACTIVE&#95;GAME&#95;EVENT
-** value1: event&#95;id
-** value2: 0
+* CONDITION_NOT_ACTIVE_GAME_EVENT (25)
+** value1: event_id
+Returns if a game event is not active
 
-* CONDITION&#95;ACTIVE&#95;HOLIDAY
-** value1: holiday&#95;id
-** value2: 0
+* CONDITION_ACTIVE_HOLIDAY (26)
+** value1: holiday_id
+Returns if a holidy is active
 
-* CONDITION&#95;NOT&#95;ACTIVE&#95;HOLIDAY
-** value1: holiday&#95;id
-** value2: 0
+* CONDITION_NOT_ACTIVE_HOLIDAY (27)
+** value1: holiday_id
+Returns if a holiday is not active
 
-* CONDITION&#95;LEARNABLE&#95;ABILITY
-** value1: spell&#95;id
-** value2: 0 or item&#95;id
+* CONDITION_LEARNABLE_ABILITY (28)
+** value1: spell_id
+** value2: 0 or item_id
+Returns player can learn ability (using min skill value from SkillLineAbility).
+Item_id can be defined in addition, to check if player has one (1) item in inventory or bank.
+When player has spell or has item (when defined), condition return false.
+
+* CONDITION_SKILL_BELOW (29)
+** value1: skill_id 
+** value2: skill_value
+Returns if player has skill skill_id and skill less than (and not equal) skill_value (for skill_value > 1)
+If skill_value == 1, then true if player has not skill skill_id
+
+* CONDITION_REPUTATION_RANK_MAX (30)
+value1: faction_id
+value2: max_rank
+Returns if a player has at most (<=) max_rank with a faction
+
+* CONDITION_COMPLETED_ENCOUNTER (31)
+** value1: encounter_id (DungeonEncounter(dbc).id)
+** value2: encounter_id2 (DungeonEncounter(dbc).id)
+Returns if encounter_id is complete (if encounter_id2 provided it will return if encounter_id is completed OR if encounter_id2 is completed)
+
+* CONDITION_SOURCE_AURA (32)
+** value1: spell_id
+** value2: effindex
+Returns true if the source of the condition check has aura of spell_id, effIndex
+
+* CONDITION_LAST_WAYPOINT (33)
+** value1: waypointId
+** value2: 0 = exact, 1: wp <= waypointId, 2: wp > waypointId
+Returns if the source of the condition is on/ has reached/ has passed a waypoint
+
+* CONDITION_XP_USER (34)
+** value1: 0, 1 (0: XP off, 1: XP on)
+Returns if a player has his XP earning turned off/on
+
+* CONDITION_GENDER (35)
+** value1: 0=male, 1=female, 2=none (see enum Gender)
+Returns if a player is male or female (none cannot happen)
+
+* CONDITION_DEAD_OR_AWAY (36)
+** value1: 0=player dead, 1=player is dead (with group dead), 2=player in instance are dead, 3=creature is dead
+** value2: optional_range
+Returns if a player / a player's group / all players in an instance / or a creature is dead or left the map.
+If the optional_range is provided the condition will also fail if the player[s] are out of range
