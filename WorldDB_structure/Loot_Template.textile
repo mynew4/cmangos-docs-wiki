@@ -96,7 +96,7 @@ Zero value of *ChanceOrQuestChance* is allowed for "grouped entries":#groupid on
 
 h3. groupid
 
-A group is a set of loot definitions processed in such a way that at any given looting event the loot generated can receive only 1 (or none) "item":#item from the items declared in the loot definitions of the group. Groups are formed by loot definitions having the same values of "entry":#entry and *groupid* fields.
+A group is a set of loot definitions processed in such a way that at any given looting event the loot generated can receive only 1 (or none) "item":#item from the items declared in the loot definitions of the group. Groups are formed by loot definitions having the same values of "entry":#entry and *groupid* fields AND have *MinCountOrRef > 0*.
 
 A group may consists of *explicitly-chanced* (having non-zero "ChanceOrQuestChance":#ChanceOrQuestChance) and *equal-chanced* ("ChanceOrQuestChance":#ChanceOrQuestChance = 0) entries. Every _equal-chanced_ entry of a group is considered having such a chance that:
 
@@ -175,7 +175,7 @@ Be careful. Self references (loot template includes reference to itself) and loo
 
 then the core will crash due to stack overflow at first attempt of loot 21215 processing. That is why *self references and loop references are strictly forbidden*.
 
-h4. Group reference
+h4. Filtered references
 
 "mincountOrRef":#mincountOrRef &lt; 0, "group":#groupid &gt; 0
 
