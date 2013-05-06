@@ -286,7 +286,9 @@ You must extract DBC/maps and vmaps for CMaNGOS to work, mmaps are optional (and
 * When finish, move the folders maps, dbc and vmaps - optionally mmaps - that have been created in your  C:\World of Warcraft to your C:\Mangos\run (the buildings folder is not required and can be deleted)
 
 On *nix this step is more complicated, it is actually suggested to extract the client files from a Windows system.
-Also it is possible that the folders must be moved to ~/Mangos/run/data (TODO-Check!)
+You need to copy them (by default configuration) into the directory into which you installed CMaNGOS:
+
+++/Mangos/run/bin++
 
 Install databases
 -----------------
@@ -387,7 +389,7 @@ CORE_PATH="/c/Mangos/mangos"
 -----------------------
 
 * Now the helper tool is configured, and you only need to run the helper script, whenever you want to set your world database to a clear state!
-* ++sh InstallFullUDB.sh++
+* ++InstallFullUDB.sh++
 +
 And check the output if the database could be set up correctly
 
