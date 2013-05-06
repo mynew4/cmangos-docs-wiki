@@ -55,6 +55,7 @@ cala : tested on z2194 and was not able to see any issue: ignoring is working as
 
 bq. [OK] cala : This one looks ok but I will test it because I'm surprised it is not fixed in TBC also.
 On z2194, improved sprint is indeed broken (not working and breaking sprint along). This commit fixes it.
+This commit does also the job. I don't know which one is better: "new zero":https://github.com/mangoszero/server/commit/1781ac3c1e2219eaa0ce42663bc7e85b319ff482
 
 </code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/e0a0426 e0a0426 * Sidsukana (committer Sidsukana)<pre><code>[z1806] Fix HP change in bear forms.
