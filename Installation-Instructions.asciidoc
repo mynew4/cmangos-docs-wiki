@@ -268,14 +268,18 @@ Install CMaNGOS binary files
 * Go to C:\Mangos\mangos\src\realmd and copy "realmd.conf.dist.in" to C:\Mangos\run and rename it to "realmd.conf"
 * Go to C:\Mangos\mangos\src\bindings\ScriptDev2 and copy "scriptdev2.conf.dist.in" to C:\Mangos\run and rename it to "scriptdev2.conf"
 
-On *nix this is done with the ++make install++ command (from the build directory)
+On *nix this is partly done with the ++make install++ command (from the build directory).
+
+You will however still need to manually rename/copy the .conf.dist files to .conf files.
 
 Extract files from the client
 -----------------------------
 * Copy the content of C:\Mangos\mangos\contrib\extractor_binary\ into your C:\World of Warcraft folder
 * Run ExtractResources.sh from your C:\World of Warcraft.
 +
-For this you can open a "Git Bash" on your C:\World of Warcraft folder and type ++sh ExtractResources.sh++
+For this you can open a "Git Bash" on your C:\World of Warcraft folder and type ++ExtractResources.sh++
++
+Depending on your installation settings, a simple double click onto the "ExtractResources.sh" file from your explorer might also work
 +
 You must extract DBC/maps and vmaps for CMaNGOS to work, mmaps are optional (and take very long)
 
@@ -328,10 +332,10 @@ Fill world database:
 
 * Unzip the zip file in C:\Mangos\unifieddb\trunk\Full_DB
 
-From the C:\Mangos folder invoke (in Git bash)
+From the C:\Mangos folder invoke (in Git bash or depending on installation with double-click!)
 
 * ++cd unifieddb/trunk++
-* ++sh InstallFullUDB.sh++
+* ++InstallFullUDB.sh++
 +
 This will create a config file named "InstallFullUDB.config", looking like:
 +
