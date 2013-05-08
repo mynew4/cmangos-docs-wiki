@@ -20,13 +20,12 @@ See the part about Howto Install
 
 ### My client still connect to a different host/address
 * Add in your /WTF/config.wtf (SET realmlist "127.0.0.1") before (SET accountName "youraccount")
-
-### I play TBC or WotLK and cannot access the Blood Elves, Draenei, Worgen or Goblins
-* You need to set the expansion of your account to 1/2/3 (for TBC/WotLK/Cata). See [[Installation Instructions]]
-
 ### MaNGOSd or/and Realmd instantly closes when i start them!
 * Run mangos in command line instead, if you have git bash that's also fine. Then you will see the onscreen error output and be able to continue from there.
 * Make sure there are no other processes using the required ports (default 8085 & 3724).
+
+### I play TBC or WotLK and cannot access the Blood Elves, Draenei, Worgen or Goblins
+* You need to set the expansion of your account to 1/2/3 (for TBC/WotLK/Cata). See [[Installation Instructions]]
 
 ### I play WotLK/Cata and cannot access the Death Knight
 * You need to the expansion of your account to 2 or 3 (2 for TBC, 3 for Cata)
@@ -37,13 +36,31 @@ See the part about Howto Install
 ### How can i use GM commands?
 * You need to set your GM-Level. See [[Installation Instructions]]
 
-## How to Update?
-### Updating MaNGOS source
-* First off you should have git installed. Then you can "cd" into your mangos source folder. For example: "cd /c/MaNGOS/" When you are inside of there you type "git pull".
-### Updating database
-* After updating MaNGOS you might need to update the database structure, to find out, simply start MaNGOS and see if it gives you a "database error". If it does you must apply all updates from the sql update folder which is "after" what update mangos tells you you currently have. Note that you should apply the updates on correct databases (see filenames in updates folder)
-### Updating ScriptDev2
-* As with updating MaNGOS you must "cd" into the git repository, for example "cd /c/MaNGOS/src/bindings/ScriptDev2". Then you type git pull.
+### Npcs directly evade when I try to attack
+### All Npcs are friendly or neutral
+### All Gameobjects around me sparkle
+* You need to turn GM mode off: .gm off
+* Maybe you have still invisibility on, try .gm visi on
 
-Note: After both the MaNGOS and ScriptDev2 procedure you must compile the core.
-The reason we do this in mangos is to see if there are any database updates, then you will want the latest PvE "scripts" from ScriptDev on top of that for extra awesomeness!
+## How to Update?
+
+### Updating the source code
+* Open a Git Bash (see [[Installation Instructions]]) in your C:\Mangos or ~/mangos (or your base directory)
+* `cd mangos` (This assumes you followed the Installation Instructions, and the directory where your sources are is located in C:\Mangos\mangos or ~/Mangos/mangos
+* Invoke `git pull` to update
+* `cd src/bindings/ScriptDev2` (This step and the next only if you also want to update SD2 and you had it installed)
+* Invoke `git pull`
+
+### Compiling and installing the update
+* You need to compile core and SD2 just like you did before in your first setup (See [[Installation Instructions]] )
+
+### Fetching new content from the database provider
+* This depends on your database provider, you might want to update your SVN or Git clone of the database
+
+### Updateing the database
+* Even if your Database provider did not ship new updates, you still might have to update your database content due to core changes.
+* In this case the easiest is to rerun an Installer Script of your DB-provider
+
+* If you don't want to reset the database to a clean state (for example because you added some custom things), then you _might_ need to update manually.
+* To check if you need a manual update, just start the mangosd and check if a database error on start is printed.
+* If it is, read the error message carefully (you can read it more easily from the file Server.log)
