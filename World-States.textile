@@ -10,7 +10,16 @@ h2. Global World States
 |3801|Bool|Text|Wintergrasp - is inactive (0: in progress, 1: not started)|
 |3802|Bool|Text|Wintergrasp - Horde controlled|
 |3803|Bool|Text|Wintergrasp - Alliance controlled|
+|3804|WG Control Status|Map Icon|Wintergrasp - Faction in control|
 |4354|Time|Timer|Wintergrasp - start time|
+
+WG Control Status:
+
+|Value|Icon Display|
+|0|Hidden|
+|1|Horde|
+|2|Alliance|
+|3|Contested|
 
 h2. Zonewide World States
 
@@ -159,9 +168,8 @@ h3. Wintergrasp
 |3501|Bool|Capture Point|Capture Point - enabled|
 |3502|Int|Capture Point|Capture Point - slider value|
 |3508|Int|Capture Point|Capture Point - slider neutral percent|
-|3804|||Unknown|
 
-Wintergrasp Gameobject Status (WG GO Status):
+WG GO Status:
 
 |Value|Icon Display|
 |0|Hidden|
