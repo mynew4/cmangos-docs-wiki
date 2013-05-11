@@ -1,0 +1,180 @@
+h2. Global World States
+
+|ID|Values|UI Type|Comment|
+|2259|Bool|Map Icon|Naxxramas Invasion - Winterspring|
+|2260|Bool|Map Icon|Naxxramas Invasion - Azshara|
+|2261|Bool|Map Icon|Naxxramas Invasion - Blasted Lands|
+|2262|Bool|Map Icon|Naxxramas Invasion - Burning Steppes|
+|2263|Bool|Map Icon|Naxxramas Invasion - Tanaris Desert|
+|2264|Bool|Map Icon|Naxxramas Invasion - Eastern Plaguelands|
+|3801|Bool|Text|Wintergrasp - is inactive (0: in progress, 1: not started)|
+|3802|Bool|Text|Wintergrasp - Horde controlled|
+|3803|Bool|Text|Wintergrasp - Alliance controlled|
+|4354|Time|Timer|Wintergrasp - start time|
+
+h2. Zonewide World States
+
+h3. Silithus
+
+|ID|Values|UI Type|Comment|
+|2313|Int|Counter|Silithyst resources - Alliance|
+|2314|Int|Counter|Silithyst resources - Horde|
+|2317|Int|Counter|Silithyst resources - maximum|
+|2322|Bool|Map Icon|Sandworm - north|
+|2323|Bool|Map Icon|Sandworm - south|
+|2324|Bool|Map Icon|Sandworm - west|
+|2325|Bool|Map Icon|Sandworm - east|
+
+h3. Eastern Plaguelands
+
+|ID|Values|UI Type|Comment|
+|2327|Int|Counter|Tower count - Alliance|
+|2328|Int|Counter|Tower count - Horde|
+|2353|Bool|Map Icon|Plaguewood Tower - neutral|
+|2368|Bool|Map Icon|Plaguewood Tower - Alliance progress|
+|2366|Bool|Map Icon|Plaguewood Tower - Alliance contested|
+|2370|Bool|Map Icon|Plaguewood Tower - Alliance|
+|2367|Bool|Map Icon|Plaguewood Tower - Horde progress|
+||||Plaguewood Tower - Horde contested ... DOES NOT EXIST IN DBC|
+|2371|Bool|Map Icon|Plaguewood Tower - Horde|
+|2352|Bool|Map Icon|Northpass Tower - neutral|
+|2364|Bool|Map Icon|Northpass Tower - Alliance progress|
+|2362|Bool|Map Icon|Northpass Tower - Alliance contested|
+|2372|Bool|Map Icon|Northpass Tower - Alliance|
+|2365|Bool|Map Icon|Northpass Tower - Horde progress|
+|2363|Bool|Map Icon|Northpass Tower - Horde contested|
+|2373|Bool|Map Icon|Northpass Tower - Horde|
+|2361|Bool|Map Icon|Eastwall Tower - neutral|
+|2357|Bool|Map Icon|Eastwall Tower - Alliance progress|
+|2359|Bool|Map Icon|Eastwall Tower - Alliance contested|
+|2354|Bool|Map Icon|Eastwall Tower - Alliance|
+|2358|Bool|Map Icon|Eastwall Tower - Horde progress|
+|2360|Bool|Map Icon|Eastwall Tower - Horde contested|
+|2356|Bool|Map Icon|Eastwall Tower - Horde|
+|2355|Bool|Map Icon|Crownguard Tower - neutral|
+|2376|Bool|Map Icon|Crownguard Tower - Alliance progress|
+|2374|Bool|Map Icon|Crownguard Tower - Alliance contested|
+|2378|Bool|Map Icon|Crownguard Tower - Alliance|
+|2377|Bool|Map Icon|Crownguard Tower - Horde progress|
+|2375|Bool|Map Icon|Crownguard Tower - Horde contested|
+|2379|Bool|Map Icon|Crownguard Tower - Horde|
+|2426|Bool|Capture Point|Capture Point - enabled|
+|2427|0-100|Capture Point|Capture Point - slider value|
+|2428|20|Capture Point|Capture Point - slider neutral percent|
+
+h3. Isle of Quel'Danas
+
+|ID|Values|UI Type|Comment|
+|3414|Bool|Map Icon|Sun's Reach Armory - enemy|
+|3415|Bool|Map Icon|Sun's Reach Armory - Shattered Sun Offensive|
+|3416|Bool|Map Icon|Sun's Reach Harbor - enemy|
+|3417|Bool|Map Icon|Sun's Reach Harbor - Shattered Sun Offensive|
+|3418|Bool|Map Icon|Sun's Reach Sanctum - enemy|
+|3419|Bool|Map Icon|Sun's Reach Sanctum - Shattered Sun Offensive|
+
+h3. Wintergrasp
+
+|ID|Values|UI Type|Comment|
+|3680|Int|Counter|Vehicle count - Alliance|
+|3490|Int|Counter|Vehicle count - Horde|
+|3681|Int|Counter|Vehicle maximum count - Alliance|
+|3491|Int|Counter|Vehicle maximum count - Horde|
+|3710|Bool|Counter|Show/Hide counters at top of screen|
+|3700|WG GO Status|Map Icon|Temple Point|
+|3701|WG GO Status|Map Icon|Sunken Ring Point|
+|3702|WG GO Status|Map Icon|Southwest Point|
+|3703|WG GO Status|Map Icon|Southeast Point|
+|3704|WG GO Status|Map Icon|Shadowsight Tower|
+|3705|WG GO Status|Map Icon|Winters Edge Tower|
+|3706|WG GO Status|Map Icon|Flamewatch Tower|
+|3773|WG GO Status|Map Icon|Fortress|
+|3763|WG GO Status|Map Icon|Fortress Gate|
+|3698|WG GO Status|Map Icon|Fortress Workshop west|
+|3699|WG GO Status|Map Icon|Fortress Workshop east|
+|3711|WG GO Status|Map Icon|Fortress Tower north west|
+|3712|WG GO Status|Map Icon|Fortress Tower north east|
+|3713|WG GO Status|Map Icon|Fortress Tower south west|
+|3714|WG GO Status|Map Icon|Fortress Tower south east|
+|3749|WG GO Status|Map Icon|Fortress Wall 1|
+|3750|WG GO Status|Map Icon|Fortress Wall 2|
+|3751|WG GO Status|Map Icon|Fortress Wall 3|
+|3752|WG GO Status|Map Icon|Fortress Wall 4|
+|3753|WG GO Status|Map Icon|Fortress Wall 5|
+|3754|WG GO Status|Map Icon|Fortress Wall 6|
+|3755|WG GO Status|Map Icon|Fortress Wall 7|
+|3756|WG GO Status|Map Icon|Fortress Wall 8|
+|3757|WG GO Status|Map Icon|Fortress Wall 9|
+|3758|WG GO Status|Map Icon|Fortress Wall 10|
+|3759|WG GO Status|Map Icon|Fortress Wall 11|
+|3760|WG GO Status|Map Icon|Fortress Wall 12|
+|3761|WG GO Status|Map Icon|Fortress Wall 13|
+|3762|WG GO Status|Map Icon|Fortress Wall 14|
+|3764|WG GO Status|Map Icon|Fortress Wall 15|
+|3765|WG GO Status|Map Icon|Fortress Wall 16|
+|3766|WG GO Status|Map Icon|Fortress Wall 17|
+|3767|WG GO Status|Map Icon|Fortress Wall 18|
+|3768|WG GO Status|Map Icon|Fortress Wall 19|
+|3769|WG GO Status|Map Icon|Fortress Wall 20|
+|3770|WG GO Status|Map Icon|Fortress Wall 21|
+|3771|WG GO Status|Map Icon|Fortress Wall 22|
+|3772|WG GO Status|Map Icon|Fortress Wall 23|
+|3779|Bool|Map Icon|PvP activity - A1|
+|3778|Bool|Map Icon|PvP activity - A2|
+|3777|Bool|Map Icon|PvP activity - A3|
+|3775|Bool|Map Icon|PvP activity - B1|
+|3774|Bool|Map Icon|PvP activity - B2|
+|3776|Bool|Map Icon|PvP activity - B3|
+|3748|Bool|Map Icon|PvP activity - C1|
+|3729|Bool|Map Icon|PvP activity - C2|
+|3744|Bool|Map Icon|PvP activity - C3|
+|3723|Bool|Map Icon|PvP activity - C4|
+|3739|Bool|Map Icon|PvP activity - C5|
+|3726|Bool|Map Icon|PvP activity - C6|
+|3788|Bool|Map Icon|PvP activity - D1|
+|3790|Bool|Map Icon|PvP activity - D2|
+|3797|Bool|Map Icon|PvP activity - D3|
+|3747|Bool|Map Icon|PvP activity - E1|
+|3730|Bool|Map Icon|PvP activity - E2|
+|3743|Bool|Map Icon|PvP activity - E3|
+|3725|Bool|Map Icon|PvP activity - E4|
+|3740|Bool|Map Icon|PvP activity - E5|
+|3727|Bool|Map Icon|PvP activity - E6|
+|3737|Bool|Map Icon|PvP activity - E7|
+|3796|Bool|Map Icon|PvP activity - F1|
+|3793|Bool|Map Icon|PvP activity - F2|
+|3746|Bool|Map Icon|PvP activity - F3|
+|3731|Bool|Map Icon|PvP activity - F4|
+|3799|Bool|Map Icon|PvP activity - G1|
+|3745|Bool|Map Icon|PvP activity - G2|
+|3792|Bool|Map Icon|PvP activity - G3|
+|3742|Bool|Map Icon|PvP activity - G4|
+|3724|Bool|Map Icon|PvP activity - G5|
+|3741|Bool|Map Icon|PvP activity - G6|
+|3728|Bool|Map Icon|PvP activity - G7|
+|3738|Bool|Map Icon|PvP activity - G8|
+|3794|Bool|Map Icon|PvP activity - G9|
+|3795|Bool|Map Icon|PvP activity - H1|
+|3791|Bool|Map Icon|PvP activity - H2|
+|3798|Bool|Map Icon|PvP activity - H3|
+|3501|Bool|Capture Point|Capture Point - enabled|
+|3502|Int|Capture Point|Capture Point - slider value|
+|3508|Int|Capture Point|Capture Point - slider neutral percent|
+|3804|||Unknown|
+
+Wintergrasp Gameobject Status (WG GO Status):
+
+|Value|Icon Display|
+|0|Hidden|
+|1|Neutral|
+|2|Damaged|
+|3|Destroyed|
+|4|Horde|
+|5|Horde - Damaged|
+|6|Horde - Destroyed|
+|7|Alliance|
+|8|Alliance - Damaged|
+|9|Alliance - Destroyed|
+
+Wintergrasp Gameobject Locations:
+"Wintergrasp Fortress walls and PvP activity locations":http://imageshack.us/a/img692/3582/wintergrasppvpactivityl.jpg
+"Wintergrasp PvP activity locations only":http://imageshack.us/a/img62/3582/wintergrasppvpactivityl.jpg
