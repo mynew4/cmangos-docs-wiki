@@ -67,9 +67,9 @@ h3. Eastern Plaguelands
 |2377|Bool|Map Icon|Crownguard Tower - Horde progress|
 |2375|Bool|Map Icon|Crownguard Tower - Horde contested|
 |2379|Bool|Map Icon|Crownguard Tower - Horde|
-|2426|Bool|Capture Point|Capture Point - enabled|
-|2427|0-100|Capture Point|Capture Point - slider value|
-|2428|20|Capture Point|Capture Point - slider neutral percent|
+|2426|Bool|Slider|Capture Point Slider - enabled|
+|2427|Int|Slider|Capture Point Slider - current value|
+|2428|Int|Slider|Capture Point Slider - neutral percent|
 
 h3. Isle of Quel'Danas
 
@@ -165,9 +165,9 @@ h3. Wintergrasp
 |3795|Bool|Map Icon|PvP activity - H1|
 |3791|Bool|Map Icon|PvP activity - H2|
 |3798|Bool|Map Icon|PvP activity - H3|
-|3501|Bool|Capture Point|Capture Point - enabled|
-|3502|Int|Capture Point|Capture Point - slider value|
-|3508|Int|Capture Point|Capture Point - slider neutral percent|
+|3501|Bool|Slider|Capture Point Slider - enabled|
+|3502|Int|Slider|Capture Point Slider - current value|
+|3508|Int|Slider|Capture Point Slider - neutral percent|
 
 WG GO Status:
 
