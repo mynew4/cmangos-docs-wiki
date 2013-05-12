@@ -91,12 +91,6 @@ bq. [OK] cala : Without this commit, druids with item 23197 deals to much damage
 bq. [OK] cala : this one is only half correct. The mana regen should occur every 2 sec See * "Mana regenaration":http://www.wowwiki.com/Talk:Mana_regeneration *, so the part fixed by this commit is correct. However, the mana regen formula was not the same for all spell casters in 1.12, it was uniformed in 2.4. I will propose a fix later to this issue and document it. In the meantime, I advice to still apply this commit, at least it will prevent casters from gaining mana twice faster than expected
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/c041d59 c041d59 * Cala Haryon (committer Cala Haryon)<pre><code>Fix glancing blows formula for zero.
- 100.0% src/game/
-
-bq. [OK] cala : this one is ok. See * "Glancing blow":http://www.wowwiki.com/Glancing_blow *
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/f7debc1 f7debc1 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Druid Attackpower in Cat and Bear Form. Patch by Zataron & Salja
  100.0% src/game/
 
