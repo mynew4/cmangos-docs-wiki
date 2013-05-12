@@ -596,7 +596,7 @@ Note that if this account is GM-Account, you can use lots of nice commands to ge
 * .tele <location>
 * .lookup
 * .npc info and .npc aiinfo
-* .modify speed <rate>
+* .modify aspeed <rate>
 * .gm fly on
 
 
