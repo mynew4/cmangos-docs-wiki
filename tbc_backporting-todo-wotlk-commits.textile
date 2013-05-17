@@ -4,9 +4,11 @@ https://github.com/cmangos/mangos-tbc/commit/d94054abab9541586bf1fbecb6c8a3edb2a
 https://github.com/cmangos/mangos-tbc/commit/28c09bce045722ccaab0a8c3765d8c22c4f0e792
 
 
-Commits which required research before backporting:
+Commits which require research before backporting:
 
 https://github.com/cmangos/mangos-wotlk/commit/8953e34 <- SpellAttributes
+
+"Older commits outstanding":https://github.com/stfx/one/issues/1
 
 Commits left over in recent backport run:
 
@@ -20,7 +22,7 @@ Commits left over in recent backport run:
   43.2% src/shared/
 </code></pre>
 
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit4ece3ed: 4ece3ed * Shauren (committer stfx)<pre><code> [12487] Improve alcohol handling</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/4ece3ed: 4ece3ed * Shauren (committer stfx)<pre><code> [12487] Improve alcohol handling</code></pre>
 *Also for TBC this change?*
 
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/9d20ead: 9d20ead * Schmoozerd (committer Schmoozerd)<pre><code>[12494] Fix SMSG_BINDPOINTUPDATE and SMSG_PLAYERBOUND sent data
