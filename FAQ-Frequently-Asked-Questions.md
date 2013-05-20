@@ -1,7 +1,9 @@
 # Frequently Asked Questions around CMaNGOS
 
 ## Generic things to do in case of a problem
-* Read Server.log output. Read it carefully!
+* Read created output. Read it carefully!
+ * For compile problems: Look into the log, on *nix you can create a log with make > compile.log 2>&1
+ * For problems with the server: Look into the file *Server.log*
 
 ## How to Install?
 See our [[Installation Instructions]]
