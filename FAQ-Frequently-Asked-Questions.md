@@ -1,5 +1,8 @@
 # Frequently Asked Questions around CMaNGOS
 
+## Generic things to do in case of a problem
+* Read Server.log output. Read it carefully!
+
 ## How to Install?
 See our [[Installation Instructions]]
 
