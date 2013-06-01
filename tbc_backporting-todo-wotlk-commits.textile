@@ -30,3 +30,157 @@ Commits left over in recent backport run:
    6.6% src/shared/
 </code></pre>
 *Also for TBC this change?*
+
+
+*New commits*
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/dd0633c: dd0633c * Schmoozerd (committer Schmoozerd)<pre><code>[12492] Fix spell 61254
+  96.8% src/game/
+   3.1% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/be0e810: be0e810 * Schmoozerd (committer Schmoozerd)<pre><code>[12493] Fix (at least) two false positive startup errors
+  96.0% src/game/
+   3.9% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/9d20ead: 9d20ead * Schmoozerd (committer Schmoozerd)<pre><code>[12494] Fix SMSG_BINDPOINTUPDATE and SMSG_PLAYERBOUND sent data
+  93.3% src/game/
+   6.6% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/ab40202: ab40202 * Xfurry (committer Xfurry)<pre><code>[12495] Implement some spells for Ahune encounter
+  94.3% src/game/
+   5.6% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/300f9d7: 300f9d7 * lfxgroove (committer Schmoozerd)<pre><code>[12496] Add some doxygen documentation
+  99.6% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/f6e6e9d: f6e6e9d * Schmoozerd (committer Schmoozerd)<pre><code>[12497] Convert some files to markdown
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/b3fe1c1: b3fe1c1 * Grz3s (committer Schmoozerd)<pre><code>[12498] Fix a typo for spell 37096
+  53.9% src/game/
+  46.0% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/b16927a: b16927a * Schmoozerd (committer Schmoozerd)<pre><code>[12499] Add some safety to some preprocessor defines
+  75.5% src/game/
+  12.9% src/shared/Database/
+  11.4% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/c980fab: c980fab * Schmoozerd (committer Schmoozerd)<pre><code>[12500] Remove a few empty lines
+   8.4% src/game/BattleGround/
+   3.3% src/game/vmap/
+  35.5% src/game/
+  52.5% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/f2ee8c0: f2ee8c0 * Schmoozerd (committer Schmoozerd)<pre><code>[12501] DBScripts Engine: Support buddy search by guid
+  98.6% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/112908b: 112908b * Schmoozerd (committer Schmoozerd)<pre><code>[12502] DBScripts Engine: Allow pets as buddy
+  14.2% doc/
+  77.4% src/game/
+   8.3% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/5eff81f: 5eff81f * Schmoozerd (committer Schmoozerd)<pre><code>[12503] DBScripts Engine: Change behaviour to search for a different npc when using buddy-search
+  96.6% src/game/
+   3.3% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/17879f2: 17879f2 * Schmoozerd (committer Schmoozerd)<pre><code>[12504] EventAI: Improve TargetSelection related ErrorLog output
+  99.2% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/659f65e: 659f65e * Schmoozerd (committer Schmoozerd)<pre><code>[12505] Add and implement server-side spell 23770
+   3.2% sql/updates/
+  83.8% sql/
+  11.6% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/6209439: 6209439 * Den (committer Schmoozerd)<pre><code>[12506] Improve proc of spell 50421
+  95.0% src/game/
+   4.9% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/06283c9: 06283c9 * Den (committer Schmoozerd)<pre><code>[12507] Implement proc effect of spells 67712, 67758
+  23.0% sql/updates/
+  19.4% sql/
+  49.3% src/game/
+   8.1% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/17a4097: 17a4097 * Cala (committer Schmoozerd)<pre><code>[12508] Fix SpellDamage modifier of SPELL_AURA_MOD_DAMAGE_DONE_CREATURE
+  94.9% src/game/
+   5.0% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/0b2324c: 0b2324c * Den (committer Schmoozerd)<pre><code>[12509] Check cast spell 51690
+  92.0% src/game/
+   8.0% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/c8b2a94: c8b2a94 * Sidsukana (committer Schmoozerd)<pre><code>[12510] Fix take ammo for most ranged spells
+  97.3% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/d260c9a: d260c9a * Carl (committer Schmoozerd)<pre><code>[12511] Fix invisible spirit healers & such on death near them
+  37.6% src/game/
+  62.3% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/256f99a: 256f99a * Xfurry (committer Xfurry)<pre><code>[12512] Implement some spells for Felmyst encounter
+  96.2% src/game/
+   3.7% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/3348191: 3348191 * Schmoozerd (committer Schmoozerd)<pre><code>[12513] Fixup commit 12511 Thanks to Zakamurite for pointing
+  77.6% src/game/
+  22.3% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/48f941c: 48f941c * Xfurry (committer Xfurry)<pre><code>[12514] Forward original caster GUID to script library
+  97.4% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/e6930bd: e6930bd * Schmoozerd (committer Schmoozerd)<pre><code>[12515] EventAI: Implement ACTION_T_SET_THROW_MASK (46)
+  15.2% doc/
+  84.0% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/70392e3: 70392e3 * Schmoozerd (committer Schmoozerd)<pre><code>[12516] EventAI: Improve code
+  99.1% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/84ff67d: 84ff67d * Schmoozerd (committer Schmoozerd)<pre><code>[12517] Do not remove FLY auras on Evade
+  88.3% src/game/
+  11.6% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/899da20: 899da20 * rowman (committer Schmoozerd)<pre><code>[12518] Enable resummoning of warlock pets
+  74.6% src/game/
+  25.3% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/19ac94d: 19ac94d * rowman (committer Schmoozerd)<pre><code>[12519] Allow player pets to swim
+  89.1% src/game/
+  10.8% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/9ef7429: 9ef7429 * Xfurry (committer Xfurry)<pre><code>[12520] Allow spell effect 86 - Activate Object to use the misc value
+  97.6% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/f7a64eb: f7a64eb * Xfurry (committer Xfurry)<pre><code>[12521] Add stacking exception for spells 39993 and 40041
+  83.2% src/game/
+  16.7% src/shared/
+
+</code></pre>FILE LAST UPDATED BASED ON... "wotlk":http://github.com/cmangos/mangos-wotlk/commit/f7a64eb: f7a64eb * Xfurry (committer Xfurry)
+
