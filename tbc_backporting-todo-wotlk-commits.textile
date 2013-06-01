@@ -35,21 +35,6 @@ Commits left over in recent backport run:
 *New commits*
 
 </code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/dd0633c: dd0633c * Schmoozerd (committer Schmoozerd)<pre><code>[12492] Fix spell 61254
-  96.8% src/game/
-   3.1% src/shared/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/be0e810: be0e810 * Schmoozerd (committer Schmoozerd)<pre><code>[12493] Fix (at least) two false positive startup errors
-  96.0% src/game/
-   3.9% src/shared/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/9d20ead: 9d20ead * Schmoozerd (committer Schmoozerd)<pre><code>[12494] Fix SMSG_BINDPOINTUPDATE and SMSG_PLAYERBOUND sent data
-  93.3% src/game/
-   6.6% src/shared/
-
-</code></pre>
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/ab40202: ab40202 * Xfurry (committer Xfurry)<pre><code>[12495] Implement some spells for Ahune encounter
   94.3% src/game/
    5.6% src/shared/
