@@ -29,59 +29,8 @@ Commits left over in recent backport run:
   93.3% src/game/
    6.6% src/shared/
 </code></pre>
-*Also for TBC this change?*
 
-
-*New commits*
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/ab40202: ab40202 * Xfurry (committer Xfurry)<pre><code>[12495] Implement some spells for Ahune encounter
-  94.3% src/game/
-   5.6% src/shared/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/300f9d7: 300f9d7 * lfxgroove (committer Schmoozerd)<pre><code>[12496] Add some doxygen documentation
-  99.6% src/game/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/f6e6e9d: f6e6e9d * Schmoozerd (committer Schmoozerd)<pre><code>[12497] Convert some files to markdown
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/b3fe1c1: b3fe1c1 * Grz3s (committer Schmoozerd)<pre><code>[12498] Fix a typo for spell 37096
-  53.9% src/game/
-  46.0% src/shared/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/b16927a: b16927a * Schmoozerd (committer Schmoozerd)<pre><code>[12499] Add some safety to some preprocessor defines
-  75.5% src/game/
-  12.9% src/shared/Database/
-  11.4% src/shared/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/c980fab: c980fab * Schmoozerd (committer Schmoozerd)<pre><code>[12500] Remove a few empty lines
-   8.4% src/game/BattleGround/
-   3.3% src/game/vmap/
-  35.5% src/game/
-  52.5% src/shared/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/f2ee8c0: f2ee8c0 * Schmoozerd (committer Schmoozerd)<pre><code>[12501] DBScripts Engine: Support buddy search by guid
-  98.6% src/game/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/112908b: 112908b * Schmoozerd (committer Schmoozerd)<pre><code>[12502] DBScripts Engine: Allow pets as buddy
-  14.2% doc/
-  77.4% src/game/
-   8.3% src/shared/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/5eff81f: 5eff81f * Schmoozerd (committer Schmoozerd)<pre><code>[12503] DBScripts Engine: Change behaviour to search for a different npc when using buddy-search
-  96.6% src/game/
-   3.3% src/shared/
-
-</code></pre>
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/17879f2: 17879f2 * Schmoozerd (committer Schmoozerd)<pre><code>[12504] EventAI: Improve TargetSelection related ErrorLog output
-  99.2% src/game/
+*Does this spell require attributes?*
 
 </code></pre>
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/659f65e: 659f65e * Schmoozerd (committer Schmoozerd)<pre><code>[12505] Add and implement server-side spell 23770
@@ -89,6 +38,7 @@ Commits left over in recent backport run:
   83.8% sql/
   11.6% src/game/
 
+*New commits*
 </code></pre>
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/6209439: 6209439 * Den (committer Schmoozerd)<pre><code>[12506] Improve proc of spell 50421
   95.0% src/game/
@@ -168,4 +118,3 @@ Commits left over in recent backport run:
   16.7% src/shared/
 
 </code></pre>FILE LAST UPDATED BASED ON... "wotlk":http://github.com/cmangos/mangos-wotlk/commit/f7a64eb: f7a64eb * Xfurry (committer Xfurry)
-
