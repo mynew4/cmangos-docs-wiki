@@ -1,22 +1,4 @@
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/5a5169b 5a5169b * Sidsukana (committer Sidsukana)<pre><code>[z1774] Fix speed modifiers for spells Permafrost, Improved Curse of Exhaustion, Camouflage, Pathfinding, Amplify Curse, Cheetah Sprint.
-  95.8% src/game/
-   4.1% src/shared/
-
-bq. [TEST] cala : Surprising one. I will also test it.
-cala (March 13-13) : Commit tested. I don't see difference with and without it. Don't know what to do.
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/c653a66 c653a66 * Sidsukana (committer Sidsukana)<pre><code>[z1795] Fix take ammo for most ranged spells.
-  97.4% src/game/
-
-bq. [TBC] stfx: not sure whats this about, should theoretically also apply to TBC but never heard of an issue there
-cala : tested take ammo and found issue on current revision: ammo are not taken for all spells
-(ex: 'arcane shot' does not take ammo but 'serpent sting' does). However, if no ammo in inventory no ranged spell can be casted, even those like 'arcane shot' that do not take ammo (though probably should take). I'll try to test this commit.
-stfx: was this behavior ever changed? it should be tested/fixed on tbc also if needed
-cala (march 13-13): this fix does allow all spells to take ammo. It should be applied to TBC firsthand, then backported to classic.
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/4d68c37 4d68c37 * Salja (committer Salja)<pre><code>[z1798] Combustion (remove main aura) and (remove triggered aura stack) by Unlern Talents.
   91.2% src/game/
    8.7% src/shared/
@@ -58,14 +40,6 @@ On z2194, improved sprint is indeed broken (not working and breaking sprint alon
 This commit does also the job. I don't know which one is better: "new zero":https://github.com/mangoszero/server/commit/1781ac3c1e2219eaa0ce42663bc7e85b319ff482
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/e0a0426 e0a0426 * Sidsukana (committer Sidsukana)<pre><code>[z1806] Fix HP change in bear forms.
-  84.3% src/game/
-  15.6% src/shared/
-
-bq. [OK] cala : Seems ok but need to be tested. I'll do it.
-On z2194, shapeshifting into bear form, druids do not keep the same percentage of HP. This commit fixes it.
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/84e3d1c 84e3d1c * Sidsukana (committer Sidsukana)<pre><code>[z1807] Fix spell 6346.
   51.2% sql/updates/
   18.4% sql/
@@ -76,31 +50,10 @@ stfx: There are some tables which are managed by mangos and not the database pro
 cala : tested on z2194 (and mangos-zero DB), this spell is already flagged as intented. This commit should be applied nonetheless to keep track of the fix.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/b2d8643 b2d8643 * Sidsukana (committer Sidsukana)<pre><code>[z1809] Fix item 23197.
-  27.7% sql/updates/
-  18.0% sql/
-  29.3% src/game/
-  24.8% src/shared/
-
-bq. [OK] cala : Without this commit, druids with item 23197 deals to much damage with moonfire spells. This commit fixes this.
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/f026561 f026561 * Cala Haryon (committer Cala Haryon)<pre><code>Modify the mana regeneration rate to be correct for 1.12 and below.
  100.0% src/game/
 
 bq. [OK] cala : this one is only half correct. The mana regen should occur every 2 sec See * "Mana regenaration":http://www.wowwiki.com/Talk:Mana_regeneration *, so the part fixed by this commit is correct. However, the mana regen formula was not the same for all spell casters in 1.12, it was uniformed in 2.4. I will propose a fix later to this issue and document it. In the meantime, I advice to still apply this commit, at least it will prevent casters from gaining mana twice faster than expected
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/f7debc1 f7debc1 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Druid Attackpower in Cat and Bear Form. Patch by Zataron & Salja
- 100.0% src/game/
-
-bq. [REMOVE] cala: Core currently use TBC values for druid AP (see * "Attack Power as of April 18th 2008":http://www.wowwiki.com/Attack_power?diff=1317844&oldid=1308858 *). However, I'm unable to find if they were different in classic. I guess so as feral druids got a big "up" in TBC but without correct 1.12 values, we should trash this commit and but put a note in StatSystem.cpp stating these values need to be confirmed.
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/e45f908 e45f908 * Cala Haryon (committer Cala Haryon)<pre><code>Fix Beastslayer Damage Bonus. Thanks Zataron & Salja
- 100.0% src/game/
-
-bq. [OK] cala : Tested: without this commit damages on beasts with a weapon are the same with or without the beastslayer enchantment.
 
 </code></pre>
 FILE LAST UPDATED BASED ON... "zero":http://github.com/mangos-zero/server-old/commit/9293a6d 9293a6d * TheLuda (committer TheLuda)
