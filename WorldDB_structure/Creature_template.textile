@@ -176,6 +176,8 @@ A bitmask that represents what NPC flags the creature has. Each bit controls a d
 |1|Gossip|If creature has more gossip options, add this flag to bring up a menu.|
 |2|Quest Giver|Any creature giving or taking quests needs to have this flag.|
 |16|Trainer|Allows the creature to have a trainer list to teach spells|
+|32|Trainer_Class|Allows the creature to have a class trainer list to teach spells|
+|64|Trainer_Profession|Allows the creature to have a profession trainer list to teach spells|
 |128|Vendor|Any creature selling items needs to have this flag.|
 |4096|Repairer|Creatures with this flag can repair items.|
 |8192|Flight Master|Any creature serving as fly master has this.|
