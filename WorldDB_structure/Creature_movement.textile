@@ -1,1 +1,1 @@
-# REDIRECT "creature_movement_template":Creature movement (template)
+# REDIRECT "creature_movement_template":creature_movement_template
