@@ -35,10 +35,10 @@ The model ID of the mount to be used to make the creature appear mounted. The va
 h4. b2&#95;0&#95;sheath
 
 SheathState.
-
-h4. b2&#95;1&#95;pvp&#95;state
 0 = Weapon Sheathed by Default
 1 = Weapon NOT Sheathed by Default
+
+h4. b2&#95;1&#95;pvp&#95;state
 
 UnitPVPStateFlags
 
