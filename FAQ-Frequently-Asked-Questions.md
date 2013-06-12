@@ -9,24 +9,24 @@
 See our [[Installation Instructions]]
 
 ## First time users
-### The server has an error when i try to start it
-See the part about Howto Install
+### The server has an error when I try to start it
+See the part about "How to Install" above
 
-### I cannot login onto my server
+### I cannot login to my server
 * realmd started?
 * mangosd started?
 * realmd database, table `realmlist` set to match the values in your mangosd.conf?
-* realmlist set to your localhost? (set realmlist 127.0.0.1)
+* realmlist in your game folder set to localhost? (set realmlist 127.0.0.1)
 * User account created? (See [[Installation Instructions]] again)
-* Don't use email as login
+* Don't use email addresses as a login
 * Delete or rename wow.mfil and wow.tfil files
-* use ONLY wow.exe to start up the client, never use launcher.exe
+* ONLY use wow.exe to start up the client, NEVER use launcher.exe
   (client versions 4.x and up require wow.exe to be patched prior aswell)
 
-### My client still connect to a different host/address
+### My client still connects to a different host/address
 * Add in your /WTF/config.wtf (SET realmlist "127.0.0.1") before (SET accountName "youraccount")
-### MaNGOSd or/and Realmd instantly closes when i start them!
-* Run mangos in command line instead, if you have git bash that's also fine. Then you will see the onscreen error output and be able to continue from there.
+### MaNGOSd or/and Realmd instantly closes when I start them!
+* Run mangos in command line instead, if you have git bash that's also fine. Then you will see the on-screen error output and be able to continue from there.
 * Make sure there are no other processes using the required ports (default 8085 & 3724).
 
 ### I play TBC or WotLK and cannot access the Blood Elves, Draenei, Worgen or Goblins
@@ -34,18 +34,18 @@ See the part about Howto Install
 
 ### I play WotLK/Cata and cannot access the Death Knight
 * You need to the expansion of your account to 2 or 3 (2 for TBC, 3 for Cata)
-* You need to level a character to level 50 OR
+* You need to level a character to level 55 OR
 * Change the config option "MinLevelForHeroicCharacterCreating" in your mangosd.conf OR
 * Set your account to be a GM Account (see next question)
 
-### How can i use GM commands?
+### How can I use GM commands?
 * You need to set your GM-Level. See [[Installation Instructions]]
 
 ### Npcs directly evade when I try to attack
 ### All Npcs are friendly or neutral
 ### All Gameobjects around me sparkle
 * You need to turn GM mode off: .gm off
-* Maybe you have still invisibility on, try .gm visi on
+* Maybe you still have invisibility on, try .gm visi on
 
 ## How to Update?
 
@@ -62,9 +62,9 @@ See the part about Howto Install
 ### Fetching new content from the database provider
 * This depends on your database provider, you might want to update your SVN or Git clone of the database
 
-### Updateing the database
+### Updating the database
 * Even if your Database provider did not ship new updates, you still might have to update your database content due to core changes.
-* In this case the easiest is to rerun an Installer Script of your DB-provider
+* In this case the easiest process is to rerun the installer script from your DB-provider
 
 * If you don't want to reset the database to a clean state (for example because you added some custom things), then you _might_ need to update manually.
 * To check if you need a manual update, just start the mangosd and check if a database error on start is printed.
