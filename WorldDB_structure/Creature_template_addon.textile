@@ -37,6 +37,8 @@ h4. b2&#95;0&#95;sheath
 SheathState.
 
 h4. b2&#95;1&#95;pvp&#95;state
+0 = Weapon Sheathed by Default
+1 = Weapon NOT Sheathed by Default
 
 UnitPVPStateFlags
 
