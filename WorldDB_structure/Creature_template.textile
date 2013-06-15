@@ -357,10 +357,10 @@ h4. trainer&#95;type
 If the NPC is a trainer (has the trainer flag), then this field controls what kind of trainer it is. Both this field and the related field must be filled in for a trainer to work correctly.
 
 |_. ID|_. Type|_. Related Field|_. Comments|
-|0|TRAINER&#95;TYPE&#95;CLASS|class]]|Trains class spells|
-|1|TRAINER&#95;TYPE&#95;MOUNTS|race]]|Trains riding skill|
-|2|TRAINER&#95;TYPE&#95;TRADESKILLS|trainer&#95;spell]]|Trains professions|
-|3|TRAINER&#95;TYPE&#95;PETS|class]]|Trains pet skills|
+|0|TRAINER&#95;TYPE&#95;CLASS|trainer&#95;class|Trains class spells|
+|1|TRAINER&#95;TYPE&#95;MOUNTS|trainer&#95;race|Trains riding skill|
+|2|TRAINER&#95;TYPE&#95;TRADESKILLS|trainer&#95;spell|Trains professions|
+|3|TRAINER&#95;TYPE&#95;PETS|trainer&#95;class|Trains pet skills|
 
 
 h4. trainer&#95;spell
