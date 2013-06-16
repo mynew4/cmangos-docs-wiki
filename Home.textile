@@ -25,7 +25,7 @@ Other useful data like small dbc contents used to populate some MaNGOS tables ca
 * "Description of wdb files content":https://github.com/cmangos/issues/wiki/wdb_files
 * "Description of the data field in the `character` table":https://github.com/cmangos/issues/wiki/character_data
 
-h2. Client dependend information
+h2. Client dependent information
 
 [[Backporting-Tutorial]]
 
