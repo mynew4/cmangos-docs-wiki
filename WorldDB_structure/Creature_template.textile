@@ -176,13 +176,19 @@ A bitmask that represents what NPC flags the creature has. Each bit controls a d
 |1|Gossip|If creature has more gossip options, add this flag to bring up a menu.|
 |2|Quest Giver|Any creature giving or taking quests needs to have this flag.|
 |16|Trainer|Allows the creature to have a trainer list to teach spells|
-|32|Trainer_Class|Allows the creature to have a class trainer list to teach spells. (TO BE USED ALSO WITH FLAG: 16)|
-|64|Trainer_Profession|Allows the creature to have a profession trainer list to teach spells. (TO BE USED ALSO WITH FLAG: 16)|
+|32|Trainer_Class|Allows the creature to have a class trainer list to teach spells.
+(MUST USE WITH FLAG: 16)|
+|64|Trainer_Profession|Allows the creature to have a profession trainer list to teach spells.
+(MUST USE WITH FLAG: 16)|
 |128|Vendor|Any creature selling items needs to have this flag.|
-|256|Vendor_Ammo|Any creature selling ammo items needs to have this flag. (TO BE USED ALSO WITH FLAG: 128)|
-|512|Vendor_Food|Any creature selling food items needs to have this flag. (TO BE USED ALSO WITH FLAG: 128)|
-|1024|Vendor_Poison|Any creature selling poison items needs to have this flag. (TO BE USED ALSO WITH FLAG: 128)
-|2048|Vendor_Reagent|Any creature selling reagent items needs to have this flag. (TO BE USED ALSO WITH FLAG: 128)|
+|256|Vendor_Ammo|Any creature selling ammo items needs to have this flag. 
+(MUST USE WITH FLAG: 128)|
+|512|Vendor_Food|Any creature selling food items needs to have this flag.
+(MUST USE WITH FLAG: 128)|
+|1024|Vendor_Poison|Any creature selling poison items needs to have this flag.
+(MUST USE WITH FLAG: 128)|
+|2048|Vendor_Reagent|Any creature selling reagent items needs to have this flag.
+(MUST USE WITH FLAG: 128)|
 |4096|Repairer|Creatures with this flag can repair items.|
 |8192|Flight Master|Any creature serving as fly master has this.|
 |16384|Spirit Healer|Makes the creature invisible to alive characters and has the resurrect function.|
