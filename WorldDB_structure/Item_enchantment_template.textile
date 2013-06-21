@@ -19,6 +19,10 @@ h4. entry
 
 This field ties in with EITHER "RandomProperty":item_template#RandomProperty OR "RandomSuffix":item_template#RandomSuffix fields in the item&#95;template table. An item cannot have both of those fields set at non-zero values.
 
+NOTE: For 4.3.4 Core Use Negative Values To Specify a Random Suffix Entry and a Positive Value for a Random Properties Value
+
+This is to prevent overlapping values since in 4.3.4 Official Data we do have about 12 overlapping Random Property and Random Suffix entries.
+
 h4. ench
 
 The enchantment to apply on the item. If the entry for the current row is used in "RandomProperty":item_template#RandomProperty, then this field points to the ID in ItemRandomProperties.dbc. If the entry is used in "RandomSuffix":item_template#RandomSuffix, then this field points to the ID in ItemRandomSuffix.dbc.
