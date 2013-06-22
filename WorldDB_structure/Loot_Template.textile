@@ -91,6 +91,8 @@ Zero value of *ChanceOrQuestChance* is allowed for "grouped entries":#groupid on
 
 (Non-zero) values of *ChanceOrQuestChance* in loot definition are multiplied by RATE_DROP_ITEMS (mangos config setting) during loot generation for references and non-reference entries, but not for grouped entries.
 
+NOTE: When using a Negative value Wiki Say's it "REFERENCES" this means that you are Directing Core to look at REFERENCE_LOOT_TEMPLATE table to include that loot table.
+ 
 h3. groupid
 
 A group is a set of loot definitions processed in such a way that at any given looting event the loot generated can receive only 1 (or none) "item":#item from the items declared in the loot definitions of the group. Groups are formed by loot definitions having the same values of "entry":#entry and *groupid* fields AND have *MinCountOrRef > 0*.
