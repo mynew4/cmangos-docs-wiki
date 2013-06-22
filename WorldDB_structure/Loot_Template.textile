@@ -83,7 +83,7 @@ h4. Chanced references
 
 For negative "mincountOrRef":#mincountOrRef (_reference entries_) *ChanceOrQuestChance* signifies the percent chance that the reference has to be used. So it is very similar to "plain entries":#Plain_entry meaning, just note that entire reference is skipped if the chance is missed.
 
-Negative and zero values of *ChanceOrQuestChance* make no sense for that case and should not be used.
+Negative and zero values of *ChanceOrQuestChance* make no sense for that case and cannot be used.
 
 h4. Common remarks
 
@@ -91,7 +91,6 @@ Zero value of *ChanceOrQuestChance* is allowed for "grouped entries":#groupid on
 
 (Non-zero) values of *ChanceOrQuestChance* in loot definition are multiplied by RATE_DROP_ITEMS (mangos config setting) during loot generation for references and non-reference entries, but not for grouped entries.
 
-NOTE: When using a Negative value Wiki Say's it "REFERENCES" this means that you are Directing Core to look at REFERENCE_LOOT_TEMPLATE table to include that loot table.
  
 h3. groupid
 
