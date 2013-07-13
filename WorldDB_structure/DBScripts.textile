@@ -29,23 +29,23 @@ h3. Structure
 
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"id":Scripts#id|int(11) unsigned|NO||0||
-|"delay":Scripts#delay|int(11) unsigned|NO||0||
-|"command":Scripts#command|mediumint(8) unsigned|NO||0||
-|"datalong":Scripts#otherfields|mediumint(8) unsigned|NO||0||
-|"datalong2":Scripts#otherfields|int(10) unsigned|NO||0||
-|"buddy_entry":Scripts#buddy_concept|int(10) unsigned|NO||0||
-|"search_radius":Scripts#search_radius|int(10) unsigned|NO||0||
-|"data_flags":Scripts#otherfields|tinyint(3) unsigned|NO||0||
-|"dataint":Scripts#otherfields|int(11)|NO||0||
-|"dataint2":Scripts#otherfields|int(11)|NO||0||
-|"dataint3":Scripts#otherfields|int(11)|NO||0||
-|"dataint4":Scripts#otherfields|int(11)|NO||0||
-|"x":Scripts#otherfields|float|NO||0||
-|"y":Scripts#otherfields|float|NO||0||
-|"z":Scripts#otherfields|float|NO||0||
-|"o":Scripts#otherfields|float|NO||0||
-|"Comments":Scripts#otherfields|VARCHAR(255)|NO||NULL||
+|"id":DBScripts#id|int(11) unsigned|NO||0||
+|"delay":DBScripts#delay|int(11) unsigned|NO||0||
+|"command":DBScripts#command|mediumint(8) unsigned|NO||0||
+|"datalong":DBScripts#otherfields|mediumint(8) unsigned|NO||0||
+|"datalong2":DBScripts#otherfields|int(10) unsigned|NO||0||
+|"buddy_entry":DBScripts#buddy_concept|int(10) unsigned|NO||0||
+|"search_radius":DBScripts#search_radius|int(10) unsigned|NO||0||
+|"data_flags":DBScripts#otherfields|tinyint(3) unsigned|NO||0||
+|"dataint":DBScripts#otherfields|int(11)|NO||0||
+|"dataint2":DBScripts#otherfields|int(11)|NO||0||
+|"dataint3":DBScripts#otherfields|int(11)|NO||0||
+|"dataint4":DBScripts#otherfields|int(11)|NO||0||
+|"x":DBScripts#otherfields|float|NO||0||
+|"y":DBScripts#otherfields|float|NO||0||
+|"z":DBScripts#otherfields|float|NO||0||
+|"o":DBScripts#otherfields|float|NO||0||
+|"Comments":DBScripts#otherfields|VARCHAR(255)|NO||NULL||
 
 
 h3. Description of the fields
