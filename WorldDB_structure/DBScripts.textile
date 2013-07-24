@@ -137,31 +137,8 @@ h4. OtherFields
 Depending on what command was used, the meaning and use for the following fields varies.
 
 * *SCRIPT&#95;COMMAND&#95;TALK = 0*
-** datalong:
-
-|_. flag|_. Description|
-|0|SAY|
-|1|YELL|
-|2|TEXT&#95;EMOTE|
-|3|BOSS&#95;EMOTE|
-|4|WHISPER|
-|5|BOSS&#95;WHISPER|
-|6|ZONE&#95;YELL|
-
-
-* ** datalong2: creature entry (searching for a buddy, closest to source)
-** datalong3: creature search radius
-** datalong4: language
-** data&#95;flags:
-
-|_. flag|_. value|
-|flag&#95;target&#95;player|0x00|
-|flag&#95;target&#95;player&#95;as&#95;source|0x01|
-|flag&#95;original&#95;source&#95;as&#95;target|0x02|
-|flag&#95;buddy&#95;as&#95;target|0x04|
-
-
-* ** dataint - 4: The text ID that the creature will say. See "db_script_string.":db_script_string. ID must be between 2000000000 and 2000010000.(In case more then only dataint is filled the text's will be used randomly.)
+** All information of the text (type, language, associated sound, emote) is stored in the "db_script_string.":db_script_string table
+** dataint - 4: The text ID that the creature will say. See "db_script_string.":db_script_string. ID must be between 2000000000 and 2000010000.(In case more then only dataint is filled the text's will be used randomly.)
 
 * *SCRIPT&#95;COMMAND&#95;EMOTE = 1*
 ** datalong: The emote ID to play.
