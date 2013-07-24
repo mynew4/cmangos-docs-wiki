@@ -155,6 +155,7 @@ Depending on what command was used, the meaning and use for the following fields
 ** data&#95;flags:
 
 |_. flag|_. value|
+|flag&#95;target&#95;player|0x00|
 |flag&#95;target&#95;player&#95;as&#95;source|0x01|
 |flag&#95;original&#95;source&#95;as&#95;target|0x02|
 |flag&#95;buddy&#95;as&#95;target|0x04|
