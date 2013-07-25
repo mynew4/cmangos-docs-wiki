@@ -97,6 +97,8 @@ h4. action&#95;menu&#95;id
 If you want to create a sub-menu, this is the ID to link to create that sub-menu.
 This sub-menu will be displayed when you click on the current menu.
 
+NOTE: If you want gossip window to close when selecting this gossip option use -1 for this value. 
+
 h4. action&#95;poi&#95;id
 
 If you want a POI (point of interest) to display on the minimap, this is the `entry` from `points&#95;of&#95;interest`
