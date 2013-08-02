@@ -29,6 +29,8 @@ h4. accessory_entry
 
 This is the Creature_Template entry of the NPC you would like to mount the Vehicle NPC.
 
+NOTE: This NPC Should NOT be spawned in the DB. The Core will Spawn It On The Vehicle as Required.
+
 h4. comment
 
 Description of Who is Mounting What NPC
