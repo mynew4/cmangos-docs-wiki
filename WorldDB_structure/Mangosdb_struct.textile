@@ -271,3 +271,5 @@ h3. This is the list of tables in the regular 'mangos' database
 * "spell_threat":spell_threat (Reloadable) (CMaNGOS)
 
 * "transports":transports
+
+* "vehicle_accessory":vehicle_accessory
