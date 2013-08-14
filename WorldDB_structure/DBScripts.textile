@@ -38,7 +38,7 @@ h3. Structure
 |"datalong2":DBScripts#otherfields|int(10) unsigned|NO||0||
 |"buddy_entry":DBScripts#buddy_concept|int(10) unsigned|NO||0||
 |"search_radius":DBScripts#search_radius|int(10) unsigned|NO||0||
-|"data_flags":DBScripts#otherfields|tinyint(3) unsigned|NO||0||
+|"data_flags":DBScripts#data_flags|tinyint(3) unsigned|NO||0||
 |"dataint":DBScripts#otherfields|int(11)|NO||0||
 |"dataint2":DBScripts#otherfields|int(11)|NO||0||
 |"dataint3":DBScripts#otherfields|int(11)|NO||0||
@@ -139,7 +139,17 @@ Where &quot;A -&gt; B&quot; means that the command is executed from A with B as 
 
 h4. Search Radius
 
-WILL UPDATE WITH INFORMATION ABOUT THIS FIELD
+Range in which the buddy defined in "buddy_entry":DBScripts#buddy_concept will be searched.
+In case of SCRIPT_FLAG_BUDDY_BY_GUID this field is the buddy's GUID.
+
+h4. Data flags
+
+|SCRIPT_FLAG_BUDDY_AS_TARGET|0x01||
+|SCRIPT_FLAG_REVERSE_DIRECTION|0x02||
+|SCRIPT_FLAG_SOURCE_TARGETS_SELF|0x04||
+|SCRIPT_FLAG_COMMAND_ADDITIONAL|0x08|Only for some commands possible.|
+|SCRIPT_FLAG_BUDDY_BY_GUID|0x10|Interpret "search_radius":DBScripts#search_radius as buddy's GUID.|
+|SCRIPT_FLAG_BUDDY_IS_PET|0x20|Do not search for an npc, but for a pet.|
 
 h4. OtherFields
 
@@ -352,4 +362,3 @@ _Side note: Source or target must be player. Only available on wotlk version._
 
 |!(data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL)|Terminate when condition is true.|
 |data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL|Terminate when condition is false.|
-
