@@ -60,7 +60,7 @@ h4. type
 |*Type*|*Description*|*Details*|
 |0|CHAT_TYPE_SAY|'white' text|
 |1|CHAT_TYPE_YELL|'red' text|
-|2|CHAT_TYPE_TEXT_EMOTE|'yellow' emote-text (no <Name>... )|
+|2|CHAT_TYPE_TEXT_EMOTE|'brown' small emote-text|
 |3|CHAT_TYPE_BOSS_EMOTE|'big yellow' emote-text displayed in the center of the screen|
 |4|CHAT_TYPE_WHISPER| whisper, needs a target|
 |5|CHAT_TYPE_BOSS_WHISPER|whipser, needs a target|
