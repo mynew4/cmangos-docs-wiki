@@ -153,157 +153,175 @@ h4. Data flags
 
 h4. OtherFields
 
+
 Depending on what command was used, the meaning and use for the following fields varies.
 
 * *SCRIPT&#95;COMMAND&#95;TALK = 0*
 ** All information of the text (type, language, associated sound, emote) is stored in the "db_script_string.":db_script_string table
-** dataint - 4: The text ID that the creature will say. See "db_script_string.":db_script_string. ID must be between 2000000000 and 2000010000.(In case more then only dataint is filled the text's will be used randomly.)
+** dataint - 4: The text ID that the creature will say. See "db_script_string.":db_script_string. ID must be between 2000000000 and 2000010000. In case more then only dataint field is filled the texts will be used randomly.
+
 
 * *SCRIPT&#95;COMMAND&#95;EMOTE = 1*
 ** datalong: The emote ID to play.
-** datalong2: creature entry
-** datalong3: radius
-** data&#95;flags: flag&#95;target&#95;as&#95;source = 0x01
+** Resulting source must be a unit.
+
 
 * *SCRIPT&#95;COMMAND&#95;FIELD&#95;SET = 2*
 ** datalong: Index of the field.
 ** datalong2: Value to place at the index.
 
+
 * *SCRIPT&#95;COMMAND&#95;MOVE&#95;TO = 3*
-** datalong2: Length of the motion.
+** datalong2: Length of the motion. This calculates as travel_speed*100. Use 0 for creature default movement.
+** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will teleport the creature to the given location.
 ** x: X position to move to.
 ** y: Y position to move to.
 ** z: Z position to move to.
 ** o: Orientation to face.
+** Resulting source must be a creature.
+_Side note: If position is very near to current position, or x=y=z=0, then only orientation is changed._
+
 
 * *SCRIPT&#95;COMMAND&#95;FLAG&#95;SET = 4*
 ** datalong: Field index to be set.
 ** datalong2: Flag bit(s) to set.
 
+
 * *SCRIPT&#95;COMMAND&#95;FLAG&#95;REMOVE = 5*
 ** datalong: Field index to be unset.
 ** datalong2: Flag bit(s) to unset.
 
+
 * *SCRIPT&#95;COMMAND&#95;TELEPORT&#95;TO = 6*
-** datalong: Target Map ID. See "Map.dbc":Map.dbc
+** datalong: Target Map ID. See "Map.dbc":Map.dbc.
 ** x: Teleport target x coordinate.
 ** y: Teleport target y coordinate.
 ** z: Teleport target z coordinate.
 ** o: Teleport target orientation.
+** The source or target must be a player.
+
 
 * *SCRIPT&#95;COMMAND&#95;QUEST&#95;EXPLORED = 7*
-** datalong: Quest ID whose external status should be satisfied
-** datalong2: Distance away from the NPC/object that the player can be and have the script still take effect
+** datalong: "Quest ID":quest_template#entry whose external status should be satisfied.
+** datalong2: Distance away from the NPC/object that the player can be and have the script still take effect.
+** The source or target must be a player.
+
 
 * *SCRIPT&#95;COMMAND&#95;KILL&#95;CREDIT = 8*
-** datalong: Kill credit entry for quest (entry in quest&#95;template.ReqCreatureOrGOId)
-** datalong2: 0=personal credit, 1=group credit
+** datalong: Kill credit entry for quest (entry in quest&#95;template.ReqCreatureOrGOId). If set to 0 then the creature source or target will be used.
+** datalong2: Can be 0 = personal credit or 1 = group credit.
+** The source or target must be a player.
+
 
 * *SCRIPT&#95;COMMAND&#95;RESPAWN&#95;GAMEOBJECT = 9*
-** datalong: Guid of the gameobject to respawn. See "gameobject.guid":gameobject#guid.
-** datalong2: Despawn time in seconds. If the value is &lt; 5 seconds: 5 is used instead.
+** datalong: Guid of the gameobject to respawn. See "gameobject.guid":gameobject#guid.  Can be skipped for buddy.
+** datalong2: Despawn time in seconds. If the value is &lt; 5 seconds then 5 seconds is used instead.
+
 
 * *SCRIPT&#95;COMMAND&#95;TEMP&#95;SUMMON&#95;CREATURE = 10*
 ** datalong: Entry of the summoned creature from "creature&#95;template.entry":creature_template#entry.
-** datalong2: Despawn time in ms.
-** data&#95;flags: 0x01 = summon as active object
+** datalong2: Despawn time (MILLIESECONDS). If set to 0 then the creature will be despawned only when killed.
+** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will summon the creature as active object.
 ** x: Summon target x coordinate.
 ** y: Summon target y coordinate.
 ** z: Summon target z coordinate.
 ** o: Summon target orientation.
 
+
 * *SCRIPT&#95;COMMAND&#95;OPEN&#95;DOOR = 11*
-** datalong: Guid of the activated door. It's a "gameobject.guid":gameobject#guid.
-** datalong2: Delay before closing again the door. If the value is &lt; 5 seconds: 5 is used instead.
+** datalong: Guid of the activated door. It's a "gameobject.guid":gameobject#guid. Can be skipped for buddy.
+** datalong2: Delay before closing again the door. If the value is &lt; 15 seconds then 15 seconds is used instead.
+
 
 * *SCRIPT&#95;COMMAND&#95;CLOSE&#95;DOOR = 12*
-** datalong: Guid of the activated door. It's a "gameobject.guid":gameobject#guid.
-** datalong2: Delay before opening again the door. If the value is &lt; 5 seconds: 5 is used instead.
+** datalong: Guid of the activated door. It's a "gameobject.guid":gameobject#guid.  Can be skipped for buddy.
+** datalong2: Delay before opening again the door. If the value is &lt; 15 seconds then 15 is used instead.
+
 
 * *SCRIPT&#95;COMMAND&#95;ACTIVATE&#95;OBJECT = 13*
-** The source must be a unit and the target a game object.
+** The source must be a unit and the target a gameobject.
+
 
 * *SCRIPT&#95;COMMAND&#95;REMOVE&#95;AURA = 14*
-** datalong: Spell ID.
-** datalong2: If value &gt; 0, then cast on the source; otherwise cast on the target.
+** datalong: "Spell ID":Spell.dbc#Content.
+
 
 * *SCRIPT&#95;COMMAND&#95;CAST&#95;SPELL = 15*
-** datalong: Spell ID.
-** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL: cast triggered
+** datalong: "Spell ID":Spell.dbc#Content.
+** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will make the cast triggered.
+
 
 * *SCRIPT&#95;COMMAND&#95;PLAY&#95;SOUND = 16*
 ** datalong: "Sound ID":SoundEntries.dbc#Content.
-** datalong2: bitmask: 0/1=anyone/target, 0/2=with distance dependent, so 1&#124;2 = 3 is target with distance dependent.
+** datalong2: bitmask: 0/1=anyone/target, 0/2=with distance dependent, 0/4=map wide, 0/8=zone wide; 1&#124;2 = 3 is target with distance dependent.
+** Source may be any object. Target may be any player.
 
-_Side note: Source may be any object/npc. Target may be any player._
 
 * *SCRIPT&#95;COMMAND&#95;CREATE&#95;ITEM = 17*
-** datalong: item entry.
-** datalong2: amount.
+** datalong: "Item entry":item_template#Content.
+** datalong2: Amount.
+** Source or target must be a player.
 
-_Side note: Source or target have to be a player._
 
 * *SCRIPT&#95;COMMAND&#95;DESPAWN&#95;SELF = 18*
-** datalong: despawn delay.
+** datalong: Despawn delay (MILLIESECONDS).
+** Resulting source must be a creature.
 
-_Side note: Source or target must be creature._
 
 * *SCRIPT&#95;COMMAND&#95;PLAY&#95;MOVIE = 19*
-** datalong: "movie&#95;id":Movie.dbc#Content.
+** datalong: Plays a "movie&#95;id":Movie.dbc#Content to the target player.
+** Target must be a player.
+
 
 * *SCRIPT&#95;COMMAND&#95;MOVEMENT = 20*
-** datalong: MovementType (0:idle, 1:random or 2:waypoint)
-** datalong2: creature entry (searching for a buddy, closest to source)
-** datalong3: creature search radius
+** datalong: Change the movement type of a creature. Possible values: 0 = idle, 1 = random, 2 = waypoint.
+** datalong2: Wander distance (for random movement only).
+** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will set random movement around the current position.
+** Resulting source must be a creature.
+
 
 * *SCRIPT&#95;COMMAND&#95;SET&#95;ACTIVEOBJECT = 21*
-** datalong: 0=off, 1=on
-** datalong2: creature entry
-** datalong3: search radius
+** datalong: Can be defined as 1 = On or 0 = Off. Set a creature as active object, depending on the datalong value.
+** Resulting source must be creature.
+
 
 * *SCRIPT&#95;COMMAND&#95;SET&#95;FACTION = 22*
-** datalong: factionId OR 0 to restore original faction from creature&#95;template
-** datalong2: creature entry
-** datalong3: search radius
-** data&#95;flags:
-
+** datalong: "Faction Id":FactionTemplate.dbc. If set to 0 will restore original faction from creature&#95;template.
+** Resulting source must be a creature.
+** datalong2: Temporary faction flags
 
 |TEMPFACTION&#95;NONE|0x00|When no flag is used in temporary faction change, faction will be persistent. It will then require manual change back to default/another faction when changed once.|
-|TEMPFACTION&#95;RESTORE&#95;RESPAWN|0x01|Default faction will be restored at respawn|
-|TEMPFACTION&#95;RESTORE&#95;COMBAT&#95;STOP|0x02|at CombatStop() (happens at creature death, at evade or custom scripte among others)|
-|TEMPFACTION&#95;RESTORE&#95;REACH&#95;HOME|0x04|... at reaching home in home movement (evade), if not already done at CombatStop()|
+|TEMPFACTION&#95;RESTORE&#95;RESPAWN|0x01|Default faction will be restored at respawn.|
+|TEMPFACTION&#95;RESTORE&#95;COMBAT&#95;STOP|0x02|at CombatStop() (happens at creature death, at evade or custom scripte among others).|
+|TEMPFACTION&#95;RESTORE&#95;REACH&#95;HOME|0x04|... at reaching home in home movement (evade), if not already done at CombatStop().|
+|TEMPFACTION&#95;TOGGLE&#95;NON&#95;ATTACKABLE|0x08|Remove UNIT_FLAG_NON_ATTACKABLE(0x02) when faction is changed (reapply when temp-faction is removed).|
+|TEMPFACTION&#95;TOGGLE&#95;OOC&#95;NOT&#95;ATTACK|0x12|Remove UNIT_FLAG_OOC_NOT_ATTACKABLE(0x100) when faction is changed (reapply when temp-faction is removed.)|
+|TEMPFACTION&#95;TOGGLE&#95;PASSIVE|0x20|Remove UNIT_FLAG_PASSIVE(0x200).|
 
 
 * *SCRIPT&#95;COMMAND&#95;MORPH&#95;TO&#95;ENTRY&#95;OR&#95;MODEL = 23*
-** datalong: creature entry/modelid (depend on data&#95;flags) OR 0 to demorph
-** datalong2: creature entry
-** datalong3: search radius
-** data&#95;flags: 0x01 to use datalong value as modelid explicit
+** datalong: Creature "entry":creature_template#entry or "model_id":creature_template#modelid (depending on data&#95;flags). If set to 0 then the creature will demorph.
+** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL to use datalong value as model_id explicit.
+** Resulting source must be a creature.
+
 
 * *SCRIPT&#95;COMMAND&#95;MOUNT&#95;TO&#95;ENTRY&#95;OR&#95;MODEL = 24*
-** datalong: creature entry/modelid (depend on data&#95;flags) OR 0 to dismount
-** datalong2: creature entry
-** datalong3: search radius
-** data&#95;flags: 0x08 to use datalong value as modelid explicit
+** datalong: Creature "entry":creature_template#entry or "model_id":creature_template#modelid (depending on data&#95;flags). If set to 0 then the creature will dismount.
+** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL to use datalong value as model_id explicit.
+** Resulting source must be creature.
+
 
 * *SCRIPT&#95;COMMAND&#95;SET&#95;RUN = 25*
-** datalong: 0=off, 1=on
-** datalong2: creature entry
-** datalong3: search radius
+** datalong: Set run to 1 = On or 0 = Off
+** Resulting source must be a creature.
+
 
 * *SCRIPT&#95;COMMAND&#95;ATTACK&#95;START = 26*
-** datalong2:creature&#95;entry
-** datalong3:radius
-** data&#95;flags:
-
-
-|flag&#95;original&#95;source&#95;as&#95;target|0x02|
-|flag&#95;buddy&#95;as&#95;target|0x04|
-
+** Resulting source must be a creature and resulting target must be a unit.
 
 * *SCRIPT&#95;COMMAND&#95;GO&#95;LOCK&#95;STATE = 27*
+** Resulting source must be gameobject.
 ** datalong:
-
 
 |flag&#95;go&#95;lock|0x01|
 |flag&#95;go&#95;unlock|0x02|
@@ -311,54 +329,51 @@ _Side note: Source or target must be creature._
 |flag&#95;go&#95;interact|0x08|
 
 
-* ** datalong2: go entry
-** datalong3: go search radius
-
 * *SCRIPT&#95;COMMAND&#95;STAND&#95;STATE = 28*
 ** datalong: stand state (enum UnitStandStateType)
-** datalong2: creature entry (searching for a buddy, closest to source)
-** datalong3: creature search radius
-** data&#95;flags:flag&#95;target&#95;as&#95;source = 0x01
+** Resulting source must be a creature.
+
 
 * *SCRIPT&#95;COMMAND&#95;MODIFY&#95;NPC&#95;FLAGS = 29*
-** datalong:NPCFlags
-** datalong2:creature entry
-** datalong3:search radius
-** data&#95;flags:
+** Resulting source must be a creature.
+** datalong: NPC Flags
+** datalong2:
 
 |toggle|0x00|
 |add|0x01|
 |remove|0x02|
 
+
 * *SCRIPT&#95;COMMAND&#95;SEND&#95;TAXY&#95;PATH = 30*
 ** datalong: "Taxi path id":TaxiPath.dbc#Content.
+** Source or target must be a player.
 
-_Side note: Source or target must be player._
 
 * *SCRIPT&#95;COMMAND&#95;TERMINATE&#95;SCRIPT = 31*
 ** datalong: "Creature entry":creature_template#entry if provided.
 ** datalong2: Search distance.
+** dataint: Change of "waittime":creature_movement#waittime (MILLIESECONDS) of a current waypoint movement type. Negative values will decrease time.
 ** data&#95;flags:
 
-|!(data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL)|If creature is not found or not alive, terminate script.|
-|data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL|If creature is found and alive, terminate script.|
+|!(data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL)|If creature is not found or not alive, terminate script.|
+|data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL|If creature is found and alive, terminate script.|
 
-** dataint: Change of "waittime":creature_movement#waittime (MILLIESECONDS) of a current waypoint movement type. Negative values will decrease time.
 
 * *SCRIPT&#95;COMMAND&#95;PAUSE&#95;WAYPOINTS = 32*
 ** datalong: 1 = Pause or 0 = Unpause waypoint movement.
+** Resulting source or target must be a creature.
 
-_Side note: Resulting source or target must be creature._
 
 * *SCRIPT&#95;COMMAND&#95;XP&#95;USER = 33*
 ** datalong: Set experience gain to 1 = On or 0 = Off
+** Source or target must be a player.
+_Side note: Only available on wotlk version._
 
-_Side note: Source or target must be player. Only available on wotlk version._
 
 * *SCRIPT&#95;COMMAND&#95;TERMINATE&#95;CONDITION = 34*
 ** datalong: "Condition entry":conditions#condition_entry to check.
 ** datalong2: "Quest entry":quest_template#entry to mark as failed for the player (if provided).
 ** data&#95;flags:
 
-|!(data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL)|Terminate when condition is true.|
-|data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL|Terminate when condition is false.|
+|!(data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL)|Terminate when condition is true.|
+|data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL|Terminate when condition is false.|
