@@ -316,7 +316,40 @@ _Side note: Source or target must be creature._
 ** datalong3:search radius
 ** data&#95;flags:
 
-
 |toggle|0x00|
 |add|0x01|
 |remove|0x02|
+
+* *SCRIPT&#95;COMMAND&#95;SEND&#95;TAXY&#95;PATH = 30*
+** datalong: "Taxi path id":TaxiPath.dbc#Content.
+
+_Side note: Source or target must be player._
+
+* *SCRIPT&#95;COMMAND&#95;TERMINATE&#95;SCRIPT = 31*
+** datalong: "Creature entry":creature_template#entry if provided.
+** datalong2: Search distance.
+** data&#95;flags:
+
+|!(data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL)|If creature is not found or not alive, terminate script.|
+|data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL|If creature is found and alive, terminate script.|
+
+** dataint: Change of "waittime":creature_movement#waittime (MILLIESECONDS) of a current waypoint movement type. Negative values will decrease time.
+
+* *SCRIPT&#95;COMMAND&#95;PAUSE&#95;WAYPOINTS = 32*
+** datalong: 1 = Pause or 0 = Unpause waypoint movement.
+
+_Side note: Resulting source or target must be creature._
+
+* *SCRIPT&#95;COMMAND&#95;XP&#95;USER = 33*
+** datalong: Set experience gain to 1 = On or 0 = Off
+
+_Side note: Source or target must be player. Only available on wotlk version._
+
+* *SCRIPT&#95;COMMAND&#95;TERMINATE&#95;CONDITION = 34*
+** datalong: "Condition entry":conditions#condition_entry to check.
+** datalong2: "Quest entry":quest_template#entry to mark as failed for the player (if provided).
+** data&#95;flags:
+
+|!(data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL)|Terminate when condition is true.|
+|data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL|Terminate when condition is false.|
+
