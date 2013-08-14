@@ -48,8 +48,6 @@ h3. This is the list of tables in the regular 'mangos' database
 
 * "creature_movement":creature_movement
 
-* "creature_movement_scripts":creature_movement_scripts
-
 * "creature_movement_template":creature_movement_template
 
 * "creature_onkill_reputation":creature_onkill_reputation
@@ -121,8 +119,6 @@ h3. This is the list of tables in the regular 'mangos' database
 * "gameobject_loot_template":gameobject_loot_template (Reloadable)
 
 * "gameobject_questrelation":gameobject_questrelation (Reloadable)
-
-* "gameobject_scripts":gameobject_scripts (Reloadable)
 
 * "gameobject_template":gameobject_template
 
@@ -268,8 +264,12 @@ h3. This is the list of tables in the regular 'mangos' database
 
 * "spell_target_position":spell_target_position (Reloadable)
 
+* "spell_template":spell_template
+
 * "spell_threat":spell_threat (Reloadable) (CMaNGOS)
 
 * "transports":transports
 
 * "vehicle_accessory":vehicle_accessory
+
+* "world_template":world_template
