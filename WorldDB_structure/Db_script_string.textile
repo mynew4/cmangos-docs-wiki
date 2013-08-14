@@ -18,6 +18,11 @@ h3. Structure
 |"content_loc6":Db_script_string#content_loc|text|YES||NULL||
 |"content_loc7":Db_script_string#content_loc|text|YES||NULL||
 |"content_loc8":Db_script_string#content_loc|text|YES||NULL||
+|"sound":Db_script_string#sound|mediumint|NO||0||
+|"type":Db_script_string#type|tinyint|NO||0||
+|"language":Db_script_string#language|tinyint|NO||0||
+|"emote":Db_script_string#emote|smallint|NO||0||
+|"comment":Db_script_string#comment|text|YES||NULL||
 
 
 h3. Description of the fields
@@ -46,3 +51,29 @@ The translation in another language depending on the locale ID of that language.
 |6|Spanish (esES) / Mexico (esMX)|
 |7|Russian (ruRU)|
 
+h4. sound
+
+"Sound ID":SoundEntries.dbc#Content.
+
+h4. type
+
+|*Type*|*Description*|*Details*|
+|0|CHAT_TYPE_SAY|'white' text|
+|1|CHAT_TYPE_YELL|'red' text|
+|2|CHAT_TYPE_TEXT_EMOTE|'yellow' emote-text (no <Name>... )|
+|3|CHAT_TYPE_BOSS_EMOTE|'big yellow' emote-text displayed in the center of the screen|
+|4|CHAT_TYPE_WHISPER| whisper, needs a target|
+|5|CHAT_TYPE_BOSS_WHISPER|whipser, needs a target|
+|6|CHAT_TYPE_ZONE_YELL|'red' text, displayed to everyone in the zone|
+
+h4. language
+
+"Language ID":Languages.dbc#Content.
+
+h4. emote
+
+Emote ID to play.
+
+h4. comment
+
+Description.
