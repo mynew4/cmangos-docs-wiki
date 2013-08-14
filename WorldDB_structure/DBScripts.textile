@@ -19,6 +19,8 @@ This table format is used for different tables to control possible scripts activ
 
 * *`dbscripts&#95;on&#95;creature&#95;movement:* Holds scripts activated while a npc is moving. (Source: creature)
 
+* *`dbscripts&#95;on&#95;creature&#95;death:* Holds scripts activated when a creature dies. (Source: creature)
+
 * *`dbscripts&#95;on&#95;event:* Holds scripts activated whenever an event is activated, be it by an object or as the spell effect SPELL&#95;EFFECT&#95;SEND&#95;EVENT (61).
 
 * *`dbscripts&#95;on&#95;gossip:* Holds scripts activated on gossip&#95;menu&#95;option - use.
@@ -53,10 +55,12 @@ h3. Description of the fields
 h4. id
 
 For *gameobject&#95;scripts*, it is the guid of the button/lever. See "gameobject.guid":gameobject#guid.
+For *gameobject_template&#95;scripts*, it is the entry of the button/lever. See "gameobject_template.entry":gameobject_template#entry.
 For *spell&#95;scripts*, it is the spell ID. See Spell.dbc
 For *quest&#95;&#42;&#95;scripts*, it is the ID that is used in "StartScript":quest_template#StartScript or "CompleteScript":quest_template#CompleteScript in the quest template definition.
 For *event&#95;scripts*, it is the event ID. There doesn't exist currently a full list of events. In any case, the event IDs are taken directly from gameobject WDB data or spell effect data. If both a gameobject and a spell activate the same event, the IDs will match.
-For *creature&#95;movement&#95;script*, it is the "script id":Creature_movement#script_id of the waypoint.The PROPER formatting for the ID field is as follows: Creature&#95;ID + 2-Digit Script ID (Starting at 01). Example: c.2386 has few movement&#95;scripts, so 2386+01 = 238601 ... 23602 ..etc
+For *creature&#95;movement&#95;scripts*, it is the "script id":Creature_movement#script_id of the waypoint.The PROPER formatting for the ID field is as follows: Creature&#95;ID + 2-Digit Script ID (Starting at 01). Example: c.2386 has few movement&#95;scripts, so 2386+01 = 238601 ... 23602 ..etc
+For *creature&#95;death&#95;scripts*, it is the entry of the creature. See "creature_template.entry":creature_template#entry.
 For *gossip&#95;scripts*, it is the "action script id":Gossip_menu_option#action_script_id of the gossip option.
 
 h4. delay
@@ -71,7 +75,7 @@ The following commands can be used:
 
 |_. Command|_. Name|_. Description|
 |0|TALK|Creature say/whisper/yell/textemote.|
-|1|EMOTE|Plays emote on a player/npc.|
+|1|EMOTE|Plays emote on a player/creature.|
 |2|FIELD&#95;SET|Change the value at an index for the player.|
 |3|MOVE&#95;TO|Relocate creature to a destination|
 |4|FLAG&#95;SET|Turns on bits on a flag field at an index for the player.|
@@ -83,23 +87,28 @@ The following commands can be used:
 |10|TEMP&#95;SUMMON&#95;CREATURE|Temporarily summon a creature.|
 |11|OPEN&#95;DOOR|Opens a door gameobject (type == 0).|
 |12|CLOSE&#95;DOOR|Closes a door gameobject (type == 0).|
-|13|ACTIVATE&#95;OBJECT|Activates an object.|
+|13|ACTIVATE&#95;OBJECT|Activate (use) a gameobject.|
 |14|REMOVE&#95;AURA|Removes an aura due to a spell.|
 |15|CAST&#95;SPELL|Casts a spell.|
-|16|PLAY&#95;SOUND|Play's a sound.|
+|16|PLAY&#95;SOUND|Plays a sound.|
 |17|CREATE&#95;ITEM|Creates an item.|
-|18|DESPAWN&#95;SELF|Despawn's a n npc with some delay.|
-|19|PLAY&#95;MOVIE|Target can only be a player.|
-|20|MOVEMENT|Makes a npc move towards a different npc.|
-|21|SET&#95;ACTIVEOBJECT||
-|22|SET&#95;FACTION|Changes faction.|
-|23|MORPH&#95;TO&#95;ENTRY&#95;OR&#95;MODEL|Morphes|
-|24|MOUNT&#95;TO&#95;ENTRY&#95;OR&#95;MODEL|Mounts up.|
-|25|COMMAND&#95;SET&#95;RUN|Makes run.|
-|26|COMMAND&#95;ATTACK&#95;START|Makes a creature attack things within a radius.|
-|27|COMMAND&#95;GO&#95;LOCK&#95;STATE||
-|28|COMMAND&#95;STAND&#95;STATE||
-|29|COMMAND&#95;MODIFY&#95;NPC&#95;FLAG||
+|18|DESPAWN&#95;SELF|Despawns a creature with some delay.|
+|19|PLAY&#95;MOVIE|Plays a movie to the target player.|
+|20|MOVEMENT|Change the movement type of a creature (idle, random, waypoint).|
+|21|SET&#95;ACTIVEOBJECT|Set a creature as active object.|
+|22|SET&#95;FACTION|Changes the faction of a creature.|
+|23|MORPH&#95;TO&#95;ENTRY&#95;OR&#95;MODEL|Morphs a creature go a given model.|
+|24|MOUNT&#95;TO&#95;ENTRY&#95;OR&#95;MODEL|Mounts or dismounts a creature to mount entry or model.|
+|25|SET&#95;RUN|Makes a creature start or stop running.|
+|26|ATTACK&#95;START|Makes a creature attack things within a radius.|
+|27|GO&#95;LOCK&#95;STATE|Change the GO lock or interact flags.|
+|28|STAND&#95;STATE|Change the stand state of a creature.|
+|29|MODIFY&#95;NPC&#95;FLAG|Change NPC flags of a creature.|
+|30|SEND&#95;TAXI&#95;PATH|Sends a player on a give taxi path.|
+|31|TERMINATE&#95;SCRIPT|Stop script execution if a given creature entry meets conditions.|
+|32|PAUSE&#95;WAYPOINTS|Pause or unpause waypoint movement.|
+|33|XP&#95;USER|Enable or disable experience gain for a player.|
+|34|TERMINATE&#95;CONDITION|Stop script execution when a give condition is met.|
 
 
 h4. Buddy Concept
@@ -311,4 +320,3 @@ _Side note: Source or target must be creature._
 |toggle|0x00|
 |add|0x01|
 |remove|0x02|
-
