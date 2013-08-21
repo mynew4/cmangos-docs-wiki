@@ -230,7 +230,7 @@ Now you should have the following subfolders:
 
 - mangos (containing the sources of CMaNGOS and optionally ScriptDev2)
 - acid (containing the content of ACID, this is optional)
-- unifieddb OR ytdbase OR psmdb_wotlk containing the content of your database-provider
+- unifieddb OR ytdbase OR psmdb_wotlk OR tbc-db OR classicdb containing the content of your database-provider
 
 For windows we suggest creating an additional "run" folder, on *nix this can be useful if you don't want to install to /opt or so
 
@@ -246,6 +246,7 @@ Compiling CMaNGOS (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your C:\Mangos\mangos\win folder
 * Open the "sln" file that fits your version of Visual C++
+  - mangosdVC110.sln for Visual C++ 2012
   - mangosdVC100.sln for Visual C++ 2010
   - mangosdVC90.sln for Visual C++ 2008
 * Wait for Visual C++ to finish loading.
@@ -262,6 +263,7 @@ Compiling ScriptDev2 (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your C:\Mangos\mangos\src\bindings\ScriptDev2 folder
 * Open the "sln" file that fits your version of Visual C++
+  - scriptVC110.sln for Visual C++ 2012
   - scriptVC100.sln for Visual C++ 2010
   - scriptVC90.sln for Visual C++ 2008
 * Wait for Visual C++ to finish loading.
