@@ -67,6 +67,9 @@ h4. delay
 
 Delay in seconds before this current step of the script activates. 0 = instant.
 
+NOTE: Delay is Cumulative From Script to Script with same ID.
+Example: Script 1 Has 5 seconds delay and then if you want script 2 to trigger 3 seconds later you would use delay value 8 for script 2 in the sequence.
+
 h4. command
 
 The type of action performed by the script after "delay":#delay seconds have passed. The value of this field affects what other fields also need to be set.
