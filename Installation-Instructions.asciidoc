@@ -418,11 +418,19 @@ With the default configuration, you only need to change CORE_PATH to:
 CORE_PATH="/c/Mangos/mangos"
 (for *nix ~/Mangos/mangos)
 -----------------------
+*
+You may actually have to set ++CORE_PATH="../../mangos"++ (assuming default paths from this guide), if the tilde is not properly resolved into your home folder path, causing InstallFullUDB.sh to complain about not finding "~/Mangos/mangos". Tested on openSUSE 11.3.
 
 * Now the helper tool is configured, and you only need to run the helper script, whenever you want to set your world database to a clear state!
 * ++InstallFullUDB.sh++
 +
-And check the output if the database could be set up correctly
+And check the output if the database could be set up correctly. If the helper script complains about not finding the config file, just open InstallFullUDB.sh in a text editor and set 
+-----------------
+CONFIG_FILE="./InstallFullUDB.config
+-----------------
+*
++
+You can now run the script again, and it should start filling your world database.
 
 * ++cd ../..++
 
