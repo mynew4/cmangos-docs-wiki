@@ -35,8 +35,9 @@ The model ID of the mount to be used to make the creature appear mounted. The va
 h4. b2&#95;0&#95;sheath
 
 SheathState.
-0 = Weapon Sheathed by Default
-1 = Weapon NOT Sheathed by Default
+0 = All Weapons Sheathed by Default
+1 = Melee Weapon NOT Sheathed by Default (Melee Weapon In Hand)
+2 = Ranged Weapon NOT Sheathed by Default (Ranged Weapon In Hand)
 
 h4. b2&#95;1&#95;pvp&#95;state
 
