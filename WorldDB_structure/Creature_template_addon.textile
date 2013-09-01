@@ -36,6 +36,8 @@ h4. bytes1
 
 NO CLUE WHAT THIS DOES
 
+h4. b2_0_sheath
+
 SheathState.
 0 = All Weapons Sheathed by Default
 1 = Melee Weapon NOT Sheathed by Default (Melee Weapon In Hand)
