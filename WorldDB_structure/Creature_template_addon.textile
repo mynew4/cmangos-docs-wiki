@@ -32,7 +32,9 @@ h4. mount
 
 The model ID of the mount to be used to make the creature appear mounted. The value here overrides the value for the creature's unit field UNIT&#95;FIELD&#95;MOUNTDISPLAYID. List of known values and what their visual effects on the creature
 
-h4. b2&#95;0&#95;sheath
+h4. bytes1
+
+NO CLUE WHAT THIS DOES
 
 SheathState.
 0 = All Weapons Sheathed by Default
