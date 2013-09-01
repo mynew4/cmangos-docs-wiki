@@ -46,13 +46,8 @@ h4. emote
 
 Emote ID that the creature should continually perform.
 
-List of often used emote IDs and what they do
-
-* 65 = Makes the creature look dead by lying on the ground
-
-untested List from Mangos Source EMOTE&#95;STATE&#95;DANCE = 10, EMOTE&#95;STATE&#95;SLEEP = 12, EMOTE&#95;STATE&#95;SIT = 13, EMOTE&#95;STATE&#95;STAND = 26, EMOTE&#95;STATE&#95;WORK = 28, EMOTE&#95;STATE&#95;STUN = 64, EMOTE&#95;STATE&#95;DEAD = 65, EMOTE&#95;STATE&#95;KNEEL = 68, EMOTE&#95;ONESHOT&#95;WAVE&#95;NOSHEATHE = 70, EMOTE&#95;ONESHOT&#95;CHEER&#95;NOSHEATHE = 71, EMOTE&#95;ONESHOT&#95;EAT&#95;NOSHEATHE = 92, EMOTE&#95;STATE&#95;WORK&#95;NOSHEATHE = 173, EMOTE&#95;STATE&#95;FISHING = 379, EMOTE&#95;ONESHOT&#95;FISHING = 380, EMOTE&#95;ONESHOT&#95;LOOT = 381, EMOTE&#95;STATE&#95;WHIRLWIND = 382, EMOTE&#95;STATE&#95;LAUGH = 392, EMOTE&#95;STATE&#95;CANNIBALIZE = 398, EMOTE&#95;STATE&#95;DANCESPECIAL = 400, EMOTE&#95;STATE&#95;EXCLAIM = 412, EMOTE&#95;STATE&#95;SIT&#95;CHAIR&#95;MED = 415
-
-List of often used emote IDs and what they do can be found "here":Emote#id.
+COMPLETE LIST OF EMOTES CAN BE FOUND IN: Emotes.dbc
+(They Are Different Between Client Versions)
 
 h4. moveflags
 
