@@ -274,7 +274,7 @@ h4. rangeattacktime
 
 h4. unit&#95;class
 
-The class of substance. Only 4 classes available to creatures.
+The NPC Class. There Are Only 4 classes available to creatures.
 
 |_. ID|_. Name|
 |CLASS&#95;WARRIOR|1|
@@ -282,6 +282,8 @@ The class of substance. Only 4 classes available to creatures.
 |CLASS&#95;ROGUE|4|
 |CLASS&#95;MAGE|8|
 
+This Value is Contained in Sniff Data: UNIT_FIELD_BYTES_0 located in SMSG_UPDATE_OBJECT
+It is a Critical Field in Determining Class Level Stats For the NPC
 
 h4. unit&#95;flags
 
