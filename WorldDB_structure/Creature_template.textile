@@ -389,9 +389,13 @@ h4. minrangedmg
 
 Minimum ranged damage the creature inflicts.
 
+NOTE: This is Damage Inflicted From RANGED WEAPON ATTACK ONLY (Cross-Bow Arrows, Knives, Thrown Axes, ect)
+
 h4. maxrangedmg
 
 Maximum range damage the creature inflicts.
+
+NOTE: This is Damage Inflicted From RANGED WEAPON ATTACK ONLY (Cross-Bow Arrows, Knives, Thrown Axes, ect)
 
 h4. rangedattackpower
 
