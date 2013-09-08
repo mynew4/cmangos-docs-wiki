@@ -2,6 +2,16 @@ Back to "world database":mangosdb_struct list of tables.
 
 h2. The `npc&#95;gossip` table
 
+
+***
+
+*THIS TABLE IS OUTDATED. DO NOT USE*
+*It should have been removed around 2009, but for some bad reasons it wasn't..*
+
+Use table "gossip_menu":gossip_menu instead.
+
+***
+
 This table is the link between NPCs and gossip text. When you click on an NPC that says something more than just &quot;Greetings &quot;, this is the table that links that NPC to the text.
 
 h3. Structure
