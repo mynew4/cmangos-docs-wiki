@@ -20,15 +20,6 @@ h3. Structure
 |"box_coded":Gossip_menu_option#box_coded|tinyint(3)|unsigned||NO|0|
 |"box_money":Gossip_menu_option#box_money|int(11)|unsigned||NO|0|
 |"box_text":Gossip_menu_option#box_text|text|signed||YES|NULL|
-|"cond_1":Gossip_menu_option#cond_1|tinyint(3)|unsigned||NO|0|
-|"cond_1_val_1":Gossip_menu_option#cond_1_val_1|mediumint(8)|unsigned||NO|0|
-|"cond_1_val_2":Gossip_menu_option#cond_1_val_2|mediumint(8)|unsigned||NO|0|
-|"cond_2":Gossip_menu_option#cond_2|tinyint(3)|unsigned||NO|0|
-|"cond_2_val_1":Gossip_menu_option#cond_2_val_1|mediumint(8)|unsigned||NO|0|
-|"cond_2_val_2":Gossip_menu_option#cond_2_val_2|mediumint(8)|unsigned||NO|0|
-|"cond_3":Gossip_menu_option#cond_3|tinyint(3)|unsigned||NO|0|
-|"cond_3_val_1":Gossip_menu_option#cond_3_val_1|mediumint(8)|unsigned||NO|0|
-|"cond_3_val_2":Gossip_menu_option#cond_3_val_2|mediumint(8)|unsigned||NO|0|
 |"condition_id":Gossip_menu_option#condition_id|mediumint(8)|unsigned||NO|0|
 
 
@@ -121,4 +112,4 @@ Confirmation text before activating the gossip.
 
 h4. condition&#95;id
 
-"condition&#95;id":conditions
+If set the option will only be displayed if the condition linked to "condition&#95;id":conditions fits
