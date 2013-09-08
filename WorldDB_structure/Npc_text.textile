@@ -2,15 +2,6 @@ Back to "world database":mangosdb_struct list of tables.
 
 h2. The `npc&#95;text` table
 
-
-***
-
-*THIS TABLE IS OUTDATED. DO NOT USE*
-*It should have been removed around 2009, but for some bad reasons it wasn't..*
-
-***
-
-
 This table contains the texts that are used for gossip. More research needs to be done on this table.
 
 h3. Structure
