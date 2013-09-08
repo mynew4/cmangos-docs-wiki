@@ -4,24 +4,13 @@ h2. The `gossip&#95;menu` table
 
 This table is used for displaying gossip when a player talks to an NPC.
 
-
 h3. Structure
-
 
 |*Field*|*Type*|*Attributes*|*Key*|*Null*|*Default*|
 |"entry":Gossip_menu#entry|smallint(6)|unsigned|PRI|NO|0|
 |"text_id":Gossip_menu#text_id|mediumint(8)|unsigned|PRI|NO|0|
-|"cond_1":Gossip_menu#cond_1|tinyint(3)|unsigned||NO|0|
-|"cond_1_val_1":Gossip_menu#cond_1_val_1|mediumint(8)|unsigned||NO|0|
-|"cond_1_val_2":Gossip_menu#cond_1_val_2|mediumint(8)|unsigned||NO|0|
-|"cond_2":Gossip_menu#cond_2|tinyint(3)|unsigned||NO|0|
-|"cond_2_val_1":Gossip_menu#cond_2_val_1|mediumint(8)|unsigned||NO|0|
-|"cond_2_val_2":Gossip_menu#cond_2_val_2|mediumint(8)|unsigned||NO|0|
+|"script_id":Gossip_menu#script_id|mediumint(8)|unsigned||NO|0|
 |"condition_id":Gossip_menu#condition_id|mediumint(8)|unsigned||NO|0|
-
-
-
-
 
 h3. Description of the fields
 
@@ -33,155 +22,11 @@ h4. text&#95;id
 
 Reference to "npc&#95;text.id":npc_text#ID.
 
-h3. condition
+h4. script&#95;id
 
-"condition&#95;value1-2":#condition_value fields can provide conditions on when the gossip is aktive.
+If set a DBScript with this ID will be started of the selected text
 
-|_. Value|_. Condition|_. Comments|
-|0|CONDITION&#95;NONE|Regular drop|
-|1|CONDITION&#95;AURA|Player looting must have an aura active|
-|2|CONDITION&#95;ITEM|Player must have a number of items in his/her inventory|
-|3|CONDITION&#95;ITEM&#95;EQUIPPED|Player must have an item equipped|
-|4|CONDITION&#95;ZONEID|Player must be in a certain zone|
-|5|CONDITION&#95;REPUTATION&#95;RANK|Player must have a certain reputation rank with a certain faction|
-|6|CONDITION&#95;TEAM|Player must be part of the specified team (Alliance or Horde)|
-|7|CONDITION&#95;SKILL|Player must have a certain skill value|
-|8|CONDITION&#95;QUESTREWARDED|Player must have completed a quest first|
-|9|CONDITION&#95;QUESTTAKEN|Players must have the quest in the quest log and not completed yet|
-|10|CONDITION&#95;AD&#95;COMMISSION&#95;AURA||
-|11|CONDITION&#95;NO&#95;AURA|Miss some aura.|
-|12|CONDITION&#95;ACTIVE&#95;EVENT|event]] is active.|
-|13|CONDITION&#95;AREA&#95;FLAG||
-|14|CONDITION&#95;RACE&#95;CLASS|Has special race or class.|
-|15|CONDITION&#95;LEVEL|Has special level.|
-|16|CONDITION&#95;NOITEM|Has not enouth items yet.|
-|17|CONDITION&#95;SPELL|Knows some spell.|
-|18|CONDITION&#95;INSTANCE&#95;SCRIPT|SD2-Based condition|
-|19|CONDITION&#95;QUESTAVAILABLE|Some quest is availible.|
-|20|CONDITION&#95;ACHIEVEMENT|Has or has no special achievement.|
-|21|CONDITION&#95;ACHIEVEMENT&#95;REALM|Realm-wideversion of 20.|
-|22|CONDITION&#95;QUEST&#95;NONE|Has not taken a quest yet.|
-|23|CONDITION&#95;ITEM&#95;WITH&#95;BANK|Check's presens of req. amount of items in inventory or bank.|
-|24|CONDITION&#95;NOITEM&#95;WITH&#95;BANK|Check's absentee of req. amount of items in inventory or bank.|
-|25|CONDITION&#95;NOT&#95;ACTIVE&#95;GAME&#95;EVENT||
-|26|CONDITION&#95;ACTIVE&#95;HOLIDAY||
-|27|CONDITION&#95;NOT&#95;ACTIVE&#95;HOLIDAY||
-|28|CONDITION&#95;LEARNABLE&#95;ABILITY|Check's if the palyer has high enought skilllevel and may check if a special item is in the inventory.|
-
-
-NOTE: For "reference entries":#mincountOrRef this field has no meaning, not used by the core in any way and should have the default value of 0.
-
-h3. condition&#95;value
-
-The values in the condition&#95;value1 and condition&#95;value2 fields depend on what condition was put in "condition":#condition.
-
-* CONDITION&#95;AURA
-** condition&#95;value1: The spell ID from where the aura came from.
-** condition&#95;value2: The effect index of the spell that applied the aura (0, 1, or 2)
-
-* CONDITION&#95;ITEM
-** condition&#95;value1: Item ID
-** condition&#95;value2: Count
-
-* CONDITION&#95;ITEM&#95;EQUIPPED
-** condition&#95;value1: Item ID
-** condition&#95;value2: Always 0
-
-* CONDITION&#95;ZONEID
-** condition&#95;value1: Zone ID
-** condition&#95;value2: Always 0
-
-* CONDITION&#95;REPUTATION&#95;RANK
-** condition&#95;value1: Faction ID
-** condition&#95;value2: Minimum rank
-
-* CONDITION&#95;TEAM
-** condition&#95;value1: Player team (469 - Alliance, 67 - Horde)
-** condition&#95;value2: Always 0
-
-* CONDITION&#95;SKILL
-** condition&#95;value1: Skill ID (SkillLine.dbc)
-** condition&#95;value2: Skill value needed
-
-* CONDITION&#95;QUESTREWARDED
-** condition&#95;value1: Quest ID
-** condition&#95;value2: Always 0
-
-* CONDITION&#95;QUESTTAKEN
-** condition&#95;value1: Quest ID
-** condition&#95;value2: 1: quest is taken but not completed, 2: quest is taken and already completed, 0 (or or any other value except 1 or 2): quest is taken and doesn't depend if quest is completed or not
-
-* CONDITION&#95;AD&#95;COMMISSION&#95;AURA
-** condition&#95;value1: Always 0
-** condition&#95;value2: Always 0
-
-* CONDITION&#95;NO&#95;AURA
-** condition&#95;value1: spellid
-** condition&#95;value2: EffectIndex
-
-* CONDITION&#95;ACTIVE&#95;EVENT
-** condition&#95;value1: "event":game_event
-** condition&#95;value2: Always 0
-
-* CONDITION&#95;AREA&#95;FLAG
-** condition&#95;value1: area&#95;flag
-** condition&#95;value2: not&#95;have&#95;flag
-
-* CONDITION&#95;RACE&#95;CLASS
-** condition&#95;value1: race&#95;mask
-** condition&#95;value2: class&#95;mask
-
-* CONDITION&#95;LEVEL
-** condition&#95;value1: level
-** condition&#95;value2: 0: equal to, 1: equal or higher than, 2: equal or less than
-
-* CONDITION&#95;NOITEM
-** condition&#95;value1: itemid
-** condition&#95;value2: count
-
-* CONDITION&#95;SPELL
-** condition&#95;value1: spellid
-** condition&#95;value2: 0: has spell, 1: has no spell
-
-* CONDITION&#95;QUESTAVAILABLE
-** condition&#95;value1: questid
-** condition&#95;value2: 0
-
-* CONDITION&#95;ACHIEVEMENT
-** condition&#95;value1: achievementid
-** condition&#95;value2: 0: has achievement, 1: has no achievement
-
-* CONDITION&#95;ACHIEVEMENT&#95;REALM
-** condition&#95;value1: achievementid
-** condition&#95;value2: 0: has achievement, 1: has no achievement
-
-* CONDITION&#95;QUEST&#95;NONE
-** condition&#95;value1: questid
-** condition&#95;value2: Always 0
-
-* CONDITION&#95;ITEM&#95;WITH&#95;BANK
-** condition&#95;value1: item&#95;id
-** condition&#95;value2: count
-
-* CONDITION&#95;NOITEM&#95;WITH&#95;BANK
-** condition&#95;value1: item&#95;id
-** condition&#95;value2: count
-
-* CONDITION&#95;NOT&#95;ACTIVE&#95;GAME&#95;EVENT
-** condition&#95;value1: event&#95;id
-** condition&#95;value2: 0
-
-* CONDITION&#95;ACTIVE&#95;HOLIDAY
-** condition&#95;value1: holiday&#95;id
-** condition&#95;value2: 0
-
-* CONDITION&#95;NOT&#95;ACTIVE&#95;HOLIDAY
-** condition&#95;value1: holiday&#95;id
-** condition&#95;value2: 0
-
-* CONDITION&#95;LEARNABLE&#95;ABILITY
-** condition&#95;value1: spell&#95;id
-** condition&#95;value2: 0 or item&#95;id
+"dbscripts_on_gossip":DBScripts
 
 h4. condition&#95;id
 
