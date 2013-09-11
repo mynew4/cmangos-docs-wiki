@@ -22,15 +22,6 @@ bq. [REMOVE] cala : see commit below
 bq. [REMOVE] cala : this one and the previous one are correct. In their current state, mods are needed for two purposes: TBC PvP diminishing returns (no need for classic) and modifying a paladin spell. This last one is moved into core by previous commit. If it is not broken, don't fix it.
 
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/7962b72 7962b72 * Sidsukana (committer Sidsukana)<pre><code>[z1804] Fix CMSG_CHAT_IGNORED. Also fixed kick players if ignored player writing to them.
-  66.8% src/game/
-  33.1% src/shared/
-
-bq. [REMOVE] cala : I guess thi is no longer usefull with all the recent TBC backports. Will test it.
-stfx: it might very well be useful as backports have nothing to do with it.
-cala : tested on z2194 and was not able to see any issue: ignoring is working as intended and without kicking anyone.
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/482ca12 482ca12 * Sidsukana (committer Sidsukana)<pre><code>[z1805] Fix Improved Sprint.
   76.2% src/game/
   23.7% src/shared/
