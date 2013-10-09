@@ -14,7 +14,9 @@ h3. Structure
 |"quest_start_active":Npc_spellclick_spells#quest_start_active|tinyint(1) unsigned|NO||0||
 |"quest_end":Npc_spellclick_spells#quest_end|mediumint(3) unsigned|NO||0||
 |"cast_flags":Npc_spellclick_spells#cast_flags|tinyint(3) unsigned|NO||||
+|"condition_id":Npc_spellclick_spells#condition_id|mediumint(8) unsigned|NO||0||
 
+*Note:* The fields quest_* are obsolete and will be removed
 
 h3. Description of the fields
 
@@ -50,10 +52,15 @@ Lower bit defines caster: 1=player, 0=creature; higher bit defines target, same 
 
 You can use that table for the actual value:
 
+|*cast&#95;flags value*|*Caster*|*Target*|
+|0|Creature|Creature|
+|1|Player|Creature|
+|2|Creature|Player|
+|3|Player|Player|
 
-|*Target*|*Caster*|*cast&#95;flags value*|
-|Creature|Creature|0|
-|Creature|Player|1|
-|Player|Creature|2|
-|Player|Player|3|
+h4. condition&#95;id
 
+Value that represents a "condition"::Conditions#condition_entry that must be met in order for the item to drop.
+See "Conditions table":Conditions for detailed description.
+
+Note: If set != 0 it will override any meaning within the quest_* fields.
