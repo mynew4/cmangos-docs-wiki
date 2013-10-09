@@ -60,7 +60,7 @@ You can use that table for the actual value:
 
 h4. condition&#95;id
 
-Value that represents a "condition"::Conditions#condition_entry that must be met in order for the item to drop.
+Value that represents a "condition":Conditions#condition_entry that must be met in order for the item to drop.
 See "Conditions table":Conditions for detailed description.
 
 Note: If set != 0 it will override any meaning within the quest_* fields.
