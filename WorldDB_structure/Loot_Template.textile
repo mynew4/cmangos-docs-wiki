@@ -28,17 +28,17 @@ h2. Relations
 The 11 tables have different relations with other DB tables.
 
 |_. Loot table|_. Field|_. Relation|_. Related table|_. Field|_. Comment|
-|fishing_loot_template|no relation|"entry":Loot_template#entry is linked with ID of the fishing zone or area|
-|spell_loot_template|no relation|"entry":Loot_template#entry is linked with ID of the Spell.|
-|creature_loot_template|"entry":Loot_template#entry|many &lt;- many|"creature_template":creature_template|lootid]]||
-|gameobject_loot_template|"entry":Loot_template#entry|many &lt;- many|"gameobject_template":gameobject_template|data1]]|Only gameobject type 3 (GAMEOBJECT_TYPE_CHEST) or 25 (GAMEOBJECT_TYPE_FISHINGHOLE) use data1 as loot ID, for other types data1 is used in other ways|
-|item_loot_template|"entry":Loot_template#entry|many &lt;- one|"item_template":item_template|entry]]||
-|disenchant_loot_template|"entry":Loot_template#entry|many &lt;- many|"item_template":item_template|DisenchantID]]||
-|prospecting_loot_template|"entry":Loot_template#entry|many &lt;- one|"item_template":item_template|entry]]||
-|milling_loot_template|"entry":Loot_template#entry|many &lt;- one|"item_template":item_template|entry]]||
-|pickpocketing_loot_template|"entry":Loot_template#entry|many &lt;- many|"creature_template":creature_template|pickpocketloot]]||
-|skinning_loot_template|"entry":Loot_template#entry|many &lt;- many|"creature_template":creature_template|skinloot]]|Can also store minable/herbable items gathered from creatures|
-|quest_mail_loot_template|"entry":Loot_template#entry||"quest_template":quest_template|RewMailTemplateId]]||
+|fishing_loot_template|no relation|"entry":Loot_template#entry is linked with ID of the fishing zone or area|||
+|spell_loot_template|no relation|"entry":Loot_template#entry is linked with ID of the Spell.|||
+|creature_loot_template|"entry":Loot_template#entry|many &lt;- many|"creature_template":Creature_template|"lootid":Creature_template#lootid||
+|gameobject_loot_template|"entry":Loot_template#entry|many &lt;- many|"gameobject_template":Gameobject_template|"data1":Gameobject_template#data0-23|Only GAMEOBJECT_TYPE_CHEST (3) or GAMEOBJECT_TYPE_FISHINGHOLE (25) use data1 as loot ID, for other types data1 is used in other ways|
+|item_loot_template|"entry":Loot_template#entry|many &lt;- one|"item_template":Item_template|"entry":Item_template#entry||
+|disenchant_loot_template|"entry":Loot_template#entry|many &lt;- many|"item_template":Item_template|"disenchantid":Item_template#disenchantid||
+|prospecting_loot_template|"entry":Loot_template#entry|many &lt;- one|"item_template":Item_template|"entry":Item_template#entry||
+|milling_loot_template|"entry":Loot_template#entry|many &lt;- one|"item_template":Item_template|"entry":Item_template#entry||
+|pickpocketing_loot_template|"entry":Loot_template#entry|many &lt;- many|"creature_template":Creature_template|"pickpocketloot":Creature_template#pickpocketloot||
+|skinning_loot_template|"entry":Loot_template#entry|many &lt;- many|"creature_template":Creature_template|"skinloot":Creature_template#skinloot|Can also store minable/herbable items gathered from creatures|
+|quest_mail_loot_template|"entry":Loot_template#entry||"quest_template":Quest_template|"RewMailTemplateId":Quest_template#rewmailtemplateid||
 |reference_loot_template|"entry":Loot_template#entry|many &lt;- many|* _loot_template|"-mincountOrRef":Loot_template#mincountorref|In case of negative mincountOrRef|
 
 
