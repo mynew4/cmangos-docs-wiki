@@ -220,7 +220,7 @@ Note: core rolls chance for any loot definition entry just one time - so if a re
 
 h3. condition_id
 
-Value that represents a "condition"::Conditions#condition_entry that must be met in order for the item to drop.
+Value that represents a "condition":Conditions#condition_entry that must be met in order for the item to drop.
 See "Conditions table":Conditions for detailed description.
 
 Note: For "reference entries":loot_template#mincountOrRef only some conditions can be used
