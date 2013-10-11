@@ -1,3 +1,8 @@
+World states are used to set global world settings in the game, they're also used for map-specific variables and UI elements. Examples include arena season id, whether or not the arena season is active, battle status in battlegrounds and so on.
+
+List of UI map icons:
+!http://images4.wikia.nocookie.net/__cb20100902055656/wowwiki/images/e/e1/Poiicons.png!
+
 h2. Global World States
 
 |ID|Values|UI Type|Comment|
@@ -184,5 +189,4 @@ WG GO Status:
 |9|Alliance - Destroyed|
 
 Wintergrasp Gameobject Locations:
-"Wintergrasp Fortress walls and PvP activity locations":http://imageshack.us/a/img692/3582/wintergrasppvpactivityl.jpg
-"Wintergrasp PvP activity locations only":http://imageshack.us/a/img62/3582/wintergrasppvpactivityl.jpg
+!http://imageshack.us/a/img692/3582/wintergrasppvpactivityl.jpg!
