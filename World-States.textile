@@ -28,6 +28,139 @@ WG Control Status:
 
 h2. Zonewide World States
 
+h3. Warsong
+
+|1545|Unk State||Unknown - Alliance|
+|1546|Unk State||Unknown - Horde|
+|1581|Int|Counter|Capture count - Alliance|
+|1582|Int|Counter|Capture count - Horde|
+|1601|Int|Counter|Capture count - maximum|
+|2339|Flag State|Map Icon|Silverwing Flag (Alliance)|
+|2338|Flag State|Map Icon|Warsong Flag (Horde)|
+|4247|Int|Timer|Timer enabled - Show/Hide timer|
+|4248|Int|Timer|Time left|
+
+Unk State:
+
+|Value|Icon Display|
+|-1|Flag on ground?|
+|0|Flag on base or respawning?|
+|1|Flag on player?|
+
+Flag State:
+
+|Value|Icon Display|
+|1|Flag on ground?|
+|2|Flag on player?|
+
+h3. Arathi Basin
+
+|1776|Int|Counter|Resource count - Alliance|
+|1777|Int|Counter|Resource count - Horde|
+|1780|Int|Counter|Resource count - maximum|
+|1955|Int|Counter|Resource count - warning|
+|1779|Int|Counter|Base count - Alliance|
+|1778|Int|Counter|Base count - Horde|
+|1842|Bool|Map Icon|Stables - neutral|
+|1767|Bool|Map Icon|Stables - Alliance|
+|1769|Bool|Map Icon|Stables - Alliance contested|
+|1768|Bool|Map Icon|Stables - Horde|
+|1770|Bool|Map Icon|Stables - Horde contested|
+|1845|Bool|Map Icon|Farm - neutral|
+|1772|Bool|Map Icon|Farm - Alliance|
+|1774|Bool|Map Icon|Farm - Alliance contested|
+|1773|Bool|Map Icon|Farm - Horde|
+|1775|Bool|Map Icon|Farm - Horde contested|
+|1846|Bool|Map Icon|Blacksmith - neutral|
+|1782|Bool|Map Icon|Blacksmith - Alliance|
+|1784|Bool|Map Icon|Blacksmith - Alliance contested|
+|1783|Bool|Map Icon|Blacksmith - Horde|
+|1785|Bool|Map Icon|Blacksmith - Horde contested|
+|1844|Bool|Map Icon|Lumber Mill - neutral|
+|1792|Bool|Map Icon|Lumber Mill - Alliance|
+|1794|Bool|Map Icon|Lumber Mill - Alliance contested|
+|1793|Bool|Map Icon|Lumber Mill - Horde|
+|1795|Bool|Map Icon|Lumber Mill - Horde contested|
+|1843|Bool|Map Icon|Gold Mine - neutral|
+|1787|Bool|Map Icon|Gold Mine - Alliance|
+|1789|Bool|Map Icon|Gold Mine - Alliance contested|
+|1788|Bool|Map Icon|Gold Mine - Horde|
+|1790|Bool|Map Icon|Gold Mine - Horde contested|
+
+h3. Alterac Valley
+
+|3127|Int|Counter|Resource count - Alliance|
+|3128|Int|Counter|Resource count - Horde|
+|2490|Bool|Counter|Show/Hide resource count - Alliance|
+|2489|Bool|Counter|Show/Hide resource count - Horde|
+|1326|Bool|Map Icon|Stormpike Aid Station - Alliance|
+|1325|Bool|Map Icon|Stormpike Aid Station - Alliance contested|
+|1328|Bool|Map Icon|Stormpike Aid Station - Horde|
+|1327|Bool|Map Icon|Stormpike Aid Station - Horde contested|
+|1335|Bool|Map Icon|Stormpike Graveyard - Alliance|
+|1333|Bool|Map Icon|Stormpike Graveyard - Alliance contested|
+|1336|Bool|Map Icon|Stormpike Graveyard - Horde|
+|1334|Bool|Map Icon|Stormpike Graveyard - Horde contested|
+|1304|Bool|Map Icon|Stoneheart Graveyard - Alliance|
+|1302|Bool|Map Icon|Stoneheart Graveyard - Alliance contested|
+|1303|Bool|Map Icon|Stoneheart Graveyard - Horde|
+|1301|Bool|Map Icon|Stoneheart Graveyard - Horde contested|
+|1966|Bool|Map Icon|Snowfall Graveyard - neutral|
+|1343|Bool|Map Icon|Snowfall Graveyard - Alliance|
+|1341|Bool|Map Icon|Snowfall Graveyard - Alliance contested|
+|1344|Bool|Map Icon|Snowfall Graveyard - Horde|
+|1342|Bool|Map Icon|Snowfall Graveyard - Horde contested|
+|1348|Bool|Map Icon|Iceblood Graveyard - Alliance|
+|1346|Bool|Map Icon|Iceblood Graveyard - Alliance contested|
+|1349|Bool|Map Icon|Iceblood Graveyard - Horde|
+|1347|Bool|Map Icon|Iceblood Graveyard - Horde contested|
+|1339|Bool|Map Icon|Frostwolf Graveyard - Alliance|
+|1337|Bool|Map Icon|Frostwolf Graveyard - Alliance contested|
+|1340|Bool|Map Icon|Frostwolf Graveyard - Horde|
+|1338|Bool|Map Icon|Frostwolf Graveyard - Horde contested|
+|1331|Bool|Map Icon|Frostwolf Relief Hut - Alliance|
+|1329|Bool|Map Icon|Frostwolf Relief Hut - Alliance contested|
+|1332|Bool|Map Icon|Frostwolf Relief Hut - Horde|
+|1330|Bool|Map Icon|Frostwolf Relief Hut - Horde contested|
+|1375|Bool|Map Icon|Dunbaldar South Bunker - Alliance|
+|1361|Bool|Map Icon|Dunbaldar South Bunker - Alliance contested|
+|1378|Bool|Map Icon|Dunbaldar South Bunker - Horde|
+|1370|Bool|Map Icon|Dunbaldar South Bunker - Horde contested|
+|1374|Bool|Map Icon|Dunbaldar North Bunker - Alliance|
+|1362|Bool|Map Icon|Dunbaldar North Bunker - Alliance contested|
+|1379|Bool|Map Icon|Dunbaldar North Bunker - Horde|
+|1371|Bool|Map Icon|Dunbaldar North Bunker - Horde contested|
+|1376|Bool|Map Icon|Icewing Bunker - Alliance|
+|1363|Bool|Map Icon|Icewing Bunker - Alliance contested|
+|1380|Bool|Map Icon|Icewing Bunker - Horde|
+|1372|Bool|Map Icon|Icewing Bunker - Horde contested|
+|1377|Bool|Map Icon|Stoneheart Bunker - Alliance|
+|1364|Bool|Map Icon|Stoneheart Bunker - Alliance contested|
+|1381|Bool|Map Icon|Stoneheart Bunker - Horde|
+|1373|Bool|Map Icon|Stoneheart Bunker - Horde contested|
+|1390|Bool|Map Icon|Iceblood Tower - Alliance|
+|1368|Bool|Map Icon|Iceblood Tower - Alliance contested|
+|1395|Bool|Map Icon|Iceblood Tower - Horde|
+|1385|Bool|Map Icon|Iceblood Tower - Horde contested|
+|1389|Bool|Map Icon|Tower Point - Alliance|
+|1367|Bool|Map Icon|Tower Point - Alliance contested|
+|1394|Bool|Map Icon|Tower Point - Horde|
+|1384|Bool|Map Icon|Tower Point - Horde contested|
+|1388|Bool|Map Icon|Frostwolf East - Alliance|
+|1366|Bool|Map Icon|Frostwolf East - Alliance contested|
+|1393|Bool|Map Icon|Frostwolf East - Horde|
+|1383|Bool|Map Icon|Frostwolf East - Horde contested|
+|1387|Bool|Map Icon|Frostwolf West - Alliance|
+|1365|Bool|Map Icon|Frostwolf West - Alliance contested|
+|1392|Bool|Map Icon|Frostwolf West - Horde|
+|1382|Bool|Map Icon|Frostwolf West - Horde contested|
+|1360|Bool|Map Icon|Mine north - neutral|
+|1358|Bool|Map Icon|Mine north - Alliance|
+|1359|Bool|Map Icon|Mine north - Horde|
+|1357|Bool|Map Icon|Mine south - neutral|
+|1355|Bool|Map Icon|Mine south - Alliance|
+|1356|Bool|Map Icon|Mine south - Horde|
+
 h3. Silithus
 
 |ID|Values|UI Type|Comment|
@@ -122,8 +255,8 @@ h3. Zangarmarsh
 
 h3. Nagrand - Halaa
 
-|2491|Int|Counter|Guards left|
-|2493|Int|Counter|Guards max|
+|2491|Int|Counter|Guards alive|
+|2493|Int|Counter|Guards maximum|
 |2502|Bool|Counter Icon|Halaa controlled - Alliance|
 |2503|Bool|Counter Icon|Halaa controlled - Horde|
 |2671|Bool|Map Icon|Halaa controlled - neutral|
@@ -208,11 +341,17 @@ h3. The Eye of the Storm
 |2733|Bool|Map Icon|Draenei Ruins - Horde|
 |2737|Bool|Map Icon|Draenei Ruins - Horde conflict|
 |2757|Bool|Map Icon|Netherstorm Flag - ready|
-|2769|Bool|Map Icon|Netherstorm Flag - Alliance|
-|2770|Bool|Map Icon|Netherstorm Flag - Horde|
+|2769|Flag State|Map Icon|Netherstorm Flag - Alliance|
+|2770|Flag State|Map Icon|Netherstorm Flag - Horde|
 |2718|Bool|Slider|Capture point slider - enabled|
 |2719|Int|Slider|Capture point slider - current value|
 |2720|Int|Slider|Capture point slider - neutral percent|
+
+Flag State:
+
+|Value|Icon Display|
+|1|Flag on ground?|
+|2|Flag on player?|
 
 h3. Isle of Quel'Danas
 
@@ -332,5 +471,5 @@ WG GO Status:
 |8|Alliance - Damaged|
 |9|Alliance - Destroyed|
 
-Wintergrasp Gameobject Locations:
+Wintergrasp Gameobject Locations - Walls and PvP activities:
 !http://imageshack.us/a/img692/3582/wintergrasppvpactivityl.jpg!
