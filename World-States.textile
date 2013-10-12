@@ -15,7 +15,7 @@ h2. Global World States
 |3801|Bool|Text|Wintergrasp - is inactive (0: in progress, 1: not started)|
 |3802|Bool|Text|Wintergrasp - Horde controlled|
 |3803|Bool|Text|Wintergrasp - Alliance controlled|
-|3804|WG Control Status|Map Icon|Wintergrasp - Faction in control|
+|3804|WG Control Status|Map Icon|Wintergrasp - faction in control|
 |4354|Time|Timer|Wintergrasp - start time|
 
 WG Control Status:
@@ -72,9 +72,110 @@ h3. Eastern Plaguelands
 |2377|Bool|Map Icon|Crownguard Tower - Horde progress|
 |2375|Bool|Map Icon|Crownguard Tower - Horde contested|
 |2379|Bool|Map Icon|Crownguard Tower - Horde|
-|2426|Bool|Slider|Capture Point Slider - enabled|
-|2427|Int|Slider|Capture Point Slider - current value|
-|2428|Int|Slider|Capture Point Slider - neutral percent|
+|2426|Bool|Slider|Capture point slider - enabled|
+|2427|Int|Slider|Capture point slider - current value|
+|2428|Int|Slider|Capture point slider - neutral percent|
+
+h3. Hellfire Peninsula
+|2476|Int|Counter|Tower count - Alliance|
+|2478|Int|Counter|Tower count - Horde|
+|2490|Bool|Counter|Show/Hide tower count - Alliance|
+|2489|Bool|Counter|Show/Hide tower count - Horde|
+|2485|Bool|Map Icon|Broken Hill - neutral|
+|2483|Bool|Map Icon|Broken Hill - Alliance|
+|2484|Bool|Map Icon|Broken Hill - Horde|
+|2482|Bool|Map Icon|Overlook - neutral|
+|2480|Bool|Map Icon|Overlook - Alliance|
+|2481|Bool|Map Icon|Overlook - Horde|
+|2472|Bool|Map Icon|Stadium - neutral|
+|2471|Bool|Map Icon|Stadium - Alliance|
+|2470|Bool|Map Icon|Stadium - Horde|
+|2473|Bool|Slider|Capture point slider - enabled|
+|2474|Int|Slider|Capture point slider - current value|
+|2475|Int|Slider|Capture point slider - neutral percent|
+
+h3. Zangarmarsh
+|2560|Bool|Counter Icon|East Beacon - neutral|
+|2558|Bool|Counter Icon|East Beacon - Alliance|
+|2559|Bool|Counter Icon|East Beacon - Horde|
+|2557|Bool|Counter Icon|West Beacon - neutral|
+|2555|Bool|Counter Icon|West Beacon - Alliance|
+|2556|Bool|Counter Icon|West Beacon - Horde|
+|2652|Bool|Map Icon|East Beacon - neutral|
+|2650|Bool|Map Icon|East Beacon - Alliance|
+|2651|Bool|Map Icon|East Beacon - Horde|
+|2646|Bool|Map Icon|West Beacon - neutral|
+|2644|Bool|Map Icon|West Beacon - Alliance|
+|2645|Bool|Map Icon|West Beacon - Horde|
+|2647|Bool|Map Icon|Twin Spire Ruins Graveyard - neutral|
+|2648|Bool|Map Icon|Twin Spire Ruins Graveyard - Alliance|
+|2649|Bool|Map Icon|Twin Spire Ruins Graveyard - Horde|
+|2655|Bool|Map Icon|Flag ready - Alliance|
+|2658|Bool|Map Icon|Flag ready - Horde|
+|2656|Bool|Map Icon|Flag not ready - Alliance|
+|2657|Bool|Map Icon|Flag not ready - Horde|
+|2527|Bool|Slider|Capture point slider - enabled|
+|2528|Int|Slider|Capture point slider - current value|
+|2529|Int|Slider|Capture point slider - neutral percent|
+
+h3. Nagrand - Halaa
+|2491|Int|Counter|Guards left|
+|2493|Int|Counter|Guards max|
+|2502|Int|UI Icon|Halaa controlled - Alliance|
+|2503|Int|UI Icon|Halaa controlled - Horde|
+|2671|Bool|Map Icon|Halaa controlled - neutral|
+|2676|Bool|Map Icon|Halaa controlled - Alliance progress|
+|2673|Bool|Map Icon|Halaa controlled - Alliance|
+|2677|Bool|Map Icon|Halaa controlled - Horde progress|
+|2672|Bool|Map Icon|Halaa controlled - Horde|
+|2662|Bool|Map Icon|Wyvern north - Alliance neutral|
+|2664|Bool|Map Icon|Wyvern north - Alliance|
+|2762|Bool|Map Icon|Wyvern north - Horde neutral|
+|2663|Bool|Map Icon|Wyvern north - Horde|
+|2670|Bool|Map Icon|Wyvern south - Alliance neutral|
+|2669|Bool|Map Icon|Wyvern south - Alliance|
+|2760|Bool|Map Icon|Wyvern south - Horde neutral|
+|2668|Bool|Map Icon|Wyvern south - Horde|
+|2667|Bool|Map Icon|Wyvern west - Alliance neutral|
+|2666|Bool|Map Icon|Wyvern west - Alliance|
+|2761|Bool|Map Icon|Wyvern west - Horde neutral|
+|2665|Bool|Map Icon|Wyvern west - Horde|
+|2659|Bool|Map Icon|Wyvern east - Alliance neutral|
+|2661|Bool|Map Icon|Wyvern east - Alliance|
+|2763|Bool|Map Icon|Wyvern east - Horde neutral|
+|2660|Bool|Map Icon|Wyvern east - Horde|
+|2495|Bool|Slider|Capture point slider - enabled|
+|2494|Int|Slider|Capture point slider - current value|
+|2497|Int|Slider|Capture point slider - neutral percent|
+
+h3. Terokkar Forest
+|2621|Int|Counter|Tower count - Alliance|
+|2622|Int|Counter|Tower count - Horde|
+|2620|Bool|Multiple|Towers controlled - hide/show towers and tower count|
+|2508|Bool|Timer|Towers controlled - neutral|
+|2767|Bool|Timer|Towers controlled - Alliance|
+|2768|Bool|Timer|Towers controlled - Horde|
+|2512|Bool|Timer|Towers controlled - time left - minutes first digit|
+|2510|Bool|Timer|Towers controlled - time left - minutes second digit|
+|2509|Bool|Timer|Towers controlled - time left - hours|
+|2681|Bool|Map Icon|West Tower - neutral|
+|2683|Bool|Map Icon|West Tower - Alliance|
+|2682|Bool|Map Icon|West Tower - Horde|
+|2686|Bool|Map Icon|North Tower - neutral|
+|2684|Bool|Map Icon|North Tower - Alliance|
+|2685|Bool|Map Icon|North Tower - Horde|
+|2690|Bool|Map Icon|East Tower - neutral|
+|2688|Bool|Map Icon|East Tower - Alliance|
+|2689|Bool|Map Icon|East Tower - Horde|
+|2696|Bool|Map Icon|South East Tower - neutral|
+|2694|Bool|Map Icon|South East Tower - Alliance|
+|2695|Bool|Map Icon|South East Tower - Horde|
+|2693|Bool|Map Icon|South Tower - neutral|
+|2691|Bool|Map Icon|South Tower - Alliance|
+|2692|Bool|Map Icon|South Tower - Horde|
+|2623|Bool|Slider|Capture point slider - enabled|
+|2625|Int|Slider|Capture point slider - current value|
+|2624|Int|Slider|Capture point slider - neutral percent|
 
 h3. Isle of Quel'Danas
 
@@ -86,6 +187,11 @@ h3. Isle of Quel'Danas
 |3418|Bool|Map Icon|Sun's Reach Sanctum - enemy|
 |3419|Bool|Map Icon|Sun's Reach Sanctum - Shattered Sun Offensive|
 
+h3. Grizzly Hills - Venture Bay
+|3466|Bool|Slider|Capture point slider - enabled|
+|3467|Int|Slider|Capture point slider - current value|
+|3468|Int|Slider|Capture point slider - neutral percent|
+
 h3. Wintergrasp
 
 |ID|Values|UI Type|Comment|
@@ -93,7 +199,7 @@ h3. Wintergrasp
 |3490|Int|Counter|Vehicle count - Horde|
 |3681|Int|Counter|Vehicle maximum count - Alliance|
 |3491|Int|Counter|Vehicle maximum count - Horde|
-|3710|Bool|Counter|Show/Hide counters at top of screen|
+|3710|Bool|Counter|Show/Hide counters|
 |3700|WG GO Status|Map Icon|Temple Point|
 |3701|WG GO Status|Map Icon|Sunken Ring Point|
 |3702|WG GO Status|Map Icon|Southwest Point|
@@ -103,35 +209,35 @@ h3. Wintergrasp
 |3706|WG GO Status|Map Icon|Flamewatch Tower|
 |3773|WG GO Status|Map Icon|Fortress|
 |3763|WG GO Status|Map Icon|Fortress Gate|
-|3698|WG GO Status|Map Icon|Fortress Workshop west|
-|3699|WG GO Status|Map Icon|Fortress Workshop east|
-|3711|WG GO Status|Map Icon|Fortress Tower north west|
-|3712|WG GO Status|Map Icon|Fortress Tower north east|
-|3713|WG GO Status|Map Icon|Fortress Tower south west|
-|3714|WG GO Status|Map Icon|Fortress Tower south east|
-|3749|WG GO Status|Map Icon|Fortress Wall 1|
-|3750|WG GO Status|Map Icon|Fortress Wall 2|
-|3751|WG GO Status|Map Icon|Fortress Wall 3|
-|3752|WG GO Status|Map Icon|Fortress Wall 4|
-|3753|WG GO Status|Map Icon|Fortress Wall 5|
-|3754|WG GO Status|Map Icon|Fortress Wall 6|
-|3755|WG GO Status|Map Icon|Fortress Wall 7|
-|3756|WG GO Status|Map Icon|Fortress Wall 8|
-|3757|WG GO Status|Map Icon|Fortress Wall 9|
-|3758|WG GO Status|Map Icon|Fortress Wall 10|
-|3759|WG GO Status|Map Icon|Fortress Wall 11|
-|3760|WG GO Status|Map Icon|Fortress Wall 12|
-|3761|WG GO Status|Map Icon|Fortress Wall 13|
-|3762|WG GO Status|Map Icon|Fortress Wall 14|
-|3764|WG GO Status|Map Icon|Fortress Wall 15|
-|3765|WG GO Status|Map Icon|Fortress Wall 16|
-|3766|WG GO Status|Map Icon|Fortress Wall 17|
-|3767|WG GO Status|Map Icon|Fortress Wall 18|
-|3768|WG GO Status|Map Icon|Fortress Wall 19|
-|3769|WG GO Status|Map Icon|Fortress Wall 20|
-|3770|WG GO Status|Map Icon|Fortress Wall 21|
-|3771|WG GO Status|Map Icon|Fortress Wall 22|
-|3772|WG GO Status|Map Icon|Fortress Wall 23|
+|3698|WG GO Status|Map Icon|Fortress Workshop - west|
+|3699|WG GO Status|Map Icon|Fortress Workshop - east|
+|3711|WG GO Status|Map Icon|Fortress Tower - north west|
+|3712|WG GO Status|Map Icon|Fortress Tower - north east|
+|3713|WG GO Status|Map Icon|Fortress Tower - south west|
+|3714|WG GO Status|Map Icon|Fortress Tower - south east|
+|3749|WG GO Status|Map Icon|Fortress Wall - 1|
+|3750|WG GO Status|Map Icon|Fortress Wall - 2|
+|3751|WG GO Status|Map Icon|Fortress Wall - 3|
+|3752|WG GO Status|Map Icon|Fortress Wall - 4|
+|3753|WG GO Status|Map Icon|Fortress Wall - 5|
+|3754|WG GO Status|Map Icon|Fortress Wall - 6|
+|3755|WG GO Status|Map Icon|Fortress Wall - 7|
+|3756|WG GO Status|Map Icon|Fortress Wall - 8|
+|3757|WG GO Status|Map Icon|Fortress Wall - 9|
+|3758|WG GO Status|Map Icon|Fortress Wall - 10|
+|3759|WG GO Status|Map Icon|Fortress Wall - 11|
+|3760|WG GO Status|Map Icon|Fortress Wall - 12|
+|3761|WG GO Status|Map Icon|Fortress Wall - 13|
+|3762|WG GO Status|Map Icon|Fortress Wall - 14|
+|3764|WG GO Status|Map Icon|Fortress Wall - 15|
+|3765|WG GO Status|Map Icon|Fortress Wall - 16|
+|3766|WG GO Status|Map Icon|Fortress Wall - 17|
+|3767|WG GO Status|Map Icon|Fortress Wall - 18|
+|3768|WG GO Status|Map Icon|Fortress Wall - 19|
+|3769|WG GO Status|Map Icon|Fortress Wall - 20|
+|3770|WG GO Status|Map Icon|Fortress Wall - 21|
+|3771|WG GO Status|Map Icon|Fortress Wall - 22|
+|3772|WG GO Status|Map Icon|Fortress Wall - 23|
 |3779|Bool|Map Icon|PvP activity - A1|
 |3778|Bool|Map Icon|PvP activity - A2|
 |3777|Bool|Map Icon|PvP activity - A3|
@@ -170,9 +276,9 @@ h3. Wintergrasp
 |3795|Bool|Map Icon|PvP activity - H1|
 |3791|Bool|Map Icon|PvP activity - H2|
 |3798|Bool|Map Icon|PvP activity - H3|
-|3501|Bool|Slider|Capture Point Slider - enabled|
-|3502|Int|Slider|Capture Point Slider - current value|
-|3508|Int|Slider|Capture Point Slider - neutral percent|
+|3501|Bool|Slider|Capture point slider - enabled|
+|3502|Int|Slider|Capture point slider - current value|
+|3508|Int|Slider|Capture point slider - neutral percent|
 
 WG GO Status:
 
