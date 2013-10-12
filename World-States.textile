@@ -124,8 +124,8 @@ h3. Nagrand - Halaa
 
 |2491|Int|Counter|Guards left|
 |2493|Int|Counter|Guards max|
-|2502|Int|UI Icon|Halaa controlled - Alliance|
-|2503|Int|UI Icon|Halaa controlled - Horde|
+|2502|Bool|Counter Icon|Halaa controlled - Alliance|
+|2503|Bool|Counter Icon|Halaa controlled - Horde|
 |2671|Bool|Map Icon|Halaa controlled - neutral|
 |2676|Bool|Map Icon|Halaa controlled - Alliance progress|
 |2673|Bool|Map Icon|Halaa controlled - Alliance|
@@ -180,6 +180,39 @@ h3. Terokkar Forest
 |2623|Bool|Slider|Capture point slider - enabled|
 |2625|Int|Slider|Capture point slider - current value|
 |2624|Int|Slider|Capture point slider - neutral percent|
+
+h3. The Eye of the Storm
+
+|2749|Int|Counter|Resource count - Alliance|
+|2750|Int|Counter|Resource count - Horde|
+|2752|Int|Counter|Tower count - Alliance|
+|2753|Int|Counter|Tower count - Horde|
+|2722|Bool|Map Icon|Blood Elf Tower - neutral|
+|2723|Bool|Map Icon|Blood Elf Tower - Alliance|
+|2735|Bool|Map Icon|Blood Elf Tower - Alliance conflict|
+|2724|Bool|Map Icon|Blood Elf Tower - Horde|
+|2736|Bool|Map Icon|Blood Elf Tower - Horde conflict|
+|2725|Bool|Map Icon|Fel Reaver Ruins - neutral|
+|2726|Bool|Map Icon|Fel Reaver Ruins - Alliance|
+|2739|Bool|Map Icon|Fel Reaver Ruins - Alliance conflict|
+|2727|Bool|Map Icon|Fel Reaver Ruins - Horde|
+|2740|Bool|Map Icon|Fel Reaver Ruins - Horde conflict|
+|2728|Bool|Map Icon|Mage Tower - neutral|
+|2730|Bool|Map Icon|Mage Tower - Alliance|
+|2741|Bool|Map Icon|Mage Tower - Alliance conflict|
+|2729|Bool|Map Icon|Mage Tower - Horde|
+|2742|Bool|Map Icon|Mage Tower - Horde conflict|
+|2731|Bool|Map Icon|Draenei Ruins - neutral|
+|2732|Bool|Map Icon|Draenei Ruins - Alliance|
+|2738|Bool|Map Icon|Draenei Ruins - Alliance conflict|
+|2733|Bool|Map Icon|Draenei Ruins - Horde|
+|2737|Bool|Map Icon|Draenei Ruins - Horde conflict|
+|2757|Bool|Map Icon|Netherstorm Flag - ready|
+|2769|Bool|Map Icon|Netherstorm Flag - Alliance|
+|2770|Bool|Map Icon|Netherstorm Flag - Horde|
+|2718|Bool|Slider|Capture point slider - enabled|
+|2719|Int|Slider|Capture point slider - current value|
+|2720|Int|Slider|Capture point slider - neutral percent|
 
 h3. Isle of Quel'Danas
 
