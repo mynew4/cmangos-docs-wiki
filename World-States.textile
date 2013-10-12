@@ -77,6 +77,7 @@ h3. Eastern Plaguelands
 |2428|Int|Slider|Capture point slider - neutral percent|
 
 h3. Hellfire Peninsula
+
 |2476|Int|Counter|Tower count - Alliance|
 |2478|Int|Counter|Tower count - Horde|
 |2490|Bool|Counter|Show/Hide tower count - Alliance|
@@ -95,6 +96,7 @@ h3. Hellfire Peninsula
 |2475|Int|Slider|Capture point slider - neutral percent|
 
 h3. Zangarmarsh
+
 |2560|Bool|Counter Icon|East Beacon - neutral|
 |2558|Bool|Counter Icon|East Beacon - Alliance|
 |2559|Bool|Counter Icon|East Beacon - Horde|
@@ -119,6 +121,7 @@ h3. Zangarmarsh
 |2529|Int|Slider|Capture point slider - neutral percent|
 
 h3. Nagrand - Halaa
+
 |2491|Int|Counter|Guards left|
 |2493|Int|Counter|Guards max|
 |2502|Int|UI Icon|Halaa controlled - Alliance|
@@ -149,6 +152,7 @@ h3. Nagrand - Halaa
 |2497|Int|Slider|Capture point slider - neutral percent|
 
 h3. Terokkar Forest
+
 |2621|Int|Counter|Tower count - Alliance|
 |2622|Int|Counter|Tower count - Horde|
 |2620|Bool|Multiple|Towers controlled - hide/show towers and tower count|
@@ -188,6 +192,7 @@ h3. Isle of Quel'Danas
 |3419|Bool|Map Icon|Sun's Reach Sanctum - Shattered Sun Offensive|
 
 h3. Grizzly Hills - Venture Bay
+
 |3466|Bool|Slider|Capture point slider - enabled|
 |3467|Int|Slider|Capture point slider - current value|
 |3468|Int|Slider|Capture point slider - neutral percent|
