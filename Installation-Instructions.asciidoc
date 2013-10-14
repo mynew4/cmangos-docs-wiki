@@ -278,6 +278,7 @@ Compiling CMaNGOS and ScriptDev2 (*nix)
   - ++-DPDC=1++ to compile with PCH mode (much faster after updates)
   - ++-DDEBUG=0++ to remove debug mode from compiling
   - *IMPORTANT* ++-DINCLUDE_BINDINGS_DIR=ScriptDev2++ to include ScriptDev2
+  - *example:* ++cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DINCLUDE_BINDINGS_DIR=ScriptDev2++
 * Invoke ++make++ to compile CMaNGOS (and ScriptDev2 if installed and included in cmake)
 * Invoke ++make install++ to install to your "run" directory
 
