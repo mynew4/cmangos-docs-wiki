@@ -163,7 +163,8 @@ UDB (WotLK)
 
 *On *nix:*
 
-++svn co https://unifieddb.svn.sourceforge.net/svnroot/unifieddb++
+++svn co https://svn.code.sf.net/p/unifieddb/code/trunk/ unifieddb++
+++unzip unifieddb/Full_DB/UDB_*.zip -d unifieddb/Full_DB/++
 
 This will create a new folder (likely C:\Mangos\unifieddb) in which UDB SQL-files are located
 
