@@ -107,7 +107,12 @@ e. Client: Which will, with adapted realmlist, connect to your server
 
 Get the remote data to your system
 ----------------------------------
-We personally use some directory structure to be able to keep overview of things we have. For this guide we will assume that you will use C:\Mangos as base directory under which you put everything (For *nix just place it under ~/Mangos).
+We personally use some directory structure to be able to keep overview of things we have. For this guide we will assume that you will use C:\Mangos (for windows) as base directory under which you put everything.
+
+For *nix, create a new user to run your mangos server under
+++useradd -m -d /home/mangos -c "MANGoS" -g mangos mangos++
+
+For *nix, this guide assumes you will use /home/mangos as a base folder under which you will put everything.
 
 For Windows all shell commands are expected to be typed from a "Git bash" started from the C:\Mangos directory. To do so, right-click onto C:\Mangos in the windows explorer, and select "Git bash here" from the context menu.
 
@@ -271,10 +276,10 @@ Compiling ScriptDev2 (Windows)
 
 Compiling CMaNGOS and ScriptDev2 (*nix)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Go to your ~/Mangos folder
+* Go to your /home/mangos folder
 * Enter the build folder: ++cd build++
 * Invoke ++cmake ../mangos++, suggested options are:
-  - ++-DCMAKE_INSTALL_PREFIX=\../mangos/run++ to install into the "run" subfolder of ~/Mangos folder, otherwise this will install to /opt/mangos
+  - ++-DCMAKE_INSTALL_PREFIX=\../mangos/run++ to install into the "run" subfolder of /home/mangos folder, otherwise this will install to /opt/mangos
   - ++-DPDC=1++ to compile with PCH mode (much faster after updates)
   - ++-DDEBUG=0++ to remove debug mode from compiling
   - *IMPORTANT* ++-DINCLUDE_BINDINGS_DIR=ScriptDev2++ to include ScriptDev2
@@ -309,7 +314,7 @@ You must extract DBC/maps and vmaps for CMaNGOS to work, mmaps are optional (and
 On *nix this step is more complicated, it is actually suggested to extract the client files from a Windows system.
 You need to copy them (by default configuration) into the directory into which you installed CMaNGOS:
 
-++/Mangos/run/bin++
+++/mangos/run/bin++
 
 Install databases
 -----------------
@@ -414,10 +419,10 @@ With the default configuration, you only need to change CORE_PATH to:
 +
 -----------------------
 CORE_PATH="/c/Mangos/mangos"
-(for *nix ~/Mangos/mangos)
+(for *nix /home/mangos/mangos)
 -----------------------
 *
-You may actually have to set ++CORE_PATH="../../mangos"++ (assuming default paths from this guide), if the tilde is not properly resolved into your home folder path, causing InstallFullUDB.sh to complain about not finding "~/Mangos/mangos". Tested on openSUSE 12.3.
+You may actually have to set ++CORE_PATH="../../mangos"++ (assuming default paths from this guide), if the tilde is not properly resolved into your home folder path, causing InstallFullUDB.sh to complain about not finding "/home/mangos/mangos". Tested on openSUSE 12.3.
 
 * Now the helper tool is configured, and you only need to run the helper script, whenever you want to set your world database to a clear state!
 * ++InstallFullUDB.sh++
@@ -578,6 +583,16 @@ Running your Server
 -------------------
 Launch C:\Mangos\run\mangosd.exe and C:\Mangos\run\realmd.exe
 On *nix run the corresponding binary files
+++./home/mangos/mangos/run/bin/mangosd -c /home/mangos/mangos/run/etc/mangosd.conf -a /home/mangos/mangos/run/etc/ahbot.conf++
+++./home/mangos/mangos/run/bin/realmd -c /home/mangos/mangos/run/etc/realmd.conf++
+
+Tip1:don't run mangosd or realmd as root
+++su mangos++
+
+Tip2:you can run mangosd and realmd in separate screens
+++exec screen -dmS mangosd /home/mangos/mangos/run/bin/mangosd -c /home/mangos/mangos/run/etc/mangosd.conf -a /home/mangos/mangos/run/etc/ahbot.conf++
+++exec screen -dmS realmd /home/mangos/mangos/run/bin/realmd -c /home/mangos/mangos/run/etc/realmd.conf++
+
 
 Creating first account:
 -----------------------
