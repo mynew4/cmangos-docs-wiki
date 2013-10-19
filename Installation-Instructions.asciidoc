@@ -583,14 +583,18 @@ Running your Server
 -------------------
 Launch C:\Mangos\run\mangosd.exe and C:\Mangos\run\realmd.exe
 On *nix run the corresponding binary files
-++./home/mangos/mangos/run/bin/mangosd -c /home/mangos/mangos/run/etc/mangosd.conf -a /home/mangos/mangos/run/etc/ahbot.conf++
-++./home/mangos/mangos/run/bin/realmd -c /home/mangos/mangos/run/etc/realmd.conf++
+
+++/home/mangos/mangos/run/bin/mangosd -c /home/mangos/mangos/run/etc/mangosd.conf -a /home/mangos/mangos/run/etc/ahbot.conf++
+
+++/home/mangos/mangos/run/bin/realmd -c /home/mangos/mangos/run/etc/realmd.conf++
 
 Tip1:don't run mangosd or realmd as root
 ++su mangos++
 
 Tip2:you can run mangosd and realmd in separate screens
+
 ++exec screen -dmS mangosd /home/mangos/mangos/run/bin/mangosd -c /home/mangos/mangos/run/etc/mangosd.conf -a /home/mangos/mangos/run/etc/ahbot.conf++
+
 ++exec screen -dmS realmd /home/mangos/mangos/run/bin/realmd -c /home/mangos/mangos/run/etc/realmd.conf++
 
 
