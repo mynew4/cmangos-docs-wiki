@@ -13,6 +13,7 @@ h3. Structure
 |"entry":Spell_script_target#entry|int(6) unsigned|NO|PRI|||
 |"type":Spell_script_target#type|int(8) unsigned|NO|PRI|0||
 |"targetEntry":Spell_script_target#targetentry|int(11) unsigned|NO|PRI|0||
+|"inverseEffectMask":Spell_script_target#inverseEffectMask|mediumint(8) unsigned|N|0||
 
 
 h3. Description of the fields
@@ -39,4 +40,17 @@ h4. targetEntry
 
 Can be: "creature&#95;template.entry":creature_template#entry or "gameobject&#95;template.entry":gameobject_template#entry depending on the choosen type.
 
-This specified entry will be automatically targeted if it is near the player casting the spell.
+This specified entry will be automatically targeted if it is near the unit casting the spell.
+
+h4. inverseEffectMask
+
+A mask value defining if the target is only applicable for specifiq effect indexes.
+This is an inverseMask, so you need to filter effects for which you don't want the target to be valid.
+The mask is 1 << EffectIndex (EffectIndex going from 0 to 2)
+
+Example:
+(Spell, 1, NpcA, 2^0), -- NpcA will NOT be chosen for spell-effect 0, so it will be chosen for effects 1 or 2
+(Spell, 1, NpcB, 2^1|2^2), -- NpcB will NOT be chosen for spell-effects 1, 2, so it will be chosen for effect 0.
+
+So with this we can define targets for a spell (assuming that the targets for the effects can make use of spell_script_target!) in a way that Effect0 will hit NpcB, and Effect1,2 will hit NpcA
+
