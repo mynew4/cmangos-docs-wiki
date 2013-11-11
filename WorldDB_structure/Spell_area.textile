@@ -13,6 +13,7 @@ h3. Structure
 |"quest_start":Spell_area#quest_start|mediumint(8) unsigned|NO|PRI|0||
 |"quest_start_active":Spell_area#quest_start_active|tinyint(1) unsigned|NO|PRI|0||
 |"quest_end":Spell_area#quest_end|mediumint(8) unsigned|NO||0||
+|"condition_id":Spell_area#condition_id|mediumint(8)|NO|PRI|0||
 |"aura_spell":Spell_area#aura_spell|mediumint(8)|NO|PRI|0||
 |"racemask":Spell_area#racemask|mediumint(8) unsigned|NO|PRI|0||
 |"gender":Spell_area#gender|tinyint(1) unsigned|NO|PRI|2||
@@ -40,6 +41,10 @@ Boolean value. If set to 0 the quest "quest&#95;start":spell_area#quest_start mu
 h4. quest&#95;end
 
 Reference to "quest_template.":quest_template. This quest must not be completed.
+
+h4. condition_id
+
+Reference to "conditions.":conditions.
 
 h4. aura&#95;spell
 
