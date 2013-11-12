@@ -176,7 +176,7 @@ UDB (WotLK)
 This will create a new folder (likely C:\Mangos\unifieddb) in which UDB SQL-files are located
 
 UDB 4.3.4(CATA)
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 *On Windows*
 
 * Open C:\Mangos in the exporer, right-click on the right hand side
