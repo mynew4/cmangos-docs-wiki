@@ -16,9 +16,10 @@ Addresses
 - ScriptDev2: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2[SD2 git repositories] | http://qchat.rizon.net/?channels=%23scriptdev2[irc] (irc.rizon.net #scriptdev2)
 - ACID: http://www.scriptdev2.com[forum] | https://github.com/scriptdev2/acid[git repository] | http://qchat.rizon.net/?channels=%23aciddev[irc] (irc.rizon.net #aciddev)
 - UDB: http://udb.no-ip.org/index.php[forum] | https://svn.code.sf.net/p/unifieddb/code/[svn repository]
+- UDB 4.3.4: http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | http://svn.code.sf.net/p/udb434/code/udb434-code[svn repository]
 - YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
 - PSDB: http://project-silvermoon.forumotion.com/[forum] | http://subversion.assembla.com/svn/psmdb_wotlk/[svn repository]
-- TBCDB: http://udb.no-ip.org/index.php[forum, scroll down to TBC] | https://tbc-db.svn.sourceforge.net/svnroot/tbc-db[svn repository]
+- TBC-DB: http://udb.no-ip.org/index.php[forum, scroll down to TBC] | https://tbc-db.svn.sourceforge.net/svnroot/tbc-db[svn repository]
 - ClassicDB: https://github.com/classicdb[Project main site on GitHub] | https://github.com/classicdb/database[git repository]
 
 Software requirements (Windows)
