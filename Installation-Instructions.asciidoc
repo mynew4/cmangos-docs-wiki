@@ -175,6 +175,34 @@ UDB (WotLK)
 
 This will create a new folder (likely C:\Mangos\unifieddb) in which UDB SQL-files are located
 
+UDB 4.3.4(CATA)
+^^^^^^^^^^^
+*On Windows*
+
+* Open C:\Mangos in the exporer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://svn.code.sf.net/p/udb434/code/++
+
+*On *nix*
+
+++svn co ttp://svn.code.sf.net/p/udb434/code/++
+
+This will create a new folder (likely C:\Mangos\udb434) in which UDB 4.3.4 SQL-files are located.
+
+TBC-DB (TBC)
+^^^^^^^^^^^
+*On Windows*
+
+* Open C:\Mangos in the exporer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://svn.code.sf.net/p/tbc-db/code/++
+
+*On *nix*
+
+++svn co ttp://svn.code.sf.net/p/tbc-db/code/++
+
+This will create a new folder (likely C:\Mangos\tbc-db) in which TBC-DB SQL-files are located.
+
 YTDB (WotLK)
 ^^^^^^^^^^^^
 *On Windows*
@@ -202,20 +230,6 @@ PSDB (WotLK)
 ++svn co http://svn.assembla.com/svn/psmdb_wotlk/++
 
 This will create a new folder (likely C:\Mangos\psmdb_wotlk) in which PSDB SQL-files are located.
-
-TBCDB (TBC)
-^^^^^^^^^^^
-*On Windows*
-
-* Open C:\Mangos in the exporer, right-click on the right hand side
-* Select "Tortoise SVN Checkout" from the context menu.
-* Insert as SVN-URL: ++http://tbc-db.svn.sourceforge.net/viewvc/tbc-db/++
-
-*On *nix*
-
-++svn co ttp://tbc-db.svn.sourceforge.net/viewvc/tbc-db/++
-
-This will create a new folder (likely C:\Mangos\tbcdb) in which TBCDB SQL-files are located.
 
 ClassicDB (Classic)
 ^^^^^^^^^^^^^^^^^^^
