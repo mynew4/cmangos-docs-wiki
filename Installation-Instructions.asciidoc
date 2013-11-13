@@ -185,7 +185,7 @@ UDB 4.3.4(CATA)
 
 *On *nix*
 
-++svn co ttp://svn.code.sf.net/p/udb434/code/++
+++svn co http://svn.code.sf.net/p/udb434/code/++
 
 This will create a new folder (likely C:\Mangos\udb434) in which UDB 4.3.4 SQL-files are located.
 
@@ -199,7 +199,7 @@ TBC-DB (TBC)
 
 *On *nix*
 
-++svn co ttp://svn.code.sf.net/p/tbc-db/code/++
+++svn co http://svn.code.sf.net/p/tbc-db/code/++
 
 This will create a new folder (likely C:\Mangos\tbc-db) in which TBC-DB SQL-files are located.
 
