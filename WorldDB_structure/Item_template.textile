@@ -182,6 +182,7 @@ The class of the item:
 |13|Key|
 |14|Permanent(OBSOLETE)|
 |15|Miscellaneous|
+|16|Glyph|
 
 
 h4. subclass
