@@ -45,11 +45,19 @@ You will need: Git, GCC, CMake, MySQL, SVN and a few libaries
 
 Software requirements - Ubuntu (12.04)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-++sudo apt-get install build-essential gcc g++ automake git-core autoconf make patch libmysql++-dev mysql-server libtool libssl-dev grep binutils zlibc libc6 libbz2-dev cmake++
+----
+sudo apt-get install build-essential gcc g++ automake git-core \
+autoconf make patch libmysql++-dev mysql-server libtool \
+libssl-dev grep binutils zlibc libc6 libbz2-dev cmake
+----
 
 Software requirements - Debian
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-++apt-get install grep build-essential gcc g++ automake git-core autoconf make patch cmake libmysql++-dev mysql-server libtool libssl-dev binutils zlibc libc6 libbz2-dev++
+----
+apt-get install grep build-essential gcc g++ automake git-core \
+autoconf make patch cmake libmysql++-dev mysql-server libtool \
+libssl-dev binutils zlibc libc6 libbz2-dev
+----
 
 Essentials
 ----------
