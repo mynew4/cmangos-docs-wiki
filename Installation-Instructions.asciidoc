@@ -73,11 +73,11 @@ ACID::
 Database::
   With "database" in terms of CMaNGOS installation is usually referred to the so-called world-database, into which the content is filled that populates the world run by CMaNGOS.
   There are mainly these database providers out there, namely
-  - UDB (for WotLK)
-  - YTDB (for WotLK)
-  - PSDB (for WotLK)
-  - TBCDB (for TBC)
-  - ClassicDB (for Classic)
+  - UDB (for WotLK - 3.3.5a)
+  - YTDB (for WotLK - 3.3.5a)
+  - PSDB (for WotLK - 3.3.5a)
+  - TBC-DB (for TBC - 2.4.3)
+  - ClassicDB (for Classic - 1.12.1)
 
   All have their own advantages and disadvantages. Which you use is your choice!
 
@@ -341,7 +341,7 @@ You need to copy them (by default configuration) into the directory into which y
 
 Install databases
 -----------------
-For this section it is assumed you have already installed your MySQL server, and have a password for "root" user.
+For this section it is assumed you have already installed your MySQL server, and have a password for "root" user. To make use of some additional installation helper scripts it is HIGHLY suggested when installing MYSQL you include the command path to the BIN folder (Option during Install).
 
 Create empty databases
 ~~~~~~~~~~~~~~~~~~~~~~
