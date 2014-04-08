@@ -11,33 +11,53 @@ h3. Structure
 
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":Creature_template#entry|mediumint(8) unsigned|NO|PRI|0||
-|"difficulty_entry_1":Creature_template#difficulty_entry|mediumint(8) unsigned|NO||0||
-|"difficulty_entry_2":Creature_template#difficulty_entry|mediumint(8) unsigned|NO||0||
-|"difficulty_entry_3":Creature_template#difficulty_entry|mediumint(8) unsigned|NO||0||
+|"Entry":Creature_template#entry|mediumint(8) unsigned|NO|PRI|0||
+|"Name":Creature_template#name|char(100)|NO||0||
+|"SubName":Creature_template#subname|char(100)|YES||Null||
+|"IconName":Creature_template#iconname|char(100)|YES||Null||
+|"MinLevel":Creature_template#minlevel|tinyint(3) unsigned|YES||1||
+|"MaxLevel":Creature_template#maxlevel|tinyint(3) unsigned|YES||1||
+|"DifficultyEntry1":Creature_template#difficulty_entry|mediumint(8) unsigned|NO||0||
+|"DifficultyEntry2":Creature_template#difficulty_entry|mediumint(8) unsigned|NO||0||
+|"DifficultyEntry3":Creature_template#difficulty_entry|mediumint(8) unsigned|NO||0||
+|"ModelId1":Creature_template#modelid|mediumint(8) unsigned|NO||0||
+|"ModelId2":Creature_template#modelid|mediumint(8) unsigned|NO||0||
+|"ModelId3":Creature_template#modelid|mediumint(8) unsigned|NO||0||
+|"ModelId4":Creature_template#modelid|mediumint(8) unsigned|NO||0||
+|"FactionAlliance":Creature_template#faction_a|smallint(5) unsigned|NO||0||
+|"FactionHorde":Creature_template#faction_h|smallint(5) unsigned|NO||0||
+|"Scale":Creature_template#scale|float|NO||0||
+|"Family":Creature_template#family|tinyint(4)|YES||0||
+|"CreatureType":Creature_template#type|tinyint(3) unsigned|NO||0||
+|"InhabitType":Creature_template#inhabittype|tinyint(3) unsigned|NO||3||
+|"RegenerateHealth":Creature_template#regenhealth|tinyint(3) unsigned|NO||1||
+|"RacialLeader":Creature_template#racialleader|tinyint(3) unsigned|NO||0||
+|"NpcFlags":Creature_template#npcflag|int(10) unsigned|NO||0||
+|"UnitFlags":Creature_template#unit_flags|int(10) unsigned|NO||0||
+|"DynamicFlags":Creature_template#dynamicflags|int(10) unsigned|NO||0||
+|"ExtraFlags":Creature_template#flags_extra|int(10) unsigned|NO||0||
+
+
+
+
+
 |"KillCredit1":Creature_template#killcredit|INTEGER unsigned|NO||0||
 |"KillCredit2":Creature_template#killcredit|INTEGER unsigned|NO||0||
-|"modelid_1":Creature_template#modelid|mediumint(8) unsigned|NO||0||
-|"modelid_2":Creature_template#modelid|mediumint(8) unsigned|NO||0||
-|"modelid_3":Creature_template#modelid|mediumint(8) unsigned|NO||0||
-|"modelid_4":Creature_template#modelid|mediumint(8) unsigned|NO||0||
-|"name":Creature_template#name|char(100)|NO||0||
-|"subname":Creature_template#subname|char(100)|YES||Null||
-|"IconName":Creature_template#iconname|char(100)|YES||Null||
+
+
+
 |"gossip_menu_id":Creature_template#gossip_menu_id|MENIUMINT(8)|YES||0||
-|"minlevel":Creature_template#minlevel|tinyint(3) unsigned|YES||1||
-|"maxlevel":Creature_template#maxlevel|tinyint(3) unsigned|YES||1||
+
 |"minhealth":Creature_template#minhealth|int(10) unsigned|YES||0||
 |"maxhealth":Creature_template#maxhealth|int(10) unsigned|YES||0||
 |"minmana":Creature_template#minmana|int(10) unsigned|YES||0||
 |"maxmana":Creature_template#maxmana|int(10) unsigned|YES||0||
 |"armor":Creature_template#armor|mediumint(8) unsigned|NO||0||
-|"faction_A":Creature_template#faction_a|smallint(5) unsigned|NO||0||
-|"faction_H":Creature_template#faction_h|smallint(5) unsigned|NO||0||
-|"npcflag":Creature_template#npcflag|int(10) unsigned|NO||0||
+
+
 |"speed_walk":Creature_template#speed|float|YES||1||
 |"speed_run":Creature_template#speed|float|YES||1.14286||
-|"scale":Creature_template#scale|float|NO||0||
+
 |"rank":Creature_template#rank|tinyint(3) unsigned|YES||0||
 |"mindmg":Creature_template#mindmg|float|YES||0||
 |"maxdmg":Creature_template#maxdmg|float|YES||0||
@@ -47,9 +67,9 @@ h3. Structure
 |"baseattacktime":Creature_template#baseattacktime|int(10) unsigned|YES||0||
 |"rangeattacktime":Creature_template#rangeattacktime|int(10) unsigned|YES||0||
 |"unit_class":Creature_template#unit_class|int unsigned|NO||0||
-|"unit_flags":Creature_template#unit_flags|int(10) unsigned|NO||0||
-|"dynamicflags":Creature_template#dynamicflags|int(10) unsigned|NO||0||
-|"family":Creature_template#family|tinyint(4)|YES||0||
+
+
+
 |"trainer_type":Creature_template#trainer_type|tinyint(4)|YES||0||
 |"trainer_spell":Creature_template#trainer_spell|mediumint(8) unsigned|YES||0||
 |"trainer_class":Creature_template#trainer_class|tinyint(3) unsigned|YES||0||
@@ -57,7 +77,7 @@ h3. Structure
 |"minrangedmg":Creature_template#minrangedmg|float|NO||0||
 |"maxrangedmg":Creature_template#maxrangedmg|float|NO||0||
 |"rangedattackpower":Creature_template#rangedattackpower|smallint(5) unsigned|NO||0||
-|"type":Creature_template#type|tinyint(3) unsigned|NO||0||
+
 |"type_flags":Creature_template#type_flags|int(10) unsigned|YES||0||
 |"lootid":Creature_template#lootid|mediumint(8) unsigned|NO||0||
 |"pickpocketloot":Creature_template#pickpocketloot|mediumint(8) unsigned|NO||0||
@@ -73,10 +93,10 @@ h3. Structure
 |"maxgold":Creature_template#maxgold|mediumint(8) unsigned|NO||0||
 |"AIName":Creature_template#ainame|char(64)|NO||||
 |"MovementType":Creature_template#movementtype|tinyint(3) unsigned|NO||0||
-|"InhabitType":Creature_template#inhabittype|tinyint(3) unsigned|NO||3||
+
 |"unk16":Creature_template#unk16|float|NO||1.0||
 |"unk17":Creature_template#unk17|float|NO||1.0||
-|"RacialLeader":Creature_template#racialleader|tinyint(3) unsigned|NO||0||
+
 |"questItem1":Creature_template#questitem|INTEGER|NO||0||
 |"questItem2":Creature_template#questitem|INTEGER|NO||0||
 |"questItem3":Creature_template#questitem|INTEGER|NO||0||
@@ -84,12 +104,12 @@ h3. Structure
 |"questItem5":Creature_template#questitem|INTEGER|NO||0||
 |"questItem6":Creature_template#questitem|INTEGER|NO||0||
 |"movementId":Creature_template#movementid|INTEGER|NO||0||
-|"RegenHealth":Creature_template#regenhealth|tinyint(3) unsigned|NO||1||
+
 |"equipment_id":Creature_template#equipment_id|mediumint(8) unsigned|NO||0||
 |"trainer_id":Creature_template#trainer_id|mediumint(8)|NO||0||
 |"vendor_id":Creature_template#vendor_id|mediumint(8)|NO||0||
 |"mechanic_immune_mask":Creature_template#mechanic_immune_mask|int(10) unsigned|NO||0||
-|"flags_extra":Creature_template#flags_extra|int(10) unsigned|NO||0||
+
 |"ScriptName":Creature_template#scriptname|char(64)|NO||||
 
 
