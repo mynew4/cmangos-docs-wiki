@@ -107,6 +107,19 @@ This is the Primary NPC Entry Number and is Also the Dungeon Normal Mode / Raid 
 |DUNGEON&#95;DIFFICULTY&#95;NORMAL|
 |RAID&#95;DIFFICULTY&#95;10MAN&#95;NORMAL|
 
+h4. Name
+
+Base Name of the Creature.
+
+h4. SubName
+
+The SubName of the Creature That Appears in &lt;&gt; Below the Creature's Name.
+
+h4. IconName
+
+Script Icon Used by Guards With Directions Menu.
+
+
 ============= BELOW IS OLD DATA ===============
 
 h4. difficulty&#95;entry
@@ -126,17 +139,7 @@ h4. modelid
 
 Graphical model that the client applies on this creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
 
-h4. name
 
-Base name of the creature.
-
-h4. subname
-
-The subname of the creature that appears in &lt;&gt; below the creature's name.
-
-h4. IconName
-
-Script icon used by guards with directions menu.
 
 h4. gossip&#95;menu&#95;id
 
