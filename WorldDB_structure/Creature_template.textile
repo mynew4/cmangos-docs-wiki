@@ -104,6 +104,9 @@ h4. Entry
 
 This is the Primary NPC Entry Number and is Also the Default Normal Mode NPC Entry.
 
+|DUNGEON&#95;DIFFICULTY&#95;NORMAL|0|
+
+
 ============= BELOW IS OLD DATA ===============
 
 h4. difficulty&#95;entry
@@ -111,7 +114,7 @@ h4. difficulty&#95;entry
 If not zero, this field refers to an entry of creature&#95;template. Which suppose to be used in certain difficulty see below:
 
 
-|DUNGEON&#95;DIFFICULTY&#95;NORMAL|0|
+
 |DUNGEON&#95;DIFFICULTY&#95;HEROIC|1|
 |RAID&#95;DIFFICULTY&#95;10MAN&#95;NORMAL|0|
 |RAID&#95;DIFFICULTY&#95;25MAN&#95;NORMAL|1|
