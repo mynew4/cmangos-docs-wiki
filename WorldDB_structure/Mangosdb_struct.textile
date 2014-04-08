@@ -54,7 +54,7 @@ h3. This is the list of tables in the regular 'mangos' database
 
 * "creature_questrelation":creature_questrelation (Reloadable)
 
-* "creature_template":creature_template_old
+* "creature_template":creature_template_old (Old Table - Pre Stats System)
 
 * "creature_template_addon":creature_template_addon
 
