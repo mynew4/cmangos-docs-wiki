@@ -104,8 +104,8 @@ h4. Entry
 
 This is the Primary NPC Entry Number and is Also the Dungeon Normal Mode / Raid 10-Man Normal Mode Entry.
 
-|DUNGEON&#95;DIFFICULTY&#95;NORMAL|0|
-|RAID&#95;DIFFICULTY&#95;10MAN&#95;NORMAL|0|
+|DUNGEON&#95;DIFFICULTY&#95;NORMAL|
+|RAID&#95;DIFFICULTY&#95;10MAN&#95;NORMAL|
 
 ============= BELOW IS OLD DATA ===============
 
