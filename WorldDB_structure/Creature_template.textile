@@ -129,38 +129,74 @@ The Maximum Level of the Creature if the Creature Has a Level Range. For Creatur
 
 h4. DifficultyEntry1
 
-If not zero, this field refers to an entry of creature&#95;template. Which suppose to be used in certain difficulty see below:
+If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
 
 |DUNGEON&#95;DIFFICULTY&#95;HEROIC|
 |RAID&#95;DIFFICULTY&#95;25MAN&#95;NORMAL|
 
 h4. DifficultyEntry2
 
-If not zero, this field refers to an entry of creature&#95;template. Which suppose to be used in certain difficulty see below:
+If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
 
 |RAID&#95;DIFFICULTY&#95;10MAN&#95;HEROIC|
 
 h4. DifficultyEntry3
 
-If not zero, this field refers to an entry of creature&#95;template. Which suppose to be used in certain difficulty see below:
+If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
 
 |RAID&#95;DIFFICULTY&#95;25MAN&#95;HEROIC|
 
 h4. ModelId1
 
-Primary Graphical Model That The Client Applies On This Creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
+Primary Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
 
 h4. ModelId2
 
-Optional Extra Graphical Model That The Client Applies On This Creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
 
 h4. ModelId3
 
-Optional Extra Graphical Model That The Client Applies On This Creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
 
 h4. ModelId4
 
-Optional Extra Graphical Model That The Client Applies On This Creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
+
+h4. FactionAlliance
+
+The Faction If The Creature Is On The Alliance Side. See "FactionTemplate.dbc.":FactionTemplate.dbc. Just Because More Than One Faction Has The Same Name, The Inter-Faction Relationships Can Be Different.
+
+Note: This Field Also Controls The Creature Family Assistance Mechanic. Only Creatures With The Same Faction Will Assist Each Other.
+
+h4. FactionHorde
+
+The Faction If The Creature Is On The Horde Side. See "FactionTemplate.dbc.":FactionTemplate.dbc. Just Because More Than One Faction Has The Same Name, The Inter-Faction Relationships Can Be Different.
+
+Note: This Field Also Controls The Creature Family Assistance Mechanic. Only Creatures With The Same Faction Will Assist Each Other.
+
+h4. Scale
+
+If This Is A Non-Zero Value, This Field Defines a Manual Over-Ride For The Size Of The Model That The Creature Appears In The Game. If Zero, The Creature Will Use The Default Model Size Taken From The DBC.
+
+h4. Family
+
+This Defines The Family That This Creature Belongs To. This Is Only Used If "CreatureType":#CreatureType Is 1 (Beast).
+
+|_. ID|_. Family|_. ID|_. Family|_. ID|_. Family|
+|1|Wolf|15|Doomguard|29|Nether Ray|
+|2|Cat|16|Scorpid|30|Serpent|
+|3|Spider|17|Turtle|31|Moth|
+|4|Bear|18|Imp|32|Chimaera|
+|5|Boar|19|Bat|33|Devilsaur|
+|6|Crocolisk|20|Hyena|34|Ghoul|
+|7|Carrion Bird|21|Bird of Prey|35|Silithid|
+|8|Crab|22|Wind Serpent|36|Worm|
+|9|Gorilla|23|Remote Control|37|Rhino|
+|10|Raptor|24|Felguard|38|Wasp|
+|11|Tallstrider|25|Dragonhawk|39|Core Hound|
+|12|Felhunter|26|Ravager|40|Spirit Beast|
+|13|Voidwalker|27|Warp Stalker|
+|14|Succubus|28|Sporebat|
 
 ============= BELOW IS OLD DATA ===============
 
@@ -191,17 +227,7 @@ h4. armor
 
 The armor value of the creature. It controls how much damage reduction the creature gets from physical attacks.
 
-h4. faction&#95;A
 
-The faction if the creature is on the alliance side. See "FactionTemplate.dbc.":FactionTemplate.dbc. Just because more than one faction has the same name, the inter-faction relationships can be different.
-
-Note: This field also controls the creature family assistance mechanic. Only creatures with the same faction will assist each other.
-
-h4. faction&#95;H
-
-The faction if the creature is on the horde side. See "FactionTemplate.dbc.":FactionTemplate.dbc. Just because more than one faction has the same name, the inter-faction relationships can be different.
-
-Note: This field also controls the creature family assistance mechanic. Only creatures with the same faction will assist each other.
 
 h4. npcflag
 
@@ -246,9 +272,6 @@ h4. speed
 
 Controls how fast the creature can move in a certain mode.
 
-h4. scale
-
-If non-zero, this field defines the size of how the model of the creature appears ingame. If zero, it will use default model size taken from the DBC.
 
 h4. rank
 
@@ -378,25 +401,7 @@ A few known flags and their use are:
 |64|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST||
 
 
-h4. family
 
-The family this creature belongs to. Only used if "type":#type is 1 (Beast).
-
-|_. ID|_. Family|_. ID|_. Family|_. ID|_. Family|
-|1|Wolf|15|Doomguard|29|Nether Ray|
-|2|Cat|16|Scorpid|30|Serpent|
-|3|Spider|17|Turtle|31|Moth|
-|4|Bear|18|Imp|32|Chimaera|
-|5|Boar|19|Bat|33|Devilsaur|
-|6|Crocolisk|20|Hyena|34|Ghoul|
-|7|Carrion Bird|21|Bird of Prey|35|Silithid|
-|8|Crab|22|Wind Serpent|36|Worm|
-|9|Gorilla|23|Remote Control|37|Rhino|
-|10|Raptor|24|Felguard|38|Wasp|
-|11|Tallstrider|25|Dragonhawk|39|Core Hound|
-|12|Felhunter|26|Ravager|40|Spirit Beast|
-|13|Voidwalker|27|Warp Stalker|
-|14|Succubus|28|Sporebat|
 
 
 h4. trainer&#95;type
