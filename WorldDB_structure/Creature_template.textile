@@ -146,16 +146,23 @@ If not zero, this field refers to an entry of creature&#95;template. Which suppo
 
 |RAID&#95;DIFFICULTY&#95;25MAN&#95;HEROIC|
 
+h4. ModelId1
 
+Primary Graphical Model That The Client Applies On This Creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
+
+h4. ModelId2
+
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
+
+h4. ModelId3
+
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
+
+h4. ModelId4
+
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
 
 ============= BELOW IS OLD DATA ===============
-
-
-
-
-h4. modelid
-
-Graphical model that the client applies on this creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
 
 
 
