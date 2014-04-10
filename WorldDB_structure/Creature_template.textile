@@ -119,6 +119,14 @@ h4. IconName
 
 Script Icon Used by Guards With Directions Menu.
 
+h4. MinLevel
+
+The Minimum Level of the Creature if the Creature Has a Level Range.
+
+h4. MaxLevel
+
+The Maximum Level of the Creature if the Creature Has a Level Range.
+
 
 ============= BELOW IS OLD DATA ===============
 
@@ -145,13 +153,6 @@ h4. gossip&#95;menu&#95;id
 
 Reference to a "gossip&#95;menu&#95;id":gossip_menu.
 
-h4. minlevel
-
-The minimum level of the creature if the creature has a level range.
-
-h4. maxlevel
-
-The maximum level of the creature if the creature has a level range. When added to world, a level in chosen in the specified level range.
 
 h4. minhealth
 
