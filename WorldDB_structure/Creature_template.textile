@@ -198,40 +198,56 @@ This Defines The Family That This Creature Belongs To. This Is Only Used If "Cre
 |13|Voidwalker|27|Warp Stalker|
 |14|Succubus|28|Sporebat|
 
-============= BELOW IS OLD DATA ===============
+h4. CreatureType
+
+This Field Defines The Type Of Creature This NPC Is.
+
+|_. ID|_. Type|
+|0|None|
+|1|Beast|
+|2|Dragonkin|
+|3|Demon|
+|4|Elemental|
+|5|Giant|
+|6|Undead|
+|7|Humanoid|
+|8|Critter|
+|9|Mechanical|
+|10|Not specified|
+|11|Totem|
+|12|Non-combat Pet|
+|13|Gas Cloud|
+
+h4. InhabitType
+
+This Field Controls Where The Creature Can Move Into, Chase And Attack. The NPC Is Limited To ONLY This:
+
+|_. ID|_. Type|
+|1|Ground Movement Only|
+|2|Water Movement Only|
+|3|Both Ground And Water Movement|
+|4|Always Flying|
 
 
+h4. RegenerateHealth
 
-h4. gossip&#95;menu&#95;id
+This Field Controls If The Creature Should Regenerate It's Health When Out of Combat (Boolean Value 1 or 0)
 
-Reference to a "gossip&#95;menu&#95;id":gossip_menu.
+|Value|Description|
+|0|NPC Does NOT Regenerate Health When Out Of Comabt|
+|1|NPC DOES Regenerate Health When Out Of Comabt|
 
+h4. RacialLeader
 
-h4. minhealth
+This Field Is a Boolean Flag Indicating That The Creature Is a Racial Leader. Killing Racial Leaders Grants 100 Honor Points.
 
-The minimum health of the creature if the creature has variable health.
+|Value|Description|
+|0|NPC Is NOT a Racial Leader|
+|1|NPC IS a Racial Leader|
 
-h4. maxhealth
+h4. NpcFlags
 
-The maximum health of the creature if the creature has a variable health. When added to world, the health value is chosen in proportion to the level chosen.
-
-h4. minmana
-
-The miminum mana of the creature if the creature has variable mana.
-
-h4. maxmana
-
-The maximum mana of the creature if the creature has variable mana. When added to world, the mana value is chosen in proportion to the level chosen.
-
-h4. armor
-
-The armor value of the creature. It controls how much damage reduction the creature gets from physical attacks.
-
-
-
-h4. npcflag
-
-A bitmask that represents what NPC flags the creature has. Each bit controls a different flag and to combine flags, you can add each flag that you want, in effect activating the respective bits.
+This Field Is a Bitmask That Represents What NPC Flags The Creature Has Assigned To It. Each Bit Controls a Different Flag and to Combine Flags, You Can Add Each Flag That You Require, In Effect Activating The Respective Bits.
 
 |_. Bit|_. Flag|_. Comment|
 |1|Gossip|If creature has more gossip options, add this flag to bring up a menu.|
@@ -265,8 +281,100 @@ A bitmask that represents what NPC flags the creature has. Each bit controls a d
 |33554432|Player Vehicle|players with mounts that have vehicle data should have it set|
 |268435456|Guard ???? |Creatures with this flag act as guards in cities.|
 
+EXAMPLE:
+So If You Want An NPC That Is a Quest Giver, a Vendor And Can Also Repair You Just Add The Specific Flags Together: 
 
-So if you want an NPC that is a quest giver, a vendor, and can repair you just add the specific flags together: 1 + 2 + 128 + 4096 = 4227.
+1 + 2 + 128 + 4096 = 4227.
+NpcFlags = 4227
+
+h4. UnitFlags
+
+This Field Allows The Manual Application Of Unit Flags To NPC. This Is a Bitmask Field And To Apply More Then One Flag, Just Add The Different Flags Together. Some Known Possible Flags Are:
+
+|*Flag*|*Name*|*Comments*|
+|1|UNIT&#95;FLAG&#95;UNK&#95;0||
+|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE||
+|4|UNIT&#95;FLAG&#95;DISABLE&#95;MOVE||
+|8|UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE|(allow apply pvp rules to attackable state in addition to faction dependent state)|
+|16|UNIT&#95;FLAG&#95;RENAME||
+|32|UNIT&#95;FLAG&#95;RESTING||
+|64|UNIT&#95;FLAG&#95;UNK&#95;6||
+|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|(??) ((UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1) is NON&#95;PVP&#95;ATTACKABLE)|
+|256|UNIT&#95;FLAG&#95;OOC&#95;NOT&#95;ATTACKABLE|(2.0.8 - Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)|
+|512|UNIT&#95;FLAG&#95;PASSIVE|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
+|1024|UNIT&#95;FLAG&#95;LOOTING|(loot animation)|
+|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|(in combat?, 2.0.8)|
+|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon (?)|
+|8192|UNIT&#95;FLAG&#95;SILENCED|Can't cast spells|
+|16384|UNIT&#95;FLAG&#95;UNK&#95;14|(2.0.8)|
+|32768|UNIT&#95;FLAG&#95;UNK&#95;15||
+|65536|UNIT&#95;FLAG&#95;UNK&#95;16||
+|131072|UNIT&#95;FLAG&#95;PACIFIED||
+|262144|UNIT&#95;FLAG&#95;DISABLE&#95;ROTATE|(stunned, 2.1.1)|
+|524288|UNIT&#95;FLAG&#95;IN&#95;COMBAT||
+|1048576|UNIT&#95;FLAG&#95;TAXI&#95;FLIGHT|(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag)|
+|2097152|UNIT&#95;FLAG&#95;DISARMED|(disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.)|
+|4194304|UNIT&#95;FLAG&#95;CONFUSED||
+|8388608|UNIT&#95;FLAG&#95;FLEEING||
+|16777216|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED|(used in spell Eyes of the Beast for pet...)|
+|33554432|UNIT&#95;FLAG&#95;NOT&#95;SELECTABLE|Can't be selected by mouse|
+|67108864|UNIT&#95;FLAG&#95;SKINNABLE||
+|134217728|UNIT&#95;FLAG&#95;MOUNT|(the client seems to handle it perfectly)|
+|268435456|UNIT&#95;FLAG&#95;UNK&#95;28||
+|536870912|UNIT&#95;FLAG&#95;UNK&#95;29|(used in Feing Death spell)|
+|1073741824|UNIT&#95;FLAG&#95;SHEATHE||
+|2147483648|UNIT&#95;FLAG&#95;UNK&#95;31|(set skinnable icon and also changes color of portrait)|
+
+
+h4. DynamicFlags
+
+This Field Flags Controls The Visual Appearance Of The Creature. These Flag Values Can Be Added Together For Any Desired Combination.
+
+Some Known Flag Values Are:
+
+|*Flag*|*Name*|*Comments*|
+|0|UNIT&#95;DYNFLAG&#95;NONE||
+|1|UNIT&#95;DYNFLAG&#95;LOOTABLE||
+|2|UNIT&#95;DYNFLAG&#95;TRACK&#95;UNIT||
+|4|UNIT&#95;DYNFLAG&#95;OTHER&#95;TAGGER|Makes creatures name appear grey (good for simulating dead creatures)|
+|8|UNIT&#95;DYNFLAG&#95;ROOTED||
+|16|UNIT&#95;DYNFLAG&#95;SPECIALINFO|Shows creatures basic stats (Health, damage, resistances, tamable).|
+|32|UNIT&#95;DYNFLAG&#95;DEAD|Makes the creature appear dead (this DOES NOT make the creatures name grey)|
+|64|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST||
+
+
+
+============= BELOW IS OLD DATA ===============
+
+
+
+h4. gossip&#95;menu&#95;id
+
+Reference to a "gossip&#95;menu&#95;id":gossip_menu.
+
+
+h4. minhealth
+
+The minimum health of the creature if the creature has variable health.
+
+h4. maxhealth
+
+The maximum health of the creature if the creature has a variable health. When added to world, the health value is chosen in proportion to the level chosen.
+
+h4. minmana
+
+The miminum mana of the creature if the creature has variable mana.
+
+h4. maxmana
+
+The maximum mana of the creature if the creature has variable mana. When added to world, the mana value is chosen in proportion to the level chosen.
+
+h4. armor
+
+The armor value of the creature. It controls how much damage reduction the creature gets from physical attacks.
+
+
+
 
 h4. speed
 
@@ -343,63 +451,6 @@ The NPC Class. There Are Only 4 classes available to creatures.
 This Value is Contained in Sniff Data: UNIT_FIELD_BYTES_0 located in SMSG_UPDATE_OBJECT
 It is a Critical Field in Determining Class Level Stats For the NPC
 
-h4. unit&#95;flags
-
-Allows the manual application of unit flags to creatures. Again this is a bitmask field and to apply more than one flag, just add the different numbers. Some possible flags are:
-
-
-|*Flag*|*Name*|*Comments*|
-|1|UNIT&#95;FLAG&#95;UNK&#95;0||
-|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE||
-|4|UNIT&#95;FLAG&#95;DISABLE&#95;MOVE||
-|8|UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE|(allow apply pvp rules to attackable state in addition to faction dependent state)|
-|16|UNIT&#95;FLAG&#95;RENAME||
-|32|UNIT&#95;FLAG&#95;RESTING||
-|64|UNIT&#95;FLAG&#95;UNK&#95;6||
-|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|(??) ((UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1) is NON&#95;PVP&#95;ATTACKABLE)|
-|256|UNIT&#95;FLAG&#95;OOC&#95;NOT&#95;ATTACKABLE|(2.0.8 - Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)|
-|512|UNIT&#95;FLAG&#95;PASSIVE|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
-|1024|UNIT&#95;FLAG&#95;LOOTING|(loot animation)|
-|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|(in combat?, 2.0.8)|
-|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon (?)|
-|8192|UNIT&#95;FLAG&#95;SILENCED|Can't cast spells|
-|16384|UNIT&#95;FLAG&#95;UNK&#95;14|(2.0.8)|
-|32768|UNIT&#95;FLAG&#95;UNK&#95;15||
-|65536|UNIT&#95;FLAG&#95;UNK&#95;16||
-|131072|UNIT&#95;FLAG&#95;PACIFIED||
-|262144|UNIT&#95;FLAG&#95;DISABLE&#95;ROTATE|(stunned, 2.1.1)|
-|524288|UNIT&#95;FLAG&#95;IN&#95;COMBAT||
-|1048576|UNIT&#95;FLAG&#95;TAXI&#95;FLIGHT|(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag)|
-|2097152|UNIT&#95;FLAG&#95;DISARMED|(disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.)|
-|4194304|UNIT&#95;FLAG&#95;CONFUSED||
-|8388608|UNIT&#95;FLAG&#95;FLEEING||
-|16777216|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED|(used in spell Eyes of the Beast for pet...)|
-|33554432|UNIT&#95;FLAG&#95;NOT&#95;SELECTABLE|Can't be selected by mouse|
-|67108864|UNIT&#95;FLAG&#95;SKINNABLE||
-|134217728|UNIT&#95;FLAG&#95;MOUNT|(the client seems to handle it perfectly)|
-|268435456|UNIT&#95;FLAG&#95;UNK&#95;28||
-|536870912|UNIT&#95;FLAG&#95;UNK&#95;29|(used in Feing Death spell)|
-|1073741824|UNIT&#95;FLAG&#95;SHEATHE||
-|2147483648|UNIT&#95;FLAG&#95;UNK&#95;31|(set skinnable icon and also changes color of portrait)|
-
-
-h4. dynamicflags
-
-Flags that control visual appearance of the creature.
-
-A few known flags and their use are:
-
-
-|*Flag*|*Name*|*Comments*|
-|0|UNIT&#95;DYNFLAG&#95;NONE||
-|1|UNIT&#95;DYNFLAG&#95;LOOTABLE||
-|2|UNIT&#95;DYNFLAG&#95;TRACK&#95;UNIT||
-|4|UNIT&#95;DYNFLAG&#95;OTHER&#95;TAGGER|Makes creatures name appear grey (good for simulating dead creatures)|
-|8|UNIT&#95;DYNFLAG&#95;ROOTED||
-|16|UNIT&#95;DYNFLAG&#95;SPECIALINFO|Shows creatures basic stats (Health, damage, resistances, tamable).|
-|32|UNIT&#95;DYNFLAG&#95;DEAD|Makes the creature appear dead (this DOES NOT make the creatures name grey)|
-|64|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST||
-
 
 
 
@@ -441,25 +492,7 @@ NOTE: This is Damage Inflicted From RANGED WEAPON ATTACK ONLY (Cross-Bow Arrows,
 
 h4. rangedattackpower
 
-h4. type
 
-The type of the creature.
-
-|_. ID|_. Type|
-|0|None|
-|1|Beast|
-|2|Dragonkin|
-|3|Demon|
-|4|Elemental|
-|5|Giant|
-|6|Undead|
-|7|Humanoid|
-|8|Critter|
-|9|Mechanical|
-|10|Not specified|
-|11|Totem|
-|12|Non-combat Pet|
-|13|Gas Cloud|
 
 
 h4. type&#95;flags
@@ -554,15 +587,6 @@ The creature's default movement type.
 |2|Waypoint movement|
 
 
-h4. InhabitType
-
-Controls where the creature can move and attack.
-
-|_. ID|_. Type|
-|1|Ground only|
-|2|Water only|
-|3|Both ground and water|
-|4|Flying|
 
 
 h4. unk16
@@ -577,13 +601,6 @@ h4. questItem
 
 The entry of the "item":item_template that creature drops and is required within an active quest.
 
-h4. RacialLeader
-
-A flag indicating wheather the creature is a racial leader. Killing racial leaders grants 100 honor.
-
-h4. RegenHealth
-
-Boolean 1 or 0 controlling if the creature should regenerate its health or not.
 
 h4. equipment&#95;id
 
