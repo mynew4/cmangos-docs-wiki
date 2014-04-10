@@ -289,7 +289,9 @@ NpcFlags = 4227
 
 h4. UnitFlags
 
-This Field Allows The Manual Application Of Unit Flags To NPC. This Is a Bitmask Field And To Apply More Then One Flag, Just Add The Different Flags Together. Some Known Possible Flags Are:
+This Field Allows The Manual Application Of Unit Flags To NPC. This Is a Bitmask Field And To Apply More Then One Flag, Just Add The Different Flags Together. 
+
+Some Known Possible Flags Are:
 
 |*Flag*|*Name*|*Comments*|
 |1|UNIT&#95;FLAG&#95;UNK&#95;0||
@@ -342,6 +344,55 @@ Some Known Flag Values Are:
 |32|UNIT&#95;DYNFLAG&#95;DEAD|Makes the creature appear dead (this DOES NOT make the creatures name grey)|
 |64|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST||
 
+h4. ExtraFlags
+
+This Field Controls the Application Of Flags That Controls Certain NPC Specific Attributes.
+
+|_. Bit|_. Name|_. Description|
+|1|CREATURE&#95;FLAG&#95;EXTRA&#95;INSTANCE&#95;BIND|Bounds killer's party to the instance they are in|
+|2|CREATURE&#95;FLAG&#95;EXTRA&#95;CIVILIAN|Makes creature ignore aggro|
+|4|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY|Prohibits creature from parrying|
+|8|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY&#95;HASTEN|Creatures parries do not speed up its next attack|
+|16|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;BLOCK|Prohibits creature from blocking|
+|32|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;CRUSH|Prohibits creature from dealing crushing blows|
+|64|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;XP&#95;AT&#95;KILL|Makes creature reward no XP at kill|
+|128|CREATURE&#95;FLAG&#95;EXTRA&#95;INVISIBLE|Makes creature invisible for player. Use this for triggers etc.|
+|256|CREATURE&#95;FLAG&#95;EXTRA&#95;NOT&#95;TAUNTABLE|creature is immune to taunt auras and effect attack me|
+|512|CREATURE&#95;FLAG&#95;EXTRA&#95;AGGRO&#95;ZONE|creature sets itself in combat with zone on aggro|
+|1024|CREATURE&#95;FLAG&#95;EXTRA&#95;GUARD|creature is a guard, for Zone under attack announce if guard death|
+|2048|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;TALKTO&#95;CREDIT|creature doesn't give quest-credits when talked to (temporarily flag).|
+
+h4. CreatureTypeFlags
+
+This Field Controls If a Mob Is Minable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The "Skinning_Loot_Template":Skinning_Loot_Template Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side. 
+
+It will be send to the client in SMSG&#95;CREATURE&#95;QUERY&#95;RESPONSE
+
+Some values provided from the community:
+
+|*Flag*|*Name*|*Comments*|
+|1||Makes the mob tameable (must also be a beast and have family set)|
+|2|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE||
+|8|UNIT&#95;FLAG&#95;ATTACKABLE||
+|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1||
+|136|UNIT&#95;FLAG&#95;NON&#95;PVP&#95;PLAYER||
+|256||Makes mob herbable|
+|512||Makes mob minable|
+|1024|UNIT&#95;FLAG&#95;ANIMATION&#95;FROZEN||
+|4096|UNIT&#95;FLAG&#95;WAR&#95;PLAYER||
+
+h4. SpeedWalk
+
+This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Data.
+
+(Default Value Is: 1)
+
+h4. SpeedRun
+
+This Field Controls How Fast An NPC Moves When Running. This Value Comes From Sniff Data.
+
+(Default Value Is: 1.14286)
+
 
 
 ============= BELOW IS OLD DATA ===============
@@ -376,9 +427,7 @@ The armor value of the creature. It controls how much damage reduction the creat
 
 
 
-h4. speed
 
-Controls how fast the creature can move in a certain mode.
 
 
 h4. rank
@@ -495,23 +544,6 @@ h4. rangedattackpower
 
 
 
-h4. type&#95;flags
-
-This field can control whether a mob is minable or herbable. If it is either of those two, then the loot given when it is skinned/mined will be stored in the "skinning_loot_template":skinning_loot_template table. Aside from those two flags, field has no special meaning on the serverside. It will be send to the client in SMSG&#95;CREATURE&#95;QUERY&#95;RESPONSE
-
-Some values provided from the community:
-
-
-|*Flag*|*Name*|*Comments*|
-|1||Makes the mob tameable (must also be a beast and have family set)|
-|2|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE||
-|8|UNIT&#95;FLAG&#95;ATTACKABLE||
-|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1||
-|136|UNIT&#95;FLAG&#95;NON&#95;PVP&#95;PLAYER||
-|256||Makes mob herbable|
-|512||Makes mob minable|
-|1024|UNIT&#95;FLAG&#95;ANIMATION&#95;FROZEN||
-|4096|UNIT&#95;FLAG&#95;WAR&#95;PLAYER||
 
 
 h4. lootid
@@ -640,23 +672,6 @@ Uses references from SpellMechanic.dbc.
 
 To combine immunities just add values. Immune to everything corresponds to the value 1073741823.
 
-h4. flags&#95;extra
-
-These flags control certain creature specific attributes.
-
-|_. Bit|_. Name|_. Description|
-|1|CREATURE&#95;FLAG&#95;EXTRA&#95;INSTANCE&#95;BIND|Bounds killer's party to the instance they are in|
-|2|CREATURE&#95;FLAG&#95;EXTRA&#95;CIVILIAN|Makes creature ignore aggro|
-|4|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY|Prohibits creature from parrying|
-|8|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY&#95;HASTEN|Creatures parries do not speed up its next attack|
-|16|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;BLOCK|Prohibits creature from blocking|
-|32|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;CRUSH|Prohibits creature from dealing crushing blows|
-|64|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;XP&#95;AT&#95;KILL|Makes creature reward no XP at kill|
-|128|CREATURE&#95;FLAG&#95;EXTRA&#95;INVISIBLE|Makes creature invisible for player. Use this for triggers etc.|
-|256|CREATURE&#95;FLAG&#95;EXTRA&#95;NOT&#95;TAUNTABLE|creature is immune to taunt auras and effect attack me|
-|512|CREATURE&#95;FLAG&#95;EXTRA&#95;AGGRO&#95;ZONE|creature sets itself in combat with zone on aggro|
-|1024|CREATURE&#95;FLAG&#95;EXTRA&#95;GUARD|creature is a guard, for Zone under attack announce if guard death|
-|2048|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;TALKTO&#95;CREDIT|creature doesn't give quest-credits when talked to (temporarily flag).|
 
 
 h4. ScriptName
