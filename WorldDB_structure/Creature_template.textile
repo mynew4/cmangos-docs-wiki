@@ -121,26 +121,36 @@ Script Icon Used by Guards With Directions Menu.
 
 h4. MinLevel
 
-The Minimum Level of the Creature if the Creature Has a Level Range.
+The Minimum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.
 
 h4. MaxLevel
 
-The Maximum Level of the Creature if the Creature Has a Level Range.
+The Maximum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.
+
+h4. DifficultyEntry1
+
+If not zero, this field refers to an entry of creature&#95;template. Which suppose to be used in certain difficulty see below:
+
+|DUNGEON&#95;DIFFICULTY&#95;HEROIC|
+|RAID&#95;DIFFICULTY&#95;25MAN&#95;NORMAL|
+
+h4. DifficultyEntry2
+
+If not zero, this field refers to an entry of creature&#95;template. Which suppose to be used in certain difficulty see below:
+
+|RAID&#95;DIFFICULTY&#95;10MAN&#95;HEROIC|
+
+h4. DifficultyEntry3
+
+If not zero, this field refers to an entry of creature&#95;template. Which suppose to be used in certain difficulty see below:
+
+|RAID&#95;DIFFICULTY&#95;25MAN&#95;HEROIC|
+
 
 
 ============= BELOW IS OLD DATA ===============
 
-h4. difficulty&#95;entry
 
-If not zero, this field refers to an entry of creature&#95;template. Which suppose to be used in certain difficulty see below:
-
-
-
-|DUNGEON&#95;DIFFICULTY&#95;HEROIC|1|
-
-|RAID&#95;DIFFICULTY&#95;25MAN&#95;NORMAL|1|
-|RAID&#95;DIFFICULTY&#95;10MAN&#95;HEROIC|2|
-|RAID&#95;DIFFICULTY&#95;25MAN&#95;HEROIC|3|
 
 
 h4. modelid
