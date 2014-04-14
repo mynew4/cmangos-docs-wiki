@@ -450,7 +450,7 @@ An NPC's Health and Damage Is Calculated From "Creature_Template_ClassLevelStats
 
 h4. HealthMultiplier
 
-This Value Comes From WDB and Sniff Data. 
+This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Health Value. NPC Have Various HealthMultipliers But Typically They Are Fairly Rounded Values (Bosses Have Large Very Rounded Values Normally)
 
 This Is The Multiplier Used Against The BaseHealthExp? Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Health Values Where ? = "Expansion":#Expansion Value.
 
@@ -481,7 +481,7 @@ MaxLevelHealth = ROUND (1277*1.15) = 1468.55 (1469)
 
 h4. ManaMultiplier
 
-This Value Comes From WDB and Sniff Data. 
+This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Mana Value. All NPC Have Nice Rounded Values For Mana Multipliers.
 
 This Is The Multiplier Used Against The BaseMana Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Mana Values. Note, BaseMana Values Do NOT Scale With Expansion Values Unlike Health And Damage.
 
