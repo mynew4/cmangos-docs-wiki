@@ -24,11 +24,13 @@ Display ID from CreatureDisplayInfo.dbc
 
 h4. bounding&#95;radius
 
-This is the distance the creature stands from the player to attack him while in melee.
+A field scaled with size.
+Might or might not have any relation to some radius of a bowl enclosing the creature.
+Currently badly used in the above suggested way in some cases, which is false in general.
 
 h4. combat&#95;reach
 
-This is the maximum distance the creature can reach the player in ranged attack.
+This is an additional distance that is added to range of attacks (both melee and spells) to check if an attack can reach the enemy.
 
 h4. gender
 
