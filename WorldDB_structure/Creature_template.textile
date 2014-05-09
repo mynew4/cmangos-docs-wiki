@@ -428,7 +428,6 @@ This Field Determines The Rank of the NPC:
 |3|World Boss|Highest rank, best loot, longest respawn time.|
 |4|Rare|Somewhat better loot, longer respawn time.|
 
-Rank 4 Does NOT Exist in Classic
 
 h4. Expansion
 
