@@ -64,6 +64,10 @@ h3. This is the list of tables in the regular 'mangos' database
 
 * "creature_template_addon":creature_template_addon
 
+* "creature_template_classlevelstats":creature_template_classlevelstats
+
+* "creature_template_spells":creature_template_spells
+
 * "db_script_string":db_script_string
 
 * "db_version":db_version
