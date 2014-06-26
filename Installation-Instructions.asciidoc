@@ -67,7 +67,7 @@ CMaNGOS::
 ScriptDev2::
   is an optional library which contains C++ scripts that, when added to CMaNGOS, handle special events, quests, encounters and bosses.
 
-ACID::
+ACID (WoLtK)::
   stands for "Advanced Creature Intelligence Database". It is an optional SQL database that handles regular mobs and bosses. ACID and ScriptDev2 complement each other and you should use both. ACID is usually already included in the database shipped by the database providers.
 
 Database::
@@ -87,7 +87,7 @@ World Of Warcraft Client::
 Tools
 -----
 Git::
-  is a free distributed revision control or source code management tool which allows you to easily manage a virtual filesystem. With this tool, you'll download the code from CMaNGOS, ScriptDev2, and ACID.
+  is a free distributed revision control or source code management tool which allows you to easily manage a virtual filesystem. With this tool, you'll download the code from CMaNGOS, ScriptDev2, and ACID (WoLtK).
 
 SVN::
    has a similar purpose as Git but for a different type of support. With this tool, you'll download the database from the database providers.
@@ -162,7 +162,7 @@ git clone -b tbc git://github.com/scriptdev2/acid.git
 git clone -b cata git://github.com/scriptdev2/acid.git
 -------------------
 
-This is considered optional, as ACID is usually included by the database providers.
+This is considered optional, as ACID is usually included by the database providers (WoLtK).
 
 Get the world-database stuff
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -253,7 +253,7 @@ Directory structure
 Now you should have the following subfolders:
 
 - mangos (containing the sources of CMaNGOS and optionally ScriptDev2)
-- acid (containing the content of ACID, this is optional)
+- acid (containing the content of ACID for WoLtK, this is optional)
 - unifieddb OR ytdbase OR psmdb_wotlk OR tbc-db OR classicdb containing the content of your database-provider
 
 For windows we suggest creating an additional "run" folder, on *nix this can be useful if you don't want to install to /opt or so
@@ -512,7 +512,7 @@ Fill ScriptDev2 database:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 * Invoke ++mysql -uroot -p scriptdev2 < mangos/src/bindings/ScriptDev2/sql/scriptdev2_script_full.sql++
 
-Fill ACID to world-database:
+Fill ACID to world-database (WoLtK):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This is considered optional, as ACID is usually included by the database providers.
 
