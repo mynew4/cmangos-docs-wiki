@@ -231,7 +231,7 @@ h3. Action Explanations
 ** Parameter 2: The new value to be put in the field.
 ** Parameter 3: The target type defining for whom the unit field should be changed. The value in this field needs to be a valid target type as specified in the reference tables below.
 
-* *18 = ACTION&#95;T&#95;SET&#95;UNIT&#95;FLAG*: When activated, this action changes the target's flags by adding (turning on) more flags. For example, this action can make the creature unattackable/unselectable if the right flags are used.
+* *18 = ACTION&#95;T&#95;SET&#95;UNIT&#95;FLAG*: When activated, this action changes the target's "flags":https://github.com/cmangos/issues/wiki/Creature_template#unitflags by adding (turning on) more flags. For example, this action can make the creature unattackable/unselectable if the right flags are used.
 ** Parameter 1: The flag(s) to be set. Multiple flags can be set by using bitwise-OR on them (adding them together).
 ** Parameter 2: The target type defining for whom the flags should be changed. The value in this field needs to be a valid target type as specified in the reference tables below.
 
