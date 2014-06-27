@@ -10,7 +10,6 @@ h3. Structure
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |"entry":Quest_template#entry|int(10) unsigned|NO|PRI|0||
 |"Method":Quest_template#method|tinyint(3)|NO||2||
-||
 |"ZoneOrSort":Quest_template#zoneorsort|smallint(6)|NO||0||
 |"MinLevel":Quest_template#minlevel|tinyint(3) unsigned|NO||0||
 |"QuestLevel":Quest_template#questlevel|tinyint(3) unsigned|NO||0||
