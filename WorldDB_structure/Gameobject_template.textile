@@ -135,7 +135,7 @@ The content of the data fields depends on the "gameobject type":#type
 * *GAMEOBJECT&#95;TYPE&#95;BUTTON = 1*
 ** data0: startOpen (State)
 ** data1: open (LockId from "Lock.dbc":https://github.com/cmangos/issues/wiki/Lock.dbc)
-** data2: autoClose (long unknown flag)
+** data2: autoClose (65536 &#42; seconds)
 ** data3: linkedTrap ("gameobject&#95;template.entry":gameobject_template#entry (Spawned GO type 6))
 ** data4: noDamageImmune (Boolean flag)
 ** data5: large? (Boolean flag)
