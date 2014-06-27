@@ -7,10 +7,20 @@ h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |"entry":Creature_movement_template#entry|mediumint(8) unsigned|NO|PRI|||
-
-|"modelid":Creature_model_info#modelid|mediumint(8) unsigned|NO|PRI|0||
-|"bounding_radius":Creature_model_info#bounding_radius|float|NO||0||
-|"combat_reach":Creature_model_info#combat_reach|float|NO||0||
-|"gender":Creature_model_info#gender|tinyint(3) unsigned|NO||2||
-|"modelid_other_gender":Creature_model_info#modelid_other_gender|mediumint(8) unsigned|NO||0||
-|"modelid_alternative":Creature_model_info#modelid_alternative|mediumint(8) unsigned|NO||0||
+|"point":Creature_movement_template#point|mediumint(8) unsigned|NO|PRI|0||
+|"position_x":Creature_movement_template#position_x|float|NO||0||
+|"position_y":Creature_movement_template#position_y|float|NO||0||
+|"position_z":Creature_movement_template#position_z|float|NO||0||
+|"waittime":Creature_movement_template#waittime|int(10) unsigned|NO||0||
+|"script_id":Creature_movement_template#script_id|mediumint(8) unsigned|NO||0||
+|"textid1":Creature_movement_template#textid1|int(11)|NO||0||
+|"textid2":Creature_movement_template#textid2|int(11)|NO||0||
+|"textid3":Creature_movement_template#textid3|int(11)|NO||0||
+|"textid4":Creature_movement_template#textid4|int(11)|NO||0||
+|"textid5":Creature_movement_template#textid5|int(11)|NO||0||
+|"emote":Creature_movement_template#emote|mediumint(8) unsigned|NO||0||
+|"spell":Creature_movement_template#spell|mediumint(8) unsigned|NO||0||
+|"wpguid":Creature_movement_template#wpguid|int(11)|NO||0||
+|"orientation":Creature_movement_template#orientation|float|NO||0||
+|"model1":Creature_movement_template#model1|mediumint(9)|NO||0||
+|"model2":Creature_movement_template#model2|mediumint(9)|NO||0||
