@@ -13,17 +13,17 @@ h3. Structure
 |"position_z":Creature_movement_template#position_z|float|NO||0||
 |"waittime":Creature_movement_template#waittime|int(10) unsigned|NO||0||
 |"script_id":Creature_movement_template#script_id|mediumint(8) unsigned|NO||0||
-|"textid1":Creature_movement_template#textid1|int(11)|NO||0||
-|"textid2":Creature_movement_template#textid2|int(11)|NO||0||
-|"textid3":Creature_movement_template#textid3|int(11)|NO||0||
-|"textid4":Creature_movement_template#textid4|int(11)|NO||0||
-|"textid5":Creature_movement_template#textid5|int(11)|NO||0||
-|"emote":Creature_movement_template#emote|mediumint(8) unsigned|NO||0||
-|"spell":Creature_movement_template#spell|mediumint(8) unsigned|NO||0||
-|"wpguid":Creature_movement_template#wpguid|int(11)|NO||0||
+|"textid1":Creature_movement_template#textid1|int(11)|NO||0|Obsolete, Do not use this Field|
+|"textid2":Creature_movement_template#textid2|int(11)|NO||0|Obsolete, Do not use this Field|
+|"textid3":Creature_movement_template#textid3|int(11)|NO||0|Obsolete, Do not use this Field|
+|"textid4":Creature_movement_template#textid4|int(11)|NO||0|Obsolete, Do not use this Field|
+|"textid5":Creature_movement_template#textid5|int(11)|NO||0|Obsolete, Do not use this Field|
+|"emote":Creature_movement_template#emote|mediumint(8) unsigned|NO||0|Obsolete, Do not use this Field|
+|"spell":Creature_movement_template#spell|mediumint(8) unsigned|NO||0|Obsolete, Do not use this Field|
+|"wpguid":Creature_movement_template#wpguid|int(11)|NO||0|For internal use only|
 |"orientation":Creature_movement_template#orientation|float|NO||0||
-|"model1":Creature_movement_template#model1|mediumint(9)|NO||0||
-|"model2":Creature_movement_template#model2|mediumint(9)|NO||0||
+|"model1":Creature_movement_template#model1|mediumint(9)|NO||0|Obsolete, Do not use this Field|
+|"model2":Creature_movement_template#model2|mediumint(9)|NO||0|Obsolete, Do not use this Field|
 
 h3. Description of the fields
 
@@ -43,7 +43,7 @@ h4. position_z
 
 h4. waittime
 
-in seconds?
+in millieseconds
 
 h4. script_id
 
