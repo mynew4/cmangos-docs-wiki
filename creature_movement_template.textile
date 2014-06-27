@@ -24,3 +24,44 @@ h3. Structure
 |"orientation":Creature_movement_template#orientation|float|NO||0||
 |"model1":Creature_movement_template#model1|mediumint(9)|NO||0||
 |"model2":Creature_movement_template#model2|mediumint(9)|NO||0||
+
+h3. Description of the fields
+
+h4. entry
+Creature ID from creature_template
+
+h4. point
+Numbering in series
+
+h4. position_x
+
+h4. position_y
+
+h4. position_z
+
+h4. waittime
+in seconds?
+
+h4. script_id
+
+h4. textid1
+
+h4. textid2
+
+h4. textid3
+
+h4. textid4
+
+h4. textid5
+
+h4. emote
+
+h4. spell
+
+h4. wpguid
+
+h4. orientation
+
+h4. model1
+
+h4. model2
