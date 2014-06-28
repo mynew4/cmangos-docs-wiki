@@ -2,7 +2,7 @@ Back to "world database":mangosdb_struct list of tables.
 
 With this table and the new conditions it is possible to create tree like and very complicated combined conditions (like HasAura && (HasItem || HasQuest))
 
-Used in: 
+Used in: "dbscripts_on_go_template_use":DBScripts
 
 h2. The `conditions` table
 
