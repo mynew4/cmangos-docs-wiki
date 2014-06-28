@@ -25,7 +25,7 @@ Reference to "npc&#95;text.id":npc_text#ID.
 h4. script&#95;id
 
 If set a DBScript with this ID will be started of the selected text
-
+NOTE: Called when menu shown (not when clicked)
 "dbscripts_on_gossip":DBScripts
 
 h4. condition&#95;id
