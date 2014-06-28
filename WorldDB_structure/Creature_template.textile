@@ -384,6 +384,7 @@ Some values provided from the community:
 h4. SpeedWalk
 
 This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Data.
+Used when moving between waypoints. 5 is speed of running kentaur.
 
 (Default Value Is: 1)
 
