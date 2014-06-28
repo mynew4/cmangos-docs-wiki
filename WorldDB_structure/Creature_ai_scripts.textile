@@ -279,7 +279,7 @@ h3. Action Explanations
 ** Parameter 1: The minimum of the phase range.
 ** Parameter 2: The maximum of the phase range. The number here must be greater than the one in parameter 1.
 
-* *32 = ACTION&#95;T&#95;SUMMON*: Summons a creature using the data specified in the separate "creature_ai_summons":summons table.
+* *32 = ACTION&#95;T&#95;SUMMON*: Summons a creature using the data specified in the separate "summons":creature_ai_summons table.
 ** Parameter 1: The creature template ID to be summoned. The value here needs to be a valid creature template ID.
 ** Parameter 2: The target type defining who the summoned creature will attack. The value in this field needs to be a valid target type as specified in the reference tables below. NOTE: Using target type 0 will cause the summoned creature to not attack anyone.
 ** Parameter 3: The summon ID from the eventai&#95;summons table controlling the position (and spawntime) where the summoned mob should be spawned at.
