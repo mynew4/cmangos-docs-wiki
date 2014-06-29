@@ -3,7 +3,7 @@ Back to "world database":mangosdb_struct list of tables.
 h2. The `npc&#95;text` table
 
 This table contains the texts that are used for gossip. More research needs to be done on this table.
-Text is showed in title of talk window.
+Text is showed in start of talk window.
 
 h3. Structure
 
