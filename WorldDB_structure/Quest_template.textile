@@ -613,12 +613,13 @@ _Player must first complete A, then B to unlock the chain from C to E. Three oth
 bc.                 *questA*
                    |
                 *questB*
-              /                    *questC*     *questF*
+              /          \
+          *questC*     *questF*    
              |         *questG*
           *questD*     *questH*
              |            |
           *questE*     *questI*
-             \           /
+              \          /
                 *questJ*
 
 
@@ -643,16 +644,17 @@ PrevQuestId = 0        NextQuestId = 0         ExclusiveGroup = 0          NextQ
 
 _Player can choose between two alternative chains (Chain A or B, but not both chains). A2 or B2 should unlock C, D and E when complete. When all three complete, F should be unlocked. If player get A3 or B3 after complete F, depends on if chain A or B was chosen._
 
-bc.                 *questA1*           *questB1*
-                    |                   |
-                *questA2*           *questB2*
-                    \                  /
-                     ---- *questC* ----
+bc.                 *questA1*          *questB1*
+                    |                  |
+                *questA2*          *questB2*
+                    \                 /
+                      --- *questC* ---
                           *questD*
                           *questE*
                              |
                           *questF*
-                         /                            *questA3*   *questB3*
+                         /        \
+                *questA3*          *questB3*
 
 
 <pre>
