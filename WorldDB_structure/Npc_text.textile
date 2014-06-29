@@ -3,6 +3,7 @@ Back to "world database":mangosdb_struct list of tables.
 h2. The `npc&#95;text` table
 
 This table contains the texts that are used for gossip. More research needs to be done on this table.
+Text is showed in title of talk window.
 
 h3. Structure
 
@@ -95,7 +96,7 @@ h3. Description of the fields
 
 h4. ID
 
-This is the ID of the text entry. This ID comes from WDB cache.
+This is the ID of the text entry. This ID comes from WDB cache. (First initialized to database from Blizzard WDB cache)
 
 h4. text0&#95;0
 
@@ -112,6 +113,7 @@ The language of the text in game (post list of possible values)
 h4. prob0
 
 This is the probability that the NPC will say this text
+* 1 means always.
 
 h4. em0&#95;0
 
