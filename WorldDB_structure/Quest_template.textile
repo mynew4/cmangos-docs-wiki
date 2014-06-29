@@ -567,9 +567,10 @@ PrevQuestId = questD   NextQuestId = 0        ExclusiveGroup = 0          NextQu
 _Completing A unlocks B and C that can be done at the same time. They both need to be completed before D becomes available. X is needed to obtain item for C and this quest should only be available if C is active_
 
 bc.                 *questA*
-                /                   *questB     *questC* - *questX*
-                \        /
-                *questD*
+                  /    \ 
+          *questB*      *questC* <-> *questX*
+                  \    /
+                 *questD*
 
 
 bc. PrevQuestId = 0        NextQuestId = 0        ExclusiveGroup = 0         NextQuestInChain = 0        entry = questA
