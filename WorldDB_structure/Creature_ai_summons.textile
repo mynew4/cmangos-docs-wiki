@@ -52,7 +52,7 @@ This value is measured in "radians":http://en.wikipedia.org/wiki/Radian.
 
 h4. spawntimesecs
 
-(Requires an elaboration and confirmation) - Most likely the time for the NPC to disappear once it has been summoned, in seconds.
+(Requires an elaboration and confirmation) - Most likely the time for the NPC to disappear once it has been summoned, in MILIseconds.
 
 h4. comment
 
