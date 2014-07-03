@@ -157,3 +157,4 @@ List of useful aura entries:
 
 * '16380 0' - Makes the creature invisible.
 * '18950 0 18950 1' - Makes the creature detect other invisible units (players or creatures).
+* '37613' - Casting teleport forever.
