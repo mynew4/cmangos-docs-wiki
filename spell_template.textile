@@ -8,7 +8,7 @@ h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |"id":spell_template#id|int(11) unsigned|NO||0||
-|proc_flags|int(11) unsigned|NO||0||
+|"proc_flags":spell_template#proc_flags|int(11) unsigned|NO||0||
 |proc_chance|int(11) unsigned|NO||0||
 |duration_index|int(11) unsigned|NO||0||
 |effect0|int(11) unsigned|NO||0||
