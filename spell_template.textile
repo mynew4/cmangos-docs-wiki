@@ -1,0 +1,58 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `spell&#95;template` table
+
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"id":spell_template#id|int(11) unsigned|NO||0||
+|proc_flags|int(11) unsigned|NO||0||
+|proc_chance|int(11) unsigned|NO||0||
+|duration_index|int(11) unsigned|NO||0||
+|effect0|int(11) unsigned|NO||0||
+|effect_implicit_target_a|int(11) unsigned|NO||0||
+|effect0_radius_idx|int(11) unsigned|NO||0||
+|effect0_apply_aura_name|int(11) unsigned|NO||0||
+|effect0_misc_value|int(11) unsigned|NO||0||
+|effect0_misc_value_b|int(11) unsigned|NO||0||
+|effect0_trigger_spell|int(11) unsigned|NO||0||
+|comments|varchar(255)|NO||||
+
+
+h3. Description of the fields
+
+h4. id
+
+The spell ID. Overwriting spell from Spell.dbc or creating new
+
+h4. proc_flags
+
+|*Bit*|*Flag*|*Comment*|
+|0|Killed||
+|1|Kill||
+|2|Successful Melee Hit||
+|3|Taken Melee Hit||
+|4|Successful Melee Spell Hit||
+|5|Taken Melee Spell Hit||
+|6|Successful Ranged Hit||
+|7|Taken Ranged Hit||
+|8|Successful Ranged Spell Hit||
+|9|Taken Ranged Spell Hit||
+|10|Successful Positive Aoe Hit||
+|11|Taken Positive Aoe||
+|12|Successful Aoe Spell Hit||
+|13|Taken Aoe Spell Hit||
+|14|Successful Positive Spell||
+|15|Taken Positive Spell||
+|16|Successful Negative Spell Hit||
+|17|Taken Negative Spell Hit||
+|18|On Do Periodic||
+|19|On Take Periodic||
+|20|Taken Any Damage||
+|21|On Trap Activation||
+|22|Successful Mainhand Hit||
+|23|Successful Offhand Hit||
+|24|Death||
+
