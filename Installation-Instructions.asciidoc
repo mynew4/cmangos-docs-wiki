@@ -452,12 +452,12 @@ You may actually have to set ++CORE_PATH="../../mangos"++ (assuming default path
 * ++InstallFullUDB.sh++
 +
 And check the output if the database could be set up correctly. If the helper script complains about not finding the config file, just open InstallFullUDB.sh in a text editor and set 
++
 -----------------
 CONFIG_FILE="./InstallFullUDB.config
 -----------------
-*
-+
-You can now run the script again, and it should start filling your world database.
+
+* You can now run the script again, and it should start filling your world database.
 
 * ++cd ../..++
 
@@ -508,6 +508,28 @@ Do you wish to continue? (y/n)
 ####################################################################################################
 -----------------------
 *Support for YTDB Needed.*
+*Support for TBCDB Needed.*
+
+*Support for ClassicDB.*
+
+* Enter your classicDB directory (by default 'C:\Mangos')
+* Invoke
++
+++ cd classicdb ++
++
+++ ./InstallFullDB.sh ++
+
+* Edit the created conf file ++InstallFullDB.config++. See above on Installing UDB for explanation of the options.
+* Rerun the installer script, invoke
++
+++ ./InstallFullDB.sh ++
+
+* Exit the classicDB directory with
++
+++ cd .. ++
+
+Also consider https://github.com/classicdb/database/blob/classic/README.mdown for further information.
+
 
 Fill ScriptDev2 database:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
