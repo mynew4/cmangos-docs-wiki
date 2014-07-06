@@ -269,6 +269,7 @@ _Side note: If position is very near to current position, or x=y=z=0, then only 
 * *SCRIPT&#95;COMMAND&#95;DESPAWN&#95;SELF = 18*
 ** datalong: Despawn delay (MILLIESECONDS).
 ** Resulting source must be a creature.
+** Despawns the target.
 
 
 * *SCRIPT&#95;COMMAND&#95;PLAY&#95;MOVIE = 19*
