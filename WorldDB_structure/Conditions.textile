@@ -94,19 +94,16 @@ The meaning of the values in "value1":Conditions#value1 / "value2":Conditions#va
 
 * CONDITION_NOT (-3)
 ** value1: condition_entry
-** Must have higher condition_entry than value1
 Returns NOT condidition (of value1)
 
 * CONDITION_OR (-2)
 ** value1: condition_entry
 ** value2: condition_entry
-** Must have higher condition_entry than value1 OR value2
 Returns condidition (of value1) OR condidition (of value2)
 
 * CONDITION_AND (-1)
 ** value1: condition_entry
 ** value2: condition_entry
-** Must have higher condition_entry than value1 OR value2
 Returns condidition (of value1) AND condidition (of value2)
 
 * CONDITION_NONE (0)
