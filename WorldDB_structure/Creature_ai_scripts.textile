@@ -203,7 +203,7 @@ h3. Action Explanations
 * *11 = ACTION&#95;T&#95;CAST*: When activated, the creature will cast a spell specified by a spell ID on a target specified by the target type.
 ** Parameter 1: The spell ID to use for the cast. The value used in this field needs to be a valid spell ID.
 ** Parameter 2: The target type defining who the creature should cast on. The value in this field needs to be a valid target type as specified in the reference tables below.
-** Parameter 3: This field can only be 0 or 1. If it is 1, then the spell cast will interrupt any spells that are already in the progress of being casted; otherwise if the creature is already casting a spell and this field is 0, then this action will be skipped.
+** Parameter 3: See "spell flags":creature_ai_scripts#cast-flags. If it is 1, then the spell cast will interrupt any spells that are already in the progress of being casted; otherwise if the creature is already casting a spell and this field is 0, then this action will be skipped.
 
 * *12 = ACTION&#95;T&#95;SUMMON*: When activated, the creature will summon another creature at the same spot as itself that will attack the specified target.
 ** Parameter 1: The creature template ID to be summoned. The value here needs to be a valid creature template ID.
