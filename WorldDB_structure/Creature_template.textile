@@ -84,7 +84,6 @@ h3. Structure
 |"ResistanceArcane":Creature_template#ResistanceArcane|smallint(5)|NO||0||
 |"PetSpellDataId":Creature_template#PetSpellDataId|mediumint(8) unsigned|NO||0||
 |"MovementType":Creature_template#MovementType|tinyint(3) unsigned|NO||0||
-|"MovementTemplateId":Creature_template#MovementTemplateId|int(11) unsigned|NO||0||
 |"TrainerType":Creature_template#TrainerType|tinyint(4)|YES||0||
 |"TrainerSpell":Creature_template#TrainerSpell|mediumint(8) unsigned|YES||0||
 |"TrainerClass":Creature_template#TrainerClass|tinyint(3) unsigned|YES||0||
