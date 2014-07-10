@@ -59,7 +59,7 @@ For *gameobject_template&#95;scripts*, it is the entry of the button/lever. See 
 For *spell&#95;scripts*, it is the spell ID. See Spell.dbc
 For *quest&#95;&#42;&#95;scripts*, it is the ID that is used in "StartScript":quest_template#StartScript or "CompleteScript":quest_template#CompleteScript in the quest template definition.
 For *event&#95;scripts*, it is the event ID. There doesn't exist currently a full list of events. In any case, the event IDs are taken directly from gameobject WDB data or spell effect data. If both a gameobject and a spell activate the same event, the IDs will match.
-For *creature&#95;movement&#95;scripts*, it is the "script id":Creature_movement#script_id of the waypoint.The PROPER formatting for the ID field is as follows: Creature&#95;ID + 2-Digit Script ID (Starting at 01). Example: c.2386 has few movement&#95;scripts, so 2386+01 = 238601 ... 23602 ..etc
+For *creature&#95;movement&#95;scripts*, it is the "script id":Creature_movement#script_id of the waypoint.The PROPER formatting for the ID field is as follows: Creature&#95;entry + 2-Digit Script ID (Starting at 01). Example: c.2386 has few movement&#95;scripts, so 2386+01 = 238601 ... 23602 ..etc
 For *creature&#95;death&#95;scripts*, it is the entry of the creature. See "creature_template.entry":creature_template#entry.
 For *gossip&#95;scripts*, it is the "action script id":Gossip_menu_option#action_script_id of the gossip option.
 
