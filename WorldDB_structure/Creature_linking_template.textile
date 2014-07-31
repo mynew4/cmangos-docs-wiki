@@ -44,6 +44,7 @@ flag - describing what should happen when
 |1024|FLAG&#95;CANT&#95;SPAWN&#95;IF&#95;BOSS&#95;DEAD|the slave cannot respawn while boss is dead|
 |2048|FLAG&#95;CANT&#95;SPAWN&#95;IF&#95;BOSS&#95;ALIVE|the slave cannot respawn while boss is alive|
 |4096|FLAG&#95;DESPAWN&#95;ON&#95;EVADE|the slave despawn after the master evade|
+|8192|FLAG&#95;DESPAWN&#95;ON&#95;DESPAWN|the slave despawn after the master despawns|
 
 h4. search_range
 
