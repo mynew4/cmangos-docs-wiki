@@ -200,14 +200,20 @@ This will create a new folder (likely C:\Mangos\udb434) in which UDB 4.3.4 SQL-f
 TBC-DB (TBC)
 ^^^^^^^^^^^
 *On Windows*
-
+Using SVN repository:
 * Open C:\Mangos in the exporer, right-click on the right hand side
 * Select "Tortoise SVN Checkout" from the context menu.
 * Insert as SVN-URL: ++http://svn.code.sf.net/p/tbc-db/code/++
 
-*On *nix*
+Or using Git repository:
+* Open C:\Mangos with git bash.
+* ++git clone git://github.com/TBC-DB/Database.git tbc-db++
 
+*On *nix*
+Using SVN repository:
 ++svn co http://svn.code.sf.net/p/tbc-db/code/++
+Or using Git repository
+++git clone git://github.com/TBC-DB/Database.git tbc-db++
 
 This will create a new folder (likely C:\Mangos\tbc-db) in which TBC-DB SQL-files are located.
 
