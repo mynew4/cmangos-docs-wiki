@@ -153,13 +153,13 @@ git clone git://github.com/scriptdev2/scriptdev2-cata.git mangos/src/bindings/Sc
 
 Clone ACID
 ~~~~~~~~~~
-++git clone git://github.com/scriptdev2/acid.git++
+++git clone git://github.com/ACID-Scripts/WOTLK.git acid++
 
 Versions for different clients:
 -------------------
-git clone -b classic git://github.com/scriptdev2/acid.git
-git clone -b tbc git://github.com/scriptdev2/acid.git
-git clone -b cata git://github.com/scriptdev2/acid.git
+git clone git://github.com/ACID-Scripts/Classic.git acid
+git clone git://github.com/ACID-Scripts/TBC.git acid
+git clone git://github.com/ACID-Scripts/CATA.git acid
 -------------------
 
 This is considered optional, as ACID is usually included by the database providers.
