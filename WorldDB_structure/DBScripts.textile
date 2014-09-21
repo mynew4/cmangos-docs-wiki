@@ -32,8 +32,16 @@ This table format is used for different tables to control possible scripts activ
 * *`dbscripts&#95;on&#95;creature&#95;death:* Holds scripts activated when a creature dies.
     Source: killed creature; Target: responsible killer (unit or player).
 
-* *`dbscripts&#95;on&#95;event:* Holds scripts activated whenever an event is activated, be it by a gameobject or as the spell effect SPELL&#95;EFFECT&#95;SEND&#95;EVENT (61) or Taxi waypoint movement.
-    Gameobjects that can trigger events: GAMEOBJECT&#95;TYPE&#95;CHEST (3), GAMEOBJECT&#95;TYPE&#95;GOOBER (10), GAMEOBJECT&#95;TYPE&#95;TRANSPORT (11) [not supported yet], GAMEOBJECT&#95;TYPE&#95;CAMERA (13), GAMEOBJECT&#95;TYPE&#95;MO&#95;TRANSPORT (15), GAMEOBJECT&#95;TYPE&#95;FLAGDROP (26) [not supported yet] GAMEOBJECT&#95;TYPE&#95;CAPTURE_POINT (29), GAMEOBJECT&#95;TYPE&#95;DESTRUCTIBLE_BUILDING (33)
+* *`dbscripts&#95;on&#95;event:* Holds scripts activated whenever an event is activated by spell, gameobject or taxi waypoints. The following spell effects and gameobjecs can activate an event:
+    SPELL&#95;EFFECT&#95;SEND&#95;EVENT (61)
+    GAMEOBJECT&#95;TYPE&#95;CHEST (3)
+    GAMEOBJECT&#95;TYPE&#95;GOOBER (10)
+    GAMEOBJECT&#95;TYPE&#95;TRANSPORT (11) [not supported yet]
+    GAMEOBJECT&#95;TYPE&#95;CAMERA (13)
+    GAMEOBJECT&#95;TYPE&#95;MO&#95;TRANSPORT (15) [partially supported]
+    GAMEOBJECT&#95;TYPE&#95;FLAGDROP (26) [not supported yet]
+    GAMEOBJECT&#95;TYPE&#95;CAPTURE_POINT (29)
+    GAMEOBJECT&#95;TYPE&#95;DESTRUCTIBLE_BUILDING (33)
     Source, Target and Script execution can be different based on the event activation source.
 
 * *`dbscripts&#95;on&#95;gossip:* Holds scripts activated on gossip&#95;menu&#95;option or gossip&#95;menu.
