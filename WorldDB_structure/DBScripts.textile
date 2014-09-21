@@ -11,13 +11,13 @@ This table format is used for different tables to control possible scripts activ
 
 * *`dbscripts&#95;on&#95;go_[template]_use:* Holds possible scripts activated by gameobjects.
     Source: object user (unit); Target: gameobject.
-    dbscripts_on_go_template_use can be used for any type of gameobject.
-    dbscripts_on_go_use can be used only for GAMEOBJECT&#95;TYPE&#95;DOOR (0) and GAMEOBJECT&#95;TYPE&#95;BUTTON (1)
+    ** dbscripts_on_go_template_use can be used for any type of gameobject.
+    ** dbscripts_on_go_use can be used only for GAMEOBJECT&#95;TYPE&#95;DOOR (0) and GAMEOBJECT&#95;TYPE&#95;BUTTON (1)
 
 * *`dbscripts&#95;on&#95;spell:* Holds scripts that can be activated by spells with the following spell effects:
-    SPELL&#95;EFFECT&#95;DUMMY (3)
-    SPELL&#95;EFFECT&#95;TRIGGER_SPELL (64) - only for missing triggered spells
-    SPELL&#95;EFFECT&#95;SCRIPT&#95;EFFECT (77)
+    ** SPELL&#95;EFFECT&#95;DUMMY (3)
+    ** SPELL&#95;EFFECT&#95;TRIGGER_SPELL (64) - only for missing triggered spells
+    ** SPELL&#95;EFFECT&#95;SCRIPT&#95;EFFECT (77)
     Source: caster; Target: target.
 
 * *`dbscripts&#95;on&#95;quest&#95;start:* Holds scripts activated when a player accepts a quest.
@@ -33,21 +33,21 @@ This table format is used for different tables to control possible scripts activ
     Source: killed creature; Target: responsible killer (unit or player).
 
 * *`dbscripts&#95;on&#95;event:* Holds scripts activated whenever an event is activated by spell, gameobject or taxi waypoints. The following spell effects and gameobjecs can activate an event:
-    SPELL&#95;EFFECT&#95;SEND&#95;EVENT (61)
-    GAMEOBJECT&#95;TYPE&#95;CHEST (3)
-    GAMEOBJECT&#95;TYPE&#95;GOOBER (10)
-    GAMEOBJECT&#95;TYPE&#95;TRANSPORT (11) [not supported yet]
-    GAMEOBJECT&#95;TYPE&#95;CAMERA (13)
-    GAMEOBJECT&#95;TYPE&#95;MO&#95;TRANSPORT (15) [partially supported]
-    GAMEOBJECT&#95;TYPE&#95;FLAGDROP (26) [not supported yet]
-    GAMEOBJECT&#95;TYPE&#95;CAPTURE_POINT (29)
-    GAMEOBJECT&#95;TYPE&#95;DESTRUCTIBLE_BUILDING (33)
+    ** SPELL&#95;EFFECT&#95;SEND&#95;EVENT (61)
+    ** GAMEOBJECT&#95;TYPE&#95;CHEST (3)
+    ** GAMEOBJECT&#95;TYPE&#95;GOOBER (10)
+    ** GAMEOBJECT&#95;TYPE&#95;TRANSPORT (11) [not supported yet]
+    ** GAMEOBJECT&#95;TYPE&#95;CAMERA (13)
+    ** GAMEOBJECT&#95;TYPE&#95;MO&#95;TRANSPORT (15) [partially supported]
+    ** GAMEOBJECT&#95;TYPE&#95;FLAGDROP (26) [not supported yet]
+    ** GAMEOBJECT&#95;TYPE&#95;CAPTURE_POINT (29)
+    ** GAMEOBJECT&#95;TYPE&#95;DESTRUCTIBLE_BUILDING (33)
     Source, Target and Script execution can be different based on the event activation source.
 
 * *`dbscripts&#95;on&#95;gossip:* Holds scripts activated on gossip&#95;menu&#95;option or gossip&#95;menu.
-    For gossip&#95;menu - Source: player; Target: gossip holder (creature or gameobject); Script execution unique by target.
-    For gossip&#95;menu&#95;option when gossip holder is creature - Source: gossip holder (creature); Target: player; Script execution unique by source.
-    For gossip&#95;menu&#95;option when gossip holder is gameobject - Source: player; Target: gossip holder (gameobject); Script execution unique by target.
+    ** For gossip&#95;menu - Source: player; Target: gossip holder (creature or gameobject); Script execution unique by target.
+    ** For gossip&#95;menu&#95;option when gossip holder is creature - Source: gossip holder (creature); Target: player; Script execution unique by source.
+    ** For gossip&#95;menu&#95;option when gossip holder is gameobject - Source: player; Target: gossip holder (gameobject); Script execution unique by target.
 
 NOTE: An entry in this table may have more than one row as a script may do more than just one action. Also each action the script may make can have a separate delay attached to it. In that case, the core will activate the appropriate action after the correct delay.
 
@@ -136,6 +136,7 @@ The following commands can be used:
 |32|PAUSE&#95;WAYPOINTS|Pause or unpause waypoint movement.|
 |33|XP&#95;USER|Enable or disable experience gain for a player.|
 |34|TERMINATE&#95;CONDITION|Stop script execution when a give condition is met.|
+|35|SEND&#95;AI&#95;EVENT&#95;AROUND|Send a give AI event for EventAI around the source with a given radius.|
 
 
 h4. Buddy Concept
@@ -405,3 +406,8 @@ _Side note: Only available on wotlk version._
 
 |!(data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL)|Terminate when condition is true.|
 |data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL|Terminate when condition is false.|
+
+* *SCRIPT&#95;COMMAND&#95;SEND&#95;AI&#95;EVENT&#95;AROUND = 35*
+** datalong: AI event id. Only EventAI events are accepted.
+** datalong2: Radius.
+** Source and target must be a creature.
