@@ -1,27 +1,4 @@
 </code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/4d68c37 4d68c37 * Salja (committer Salja)<pre><code>[z1798] Combustion (remove main aura) and (remove triggered aura stack) by Unlern Talents.
-  91.2% src/game/
-   8.7% src/shared/
-
-bq. [OK] cala : Tested on z2040, without this fix it is possible to take advantage of the unlearn mechanics to use combustion aura even after unlearning the talent. This commit fixes it.
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/b7a8540 b7a8540 * Sidsukana (committer Sidsukana)<pre><code>[z1799] Remove extra mods code.
-  87.7% src/game/extras/
-   5.3% src/game/
-   6.3% src/mangosd/
-
-bq. [REMOVE] cala : see commit below
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/139075f 139075f * TheLuda (committer TheLuda)<pre><code>[z1800] Remove all remains of TBC spell modifications.
-  37.3% src/game/
-  43.9% win/VC100/
-  18.7% win/VC90/
-
-bq. [REMOVE] cala : this one and the previous one are correct. In their current state, mods are needed for two purposes: TBC PvP diminishing returns (no need for classic) and modifying a paladin spell. This last one is moved into core by previous commit. If it is not broken, don't fix it.
-
-</code></pre>
 * "zero":http://github.com/mangos-zero/server-old/commit/482ca12 482ca12 * Sidsukana (committer Sidsukana)<pre><code>[z1805] Fix Improved Sprint.
   76.2% src/game/
   23.7% src/shared/
@@ -29,22 +6,6 @@ bq. [REMOVE] cala : this one and the previous one are correct. In their current 
 bq. [OK] cala : This one looks ok but I will test it because I'm surprised it is not fixed in TBC also.
 On z2194, improved sprint is indeed broken (not working and breaking sprint along). This commit fixes it.
 This commit does also the job. I don't know which one is better: "new zero":https://github.com/mangoszero/server/commit/1781ac3c1e2219eaa0ce42663bc7e85b319ff482
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/84e3d1c 84e3d1c * Sidsukana (committer Sidsukana)<pre><code>[z1807] Fix spell 6346.
-  51.2% sql/updates/
-  18.4% sql/
-  30.2% src/shared/
-
-bq. [OK] cala : This one is OK but this is only for DB. No need to backport to core. I'll put it into DB if not already there.
-stfx: There are some tables which are managed by mangos and not the database providers. this one is one of them.
-cala : tested on z2194 (and mangos-zero DB), this spell is already flagged as intented. This commit should be applied nonetheless to keep track of the fix.
-
-</code></pre>
-* "zero":http://github.com/mangos-zero/server-old/commit/f026561 f026561 * Cala Haryon (committer Cala Haryon)<pre><code>Modify the mana regeneration rate to be correct for 1.12 and below.
- 100.0% src/game/
-
-bq. [OK] cala : this one is only half correct. The mana regen should occur every 2 sec See * "Mana regenaration":http://www.wowwiki.com/Talk:Mana_regeneration *, so the part fixed by this commit is correct. However, the mana regen formula was not the same for all spell casters in 1.12, it was uniformed in 2.4. I will propose a fix later to this issue and document it. In the meantime, I advice to still apply this commit, at least it will prevent casters from gaining mana twice faster than expected
 
 </code></pre>
 FILE LAST UPDATED BASED ON... "zero":http://github.com/mangos-zero/server-old/commit/9293a6d 9293a6d * TheLuda (committer TheLuda)
