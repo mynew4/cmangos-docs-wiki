@@ -5,10 +5,9 @@ How to install C(ontinued)-MaNGOS from scratch and how to update it.
 
 This Guide will help you for Windows or *nix (Ubuntu, Debian) and for all supported clients: Classic - TBC - WotLK - Cata
 
-For other environments (like FreeBSD, Mac OSX, ARM and similar) please consider our http://cmangos.net/forum-5.html[Installation, Configuration & Upgrades - Subforum]
+For other environments (like FreeBSD, Mac OSX, ARM and similar) please consider our http://cmangos.net/forum-5.html[Installation, Configuration & Upgrades - Subforum] for assistance.
 
-In case you stumble accross problems, you can also read in http://cmangos.net/forum-5.html[our forum] for similar problems -- however these Installation Instructions are expected to be working, so also read them again to ensure that you didn't skip any step by accident.
-
+If you run into issues during installation or need help understanding one of the following steps, please visit http://cmangos.net/forum-5.html[our forum] to look for solutions and ask questions. These Installation Instructions are expected to be current, so please read through every step again to ensure that you didn't skip or misunderstand something before going to the forums.
 
 Addresses
 ---------
@@ -355,7 +354,9 @@ You need to copy them (by default configuration) into the directory into which y
 
 Install databases
 -----------------
-For this section it is assumed you have already installed your MySQL server, and have a password for "root" user. To make use of some additional installation helper scripts it is HIGHLY suggested when installing MYSQL you include the command path to the BIN folder (Option during Install).
+For this section it is assumed you have already installed your MySQL server, and have a password for "root" user. 
+
+To make use of some additional installation helper scripts it is HIGHLY suggested when installing MYSQL you include the command path to the BIN folder (Option during Install). If this option was not available or if you missed it please follow the instructions found http://dev.mysql.com/doc/mysql-windows-excerpt/5.1/en/mysql-installation-windows-path.html[here] before proceeding. If you don't have this configured properly then you will not be able to follow along with the command-line steps below in the guide because the command prompt will not recognize "mysql" as a valid command.
 
 Create empty databases
 ~~~~~~~~~~~~~~~~~~~~~~
