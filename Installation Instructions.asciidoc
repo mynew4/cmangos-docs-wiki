@@ -376,8 +376,8 @@ This will create the database "scriptdev2" which can be used by the "mangos" use
 
 * ++mysql -uroot -p scriptdev2 < mangos/src/bindings/ScriptDev2/sql/scriptdev2_create_structure_mysql.sql++
 
-Initialize Mangos database (necessary if using YTDB):
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Initialize Mangos database
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 From the C:\Mangos folder invoke (in Git bash):
 
 * ++mysql -uroot -p mangos < mangos/sql/mangos.sql++
