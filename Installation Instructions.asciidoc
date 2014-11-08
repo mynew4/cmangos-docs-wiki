@@ -315,7 +315,7 @@ Compiling CMaNGOS and ScriptDev2 (*nix)
 * Enter the build folder: ++cd build++
 * Invoke ++cmake ../mangos++, suggested options are:
   - ++-DCMAKE_INSTALL_PREFIX=\../mangos/run++ to install into the "run" subfolder of /home/mangos folder, otherwise this will install to /opt/mangos
-  - ++-DPDC=1++ to compile with PCH mode (much faster after updates)
+  - ++-DPCH=1++ to compile with PCH mode (much faster after updates)
   - ++-DDEBUG=0++ to remove debug mode from compiling
   - *IMPORTANT* ++-DINCLUDE_BINDINGS_DIR=ScriptDev2++ to include ScriptDev2
   - *example:* ++cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DINCLUDE_BINDINGS_DIR=ScriptDev2++
