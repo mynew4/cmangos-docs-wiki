@@ -2,7 +2,7 @@
 
 ## Generic things to do in case of a problem
 * Read created output. Read it carefully!
- * For compile problems: Look into the log, on *nix you can create a log with make > compile.log 2>&1
+ * For compile problems: Look into the log, on *nix you can create a log with `make > compile.log 2>&1`
  * For problems with the server: Look into the file *Server.log*
 
 ## How to Install?
@@ -25,6 +25,7 @@ See the part about "How to Install" above
 
 ### My client still connects to a different host/address
 * Add in your /WTF/config.wtf (SET realmlist "127.0.0.1") before (SET accountName "youraccount")
+
 ### MaNGOSd or/and Realmd instantly closes when I start them!
 * Run mangos in command line instead, if you have git bash that's also fine. Then you will see the on-screen error output and be able to continue from there.
 * Make sure there are no other processes using the required ports (default 8085 & 3724).
