@@ -68,3 +68,5 @@ So from start to finish, this is a quick summary of the steps you will take to g
 The next sections of this guide will focus on all of the different pieces of CMaNGOS and how they work together. Remember that this guide will not tell you _how_ to put them together, it will just give you a simplified explanation of what everything is. The Installation Instructions (found [here](https://github.com/cmangos/issues/wiki/Installation-Instructions)) is where you should go for the actual process of building a CMaNGOS server.
 
 Next: [What Everything Is](https://github.com/cmangos/issues/wiki/Beginners-Guide-What-Everything-Is)
+
+[Beginner's Guide Home](https://github.com/cmangos/issues/wiki/Beginners-Guide-Home)
