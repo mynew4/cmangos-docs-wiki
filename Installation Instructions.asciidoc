@@ -3,11 +3,11 @@ Installation Instructions
 
 How to install C(ontinued)-MaNGOS from scratch and how to update it.
 
-This Guide will help you for Windows or *nix (Ubuntu, Debian) and for all supported clients: Classic - TBC - WotLK - Cata
+This Guide will help you for Windows or *nix (Ubuntu, Debian) and for all supported clients: Classic - TBC - WotLK - Cata - WoD. 
 
 For other environments (like FreeBSD, Mac OSX, ARM and similar) please consider our http://cmangos.net/forum-5.html[Installation, Configuration & Upgrades - Subforum] for assistance.
 
-If you run into issues during installation or need help understanding one of the following steps, please visit http://cmangos.net/forum-5.html[our forum] to look for solutions and ask questions. These Installation Instructions are expected to be current, so please read through every step again to ensure that you didn't skip or misunderstand something before going to the forums.
+If you run into issues during installation or need help understanding one of the following steps, please visit http://cmangos.net/forum-5.html[our forum] to look for solutions and ask questions. These Installation Instructions are expected to be current, so please read through every step again to ensure that you didn't skip or misunderstand something before going to the forums. If you are an absolute beginner to programming and compiling then you may want to go through the https://github.com/cmangos/issues/wiki/Beginners-Guide-Home[Beginner's Guide] first.
 
 Addresses
 ---------
