@@ -1,50 +1,46 @@
 h1. C(ontinued)-MaNGOS Development
-
 * "About C(ontinued) MaNGOS":https://github.com/cmangos/mangos-wotlk#readme
 * "Beginner's Guide":https://github.com/cmangos/issues/wiki/Beginners-Guide-Home
-* [[Installation Instructions]]
-* [[FAQ Frequently Asked Questions]]
+* "Installation Instructions":https://github.com/cmangos/issues/wiki/Installation-Instructions
+* "FAQ Frequently Asked Questions":https://github.com/cmangos/issues/wiki/FAQ-Frequently-Asked-Questions
 * "Bug reports and patches":https://github.com/cmangos/issues/issues
-** "Contributing Guidelines":https://github.com/cmangos/mangos-wotlk/blob/master/CONTRIBUTING.md
-** [[Coding Standards]]
-** [[Git tutorials]]
-
+* "Contributing Guidelines":https://github.com/cmangos/mangos-wotlk/blob/master/CONTRIBUTING.md
+* "Coding Standards":https://github.com/cmangos/issues/wiki/Coding-Standards
+* "Git tutorials":https://github.com/cmangos/issues/wiki/Git-tutorials
 * "Roadmap":https://github.com/cmangos/issues/issues/1
 
-h2. Database structure
+h2. Database Structure
 
 * "Description of the CMaNGOS database structure":https://github.com/cmangos/issues/wiki/mangosdb_struct
 * "Description of the Characters database structure":https://github.com/cmangos/issues/wiki/charactersdb_struct
 * "Description of the Realm database structure":https://github.com/cmangos/issues/wiki/realmdb_struct
 
-h2. External data
+h2. External Data
 
-Other useful data like small dbc contents used to populate some MaNGOS tables can be found here. These pages are also used as template for some MaNGOS field description when needed to list the content. We can then update all information about contained data from these pages when a change occurs, and this change is reflected in all pages that include these templates.
+Other useful data such as dbc content used to populate some of the CMaNGOS tables can be found here. These pages are also used as templates for some CMaNGOS field descriptions when needed to list the content. We then update information on these pages when a change occurs and it is reflected in all pages that include these templates.
 
 * "Description of dbc files content":https://github.com/cmangos/issues/wiki/dbc_files
 * "Description of wdb files content":https://github.com/cmangos/issues/wiki/wdb_files
 * "Description of the data field in the `character` table":https://github.com/cmangos/issues/wiki/character_data
 
-h2. Client dependent information
+h2. Client Dependent Information
 
-[[Backporting-Tutorial]]
-
+* "Backporting-Tutorial":https://github.com/cmangos/issues/wiki/Backporting-Tutorial
 
 h3. Classic
 
-[[Client-File-Formats]]
-[[classic_backporting todo tbc commits]]
-[[classic_backporting todo zero commits]]
-
+* "Client-File-Formats":https://github.com/cmangos/issues/wiki/Client-File-Formats
+* "classic_backporting todo tbc commits":https://github.com/cmangos/issues/wiki/classic_backporting-todo-tbc-commits
+* "classic_backporting todo zero commits":https://github.com/cmangos/issues/wiki/classic_backporting-todo-zero-commits
 
 h3. TBC
 
-[[tbc_backporting-todo-wotlk-commits]]
-
+* "tbc_backporting-todo-wotlk-commits":https://github.com/cmangos/issues/wiki/tbc_backporting-todo-wotlk-commits
 
 h3. WotLK
 
-
 h3. Cata
 
-[[cata_backporting todo wotlk commits]]
+* "cata_backporting todo wotlk commits":https://github.com/cmangos/issues/wiki/cata_backporting-todo-wotlk-commits
+
+h4. WoD
