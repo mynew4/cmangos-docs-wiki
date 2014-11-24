@@ -1,30 +1,54 @@
-# Frequently Asked Questions around CMaNGOS
-
-## Generic things to do in case of a problem
-* Read created output. Read it carefully!
+### What should I do when I encounter a problem?
+In general, read the log file and see if you can work out the problem from there on your own; if you can't, seek out help in IRC (#cmangos channel) or on the [cmangos.net forums](http://cmangos.net/index.php). Every application generates a log file somewhere that can be opened and reviewed.
  * For compile problems: Look into the log, on *nix you can create a log with `make > compile.log 2>&1`
- * For problems with the server: Look into the file *Server.log*
+ * For problems with the server: Look for the file, *Server.log*, in your server's home directory.
 
-## How to Install?
-See our [[Installation Instructions]]
+### I'm a beginner, where should I get started?
+See the [Beginner's Guide](https://github.com/cmangos/issues/wiki/Beginners-Guide-Home).
 
-## First time users
-### The server has an error when I try to start it
-See the part about "How to Install" above
+### How do I install CMaNGOS?
+See the [Installation Instructions](https://github.com/cmangos/issues/wiki/Installation-Instructions).
 
-### I cannot login to my server
-* realmd started?
-* mangosd started?
-* realmd database, table `realmlist` set to match the values in your mangosd.conf?
-* realmlist in your game folder set to localhost? (set realmlist 127.0.0.1)
-* User account created? (See [[Installation Instructions]] again)
-* Don't use email addresses as a login
-* Delete or rename wow.mfil and wow.tfil files
-* ONLY use wow.exe to start up the client, NEVER use launcher.exe
-  (client versions 4.x and up require wow.exe to be patched prior aswell)
+### My server has errors when I try to start it, what should I do?
+First you should review the [Installation Instructions](https://github.com/cmangos/issues/wiki/Installation-Instructions) again to be sure you didn't miss any steps and that every step was done according to the instructions.  
+
+Second, _search_ the forums for an solution (most errors have been encounter before and so there is usually a thread someone on the forums discussing it).
+
+Third, if you can't find any answers, seek out help in IRC (#cmangos channel) or on the [cmangos.net forums](http://cmangos.net/index.php).
+
+### I cannot login to my server, what should I do?
+If your server is running and you just can't connect to it then there are several possible issues:
+* Ensure that the realmd application is running; if not, start it up and check for errors if it doesn't stay open.  
+
+* Ensure that the mangosd application is running; if not, start it up and check for errors if it doesn't stay open.  
+* Make sure that the following fields from the `realmlist` table (realmd database) match up to their corresponding values in your _mangosd.conf_ configuration file:  
+
+  | realmlist | mangosd.conf    |
+  |:---------:|:---------------:|
+  | id        | RealmID         |
+  | port      | WorldServerPort |
+
+* Make sure that your _realmlist.wtf_ file in your game client folder is set to the address of your server. The content of the file should only have three phrases:  
+    >set realmlist _address_  
+
+  * If the server is on the same computer as the client then you can just use "127.0.0.1" as the address:  
+  >set realmlist 127.0.0.1  
+
+  * Otherwise the address should be the same as the "address" field from the `realmlist` table (realmd database).  
+
+* Ensure that the user account you are trying to log in with is created:
+  * See the [Installation Instructions](https://github.com/cmangos/issues/wiki/Installation-Instructions).
+  * To add an account, type the below line directly into the server command prompt (mangosd) replacing $accountName with the name of the account and $accountPassword with the password to be used:  
+  `account create $accountName $accountPassword`
+
+* Don't use email addresses as a username.  
+
+* Delete or rename wow.mfil and wow.tfil files.  
+
+* ONLY use wow.exe to start up the client, NEVER use launcher.exe (client versions 4.x and up require wow.exe to be patched prior as well).
 
 ### My client still connects to a different host/address
-* Add in your /WTF/config.wtf (SET realmlist "127.0.0.1") before (SET accountName "youraccount")
+* Add in your _/WTF/config.wtf_ file: (SET realmlist "127.0.0.1") before (SET accountName "youraccount")
 
 ### MaNGOSd or/and Realmd instantly closes when I start them!
 * Run mangos in command line instead, if you have git bash that's also fine. Then you will see the on-screen error output and be able to continue from there.
