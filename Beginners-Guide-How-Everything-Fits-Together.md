@@ -46,3 +46,5 @@ As you can see, every little action and exchange of information is incredibly co
 
 ## What's Next?
 Now you can move on to the installation instructions and get started! Remember that the forums and the #cmangos IRC channel are full of people available to help you with any issues so don't be afraid to ask. Once you have a server up and running we encourage you to participate in the community, report bugs, and if you have some programming skills, try your hand at fixing or enhancing the repositories. There is plenty of information on the forums about how to participate and help out.
+
+[Beginner's Guide Home](https://github.com/cmangos/issues/wiki/Beginners-Guide-Home)
