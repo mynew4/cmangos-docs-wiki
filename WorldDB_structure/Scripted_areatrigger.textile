@@ -1,6 +1,6 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `scriped&#95;areatrigger` table
+h2. The `scripted&#95;areatrigger` table
 
 This table links areatriggers to C++ scripts.
 
