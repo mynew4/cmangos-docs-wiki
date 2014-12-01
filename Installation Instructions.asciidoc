@@ -23,12 +23,12 @@ Addresses
 
 Software requirements (Windows)
 -------------------------------
-- World of Warcraft client for Classic (1.12.x)
-- World of Warcraft client for TBC (2.4.3)
-- World of Warcraft client for WotLK (3.3.5a)
-- World of Warcraft client for Cataclysm (4.3.4)
+- World of Warcraft Classic (1.12.x) client for cmangos-classic
+- World of Warcraft TBC (2.4.3) client for cmangos-tbc
+- World of Warcraft WotLK (3.3.5a) client for for cmangos-wotlk
+- World of Warcraft Cataclysm (4.3.4) client for for cmangos-cata
 
-- Git: http://code.google.com/p/msysgit/downloads/list[MySysGit] (http://i49.tinypic.com/v45smh.jpg[install with "Git bash here" support])
+- Git: http://code.google.com/p/msysgit/downloads/list[MySysGit] (http://oi49.tinypic.com/v45smh.jpg[install with "Git bash here" support])
 - Visual C++ 2008 or newer: http://www.microsoft.com/express/Downloads/[Visual Studio Express](On Windows 8, use "Visual Studio Express 2012 for Windows Desktop")
 - Any MySQL server: http://dev.mysql.com/downloads/mysql/[MySQL server community edition], http://www.apachefriends.org/en/xampp.html[XAMPP]
 - Any MySQL client (optional, for easy database access): http://dev.mysql.com/downloads/workbench/[MySQL Workbench], http://code.google.com/p/sqlyog/downloads/list[SQLyog]
