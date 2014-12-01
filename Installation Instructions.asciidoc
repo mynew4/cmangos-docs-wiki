@@ -276,9 +276,9 @@ Compiling CMaNGOS (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your C:\Mangos\mangos\win folder
 * Open the "sln" file that fits your version of Visual C++
+  - mangosdVC120.sln for Visual C++ 2013
   - mangosdVC110.sln for Visual C++ 2012
   - mangosdVC100.sln for Visual C++ 2010
-  - mangosdVC90.sln for Visual C++ 2008
 * Wait for Visual C++ to finish loading.
 * Open the menu "Build" -> "Configuration Manager"
   - Choose "Release" in the drop down box for "Active Solution Configuration"
@@ -293,9 +293,9 @@ Compiling ScriptDev2 (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your C:\Mangos\mangos\src\bindings\ScriptDev2 folder
 * Open the "sln" file that fits your version of Visual C++
+  - scriptVC120.sln for Visual C++ 2013
   - scriptVC110.sln for Visual C++ 2012
   - scriptVC100.sln for Visual C++ 2010
-  - scriptVC90.sln for Visual C++ 2008
 * Wait for Visual C++ to finish loading.
 * Open the menu "Build" -> "Configuration Manager"
   - Choose "Release" in the drop down box for "Active Solution Configuration"
