@@ -184,17 +184,11 @@ This will create a new folder (likely C:\Mangos\unifieddb) in which UDB SQL-file
 
 UDB 4.3.4(CATA)
 ^^^^^^^^^^^^^^^
-*On Windows*
+Open C:\Mangos with git bash.
 
-* Open C:\Mangos in the exporer, right-click on the right hand side
-* Select "Tortoise SVN Checkout" from the context menu.
-* Insert as SVN-URL: ++http://svn.code.sf.net/p/udb434/code/++
+git clone git://github.com/UDB-434/Database.git
 
-*On *nix*
-
-++svn co http://svn.code.sf.net/p/udb434/code/++
-
-This will create a new folder (likely C:\Mangos\udb434) in which UDB 4.3.4 SQL-files are located.
+This will create a new subfolder "Database" in which the SQL-files are located.
 
 TBC-DB (TBC)
 ^^^^^^^^^^^
