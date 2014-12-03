@@ -8,12 +8,12 @@ You must have access to an administrator account on your computer.
 
 **Software tools**
 
-In order to download, compile and install CMaNGOS and its tools, you will need the following softwares. All of them are free, though some may require you to register on the company website before downloading. All come with a standard Mac OS X installer which will greatly ease their installation and setting.
+In order to download, compile and install CMaNGOS and its tools, you will need the following software. All of them are free, though some may require you to register on the company website before downloading. All come with a standard Mac OS X installer which will greatly ease their installation and setting.
 
-**Developers Tools (XCode)**
+**Developers Tools (Xcode)**
 
-You'll need them to compile the source files. They are provided to developers by Apple You can grab XCode here: https://developer.apple.com/technologies/mac/#xcode   
-Don't forget to install the command line tools (Preferences>Download for the last version of XCode)
+You'll need them to compile the source files. They are provided to developers by Apple You can grab Xcode here: https://developer.apple.com/technologies/mac/#xcode   
+Don't forget to install the command line tools (Preferences>Download for the last version of Xcode)
 
 **MySQL Community Database Server**
 
@@ -23,8 +23,7 @@ Of course, if you have a 64-bit Mac, install the 64-bit MySQL package
 
 **Git**
 
-To get and manage the source code of CMaNGOS and scripts.  
-Link: http://code.google.com/p/git-osx-installer/
+Git comes with Xcode so you don't have to install it separately. If you want a newer version you can download it from http://git-scm.com/
 
 **CMake**
 
