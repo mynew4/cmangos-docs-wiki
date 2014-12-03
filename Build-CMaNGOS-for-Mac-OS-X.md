@@ -63,17 +63,6 @@ Now, we will prepare to build the server
 
 `$cd mangos`
 
-Prior going further, we need to patch the source for Mac OS X to solve conflicting declaration issue with one of the third party library coming with CMaNGOS (the ACE library to be precise).  
-A patch was written by Faramir118/Vermie and you can get it by (it is better to copy paste the link below into Terminal):
-```
-$curl https://gist.github.com/cala/5784841/raw/c71dd27f6035e90ec8ab7620456f4ad82bda9419/Fix+build+on+OX+Lion -o fix_build_for_os_x.txt
-$git apply fix_build_for_os_x.txt
-```
-
-If everything went OK, you should not have any feedback and we need to commit (aka save the changes):
-
-`$git commit -am "Fix build for Mac OS X"`
-
 Download the source files for the scripts (allows NPC to cast more spells and do complex things, not mandatory but you definitely want them):
 
 `$git clone git://github.com/scriptdev2/scriptdev2.git src/bindings/ScriptDev2`
