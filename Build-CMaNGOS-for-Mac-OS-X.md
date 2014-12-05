@@ -118,7 +118,7 @@ $./ad -f 0 -i /Applications/World\ of\ Warcraft/ -o .
 You can either remplace `f 0` by `f 1`, depending of the accuracy you want for the maps (but at the cost of larger file size). You should now have two new directories: dbc and maps inside your WoW client folder. By default, they need to be put where the server binaires are. If you want to use mmaps (for pathfinding and smoother creatures movements), you can go to step 4. If you don't want to use mmaps, you can move the dbc and maps to the server directory:
 
 `$mv dbc maps ~/mangos/run/bin/`
-## 4. Installing the vmaps (optional, but highly recommanded)
+## 4. Installing the vmaps (optional, but highly recommended)
 Vmaps are used by the server to determine if NPC can see/attack your characters, through walls for instance. This is also called LoS calculation (Line of Sight).
 We will extract the vmaps from the game data and then assemble them. CMaNGOS does not yet provide binaries for Mac but it does provide the source files, thus we will build our own binaries. First, we need to download and apply a patch written by evil-at-wow and myself:
 
