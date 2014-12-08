@@ -1,4 +1,4 @@
-These instructions are specific to Mac OS X. There were tested with Mac OS X 10.6.8 but should also work with more recent versions.
+These instructions are specific to Mac OS X. They were only tested with Mac OS X 10.6.8 but should also work with 10.7. These steps won't work on higher versions without further tweaks.
 
 ## 1: Getting everything you need
 
