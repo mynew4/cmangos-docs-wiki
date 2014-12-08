@@ -5,7 +5,7 @@ How to install C(ontinued)-MaNGOS from scratch and how to update it.
 
 This Guide will help you for Windows or *nix (Ubuntu, Debian) and for all supported clients: Classic - TBC - WotLK - Cata - WoD.
 
-Instructions covering Mac OS X specific steps are available https://github.com/cmangos/issues/wiki/Build-CMaNGOS-for-Mac-OS-X[here] in addition of this guide.
+Instructions covering Mac OS X (10.6 & 10.7) specific steps are available https://github.com/cmangos/issues/wiki/Build-CMaNGOS-for-Mac-OS-X[here] in addition of this guide.
 
 For other environments (like FreeBSD, ARM and similar) please consider our http://cmangos.net/forum-5.html[Installation, Configuration & Upgrades - Subforum] for assistance.
 
