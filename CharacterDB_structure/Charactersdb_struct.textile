@@ -1,7 +1,5 @@
 h3. This is the list of tables in the 'characters' database
 
-* "account_data":account_data
-
 * "arena_team":arena_team
 
 * "arena_team_member":arena_team_member
