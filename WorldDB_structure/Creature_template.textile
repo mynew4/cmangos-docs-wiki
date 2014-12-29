@@ -361,7 +361,7 @@ This Field Controls the Application Of Flags That Controls Certain NPC Specific 
 |512|CREATURE&#95;FLAG&#95;EXTRA&#95;AGGRO&#95;ZONE|creature sets itself in combat with zone on aggro|
 |1024|CREATURE&#95;FLAG&#95;EXTRA&#95;GUARD|creature is a guard, for Zone under attack announce if guard death|
 |2048|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;TALKTO&#95;CREDIT|creature doesn't give quest-credits when talked to (temporarily flag).|
-
+|4096|CREATURE&#95;FLAG&#95;EXTRA&#95;ACTIVE|creature is loaded and active on server startup, doesn't require players to activate its corresponding grid.|
 h4. CreatureTypeFlags
 
 This Field Controls If a Mob Is Minable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The "Skinning_Loot_Template":Skinning_Loot_Template Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side. 
