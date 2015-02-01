@@ -16,7 +16,7 @@ Addresses
 - CMaNGOS: http://www.cmangos.net[forum] | https://github.com/cmangos[git repositories] | http://qchat.rizon.net/?channels=%23cmangos[irc] (irc.rizon.net #cmangos)
 - ScriptDev2: http://cmangos.net/forum-32.html[forum] | https://github.com/scriptdev2[SD2 git repositories] | http://qchat.rizon.net/?channels=%23scriptdev2[irc] (irc.rizon.net #scriptdev2)
 - ACID: http://cmangos.net/forum-34.html[forum] | https://github.com/ACID-Scripts[git repositories] | http://qchat.rizon.net/?channels=%23aciddev[irc] (irc.rizon.net #aciddev)
-- UDB: http://udb.no-ip.org/index.php[forum] | https://svn.code.sf.net/p/unifieddb/code/[svn repository]
+- UDB: http://udb.no-ip.org/index.php[forum] | https://svn.code.sf.net/p/unifieddb/code/[svn repository] | https://github.com/unified-db/Database[git repository] 
 - UDB 4.3.4: http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | http://svn.code.sf.net/p/udb434/code/[svn repository]
 - TBC-DB: http://udb.no-ip.org/index.php[forum, scroll down to TBC] | https://tbc-db.svn.sourceforge.net/svnroot/tbc-db[svn repository] | https://github.com/TBC-DB/Database[git repository]
 - YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
