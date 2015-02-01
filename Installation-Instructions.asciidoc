@@ -16,9 +16,9 @@ Addresses
 - CMaNGOS: http://www.cmangos.net[forum] | https://github.com/cmangos[git repositories] | http://qchat.rizon.net/?channels=%23cmangos[irc] (irc.rizon.net #cmangos)
 - ScriptDev2: http://cmangos.net/forum-32.html[forum] | https://github.com/scriptdev2[SD2 git repositories] | http://qchat.rizon.net/?channels=%23scriptdev2[irc] (irc.rizon.net #scriptdev2)
 - ACID: http://cmangos.net/forum-34.html[forum] | https://github.com/ACID-Scripts[git repositories] | http://qchat.rizon.net/?channels=%23aciddev[irc] (irc.rizon.net #aciddev)
-- UDB: http://udb.no-ip.org/index.php[forum] | https://svn.code.sf.net/p/unifieddb/code/[svn repository] | https://github.com/unified-db/Database[git repository] 
-- UDB 4.3.4: http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | http://svn.code.sf.net/p/udb434/code/[svn repository]
-- TBC-DB: http://udb.no-ip.org/index.php[forum, scroll down to TBC] | https://tbc-db.svn.sourceforge.net/svnroot/tbc-db[svn repository] | https://github.com/TBC-DB/Database[git repository]
+- UDB: http://udb.no-ip.org/index.php[forum] | https://github.com/unified-db/Database[git repository] 
+- UDB 4.3.4: http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | https://github.com/UDB-434/Database[git repository]
+- TBC-DB: http://udb.no-ip.org/index.php[forum, scroll down to TBC] | https://github.com/TBC-DB/Database[git repository]
 - YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
 - PSDB: http://project-silvermoon.forumotion.com/[forum] | http://subversion.assembla.com/svn/psmdb_wotlk/[svn repository]
 - ClassicDB: https://github.com/classicdb[Project main site on GitHub] | https://github.com/classicdb/database[git repository]
@@ -169,53 +169,27 @@ Get the world-database stuff
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 UDB (WotLK)
 ^^^^^^^^^^^
-*On Windows*
+* Open C:\Mangos with git bash.
 
-* Open C:\Mangos in the explorer, right-click on the right hand side
-* Select "Tortoise SVN Checkout" from the context menu.
-* (All versions) Insert as SVN-URL: ++https://unifieddb.svn.sourceforge.net/svnroot/unifieddb++
-* (Latest version) Insert as SVN-URL: ++https://unifieddb.svn.sourceforge.net/svnroot/unifieddb/trunk++
+* ++git clone git://github.com/unified-db/Database.git++
 
-*On *nix:*
+This will create a new subfolder "Database" in which the SQL-files are located.
 
-++svn co https://svn.code.sf.net/p/unifieddb/code/trunk/ unifieddb++
-
-++unzip unifieddb/Full_DB/UDB_*.zip -d unifieddb/Full_DB/++
-
-This will create a new folder (likely C:\Mangos\unifieddb) in which UDB SQL-files are located
+* Run Windows_Install_Script.bat and follow the steps provided by the script. If required you might need to manually provide the details required by the script, by editing the file in notepad.
 
 UDB 4.3.4(CATA)
 ^^^^^^^^^^^^^^^
-Open C:\Mangos with git bash.
+* Open C:\Mangos with git bash.
 
-git clone git://github.com/UDB-434/Database.git
+* ++git clone git://github.com/UDB-434/Database.git++
 
 This will create a new subfolder "Database" in which the SQL-files are located.
 
 TBC-DB (TBC)
 ^^^^^^^^^^^
-*On Windows*
-
-Using SVN repository:
-
-* Open C:\Mangos in the exporer, right-click on the right hand side
-* Select "Tortoise SVN Checkout" from the context menu.
-* Insert as SVN-URL: ++http://svn.code.sf.net/p/tbc-db/code/++
-
-Or using Git repository:
-
 * Open C:\Mangos with git bash.
+
 * ++git clone git://github.com/TBC-DB/Database.git tbc-db++
-
-*On *nix*
-
-Using SVN repository:
-
-++svn co http://svn.code.sf.net/p/tbc-db/code/++
-
-Or using Git repository:
-
-++git clone git://github.com/TBC-DB/Database.git tbc-db++
 
 This will create a new folder (likely C:\Mangos\tbc-db) in which TBC-DB SQL-files are located.
 
