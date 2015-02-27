@@ -30,7 +30,7 @@ h3. Structure
 |"Family":Creature_template#Family|tinyint(4)|YES||0||
 |"CreatureType":Creature_template#CreatureType|tinyint(3) unsigned|NO||0||
 |"InhabitType":Creature_template#InhabitType|tinyint(3) unsigned|NO||3||
-|"RegenerateHealth":Creature_template#RegenerateHealth|tinyint(3) unsigned|NO||1||
+|"RegenerateStats":Creature_template#RegenerateStats|tinyint(3) unsigned|NO||1||
 |"RacialLeader":Creature_template#RacialLeader|tinyint(3) unsigned|NO||0||
 |"NpcFlags":Creature_template#NpcFlags|int(10) unsigned|NO||0||
 |"UnitFlags":Creature_template#UnitFlags|int(10) unsigned|NO||0||
@@ -229,13 +229,13 @@ This Field Controls Where The Creature Can Move Into, Chase And Attack. The NPC 
 |4|Always Flying|
 
 
-h4. RegenerateHealth
+h4. RegenerateStats
 
-This Field Controls If The Creature Should Regenerate It's Health When Out of Combat (Boolean Value 1 or 0)
+This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Boolean Value 1 or 0)
 
 |Value|Description|
-|0|NPC Does NOT Regenerate Health When Out Of Comabt|
-|1|NPC DOES Regenerate Health When Out Of Comabt|
+|0|NPC Does NOT Regenerate Stats When Out Of Comabt|
+|1|NPC DOES Regenerate Stats When Out Of Comabt|
 
 h4. RacialLeader
 
@@ -412,8 +412,11 @@ An NPC's Unit Class Is A Corner Stone Value Used In "Creature_Template_Classleve
 
 NPC Stats Refers To: (Health/Mana/Damage/Armor).
 
-In WOTLK and CATA There Are 4 Possible NPC Classes Available For Creatures (Class: 1,2,4,8)
-In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures (Class: 1,2,8)
+In WOTLK and CATA There Are 4 Possible NPC Classes Available For Creatures:
+(Class: 1,2,4,8)
+
+In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures:
+(Class: 1,2,8)
 
 |_. ID|_. Name|
 |CLASS&#95;WARRIOR|1|
@@ -422,12 +425,14 @@ In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures (Cla
 |CLASS&#95;MAGE|8|
 
 This Value is Contained in Sniff Data: UNIT_FIELD_BYTES_0 located in SMSG_UPDATE_OBJECT
-It is a Critical Field in Determining Class Level Stats For the NPC. Typically ONLY Vehicles Are Class=4
+It is a Critical Field in Determining Class Level Stats For the NPC. 
 
-Warriors Do Not Have Mana and Maximum Health and Damage
-Paladins Have a Small Amount Of Mana and Slightly Less Health and Damage From a Warrior
-Rogues (Little is Known Currently But They All Seem To Be Vehicles)
-Mages Have Lots of Mana But Have Very Low Health and Damage
+NOTE: Typically ONLY Vehicles Are Class=4
+
+Warriors: Do Not Have Mana and Maximum Health and Damage
+Paladins: Have a Small Amount Of Mana and Slightly Less Health and Damage From a Warrior
+Rogues: (Little is Known Currently But They All Seem To Be Vehicles)
+Mages: Have Lots of Mana But Have Very Low Health and Damage
 
 h4. Rank
 
@@ -453,15 +458,19 @@ This Value Is a Critical Value in Determining an NPC's Stats From "Creature_Temp
 |2|Wrath of the Lich King|
 |3|Cataclysm|
 
-NOTE: Now Everyone Has Trouble Understanding This Concept. An NPC's Expansion Value Has NOTHING To Do With What Expansion An NPC Is From. This Value Determines How Difficult An NPC Is In Regards To An NPC At The Same Level From A Different Expansion. As An Example a Classic Level 60 NPC Will Have Less Base Health and Less Base Damage Then An NPC That Is Level 60 From A TBC NPC.
+NOTE: Now Everyone Has Trouble Understanding This Concept. An NPC's Expansion Value Has NOTHING To Do With What Expansion An NPC Is From. This Value Determines How Difficult An NPC Is In Regards To An NPC At The Same Level From A Different Expansion. As An Example a Classic Level 60 NPC Will Have Less Base Health and Less Base Damage Then A Level 60 TBC NPC.
 
-Each Expansion Value Has a Different Base Health and Base Damage (Each Expansion Having Higher Values Then The Previous). ONLY Health And Damage Scale With Expansion Values. Mana / Armor / Attack Power Are Static Values For All Expansions For A Particular Level and Unit Class.
+Each Expansion Value Has a Different Base Health and Base Damage (Each Expansion Having Higher Values Then The Previous). ONLY Health And Damage Scale With Expansion Values. Mana / Armor / Attack Power Are Static Values For All Expansions For A Particular Level and Unit Class combination.
 
 An NPC's Health and Damage Is Calculated From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats Based On "HealthMultiplier":#HealthMultiplier And "DamageMultiplier":#DamageMultiplier Multiplied By BaseHealthExp? and BaseDamageExp? From Creature_Template_ClassLevelStats Where ? = Expansion Value.
 
+Note: See "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats For Better Understanding.
+
 h4. HealthMultiplier
 
-This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Health Value. NPC Have Various HealthMultipliers But Typically They Are Fairly Rounded Values (Bosses Have Large Very Rounded Values Normally)
+This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Health Value. NPC Have Various HealthMultipliers But Typically They Are Fairly Rounded Values 
+
+(Note: Dungeon/Raid/World Bosses Normally Have Large Very Rounded Values Normally)
 
 This Is The Multiplier Used Against The BaseHealthExp? Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Health Values Where ? = "Expansion":#Expansion Value.
 
@@ -492,10 +501,11 @@ MaxLevelHealth = ROUND (1277*1.15) = 1468.55 (1469)
 
 h4. PowerMultiplier
 
-This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Mana Value. All NPC Have Nice Rounded Values For Mana Multipliers.
+This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Mana Value. All NPC Have Nice Rounded Values For PowerMultipliers.
 
-This Is The Multiplier Used Against The BaseMana Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Mana Values. Note, BaseMana Values Do NOT Scale With Expansion Values Unlike Health And Damage.
+This Is The Multiplier Used Against The BaseMana Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Mana Values. 
 
+Note: BaseMana Values Do NOT Scale With Expansion Values Unlike Health And Damage.
 Note: For NPC that use Other Power then Mana it will reflect that power instead.
 
 Formula:
@@ -512,7 +522,7 @@ Example:
 |"MaxLevelMana":#MaxLevelMana|5360|(Sniff Data)|
 |"UnitClass":#UnitClass|8|(Sniff Data)|
 |"Expansion":#Expansion|0|Determined From Calculations / Sniff Data / MoP DBC|
-|"ManaMultiplier":#ManaMultiplier|2|(Sniff Data)|
+|"PowerMultiplier":#ManaMultiplier|2|(Sniff Data)|
 
 Level 35 BaseMana: 2680 
 (From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats - BaseMana Values Calculated From Sniff Data And Extensive Research)
