@@ -530,6 +530,41 @@ Level 35 BaseMana: 2680
 MinLevelMana = ROUND (2680*2) = 5360 (5360)
 MaxLevelMana = ROUND (2680*2) = 5360 (5360)
 
+h4. DamageMultiplier
+
+h4. DamageVariance
+
+h4. ArmorMultiplier
+
+h4. ExperienceMultiplier
+
+NOTE: This Field Is Currently Not Used By The Core (Future Implementation)
+
+h4. MinLevelHealth
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers (Nice Field To Have Still)
+
+Minimum Level Health Is Now Calculated Using "HealthMultiplier":#HealthMultiplier
+
+h4. MaxLevelHealth
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers (Nice Field To Have Still)
+
+Maximum Level Health Is Now Calculated Using "HealthMultiplier":#HealthMultiplier
+
+
+h4. MinLevelMana
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers (Nice Field To Have Still)
+
+Minimum Level Mana Is Now Calculated Using "PowerMultiplier":#PowerMultiplier
+
+h4. MaxLevelMana
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers (Nice Field To Have Still)
+
+Maximum Level Mana Is Now Calculated Using "PowerMultiplier":#PowerMultiplier
+
 
 
 
@@ -542,13 +577,7 @@ h4. gossip&#95;menu&#95;id
 Reference to a "gossip&#95;menu&#95;id":gossip_menu.
 
 
-h4. minhealth
 
-The minimum health of the creature if the creature has variable health.
-
-h4. maxhealth
-
-The maximum health of the creature if the creature has a variable health. When added to world, the health value is chosen in proportion to the level chosen.
 
 h4. minmana
 
