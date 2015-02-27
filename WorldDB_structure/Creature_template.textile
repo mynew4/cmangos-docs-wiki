@@ -43,7 +43,7 @@ h3. Structure
 |"Rank":Creature_template#Rank|tinyint(3) unsigned|YES||0||
 |"Expansion":Creature_template#Expansion|tinyint(3) unsigned|NO||0||
 |"HealthMultiplier":Creature_template#HealthMultiplier|float|NO||1.0||
-|"ManaMultiplier":Creature_template#ManaMultiplier|float|NO||1.0||
+|"PowerMultiplier":Creature_template#ManaMultiplier|float|NO||1.0||
 |"DamageMultiplier":Creature_template#DamageMultiplier|float|NO||1||
 |"DamageVariance":Creature_template#DamageVariance|float|NO||1||
 |"ArmorMultiplier":Creature_template#ArmorMultiplier|float|NO||1||
@@ -490,11 +490,13 @@ Level 36 BaseHealthExp0: 1277
 MinLevelHealth = ROUND (1220*1.15) = 1403 (1403)
 MaxLevelHealth = ROUND (1277*1.15) = 1468.55 (1469)
 
-h4. ManaMultiplier
+h4. PowerMultiplier
 
 This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Mana Value. All NPC Have Nice Rounded Values For Mana Multipliers.
 
 This Is The Multiplier Used Against The BaseMana Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Mana Values. Note, BaseMana Values Do NOT Scale With Expansion Values Unlike Health And Damage.
+
+Note: For NPC that use Other Power then Mana it will reflect that power instead.
 
 Formula:
 MinLevelMana = ROUND (BaseMana * ManaMultiplier)
