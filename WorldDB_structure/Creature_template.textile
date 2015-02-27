@@ -542,30 +542,46 @@ NOTE: This Field Is Currently Not Used By The Core (Future Implementation)
 
 h4. MinLevelHealth
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers (Nice Field To Have Still)
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
 
 Minimum Level Health Is Now Calculated Using "HealthMultiplier":#HealthMultiplier
 
 h4. MaxLevelHealth
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers (Nice Field To Have Still)
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
 
 Maximum Level Health Is Now Calculated Using "HealthMultiplier":#HealthMultiplier
 
 
 h4. MinLevelMana
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers (Nice Field To Have Still)
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
 
 Minimum Level Mana Is Now Calculated Using "PowerMultiplier":#PowerMultiplier
 
 h4. MaxLevelMana
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers (Nice Field To Have Still)
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
 
 Maximum Level Mana Is Now Calculated Using "PowerMultiplier":#PowerMultiplier
 
+h4. MinMeleeDmg
 
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Minimum Melee Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
+
+h4. MaxMeleeDmg
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Maximum Melee Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
 
 
 ============= BELOW IS OLD DATA ===============
@@ -579,13 +595,7 @@ Reference to a "gossip&#95;menu&#95;id":gossip_menu.
 
 
 
-h4. minmana
 
-The miminum mana of the creature if the creature has variable mana.
-
-h4. maxmana
-
-The maximum mana of the creature if the creature has variable mana. When added to world, the mana value is chosen in proportion to the level chosen.
 
 h4. armor
 
@@ -599,13 +609,7 @@ The armor value of the creature. It controls how much damage reduction the creat
 
 
 
-h4. mindmg
 
-Minimum damage the creature deals in melee. This field is combined with the "attackpower":#attackpower field to calculate the damage. Look at "attackpower":#attackpower to see the formula.
-
-h4. maxdmg
-
-Maximum damage the creature deals in melee. This field is combined with the "attackpower":#attackpower field to calculate the damage. Look at "attackpower":#attackpower to see the formula.
 
 h4. dmgschool
 
