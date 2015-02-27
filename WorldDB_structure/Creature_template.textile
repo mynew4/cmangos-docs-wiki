@@ -338,11 +338,13 @@ Some Known Flag Values Are:
 |0|UNIT&#95;DYNFLAG&#95;NONE||
 |1|UNIT&#95;DYNFLAG&#95;LOOTABLE||
 |2|UNIT&#95;DYNFLAG&#95;TRACK&#95;UNIT||
-|4|UNIT&#95;DYNFLAG&#95;OTHER&#95;TAGGER|Makes creatures name appear grey (good for simulating dead creatures)|
-|8|UNIT&#95;DYNFLAG&#95;ROOTED||
+|4|UNIT&#95;DYNFLAG&#95;TAPPED|Lua_UnitIsTapped - Makes creatures name appear grey (good for simulating dead creatures) ???|
+|8|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;PLAYER|Lua_UnitIsTappedByPlayer|
 |16|UNIT&#95;DYNFLAG&#95;SPECIALINFO|Shows creatures basic stats (Health, damage, resistances, tamable).|
 |32|UNIT&#95;DYNFLAG&#95;DEAD|Makes the creature appear dead (this DOES NOT make the creatures name grey)|
-|64|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST||
+|64|UNIT&#95;DYNFLAG&#95;REFER&#95;A&#95;FRIEND||
+|128|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST|Lua_UnitIsTappedByAllThreatList|
+
 
 h4. ExtraFlags
 
