@@ -376,6 +376,9 @@ Some values provided from the community:
 |2|CREATURE&#95;TYPEFLAGS&#95;GHOST&#95;VISIBLE|Sets Creatures that can ALSO be seen when player is a ghost|
 |4|CREATURE&#95;TYPEFLAGS&#95;UNK3|Sets "BOSS" flag for tooltips|
 |8|CREATURE&#95;TYPEFLAGS&#95;ATTACKABLE||
+|16|CREATURE&#95;TYPEFLAGS&#95;UNK5|Controls something in client tooltip related to creature faction|
+|32|CREATURE&#95;TYPEFLAGS&#95;UNK6|Something related to Sound|
+|64|CREATURE&#95;TYPEFLAGS&#95;UNK7|Related to attackable / not attackable creatures with spells|
 |128|CREATURE&#95;TYPEFLAGS&#95;NOT&#95;ATTACKABLE&#95;1||
 |136|CREATURE&#95;TYPEFLAGS&#95;NON&#95;PVP&#95;PLAYER||
 |256|CREATURE&#95;TYPEFLAGS&#95;HERBLOOT|Makes mob herbable|
