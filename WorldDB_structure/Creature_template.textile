@@ -547,6 +547,8 @@ NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
 
 Minimum Level Health Is Now Calculated Using "HealthMultiplier":#HealthMultiplier
 
+Core Now Automatically Calculates This Value On The Fly
+
 h4. MaxLevelHealth
 
 NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
@@ -554,6 +556,7 @@ NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
 
 Maximum Level Health Is Now Calculated Using "HealthMultiplier":#HealthMultiplier
 
+Core Now Automatically Calculates This Value On The Fly
 
 h4. MinLevelMana
 
@@ -562,12 +565,16 @@ NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
 
 Minimum Level Mana Is Now Calculated Using "PowerMultiplier":#PowerMultiplier
 
+Core Now Automatically Calculates This Value On The Fly
+
 h4. MaxLevelMana
 
 NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
 (Nice Field To Have Still)
 
 Maximum Level Mana Is Now Calculated Using "PowerMultiplier":#PowerMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
 
 h4. MinMeleeDmg
 
@@ -576,12 +583,46 @@ NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
 
 Minimum Melee Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
 
+Core Now Automatically Calculates This Value On The Fly
+
 h4. MaxMeleeDmg
 
 NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
 (Nice Field To Have Still)
 
 Maximum Melee Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. Armor
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+DB Devs: Suggested Apply Armor Value For MaxLevel For This Field For FYI Purposes
+
+(Old System Did Not Properly Calculate Armor Values for different NPC Levels)
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MeleeAttackPower
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes
+
+Core Now Gets Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats
+
+(Old System Did Not Properly Calculate Melee Attack Power Values for Damage Calculations) 
+
+h4. RangedAttackPower
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes
+
+Core Now Gets Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats
+
+(Old System Did Not Properly Calculate Ranged Attack Power Values for Damage Calculations) 
+
+
+
 
 
 ============= BELOW IS OLD DATA ===============
@@ -597,9 +638,6 @@ Reference to a "gossip&#95;menu&#95;id":gossip_menu.
 
 
 
-h4. armor
-
-The armor value of the creature. It controls how much damage reduction the creature gets from physical attacks.
 
 
 
@@ -625,22 +663,6 @@ Creature's melee damage school.
 |6|SPELL&#95;SCHOOL&#95;ARCANE|
 
 
-h4. attackpower
-
-The attack power for the creature's melee attacks. This field along with "mindmg":#mindmg and "maxdmg":#maxdmg dictate how much the creature will hit for. The formula in applying correct damages is as follows:
-
-bc. UPDATE `creature_template` SET 
-    `mindmg` = <#1>, 
-    `maxdmg` = <#2>, 
-    `attackpower` = ROUND((`mindmg` + `maxdmg`) / 4 * 7), 
-    `mindmg` = ROUND(`mindmg` - `attackpower` / 7), 
-    `maxdmg` = ROUND(`maxdmg` - `attackpower` / 7) 
-  WHERE `entry` = ...
-
-
-In the query above, substitute '&lt;#1&gt;' with the minimum damage you want the creature to deal and '&lt;#2&gt;' with the maximum damage you want the creature to deal.
-
-NOTE: You might also want to double check the values calculated after the query is run because if the difference between mindmg and maxdmg is too high, mindmg will end up being a negative value.
 
 h4. baseattacktime
 
