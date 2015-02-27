@@ -373,18 +373,22 @@ Some values provided from the community:
 
 |*Flag*|*Name*|*Comments*|
 |1|CREATURE&#95;TYPEFLAGS&#95;TAMEABLE|Makes the mob tameable (must also be a beast and have family set)|
-|2|CREATURE&#95;TYPEFLAGS&#95;GHOST&#95;VISIBLE|Sets Creatures that can ALSO be seen when player is a ghost|
+|2|CREATURE&#95;TYPEFLAGS&#95;GHOST&#95;VISIBLE|Sets Creatures that can ALSO be seen when player is a ghost. Used in CanInteract function by client, can't be attacked|
 |4|CREATURE&#95;TYPEFLAGS&#95;UNK3|Sets "BOSS" flag for tooltips|
-|8|CREATURE&#95;TYPEFLAGS&#95;ATTACKABLE||
+|8|CREATURE&#95;TYPEFLAGS&#95;UNK4||
 |16|CREATURE&#95;TYPEFLAGS&#95;UNK5|Controls something in client tooltip related to creature faction|
 |32|CREATURE&#95;TYPEFLAGS&#95;UNK6|Something related to Sound|
 |64|CREATURE&#95;TYPEFLAGS&#95;UNK7|Related to attackable / not attackable creatures with spells|
-|128|CREATURE&#95;TYPEFLAGS&#95;NOT&#95;ATTACKABLE&#95;1||
+|128|CREATURE&#95;TYPEFLAGS&#95;UNK8|has something to do with unit interaction / quest status requests|
 |136|CREATURE&#95;TYPEFLAGS&#95;NON&#95;PVP&#95;PLAYER||
-|256|CREATURE&#95;TYPEFLAGS&#95;HERBLOOT|Makes mob herbable|
-|512|CREATURE&#95;TYPEFLAGS&#95;MININGLOOT|Makes mob minable|
-|1024|CREATURE&#95;TYPEFLAGS&#95;ANIMATION&#95;FROZEN||
-|4096|CREATURE&#95;TYPEFLAGS&#95;WAR&#95;PLAYER||
+|256|CREATURE&#95;TYPEFLAGS&#95;HERBLOOT|Makes Mob Corpse Herbable - Uses Skinning Loot Field|
+|512|CREATURE&#95;TYPEFLAGS&#95;MININGLOOT|Makes Mob Corpse Mineable - Uses Skinning Loot Field|
+|1024|CREATURE&#95;TYPEFLAGS&#95;ANIMATION&#95;UNK11|no idea, but it used by client|
+|2048|CREATURE&#95;TYPEFLAGS&#95;ANIMATION&#95;UNK12|related to possibility to cast spells while mounted|
+|4096|CREATURE&#95;TYPEFLAGS&#95;CAN&#95;ASSIST|Can aid any player or group in combat. Typically seen for escorting NPC's|
+|8192|CREATURE&#95;TYPEFLAGS&#95;UNK14|checked from calls in Lua_PetHasActionBar|
+|16384|CREATURE&#95;TYPEFLAGS&#95;UNK15|Lua_UnitGUID, client does guid_low &= 0xFF000000 if this flag is set|
+|32768|CREATURE&#95;TYPEFLAGS&#95;ENGINEERLOOT|Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field|
 
 h4. SpeedWalk
 
