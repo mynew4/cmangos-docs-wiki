@@ -610,7 +610,7 @@ DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes
 
 Core Now Gets Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats
 
-(Old System Did Not Properly Calculate Melee Attack Power Values for Damage Calculations) 
+(Old System Did Not Properly Calculate Values for Damage Calculations) 
 
 h4. RangedAttackPower
 
@@ -619,7 +619,7 @@ DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes
 
 Core Now Gets Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats
 
-(Old System Did Not Properly Calculate Ranged Attack Power Values for Damage Calculations) 
+(Old System Did Not Properly Calculate Values for Damage Calculations) 
 
 
 
