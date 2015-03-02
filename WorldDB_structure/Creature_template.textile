@@ -543,6 +543,7 @@ MAX MELEE DAMAGE = ((((Creature_Template_Classlevelstats.BaseDamageExp? * Creatu
 Note: ? = Expansion Value of The NPC
 
 Some NPC Have Damage Multipliers Applied To Increase Their Damage Above That Of a Normal NPC Of The Same Level.
+
 I am sure people are asking... WHY is there more then just a simple Damage Multiplier Involved To Boost NPC Damage? Here is the only logical answer. With some NPC (Like Bosses) Who have Multipliers in the range of 20 - 75 Min and Max Damage values can fluctuate into VERY Large Ranges. So What Blizz has done is create a Co-Efficient System of 2 Values to help Reign in Max Damage Values so if you require a Set Min/Max Damage For an NPC it can scale the BaseDamage so after being put though the Formula The Min and Max Damage values will be within the Required Range. Damage Variance is used to reduce the Max Damage Value. For NPC Who Do NOT Have an altered Damage Variance the Default Value used is 1 (Normal Variance = 1).
 
 -----------------------------------------------------
