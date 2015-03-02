@@ -775,6 +775,22 @@ h4. ResistanceArcane
 
 An NPC's Additional Arcane Spell Resistance Value.
 
+h4. PetSpellDataId
+
+ID that displays what spells the pet has in the client.
+
+Note: This Value Comes From DBC (Not Confirmed)
+
+h4. MovementType
+
+The NPC's default Movement Type.
+
+|_. ID|_. Type|
+|0|Idle - Stand Still (Stationary)|
+|1|Random Movement - Will Random Move inside SpawnDist Radius (Creature Table)|
+|2|Waypoint Movement - Will Move Along Waypoint Path Defined In Creature_(Template)_Movement|
+
+
 
 
 
@@ -785,30 +801,6 @@ An NPC's Additional Arcane Spell Resistance Value.
 h4. gossip&#95;menu&#95;id
 
 Reference to a "gossip&#95;menu&#95;id":gossip_menu.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -845,9 +837,7 @@ If the NPC is a mount trainer ("trainer&#95;type":creature_template#trainer_type
 
 
 
-h4. PetSpellDataId
 
-ID that displays what spells the pet has in the client.
 
 
 
@@ -866,14 +856,6 @@ Overrides AI used for the creature.
 ||
 
 
-h4. MovementType
-
-The creature's default movement type.
-
-|_. ID|_. Type|
-|0|Idle; stay in one place|
-|1|Random movement inside the spawndist radius|
-|2|Waypoint movement|
 
 
 
