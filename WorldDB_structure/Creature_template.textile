@@ -675,7 +675,7 @@ An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.
 NOTE:
 1 = 1 Copper
 100 = 1 Silver
-1000 = 1 Gold
+10000 = 1 Gold
 
 h4. MaxLootGold
 
@@ -686,7 +686,7 @@ An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.
 NOTE:
 1 = 1 Copper
 100 = 1 Silver
-1000 = 1 Gold
+10000 = 1 Gold
 
 ============= BELOW IS OLD DATA ===============
 
