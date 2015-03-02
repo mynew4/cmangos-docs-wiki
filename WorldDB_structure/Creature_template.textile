@@ -594,6 +594,24 @@ Maximum Melee Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplie
 
 Core Now Automatically Calculates This Value On The Fly
 
+h4. MinRangedDmg
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Minimum Ranged Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MaxRangedDmg
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Maximum Ranged Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
 h4. Armor
 
 NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
@@ -621,9 +639,54 @@ Core Now Gets Value From "Creature_Template_ClassLevelStats":Creature_Template_C
 
 (Old System Did Not Properly Calculate Values for Damage Calculations) 
 
+h4. MeleeBaseAttackTime
 
+An NPC's melee attack time in milliseconds. This Field is populated by Sniff Data.
 
+This field is used as part of Min/Max Melee Damage Formula Calculations.
 
+h4. RangedBaseAttackTime
+
+An NPC's ranged attack time in milliseconds. This Field is populated by Sniff Data.
+
+This field is used as part of Min/Max Ranged Damage Formula Calculations.
+
+h4. DamageSchool
+
+NPC's Melee Damage School. All Melee Damage Will Be Done As This Spell School Damage Set Here.
+
+NOTE: 0 (Normal) = Physical Damage
+
+|_. ID|_. Name|
+|0|SPELL&#95;SCHOOL&#95;NORMAL|
+|1|SPELL&#95;SCHOOL&#95;HOLY|
+|2|SPELL&#95;SCHOOL&#95;FIRE|
+|3|SPELL&#95;SCHOOL&#95;NATURE|
+|4|SPELL&#95;SCHOOL&#95;FROST|
+|5|SPELL&#95;SCHOOL&#95;SHADOW|
+|6|SPELL&#95;SCHOOL&#95;ARCANE|
+
+h4. MinLootGold
+
+Minimum possible money that the NPC drops when killed, in copper.
+
+An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.
+
+NOTE:
+1 = 1 Copper
+100 = 1 Silver
+1000 = 1 Gold
+
+h4. MaxLootGold
+
+Maximum possible money that the NPC drops when killed, in copper.
+
+An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.
+
+NOTE:
+1 = 1 Copper
+100 = 1 Silver
+1000 = 1 Gold
 
 ============= BELOW IS OLD DATA ===============
 
@@ -649,26 +712,11 @@ Reference to a "gossip&#95;menu&#95;id":gossip_menu.
 
 
 
-h4. dmgschool
-
-Creature's melee damage school.
-
-|_. ID|_. Name|
-|0|SPELL&#95;SCHOOL&#95;NORMAL|
-|1|SPELL&#95;SCHOOL&#95;HOLY|
-|2|SPELL&#95;SCHOOL&#95;FIRE|
-|3|SPELL&#95;SCHOOL&#95;NATURE|
-|4|SPELL&#95;SCHOOL&#95;FROST|
-|5|SPELL&#95;SCHOOL&#95;SHADOW|
-|6|SPELL&#95;SCHOOL&#95;ARCANE|
 
 
 
-h4. baseattacktime
 
-Creature's melee attack time in milliseconds.
 
-h4. rangeattacktime
 
 
 
@@ -698,19 +746,6 @@ h4. trainer&#95;race
 
 If the NPC is a mount trainer ("trainer&#95;type":creature_template#trainer_type == 1), then the player's race must be the same as the value specified here to talk to this trainer. See "character.race":character#race
 
-h4. minrangedmg
-
-Minimum ranged damage the creature inflicts.
-
-NOTE: This is Damage Inflicted From RANGED WEAPON ATTACK ONLY (Cross-Bow Arrows, Knives, Thrown Axes, ect)
-
-h4. maxrangedmg
-
-Maximum range damage the creature inflicts.
-
-NOTE: This is Damage Inflicted From RANGED WEAPON ATTACK ONLY (Cross-Bow Arrows, Knives, Thrown Axes, ect)
-
-h4. rangedattackpower
 
 
 
@@ -757,13 +792,7 @@ h4. PetSpellDataId
 
 ID that displays what spells the pet has in the client.
 
-h4. mingold
 
-Minimum money that the creature drops when killed, in copper.
-
-h4. maxgold
-
-Maximum money that the creature drops when killed, in copper.
 
 h4. AIName
 
