@@ -1,4 +1,4 @@
-This tutorial was written by stfx for mangos-tbc and mangos-classic developers to correctly backport commits from master (wotlk).
+This tutorial was written by stfx for mangos-tbc (and mangos-classic) developers to correctly backport commits from master (wotlk).
 
 # 1. Set up the directory
   * Clone mangos-tbc repo
@@ -20,11 +20,10 @@ This tutorial was written by stfx for mangos-tbc and mangos-classic developers t
 
 # 3. Number the commit with git_id
   * Build git_id tool in release mode if you did not already (located in contrib\git_id)
-  * Use git_id in git bash: `contrib/git_id/Release/git_id.exe`
-    * This only works if you push every time you commit something but it is also possible to use git_id.exe -l for local mode but then you can not use git_id.exe -s
+  * Use git_id in git bash: `contrib/git_id/Release/git_id.exe -l`
 
 ## 3.1. Number the commit with sql changes
-  * Use `contrib/git_id/Release/git_id.exe -s` so that all db_version changes will be automatically written to mangos.sql and in the sql/updates/*.sql
+  * Use `contrib/git_id/Release/git_id.exe -s` in git bash so that all db_version changes will be automatically written to mangos.sql and in the sql/updates/*.sql
     * You have to push every outstanding commit before that because git_id.exe -s does not work with git_id.exe -l
 
 # 4. Push the commits
