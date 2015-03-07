@@ -14,7 +14,7 @@ This tutorial was written by stfx for mangos-tbc (and mangos-classic) developers
   * _Fetch from mangos-wotlk (like before)_
   * _Use backport tool (like before)_
   * _Check and resolve conflicts (like before)_
-  * Rename the sql updates in sql/updates directory by adding this commit's version number at the start of the filename like so: 11754_01_mangos_mangos_string.sql -> s1415_11754_01_mangos_mangos_string.sql
+  * Rename the sql updates in sql/updates directory by adding this commit's version number at the start of the filename like so: `11754_01_mangos_mangos_string.sql` -> `s1415_11754_01_mangos_mangos_string.sql`
   * Remove the lines related to db_version change (in the sql update file usually the first one and the empty line after that)
   * _Amend commit (like before)_
 
@@ -23,8 +23,9 @@ This tutorial was written by stfx for mangos-tbc (and mangos-classic) developers
   * Use git_id in git bash: `contrib/git_id/Release/git_id.exe -l`
 
 ## 3.1. Number the commit with sql changes
-  * Push every outstanding commit because git_id.exe -s does not work if you used git_id.exe -l before
-  * Use `contrib/git_id/Release/git_id.exe -s` in git bash so that all db_version changes will be automatically written to mangos.sql and in the sql/updates/*.sql
+  * Push every outstanding commit because `git_id.exe -s` does not work if you used `git_id.exe -l` before
+  * Use git_id in git bash: `contrib/git_id/Release/git_id.exe -s`
+    * This automatically writes all db_version changes to mangos.sql and in the sql/updates/*.sql
 
 # 4. Push the commits
   * Check correct authorship
