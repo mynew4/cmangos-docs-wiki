@@ -14,7 +14,7 @@ This tutorial was written by stfx for mangos-tbc (and mangos-classic) developers
   * _Fetch from mangos-wotlk (like before)_
   * _Use backport tool (like before)_
   * _Check and resolve conflicts (like before)_
-  * Rename the sql updates in sql/updates directory by adding this commit's version number at the start of the filename like so: `11754_01_mangos_mangos_string.sql` -> `s1415_11754_01_mangos_mangos_string.sql`
+  * Rename the sql updates in sql/updates directory by adding this commit's version number at the start of the filename like so: `11754_01_mangos_mangos_string.sql -> s1415_11754_01_mangos_mangos_string.sql`
   * Remove the lines related to db_version change (in the sql update file usually the first one and the empty line after that)
   * _Amend commit (like before)_
 
