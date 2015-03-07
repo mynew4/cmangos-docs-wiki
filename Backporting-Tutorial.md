@@ -23,8 +23,8 @@ This tutorial was written by stfx for mangos-tbc (and mangos-classic) developers
   * Use git_id in git bash: `contrib/git_id/Release/git_id.exe -l`
 
 ## 3.1. Number the commit with sql changes
+  * Push every outstanding commit because git_id.exe -s does not work if you used git_id.exe -l before
   * Use `contrib/git_id/Release/git_id.exe -s` in git bash so that all db_version changes will be automatically written to mangos.sql and in the sql/updates/*.sql
-    * You have to push every outstanding commit before that because git_id.exe -s does not work with git_id.exe -l
 
 # 4. Push the commits
   * Check correct authorship
