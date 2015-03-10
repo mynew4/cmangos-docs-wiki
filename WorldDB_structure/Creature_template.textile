@@ -220,7 +220,8 @@ This Field Defines The Type Of Creature This NPC Is.
 
 h4. InhabitType
 
-This Field Controls Where The Creature Can Move Into, Chase And Attack. The NPC Is Limited To ONLY This:
+This Field Controls Where The Creature Can Move Into, Chase And Attack. 
+The NPC Is Limited To ONLY Movement On This:
 
 |_. ID|_. Type|
 |1|Ground Movement Only|
