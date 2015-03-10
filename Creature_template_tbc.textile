@@ -92,7 +92,6 @@ h3. Structure
 |"TrainerTemplateId":Creature_template#TrainerTemplateId|mediumint(8) unsigned|NO||0||
 |"VendorTemplateId":Creature_template#VendorTemplateId|mediumint(8) unsigned|NO||0||
 |"EquipmentTemplateId":Creature_template#EquipmentTemplateId|mediumint(8) unsigned|NO||0||
-|"VehicleTemplateId":Creature_template#VehicleTemplateId|mediumint(8) unsigned|NO||0||
 |"GossipMenuId":Creature_template#GossipMenuId|mediumint(8) unsigned|YES||0||
 |"AIName":Creature_template#AIName|char(64)|NO||||
 |"ScriptName":Creature_template#ScriptName|char(64)|NO||||
@@ -127,24 +126,9 @@ h4. MaxLevel
 
 The Maximum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.
 
-h4. DifficultyEntry1
+h4. HeroicEntry
 
-If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
-
-|DUNGEON&#95;DIFFICULTY&#95;HEROIC|
-|RAID&#95;DIFFICULTY&#95;25MAN&#95;NORMAL|
-
-h4. DifficultyEntry2
-
-If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
-
-|RAID&#95;DIFFICULTY&#95;10MAN&#95;HEROIC|
-
-h4. DifficultyEntry3
-
-If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
-
-|RAID&#95;DIFFICULTY&#95;25MAN&#95;HEROIC|
+If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for a Specific Versions of an NPC in Heroic Dungeons.
 
 h4. ModelId1
 
@@ -882,10 +866,6 @@ The id refers to the "npc_vendor_template.":npc_vendor_template.
 h4. EquipmentTemplateId
 
 The default ID of the equipment that this creature should display. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
-
-h4. VehicleTemplateId
-
-?????????????
 
 h4. GossipMenuId
 
