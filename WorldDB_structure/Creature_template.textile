@@ -227,7 +227,9 @@ This Field Controls Where The Creature Can Move Into, Chase And Attack. The NPC 
 |2|Water Movement Only|
 |3|Both Ground And Water Movement|
 |4|Always Flying|
-
+|5|Over Ground Always Flying|
+|6|Over Water Always Flying|
+|7|Always Flying Over Anything|
 
 h4. RegenerateStats
 
