@@ -843,7 +843,8 @@ The NPC's default Movement Type.
 
 h4. MovementTemplateId
 
-????
+This Field Is Not Used By The Core 
+(Not Sure What/Why This Would Be Used For If It Was)
 
 h4. TrainerType
 
