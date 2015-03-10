@@ -19,9 +19,7 @@ h3. Structure
 |"IconName":Creature_template#IconName|char(100)|YES||Null||
 |"MinLevel":Creature_template#MinLevel|tinyint(3) unsigned|YES||1||
 |"MaxLevel":Creature_template#MaxLevel|tinyint(3) unsigned|YES||1||
-|"DifficultyEntry1":Creature_template#DifficultyEntry1|mediumint(8) unsigned|NO||0||
-|"DifficultyEntry2":Creature_template#DifficultyEntry2|mediumint(8) unsigned|NO||0||
-|"DifficultyEntry3":Creature_template#DifficultyEntry3|mediumint(8) unsigned|NO||0||
+|"HeroicEntry":Creature_template_tbc#HeroicEntry|mediumint(8) unsigned|NO||0||
 |"ModelId1":Creature_template#ModelId1|mediumint(8) unsigned|NO||0||
 |"ModelId2":Creature_template#ModelId2|mediumint(8) unsigned|NO||0||
 |"ModelId3":Creature_template#ModelId3|mediumint(8) unsigned|NO||0||
