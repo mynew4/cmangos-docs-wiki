@@ -477,7 +477,9 @@ This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calc
 
 (Note: Dungeon/Raid/World Bosses Normally Have Large Very Rounded Values Normally)
 
-This Is The Multiplier Used Against The BaseHealthExp? Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Health Values Where ? = "Expansion":#Expansion Value.
+This Is The Multiplier Used Against The BaseHealthExp? Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Health Values.
+
+? = "Expansion":#Expansion Value.
 
 Formula:
 MinLevelHealth = ROUND (BaseHealthExp? * HealthMultiplier)
