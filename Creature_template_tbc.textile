@@ -1,9 +1,8 @@
 Back to "world database":mangosdb_struct list of tables.
 
-*See also "Creature_template_tbc":Creature_template_tbc  (for 2.4.3)*
-*See also "Creature_template_classic":Creature_template_classic  (for 1.12.x)*
+*This Table Is For Classic Core (for 1.12.x)*
 
-h2. The `creature&#95;template` table
+h2. The `creature&#95;template&#95;tbc` table
 
 This table contains the description of creatures. Each spawned creature is an instance of a template present in this table, this means every creature MUST be defined in this table.
 
