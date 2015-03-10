@@ -1,7 +1,7 @@
 Back to "world database":mangosdb_struct list of tables.
 
-*See also "Creature_template_classic":Creature_template_classic  (for 1.12.x)*
-*See also "Creature_template_tbc":Creature_template_tbc  (for 2.4.3)*
+*See also "creature_template_classic":creature_template_classic  (for 1.12.x)*
+*See also "creature_template_tbc":creature_template_tbc  (for 2.4.3)*
 
 h2. The `creature&#95;template` table
 
