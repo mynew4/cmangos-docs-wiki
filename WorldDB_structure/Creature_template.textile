@@ -397,20 +397,22 @@ Some values provided from the community:
 
 h4. SpeedWalk
 
-This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Data.
-Used when moving between waypoints. 5 is speed of running kentaur.
+This Field Controls How Fast An NPC Moves When Walking. 
+This Value Comes From Sniff Packet Data.
 
 (Default Value Is: 1)
 
 h4. SpeedRun
 
-This Field Controls How Fast An NPC Moves When Running. This Value Comes From Sniff Data.
+This Field Controls How Fast An NPC Moves When Running. 
+This Value Comes From Sniff Packet Data.
 
 (Default Value Is: 1.14286)
 
 h4. UnitClass
 
 The NPC Unit Class. This Field is a Critical Value That Dictates An NPC's Base Stats System.
+
 An NPC's Unit Class Is A Corner Stone Value Used In "Creature_Template_Classlevelstats":Creature_Template_Classlevelstats To Determine An NPC's Stats.
 
 NPC Stats Refers To: (Health/Mana/Damage/Armor).
