@@ -1,306 +1,185 @@
 Back to "world database":mangosdb_struct list of tables.
 
-*NOT ALL FIELDS PORTED TO CLASSIC, BE CAREFUL, IF IN DOUBT CHECK IN CODE (and edit here)*
+*This Table Is For Classic Core (for 1.12.x)*
 
-h2. The `creature&#95;template` (1.12.x) table
+h2. The `creature&#95;template` table
 
 This table contains the description of creatures. Each spawned creature is an instance of a template present in this table, this means every creature MUST be defined in this table.
 
 h3. Structure
 
+
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":Creature_template#entry|mediumint(8) unsigned|NO|PRI|0||
-|"KillCredit1":Creature_template#killcredit|INTEGER unsigned|NO||0||
-|"KillCredit2":Creature_template#killcredit|INTEGER unsigned|NO||0||
-|"modelid_1":Creature_template#modelid|mediumint(8) unsigned|NO||0||
-|"modelid_2":Creature_template#modelid|mediumint(8) unsigned|NO||0||
-|"name":Creature_template#name|char(100)|NO||0||
-|"subname":Creature_template#subname|char(100)|YES||Null||
-|"gossip_menu_id":Creature_template#gossip_menu_id|MENIUMINT(8)|YES||0||
-|"minlevel":Creature_template#minlevel|tinyint(3) unsigned|YES||1||
-|"maxlevel":Creature_template#maxlevel|tinyint(3) unsigned|YES||1||
-|"minhealth":Creature_template#minhealth|int(10) unsigned|YES||0||
-|"maxhealth":Creature_template#maxhealth|int(10) unsigned|YES||0||
-|"minmana":Creature_template#minmana|int(10) unsigned|YES||0||
-|"maxmana":Creature_template#maxmana|int(10) unsigned|YES||0||
-|"armor":Creature_template#armor|mediumint(8) unsigned|NO||0||
-|"faction_A":Creature_template#faction_a|smallint(5) unsigned|NO||0||
-|"faction_H":Creature_template#faction_h|smallint(5) unsigned|NO||0||
-|"npcflag":Creature_template#npcflag|int(10) unsigned|NO||0||
-|"speed_walk":Creature_template#speed|float|YES||1||
-|"speed_run":Creature_template#speed|float|YES||1.14286||
-|"scale":Creature_template#scale|float|NO||0||
-|"rank":Creature_template#rank|tinyint(3) unsigned|YES||0||
-|"mindmg":Creature_template#mindmg|float|YES||0||
-|"maxdmg":Creature_template#maxdmg|float|YES||0||
-|"dmgschool":Creature_template#dmgschool|tinyint(4)|NO||0||
-|"attackpower":Creature_template#attackpower|int(10) unsigned|NO||0||
-|"dmg_multiplier":Creature_template#dmg_multiplier|float|NO||0||
-|"baseattacktime":Creature_template#baseattacktime|int(10) unsigned|YES||0||
-|"rangeattacktime":Creature_template#rangeattacktime|int(10) unsigned|YES||0||
-|"unit_class":Creature_template#unit_class|int unsigned|NO||0||
-|"unit_flags":Creature_template#unit_flags|int(10) unsigned|NO||0||
-|"dynamicflags":Creature_template#dynamicflags|int(10) unsigned|NO||0||
-|"family":Creature_template#family|tinyint(4)|YES||0||
-|"trainer_type":Creature_template#trainer_type|tinyint(4)|YES||0||
-|"trainer_spell":Creature_template#trainer_spell|mediumint(8) unsigned|YES||0||
-|"trainer_class":Creature_template#trainer_class|tinyint(3) unsigned|YES||0||
-|"trainer_race":Creature_template#trainer_race|tinyint(3) unsigned|YES||0||
-|"minrangedmg":Creature_template#minrangedmg|float|NO||0||
-|"maxrangedmg":Creature_template#maxrangedmg|float|NO||0||
-|"rangedattackpower":Creature_template#rangedattackpower|smallint(5) unsigned|NO||0||
-|"type":Creature_template#type|tinyint(3) unsigned|NO||0||
-|"type_flags":Creature_template#type_flags|int(10) unsigned|YES||0||
-|"lootid":Creature_template#lootid|mediumint(8) unsigned|NO||0||
-|"pickpocketloot":Creature_template#pickpocketloot|mediumint(8) unsigned|NO||0||
-|"skinloot":Creature_template#skinloot|mediumint(8) unsigned|NO||0||
-|"resistance1":Creature_template#resistance1|int(10) unsigned|NO||0||
-|"resistance2":Creature_template#resistance2|smallint(5)|NO||0||
-|"resistance3":Creature_template#resistance3|smallint(5)|NO||0||
-|"resistance4":Creature_template#resistance4|smallint(5)|NO||0||
-|"resistance5":Creature_template#resistance5|smallint(5)|NO||0||
-|"resistance6":Creature_template#resistance6|smallint(5)|NO||0||
-|"PetSpellDataId":Creature_template#petspelldataid|mediumint(8) unsigned|NO||0||
-|"mingold":Creature_template#mingold|mediumint(8) unsigned|NO||0||
-|"maxgold":Creature_template#maxgold|mediumint(8) unsigned|NO||0||
-|"AIName":Creature_template#ainame|char(64)|NO||||
-|"MovementType":Creature_template#movementtype|tinyint(3) unsigned|NO||0||
-|"InhabitType":Creature_template#inhabittype|tinyint(3) unsigned|NO||3||
-|"Civilian":civilian (TODO)|uint32|NO|0||
-|"RacialLeader":Creature_template#racialleader|tinyint(3) unsigned|NO||0||
-|"questItem1":Creature_template#questitem|INTEGER|NO||0||
-|"questItem2":Creature_template#questitem|INTEGER|NO||0||
-|"questItem3":Creature_template#questitem|INTEGER|NO||0||
-|"questItem4":Creature_template#questitem|INTEGER|NO||0||
-|"questItem5":Creature_template#questitem|INTEGER|NO||0||
-|"questItem6":Creature_template#questitem|INTEGER|NO||0||
-|"movementId":Creature_template#movementid|INTEGER|NO||0||
-|"RegenHealth":Creature_template#regenhealth|tinyint(3) unsigned|NO||1||
-|"equipment_id":Creature_template#equipment_id|mediumint(8) unsigned|NO||0||
-|"trainer_id":Creature_template#trainer_id|mediumint(8)|NO||0||
-|"vendor_id":Creature_template#vendor_id|mediumint(8)|NO||0||
-|"mechanic_immune_mask":Creature_template#mechanic_immune_mask|int(10) unsigned|NO||0||
-|"flags_extra":Creature_template#flags_extra|int(10) unsigned|NO||0||
-|"ScriptName":Creature_template#scriptname|char(64)|NO||||
+|"Entry":Creature_template#Entry|mediumint(8) unsigned|NO|PRI|0||
+|"Name":Creature_template#Name|char(100)|NO||0||
+|"SubName":Creature_template#SubName|char(100)|YES||Null||
+|"IconName":Creature_template#IconName|char(100)|YES||Null||
+|"MinLevel":Creature_template#MinLevel|tinyint(3) unsigned|YES||1||
+|"MaxLevel":Creature_template#MaxLevel|tinyint(3) unsigned|YES||1||
+|"DifficultyEntry1":Creature_template#DifficultyEntry1|mediumint(8) unsigned|NO||0||
+|"DifficultyEntry2":Creature_template#DifficultyEntry2|mediumint(8) unsigned|NO||0||
+|"DifficultyEntry3":Creature_template#DifficultyEntry3|mediumint(8) unsigned|NO||0||
+|"ModelId1":Creature_template#ModelId1|mediumint(8) unsigned|NO||0||
+|"ModelId2":Creature_template#ModelId2|mediumint(8) unsigned|NO||0||
+|"ModelId3":Creature_template#ModelId3|mediumint(8) unsigned|NO||0||
+|"ModelId4":Creature_template#ModelId4|mediumint(8) unsigned|NO||0||
+|"FactionAlliance":Creature_template#FactionAlliance|smallint(5) unsigned|NO||0||
+|"FactionHorde":Creature_template#FactionHorde|smallint(5) unsigned|NO||0||
+|"Scale":Creature_template#Scale|float|NO||0||
+|"Family":Creature_template#Family|tinyint(4)|YES||0||
+|"CreatureType":Creature_template#CreatureType|tinyint(3) unsigned|NO||0||
+|"InhabitType":Creature_template#InhabitType|tinyint(3) unsigned|NO||3||
+|"RegenerateStats":Creature_template#RegenerateStats|tinyint(3) unsigned|NO||1||
+|"RacialLeader":Creature_template#RacialLeader|tinyint(3) unsigned|NO||0||
+|"NpcFlags":Creature_template#NpcFlags|int(10) unsigned|NO||0||
+|"UnitFlags":Creature_template#UnitFlags|int(10) unsigned|NO||0||
+|"DynamicFlags":Creature_template#DynamicFlags|int(10) unsigned|NO||0||
+|"ExtraFlags":Creature_template#ExtraFlags|int(10) unsigned|NO||0||
+|"CreatureTypeFlags":Creature_template#CreatureTypeFlags|int(10) unsigned|YES||0||
+|"SpeedWalk":Creature_template#SpeedWalk|float|YES||1||
+|"SpeedRun":Creature_template#SpeedRun|float|YES||1.14286||
+|"UnitClass":Creature_template#UnitClass|int unsigned|NO||0||
+|"Rank":Creature_template#Rank|tinyint(3) unsigned|YES||0||
+|"Expansion":Creature_template#Expansion|tinyint(3) unsigned|NO||0||
+|"HealthMultiplier":Creature_template#HealthMultiplier|float|NO||1.0||
+|"PowerMultiplier":Creature_template#ManaMultiplier|float|NO||1.0||
+|"DamageMultiplier":Creature_template#DamageMultiplier|float|NO||1||
+|"DamageVariance":Creature_template#DamageVariance|float|NO||1||
+|"ArmorMultiplier":Creature_template#ArmorMultiplier|float|NO||1||
+|"ExperienceMultiplier":Creature_template#ExperienceMultiplier|float|NO||1||
+|"MinLevelHealth":Creature_template#MinLevelHealth|int(10) unsigned|YES||0||
+|"MaxLevelHealth":Creature_template#MaxLevelHealth|int(10) unsigned|YES||0||
+|"MinLevelMana":Creature_template#MinLevelMana|int(10) unsigned|YES||0||
+|"MaxLevelMana":Creature_template#MaxLevelMana|int(10) unsigned|YES||0||
+|"MinMeleeDmg":Creature_template#MinMeleeDmg|float|YES||0||
+|"MaxMeleeDmg":Creature_template#MaxMeleeDmg|float|YES||0||
+|"MinRangedDmg":Creature_template#MinRangedDmg|float|NO||0||
+|"MaxRangedDmg":Creature_template#MaxRangedDmg|float|NO||0||
+|"Armor":Creature_template#Armor|mediumint(8) unsigned|NO||0||
+|"MeleeAttackPower":Creature_template#MeleeAttackPower|int(10) unsigned|NO||0||
+|"RangedAttackPower":Creature_template#RangedAttackPower|smallint(5) unsigned|NO||0||
+|"MeleeBaseAttackTime":Creature_template#MeleeBaseAttackTime|int(10) unsigned|YES||0||
+|"RangedBaseAttackTime":Creature_template#RangedBaseAttackTime|int(10) unsigned|YES||0||
+|"DamageSchool":Creature_template#DamageSchool|tinyint(4)|NO||0||
+|"MinLootGold":Creature_template#MinLootGold|mediumint(8) unsigned|NO||0||
+|"MaxLootGold":Creature_template#MaxLootGold|mediumint(8) unsigned|NO||0||
+|"LootId":Creature_template#LootId|mediumint(8) unsigned|NO||0||
+|"PickpocketLootId":Creature_template#PickpocketLootId|mediumint(8) unsigned|NO||0||
+|"SkinningLootId":Creature_template#SkinningLootId|mediumint(8) unsigned|NO||0||
+|"KillCredit1":Creature_template#KillCredit1|int(11) unsigned|NO||0||
+|"KillCredit2":Creature_template#KillCredit2|int(11) unsigned|NO||0||
+|"QuestItem1":Creature_template#QuestItem1|int(11) unsigned|NO||0||
+|"QuestItem2":Creature_template#QuestItem2|int(11) unsigned|NO||0||
+|"QuestItem3":Creature_template#QuestItem3|int(11) unsigned|NO||0||
+|"QuestItem4":Creature_template#QuestItem4|int(11) unsigned|NO||0||
+|"QuestItem5":Creature_template#QuestItem5|int(11) unsigned|NO||0||
+|"QuestItem6":Creature_template#QuestItem6|int(11) unsigned|NO||0||
+|"MechanicImmuneMask":Creature_template#MechanicImmuneMask|int(10) unsigned|NO||0||
+|"ResistanceHoly":Creature_template#ResistanceHoly|int(10) unsigned|NO||0||
+|"ResistanceFire":Creature_template#ResistanceFire|smallint(5)|NO||0||
+|"ResistanceNature":Creature_template#ResistanceNature|smallint(5)|NO||0||
+|"ResistanceFrost":Creature_template#ResistanceFrost|smallint(5)|NO||0||
+|"ResistanceShadow":Creature_template#ResistanceShadow|smallint(5)|NO||0||
+|"ResistanceArcane":Creature_template#ResistanceArcane|smallint(5)|NO||0||
+|"PetSpellDataId":Creature_template#PetSpellDataId|mediumint(8) unsigned|NO||0||
+|"MovementType":Creature_template#MovementType|tinyint(3) unsigned|NO||0||
+|"MovementTemplateId":Creature_template#MovementTemplateId|int(11) unsigned|NO||0||
+|"TrainerType":Creature_template#TrainerType|tinyint(4)|YES||0||
+|"TrainerSpell":Creature_template#TrainerSpell|mediumint(8) unsigned|YES||0||
+|"TrainerClass":Creature_template#TrainerClass|tinyint(3) unsigned|YES||0||
+|"TrainerRace":Creature_template#TrainerRace|tinyint(3) unsigned|YES||0||
+|"TrainerTemplateId":Creature_template#TrainerTemplateId|mediumint(8) unsigned|NO||0||
+|"VendorTemplateId":Creature_template#VendorTemplateId|mediumint(8) unsigned|NO||0||
+|"EquipmentTemplateId":Creature_template#EquipmentTemplateId|mediumint(8) unsigned|NO||0||
+|"VehicleTemplateId":Creature_template#VehicleTemplateId|mediumint(8) unsigned|NO||0||
+|"GossipMenuId":Creature_template#GossipMenuId|mediumint(8) unsigned|YES||0||
+|"AIName":Creature_template#AIName|char(64)|NO||||
+|"ScriptName":Creature_template#ScriptName|char(64)|NO||||
 
 
 h3. Description of the fields
 
-h4. modelid
+h4. Entry
 
-Graphical model that the client applies on this creature. This is a "creature&#95;model&#95;info.entry":creature_model_info#entry
+This is the Primary NPC Entry Number and is Also the Dungeon Normal Mode / Raid 10-Man Normal Mode Entry.
 
-h4. name
+|DUNGEON&#95;DIFFICULTY&#95;NORMAL|
+|RAID&#95;DIFFICULTY&#95;10MAN&#95;NORMAL|
 
-Base name of the creature.
+h4. Name
 
-h4. subname
+Base Name of the Creature.
 
-The subname of the creature that appears in &lt;&gt; below the creature's name.
+h4. SubName
 
-h4. gossip&#95;menu&#95;id
+The SubName of the Creature That Appears in &lt;&gt; Below the Creature's Name.
 
-Reference to a "gossip&#95;menu&#95;id":gossip_menu.
+h4. IconName
 
-h4. minlevel
+Script Icon Used by Guards With Directions Menu.
 
-The minimum level of the creature if the creature has a level range.
+h4. MinLevel
 
-h4. maxlevel
+The Minimum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.
 
-The maximum level of the creature if the creature has a level range. When added to world, a level in chosen in the specified level range.
+h4. MaxLevel
 
-h4. minhealth
+The Maximum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.
 
-The minimum health of the creature if the creature has variable health.
+h4. DifficultyEntry1
 
-h4. maxhealth
+If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
 
-The maximum health of the creature if the creature has a variable health. When added to world, the health value is chosen in proportion to the level chosen.
+|DUNGEON&#95;DIFFICULTY&#95;HEROIC|
+|RAID&#95;DIFFICULTY&#95;25MAN&#95;NORMAL|
 
-h4. minmana
+h4. DifficultyEntry2
 
-The miminum mana of the creature if the creature has variable mana.
+If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
 
-h4. maxmana
+|RAID&#95;DIFFICULTY&#95;10MAN&#95;HEROIC|
 
-The maximum mana of the creature if the creature has variable mana. When added to world, the mana value is chosen in proportion to the level chosen.
+h4. DifficultyEntry3
 
-h4. armor
+If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
 
-The armor value of the creature. It controls how much damage reduction the creature gets from physical attacks.
+|RAID&#95;DIFFICULTY&#95;25MAN&#95;HEROIC|
 
-h4. faction&#95;A
+h4. ModelId1
 
-The faction if the creature is on the alliance side. See "FactionTemplate.dbc.":FactionTemplate.dbc. Just because more than one faction has the same name, the inter-faction relationships can be different.
+Primary Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
 
-Note: This field also controls the creature family assistance mechanic. Only creatures with the same faction will assist each other.
+h4. ModelId2
 
-h4. faction&#95;H
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
 
-The faction if the creature is on the horde side. See "FactionTemplate.dbc.":FactionTemplate.dbc. Just because more than one faction has the same name, the inter-faction relationships can be different.
+h4. ModelId3
 
-Note: This field also controls the creature family assistance mechanic. Only creatures with the same faction will assist each other.
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
 
-h4. npcflag
+h4. ModelId4
 
-A bitmask that represents what NPC flags the creature has. Each bit controls a different flag and to combine flags, you can add each flag that you want, in effect activating the respective bits.
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
 
-|_. Bit|_. Flag|_. Comment|
-|0x00000001|UNIT_NPC_FLAG_GOSSIP|Has a gossip menu|
-|0x00000002|UNIT_NPC_FLAG_QUESTGIVER||
-|0x00000004|UNIT_NPC_FLAG_VENDOR||
-|0x00000008|UNIT_NPC_FLAG_FLIGHTMASTER||
-|0x00000010|UNIT_NPC_FLAG_TRAINER||
-|0x00000020|UNIT_NPC_FLAG_SPIRITHEALER||
-|0x00000040|UNIT_NPC_FLAG_SPIRITGUIDE||
-|0x00000080|UNIT_NPC_FLAG_INNKEEPER||
-|0x00000100|UNIT_NPC_FLAG_BANKER||
-|0x00000200|UNIT_NPC_FLAG_PETITIONER||
-|0x00000400|UNIT_NPC_FLAG_TABARDDESIGNER||
-|0x00000800|UNIT_NPC_FLAG_BATTLEMASTER||
-|0x00001000|UNIT_NPC_FLAG_AUCTIONEER||
-|0x00002000|UNIT_NPC_FLAG_STABLEMASTER||
-|0x00004000|UNIT_NPC_FLAG_REPAIR||
-|0x20000000|UNIT_NPC_FLAG_OUTDOORPVP|custom flag for outdoor pvp creatures|
+h4. FactionAlliance
 
-h4. speed
+The Faction If The Creature Is On The Alliance Side. See "FactionTemplate.dbc.":FactionTemplate.dbc. Just Because More Than One Faction Has The Same Name, The Inter-Faction Relationships Can Be Different.
 
-Controls how fast the creature can move in a certain mode.
+Note: This Field Also Controls The Creature Family Assistance Mechanic. Only Creatures With The Same Faction Will Assist Each Other.
 
-h4. scale
+h4. FactionHorde
 
-If non-zero, this field defines the size of how the model of the creature appears ingame. If zero, it will use default model size taken from the DBC.
+The Faction If The Creature Is On The Horde Side. See "FactionTemplate.dbc.":FactionTemplate.dbc. Just Because More Than One Faction Has The Same Name, The Inter-Faction Relationships Can Be Different.
 
-h4. rank
+Note: This Field Also Controls The Creature Family Assistance Mechanic. Only Creatures With The Same Faction Will Assist Each Other.
 
-The rank of the creature:
+h4. Scale
 
-|_. Rank|_. Name|_. Comments|
-|0|Normal||
-|1|Elite|Higher damage, more health, better loot.|
-|2|Rare Elite|A rare mob but with elite damage and health.|
-|3|World Boss|Highest rank, best loot, longest respawn time.|
-|4|Rare|Somewhat better loot, longer respawn time.|
+If This Is A Non-Zero Value, This Field Defines a Manual Over-Ride For The Size Of The Model That The Creature Appears In The Game. If Zero, The Creature Will Use The Default Model Size Taken From The DBC.
 
+h4. Family
 
-h4. mindmg
-
-Minimum damage the creature deals in melee. This field is combined with the "attackpower":#attackpower field to calculate the damage. Look at "attackpower":#attackpower to see the formula.
-
-h4. maxdmg
-
-Maximum damage the creature deals in melee. This field is combined with the "attackpower":#attackpower field to calculate the damage. Look at "attackpower":#attackpower to see the formula.
-
-h4. dmgschool
-
-Creature's melee damage school.
-
-|_. ID|_. Name|
-|0|SPELL&#95;SCHOOL&#95;NORMAL|
-|1|SPELL&#95;SCHOOL&#95;HOLY|
-|2|SPELL&#95;SCHOOL&#95;FIRE|
-|3|SPELL&#95;SCHOOL&#95;NATURE|
-|4|SPELL&#95;SCHOOL&#95;FROST|
-|5|SPELL&#95;SCHOOL&#95;SHADOW|
-|6|SPELL&#95;SCHOOL&#95;ARCANE|
-
-
-h4. attackpower
-
-The attack power for the creature's melee attacks. This field along with "mindmg":#mindmg and "maxdmg":#maxdmg dictate how much the creature will hit for. The formula in applying correct damages is as follows:
-
-bc. UPDATE `creature_template` SET 
-    `mindmg` = <#1>, 
-    `maxdmg` = <#2>, 
-    `attackpower` = ROUND((`mindmg` + `maxdmg`) / 4 * 7), 
-    `mindmg` = ROUND(`mindmg` - `attackpower` / 7), 
-    `maxdmg` = ROUND(`maxdmg` - `attackpower` / 7) 
-  WHERE `entry` = ...
-
-
-In the query above, substitute '&lt;#1&gt;' with the minimum damage you want the creature to deal and '&lt;#2&gt;' with the maximum damage you want the creature to deal.
-
-NOTE: You might also want to double check the values calculated after the query is run because if the difference between mindmg and maxdmg is too high, mindmg will end up being a negative value.
-
-h4. baseattacktime
-
-Creature's melee attack time in milliseconds.
-
-h4. rangeattacktime
-
-h4. unit&#95;class
-
-The class of substance. Only 4 classes available to creatures.
-
-|_. ID|_. Name|
-|CLASS&#95;WARRIOR|1|
-|CLASS&#95;PALADIN|2|
-|CLASS&#95;ROGUE|4|
-|CLASS&#95;MAGE|8|
-
-
-h4. unit&#95;flags
-
-Allows the manual application of unit flags to creatures. Again this is a bitmask field and to apply more than one flag, just add the different numbers. Some possible flags are:
-
-
-|*Flag*|*Name*|*Comments*|
-|1|UNIT&#95;FLAG&#95;UNK&#95;0||
-|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE||
-|4|UNIT&#95;FLAG&#95;DISABLE&#95;MOVE||
-|8|UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE|(allow apply pvp rules to attackable state in addition to faction dependent state)|
-|16|UNIT&#95;FLAG&#95;RENAME||
-|32|UNIT&#95;FLAG&#95;RESTING||
-|64|UNIT&#95;FLAG&#95;UNK&#95;6||
-|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|(??) ((UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1) is NON&#95;PVP&#95;ATTACKABLE)|
-|256|UNIT&#95;FLAG&#95;OOC&#95;NOT&#95;ATTACKABLE|(2.0.8 - Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)|
-|512|UNIT&#95;FLAG&#95;PASSIVE|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
-|1024|UNIT&#95;FLAG&#95;LOOTING|(loot animation)|
-|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|(in combat?, 2.0.8)|
-|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon (?)|
-|8192|UNIT&#95;FLAG&#95;SILENCED|Can't cast spells|
-|16384|UNIT&#95;FLAG&#95;UNK&#95;14|(2.0.8)|
-|32768|UNIT&#95;FLAG&#95;UNK&#95;15||
-|65536|UNIT&#95;FLAG&#95;UNK&#95;16||
-|131072|UNIT&#95;FLAG&#95;PACIFIED||
-|262144|UNIT&#95;FLAG&#95;DISABLE&#95;ROTATE|(stunned, 2.1.1)|
-|524288|UNIT&#95;FLAG&#95;IN&#95;COMBAT||
-|1048576|UNIT&#95;FLAG&#95;TAXI&#95;FLIGHT|(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag)|
-|2097152|UNIT&#95;FLAG&#95;DISARMED|(disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.)|
-|4194304|UNIT&#95;FLAG&#95;CONFUSED||
-|8388608|UNIT&#95;FLAG&#95;FLEEING||
-|16777216|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED|(used in spell Eyes of the Beast for pet...)|
-|33554432|UNIT&#95;FLAG&#95;NOT&#95;SELECTABLE|Can't be selected by mouse|
-|67108864|UNIT&#95;FLAG&#95;SKINNABLE||
-|134217728|UNIT&#95;FLAG&#95;MOUNT|(the client seems to handle it perfectly)|
-|268435456|UNIT&#95;FLAG&#95;UNK&#95;28||
-|536870912|UNIT&#95;FLAG&#95;UNK&#95;29|(used in Feing Death spell)|
-|1073741824|UNIT&#95;FLAG&#95;SHEATHE||
-|2147483648|UNIT&#95;FLAG&#95;UNK&#95;31|(set skinnable icon and also changes color of portrait)|
-
-
-h4. dynamicflags
-
-Flags that control visual appearance of the creature.
-
-A few known flags and their use are:
-
-
-|*Flag*|*Name*|*Comments*|
-|0|UNIT&#95;DYNFLAG&#95;NONE||
-|1|UNIT&#95;DYNFLAG&#95;LOOTABLE||
-|2|UNIT&#95;DYNFLAG&#95;TRACK&#95;UNIT||
-|4|UNIT&#95;DYNFLAG&#95;OTHER&#95;TAGGER|Makes creatures name appear grey (good for simulating dead creatures)|
-|8|UNIT&#95;DYNFLAG&#95;ROOTED||
-|16|UNIT&#95;DYNFLAG&#95;SPECIALINFO|Shows creatures basic stats (Health, damage, resistances, tamable).|
-|32|UNIT&#95;DYNFLAG&#95;DEAD|Makes the creature appear dead (this DOES NOT make the creatures name grey)|
-|64|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST||
-
-
-h4. family
-
-The family this creature belongs to. Only used if "type":#type is 1 (Beast).
+This Defines The Family That This Creature Belongs To. This Is Only Used If "CreatureType":#CreatureType Is 1 (Beast).
 
 |_. ID|_. Family|_. ID|_. Family|_. ID|_. Family|
 |1|Wolf|15|Doomguard|29|Nether Ray|
@@ -318,43 +197,9 @@ The family this creature belongs to. Only used if "type":#type is 1 (Beast).
 |13|Voidwalker|27|Warp Stalker|
 |14|Succubus|28|Sporebat|
 
+h4. CreatureType
 
-h4. trainer&#95;type
-
-If the NPC is a trainer (has the trainer flag), then this field controls what kind of trainer it is. Both this field and the related field must be filled in for a trainer to work correctly.
-
-|_. ID|_. Type|_. Related Field|_. Comments|
-|0|TRAINER&#95;TYPE&#95;CLASS|class]]|Trains class spells|
-|1|TRAINER&#95;TYPE&#95;MOUNTS|race]]|Trains riding skill|
-|2|TRAINER&#95;TYPE&#95;TRADESKILLS|trainer&#95;spell]]|Trains professions|
-|3|TRAINER&#95;TYPE&#95;PETS|class]]|Trains pet skills|
-
-
-h4. trainer&#95;spell
-
-If the NPC is a trainer that teaches professions ("trainer&#95;type":creature_template#trainer_type == 2), then the player must already know the spell ID specified here to be able to talk to this NPC.
-
-h4. trainer&#95;class
-
-If the NPC is a class trainer or a pet trainer ("trainer&#95;type":creature_template#trainer_type == 0 or 3), then the player's class must be the same as the value specified here to talk to this trainer. For pet trainers, this value must be 3 (hunter). See "character.class":character#class
-
-h4. trainer&#95;race
-
-If the NPC is a mount trainer ("trainer&#95;type":creature_template#trainer_type == 1), then the player's race must be the same as the value specified here to talk to this trainer. See "character.race":character#race
-
-h4. minrangedmg
-
-Minimum ranged damage the creature inflicts.
-
-h4. maxrangedmg
-
-Maximum range damage the creature inflicts.
-
-h4. rangedattackpower
-
-h4. type
-
-The type of the creature.
+This Field Defines The Type Of Creature This NPC Is.
 
 |_. ID|_. Type|
 |0|None|
@@ -372,137 +217,568 @@ The type of the creature.
 |12|Non-combat Pet|
 |13|Gas Cloud|
 
-
-h4. type&#95;flags
-
-This field can control whether a mob is minable or herbable. If it is either of those two, then the loot given when it is skinned/mined will be stored in the "skinning_loot_template":skinning_loot_template table. Aside from those two flags, field has no special meaning on the serverside. It will be send to the client in SMSG&#95;CREATURE&#95;QUERY&#95;RESPONSE
-
-Some values provided from the community:
-
-
-|*Flag*|*Name*|*Comments*|
-|1||Makes the mob tameable (must also be a beast and have family set)|
-|2|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE||
-|8|UNIT&#95;FLAG&#95;ATTACKABLE||
-|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1||
-|136|UNIT&#95;FLAG&#95;NON&#95;PVP&#95;PLAYER||
-|256||Makes mob herbable|
-|512||Makes mob minable|
-|1024|UNIT&#95;FLAG&#95;ANIMATION&#95;FROZEN||
-|4096|UNIT&#95;FLAG&#95;WAR&#95;PLAYER||
-
-
-h4. lootid
-
-The ID of the loot template ID that this creature should use to generate loots. See "creature&#95;loot&#95;template.entry":creature_loot_template#entry
-
-h4. pickpocketloot
-
-The ID of the pickpocketing loot template that this creature should use to generate pickpocketing loots. See "pickpocketing&#95;loot&#95;template.entry":pickpocketing_loot_template#entry
-
-h4. skinloot
-
-The ID of the skinning loot template that this creature should use to generate skinning loots. See "skinning&#95;loot&#95;template.entry":skinning_loot_template#entry
-
-h4. resistance1
-
-Holy resistance.
-
-h4. resistance2
-
-Fire resistance.
-
-h4. resistance3
-
-Nature resistance.
-
-h4. resistance4
-
-Frost resistance.
-
-h4. resistance5
-
-Shadow resistance.
-
-h4. resistance6
-
-Arcane resistance.
-
-h4. PetSpellDataId
-
-ID that displays what spells the pet has in the client.
-
-h4. mingold
-
-Minimum money that the creature drops when killed, in copper.
-
-h4. maxgold
-
-Maximum money that the creature drops when killed, in copper.
-
-h4. AIName
-
-Overrides AI used for the creature.
-
-|_. Name|_. Description|
-|NullAI|Empty AI, creature does nothing.|
-|AggressorAI|Creature attacks as soon as something is in aggro range.|
-|ReactorAI|Creature attacks only if aggroed by attack, spell etc.|
-|GuardAI||
-|PetAI|Creature is a pet.|
-|TotemAI|Creature casts spell from field spell1, otherwise like NullAI.|
-|EventAI|Creature uses event based AI.|
-||
-
-
-h4. MovementType
-
-The creature's default movement type.
-
-|_. ID|_. Type|
-|0|Idle; stay in one place|
-|1|Random movement inside the spawndist radius|
-|2|Waypoint movement|
-
-
 h4. InhabitType
 
-Controls where the creature can move and attack.
+This Field Controls Where The Creature Can Move Into, Chase And Attack. 
+The NPC Is Limited To ONLY Movement On This:
 
 |_. ID|_. Type|
-|1|Ground only|
-|2|Water only|
-|3|Both ground and water|
-|4|Flying|
+|1|Ground Movement Only|
+|2|Water Movement Only|
+|3|Both Ground And Water Movement|
+|4|Always Flying|
+|5|Over Ground Always Flying|
+|6|Over Water Always Flying|
+|7|Always Flying Over Anything|
 
+h4. RegenerateStats
 
-h4. questItem
+This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Boolean Value 1 or 0)
 
-The entry of the "item":item_template that creature drops and is required within an active quest.
+|Value|Description|
+|0|NPC Does NOT Regenerate Stats When Out Of Comabt|
+|1|NPC DOES Regenerate Stats When Out Of Comabt|
 
 h4. RacialLeader
 
-A flag indicating wheather the creature is a racial leader. Killing racial leaders grants 100 honor.
+This Field Is a Boolean Flag Indicating That The Creature Is a Racial Leader. Killing Racial Leaders Grants 100 Honor Points.
 
-h4. RegenHealth
+|Value|Description|
+|0|NPC Is NOT a Racial Leader|
+|1|NPC IS a Racial Leader|
 
-Boolean 1 or 0 controlling if the creature should regenerate its health or not.
+h4. NpcFlags
 
-h4. equipment&#95;id
+This Field Is a Bitmask That Represents What NPC Flags The Creature Has Assigned To It. Each Bit Controls a Different Flag and to Combine Flags, You Can Add Each Flag That You Require, In Effect Activating The Respective Bits.
 
-The default ID of the equipment that this creature should display. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
+|_. Bit|_. Value|_. Flag|_. Comment|
+|0|1|Gossip|If creature has more gossip options, add this flag to bring up a menu.|
+|1|2|Quest Giver|Any creature giving or taking quests needs to have this flag.|
+|4|16|Trainer|Allows the creature to have a trainer list to teach spells|
+|5|32|Trainer_Class|Allows the creature to have a class trainer list to teach spells.
+(MUST USE WITH FLAG: 16)|
+|6|64|Trainer_Profession|Allows the creature to have a profession trainer list to teach spells.
+(MUST USE WITH FLAG: 16)|
+|7|128|Vendor|Any creature selling items needs to have this flag.|
+|8|256|Vendor_Ammo|Any creature selling ammo items needs to have this flag. 
+(MUST USE WITH FLAG: 128)|
+|9|512|Vendor_Food|Any creature selling food items needs to have this flag.
+(MUST USE WITH FLAG: 128)|
+|10|1024|Vendor_Poison|Any creature selling poison items needs to have this flag.
+(MUST USE WITH FLAG: 128)|
+|11|2048|Vendor_Reagent|Any creature selling reagent items needs to have this flag.
+(MUST USE WITH FLAG: 128)|
+|12|4096|Repairer|Creatures with this flag can repair items.|
+|13|8192|Flight Master|Any creature serving as fly master has this.|
+|14|16384|Spirit Healer|Makes the creature invisible to alive characters and has the resurrect function.|
+|15|32768|Spirit Guide||
+|16|65536|Innkeeper|Creatures with this flag can set hearthstone locations.|
+|17|131072|Banker|Creatures with this flag can show the bank|
+|18|262144|Petitioner||
+|19|524288|Tabard Designer|Allows the designing of guild tabards.|
+|20|1048576|Battlemaster|Creatures with this flag port players to battlegrounds.|
+|21|2097152|Auctioneer|Allows creature to display auction list.|
+|22|4194304|Stable Master|Has the option to stable pets for hunters.|
+|23|16777216|Instantloot|NPC could be loot immediately without killing, just after clicking on it. (Npc&#95;spellclick&#95;spells)|
+|24|33554432|Player Vehicle|players with mounts that have vehicle data should have it set|
+|25|268435456|Guard ???? |Creatures with this flag act as guards in cities.|
 
-h4. trainer&#95;id
+EXAMPLE:
+So If You Want An NPC That Is a Quest Giver, a Vendor And Can Also Repair You Just Add The Specific Flags Together: 
 
-The id refers to the "npc_trainer_template.":npc_trainer_template.
+1 + 2 + 128 + 4096 = 4227.
+NpcFlags = 4227
 
-h4. vendor&#95;id
+h4. UnitFlags
 
-The id refers to the "npc_vendor_template.":npc_vendor_template.
+This Field Allows The Manual Application Of Unit Flags To NPC. This Is a Bitmask Field And To Apply More Then One Flag, Just Add The Different Flags Together. 
 
-h4. mechanic&#95;immune&#95;mask
+Some Known Possible Flags Are:
 
-This makes the creature immune to specific spell natures. See Spell.dbc at row effect&#95;X&#95;mechanic&#95;id.
+|*Bit*|*Flag*|*Name*|*Comments*|
+|0|1|UNIT&#95;FLAG&#95;UNK&#95;0||
+|1|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE||
+|2|4|UNIT&#95;FLAG&#95;DISABLE&#95;MOVE||
+|3|8|UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE|(allow apply pvp rules to attackable state in addition to faction dependent state)|
+|4|16|UNIT&#95;FLAG&#95;RENAME||
+|5|32|UNIT&#95;FLAG&#95;RESTING||
+|6|64|UNIT&#95;FLAG&#95;UNK&#95;6||
+|7|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|(??) ((UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1) is NON&#95;PVP&#95;ATTACKABLE)|
+|8|256|UNIT&#95;FLAG&#95;OOC&#95;NOT&#95;ATTACKABLE|(2.0.8 - Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)|
+|9|512|UNIT&#95;FLAG&#95;PASSIVE|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
+|10|1024|UNIT&#95;FLAG&#95;LOOTING|(loot animation)|
+|11|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|(in combat?, 2.0.8)|
+|12|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon (?)|
+|13|8192|UNIT&#95;FLAG&#95;SILENCED|Can't cast spells|
+|14|16384|UNIT&#95;FLAG&#95;UNK&#95;14|(2.0.8)|
+|15|32768|UNIT&#95;FLAG&#95;UNK&#95;15||
+|16|65536|UNIT&#95;FLAG&#95;UNK&#95;16||
+|17|131072|UNIT&#95;FLAG&#95;PACIFIED||
+|18|262144|UNIT&#95;FLAG&#95;DISABLE&#95;ROTATE|(stunned, 2.1.1)|
+|19|524288|UNIT&#95;FLAG&#95;IN&#95;COMBAT||
+|20|1048576|UNIT&#95;FLAG&#95;TAXI&#95;FLIGHT|(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag)|
+|21|2097152|UNIT&#95;FLAG&#95;DISARMED|(disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.)|
+|22|4194304|UNIT&#95;FLAG&#95;CONFUSED||
+|23|8388608|UNIT&#95;FLAG&#95;FLEEING||
+|24|16777216|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED|(used in spell Eyes of the Beast for pet...)|
+|25|33554432|UNIT&#95;FLAG&#95;NOT&#95;SELECTABLE|Can't be selected by mouse|
+|26|67108864|UNIT&#95;FLAG&#95;SKINNABLE||
+|27|134217728|UNIT&#95;FLAG&#95;MOUNT|(the client seems to handle it perfectly)|
+|28|268435456|UNIT&#95;FLAG&#95;UNK&#95;28||
+|29|536870912|UNIT&#95;FLAG&#95;UNK&#95;29|(used in Feing Death spell)|
+|30|1073741824|UNIT&#95;FLAG&#95;SHEATHE||
+|31|2147483648|UNIT&#95;FLAG&#95;UNK&#95;31|(set skinnable icon and also changes color of portrait)|
+
+
+h4. DynamicFlags
+
+This Field Flags Controls The Visual Appearance Of The Creature. These Flag Values Can Be Added Together For Any Desired Combination.
+
+Some Known Flag Values Are:
+
+|*Flag*|*Name*|*Comments*|
+|0|UNIT&#95;DYNFLAG&#95;NONE||
+|1|UNIT&#95;DYNFLAG&#95;LOOTABLE||
+|2|UNIT&#95;DYNFLAG&#95;TRACK&#95;UNIT||
+|4|UNIT&#95;DYNFLAG&#95;TAPPED|Lua_UnitIsTapped - Makes creatures name appear grey (good for simulating dead creatures) ???|
+|8|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;PLAYER|Lua_UnitIsTappedByPlayer|
+|16|UNIT&#95;DYNFLAG&#95;SPECIALINFO|Shows creatures basic stats (Health, damage, resistances, tamable).|
+|32|UNIT&#95;DYNFLAG&#95;DEAD|Makes the creature appear dead (this DOES NOT make the creatures name grey)|
+|64|UNIT&#95;DYNFLAG&#95;REFER&#95;A&#95;FRIEND||
+|128|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST|Lua_UnitIsTappedByAllThreatList|
+
+
+h4. ExtraFlags
+
+This Field Controls the Application Of Flags That Controls Certain NPC Specific Attributes.
+
+|_. Bit|_. Name|_. Description|
+|1|CREATURE&#95;FLAG&#95;EXTRA&#95;INSTANCE&#95;BIND|Bounds killer's party to the instance they are in|
+|2|CREATURE&#95;FLAG&#95;EXTRA&#95;CIVILIAN|Makes creature ignore aggro|
+|4|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY|Prohibits creature from parrying|
+|8|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY&#95;HASTEN|Creatures parries do not speed up its next attack|
+|16|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;BLOCK|Prohibits creature from blocking|
+|32|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;CRUSH|Prohibits creature from dealing crushing blows|
+|64|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;XP&#95;AT&#95;KILL|Makes creature reward no XP at kill|
+|128|CREATURE&#95;FLAG&#95;EXTRA&#95;INVISIBLE|Makes creature invisible for player. Use this for triggers etc.|
+|256|CREATURE&#95;FLAG&#95;EXTRA&#95;NOT&#95;TAUNTABLE|creature is immune to taunt auras and effect attack me|
+|512|CREATURE&#95;FLAG&#95;EXTRA&#95;AGGRO&#95;ZONE|creature sets itself in combat with zone on aggro|
+|1024|CREATURE&#95;FLAG&#95;EXTRA&#95;GUARD|creature is a guard, for Zone under attack announce if guard death|
+|2048|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;TALKTO&#95;CREDIT|creature doesn't give quest-credits when talked to (temporarily flag).|
+|4096|CREATURE&#95;FLAG&#95;EXTRA&#95;ACTIVE|creature is loaded and active on server startup, doesn't require players to activate its respective grid.|
+
+h4. CreatureTypeFlags
+
+This Field Controls If a Mob Is Minable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The "Skinning_Loot_Template":Skinning_Loot_Template Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side. 
+
+It will be send to the client in SMSG&#95;CREATURE&#95;QUERY&#95;RESPONSE
+
+Some values provided from the community:
+
+|*Flag*|*Name*|*Comments*|
+|1|CREATURE&#95;TYPEFLAGS&#95;TAMEABLE|Makes the mob tameable (must also be a beast and have family set)|
+|2|CREATURE&#95;TYPEFLAGS&#95;GHOST&#95;VISIBLE|Sets Creatures that can ALSO be seen when player is a ghost. Used in CanInteract function by client, can't be attacked|
+|4|CREATURE&#95;TYPEFLAGS&#95;UNK3|Sets "BOSS" flag for tooltips|
+|8|CREATURE&#95;TYPEFLAGS&#95;UNK4||
+|16|CREATURE&#95;TYPEFLAGS&#95;UNK5|Controls something in client tooltip related to creature faction|
+|32|CREATURE&#95;TYPEFLAGS&#95;UNK6|Something related to Sound|
+|64|CREATURE&#95;TYPEFLAGS&#95;UNK7|Related to attackable / not attackable creatures with spells|
+|128|CREATURE&#95;TYPEFLAGS&#95;UNK8|has something to do with unit interaction / quest status requests|
+|136|CREATURE&#95;TYPEFLAGS&#95;NON&#95;PVP&#95;PLAYER||
+|256|CREATURE&#95;TYPEFLAGS&#95;HERBLOOT|Makes Mob Corpse Herbable - Uses Skinning Loot Field|
+|512|CREATURE&#95;TYPEFLAGS&#95;MININGLOOT|Makes Mob Corpse Mineable - Uses Skinning Loot Field|
+|1024|CREATURE&#95;TYPEFLAGS&#95;ANIMATION&#95;UNK11|no idea, but it used by client|
+|2048|CREATURE&#95;TYPEFLAGS&#95;ANIMATION&#95;UNK12|related to possibility to cast spells while mounted|
+|4096|CREATURE&#95;TYPEFLAGS&#95;CAN&#95;ASSIST|Can aid any player or group in combat. Typically seen for escorting NPC's|
+|8192|CREATURE&#95;TYPEFLAGS&#95;UNK14|checked from calls in Lua_PetHasActionBar|
+|16384|CREATURE&#95;TYPEFLAGS&#95;UNK15|Lua_UnitGUID, client does guid_low &= 0xFF000000 if this flag is set|
+|32768|CREATURE&#95;TYPEFLAGS&#95;ENGINEERLOOT|Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field|
+
+h4. SpeedWalk
+
+This Field Controls How Fast An NPC Moves When Walking. 
+This Value Comes From Sniff Packet Data.
+
+(Default Value Is: 1)
+
+h4. SpeedRun
+
+This Field Controls How Fast An NPC Moves When Running. 
+This Value Comes From Sniff Packet Data.
+
+(Default Value Is: 1.14286)
+
+h4. UnitClass
+
+The NPC Unit Class. This Field is a Critical Value That Dictates An NPC's Base Stats System.
+
+An NPC's Unit Class Is A Corner Stone Value Used In "Creature_Template_Classlevelstats":Creature_Template_Classlevelstats To Determine An NPC's Stats.
+
+NPC Stats Refers To: (Health/Mana/Damage/Armor).
+
+In WOTLK and CATA There Are 4 Possible NPC Classes Available For Creatures:
+(Class: 1,2,4,8)
+
+In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures:
+(Class: 1,2,8)
+
+|_. ID|_. Name|
+|CLASS&#95;WARRIOR|1|
+|CLASS&#95;PALADIN|2|
+|CLASS&#95;ROGUE|4|
+|CLASS&#95;MAGE|8|
+
+This Value is Contained in Sniff Data: UNIT_FIELD_BYTES_0 located in SMSG_UPDATE_OBJECT
+It is a Critical Field in Determining Class Level Stats For the NPC. 
+
+NOTE: Typically ONLY Vehicles Are Class=4
+
+Warriors: Do Not Have Mana and Maximum Health and Damage
+Paladins: Have a Small Amount Of Mana and Slightly Less Health and Damage From a Warrior
+Rogues: (Little is Known Currently But They All Seem To Be Vehicles)
+Mages: Have Lots of Mana But Have Very Low Health and Damage
+
+h4. Rank
+
+This Field Determines The Rank of the NPC:
+
+|_. Rank|_. Name|_. Comments|
+|0|Normal||
+|1|Elite|Higher damage, more health, better loot.|
+|2|Rare Elite|A rare mob but with elite damage and health.|
+|3|World Boss|Highest rank, best loot, longest respawn time.|
+|4|Rare|Somewhat better loot, longer respawn time.|
+
+
+h4. Expansion
+
+This Field Determines The Expansion Value of the NPC:
+
+This Value Is a Critical Value in Determining an NPC's Stats From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats And Directly Affects An NPC's Health and Damage.
+
+|_. Value|_. Expansion|
+|0|Classic|
+|1|Burning Crusades|
+|2|Wrath of the Lich King|
+|3|Cataclysm|
+
+NOTE: Now Everyone Has Trouble Understanding This Concept. An NPC's Expansion Value Has NOTHING To Do With What Expansion An NPC Is From. This Value Determines How Difficult An NPC Is In Regards To An NPC At The Same Level From A Different Expansion. As An Example a Classic Level 60 NPC Will Have Less Base Health and Less Base Damage Then A Level 60 TBC NPC.
+
+Each Expansion Value Has a Different Base Health and Base Damage (Each Expansion Having Higher Values Then The Previous). ONLY Health And Damage Scale With Expansion Values. Mana / Armor / Attack Power Are Static Values For All Expansions For A Particular Level and Unit Class combination.
+
+An NPC's Health and Damage Is Calculated From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats Based On "HealthMultiplier":#HealthMultiplier And "DamageMultiplier":#DamageMultiplier Multiplied By BaseHealthExp? and BaseDamageExp? From Creature_Template_ClassLevelStats Where ? = Expansion Value.
+
+Note: See "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats For Better Understanding.
+
+h4. HealthMultiplier
+
+This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Health Value. NPC Have Various HealthMultipliers But Typically They Are Fairly Rounded Values 
+
+(Note: Dungeon/Raid/World Bosses Normally Have Large Very Rounded Values Normally)
+
+This Is The Multiplier Used Against The BaseHealthExp? Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Health Values.
+
+? = "Expansion":#Expansion Value.
+
+Formula:
+MinLevelHealth = ROUND (BaseHealthExp? * HealthMultiplier)
+MaxLevelHealth = ROUND (BaseHealthExp? * HealthMultiplier)
+
+Example: 
+
+|_. Field|_. Value|_. Comments|
+|"Entry":#Entry|871|Saltscale Warrior|
+|"MinLevel":#MinLevel|35|(Sniff Data)|
+|"MaxLevel":#MaxLevel|36|(Sniff Data)|
+|"MinLevelHealth":#MinLevelHealth|1403|(Sniff Data)|
+|"MaxLevelHealth":#MaxLevelHealth|1469|(Sniff Data)|
+|"UnitClass":#UnitClass|1|(Sniff Data)|
+|"Expansion":#Expansion|0|Determined From Calculations / Sniff Data / MoP DBC|
+|"HealthMultiplier":#HealthMultiplier|1.15|(Sniff Data)|
+
+Level 35 BaseHealthExp0: 1220 
+(From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats - BaseHealth Values Calculated From Sniff Data And Extensive Research)
+
+Level 36 BaseHealthExp0: 1277 
+(From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats - BaseHealth Values Calculated From Sniff Data And Extensive Research)
+
+MinLevelHealth = ROUND (1220*1.15) = 1403 (1403)
+MaxLevelHealth = ROUND (1277*1.15) = 1468.55 (1469)
+
+h4. PowerMultiplier
+
+This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Mana Value. All NPC Have Nice Rounded Values For PowerMultipliers.
+
+This Is The Multiplier Used Against The BaseMana Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Mana Values. 
+
+Note: BaseMana Values Do NOT Scale With Expansion Values Unlike Health And Damage.
+Note: For NPC that use Other Power then Mana it will reflect that power instead.
+
+Formula:
+MinLevelMana = ROUND (BaseMana * ManaMultiplier)
+MaxLevelMana = ROUND (BaseMana * ManaMultiplier)
+
+Example: 
+
+|_. Field|_. Value|_. Comments|
+|"Entry":#Entry|7335|Death's Head Geomancer|
+|"MinLevel":#MinLevel|35|(Sniff Data)|
+|"MaxLevel":#MaxLevel|35|(Sniff Data)|
+|"MinLevelMana":#MinLevelMana|5360|(Sniff Data)|
+|"MaxLevelMana":#MaxLevelMana|5360|(Sniff Data)|
+|"UnitClass":#UnitClass|8|(Sniff Data)|
+|"Expansion":#Expansion|0|Determined From Calculations / Sniff Data / MoP DBC|
+|"PowerMultiplier":#ManaMultiplier|2|(Sniff Data)|
+
+Level 35 BaseMana: 2680 
+(From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats - BaseMana Values Calculated From Sniff Data And Extensive Research)
+
+MinLevelMana = ROUND (2680*2) = 5360 (5360)
+MaxLevelMana = ROUND (2680*2) = 5360 (5360)
+
+h4. DamageMultiplier
+
+This field is the PRIMARY Field for adjusting and setting the Min/Max Damage Values for an NPC.
+
+Damage Calculation Formulas
+
+MIN MELEE DAMAGE = (((Creature_Template_Classlevelstats.BaseDamageExp? * Creature_Template.DamageVariance) + (Creature_Template_Classlevelstats.BaseMeleeAttackPower / 14)) * (Creature_Template.BaseMeleeAttackTime / 1000)) * Creature_Template.Dmg_Multiplier
+
+MAX MELEE DAMAGE = ((((Creature_Template_Classlevelstats.BaseDamageExp? * Creature_Template.DamageVariance) * 1.5) + (Creature_Template_Classlevelstats.BaseMeleeAttackPower / 14)) * (Creature_Template.BaseMeleeAttackTime / 1000)) * Creature_Template.Dmg_Multiplier
+
+Note: ? = Expansion Value of The NPC
+
+Some NPC Have Damage Multipliers Applied To Increase Their Damage Above That Of a Normal NPC Of The Same Level.
+
+I am sure people are asking... WHY is there more then just a simple Damage Multiplier Involved To Boost NPC Damage? Here is the only logical answer. With some NPC (Like Bosses) Who have Multipliers in the range of 20 - 75 Min and Max Damage values can fluctuate into VERY Large Ranges. So What Blizz has done is create a Co-Efficient System of 2 Values to help Reign in Max Damage Values so if you require a Set Min/Max Damage For an NPC it can scale the BaseDamage so after being put though the Formula The Min and Max Damage values will be within the Required Range. Damage Variance is used to reduce the Max Damage Value. For NPC Who Do NOT Have an altered Damage Variance the Default Value used is 1 (Normal Variance = 1).
+
+-----------------------------------------------------
+Here is an Example of an NPC Melee Damage Calculation
+-----------------------------------------------------
+Nexus-Prince Shaffar = Unit Class 2 (BOSS)
+Level 66: BaseDamage = 78.472 / Melee AttackPower = 266 / Base Melee Attack Time = 2000
+Bestiary Min Dmg: 1136
+Bestiary Max Dmg: 1593
+Damage Variance: 1.0 (No Variance)
+Damage Multiplier: 5.83 (Calculated Value)
+
+CalculatedMinMeleeDmg=ROUND(((BaseDamage * Damage Variance) + (Base Melee Attackpower / 14)) * (Base Attack Time/1000)) * Damage Multiplier
+= ((((78.472 * 1.0) + (266/14)) * (2000/1000)) * 5.83
+= (((78.472) + 19) * 2) = 194.944 * 5.83 = 1136.52352
+
+CalculatedMaxMeleeDmg=ROUND((((BaseDamage * Damage Variance) * 1.5) + (Base Melee Attack Power / 14)) * (Base Attack Time/1000)) * Damage Multiplier
+= ((((78.472 * 1.0) * 1.5) + (266/14)) * (2000/1000)) * 5.83
+= (((117.708) + 19) * 2) = 273.416 * 5.83 = 1594.01528
+
+NOTE: 
+
+Very Slight Rounding Errors of 1 or 2 Damage Might Occur... This was due to Rounding When Generating BaseDamage Values in Calculations.
+
+h4. DamageVariance
+
+Damage Variance is a Co-Efficient used in Damage Calculations To Limit the Min/Max Damage Range.
+
+Default Value is 1 (Normal) ===> See "DamageMultiplier":#DamageMultiplier for More Information
+
+h4. ArmorMultiplier
+
+This Value Is The Multiplier Value Used To Multiply Against BaseArmor Value in Creature_Template_Classlevelstats
+
+Most Normal NPC are = 1
+
+h4. ExperienceMultiplier
+
+NOTE: This Field Is Currently Not Used By The Core (Future Implementation)
+
+h4. MinLevelHealth
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Minimum Level Health Is Now Calculated Using "HealthMultiplier":#HealthMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MaxLevelHealth
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Maximum Level Health Is Now Calculated Using "HealthMultiplier":#HealthMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MinLevelMana
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Minimum Level Mana Is Now Calculated Using "PowerMultiplier":#PowerMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MaxLevelMana
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Maximum Level Mana Is Now Calculated Using "PowerMultiplier":#PowerMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MinMeleeDmg
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Minimum Melee Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MaxMeleeDmg
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Maximum Melee Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MinRangedDmg
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Minimum Ranged Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MaxRangedDmg
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+(Nice Field To Have Still)
+
+Maximum Ranged Damage Is Now Calculated Using "DamageMultiplier":#DamageMultiplier
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. Armor
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers 
+DB Devs: Suggested Apply Armor Value For MaxLevel For This Field For FYI Purposes
+
+(Old System Did Not Properly Calculate Armor Values for different NPC Levels)
+
+Core Now Automatically Calculates This Value On The Fly
+
+h4. MeleeAttackPower
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes
+
+Core Now Gets Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats
+
+(Old System Did Not Properly Calculate Values for Damage Calculations) 
+
+h4. RangedAttackPower
+
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes
+
+Core Now Gets Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats
+
+(Old System Did Not Properly Calculate Values for Damage Calculations) 
+
+h4. MeleeBaseAttackTime
+
+An NPC's melee attack time in milliseconds. This Field is populated by Sniff Data.
+
+This field is used as part of Min/Max Melee Damage Formula Calculations.
+
+h4. RangedBaseAttackTime
+
+An NPC's ranged attack time in milliseconds. This Field is populated by Sniff Data.
+
+This field is used as part of Min/Max Ranged Damage Formula Calculations.
+
+h4. DamageSchool
+
+NPC's Melee Damage School. All Melee Damage Will Be Done As This Spell School Damage Set Here.
+
+NOTE: 0 (Normal) = Physical Damage
+
+|_. ID|_. Name|
+|0|SPELL&#95;SCHOOL&#95;NORMAL|
+|1|SPELL&#95;SCHOOL&#95;HOLY|
+|2|SPELL&#95;SCHOOL&#95;FIRE|
+|3|SPELL&#95;SCHOOL&#95;NATURE|
+|4|SPELL&#95;SCHOOL&#95;FROST|
+|5|SPELL&#95;SCHOOL&#95;SHADOW|
+|6|SPELL&#95;SCHOOL&#95;ARCANE|
+
+h4. MinLootGold
+
+Minimum possible money that the NPC drops when killed, in copper.
+
+An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.
+
+NOTE:
+1 = 1 Copper
+100 = 1 Silver
+10000 = 1 Gold
+
+h4. MaxLootGold
+
+Maximum possible money that the NPC drops when killed, in copper.
+
+An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.
+
+NOTE:
+1 = 1 Copper
+100 = 1 Silver
+10000 = 1 Gold
+
+h4. LootId
+
+The ID of the Loot Template that this NPC uses to generate loot from. 
+See "creature&#95;loot&#95;template.entry":creature_loot_template#entry
+
+h4. PickpocketLootId
+
+The ID of the Pickpocketing Loot Template that this NPC should use to generate pickpocketing loot from. 
+See "pickpocketing&#95;loot&#95;template.entry":pickpocketing_loot_template#entry
+
+h4. SkinningLootId
+
+The ID of the Skinning Loot Template that this NPC should use to generate skinning loot from. 
+See "skinning&#95;loot&#95;template.entry":skinning_loot_template#entry
+
+NOTE: This is a Multi-Profession Loot Based On "CreatureTypeFlags":Creature_template#CreatureTypeFlags
+
+|*Type*|*Info*|
+|CREATURE&#95;TYPEFLAGS&#95;HERBLOOT|Makes Mob Corpse Herbable - Uses Skinning Loot Field|
+|CREATURE&#95;TYPEFLAGS&#95;MININGLOOT|Makes Mob Corpse Mineable - Uses Skinning Loot Field|
+|CREATURE&#95;TYPEFLAGS&#95;ENGINEERLOOT|Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field|
+
+For These Other Types Use Skinning_Loot_Template For Loot To Be Generated By These Other Professions Also
+
+h4. KillCredit1
+
+Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.
+Note: Some Quests Require Additional Quest Kill Credit
+
+h4. KillCredit2
+
+Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.
+Note: Some Quests Require Additional Quest Kill Credit
+
+h4. QuestItem1 - QuestItem6
+
+The entry of the "item":item_template that creature drops and is required within an active quest.
+
+h4. MechanicImmuneMask
+
+This makes the NPC immune to specific spell natures. See Spell.dbc at row effect&#95;X&#95;mechanic&#95;id.
 
 Uses references from SpellMechanic.dbc.
 
@@ -523,28 +799,116 @@ Uses references from SpellMechanic.dbc.
 |8192|MECHANIC&#95;KNOCKOUT|268435456|MECHANIC&#95;IMMUNE&#95;SHIELD|
 |16384|MECHANIC&#95;BLEED|536870912|MECHANIC&#95;SAPPED|
 
-
 To combine immunities just add values. Immune to everything corresponds to the value 1073741823.
 
-h4. flags&#95;extra
+h4. ResistanceHoly
 
-These flags control certain creature specific attributes.
+An NPC's Additional Holy Spell Resistance Value.
 
-|_. Bit|_. Name|_. Description|
-|1|CREATURE&#95;FLAG&#95;EXTRA&#95;INSTANCE&#95;BIND|Bounds killer's party to the instance they are in|
-|2|CREATURE&#95;FLAG&#95;EXTRA&#95;CIVILIAN|Makes creature ignore aggro|
-|4|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY|Prohibits creature from parrying|
-|8|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY&#95;HASTEN|Creatures parries do not speed up its next attack|
-|16|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;BLOCK|Prohibits creature from blocking|
-|32|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;CRUSH|Prohibits creature from dealing crushing blows|
-|64|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;XP&#95;AT&#95;KILL|Makes creature reward no XP at kill|
-|128|CREATURE&#95;FLAG&#95;EXTRA&#95;INVISIBLE|Makes creature invisible for player. Use this for triggers etc.|
-|256|CREATURE&#95;FLAG&#95;EXTRA&#95;NOT&#95;TAUNTABLE|creature is immune to taunt auras and effect attack me|
-|512|CREATURE&#95;FLAG&#95;EXTRA&#95;AGGRO&#95;ZONE|creature sets itself in combat with zone on aggro|
-|1024|CREATURE&#95;FLAG&#95;EXTRA&#95;GUARD|creature is a guard, for Zone under attack announce if guard death|
-|2048|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;TALKTO&#95;CREDIT|creature doesn't give quest-credits when talked to (temporarily flag).|
+h4. ResistanceFire
 
+An NPC's Additional Fire Spell Resistance Value.
+
+h4. ResistanceNature
+
+An NPC's Additional Nature Spell Resistance Value.
+
+h4. ResistanceFrost
+
+An NPC's Additional Frost Spell Resistance Value.
+
+h4. ResistanceShadow
+
+An NPC's Additional Shadow Spell Resistance Value.
+
+h4. ResistanceArcane
+
+An NPC's Additional Arcane Spell Resistance Value.
+
+h4. PetSpellDataId
+
+ID that displays what spells the pet has in the client.
+
+Note: This Value Comes From DBC (Not Confirmed)
+
+h4. MovementType
+
+The NPC's default Movement Type.
+
+|_. ID|_. Type|
+|0|Idle - Stand Still (Stationary)|
+|1|Random Movement - Random Move Inside SpawnDist Radius|
+|2|Waypoint Movement - Move Along Waypoint Path Defined|
+
+h4. MovementTemplateId
+
+This Field Is Not Used By The Core 
+(Not Sure What/Why This Would Be Used For If It Was)
+
+h4. TrainerType
+
+If the NPC is a Trainer (Has Trainer NPCFlag Set), then this field controls what kind of Trainer the NPC is. 
+
+NOTE: Both this field and the related field must be filled in for a trainer to work correctly.
+
+|_. ID|_. Type|_. Related Field|_. Comments|
+|0|TRAINER&#95;TYPE&#95;CLASS|trainer&#95;class|Trains Class Spells|
+|1|TRAINER&#95;TYPE&#95;MOUNTS|trainer&#95;race|Trains Riding Skill|
+|2|TRAINER&#95;TYPE&#95;TRADESKILLS|trainer&#95;spell|Trains Professions|
+|3|TRAINER&#95;TYPE&#95;PETS|trainer&#95;class|Trains Pet Skills|
+
+
+h4. TrainerSpell
+
+If the NPC is a trainer that teaches professions ("trainer&#95;type":creature_template#trainer_type == 2), then the player must already know the spell ID specified here to be able to talk to this NPC.
+
+h4. TrainerClass
+
+If the NPC is a class trainer or a pet trainer ("trainer&#95;type":creature_template#trainer_type == 0 or 3), then the player's class must be the same as the value specified here to talk to this trainer. For pet trainers, this value must be 3 (hunter). See "character.class":character#class
+
+h4. TrainerRace
+
+If the NPC is a mount trainer ("trainer&#95;type":creature_template#trainer_type == 1), then the player's race must be the same as the value specified here to talk to this trainer. See "character.race":character#race
+
+h4. TrainerTemplateId
+
+The id refers to the "npc_trainer_template.":npc_trainer_template.
+
+h4. VendorTemplateId
+
+The id refers to the "npc_vendor_template.":npc_vendor_template.
+
+h4. EquipmentTemplateId
+
+The default ID of the equipment that this creature should display. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
+
+h4. VehicleTemplateId
+
+?????????????
+
+h4. GossipMenuId
+
+Reference to a "gossip&#95;menu&#95;id":gossip_menu.
+
+
+h4. AIName
+
+Overrides AI used for the creature.
+
+|_. Name|_. Description|
+|NullAI|Empty AI, creature does nothing.|
+|AggressorAI|Creature attacks as soon as something is in aggro range.|
+|ReactorAI|Creature attacks only if aggroed by attack, spell etc.|
+|GuardAI||
+|PetAI|Creature is a pet.|
+|TotemAI|Creature casts spell from field spell1, otherwise like NullAI.|
+|EventAI|Creature uses Event Based AI (Creature AI).|
+||
 
 h4. ScriptName
 
 The name of the script that this creature uses, if any. This ties a script from a scripting engine to this creature.
+
+Example: SD2 Script
+
+
