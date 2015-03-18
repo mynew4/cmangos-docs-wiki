@@ -87,7 +87,18 @@ The race of the character.
 
 h4. class
 
-The class of the character: 
+The class of the character:
+
+|_. Index |_. Class |
+|1 | Warrior |
+|2 | Paladin |
+|3 | Hunter |
+|4 | Rogue |
+|5 | Priest |
+|7 | Shaman |
+|8 | Mage |
+|9 | Warlock |
+|11 | Druid | 
 
 h4. position&#95;x
 
