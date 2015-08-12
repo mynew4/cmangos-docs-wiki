@@ -1,1 +1,1 @@
-# REDIRECT "Npc vendor (template)":Npc vendor (template)
+# REDIRECT "Npc vendor (template)":npc_vendor_template
