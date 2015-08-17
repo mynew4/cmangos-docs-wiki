@@ -43,8 +43,6 @@ h4. spell&#95;end
 
 Spell for NPC to cast when game event ends
 
-h4. equipment&#95;id
-
 h4. event
 
 Entry of the event ("game&#95;event.entry":game_event#entry)
