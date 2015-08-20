@@ -238,8 +238,9 @@ This Field Controls If The Creature Should Regenerate It's Health/Stats When Out
 
 |Value|Description|
 |0|NPC Does NOT Regenerate Stats When Out Of Comabt|
-|1|NPC DOES Regenerate Stats When Out Of Comabt|
-
+|1|NPC DOES Regenerate Health When Out Of Comabt|
+|2|NPC DOES Regenerate Power (Mana) When Out Of Comabt|
+|3|NPC DOES Regenerate Health AND Power (Mana) When Out Of Comabt|
 h4. RacialLeader
 
 This Field Is a Boolean Flag Indicating That The Creature Is a Racial Leader. Killing Racial Leaders Grants 100 Honor Points.
