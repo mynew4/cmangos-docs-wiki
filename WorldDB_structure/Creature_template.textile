@@ -234,13 +234,14 @@ The NPC Is Limited To ONLY Movement On This:
 
 h4. RegenerateStats
 
-This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Boolean Value 1 or 0)
+This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Data Flag)
 
 |Value|Description|
 |0|NPC Does NOT Regenerate Stats When Out Of Comabt|
 |1|NPC DOES Regenerate Health When Out Of Comabt|
 |2|NPC DOES Regenerate Power (Mana) When Out Of Comabt|
 |3|NPC DOES Regenerate Health AND Power (Mana) When Out Of Comabt|
+
 h4. RacialLeader
 
 This Field Is a Boolean Flag Indicating That The Creature Is a Racial Leader. Killing Racial Leaders Grants 100 Honor Points.
