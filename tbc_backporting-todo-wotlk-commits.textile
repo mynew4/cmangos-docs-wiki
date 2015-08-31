@@ -1,7 +1,8 @@
 Backports which require additional testing and fixing:
 
-https://github.com/cmangos/mangos-tbc/commit/d94054abab9541586bf1fbecb6c8a3edb2a464e7
-https://github.com/cmangos/mangos-tbc/commit/28c09bce045722ccaab0a8c3765d8c22c4f0e792
+http://github.com/cmangos/mangos-tbc/commit/d94054abab9541586bf1fbecb6c8a3edb2a464e7
+
+http://github.com/cmangos/mangos-tbc/commit/28c09bce045722ccaab0a8c3765d8c22c4f0e792
 
 
 Commits which require research before backporting:
@@ -17,13 +18,8 @@ Commits left over in recent backport run:
 </code></pre>
 *WTF has happened here - the summoning changes are not properly backported..*
 
-* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/3276232: 3276232 * Shauren (committer stfx)<pre><code>[12486] Fix guid sent in SMSG_PLAYERBOUND, it should be caster's guid, not player's
-  56.7% src/game/
-  43.2% src/shared/
-</code></pre>
-
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/4ece3ed: 4ece3ed * Shauren (committer stfx)<pre><code> [12487] Improve alcohol handling</code></pre>
-*Also for TBC this change?*
+*Also for TBC this change? Depends on not backported code*
 
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/9d20ead: 9d20ead * Schmoozerd (committer Schmoozerd)<pre><code>[12494] Fix SMSG_BINDPOINTUPDATE and SMSG_PLAYERBOUND sent data
   93.3% src/game/
