@@ -55,8 +55,8 @@ h3. Structure
 
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"id":DBScripts#id|int(11) unsigned|NO||0||
-|"delay":DBScripts#delay|int(11) unsigned|NO||0||
+|"id":DBScripts#id|int(8) unsigned|NO||0||
+|"delay":DBScripts#delay|int(10) unsigned|NO||0||
 |"command":DBScripts#command|mediumint(8) unsigned|NO||0||
 |"datalong":DBScripts#otherfields|mediumint(8) unsigned|NO||0||
 |"datalong2":DBScripts#otherfields|int(10) unsigned|NO||0||
