@@ -1,13 +1,13 @@
 Backports which require additional testing and fixing:
 
-http://github.com/cmangos/mangos-tbc/commit/d94054abab9541586bf1fbecb6c8a3edb2a464e7
+"d94054":http://github.com/cmangos/mangos-tbc/commit/d94054abab9541586bf1fbecb6c8a3edb2a464e7
 
-http://github.com/cmangos/mangos-tbc/commit/28c09bce045722ccaab0a8c3765d8c22c4f0e792
+"28c09b":http://github.com/cmangos/mangos-tbc/commit/28c09bce045722ccaab0a8c3765d8c22c4f0e792
 
 
 Commits which require research before backporting:
 
-https://github.com/cmangos/mangos-wotlk/commit/8953e34 <- SpellAttributes
+"8953e34":https://github.com/cmangos/mangos-wotlk/commit/8953e34 <- SpellAttributes
 
 "Older commits outstanding":https://github.com/stfx/one/issues/1
 
