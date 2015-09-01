@@ -1,3 +1,42 @@
+Recent missing backport from 1.09.2015
+
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/f0ed1a7: f0ed1a7 * xfurry (committer xfurry)<pre><code>[12904] Set positive effect for spells 58533 and 58552
+  74.1% src/game/
+  25.8% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/c60c9d3: c60c9d3 * xfurry (committer xfurry)<pre><code>[12905] Allow spell effect 32 to trigger spells on unitTarget
+  89.6% src/game/
+  10.3% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/808cc1b: 808cc1b * xfurry (committer xfurry)<pre><code>[12906] Implement spell effect 153 - Create Tamed Pet for Hunters
+  97.9% src/game/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/addd971: addd971 * kaelima (committer stfx)<pre><code>[12919] Wait proper time before arena/bg invitation window is removed
+  68.8% src/game/BattleGround/
+  31.1% src/shared/
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/8a6be23: 8a6be23 * Dehravor (committer stfx)<pre><code>[12927] Fix showing trade cancelled message twice as client checks it as well
+  74.3% src/game/
+  25.6% src/shared/
+*Needs to be tested on client - quite easy*
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/55813a4: 55813a4 * Shauren (committer stfx)<pre><code>[12934] Second part of recent SendNotification trade packet improvement
+  96.6% src/game/
+   3.3% src/shared/
+*Depends on not yet backported code which needs to be checked*
+
+</code></pre>
+* "wotlk":http://github.com/cmangos/mangos-wotlk/commit/a1ffc9e: a1ffc9e * Cyberium (committer Cyberium)<pre><code>[12935] Adding Visual Studio 2015 support
+   8.5% contrib/
+   3.6% dep/
+  85.7% win/VC140/
+
+
 Backports which require additional testing and fixing:
 
 "d94054":http://github.com/cmangos/mangos-tbc/commit/d94054abab9541586bf1fbecb6c8a3edb2a464e7
