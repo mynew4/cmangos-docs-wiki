@@ -22,12 +22,8 @@ Commits left over in backporting run from 1.09.2015
 ```
 [12934] Second part of recent SendNotification trade packet improvement
 ```
-> Depends on not yet backported code which needs to be checked
+> Depends on not yet backported code which needs to be checked if its needed
 
-* [wotlk](http://github.com/cmangos/mangos-wotlk/commit/a1ffc9e): a1ffc9e * Cyberium (committer Cyberium)
-```
-[12935] Adding Visual Studio 2015 support
-```
 ---
 Backports which require additional testing and fixing:
 
