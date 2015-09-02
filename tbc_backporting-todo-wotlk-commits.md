@@ -1,9 +1,5 @@
 Commits left over in backporting run from 1.09.2015
 
-* [wotlk](http://github.com/cmangos/mangos-wotlk/commit/f0ed1a7): f0ed1a7 * xfurry (committer xfurry)
-```
-[12904] Set positive effect for spells 58533 and 58552
-```
 * [wotlk](http://github.com/cmangos/mangos-wotlk/commit/c60c9d3): c60c9d3 * xfurry (committer xfurry)
 ```
 [12905] Allow spell effect 32 to trigger spells on unitTarget
