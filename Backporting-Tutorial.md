@@ -4,7 +4,7 @@ This tutorial was written by stfx for developers to correctly backport commits a
   * Clone mangos-tbc repo
   * Add mangos-wotlk remote: `git remote add wotlk _url_`
 
-## 2. Backport an commits
+## 2. Backport commits
   * Fetch from mangos-wotlk every time something changes there: `git fetch wotlk`
   * Start backport tool with hash of commit to backport: `contrib/backporting/mangos-backport.sh _commit_hash_`
   * Check and resolve conflicts if any exist
