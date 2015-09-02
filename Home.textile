@@ -38,7 +38,3 @@ h4. Classic
 h4. TBC
 
 * "TBC Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/tbc_backporting-todo-wotlk-commits
-
-h4. Cataclysm
-
-* "Cataclysm Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/cata_backporting-todo-wotlk-commits
