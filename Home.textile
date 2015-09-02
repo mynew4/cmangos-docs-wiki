@@ -1,12 +1,12 @@
 h3. General
-* "About CMaNGOS":https://github.com/cmangos/mangos-wotlk#readme
+* "About Continued MaNGOS":https://github.com/cmangos/mangos-wotlk#readme
 * "Beginner's Guide":https://github.com/cmangos/issues/wiki/Beginners-Guide-Home
 * "Installation Instructions":https://github.com/cmangos/issues/wiki/Installation-Instructions
 * "FAQ (Frequently Asked Questions)":https://github.com/cmangos/issues/wiki/FAQ-Frequently-Asked-Questions
 
 h3. Development
 
-* "Bug Reports & Issues":https://github.com/cmangos/issues/issues
+* "Bug Reports & Issues":https://github.com/cmangos/issues/issues (read "this":https://github.com/cmangos/mangos-wotlk/blob/master/CONTRIBUTING.md#bug-reports first)
 * "Contributing Guidelines":https://github.com/cmangos/mangos-wotlk/blob/master/CONTRIBUTING.md
 * "Coding Standards":https://github.com/cmangos/issues/wiki/Coding-Standards
 * "Git Tutorials":https://github.com/cmangos/issues/wiki/Git-tutorials
@@ -28,7 +28,7 @@ Other useful data such as dbc content used to populate some of the CMaNGOS table
 
 h3. Advanced
 
-* "Backporting-Tutorial":https://github.com/cmangos/issues/wiki/Backporting-Tutorial
+* "Backporting Tutorial":https://github.com/cmangos/issues/wiki/Backporting-Tutorial
 * "Classic Client File Formats":https://github.com/cmangos/issues/wiki/Client-File-Formats
 * "Classic Backporting TODO TBC Commits":https://github.com/cmangos/issues/wiki/classic_backporting-todo-tbc-commits
 * "TBC Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/tbc_backporting-todo-wotlk-commits
