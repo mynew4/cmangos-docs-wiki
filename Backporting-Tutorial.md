@@ -8,14 +8,14 @@ This tutorial was written by stfx for developers to correctly backport commits. 
   * Fetch from mangos-wotlk every time something changes there: `git fetch wotlk`
   * Use backport tool in git bash: `contrib/backporting/mangos-backport.sh _commit_hash_`
   * Check and resolve conflicts if any exist
-  * If you had to resolve conflicts you still have to amend the commit: `git commit -s --amend`
+    * Amend the commit after resolving conflicts: `git commit -s --amend`
 
 ## 2.1. Backport a commit with sql changes
   * _Fetch from mangos-wotlk (like before)_
   * _Use backport tool (like before)_
   * _Check and resolve conflicts (like before)_
   * Rename the sql updates in sql/updates directory by adding this commit's version number at the start of the filename like so: `11754_01_mangos_mangos_string.sql -> s1415_11754_01_mangos_mangos_string.sql`
-  * Remove the lines related to db_version change (in the sql update file usually the first one and the empty line after that)
+  * Remove the line related to db_version change (usually the first line in each sql update file)
   * _Amend commit (like before)_
 
 # 3. Number the commit with git_id (only need for sql changes)
