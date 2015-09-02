@@ -29,12 +29,6 @@ Other useful data such as dbc content used to populate some of the CMaNGOS table
 h3. Advanced
 
 * "Backporting-Tutorial":https://github.com/cmangos/issues/wiki/Backporting-Tutorial
-
-h4. Classic
-
 * "Classic Client File Formats":https://github.com/cmangos/issues/wiki/Client-File-Formats
 * "Classic Backporting TODO TBC Commits":https://github.com/cmangos/issues/wiki/classic_backporting-todo-tbc-commits
-
-h4. TBC
-
 * "TBC Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/tbc_backporting-todo-wotlk-commits
