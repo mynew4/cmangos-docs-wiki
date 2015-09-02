@@ -6,9 +6,9 @@ This tutorial was written by stfx for developers to correctly backport commits a
 
 ## 2. Backport commits
   * Fetch from mangos-wotlk every time something changes there: `git fetch wotlk`
-  * Start backport tool with hash of commit to backport: `contrib/backporting/mangos-backport.sh _commit_hash_`
+  * Use backport tool with hash of commit to backport: `contrib/backporting/mangos-backport.sh _commit_hash_`
   * Check and resolve conflicts if any exist
-    * Amend the commit after resolving conflicts: `git commit -s --amend`
+  * If you had to resolve conflicts you still have to amend the commit: `git commit -s --amend`
 
 #### 2.1. Backport commits with sql changes
   * _Fetch from mangos-wotlk (like before)_
