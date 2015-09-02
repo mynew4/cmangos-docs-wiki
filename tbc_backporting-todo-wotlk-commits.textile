@@ -5,10 +5,10 @@ Commits left over in backporting run from 1.09.2015
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/808cc1b: 808cc1b * xfurry (committer xfurry)<pre><code>[12906] Implement spell effect 153 - Create Tamed Pet for Hunters</code></pre>
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/addd971: addd971 * kaelima (committer stfx)<pre><code>[12919] Wait proper time before arena/bg invitation window is removed</code></pre>
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/8a6be23: 8a6be23 * Dehravor (committer stfx)<pre><code>[12927] Fix showing trade cancelled message twice as client checks it as well</code></pre>
-> Needs to be tested on client - quite easy to do
+??Needs to be tested on client - quite easy to do??
 
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/55813a4: 55813a4 * Shauren (committer stfx)<pre><code>[12934] Second part of recent SendNotification trade packet improvement</code></pre>
-> Depends on not yet backported code which needs to be checked
+??Depends on not yet backported code which needs to be checked??
 
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/a1ffc9e: a1ffc9e * Cyberium (committer Cyberium)<pre><code>[12935] Adding Visual Studio 2015 support</code></pre>
 
@@ -29,10 +29,10 @@ Commits which require research before backporting:
 Commits left over in recent backport run:
 
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/771342e: 771342e * Schmoozerd (committer Schmoozerd)<pre><code>[12483] Improvements for NPC summoning code</code></pre>
-> WTF has happened here - the summoning changes are not properly backported..
+??WTF has happened here - the summoning changes are not properly backported..??
 
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/4ece3ed: 4ece3ed * Shauren (committer stfx)<pre><code> [12487] Improve alcohol handling</code></pre>
-> Also for TBC this change? Depends on not backported code
+??Also for TBC this change? Depends on not backported code??
 
 * "wotlk":http://github.com/cmangos/mangos-wotlk/commit/9d20ead: 9d20ead * Schmoozerd (committer Schmoozerd)<pre><code>[12494] Fix SMSG_BINDPOINTUPDATE and SMSG_PLAYERBOUND sent data</code></pre>
 
