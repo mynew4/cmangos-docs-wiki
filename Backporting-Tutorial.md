@@ -1,4 +1,4 @@
-This tutorial was written by stfx for mangos-tbc (and mangos-classic) developers to correctly backport commits from master (wotlk).
+This tutorial was written by stfx for developers to correctly backport commits. Example backporting from mangos-wotlk to mangos-tbc:
 
 # 1. Set up the directory
   * Clone mangos-tbc repo
@@ -8,7 +8,7 @@ This tutorial was written by stfx for mangos-tbc (and mangos-classic) developers
   * Fetch from mangos-wotlk every time something changes there: `git fetch wotlk`
   * Use backport tool in git bash: `contrib/backporting/mangos-backport.sh _commit_hash_`
   * Check and resolve conflicts if any exist
-  * If you had to resolve conflicts you still have to amend the commit and maybe change the commit message as well: `git commit -s --amend`
+  * If you had to resolve conflicts you still have to amend the commit: `git commit -s --amend`
 
 ## 2.1. Backport a commit with sql changes
   * _Fetch from mangos-wotlk (like before)_
@@ -18,16 +18,13 @@ This tutorial was written by stfx for mangos-tbc (and mangos-classic) developers
   * Remove the lines related to db_version change (in the sql update file usually the first one and the empty line after that)
   * _Amend commit (like before)_
 
-# 3. Number the commit with git_id
+# 3. Number the commit with git_id (only need for sql changes)
   * Build git_id tool in release mode if you did not already (located in contrib\git_id)
-  * Use git_id in git bash: `contrib/git_id/Release/git_id.exe -l`
-
-## 3.1. Number the commit with sql changes
-  * Push every outstanding commit because `git_id.exe -s` does not work if you used `git_id.exe -l` before
-  * Use git_id in git bash: `contrib/git_id/Release/git_id.exe -s`
+  * Push every outstanding commit because `git_id.exe` checks last version from remote
+  * Use git_id in git bash: `contrib/git_id/Release/git_id.exe`
     * This automatically writes all db_version changes to mangos.sql and in the sql/updates/*.sql
 
 # 4. Push the commits
   * Check correct authorship
-  * Check commit number
-  * Push to the mangos-tbc remote: `git push origin master` (assuming you cloned from mangos-tbc or named the mangos-tbc remote "origin")
+  * Check commit number for commits with sql changes
+  * Push to the mangos-tbc remote: `git push origin master` (assuming you named the mangos-tbc remote "origin" which is the default after cloning)
