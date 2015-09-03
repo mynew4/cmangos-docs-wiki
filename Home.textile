@@ -30,5 +30,6 @@ h3. Advanced
 
 * "Backporting Tutorial":https://github.com/cmangos/issues/wiki/Backporting-Tutorial
 * "Classic Client File Formats":https://github.com/cmangos/issues/wiki/Client-File-Formats
-* "Classic Backporting TODO TBC Commits":https://github.com/cmangos/issues/wiki/classic_backporting-todo-tbc-commits
-* "TBC Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/tbc_backporting-todo-wotlk-commits
+* "Classic Backporting TODO TBC Commits":https://github.com/cmangos/issues/wiki/Classic-Backporting-TODO-TBC-Commits
+* "TBC Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/TBC-Backporting-TODO-WOTLK-Commits
+* "Cata Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/Cata-Backporting-TODO-WOTLK-Commits
