@@ -16,8 +16,6 @@ This tutorial was written by stfx for developers to correctly backport commits a
   * _Check and resolve conflicts (like before)_
   * Rename the sql updates in sql/updates directory by adding the client version's prefix character at the start of the filename like so: `11754_01_mangos_mangos_string.sql -> s11754_01_mangos_mangos_string.sql`
   * _Amend commit (like before)_
-
-#### 2.2. Number commits with sql changes using git_id
   * Build git_id tool in release mode if you did not already (located in contrib\git_id)
   * Push every outstanding commit because `git_id.exe` checks last version from remote
   * Use git_id in git bash: `contrib/git_id/Release/git_id.exe`
