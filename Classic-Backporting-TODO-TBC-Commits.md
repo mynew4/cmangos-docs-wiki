@@ -53,7 +53,7 @@ End of transporter commits
 ```
 [s1828] Use SpellFocus check for all Spells
 ```
-> stfx: On 1.12 I am pretty sure that SMSG_PET_CAST_FAILED doesnt have the added cast_count but then again neither has SMSG_CAST_FAILED. Maybe those two cant use the same structure on 1.12 as its done on master/tbc.
+> stfx: That might work, needs to be tested if it doesnt cause issue
 
 End of other misc commits
 
