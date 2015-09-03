@@ -14,8 +14,7 @@ This tutorial was written by stfx for developers to correctly backport commits a
   * _Fetch from mangos-wotlk (like before)_
   * _Use backport tool (like before)_
   * _Check and resolve conflicts (like before)_
-  * Rename the sql updates in sql/updates directory by adding this commit's version number at the start of the filename like so: `11754_01_mangos_mangos_string.sql -> s1415_11754_01_mangos_mangos_string.sql`
-  * Remove the line related to db_version change (usually the first line in each sql update file)
+  * Rename the sql updates in sql/updates directory by adding the client version's prefix character at the start of the filename like so: `11754_01_mangos_mangos_string.sql -> s11754_01_mangos_mangos_string.sql`
   * _Amend commit (like before)_
 
 #### 2.2. Number commits with sql changes using git_id
