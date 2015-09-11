@@ -60,6 +60,12 @@ autoconf make patch cmake libmysql++-dev mysql-server libtool \
 libssl-dev binutils zlibc libc6 libbz2-dev
 ----
 
+Software requirements - Fedora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----
+dnf install git cmake gcc patch autoconf mariadb-devel libtool zfstream gcc-c++
+----
+
 Essentials
 ----------
 CMaNGOS::
