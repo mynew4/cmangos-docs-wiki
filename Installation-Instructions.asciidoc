@@ -503,13 +503,13 @@ Do you wish to continue? (y/n)
 * Support is for Linux (Debian)
 * Go to root
 +
-++ cd tbc-db
+++ cd tbc-db ++
 +
-++ cd Current_Release
+++ cd Current_Release ++
 +
-++ cd Full_DB
+++ cd Full_DB ++
 +
-++ mysql -uroot -p mangos < ~/tbc-db/Current_Release/Full_DB/TBCDB_1.4.0_cmangos-tbc_s1982_SD2-TBC_s2720.sql
+++ mysql -uroot -p mangos < ~/tbc-db/Current_Release/Full_DB/TBCDB_1.4.0_cmangos-tbc_s1982_SD2-TBC_s2720.sql ++
 * Enter Password
 
 *Support for ClassicDB.*
