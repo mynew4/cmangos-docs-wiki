@@ -498,7 +498,15 @@ Do you wish to continue? (y/n)
 ####################################################################################################
 -----------------------
 *Support for YTDB Needed.*
-*Support for TBCDB Needed.*
+*Support for TBCDB.*
+
+* Support is for Linux (Debian)
+* Go to root
+* cd tbc-db
+* cd Current_Release
+* cd Full_DB
+* mysql -uroot -p mangos < ~/tbc-db/Current_Release/Full_DB/TBCDB_1.4.0_cmangos-tbc_s1982_SD2-TBC_s2720.sql
+* Enter Password
 
 *Support for ClassicDB.*
 
