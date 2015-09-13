@@ -63,7 +63,7 @@ libssl-dev binutils zlibc libc6 libbz2-dev
 Software requirements - Fedora
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ----
-dnf install git cmake gcc patch autoconf mariadb-devel libtool zfstream gcc-c++
+dnf install git cmake gcc patch autoconf mariadb-server mariadb-devel libtool zfstream gcc-c++
 ----
 
 Essentials
