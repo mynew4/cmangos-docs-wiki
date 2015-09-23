@@ -15,6 +15,10 @@ In order to download, compile and install CMaNGOS and its tools, you will need t
 You'll need them to compile the source files. They are provided to developers by Apple You can grab Xcode here: https://developer.apple.com/technologies/mac/#xcode   
 Don't forget to install the command line tools (Preferences>Download for the last version of Xcode)
 
+**A C++11 compliant compiler**
+
+See [this guide](https://github.com/cmangos/issues/wiki/Getting-a-C--11-compiler-on-Mac-OS-X) on our wiki.
+
 **MySQL Community Database Server**
 
 Where a great part of the data about the game server side will be stored.  
@@ -42,8 +46,7 @@ From now, we will assume that:
 First, we will download all sources for CMaNGOS and scripts.
 Open Terminal and enter:
 ```
-$mkdir mangos
-$cd mangos
+$mkdir mangos && cd mangos
 $git clone git://github.com/cmangos/mangos-wotlk.git mangos
 ```
 or for TBC:
@@ -74,11 +77,37 @@ For Classic use instead:
 
 `$git clone git://github.com/scriptdev2/scriptdev2-classic.git src/bindings/ScriptDev2`
 
+##Note:##
+For the time being, we must manually modify two files in order to build. This should be fixed in a near future. Quoting the related answer for this issue:
+> What did prevent me to actually get a build of the core on Mac OS X was a linker flag problem (in particular, `-rdynamic` doesn't seem to be supported). To get around this, you can make this change in src/mangosd/CMakeLists.txt:
+```
+ set(EXECUTABLE_LINK_FLAGS "")
+
+ if(UNIX)
+-  set(EXECUTABLE_LINK_FLAGS "-pthread ${EXECUTABLE_LINK_FLAGS} -rdynamic")
++  set(EXECUTABLE_LINK_FLAGS "-pthread ${EXECUTABLE_LINK_FLAGS}")
+ endif()
+
+ if(APPLE)
+```
+> But we can't just push this change, because it also affects Linux. So I'll have to do some more investigation to see how best to fix this.
+> 
+> To silence a gazillion warnings for now, you can make this change in src/framework/Platform/Define.h:
+> 
+```
+#  if defined(__APPLE_CC__) && defined(BIG_ENDIAN)
+- #    define MANGOS_IMPORT __attribute__ ((longcall))
++ #    define MANGOS_IMPORT
+#  elif defined(__x86_64__)
+```
+> 
+> With those two local changes, you should be able to build the core binaries and SD2 and with far less warnings. 
+
 We will now configure the compilation to tell cmake we want to install CMaNGOS server into the server directory we created earlier:
 
 ```
-$mkdir build ; cd build
-$cmake .. -DCMAKE_INSTALL_PREFIX=~/mangos/run -DINCLUDE_BINDINGS_DIR=ScriptDev2
+$mkdir build && cd build
+$cmake .. -DCMAKE_INSTALL_PREFIX=~/mangos/run -DCMAKE_C_COMPILER=~/toolchains/gcc-4.8.5/bin/gcc -DCMAKE_CXX_COMPILER=~/toolchains/gcc-4.8.5/bin/g++
 ```
 
 If everything is OK, we can compile:
