@@ -80,21 +80,21 @@ For Classic use instead:
 ##Note:##
 For the time being, we must manually modify two files in order to build. This should be fixed in a near future. Quoting the related answer for this issue:
 > What did prevent me to actually get a build of the core on Mac OS X was a linker flag problem (in particular, `-rdynamic` doesn't seem to be supported). To get around this, you can make this change in src/mangosd/CMakeLists.txt:
-```
+```diff
  set(EXECUTABLE_LINK_FLAGS "")
-
+>
  if(UNIX)
 -  set(EXECUTABLE_LINK_FLAGS "-pthread ${EXECUTABLE_LINK_FLAGS} -rdynamic")
 +  set(EXECUTABLE_LINK_FLAGS "-pthread ${EXECUTABLE_LINK_FLAGS}")
  endif()
-
+>
  if(APPLE)
 ```
 > But we can't just push this change, because it also affects Linux. So I'll have to do some more investigation to see how best to fix this.
 > 
 > To silence a gazillion warnings for now, you can make this change in src/framework/Platform/Define.h:
 > 
-```
+```diff
 #  if defined(__APPLE_CC__) && defined(BIG_ENDIAN)
 - #    define MANGOS_IMPORT __attribute__ ((longcall))
 + #    define MANGOS_IMPORT
