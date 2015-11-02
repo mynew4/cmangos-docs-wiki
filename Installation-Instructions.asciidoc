@@ -212,9 +212,9 @@ YTDB (CATA)
 
 *On *nix*
 
-++svn co http://svn2.assembla.com/svn/ytdbase/Mangos/Cataclysm/++
+++svn co http://svn2.assembla.com/svn/ytdbase/Mangos/Cataclysm ytdbase/++
 
-This will create a new folder (likely C:\Mangos\Cataclysm) in which YTDB SQL-files are located.
+This will create a new folder (likely C:\Mangos\ytdbase) in which YTDB SQL-files are located.
 
 PSDB (WotLK)
 ^^^^^^^^^^^^
