@@ -30,8 +30,8 @@ Software requirements (Windows)
 - World of Warcraft WotLK (3.3.5a) client for for cmangos-wotlk
 - World of Warcraft Cataclysm (4.3.4) client for for cmangos-cata
 
-- Git: http://code.google.com/p/msysgit/downloads/list[MySysGit] (http://oi49.tinypic.com/v45smh.jpg[install with "Git bash here" support])
-- Visual C++ 2010 or newer: http://www.microsoft.com/express/Downloads/[Visual Studio Express] (Visual Studio Express 2013 is recommended)
+- Git: http://code.google.com/p/msysgit/downloads/list[MySysGit] (http://oi49.tinypic.com/v45smh.jpg[install with "Git bash here" support]) optionally you can install (http://sourceforge.net/projects/gitextensions/files/latest/download)[Git Extensions] instead. Git Extensions comes with Git, MySYSGit, and KDiff
+- Visual C++ 2013 or newer: http://www.microsoft.com/express/Downloads/[Visual Studio Express] (Visual Studio Express 2013 is recommended)
 - Any MySQL server: http://dev.mysql.com/downloads/mysql/[MySQL server community edition], http://www.apachefriends.org/en/xampp.html[XAMPP]
 - Any MySQL client (optional, for easy database access): http://dev.mysql.com/downloads/workbench/[MySQL Workbench], http://code.google.com/p/sqlyog/downloads/list[SQLyog]
 - SVN (optional, for easy database download): http://tortoisesvn.net/downloads[Tortoise SVN]
