@@ -72,7 +72,7 @@ CMaNGOS::
   is the server, also called "core", which manages all the game inquiries and accesses your SQL Database to get the information needed.
 
 ScriptDev2::
-  is an optional library which contains C++ scripts that, when added to CMaNGOS, handle special events, quests, encounters and bosses.
+  is an optional library which contains C++ scripts that, when added to CMaNGOS, handle special events, quests, encounters and bosses.*AS OF 11/1/2015 ScriptDev2 HAS BEEN INTEGRATED INTO THE "CORE"*
 
 ACID::
   stands for "Advanced Creature Intelligence Database". It is an optional SQL database that handles regular mobs and bosses. ACID and ScriptDev2 complement each other and you should use both. ACID is usually already included in the database shipped by the database providers.
@@ -147,17 +147,6 @@ git clone git://github.com/cmangos/mangos-cata.git mangos
 
 And submit this git command with return. This will take a little time, but after you will have created a subdirectory into C:\Mangos named "mangos" into which the CMaNGOS sources are cloned.
 
-Clone ScriptDev2
-~~~~~~~~~~~~~~~~
-++git clone git://github.com/scriptdev2/scriptdev2.git mangos/src/bindings/ScriptDev2++
-
-Versions for different clients:
--------------------
-git clone git://github.com/scriptdev2/scriptdev2-classic.git mangos/src/bindings/ScriptDev2
-git clone git://github.com/scriptdev2/scriptdev2-tbc.git mangos/src/bindings/ScriptDev2
-git clone git://github.com/scriptdev2/scriptdev2-cata.git mangos/src/bindings/ScriptDev2
--------------------
-
 Clone ACID
 ~~~~~~~~~~
 ++git clone git://github.com/ACID-Scripts/WOTLK.git acid++
@@ -213,6 +202,20 @@ YTDB (WotLK)
 
 This will create a new folder (likely C:\Mangos\ytdbase) in which YTDB SQL-files are located.
 
+YTDB (CATA)
+^^^^^^^^^^^^
+*On Windows*
+
+* Open C:\Mangos in the explorer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://svn2.assembla.com/svn/ytdbase/Mangos/Cataclysm/++
+
+*On *nix*
+
+++svn co http://svn2.assembla.com/svn/ytdbase/Mangos/Cataclysm/++
+
+This will create a new folder (likely C:\Mangos\ytdbase) in which YTDB SQL-files are located.
+
 PSDB (WotLK)
 ^^^^^^^^^^^^
 *On Windows*
@@ -254,13 +257,12 @@ For *nix or cmake compile we suggest creating an additional "build" folder, this
 
 Compiling CMaNGOS and ScriptDev2
 --------------------------------
-Compiling CMaNGOS (Windows)
+Compiling CMaNGOS and ScriptDev2 (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your C:\Mangos\mangos\win folder
 * Open the "sln" file that fits your version of Visual C++
   - mangosdVC120.sln for Visual C++ 2013
-  - mangosdVC110.sln for Visual C++ 2012
-  - mangosdVC100.sln for Visual C++ 2010
+  - mangosdVC140.sln for Visual C++ 2015
 * Wait for Visual C++ to finish loading.
 * Open the menu "Build" -> "Configuration Manager"
   - Choose "Release" in the drop down box for "Active Solution Configuration"
@@ -271,20 +273,6 @@ Compiling CMaNGOS (Windows)
   - You might get some warning messages. Don't worry about it, that's normal.
   - You must not get any error messages, although if you do so, you could click the menu "Build" -> "Clean Solution" to restart the compile. If you cannot solve an error, please use the official forums or IRC channels to ask for help
 
-Compiling ScriptDev2 (Windows)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Go to your C:\Mangos\mangos\src\bindings\ScriptDev2 folder
-* Open the "sln" file that fits your version of Visual C++
-  - scriptVC120.sln for Visual C++ 2013
-  - scriptVC110.sln for Visual C++ 2012
-  - scriptVC100.sln for Visual C++ 2010
-* Wait for Visual C++ to finish loading.
-* Open the menu "Build" -> "Configuration Manager"
-  - Choose "Release" in the drop down box for "Active Solution Configuration"
-  - The drop down box "Active Solution Platform" should already be set to "Win32"
-  - Close the window
-* Click the menu "Build" -> "Build Solution"
-
 Compiling CMaNGOS and ScriptDev2 (*nix)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your /home/mangos folder
@@ -293,9 +281,8 @@ Compiling CMaNGOS and ScriptDev2 (*nix)
   - ++-DCMAKE_INSTALL_PREFIX=\../mangos/run++ to install into the "run" subfolder of /home/mangos folder, otherwise this will install to /opt/mangos
   - ++-DPCH=1++ to compile with PCH mode (much faster after updates)
   - ++-DDEBUG=0++ to remove debug mode from compiling
-  - *IMPORTANT* ++-DINCLUDE_BINDINGS_DIR=ScriptDev2++ to include ScriptDev2
-  - *example:* ++cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DINCLUDE_BINDINGS_DIR=ScriptDev2++
-* Invoke ++make++ to compile CMaNGOS (and ScriptDev2 if installed and included in cmake)
+  - *example:* ++cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DPCH=1 -DDEBUG=0++
+* Invoke ++make++ to compile CMaNGOS and ScriptDev2
 * Invoke ++make install++ to install to your "run" directory
 
 Install CMaNGOS binary files
