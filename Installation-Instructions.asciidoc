@@ -333,12 +333,6 @@ And enter your password in the following dialogue (similar in all other next ste
 +
 This will create a user (name mangos, password mangos) with rights to the databases "mangos" (world-db), characters and realmd
 
-* ++mysql -uroot -p < mangos/src/bindings/ScriptDev2/sql/scriptdev2_create_database.sql++
-+
-This will create the database "scriptdev2" which can be used by the "mangos" user created with the commands above
-
-* ++mysql -uroot -p scriptdev2 < mangos/src/bindings/ScriptDev2/sql/scriptdev2_create_structure_mysql.sql++
-
 Initialize Mangos database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 From the C:\Mangos folder invoke (in Git bash):
@@ -522,7 +516,7 @@ Also consider https://github.com/classicdb/database/blob/classic/README.mdown fo
 
 Fill ScriptDev2 database:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-* Invoke ++mysql -uroot -p scriptdev2 < mangos/src/bindings/ScriptDev2/sql/scriptdev2_script_full.sql++
+* Invoke ++mysql -uroot -p mangos < mangos/sql/scriptdev2/scriptdev2.sql++
 
 Fill ACID to world-database:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
