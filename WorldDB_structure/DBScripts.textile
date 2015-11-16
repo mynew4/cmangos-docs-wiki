@@ -137,6 +137,13 @@ The following commands can be used:
 |33|XP&#95;USER|Enable or disable experience gain for a player.|
 |34|TERMINATE&#95;CONDITION|Stop script execution when a give condition is met.|
 |35|SEND&#95;AI&#95;EVENT&#95;AROUND|Send a give AI event for EventAI around the source with a given radius.|
+|36|SET&#95;FACING|Turn resulting source to resulting target.|
+|37|MOVE&#95;DYNAMIC|Move resulting source to a random point around resulting target or to resulting target.|
+|38|SEND&#95;MAIL|Send mail from resulting source to resulting target.|
+|39|SET&#95;FLY|Makes a creature start or stop flying.|
+|40|DESPAWN&#95;OBJECT|Despawns a gameobject.|
+|41|RESPAWN&#95;CREATURE|Respawns a creature.|
+|42|SET&#95;EQUIPMENT&#95;SLOTS|Change equipment slots of the resulting source.|
 
 
 h4. Buddy Concept
@@ -178,6 +185,7 @@ h4. Data flags
 |SCRIPT_FLAG_COMMAND_ADDITIONAL|0x08|8|Only for some commands possible.|
 |SCRIPT_FLAG_BUDDY_BY_GUID|0x10|16|Interpret "search_radius":DBScripts#search_radius as buddy's GUID.|
 |SCRIPT_FLAG_BUDDY_IS_PET|0x20|32|Do not search for an npc, but for a pet.|
+|SCRIPT_FLAG_BUDDY_IS_DESPAWNED|0x40|64|Search for a creature that is despawned or dead.|
 
 h4. OtherFields
 
