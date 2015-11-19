@@ -420,3 +420,41 @@ _Side note: Only available on wotlk version._
 ** datalong: AI event id. Only EventAI events are accepted.
 ** datalong2: Radius.
 ** Source and target must be a creature.
+
+* *SCRIPT_COMMAND_SET_FACING = 36*
+** Resulting source must be a creature; Resulting target must be a Worldobject.
+** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL also set TargetGuid of resultingSource to resultingTarget. In this case resultingTarget MUST be Creature/ Player
+** datalong != 0 Reset TargetGuid, Reset orientation
+
+* *SCRIPT_COMMAND_MOVE_DYNAMIC = 37*
+** Resulting source must be a creature; Resulting target must be a Worldobject.
+** datalong = 0:  Move resulting source towards resulting target
+** datalong != 0: Move resulting source to a random point between datalong2..datalong around resulting target.
+** orientation != 0: Obtain a random point around resulting target in direction of orientation
+** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL Obtain a point in direction of resulting target->GetOrientation + orientation
+** for resulting target == resulting source and orientation == 0 this will mean resulting source moving forward
+
+* *SCRIPT_COMMAND_SEND_MAIL = 38*
+** Resulting source should be a Creature OR NULL. Resulting target must be Player
+** datalong = mailTemplateId
+** datalong2: AlternativeSenderEntry. Use as sender-Entry of the sent mail
+** dataint1: Delay (>= 0) in Seconds
+
+* *SCRIPT_COMMAND_SET_FLY = 39*
+** Resulting source must be a creature.
+** datalong = bool 0=off, 1=on
+** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL set/unset byte flag UNIT_BYTE1_FLAG_FLY_ANIM
+
+* *SCRIPT_COMMAND_DESPAWN_GO = 40*
+** Resulting target must be a Gameobject. Please note that not all gameobject types support this command.
+
+* *SCRIPT_COMMAND_RESPAWN = 41*
+** resultingSource = Creature. Requires SCRIPT_FLAG_BUDDY_IS_DESPAWNED to find dead or despawned targets
+
+* *SCRIPT_COMMAND_SET_EQUIPMENT_SLOTS = 42*
+** Resulting source must be a creature.
+** datalong = resetDefault: bool 0=false, 1=true
+** dataint = main hand slot; dataint2 = off hand slot; dataint3 = ranged slot
+
+* *SCRIPT_COMMAND_RESET_GO = 43*
+** Resulting target must be a Gameobject. Only works for Gameobject which are doors or buttons (GO type 0 and 1)
