@@ -144,6 +144,7 @@ The following commands can be used:
 |40|DESPAWN&#95;OBJECT|Despawns a gameobject.|
 |41|RESPAWN&#95;CREATURE|Respawns a creature.|
 |42|SET&#95;EQUIPMENT&#95;SLOTS|Change equipment slots of the resulting source.|
+|43|RESET&#95;OBJECT|Reset a gameobject.|
 
 
 h4. Buddy Concept
