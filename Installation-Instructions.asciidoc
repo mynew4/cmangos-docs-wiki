@@ -14,6 +14,7 @@ If you run into issues during installation or need help understanding one of the
 Addresses
 ---------
 - CMaNGOS: http://www.cmangos.net[forum] | https://github.com/cmangos[git repositories] | http://qchat.rizon.net/?channels=%23cmangos[irc] (irc.rizon.net #cmangos)
+- boost: http://www.boost.org[main page]
 - ScriptDev2: http://cmangos.net/forum-32.html[forum] | https://github.com/scriptdev2[SD2 git repositories] | http://qchat.rizon.net/?channels=%23scriptdev2[irc] (irc.rizon.net #scriptdev2)
 - ACID: http://cmangos.net/forum-34.html[forum] | https://github.com/ACID-Scripts[git repositories] | http://qchat.rizon.net/?channels=%23aciddev[irc] (irc.rizon.net #aciddev)
 - UDB: http://udb.no-ip.org/index.php[forum] | https://github.com/unified-db/Database[git repository] 
@@ -257,8 +258,27 @@ For *nix or cmake compile we suggest creating an additional "build" folder, this
 
 Compiling CMaNGOS and ScriptDev2
 --------------------------------
-Compiling CMaNGOS and ScriptDev2 (Windows)
+
+Installing boost
+~~~~~~~~~~~~~~~~
+For instructions on how to compile boost from source code, see http://www.boost.org/more/getting_started/index.html[here].
+
+For Windows users who would prefer to simply download the binaries, you can find installers http://sourceforge.net/projects/boost/files/boost-binaries/[here].
+
+Configuring boost (UNIX)
+~~~~~~~~~~~~~~~~~~~~~~~~
+The CMaNGOS cmake scripts should automatically detect the location of your boost installation, and configure the build accordingly.  If it is not detected, please ensure that your BOOST_ROOT environment variable is set properly.  For more information, see http://www.boost.org/more/getting_started/index.html[here].
+
+Configuring boost (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you are using cmake to generate a solution and project files, the CMaNGOS cmake scripts should automatically detect the location of your boost installation, and configure the build accordingly.  If it is not detected, please ensure that your BOOST_ROOT environment variable is set properly.  For more information, see http://www.boost.org/more/getting_started/index.html[here].
+
+If you are not using cmake, the built-in project files assume that BOOST_ROOT environment variable is set.  Demonstrating how to set an environment variable is beyond the scope of this document, but numerous examples can be found online.
+
+Note: In a typical boost installation environment with Visual Studio, the user will configure their Visual Studio property sheets to point to the boost installation.  This will allow boost to be found by all projects on that system.  For information on configuring property sheets, look https://msdn.microsoft.com/en-us/library/669zx6zc.aspx[here].
+
+Compiling CMaNGOS and ScriptDev2 (Windows)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your C:\Mangos\mangos\win folder
 * Open the "sln" file that fits your version of Visual C++
   - mangosdVC120.sln for Visual C++ 2013
