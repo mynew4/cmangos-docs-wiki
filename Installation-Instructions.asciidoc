@@ -50,7 +50,7 @@ Software requirements - Ubuntu (12.04)
 ----
 sudo apt-get install build-essential gcc g++ automake git-core \
 autoconf make patch libmysql++-dev mysql-server libtool \
-libssl-dev grep binutils zlibc libc6 libbz2-dev cmake
+libssl-dev grep binutils zlibc libc6 libbz2-dev cmake subversion
 ----
 
 Software requirements - Debian
@@ -58,13 +58,13 @@ Software requirements - Debian
 ----
 apt-get install grep build-essential gcc g++ automake git-core \
 autoconf make patch cmake libmysql++-dev mysql-server libtool \
-libssl-dev binutils zlibc libc6 libbz2-dev
+libssl-dev binutils zlibc libc6 libbz2-dev subversion
 ----
 
 Software requirements - Fedora
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ----
-dnf install git cmake gcc patch autoconf mariadb-server mariadb-devel libtool zfstream gcc-c++
+dnf install git cmake gcc patch autoconf mariadb-server mariadb-devel libtool zfstream gcc-c++ subversion
 ----
 
 Essentials
