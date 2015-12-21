@@ -310,7 +310,6 @@ Install CMaNGOS binary files
 * Transfer the files from your compile folder (C:\Mangos\mangos\bin\Win32_Release) into C:\Mangos\run
 * Go to C:\Mangos\mangos\src\mangosd and copy "mangosd.conf.dist.in" to C:\Mangos\run and rename it to "mangosd.conf"
 * Go to C:\Mangos\mangos\src\realmd and copy "realmd.conf.dist.in" to C:\Mangos\run and rename it to "realmd.conf"
-* Go to C:\Mangos\mangos\src\bindings\ScriptDev2 and copy "scriptdev2.conf.dist.in" to C:\Mangos\run and rename it to "scriptdev2.conf"
 * Go to :C\Mangos\mangos\src\game\AuctionHouseBot and copy "ahbot.conf.dist.in" to C:\Mangos\run and rename it to "ahbot.conf"
 
 On *nix this is partly done with the ++make install++ command (from the build directory).
