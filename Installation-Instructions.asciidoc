@@ -314,7 +314,7 @@ Install CMaNGOS binary files
 
 On *nix this is partly done with the ++make install++ command (from the build directory).
 
-You will however still need to manually rename/copy the .conf.dist files to .conf files from the "etc" directory to the "bin" directory.
+You will however still need to manually rename/copy the .conf.dist files to .conf files.
 
 Extract files from the client
 -----------------------------
