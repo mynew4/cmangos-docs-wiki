@@ -37,13 +37,13 @@ Software requirements (Windows)
 - Any MySQL client (optional, for easy database access): http://dev.mysql.com/downloads/workbench/[MySQL Workbench], http://code.google.com/p/sqlyog/downloads/list[SQLyog]
 - SVN (optional, for easy database download): http://tortoisesvn.net/downloads[Tortoise SVN]
 
-Additional usefull software:
+Additional useful software:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Notepad++ http://notepad-plus-plus.org/[] - An advanced text-editor with syntax highlighting for most that you can wish for :)
 
 Software requirements (*nix)
 ----------------------------
-You will need: Git, GCC, CMake, MySQL, SVN and a few libaries
+You will need: Git, GCC, CMake, MySQL, SVN and a few libraries
 
 Software requirements - Ubuntu (12.04)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -301,7 +301,7 @@ Compiling CMaNGOS and ScriptDev2 (*nix)
   - ++-DCMAKE_INSTALL_PREFIX=\../mangos/run++ to install into the "run" subfolder of /home/mangos folder, otherwise this will install to /opt/mangos
   - ++-DPCH=1++ to compile with PCH mode (much faster after updates)
   - ++-DDEBUG=0++ to remove debug mode from compiling
-  - *example:* ++cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DPCH=1 -DDEBUG=0++
+  - *example:* ++cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DPCH=1 -DDEBUG=0++ (currently DPH doesn't work, set to 0)
 * Invoke ++make++ to compile CMaNGOS and ScriptDev2
 * Invoke ++make install++ to install to your "run" directory
 
@@ -581,8 +581,8 @@ You will need to manually update the configuration files within your "run" direc
 
 The files are:
 * mangosd.conf: Holds configuration for the mangosd executable
-* realmd.conf: Holds configuration for the realmd exectuable
-* scriptdev2.conf: Holds configuration for ScriptDev2's settings
+* realmd.conf: Holds configuration for the realmd executable
+* scriptdev2.conf: Holds configuration for ScriptDev2's settings(no longer used and may not exist) 
 * (Very optional) ahbot.conf: Holds configuration for AHBot (by default disabled)
 
 Most important to configure are the database settings. You will need this if you decided to use a different password/user then the "default" combination of mangos/mangos.
@@ -595,7 +595,7 @@ These settings are relatively self-explaining, you should look for the settings 
 
 You need to change this only if you changed the mangosd.conf settings "WorldServerPort" or "RealmID"
 
-This information is required so that the realmd "knows" to which mangosd he should forward a player after authentification
+This information is required so that the realmd "knows" to which mangosd he should forward a player after authentication
 
 Apply code to realmd database, adapt to your wishes
 ---------------------
