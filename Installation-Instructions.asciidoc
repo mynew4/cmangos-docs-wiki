@@ -346,7 +346,7 @@ Either use a GUI tool for mysql and open the SQL-files, or do it by command-line
 
 From the C:\Mangos folder invoke (in Git bash):
 
-* ++mysql -uroot -p < mangos/sql/create_mysql.sql++
+* ++mysql -uroot -p < mangos/sql/create/db_create_mysql.sql++
 +
 And enter your password in the following dialogue (similar in all other next steps)
 +
@@ -356,7 +356,7 @@ Initialize Mangos database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 From the C:\Mangos folder invoke (in Git bash):
 
-* ++mysql -uroot -p mangos < mangos/sql/mangos.sql++
+* ++mysql -uroot -p mangos < mangos/sql/base/mangos.sql++
 +
 This will create and fill the Mangos database with some values.
 
@@ -364,7 +364,7 @@ Initialize characters database:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 From the C:\Mangos folder invoke (in Git bash):
 
-* ++mysql -uroot -p characters < mangos/sql/characters.sql++
+* ++mysql -uroot -p characters < mangos/sql/base/characters.sql++
 +
 This will create an empty characters database.
 
@@ -372,7 +372,7 @@ Initialize realmd database:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 From the C:\Mangos folder invoke (in Git bash):
 
-* ++mysql -uroot -p realmd < mangos/sql/realmd.sql++
+* ++mysql -uroot -p realmd < mangos/sql/base/realmd.sql++
 +
 This will create an empty realmd database.
 
