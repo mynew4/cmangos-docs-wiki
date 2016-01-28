@@ -410,6 +410,11 @@ h4. Target Types
 |5|TARGET&#95;T&#95;HOSTILE&#95;RANDOM&#95;NOT&#95;TOP|Targets a random unit from the threat list excluding the one with the most threat|
 |6|TARGET&#95;T&#95;ACTION&#95;INVOKER|Targets the unit that caused the event; only for certain events only.|
 
+|7|TARGET&#95;T&#95;ACTION&#95;INVOKER&#95;OWNER|Unit who is responsible for Event to occur (only works for EVENT_T_AGGRO, EVENT_T_KILL, EVENT_T_DEATH, EVENT_T_SPELLHIT, EVENT_T_OOC_LOS, EVENT_T_FRIENDLY_HP, EVENT_T_FRIENDLY_IS_CC, EVENT_T_FRIENDLY_MISSING_BUFF, EVENT_T_RECEIVE_EMOTE, EVENT_T_RECEIVE_AI_EVENT)|
+|8|TARGET&#95;T&#95;HOSTILE&#95;RANDOM&#95;PLAYER|Random Player on The Threat List|
+|9|TARGET&#95;T&#95;HOSTILE&#95;RANDOM&#95;NOT&#95;TOP&#95;PLAYER|Any Random Player Except Top Threat|
+|10|TARGET&#95;T&#95;EVENT&#95;SENDER|Creature who sent a received AIEvent - only triggered by EVENT_T_RECEIVE_AI_EVENT|          
+
 
 h4. Cast Flags
 
