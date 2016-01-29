@@ -8,15 +8,11 @@ Commits left over in backporting run from 1.09.2015
 ```
 [12906] Implement spell effect 153 - Create Tamed Pet for Hunters
 ```
-* [wotlk](http://github.com/cmangos/mangos-wotlk/commit/addd971): addd971 * kaelima (committer stfx)
-```
-[12919] Wait proper time before arena/bg invitation window is removed
-```
 * [wotlk](http://github.com/cmangos/mangos-wotlk/commit/8a6be23): 8a6be23 * Dehravor (committer stfx)
 ```
 [12927] Fix showing trade cancelled message twice as client checks it as well
 ```
-> Needs to be tested on client - quite easy to do
+> Easily tested on client by checking if message is shown twice without this change
 
 * [wotlk](http://github.com/cmangos/mangos-wotlk/commit/55813a4): 55813a4 * Shauren (committer stfx)
 ```
@@ -40,8 +36,6 @@ Commits which require research before backporting:
 ```
 > SpellAttributes...
 
-[Older commits outstanding](https://github.com/stfx/one/issues/1)
-
 ---
 Commits left over in recent backport run:
 
@@ -56,6 +50,7 @@ Commits left over in recent backport run:
 [12487] Improve alcohol handling
 ```
 > Also for TBC this change? Depends on not backported code
+> If it still works correctly after changes then yes since its better code
 
 * [wotlk](http://github.com/cmangos/mangos-wotlk/commit/9d20ead): 9d20ead * Schmoozerd (committer Schmoozerd)
 ```
