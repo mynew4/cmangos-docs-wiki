@@ -477,11 +477,11 @@ Emote played by the NPC at the time the character is rewarded for the quest.
 
 h4. StartScript
 
-ID of the start script. See "quest&#95;start&#95;scripts.id":quest_start_scripts#id
+ID of the start script. See "DBScripts.id":https://github.com/cmangos/issues/wiki/DBScripts#id
 
 h4. CompleteScript
 
-ID of the end script. See "quest&#95;end&#95;scripts.id":quest_end_scripts#id
+ID of the end script. See "DBScripts.id":https://github.com/cmangos/issues/wiki/DBScripts#id
 
 h2. Examples
 
