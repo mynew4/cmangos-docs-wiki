@@ -263,7 +263,10 @@ Installing boost
 ~~~~~~~~~~~~~~~~
 For instructions on how to compile boost from source code, see http://www.boost.org/more/getting_started/index.html[here].
 
-For Windows users who would prefer to simply download the binaries, you can find installers http://sourceforge.net/projects/boost/files/boost-binaries/[here].
+For Windows users who would prefer to simply download the binaries, you can find installers http://sourceforge.net/projects/boost/files/boost-binaries/[here]. You have to download the binaries corresponding to your VisualStudio version (VS2015->msvc-14, VS2013->msvc-12) and your desired architecture (Win32 or x64).
+To make it easy you can put thoses files in your boost path in subfolder named 'lib/win32' for 32 bit version and 'lib/x64' for 64 bit version. Both can be installed together.
+
+If you have already boost in another folder schema you can also define 'BOOST_LIBRARYDIR' to point to the right folder. Then only win32 or x64 will work according to the file you have on that folder.
 
 Configuring boost (UNIX)
 ~~~~~~~~~~~~~~~~~~~~~~~~
