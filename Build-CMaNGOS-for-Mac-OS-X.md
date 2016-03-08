@@ -19,6 +19,14 @@ Don't forget to install the command line tools (Preferences>Download for the las
 
 See [this guide](https://github.com/cmangos/issues/wiki/Getting-a-C--11-compiler-on-Mac-OS-X) on our wiki.
 
+**Boost lib**
+
+The network part of CMaNGOS rely on boost library. You need to get it and install/compile it from http://www.boost.org/users/download/. We will then assume that Boost in installed under `/usr/local/boost/`. You will need to let your OS know where Boost lib directory is by running:
+```
+$ DYLD_LIBRARY_PATH=/usr/local/boost/lib:DYLD_LIBRARY_PATH
+$ export DYLD_LIBRARY_PATH
+``` 
+
 **MySQL Community Database Server**
 
 Where a great part of the data about the game server side will be stored.  
@@ -77,37 +85,11 @@ For Classic use instead:
 
 `$git clone git://github.com/scriptdev2/scriptdev2-classic.git src/bindings/ScriptDev2`
 
-##Note:##
-For the time being, we must manually modify two files in order to build. This should be fixed in a near future. Quoting the related answer for this issue:
-> What did prevent me to actually get a build of the core on Mac OS X was a linker flag problem (in particular, `-rdynamic` doesn't seem to be supported). To get around this, you can make this change in src/mangosd/CMakeLists.txt:
-```diff
- set(EXECUTABLE_LINK_FLAGS "")
->
- if(UNIX)
--  set(EXECUTABLE_LINK_FLAGS "-pthread ${EXECUTABLE_LINK_FLAGS} -rdynamic")
-+  set(EXECUTABLE_LINK_FLAGS "-pthread ${EXECUTABLE_LINK_FLAGS}")
- endif()
->
- if(APPLE)
-```
-> But we can't just push this change, because it also affects Linux. So I'll have to do some more investigation to see how best to fix this.
-> 
-> To silence a gazillion warnings for now, you can make this change in src/framework/Platform/Define.h:
-> 
-```diff
-#  if defined(__APPLE_CC__) && defined(BIG_ENDIAN)
-- #    define MANGOS_IMPORT __attribute__ ((longcall))
-+ #    define MANGOS_IMPORT
-#  elif defined(__x86_64__)
-```
-> 
-> With those two local changes, you should be able to build the core binaries and SD2 and with far less warnings. 
-
 We will now configure the compilation to tell cmake we want to install CMaNGOS server into the server directory we created earlier:
 
 ```
 $mkdir build && cd build
-$cmake .. -DCMAKE_INSTALL_PREFIX=~/mangos/run -DCMAKE_C_COMPILER=~/toolchains/gcc-4.8.5/bin/gcc -DCMAKE_CXX_COMPILER=~/toolchains/gcc-4.8.5/bin/g++
+$cmake .. -DCMAKE_INSTALL_PREFIX=~/mangos/run -DCMAKE_C_COMPILER=~/toolchains/gcc-4.8.5/bin/gcc -DCMAKE_CXX_COMPILER=~/toolchains/gcc-4.8.5/bin/g++ -DBOOST_INCLUDEDIR=/usr/local/boost/include
 ```
 
 If everything is OK, we can compile:
