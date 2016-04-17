@@ -7,11 +7,12 @@ This table contains data to override displayed models based on the race of the p
 
 h3. Structure
 
+
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |"modelid":Creature_model_race#modelid|mediumint(8) unsigned|NO|PRI|0||
 |"racemask":Creature_model_race#racemask|mediumint(8) unsigned|NO|PRI|0||
 |"creature_entry":Creature_model_race#creature_entry|mediumint(8) unsigned|NO||0||
-|"modelid_racial":Creature_model_race#modelid_racial|mediumint(8) unsignedunsigned|NO||0||
+|"modelid_racial":Creature_model_race#modelid_racial|mediumint(8) unsigned|NO||0||
 
 
 h3. Description of the fields
