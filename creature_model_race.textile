@@ -1,6 +1,6 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `creature&#95;model_&#95;race` table
+h2. The `creature&#95;model&#95;race` table
 
 This table contains data to override displayed models based on the race of the player. Use creature_entry or modelid_racial to specify the new models, but not both.
 
