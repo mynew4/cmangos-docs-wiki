@@ -1,7 +1,5 @@
 Commits left over in backporting run from 1.09.2015
 
-[12905] Allow spell effect 32 to trigger spells on unitTarget
-```
 * [wotlk](http://github.com/cmangos/mangos-wotlk/commit/808cc1b): 808cc1b * xfurry (committer xfurry)
 ```
 [12906] Implement spell effect 153 - Create Tamed Pet for Hunters
