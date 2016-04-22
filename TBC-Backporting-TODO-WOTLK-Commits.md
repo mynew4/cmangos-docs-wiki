@@ -73,8 +73,6 @@ https://github.com/cmangos/mangos-wotlk/commit/dbcf0f3fc2932b4bf9d5df33987befef7
 
 https://github.com/cmangos/mangos-wotlk/commit/0cd64d0bae6272ea65e61b3662b1ceb986feb82c
 
-https://github.com/cmangos/mangos-wotlk/commit/ce04030906d8af51bad6295f38ef1d1648af0266
-
 https://github.com/cmangos/mangos-wotlk/commit/7027f52c35dba53075493adc84fcea4f415a0843
 
 https://github.com/cmangos/mangos-wotlk/commit/f683e3cb007a678cb537b3d3d09d29ab32321e99
