@@ -67,8 +67,6 @@ Possible forgotten stuff:
 
 * TBC spells are present but i'm not sure about adding Starfall [commit](https://github.com/cmangos/mangos-wotlk/commit/aa65a175298693499202429368514814d2a45d17)
 
-https://github.com/cmangos/mangos-wotlk/commit/0390d28e3e17e3e9a6fc877c7ca4162fd413d756
-
 Laise's spell changes:
 
 https://github.com/cmangos/mangos-wotlk/commit/e7da1b0c9b065fb3e28d8792839b882c97799ea1
