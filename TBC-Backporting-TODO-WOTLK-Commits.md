@@ -65,7 +65,7 @@ Commits left over in recent backport run:
 ***
 Possible forgotten stuff:
 
-https://github.com/cmangos/mangos-wotlk/commit/aa65a175298693499202429368514814d2a45d17 (for tbc spells)
+* TBC spells are present but i'm not sure about adding Starfall (commit)[https://github.com/cmangos/mangos-wotlk/commit/aa65a175298693499202429368514814d2a45d17]
 
 https://github.com/cmangos/mangos-wotlk/commit/0390d28e3e17e3e9a6fc877c7ca4162fd413d756
 
