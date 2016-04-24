@@ -145,6 +145,7 @@ The following commands can be used:
 |41|RESPAWN&#95;CREATURE|Respawns a creature.|
 |42|SET&#95;EQUIPMENT&#95;SLOTS|Change equipment slots of the resulting source.|
 |43|RESET&#95;OBJECT|Reset a gameobject.|
+|44|UPDATE&#95;TEMPLATE|Update creature entry.|
 
 
 h4. Buddy Concept
@@ -458,3 +459,8 @@ _Side note: Only available on wotlk version._
 
 * *SCRIPT_COMMAND_RESET_GO = 43*
 ** Resulting target must be a Gameobject. Only works for Gameobject which are doors or buttons (GO type 0 and 1)
+
+* *SCRIPT_COMMAND_UPDATE_TEMPLATE = 44*
+** Resulting source must be a Creature.
+** datalong = new creature entry. Must be different than the current one
+** datalong2 = faction for which the entry is updated. 0 = Alliance, 1 = Horde. No other values are allowed
