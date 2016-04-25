@@ -260,6 +260,7 @@ _Side note: If position is very near to current position, or x=y=z=0, then only 
 ** datalong: Entry of the summoned creature from "creature&#95;template.entry":creature_template#entry.
 ** datalong2: Despawn time (MILLIESECONDS). If set to 0 then the creature will be despawned only when killed.
 ** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will summon the creature as active object.
+** dataint: SetRun (bool). 0 = off (default), 1 = on
 ** x: Summon target x coordinate.
 ** y: Summon target y coordinate.
 ** z: Summon target z coordinate.
