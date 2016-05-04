@@ -278,6 +278,8 @@ If you are using cmake to generate a solution and project files, the CMaNGOS cma
 
 If you are not using cmake, the built-in project files assume that BOOST_ROOT environment variable is set.  Demonstrating how to set an environment variable is beyond the scope of this document, but numerous examples can be found online.
 
+If you are using Visual Studio then http://cmangos.net/thread-7365.html provides an excellent step-by-step guide on how to set up boost for Visual Studio on Windows. Adjust the info in the guide to your version of VS and Windows, of course.
+
 Note: In a typical boost installation environment with Visual Studio, the user will configure their Visual Studio property sheets to point to the boost installation.  This will allow boost to be found by all projects on that system.  For information on configuring property sheets, look https://msdn.microsoft.com/en-us/library/669zx6zc.aspx[here].
 
 Compiling CMaNGOS and ScriptDev2 (Windows)
