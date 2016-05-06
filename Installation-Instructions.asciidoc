@@ -127,7 +127,7 @@ Get the remote data to your system
 We personally use some directory structure to be able to keep overview of things we have. For this guide we will assume that you will use C:\Mangos (for windows) as base directory under which you put everything.
 
 For *nix, create a new user to run your mangos server under
-++useradd -m -d /home/mangos -c "MANGoS" -g mangos mangos++
+++useradd -m -d /home/mangos -c "MANGoS" -U mangos++
 
 For *nix, this guide assumes you will use /home/mangos as a base folder under which you will put everything.
 
