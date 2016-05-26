@@ -36,7 +36,6 @@ Use this as new spell power coefficient.
 h4. dot&#95;bonus
 
 Spell damage over time.
-
 If &lt; 0 
 Calculate default spell power coefficient. 
 If = 0 
