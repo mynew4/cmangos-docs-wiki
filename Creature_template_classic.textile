@@ -107,10 +107,6 @@ h4. SubName
 
 The SubName of the Creature That Appears in &lt;&gt; Below the Creature's Name.
 
-h4. IconName
-
-Script Icon Used by Guards With Directions Menu.
-
 h4. MinLevel
 
 The Minimum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.
@@ -118,25 +114,6 @@ The Minimum Level of the Creature if the Creature Has a Level Range. For Creatur
 h4. MaxLevel
 
 The Maximum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.
-
-h4. DifficultyEntry1
-
-If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
-
-|DUNGEON&#95;DIFFICULTY&#95;HEROIC|
-|RAID&#95;DIFFICULTY&#95;25MAN&#95;NORMAL|
-
-h4. DifficultyEntry2
-
-If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
-
-|RAID&#95;DIFFICULTY&#95;10MAN&#95;HEROIC|
-
-h4. DifficultyEntry3
-
-If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for Specific Versions of an NPC in Certain Difficulty Settings, See Below:
-
-|RAID&#95;DIFFICULTY&#95;25MAN&#95;HEROIC|
 
 h4. ModelId1
 
@@ -229,10 +206,10 @@ h4. RegenerateStats
 This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Data Flag)
 
 |Value|Description|
-|0|NPC Does NOT Regenerate Stats When Out Of Comabt|
-|1|NPC DOES Regenerate Health When Out Of Comabt|
-|2|NPC DOES Regenerate Power (Mana) When Out Of Comabt|
-|3|NPC DOES Regenerate Health AND Power (Mana) When Out Of Comabt|
+|0|NPC Does NOT Regenerate Stats When Out Of Combat|
+|1|NPC DOES Regenerate Health When Out Of Combat|
+|2|NPC DOES Regenerate Power (Mana) When Out Of Combat|
+|3|NPC DOES Regenerate Health AND Power (Mana) When Out Of Combat|
 
 h4. RacialLeader
 
@@ -364,7 +341,7 @@ This Field Controls the Application Of Flags That Controls Certain NPC Specific 
 
 h4. CreatureTypeFlags
 
-This Field Controls If a Mob Is Minable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The "Skinning_Loot_Template":Skinning_Loot_Template Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side. 
+This Field Controls If a Mob Is Mineable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The "Skinning_Loot_Template":Skinning_Loot_Template Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side. 
 
 It will be send to the client in SMSG&#95;CREATURE&#95;QUERY&#95;RESPONSE
 
@@ -444,27 +421,6 @@ This Field Determines The Rank of the NPC:
 |3|World Boss|Highest rank, best loot, longest respawn time.|
 |4|Rare|Somewhat better loot, longer respawn time.|
 
-
-h4. Expansion
-
-This Field Determines The Expansion Value of the NPC:
-
-This Value Is a Critical Value in Determining an NPC's Stats From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats And Directly Affects An NPC's Health and Damage.
-
-|_. Value|_. Expansion|
-|0|Classic|
-|1|Burning Crusades|
-|2|Wrath of the Lich King|
-|3|Cataclysm|
-
-NOTE: Now Everyone Has Trouble Understanding This Concept. An NPC's Expansion Value Has NOTHING To Do With What Expansion An NPC Is From. This Value Determines How Difficult An NPC Is In Regards To An NPC At The Same Level From A Different Expansion. As An Example a Classic Level 60 NPC Will Have Less Base Health and Less Base Damage Then A Level 60 TBC NPC.
-
-Each Expansion Value Has a Different Base Health and Base Damage (Each Expansion Having Higher Values Then The Previous). ONLY Health And Damage Scale With Expansion Values. Mana / Armor / Attack Power Are Static Values For All Expansions For A Particular Level and Unit Class combination.
-
-An NPC's Health and Damage Is Calculated From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats Based On "HealthMultiplier":#HealthMultiplier And "DamageMultiplier":#DamageMultiplier Multiplied By BaseHealthExp? and BaseDamageExp? From Creature_Template_ClassLevelStats Where ? = Expansion Value.
-
-Note: See "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats For Better Understanding.
-
 h4. HealthMultiplier
 
 This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Health Value. NPC Have Various HealthMultipliers But Typically They Are Fairly Rounded Values 
@@ -472,8 +428,6 @@ This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calc
 (Note: Dungeon/Raid/World Bosses Normally Have Large Very Rounded Values Normally)
 
 This Is The Multiplier Used Against The BaseHealthExp? Value From "Creature_Template_ClassLevelStats":Creature_Template_ClassLevelStats To Calculate An NPC's Final Health Values.
-
-? = "Expansion":#Expansion Value.
 
 Formula:
 MinLevelHealth = ROUND (BaseHealthExp? * HealthMultiplier)
@@ -488,7 +442,6 @@ Example:
 |"MinLevelHealth":#MinLevelHealth|1403|(Sniff Data)|
 |"MaxLevelHealth":#MaxLevelHealth|1469|(Sniff Data)|
 |"UnitClass":#UnitClass|1|(Sniff Data)|
-|"Expansion":#Expansion|0|Determined From Calculations / Sniff Data / MoP DBC|
 |"HealthMultiplier":#HealthMultiplier|1.15|(Sniff Data)|
 
 Level 35 BaseHealthExp0: 1220 
@@ -522,7 +475,6 @@ Example:
 |"MinLevelMana":#MinLevelMana|5360|(Sniff Data)|
 |"MaxLevelMana":#MaxLevelMana|5360|(Sniff Data)|
 |"UnitClass":#UnitClass|8|(Sniff Data)|
-|"Expansion":#Expansion|0|Determined From Calculations / Sniff Data / MoP DBC|
 |"PowerMultiplier":#ManaMultiplier|2|(Sniff Data)|
 
 Level 35 BaseMana: 2680 
@@ -540,8 +492,6 @@ Damage Calculation Formulas
 MIN MELEE DAMAGE = (((Creature_Template_Classlevelstats.BaseDamageExp? * Creature_Template.DamageVariance) + (Creature_Template_Classlevelstats.BaseMeleeAttackPower / 14)) * (Creature_Template.BaseMeleeAttackTime / 1000)) * Creature_Template.Dmg_Multiplier
 
 MAX MELEE DAMAGE = ((((Creature_Template_Classlevelstats.BaseDamageExp? * Creature_Template.DamageVariance) * 1.5) + (Creature_Template_Classlevelstats.BaseMeleeAttackPower / 14)) * (Creature_Template.BaseMeleeAttackTime / 1000)) * Creature_Template.Dmg_Multiplier
-
-Note: ? = Expansion Value of The NPC
 
 Some NPC Have Damage Multipliers Applied To Increase Their Damage Above That Of a Normal NPC Of The Same Level.
 
@@ -767,10 +717,6 @@ h4. KillCredit2
 Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.
 Note: Some Quests Require Additional Quest Kill Credit
 
-h4. QuestItem1 - QuestItem6
-
-The entry of the "item":item_template that creature drops and is required within an active quest.
-
 h4. MechanicImmuneMask
 
 This makes the NPC immune to specific spell natures. See Spell.dbc at row effect&#95;X&#95;mechanic&#95;id.
@@ -835,11 +781,6 @@ The NPC's default Movement Type.
 |1|Random Movement - Random Move Inside SpawnDist Radius|
 |2|Waypoint Movement - Move Along Waypoint Path Defined|
 
-h4. MovementTemplateId
-
-This Field Is Not Used By The Core 
-(Not Sure What/Why This Would Be Used For If It Was)
-
 h4. TrainerType
 
 If the NPC is a Trainer (Has Trainer NPCFlag Set), then this field controls what kind of Trainer the NPC is. 
@@ -873,18 +814,19 @@ h4. VendorTemplateId
 
 The id refers to the "npc_vendor_template.":npc_vendor_template.
 
-h4. EquipmentTemplateId
-
-The default ID of the equipment that this creature should display. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
-
-h4. VehicleTemplateId
-
-?????????????
-
 h4. GossipMenuId
 
 Reference to a "gossip&#95;menu&#95;id":gossip_menu.
 
+h4. EquipmentTemplateId
+
+The default ID of the equipment that this creature should display. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
+
+h4. Civilian
+
+|_. ID|_. Comments|
+|0|Regular|
+|1|Civilian|
 
 h4. AIName
 
