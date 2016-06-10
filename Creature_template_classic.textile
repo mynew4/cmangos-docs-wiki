@@ -824,8 +824,10 @@ The default ID of the equipment that this creature should display. See "creature
 
 h4. Civilian
 
+Used to define Honourable/Dishonourable kills.
+
 |_. ID|_. Comments|
-|0|Regular|
+|0|Normal|
 |1|Civilian|
 
 h4. AIName
