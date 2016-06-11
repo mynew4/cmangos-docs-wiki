@@ -745,6 +745,21 @@ To combine immunities just add values. Immune to everything corresponds to the v
 
 h4. SchoolImmuneMask
 
+This makes the NPC immune to specific spell schools.
+
+Uses references from Resistances.dbc.
+
+|_. Bit|_. Type|
+|1|RESISTANCE&#95;PHYSICAL|
+|2|RESISTANCE&#95;HOLY|
+|4|RESISTANCE&#95;FIRE|
+|8|RESISTANCE&#95;NATURE|
+|16|RESISTANCE&#95;FROST|
+|32|RESISTANCE&#95;SHADOW|
+|64|RESISTANCE&#95;ARCANE|
+
+To combine immunities add values.
+
 h4. ResistanceHoly
 
 An NPC's Additional Holy Spell Resistance Value.
