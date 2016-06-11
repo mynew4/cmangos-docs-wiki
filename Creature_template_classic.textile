@@ -69,6 +69,7 @@ h3. Structure
 |"KillCredit1":Creature_template#KillCredit1|int(11) unsigned|NO||0||
 |"KillCredit2":Creature_template#KillCredit2|int(11) unsigned|NO||0||
 |"MechanicImmuneMask":Creature_template#MechanicImmuneMask|int(10) unsigned|NO||0||
+|"SchoolImmuneMask":Creature_template#SchoolImmuneMask|int(10) unsigned|NO||0||
 |"ResistanceHoly":Creature_template#ResistanceHoly|int(10) unsigned|NO||0||
 |"ResistanceFire":Creature_template#ResistanceFire|smallint(5)|NO||0||
 |"ResistanceNature":Creature_template#ResistanceNature|smallint(5)|NO||0||
@@ -741,6 +742,8 @@ Uses references from SpellMechanic.dbc.
 |16384|MECHANIC&#95;BLEED|536870912|MECHANIC&#95;SAPPED|
 
 To combine immunities just add values. Immune to everything corresponds to the value 1073741823.
+
+h4. SchoolImmuneMask
 
 h4. ResistanceHoly
 
