@@ -811,7 +811,7 @@ h4. SchoolImmuneMask
 
 This makes the NPC immune to specific spell schools.
 
-|_. Bitmask|_. Type|_. Bit
+|_. Bitmask|_. Type|_. Bit|
 |1|SPELL&#95;SCHOOL&#95;NORMAL|0|
 |2|SPELL&#95;SCHOOL&#95;HOLY|1|
 |4|SPELL&#95;SCHOOL&#95;FIRE|2|
