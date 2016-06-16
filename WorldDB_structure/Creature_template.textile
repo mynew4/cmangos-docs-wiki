@@ -76,6 +76,7 @@ h3. Structure
 |"QuestItem5":Creature_template#QuestItem5|int(11) unsigned|NO||0||
 |"QuestItem6":Creature_template#QuestItem6|int(11) unsigned|NO||0||
 |"MechanicImmuneMask":Creature_template#MechanicImmuneMask|int(10) unsigned|NO||0||
+|"SchoolImmuneMask":Creature_template#SchoolImmuneMask|int(10) unsigned|NO||0||
 |"ResistanceHoly":Creature_template#ResistanceHoly|int(10) unsigned|NO||0||
 |"ResistanceFire":Creature_template#ResistanceFire|smallint(5)|NO||0||
 |"ResistanceNature":Creature_template#ResistanceNature|smallint(5)|NO||0||
@@ -805,6 +806,21 @@ Uses references from SpellMechanic.dbc.
 |16384|MECHANIC&#95;BLEED|536870912|MECHANIC&#95;SAPPED|
 
 To combine immunities just add values. Immune to everything corresponds to the value 1073741823.
+
+h4. SchoolImmuneMask
+
+This makes the NPC immune to specific spell schools.
+
+|_. Bitmask|_. Type|_. Bit
+|1|SPELL&#95;SCHOOL&#95;NORMAL|0|
+|2|SPELL&#95;SCHOOL&#95;HOLY|1|
+|4|SPELL&#95;SCHOOL&#95;FIRE|2|
+|8|SPELL&#95;SCHOOL&#95;NATURE|3|
+|16|SPELL&#95;SCHOOL&#95;FROST|4|
+|32|SPELL&#95;SCHOOL&#95;SHADOW|5|
+|64|SPELL&#95;SCHOOL&#95;ARCANE|6|
+
+The code is checking the database value against 1 << spellInfo->School so it should match the spell schools defined in the code (SharedDefines.h). Or translated into bits and mask values you can use in the database:
 
 h4. ResistanceHoly
 
