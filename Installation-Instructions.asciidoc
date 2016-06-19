@@ -317,6 +317,8 @@ The CMaNGOS cmake scripts should automatically detect the location of your boost
 
 On most *nix you just have to install boost development libraries from your distribution package repositories.
 
+On debian you can simply install the ++libboost-all-dev++ meta-package.
+
 For more information, see http://www.boost.org/more/getting_started/index.html[here].
 
 Configuring boost (Windows)
