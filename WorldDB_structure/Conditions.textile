@@ -186,6 +186,19 @@ Returns if area_flag is present in current area (if area_flag set != 0) AND if n
 ** value2: class_mask
 Returns if a player is of race (if race_mask set != 0) AND if a player is of class (if class_mask != 0)
 
+|_. Mask|_. Race|
+|1|Human|
+|2|Orc|
+|4|Dwarf|
+|8|Night Elf|
+|16|Undead|
+|32|Tauren|
+|64|Gnome|
+|128|Troll|
+|512|Blood Elf|
+|1024|Draenei|
+
+
 * CONDITION_LEVEL (15)
 ** value1: level
 ** value2: 0: equal to, 1: equal or higher than, 2: equal or less than
