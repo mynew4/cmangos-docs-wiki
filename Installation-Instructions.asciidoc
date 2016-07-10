@@ -303,7 +303,6 @@ Compiling CMaNGOS and ScriptDev2
 
 Installing and Configuring boost (UNIX)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 The CMaNGOS cmake scripts should automatically detect the location of your boost installation, and configure the build accordingly.  If it is not detected, please ensure that your BOOST_ROOT environment variable is set properly.
 
 On most *nix you just have to install boost development libraries from your distribution package repositories.
@@ -411,6 +410,9 @@ You will however still need to manually copy and rename the .conf.dist files to 
 
 Extract files from the client
 -----------------------------
+
+Windows
+~~~~~~~
 * Copy the content of ++C:\Mangos\mangos\contrib\extractor_binary\++ into your ++C:\World of Warcraft++ folder
 * Run ++ExtractResources.sh++ from your ++C:\World of Warcraft++.
 
@@ -422,13 +424,16 @@ You must extract *DBC/maps* and *vmaps* for CMaNGOS to work, *mmaps* are optiona
 
 * When finish, move the folders ++maps++, ++dbc++ and ++vmaps++ - optionally ++mmaps++ - that have been created in your ++C:\World of Warcraft++ to your ++C:\Mangos\run++ (the buildings folder is not required and can be deleted).
 
-On *nix this step is more complicated, you'll have to recompile all extrator tools.
+*nix
+~~~~
+On *nix this step is more complicated, you'll have to recompile all extractor tools.
 
 It is actually suggested to extract the client files from a Windows system.
 You need to copy them (by default configuration) into the directory into which you installed CMaNGOS:
 
  /mangos/run/bin
 
+If you want to stick to *nix or have no Windows system at your disposal see http://cmangos.net/thread-7481-post-46129.html#pid46129[here] (step 11) and http://cmangos.net/thread-7481-post-46306.html#pid46306[here] for information on how to do everything on *nix.
 
 Install databases
 -----------------
