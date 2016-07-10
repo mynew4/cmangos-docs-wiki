@@ -309,7 +309,7 @@ The CMaNGOS cmake scripts should automatically detect the location of your boost
 
 On most *nix you just have to install boost development libraries from your distribution package repositories.
 
-On Debian and Ubuntu you can simply install the ++libboost-all-dev++ meta-package. On Fedora there should be a package named ++boost-devel++ (untested). If you followed the https://github.com/cmangos/issues/wiki/Installation-Instructions#Software requirements (*nix)[Software requirements (*nix)] step above you should have the respective package installed already.
+On Debian and Ubuntu you can simply install the ++libboost-all-dev++ meta-package. On Fedora there should be a package named ++boost-devel++ (untested). If you followed the https://github.com/cmangos/issues/wiki/Installation-Instructions#software-requirements-nix[Software requirements (*nix)] step above you should have the respective package installed already.
 
 For instructions on how to compile boost from source code or general information, see the boost http://www.boost.org/more/getting_started/index.html[Getting Started] guide.
 
