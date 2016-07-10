@@ -23,7 +23,7 @@ Addresses
  * boost: http://www.boost.org[main page]
  * ScriptDev2: http://cmangos.net/forum-32.html[forum] | https://github.com/scriptdev2[SD2 git repositories] | http://qchat.rizon.net/?channels=%23scriptdev2[irc] (irc.rizon.net #scriptdev2)
  * ACID: http://cmangos.net/forum-34.html[forum] | https://github.com/ACID-Scripts[git repositories] | http://qchat.rizon.net/?channels=%23aciddev[irc] (irc.rizon.net #aciddev)
- * UDB: http://udb.no-ip.org/index.php[forum] | https://github.com/unified-db/Database[git repository] 
+ * UDB: http://udb.no-ip.org/index.php[forum] | https://github.com/unified-db/Database[git repository]
  * UDB 4.3.4: http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | https://github.com/UDB-434/Database[git repository]
  * TBC-DB: http://udb.no-ip.org/index.php[forum, scroll down to TBC] | https://github.com/TBC-DB/Database[git repository]
  * YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
@@ -83,7 +83,7 @@ ACID::
   stands for "Advanced Creature Intelligence Database". It is an optional SQL database that handles regular mobs and bosses. ACID and ScriptDev2 complement each other and you should use both. ACID is usually already included in the database shipped by the database providers.
 
 Database::
-  in the context of CMaNGOS installation is usually referring to the world database, which contains all of the content of the game world run by CMaNGOS.  
+  in the context of CMaNGOS installation is usually referring to the world database, which contains all of the content of the game world run by CMaNGOS.
   These are the main database providers that sync up with CMaNGOS:
   - UDB (for WotLK - 3.3.5a)
   - YTDB (for WotLK - 3.3.5a)
@@ -136,7 +136,7 @@ Get the remote data to your system
 
 It is a good idea to start off your installation with some basic directory structure. See the below options depending on your operating system and follow along.
 
-#### For Windows 
+#### For Windows
 
 For this guide we will assume that you will use +C:\Mangos+ as base directory under which you put everything.
 
@@ -301,32 +301,54 @@ For *nix or cmake compile we suggest creating an additional ++build++ folder, th
 Compiling CMaNGOS and ScriptDev2
 --------------------------------
 
-Installing boost
-~~~~~~~~~~~~~~~~
-For instructions on how to compile boost from source code, see http://www.boost.org/more/getting_started/index.html[here].
+Installing and Configuring boost (UNIX)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Windows users who would prefer to simply download the binaries, you can find installers http://sourceforge.net/projects/boost/files/boost-binaries/[here]. You have to download the binaries corresponding to your VisualStudio version (VS2015->msvc-14, VS2013->msvc-12) and your desired architecture (Win32 or x64).
-To make it easy you can put thoses files in your boost path in subfolder named 'lib/win32' for 32 bit version and 'lib/x64' for 64 bit version. Both can be installed together.
-
-If you have already boost in another folder schema you can also define 'BOOST_LIBRARYDIR' to point to the right folder. Then only win32 or x64 will work according to the file you have on that folder.
-
-Configuring boost (UNIX)
-~~~~~~~~~~~~~~~~~~~~~~~~
 The CMaNGOS cmake scripts should automatically detect the location of your boost installation, and configure the build accordingly.  If it is not detected, please ensure that your BOOST_ROOT environment variable is set properly.
 
 On most *nix you just have to install boost development libraries from your distribution package repositories.
 
-On debian you can simply install the ++libboost-all-dev++ meta-package.
+On Debian and Ubuntu you can simply install the ++libboost-all-dev++ meta-package. On Fedora there should be a package named ++boost-devel++ (untested).
 
-For more information, see http://www.boost.org/more/getting_started/index.html[here].
+For instructions on how to compile boost from source code or general information, see the boost http://www.boost.org/more/getting_started/index.html[Getting Started] guide.
 
-Configuring boost (Windows)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you are using cmake to generate a solution and project files, the CMaNGOS cmake scripts should automatically detect the location of your boost installation, and configure the build accordingly.  If it is not detected, please ensure that your BOOST_ROOT environment variable is set properly.  For more information, see http://www.boost.org/more/getting_started/index.html[here].
+Installing and Configuring boost (Windows)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Go to http://sourceforge.net/projects/boost/files/boost-binaries/
+- Select the folder with the highest version number (1.61.0 at the time of this writing)
+- Download the correct version as indicated below *or* the ++boost_x_xx_x-bin-msvc-all-32-64.7z++. If you need the Win32 or x64 version depends on what architecture you would like your compiled server executable to use. For most people x64 is fine.
+ * Note: *This has nothing to do with your Windows version*, apart from the fact that 64bit executables will not run on a 32bit Windows. It is very unlikely you have a 32bit OS but if you want to make sure that you have a 64bit one press <Win>+<Pause>.
+ *  Note: You can install both the Win32 and the x64 binaries into the same directory, in case you want to switch build architectures. Visual Studio will automatically select the correct version.
 
-If you are not using cmake, the built-in project files assume that BOOST_ROOT environment variable is set.  Demonstrating how to set an environment variable is beyond the scope of this document, but numerous examples can be found online.
+[width="40%",cols=">s,^2m,^2e",frame="topbot",options="header"]
+|======================
+|         |Win32                         |x64
+|VS 2013  |boost_x_xx_x-msvc-12.0-32.exe |boost_x_xx_x-msvc-12.0-64.exe
+|VS 2015  |boost_x_xx_x-msvc-14.0-32.exe |boost_x_xx_x-msvc-14.0-64.exe
+|======================
 
-If you are using Visual Studio then http://cmangos.net/thread-7365.html[this] provides an excellent step-by-step guide on how to set up boost for Visual Studio on Windows. Adjust the info in the guide to your version of VS and Windows, of course.
+- Install the downloaded binaries.
+- Go to the *PC Properties* (press *<Win>+<Pause>*)
+- Click on *Advanced System Settings*
+- Click on *Environment Variables*
+- At the bottom under *System variables* click *New*
+ * Name: *BOOST_ROOT*
+ * Value: *C:\local\boost_x_xx_x* _Replace the x with the version number you downloaded, e.g. boost_1_61_0._
++
+--
+  - If you changed the path while installing the binaries, you will have to do that here as well.
+--
+ * Confirm
+
+Additional remarks regarding boost for advanced users (Windows)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you are not using cmake, the built-in project files assume that BOOST_ROOT environment variable is set.
+
+If you have already boost in another folder schema you can also define 'BOOST_LIBRARYDIR' to point to the right folder. Then only win32 or x64 will work according to the file you have on that folder.
+
+If you are using cmake to generate a solution and project files, the CMaNGOS cmake scripts should automatically detect the location of your boost installation, and configure the build accordingly.  If it is not detected, please ensure that your BOOST_ROOT environment variable is set properly.
+
+For instructions on how to compile boost from source code or general information, see the boost http://www.boost.org/more/getting_started/index.html[Getting Started] guide.
 
 Note: In a typical boost installation environment with Visual Studio, the user will configure their Visual Studio property sheets to point to the boost installation.  This will allow boost to be found by all projects on that system.  For information on configuring property sheets, look https://msdn.microsoft.com/en-us/library/669zx6zc.aspx[here].
 
@@ -339,7 +361,7 @@ Compiling CMaNGOS and ScriptDev2 (Windows)
 * Wait for Visual C++ to finish loading.
 * Open the menu "Build" -> "Configuration Manager"
   - Choose "Release" in the drop down box for "Active Solution Configuration"
-  - The drop down box "Active Solution Platform" should already be set to "Win32"
+  - The drop down box "Active Solution Platform" should be set to "Win32" by default. Change it to "x64" if you want to compile 64bit executables. (This setting has to correspond with the boost version you installed.)
   - Close the window
 * Click the menu "Build" -> "Build Solution"
   - This will take some time.
@@ -410,7 +432,7 @@ You need to copy them (by default configuration) into the directory into which y
 
 Install databases
 -----------------
-For this section it is assumed you have already installed your MySQL server, and have a password for "root" user. 
+For this section it is assumed you have already installed your MySQL server, and have a password for "root" user.
 
 To make use of some additional installation helper scripts it is HIGHLY suggested when installing MYSQL you include the command path to the BIN folder (Option during Install). If this option was not available or if you missed it please follow the instructions found http://dev.mysql.com/doc/mysql-windows-excerpt/5.1/en/mysql-installation-windows-path.html[here] before proceeding. If you don't have this configured properly then you will not be able to follow along with the command-line steps below in the guide because the command prompt will not recognize "mysql" as a valid command.
 
@@ -518,7 +540,7 @@ You may actually have to set ++CORE_PATH="../mangos"++ (assuming default paths f
 * Now the helper tool is configured, and you only need to run the helper script, whenever you want to set your world database to a clear state!
 * ++sh ./InstallFullUDB.sh++
 +
-And check the output if the database could be set up correctly. If the helper script complains about not finding the config file, just open InstallFullUDB.sh in a text editor and set 
+And check the output if the database could be set up correctly. If the helper script complains about not finding the config file, just open InstallFullUDB.sh in a text editor and set
 +
 -----------------
 SCRIPT_FILE="./InstallFullDB.sh"
@@ -551,25 +573,25 @@ Example of PSDB_Installer.bat:
 Credits to: Factionwars, Nemok and BrainDedd
 
 What is your MySQL host name?           [localhost]   :
-What is your MySQL user name?           [root]        : 
-What is your MySQL password?            [ ]           : 
+What is your MySQL user name?           [root]        :
+What is your MySQL password?            [ ]           :
 What is your MySQL port?                [3306]        :
-What is your World database name?       [mangos]      : 
-What is your ScriptDev2 database name?  [scriptdev2]  : 
-What is your Characters database name?  [characters]  : 
+What is your World database name?       [mangos]      :
+What is your ScriptDev2 database name?  [scriptdev2]  :
+What is your Characters database name?  [characters]  :
 What is your Realmd database name?      [realmd]      :
 
 This will wipe out your current World database and replace it.
-Do you wish to continue? (y/n) 
+Do you wish to continue? (y/n)
 
 This will wipe out your current ScriptDev2 database and replace it.
-Do you wish to continue? (y/n) 
+Do you wish to continue? (y/n)
 
 This will wipe out your current Characters database and replace it.
-Do you wish to continue? (y/n) 
+Do you wish to continue? (y/n)
 
 This will wipe out your current Realm database and replace it.
-Do you wish to continue? (y/n) 
+Do you wish to continue? (y/n)
 
 This will optimize your current database.
 Do you wish to continue? (y/n)
@@ -659,7 +681,7 @@ You will need to manually update the configuration files within your "run" direc
 The files are:
 * mangosd.conf: Holds configuration for the mangosd executable
 * realmd.conf: Holds configuration for the realmd executable
-* scriptdev2.conf: Holds configuration for ScriptDev2's settings(no longer used and may not exist) 
+* scriptdev2.conf: Holds configuration for ScriptDev2's settings(no longer used and may not exist)
 * (Very optional) ahbot.conf: Holds configuration for AHBot (by default disabled)
 
 Most important to configure are the database settings. You will need this if you decided to use a different password/user then the "default" combination of mangos/mangos.
@@ -684,7 +706,7 @@ Apply code to realmd database, adapt to your wishes
 Where of course the data must match the configs:
 
 * port (above 8085) must match the value in the mangosd.conf (Config option: "WorldServerPort")
-* id (above 1) must match the value in the mangosd.conf (Config option: "RealmID") 
+* id (above 1) must match the value in the mangosd.conf (Config option: "RealmID")
 
 
 Configuring your WoW-Client
