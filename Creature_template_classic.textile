@@ -339,6 +339,11 @@ This Field Controls the Application Of Flags That Controls Certain NPC Specific 
 |1024|CREATURE&#95;FLAG&#95;EXTRA&#95;GUARD|creature is a guard, for Zone under attack announce if guard death|
 |2048|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;TALKTO&#95;CREDIT|creature doesn't give quest-credits when talked to (temporarily flag).|
 |4096|CREATURE&#95;FLAG&#95;EXTRA&#95;ACTIVE|creature is loaded and active on server startup, doesn't require players to activate its respective grid.|
+|8192|CREATURE&#95;EXTRA&#95;FLAG&#95;MMAP&#95;FORCE&#95;ENABLE|creature is forced to use MMaps.|
+|16384|CREATURE&#95;EXTRA&#95;FLAG&#95;MMAP&#95;FORCE&#95;DISABLE|creature is forced to NOT use MMaps.|
+|32768|CREATURE&#95;EXTRA&#95;FLAG&#95;WALK&#95;IN&#95;WATER|creature is forced to walk in water even it can swim|
+|65536|CREATURE&#95;EXTRA&#95;FLAG&#95;HAVE&#95;NO&#95;SWIM&#95;ANIMATION|we have to not set "swim" animation or creature will have "no animation"|
+|131072|CREATURE&#95;EXTRA&#95;FLAG&#95;NO&#95;MELEE|creature can't melee|
 
 h4. CreatureTypeFlags
 
