@@ -331,19 +331,19 @@ h4. ExtraFlags
 This Field Controls the Application Of Flags That Controls Certain NPC Specific Attributes.
 
 |_. Bit|_. Name|_. Description|
-|1|CREATURE&#95;FLAG&#95;EXTRA&#95;INSTANCE&#95;BIND|Bounds killer's party to the instance they are in|
-|2|CREATURE&#95;FLAG&#95;EXTRA&#95;CIVILIAN|Makes creature ignore aggro|
-|4|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY|Prohibits creature from parrying|
-|8|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;PARRY&#95;HASTEN|Creatures parries do not speed up its next attack|
-|16|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;BLOCK|Prohibits creature from blocking|
-|32|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;CRUSH|Prohibits creature from dealing crushing blows|
-|64|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;XP&#95;AT&#95;KILL|Makes creature reward no XP at kill|
-|128|CREATURE&#95;FLAG&#95;EXTRA&#95;INVISIBLE|Makes creature invisible for player. Use this for triggers etc.|
-|256|CREATURE&#95;FLAG&#95;EXTRA&#95;NOT&#95;TAUNTABLE|creature is immune to taunt auras and effect attack me|
-|512|CREATURE&#95;FLAG&#95;EXTRA&#95;AGGRO&#95;ZONE|creature sets itself in combat with zone on aggro|
-|1024|CREATURE&#95;FLAG&#95;EXTRA&#95;GUARD|creature is a guard, for Zone under attack announce if guard death|
-|2048|CREATURE&#95;FLAG&#95;EXTRA&#95;NO&#95;TALKTO&#95;CREDIT|creature doesn't give quest-credits when talked to (temporarily flag).|
-|4096|CREATURE&#95;FLAG&#95;EXTRA&#95;ACTIVE|creature is loaded and active on server startup, doesn't require players to activate its respective grid.|
+|1|CREATURE&#95;EXTRA&#95;FLAG&#95;INSTANCE&#95;BIND|Bounds killer's party to the instance they are in|
+|2|CREATURE&#95;EXTRA&#95;FLAG&#95;CIVILIAN|Makes creature ignore aggro|
+|4|CREATURE&#95;EXTRA&#95;FLAG&#95;NO&#95;PARRY|Prohibits creature from parrying|
+|8|CREATURE&#95;EXTRA&#95;FLAG&#95;NO&#95;PARRY&#95;HASTEN|Creatures parries do not speed up its next attack|
+|16|CREATURE&#95;EXTRA&#95;FLAG&#95;NO&#95;BLOCK|Prohibits creature from blocking|
+|32|CREATURE&#95;EXTRA&#95;FLAG&#95;NO&#95;CRUSH|Prohibits creature from dealing crushing blows|
+|64|CREATURE&#95;EXTRA&#95;FLAG&#95;NO&#95;XP&#95;AT&#95;KILL|Makes creature reward no XP at kill|
+|128|CREATURE&#95;EXTRA&#95;FLAG&#95;INVISIBLE|Makes creature invisible for player. Use this for triggers etc.|
+|256|CREATURE&#95;EXTRA&#95;FLAG&#95;NOT&#95;TAUNTABLE|creature is immune to taunt auras and effect attack me|
+|512|CREATURE&#95;EXTRA&#95;FLAG&#95;AGGRO&#95;ZONE|creature sets itself in combat with zone on aggro|
+|1024|CREATURE&#95;EXTRA&#95;FLAG&#95;GUARD|creature is a guard, for Zone under attack announce if guard death|
+|2048|CREATURE&#95;EXTRA&#95;FLAG&#95;NO&#95;TALKTO&#95;CREDIT|creature doesn't give quest-credits when talked to (temporarily flag).|
+|4096|CREATURE&#95;EXTRA&#95;FLAG&#95;ACTIVE|creature is loaded and active on server startup, doesn't require players to activate its respective grid.|
 |8192|CREATURE&#95;EXTRA&#95;FLAG&#95;MMAP&#95;FORCE&#95;ENABLE|creature is forced to use MMaps.|
 |16384|CREATURE&#95;EXTRA&#95;FLAG&#95;MMAP&#95;FORCE&#95;DISABLE|creature is forced to NOT use MMaps.|
 |32768|CREATURE&#95;EXTRA&#95;FLAG&#95;WALK&#95;IN&#95;WATER|creature is forced to walk in water even it can swim|
