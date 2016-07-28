@@ -48,12 +48,6 @@ Commits left over in recent backport run:
 > Also for TBC this change? Depends on not backported code
 > If it still works correctly after changes then yes since its better code
 
-* [wotlk](http://github.com/cmangos/mangos-wotlk/commit/9d20ead): 9d20ead * Schmoozerd (committer Schmoozerd)
-```
-[12494] Fix SMSG_BINDPOINTUPDATE and SMSG_PLAYERBOUND sent data
-```
-> Does this spell require attributes?
-
 * [wotlk](http://github.com/cmangos/mangos-wotlk/commit/659f65e): 659f65e * Schmoozerd (committer Schmoozerd)
 ```
 [12505] Add and implement server-side spell 23770
