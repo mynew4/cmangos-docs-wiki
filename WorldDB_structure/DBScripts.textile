@@ -224,6 +224,10 @@ _Side note: If position is very near to current position, or x=y=z=0, then only 
 ** datalong: Field index to be set.
 ** datalong2: Flag bit(s) to set.
 
+|FIELD TO MODIFY|HEX VALUES|DECIMAL INDEX VALUE|COMMENTS|
+|UNIT&#95;FIELD&#95;FLAGS|0x0006 + 0x0028|46|Modify UnitFlags for NPC (Source Must Be Unit)|
+|UNIT&#95;DYNAMIC&#95;FLAGS|0x0006 + 0x009E|164|Modify DynamicFlags for NPC (Source Must Be Unit)|
+|UNIT&#95;NPC&#95;FLAGS|0x0006 + 0x00A2|168|Modify NPCFlags for NPC (Source Must Be Unit)|
 
 * *SCRIPT&#95;COMMAND&#95;FLAG&#95;REMOVE = 5*
 ** datalong: Field index to be unset.
