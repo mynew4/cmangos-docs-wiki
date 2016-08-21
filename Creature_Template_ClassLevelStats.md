@@ -1,21 +1,21 @@
 This table contains 6 - 10 fields (classic - wrath);
-  `BaseHealthExp?` (0 - 2)
-  `BaseMana`
-  `BaseDamageExp?` (0 - 2)
-  `BaseMeleeAttackPower`
-  `BaseRangedAttackPower`
-  `BaseArmor`
+- `BaseHealthExp?` (0 - 2)
+- `BaseMana`
+- `BaseDamageExp?` (0 - 2)
+- `BaseMeleeAttackPower`
+- `BaseRangedAttackPower`
+- `BaseArmor`
 
 You access them in the core by using;
 `sObjectMgr.GetCreatureClassLvlStats(level, cInfo->UnitClass, cInfo->Expansion)`
 ( cInfo = `GetCreatureInfo()` , classic: `sObjectMgr.GetCreatureClassLvlStats(level, cInfo->UnitClass)` )
 
-BaseHealth
-BaseMana
-BaseDamage
-BaseMeleeAttackPower
-BaseRangedAttackPower
-BaseArmor
+- `BaseHealth`
+- `BaseMana`
+- `BaseDamage`
+- `BaseMeleeAttackPower`
+- `BaseRangedAttackPower`
+- `BaseArmor`
 
 And are included in the following formulas:
 
