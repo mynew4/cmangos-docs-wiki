@@ -8,7 +8,9 @@ This table contains 6 - 10 fields (classic - wrath);
 
 You access them in the core by using;
 - `sObjectMgr.GetCreatureClassLvlStats(level, cInfo->UnitClass, cInfo->Expansion)`
-( cInfo = `GetCreatureInfo()` , classic: `sObjectMgr.GetCreatureClassLvlStats(level, cInfo->UnitClass)` )
+-- ( cInfo = `GetCreatureInfo()` , classic: `sObjectMgr.GetCreatureClassLvlStats(level, cInfo->UnitClass)` )
+
+-
 
 - `BaseHealth`
 - `BaseMana`
