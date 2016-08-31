@@ -96,7 +96,7 @@ If you want a POI (point of interest) to display on the minimap, this is the `en
 
 h4. action&#95;script&#95;id
 
-The ID from the `gossip&#95;scripts` table if this gossip option has a script.
+The ID from the `db&#95;scripts&#95;on&#95;gossip` table if this gossip option has a script.
 
 h4. box&#95;coded
 
