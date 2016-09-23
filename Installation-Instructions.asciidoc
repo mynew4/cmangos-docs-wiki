@@ -213,8 +213,6 @@ UDB (WotLK)
 
 This will create a new subfolder "Database" in which the SQL-files are located.
 
-* Run ++Windows_Install_Script.bat++ and follow the steps provided by the script. If required you might need to manually provide the details required by the script, by editing the file in notepad.
-
 UDB 4.3.4(CATA)
 ^^^^^^^^^^^^^^^
 * Open ++C:\Mangos++ with git bash.
