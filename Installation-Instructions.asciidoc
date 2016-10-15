@@ -23,7 +23,7 @@ Addresses
  * boost: http://www.boost.org[main page]
  * ScriptDev2: http://cmangos.net/forum-32.html[forum] | https://github.com/scriptdev2[SD2 git repositories] | http://qchat.rizon.net/?channels=%23scriptdev2[irc] (irc.rizon.net #scriptdev2)
  * ACID: http://cmangos.net/forum-34.html[forum] | https://github.com/ACID-Scripts[git repositories] | http://qchat.rizon.net/?channels=%23aciddev[irc] (irc.rizon.net #aciddev)
- * UDB: http://udb.no-ip.org/index.php[forum] | https://github.com/unified-db/Database[git repository]
+ * UDB: http://udb.no-ip.org/index.php[forum] | https://github.com/cmangos/wotlk-db.git[git repository]
  * UDB 4.3.4: http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | https://github.com/UDB-434/Database[git repository]
  * TBC-DB: http://udb.no-ip.org/index.php[forum, scroll down to TBC] | https://github.com/TBC-DB/Database[git repository]
  * YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
@@ -209,7 +209,7 @@ UDB (WotLK)
 ^^^^^^^^^^^
 * Open ++C:\Mangos++ with git bash.
 
- git clone git://github.com/unified-db/Database.git
+ git clone git://github.com/cmangos/wotlk-db.git
 
 This will create a new subfolder "Database" in which the SQL-files are located.
 
