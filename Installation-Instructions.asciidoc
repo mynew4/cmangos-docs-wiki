@@ -434,7 +434,7 @@ You need to copy them (by default configuration) into the directory into which y
 
  /mangos/run/bin
 
-If you want to stick to *nix or have no Windows system at your disposal see http://cmangos.net/thread-7481-post-46129.html#pid46129[here] (step 11) and http://cmangos.net/thread-7481-post-46306.html#pid46306[here] for information on how to do everything on *nix.
+If you want to stick to *nix or have no Windows system at your disposal see http://cmangos.net/thread-7481-post-46129.html#pid46129[here] (step 11) for information on how to do everything on *nix.
 
 Install databases
 -----------------
