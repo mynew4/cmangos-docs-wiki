@@ -26,7 +26,9 @@ Addresses
  * Classic-DB: https://github.com/cmangos/classic-db/issues[forum] | https://github.com/cmangos/classic-db.git[git repository]
  * TBC-DB: https://github.com/cmangos/tbc-db/issues[forum] | https://github.com/cmangos/tbc-db.git[git repository]
  * WOTLK-DB: https://github.com/cmangos/wotlk-db/issues[forum] | https://github.com/cmangos/wotlk-db.git[git repository]
- * Cata-DB (UDB 4.3.4): http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | https://github.com/UDB-434/Database[git repository]
+ * YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
+ * PSDB: http://project-silvermoon.forumotion.com/[forum] | http://subversion.assembla.com/svn/psmdb_wotlk/[svn repository]
+ * UDB 4.3.4: http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | https://github.com/UDB-434/Database[git repository]
 
 Software requirements (Windows)
 -------------------------------
@@ -44,6 +46,7 @@ Some tools:
  * Visual C++ 2013 or newer: https://www.visualstudio.com/free-developer-offers/[Visual Studio Community] (Visual Studio Community 2015 is recommended).
  * Any MySQL server such as http://dev.mysql.com/downloads/mysql/[MySQL server community edition] or http://www.apachefriends.org/en/xampp.html[XAMPP].
  * Any MySQL client (optional, for easy database access) such as http://dev.mysql.com/downloads/workbench/[MySQL Workbench] or http://code.google.com/p/sqlyog/downloads/list[SQLyog]
+ * SVN (very optional, for easy download of alternative (not directly supported by the cmangos team) databases (ytdb / psdb)): http://tortoisesvn.net/downloads[Tortoise SVN].
  * An advanced text editor (optional) such as http://notepad-plus-plus.org/[Notepad++]. Definitely not required but will make editing the configuration files much easier in later steps.
 
 
@@ -87,6 +90,10 @@ Database::
   - WOTLK-DB (for WotLK - 3.3.5a)
   - TBC-DB (for TBC - 2.4.3)
   - Classic-DB (for Classic - 1.12.1)
+ A few other teams also provide databases that work with the cmangos core, and while we here at cmangos don't directly support them they still are a valid choice, and to some a more prefered one.
+  - YTDB (for WotLK - 3.3.5a)
+  - PSDB (for WotLK - 3.3.5a)
+  - UDB 4.3.4 (for Cata - 4.3.4)
 
 World Of Warcraft Client::
   is a client to connect to the server. It's your own copy of the game.
@@ -195,6 +202,46 @@ WotLK-DB
  git clone git://github.com/cmangos/wotlk-db.git
 
 This will create a new subfolder ++wotlk-db++ in which WOTLK-DB SQL-files are located.
+
+YTDB (WotLK)
+^^^^^^^^^^^^
+*On Windows*
+
+* Open ++C:\Mangos++ in the explorer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://svn2.assembla.com/svn/ytdbase/++
+
+*On *nix*
+
+ svn co http://svn2.assembla.com/svn/ytdbase/
+
+This will create a new folder (likely ++ytdbase++) in which YTDB SQL-files are located.
+
+YTDB (CATA)
+^^^^^^^^^^^^
+*On Windows*
+
+* Open ++C:\Mangos++ in the explorer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://svn2.assembla.com/svn/ytdbase/Mangos/Cataclysm/++
+
+*On *nix*
+
+ svn co http://svn2.assembla.com/svn/ytdbase/Mangos/Cataclysm ytdbase/
+
+This will create a new folder (likely ++ytdbase++) in which YTDB SQL-files are located.
+
+PSDB (WotLK)
+^^^^^^^^^^^^
+*On Windows*
+
+* Open ++C:\Mangos++ in the explorer, right-click on the right hand side
+* Select "Tortoise SVN Checkout" from the context menu.
+* Insert as SVN-URL: ++http://svn.assembla.com/svn/psmdb_wotlk/++
+
+*On *nix*
+
+ svn co http://svn.assembla.com/svn/psmdb_wotlk/
 
 UDB 4.3.4(CATA)
 ^^^^^^^^^^^^^^^
@@ -430,18 +477,18 @@ This will create a config file named "InstallFullUDB.config", looking like:
 ## Define the host on which the mangos database resides (typically localhost)
 MANGOS_DBHOST="localhost"
 
-## Define the database in which you want to add clean WoTLK-DB
-MANGOS_DBNAME="mangos_wrath"
+## Define the database in which you want to add clean DB
+MANGOS_DBNAME="mangos"
 
 ## Define your username
-MANGOS_DBUSER="mangos_wrath"
+MANGOS_DBUSER="mangos"
 
 ## Define your password (It is suggested to restrict read access to this file!)
-MANGOS_DBPASS="mangos_wrath"
+MANGOS_DBPASS="mangos"
 
 ## Define the path to your core's folder (This is optional)
 ##   If set the core updates located under sql/updates/mangos from this mangos-directory will be added automatically
-CORE_PATH="C:\MangosWrath\mangos-wotlk"
+CORE_PATH=""
 
 ## Define your mysql programm if this differs
 MYSQL="mysql"
@@ -475,8 +522,8 @@ CONFIG_FILE="./InstallFullUDB.config"
 * ++cd ../..++
 
 *Support for TBC-DB.*
-* Support for Windows:
-* Go to C:/Mangos/tbc-db
+
+* Support is for Windows:
 
 Open Windows_Install_Script.bat in your prefered text-editor (notepad++ for instance) - don't run it!
 
@@ -494,7 +541,7 @@ SET RealmdDB="realmd"
 First, change ++SET CMangos="C:\CMangos"++ to ++SET CMangos="C:\Mangos"++
 Secondly, you also wanna correct the ACID location to ++C:\Mangos\tbc-db\ACID++
 
-Unless your changed any of the other settings while setting up the server you want to leave the rest on default.
+Unless you changed any of the other settings while setting up the server you want to leave the rest on default.
 Save the file and run it.
 
 * Support is for Linux (Debian)
@@ -526,6 +573,56 @@ So you need to:
 * Apply the latest release file
 * Apply all following updatepack files (always corepatches before updatepacks)
 * Apply the remaining updates from the core (located in C:\Mangos\mangos\sql\updates
+---------------------------------
+
+Alternative Databases
+---------------------
+
+* Execute PSDB_Installer in psmdb_wotlk svn folder.
+* Type your info when prompted.
+* You can also edit PSDB_Installer.bat for quick re-install of PSDB & Scriptdev2 DB by changing "set   quick=on" & "set pass=".
++
+Example of PSDB_Installer.bat:
++
+-----------------------
+####################################################################################################
+8888888b.   .d8888b.  8888888b.  888888b.  (LK)
+888   Y88b d88P  Y88b 888  "Y88b 888  "88b
+888    888 Y88b.      888    888 888  .88P
+888   d88P  "Y888b.   888    888 8888888K.
+8888888P"      "Y88b. 888    888 888  "Y88b
+888              "888 888    888 888    888
+888        Y88b  d88P 888  .d88P 888   d88P
+888         "Y8888P"  8888888P"  8888888P"
+
+Credits to: Factionwars, Nemok and BrainDedd
+
+What is your MySQL host name?           [localhost]   :
+What is your MySQL user name?           [root]        :
+What is your MySQL password?            [ ]           :
+What is your MySQL port?                [3306]        :
+What is your World database name?       [mangos]      :
+What is your ScriptDev2 database name?  [scriptdev2]  :
+What is your Characters database name?  [characters]  :
+What is your Realmd database name?      [realmd]      :
+
+This will wipe out your current World database and replace it.
+Do you wish to continue? (y/n)
+
+This will wipe out your current ScriptDev2 database and replace it.
+Do you wish to continue? (y/n)
+
+This will wipe out your current Characters database and replace it.
+Do you wish to continue? (y/n)
+
+This will wipe out your current Realm database and replace it.
+Do you wish to continue? (y/n)
+
+This will optimize your current database.
+Do you wish to continue? (y/n)
+####################################################################################################
+-----------------------
+*Support for YTDB Needed.*
 
 
 Fill ScriptDev2 database:
