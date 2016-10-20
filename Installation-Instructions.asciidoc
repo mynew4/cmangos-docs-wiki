@@ -43,7 +43,7 @@ Game client of:
 Some tools:
 
  * Git: https://git-scm.com/[Main Download Page]. Select the "Git Bash Here" and "Use Git Bash only" options from the respective pages of the http://tinypic.com/view.php?pic=v45smh&s=6#.V2vSH_krKHs[install Wizard] in order to follow along with these instructions; otherwise, just use the default install options. __Alternatively, you can install (http://sourceforge.net/projects/gitextensions/files/latest/download)[Git Extensions] instead, which comes with Git, MySYSGit, and KDiff).__
- * Visual C++ 2013 or newer: https://www.visualstudio.com/free-developer-offers/[Visual Studio Community] (Visual Studio Community 2015 is recommended).
+ * Visual C++ 2013 or newer: https://www.visualstudio.com/downloads/[Visual Studio Downloads] (https://www.visualstudio.com/vs/community/[Visual Studio Community] 2015 is recommended, but Express 2015 for Desktop will also do the job and is free, it is however not as good a choice for open source development as CE (Community Edition).
  * Any MySQL server such as http://dev.mysql.com/downloads/mysql/[MySQL server community edition] or http://www.apachefriends.org/en/xampp.html[XAMPP].
  * Any MySQL client (optional, for easy database access) such as http://dev.mysql.com/downloads/workbench/[MySQL Workbench] or http://code.google.com/p/sqlyog/downloads/list[SQLyog]
  * SVN (very optional, for easy download of alternative (not directly supported by the cmangos team) databases (ytdb / psdb)): http://tortoisesvn.net/downloads[Tortoise SVN].
