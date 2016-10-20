@@ -84,13 +84,17 @@ ACID::
   stands for "Advanced Creature Intelligence Database". It is an optional SQL database that handles regular mobs and bosses. ACID and ScriptDev2 complement each other and you should use both. ACID is usually already included in the database shipped by the database providers.
 *AS OF 10/2016 ACID HAS BEEN INTEGRATED INTO THE "DATABASES"*
 
-Database::
-  in the context of CMaNGOS installation is usually referring to the world database, which contains all of the content of the game world run by CMaNGOS.
+
+in the context of CMaNGOS installation is usually referring to the world database, which contains all of the content of the game world run by CMaNGOS.
+
+CMaNGOS databases::
   cMaNGOS provides 3 different content databases depending on the core version:
   - WOTLK-DB (for WotLK - 3.3.5a)
   - TBC-DB (for TBC - 2.4.3)
   - Classic-DB (for Classic - 1.12.1)
- A few other teams also provide databases that work with the cmangos core, and while we here at cmangos don't directly support them they still are a valid choice, and to some a more prefered one.
+
+Alternative databases::
+  A few other teams also provide databases that work with the cmangos core, and while we here at cmangos don't directly support them they still are a valid choice, and to some a more prefered one.
   - YTDB (for WotLK - 3.3.5a)
   - PSDB (for WotLK - 3.3.5a)
   - UDB 4.3.4 (for Cata - 4.3.4)
