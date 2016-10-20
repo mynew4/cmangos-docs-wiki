@@ -542,7 +542,7 @@ SET WorldDB="mangos"
 SET CharactersDB="characters"
 SET RealmdDB="realmd"
 -------------------------------
-First, change ++SET CMangos="C:\CMangos"++ to ++SET CMangos="C:\Mangos"++
+First, change ++SET CMangos="C:\CMangos"++ to ++SET CMangos="C:\Mangos\mangos"++
 Secondly, you also wanna correct the ACID location to ++C:\Mangos\tbc-db\ACID++
 
 Unless you changed any of the other settings while setting up the server you want to leave the rest on default.
