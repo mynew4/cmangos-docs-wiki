@@ -455,11 +455,11 @@ This will create an empty realmd database.
 
 Fill world database:
 ~~~~~~~~~~~~~~~~~~~~
-*Support for Classic-DB & WOTLK-DB.*
+*Support for cmangos databases.*
 
 From the C:\Mangos folder invoke (in Git bash or depending on installation with double-click!)
 
-* ++cd classic-db++ OR ++cd wotlk-db++ (choose the one appliciaple to your situation)
+* ++cd classic-db++, ++cd tbc-db++ OR ++cd wotlk-db++ (choose the one appliciaple to your situation)
 * ++InstallFullUDB.sh++
 +
 This will create a config file named "InstallFullUDB.config", looking like:
@@ -524,40 +524,6 @@ CONFIG_FILE="./InstallFullUDB.config"
 * You can now run the script again, and it should start filling your world database.
 
 * ++cd ../..++
-
-*Support for TBC-DB.*
-
-* Support is for Windows:
-
-Open Windows_Install_Script.bat in your prefered text-editor (notepad++ for instance) - don't run it!
-
-At the top of the document you will see these lines;
-
--------------------------------
-SET CMangos="C:\CMangos"
-SET ACID="C:\CMangos\ACID\acid_tbc"
-SET User="mangos"
-SET Password="mangos"
-SET WorldDB="mangos"
-SET CharactersDB="characters"
-SET RealmdDB="realmd"
--------------------------------
-First, change ++SET CMangos="C:\CMangos"++ to ++SET CMangos="C:\Mangos\mangos"++
-Secondly, you also wanna correct the ACID location to ++C:\Mangos\tbc-db\ACID++
-
-Unless you changed any of the other settings while setting up the server you want to leave the rest on default.
-Save the file and run it.
-
-* Support is for Linux (Debian)
-* Go to root
-
- cd tbc-db
- cd Current_Release
- cd Full_DB
- mysql -uroot -p mangos < ~/tbc-db/Current_Release/Full_DB/TBCDB_1.4.0_cmangos-tbc_s1982_SD2-TBC_s2720.sql ++
-
-* Enter SQL root password
-
 
 Basic concept of manual database filling
 ---------------------------------
