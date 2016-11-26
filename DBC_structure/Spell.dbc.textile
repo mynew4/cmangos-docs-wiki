@@ -296,7 +296,7 @@ Determines specific stances in which caster must be for spell to be successfully
 
 h3. StancesNot
 
-Determines specific stanes in which caster cannot be for spell to be successfully cast.
+Determines specific stances in which caster cannot be for spell to be successfully cast.
 
 TODO: Describe rest of columns
 |16|Targets|uint|
