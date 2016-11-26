@@ -11,6 +11,7 @@ h3. Structure
 
 |*ID*|*Name*|*Type*|
 |0|Entry|uint|
+Unique ID of spell
 |1|Category|uint|
 |2|Dispel|uint|
 |3|Mechanic|uint|
