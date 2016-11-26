@@ -12,3 +12,5 @@ Triggered spells - There are 3 main kinds of triggered spells:
 2. Triggered by another spell (arcane missiles)
 3. Triggered by aura (Talents/Blizzard)
 Triggered spell setting influences many aspects of given spell. It skips cast time, cooldown checking, can target unselectable targets and more. Also these three kinds heavily influence PROCs, meaning in case of wrong usage, spells tend to not proc properly among other things (namely skipping safety checks).
+
+NOTE: Work in progress
