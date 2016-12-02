@@ -45,6 +45,11 @@ If your server is running and you just can't connect to it then there are severa
 
   * Otherwise the address should be the same as the "address" field from the `realmlist` table (realmd database).  
 
+* If your server is hosted on a remote machine and/or you're using an IP address other than 127.0.0.1, then you probably have to update your realm address field in the database
+  * Open the mysql client on your machine (mysql -p)
+  * Run the following command (don't forget to replace the placeholder text with your values): ```UPDATE realmlist SET address='your.ip.address.here' WHERE id='id_of_the_realm_you_want_to_edit';```
+  * You can get a list of all your realms with the following: ```SELECT * FROM realmlist;```
+
 * Ensure that the user account you are trying to log in with is created:
   * See the [Installation Instructions](https://github.com/cmangos/issues/wiki/Installation-Instructions).
   * To add an account, type the below line directly into the server command prompt (mangosd) replacing $accountName with the name of the account and $accountPassword with the password to be used:  
