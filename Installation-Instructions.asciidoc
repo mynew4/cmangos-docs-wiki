@@ -341,6 +341,7 @@ Compiling CMaNGOS and ScriptDev2 (Windows)
   - This will take some time.
   - You might get some warning messages. Don't worry about it, that's normal.
   - You must not get any error messages, although if you do so, you could click the menu "Build" -> "Clean Solution" to restart the compile.
+  - If you get error messages saying some boost files cannot be found, you may need to restart your Visual Studio and/or your computer for the environment variables to be set.
 
 If you cannot solve an error, please use the official forums or IRC channels to ask for help
 
