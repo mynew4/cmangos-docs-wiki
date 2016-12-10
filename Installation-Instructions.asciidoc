@@ -438,6 +438,14 @@ From the C:\Mangos folder invoke (in Git bash):
 +
 This will create and fill the Mangos database with some values.
 
+Initialize DBC data
+~~~~~~~~~~~~~~~~~~~
+From the C:\Mangos folder invoke (in Git bash):
+
+* ++mysql -uroot -p mangos < mangos/sql/base/dbc/*.sql++
++
+This will create and fill in Mangos database the imported DBC data.
+
 Initialize characters database:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 From the C:\Mangos folder invoke (in Git bash):
