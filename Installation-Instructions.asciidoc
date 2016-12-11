@@ -469,9 +469,9 @@ Fill world database:
 From the C:\Mangos folder invoke (in Git bash or depending on installation with double-click!)
 
 * ++cd classic-db++, ++cd tbc-db++ OR ++cd wotlk-db++ (choose the one appliciaple to your situation)
-* ++InstallFullUDB.sh++
+* ++InstallFullDB.sh++
 +
-This will create a config file named "InstallFullUDB.config", looking like:
+This will create a config file named "InstallFullDB.config", looking like:
 +
 -----------------------
 ####################################################################################################
@@ -518,16 +518,16 @@ CORE_PATH="/c/Mangos/mangos"
 (for *nix /home/mangos/mangos)
 -----------------------
 *
-You may actually have to set ++CORE_PATH="../mangos"++ (assuming default paths from this guide), if the tilde is not properly resolved into your home folder path, causing InstallFullUDB.sh to complain about not finding "/home/mangos/mangos". Tested on openSUSE 12.3.
+You may actually have to set ++CORE_PATH="../mangos"++ (assuming default paths from this guide), if the tilde is not properly resolved into your home folder path, causing InstallFullDB.sh to complain about not finding "/home/mangos/mangos". Tested on openSUSE 12.3.
 
 * Now the helper tool is configured, and you only need to run the helper script, whenever you want to set your world database to a clear state!
-* ++sh ./InstallFullUDB.sh++
+* ++sh ./InstallFullDB.sh++
 +
-And check the output if the database could be set up correctly. If the helper script complains about not finding the config file, just open InstallFullUDB.sh in a text editor and set
+And check the output if the database could be set up correctly. If the helper script complains about not finding the config file, just open InstallFullDB.sh in a text editor and set
 +
 -----------------
 SCRIPT_FILE="./InstallFullDB.sh"
-CONFIG_FILE="./InstallFullUDB.config"
+CONFIG_FILE="./InstallFullDB.config"
 -----------------
 
 * You can now run the script again, and it should start filling your world database.
