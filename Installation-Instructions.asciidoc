@@ -391,6 +391,8 @@ Extract files from the client
 Windows
 ~~~~~~~
 * Copy the content of ++C:\Mangos\mangos\contrib\extractor_binary\++ into your ++C:\World of Warcraft++ folder
+* Copy the pre-compiled ++C:\Mangos\mangos\contrib\extractor\ad.exe++ binary, as well.
+* The GitHub repository does *not* currently contain pre-compiled binaries for vmap_assembler and vmap_extractor. You'll need to build these yourself (source code and VS solution files are in appropriately-named sub-folders of C:\Mangos\mangos\contrib), and copy the executable files created into your ++C:\World of Warcraft++ folder.
 * Run ++ExtractResources.sh++ from your ++C:\World of Warcraft++.
 
 For this you can open a "Git Bash" on your C:\World of Warcraft folder and type ++ExtractResources.sh++
