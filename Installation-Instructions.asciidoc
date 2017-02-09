@@ -448,6 +448,13 @@ From the C:\Mangos folder invoke (in Git bash):
 +
 This will create and fill in Mangos database the imported DBC data.
 
+On *nix you may want to use the following two scripted commands:
+
+* ++for sql_file in `ls mangos/sql/base/dbc/original_data/*.sql`; do mysql -uroot -p --database=mangos < $sql_file ; done++
+
+* ++for sql_file in `ls mangos/sql/base/dbc/cmangos_fixes/*.sql`; do mysql -uroot -p --database=mangos < $sql_file ; done++
+
+
 Initialize characters database:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 From the C:\Mangos folder invoke (in Git bash):
