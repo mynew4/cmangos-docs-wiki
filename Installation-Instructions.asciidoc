@@ -491,7 +491,7 @@ This will create a config file named "InstallFullDB.config", looking like:
 #   MANGOS_DBNAME:	Your MANGOS database schema
 #   MANGOS_DBUSER:	Your MANGOS username
 #   MANGOS_DBPASS:	Your MANGOS password
-#   CORE_PATH:    	Your path to core's directory (OPTIONAL: Use if you want to apply remaining core updates automatically)
+#   CORE_PATH:    	Your path to core's directory
 #   MYSQL:        	Your mysql command (usually mysql)
 #
 ####################################################################################################
@@ -508,7 +508,7 @@ MANGOS_DBUSER="mangos"
 ## Define your password (It is suggested to restrict read access to this file!)
 MANGOS_DBPASS="mangos"
 
-## Define the path to your core's folder (This is optional)
+## Define the path to your core's folder
 ##   If set the core updates located under sql/updates/mangos from this mangos-directory will be added automatically
 CORE_PATH=""
 
