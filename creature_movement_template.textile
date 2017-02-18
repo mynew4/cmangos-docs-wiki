@@ -64,6 +64,7 @@ h4. spell
 h4. wpguid
 
 h4. orientation
+Setting this field to 100 means the creature will not change its orientation upon reaching the waypoint.
 
 h4. model1
 
