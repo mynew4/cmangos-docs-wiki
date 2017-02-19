@@ -8,13 +8,13 @@ h3. Structure
 
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":Game_event_creature_data#guid|int(11) unsigned|NO|PRI|||
-|"entry_id":Game_event_creature_data#id|mediumint(8) unsigned|NO|PRI|||
+|"guid":Game_event_creature_data#guid|int(10) unsigned|NO|PRI|||
+|"entry_id":Game_event_creature_data#id|mediumint(8) unsigned|NO||||
 |"modelid":Game_event_creature_data#modelid|mediumint(8) unsigned|NO||0||
 |"equipment_id":Game_event_creature_data#equipment_id|mediumint(8) unsigned|NO||0||
 |"spell_start":Game_event_creature_data#spell_start|mediumint(8) unsigned|NO||0||
 |"spell_end":Game_event_creature_data#spell_end|mediumint(8) unsigned|NO||0||
-|"event":Game_event_creature_data#event|mediumint(9) unsigned|NO||0||
+|"event":Game_event_creature_data#event|mediumint(5) unsigned|NO|PRI|0||
 
 
 h3. Description of the fields
