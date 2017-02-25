@@ -1,1 +1,1 @@
-# REDIRECT "creature_movement_template":creature_movement_template
+# REDIRECT "Creature_movement_(template)":https://github.com/cmangos/issues/wiki/Creature_movement_(template)
