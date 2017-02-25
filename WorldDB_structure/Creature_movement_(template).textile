@@ -34,7 +34,7 @@ h3. Description of the fields
 h4. entry/id
 
 The GUID of the creature if creature_movement. See "creature.guid":creature#guid .
-The entry of the creature if creature_movement_template. See "creature_template.guid":Creature_template#Entry .
+The entry of the creature if creature_movement_template. See "creature_template.entry":Creature_template#Entry .
 
 h4. point
 
@@ -80,7 +80,9 @@ The spell ID that the creature will cast once it reaches the waypoint. The spell
 
 h4. orientation
 
-The orientation the creature will face once it reaches the waypoint. (North = 0.0; South = pi (3.14159))
+The orientation the creature will face once it reaches the waypoint. 
+(North = 0.0; South = pi (3.14159))
+
 Setting this field to 100 means the creature will not change its orientation upon reaching the waypoint.
 
 h4. model1
