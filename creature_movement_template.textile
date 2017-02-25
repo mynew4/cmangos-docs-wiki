@@ -10,23 +10,23 @@ h3. Structure
 
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":Creature_movement_(template)#id|int(10) unsigned|NO|PRI|0||
-|"point":Creature_movement_(template)#point|int(10) unsigned|NO|PRI|0||
-|"position_x":Creature_movement_(template)#position_x|float|NO||0||
-|"position_y":Creature_movement_(template)#position_y|float|NO||0||
-|"position_z":Creature_movement_(template)#position_z|float|NO||0||
-|"waittime":Creature_movement_(template)#waittime|int(5) unsigned|NO||0||
-|"script_id":Creature_movement_(template)#script_id|mediumint(8) unsigned|NO||0||
-|"text1":Creature_movement_(template)#text|int(11)|NO||0|Obsolete, Do not use this Field|
-|"text2":Creature_movement_(template)#text|int(11)|NO||0|Obsolete, Do not use this Field|
-|"text3":Creature_movement_(template)#text|int(11)|NO||0|Obsolete, Do not use this Field|
-|"text4":Creature_movement_(template)#text|int(11)|NO||0|Obsolete, Do not use this Field|
-|"text5":Creature_movement_(template)#text|int(11)|NO||0|Obsolete, Do not use this Field|
-|"emote":Creature_movement_(template)#emote|int(10) unsigned|YES||0|Obsolete, Do not use this Field|
-|"spell":Creature_movement_(template)#spell|int(5) unsigned|YES||0|Obsolete, Do not use this Field|
-|"orientation":Creature_movement_(template)#orientation|float|YES||0||
-|"model1":Creature_movement_(template)#model1|int(11)|YES||0|Obsolete, Do not use this Field|
-|"model2":Creature_movement_(template)#model2|int(11)|YES||0|Obsolete, Do not use this Field|
+|"entry":creature_movement_template#id|int(10) unsigned|NO|PRI|0||
+|"point":creature_movement_template#point|int(10) unsigned|NO|PRI|0||
+|"position_x":creature_movement_template#position_x|float|NO||0||
+|"position_y":creature_movement_template#position_y|float|NO||0||
+|"position_z":creature_movement_template#position_z|float|NO||0||
+|"waittime":creature_movement_template#waittime|int(5) unsigned|NO||0||
+|"script_id":creature_movement_template#script_id|mediumint(8) unsigned|NO||0||
+|"text1":creature_movement_template#text|int(11)|NO||0|Obsolete, Do not use this Field|
+|"text2":creature_movement_template#text|int(11)|NO||0|Obsolete, Do not use this Field|
+|"text3":creature_movement_template#text|int(11)|NO||0|Obsolete, Do not use this Field|
+|"text4":creature_movement_template#text|int(11)|NO||0|Obsolete, Do not use this Field|
+|"text5":creature_movement_template#text|int(11)|NO||0|Obsolete, Do not use this Field|
+|"emote":creature_movement_template#emote|int(10) unsigned|YES||0|Obsolete, Do not use this Field|
+|"spell":creature_movement_template#spell|int(5) unsigned|YES||0|Obsolete, Do not use this Field|
+|"orientation":creature_movement_template#orientation|float|YES||0||
+|"model1":creature_movement_template#model1|int(11)|YES||0|Obsolete, Do not use this Field|
+|"model2":creature_movement_template#model2|int(11)|YES||0|Obsolete, Do not use this Field|
 
 
 h3. Description of the fields
