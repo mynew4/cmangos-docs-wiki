@@ -10,7 +10,7 @@ h3. Structure
 
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":creature_movement_template#id|int(10) unsigned|NO|PRI|0||
+|"entry":creature_movement_template#entry|int(10) unsigned|NO|PRI|0||
 |"point":creature_movement_template#point|int(10) unsigned|NO|PRI|0||
 |"position_x":creature_movement_template#position_x|float|NO||0||
 |"position_y":creature_movement_template#position_y|float|NO||0||
