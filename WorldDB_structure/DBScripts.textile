@@ -136,7 +136,7 @@ The following commands can be used:
 |32|PAUSE&#95;WAYPOINTS|Pause or unpause waypoint movement.|
 |33|XP&#95;USER|Enable or disable experience gain for a player.|
 |34|TERMINATE&#95;CONDITION|Stop script execution when a give condition is met.|
-|35|SEND&#95;AI&#95;EVENT&#95;AROUND|Send a give AI event for EventAI around the source with a given radius.|
+|35|SEND&#95;AI&#95;EVENT|Send a give AI event for EventAI around the source with a given radius.|
 |36|SET&#95;FACING|Turn resulting source to resulting target.|
 |37|MOVE&#95;DYNAMIC|Move resulting source to a random point around resulting target or to resulting target.|
 |38|SEND&#95;MAIL|Send mail from resulting source to resulting target.|
@@ -426,9 +426,9 @@ _Side note: Only available on wotlk version._
 |!(data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL)|Terminate when condition is true.|
 |data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL|Terminate when condition is false.|
 
-* *SCRIPT&#95;COMMAND&#95;SEND&#95;AI&#95;EVENT&#95;AROUND = 35*
-** datalong: AI event id. Only EventAI events are accepted.
-** datalong2: Radius.
+* *SCRIPT&#95;COMMAND&#95;SEND&#95;AI&#95;EVENT = 35*
+** datalong: AI event id. Only EventAI events are accepted. Supported types see CreatureAI.h enum AIEventType.
+** datalong2: Radius. If radius isn't provided and the target is a creature, then send AIEvent to target.
 ** Source and target must be a creature.
 
 * *SCRIPT_COMMAND_SET_FACING = 36*
