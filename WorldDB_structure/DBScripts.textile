@@ -201,6 +201,7 @@ Depending on what command was used, the meaning and use for the following fields
 
 * *SCRIPT&#95;COMMAND&#95;EMOTE = 1*
 ** datalong: The emote ID to play.
+** dataint1-dataint4 optionally, for random selection of emote
 ** Resulting source must be a unit.
 
 
