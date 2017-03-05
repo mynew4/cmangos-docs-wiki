@@ -6,7 +6,6 @@ This table has all the templates for every instance. When a group enters an inst
 
 h3. Structure
 
-
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |"map":Instance_template#map|int(10) unsigned|NO|PRI|||
 |"parent":Instance_template#parent|int(11) unsigned|NO||||
@@ -19,7 +18,7 @@ h3. Structure
 |"startLocZ":Instance_template#startlocz|float|YES||None||
 |"startLocO":Instance_template#startloco|float|YES||None||
 |"script":Instance_template#script|varchar(255)|NO||||
-
+|"mountAllowed":Instance_template#mountAllowed|tinyint(3) unsigned|NO||0||
 
 h3. Description of the fields
 
@@ -66,3 +65,7 @@ Defines the starting orientation that players will face. (if different from defa
 h4. script
 
 The name of the instance script that the instance will use and apply (if any).
+
+h4. mountAllowed
+
+Possible or not use mounts in this instance.
