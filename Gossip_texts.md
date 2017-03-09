@@ -1,0 +1,38 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `gossip_texts` table
+
+This table is used for displaying gossip when a player talks to an NPC. (Used in SD2 only, for normal gossip implementation see "Gossip_menu":Gossip_menu)
+
+h3. Structure
+
+|*Field*|*Type*|*Attributes*|*Key*|*Null*|*Default*|
+|"entry":Gossip_texts#entry|mediumint(8)|unsigned|PRI|NO|0|
+|"content_default":Gossip_texts#content_default|text|signed||YES|NULL|
+|"content_loc1":Gossip_texts#content_locX|text|signed||NO|NULL|
+|"content_loc2":Gossip_texts#content_locX|text|signed||NO|NULL|
+|"content_loc3":Gossip_texts#content_locX|text|signed||NO|NULL|
+|"content_loc4":Gossip_texts#content_locX|text|signed||NO|NULL|
+|"content_loc5":Gossip_texts#content_locX|text|signed||NO|NULL|
+|"content_loc6":Gossip_texts#content_locX|text|signed||NO|NULL|
+|"content_loc7":Gossip_texts#content_locX|text|signed||NO|NULL|
+|"content_loc8":Gossip_texts#content_locX|text|signed||NO|NULL|
+|"comment":Gossip_texts#comment|text|signed||NO|NULL|
+
+h3. Description of the fields
+
+h4. entry
+
+ID of the text. This has the be negative and in the range -3000000 -> -3999999.
+
+h4. content_default
+
+The text shown if no localized text is available?
+
+h4. content_locX
+
+Localized texts. See "Localization_lang":Localization_lang
+
+h4. comment
+
+
