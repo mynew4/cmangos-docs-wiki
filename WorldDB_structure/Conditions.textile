@@ -85,6 +85,7 @@ This is a description of the values in "type":Conditions#type
 |35|CONDITION_GENDER|Checks the gender of a player|
 |36|CONDITION_DEAD_OR_AWAY||
 |37|CONDITION_CREATURE_IN_RANGE||
+|38|CONDITION_PVP_SCRIPT||
 
 
 (&#42;) Meta-Condition types CONDITION_AND (-1) and CONDITION_OR (-2) which are used as: value1 (as condition_entry) AND / OR value2 (as condition_entry). With these meta-conditions it is possible to create tree like and very complicated combined conditions (like HasAura && (HasItem || HasQuest))
@@ -319,3 +320,8 @@ If the optional_range is provided the condition will also fail if the player[s] 
 ** value1: creatureEntry
 ** value2: range
 Returns if the creature of the given entry is found in the given range
+
+* CONDITION_PVP_SCRIPT (38)
+** value1: area_id of the outdoor PvP script
+** value2: opvp_condition_id (defined in the actual script)
+Returns the result of the outdoor PvP script function IsConditionFulfilled (which must be implemented for the required scripts)
