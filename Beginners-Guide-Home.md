@@ -3,7 +3,7 @@ This guide is designed to help you understand the basics of how CMaNGOS works an
 
 This guide will not show you how to _do_ anything directly but it should prepare you to follow the Installation Instructions with a little more knowledge and understanding of what is going on. To get started click on the "Introduction" link below.
 
-###Index<br />
+### Index
 **The Basics:**<br />
 -----------------------------------------------------------------------------------------------------<br />
 1. [Introduction](https://github.com/cmangos/issues/wiki/Beginners-Guide-Introduction)<br />
