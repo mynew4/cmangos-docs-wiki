@@ -378,9 +378,19 @@ More Examples Can Be Found At: UpdateFields.h In Core
 
 
 * *SCRIPT&#95;COMMAND&#95;STAND&#95;STATE = 28*
-** datalong: stand state (enum UnitStandStateType)
 ** Resulting source must be a creature.
+** datalong: stand state (enum UnitStandStateType)
 
+|UNIT_STAND_STATE_STAND|0|
+|UNIT_STAND_STATE_SIT|1|
+|UNIT_STAND_STATE_SIT_CHAIR|2|
+|UNIT_STAND_STATE_SLEEP|3|
+|UNIT_STAND_STATE_SIT_LOW_CHAIR|4|
+|UNIT_STAND_STATE_SIT_MEDIUM_CHAIR|5|
+|UNIT_STAND_STATE_SIT_HIGH_CHAIR|6|
+|UNIT_STAND_STATE_DEAD|7|
+|UNIT_STAND_STATE_KNEEL|8|
+|UNIT_STAND_STATE_CUSTOM|9|
 
 * *SCRIPT&#95;COMMAND&#95;MODIFY&#95;NPC&#95;FLAGS = 29*
 ** Resulting source must be a creature.
