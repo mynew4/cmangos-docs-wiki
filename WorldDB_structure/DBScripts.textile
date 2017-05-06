@@ -196,7 +196,7 @@ Depending on what command was used, the meaning and use for the following fields
 
 * *SCRIPT&#95;COMMAND&#95;TALK = 0*
 ** All information of the text (type, language, associated sound, emote) is stored in the "db_script_string.":db_script_string table
-** datalong: dbscript_string_template ID - will randomize between all db_script_strings in given template.
+** datalong: "dbscript_string_template.id":dbscript_string_template#id - will randomize between all db_script_strings in given template.
 ** dataint - 4: The text ID that the creature will say. See "db_script_string.":db_script_string. ID must be between 2000000000 and 2000010000. In case more then only dataint field is filled the texts will be used randomly.
 
 
