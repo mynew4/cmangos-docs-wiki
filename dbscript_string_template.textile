@@ -1,0 +1,23 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `dbscript_string_template` table
+
+Use this table to set up an infinite amount of texts to be randomized in the same action. Used in SCRIPT_COMMAND_TALK 
+
+h3. Structure
+
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"id":dbscript_string_template#id|int(11) unsigned|NO|PRI|AUTO_INCREMENT||
+|"string_id":dbscript_string_template#string_id|int(11)|NO|PRI|0||
+
+
+h3. Description of the fields
+
+h4. id
+
+The ID of the template. This is the ID you need to use in SCRIPT_COMMAND_TALK.datalong
+
+h4. string_id
+
+The string entry from "db_script_string.entry":Db_script_string#entry
