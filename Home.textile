@@ -33,3 +33,4 @@ h3. Advanced
 * "Classic Backporting TODO TBC Commits":https://github.com/cmangos/issues/wiki/Classic-Backporting-TODO-TBC-Commits
 * "TBC Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/TBC-Backporting-TODO-WOTLK-Commits
 * "Cata Backporting TODO WOTLK Commits":https://github.com/cmangos/issues/wiki/Cata-Backporting-TODO-WOTLK-Commits
+* "Notes on MinGW toolchains for developers":https://github.com/cmangos/issues/wiki/Notes-on-MinGW-toolchains-for-developers
