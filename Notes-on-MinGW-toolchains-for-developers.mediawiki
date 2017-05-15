@@ -7,7 +7,8 @@ Keep in mind, that MinGW toolchains have enthusiast and DIY meaning to them, man
 
 
 
-MinGW toolchains are ports of GCC for Windows. GCC can offer a number of advantages over MSVC++ even on Windows, which include, but not limited to:* Open source and licensing policy. More details at http://mingw.org/license
+MinGW toolchains are ports of GCC for Windows. GCC can offer a number of advantages over MSVC++ even on Windows, which include, but not limited to:
+* Open source and licensing policy. More details at http://mingw.org/license
 * GCC tends to implement newer C++ standards and drafts much faster than MSVC++.<br/>It was brought to light in the early 2010s, with Visual C++ often lagging years behind with C++11 features, MinGW gained a large following as a result of that.
 * It offers a much higher customizability in terms of build options than MSVC++.<br/>An expert with a fresh GCC version can try to take advantages of new architectures like AMD's Zen by rebuilding the program and it's dependencies with new instruction sets.
 
