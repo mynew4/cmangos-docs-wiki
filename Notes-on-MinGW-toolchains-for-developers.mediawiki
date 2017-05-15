@@ -8,6 +8,8 @@ Keep in mind, that MinGW toolchains have enthusiast and DIY meaning to them, man
 
 
 MinGW toolchains are ports of GCC for Windows. GCC can offer a number of advantages over MSVC++ even on Windows, which include, but not limited to:
+
+
 * Open source and licensing policy. More details at http://mingw.org/license
 * GCC tends to implement newer C++ standards and drafts much faster than MSVC++.<br/>It was brought to light in the early 2010s, with Visual C++ often lagging years behind with C++11 features, MinGW gained a large following as a result of that.
 * It offers a much higher customizability in terms of build options than MSVC++.<br/>An expert with a fresh GCC version can try to take advantages of new architectures like AMD's Zen by rebuilding the program and it's dependencies with new instruction sets.
@@ -72,7 +74,7 @@ Second most important quality, deciding whether its fit for development and debu
 
 * Architecture: 64bit target toolchains only.
 * Speed: Fastest for 64bit, directly competes with MSVC++.
-* Compatibility: Very good, compatible with MSVC symbol mangling.
+* Compatibility: Very good, compatible with MSVC++ symbol mangling.
 * Origin: A variety of standards. 32bit SEH option for MinGW is not available due to patent issues.
 * Usage recommendation: Best option overall for 64bit for all purposes due to balance of speed and compatibility.
 
@@ -84,11 +86,11 @@ Second most important quality, deciding whether its fit for development and debu
 
 == MinGW Distribution ==
 
-Once you've decided with the variant you want, all thats left to do is pick your MinGW distribution.
+Once you've decided which is the variant you want, all thats left to do is pick your MinGW distribution.
 
 At the time of the writing, the most frequently updated distribution project is MinGW-w64, which seems to be recognized as the distribution of choice for many major projects (such as popular Linux distributions and Qt). Distributions from MinGW team and TDM-GCC are less frequently updated.
 
-If you are cross-compiling on Linux, you should probably stick to versions found in your packet manager, so you can ask maintainers for support if any issue arises.
+If you are cross-compiling on Linux, you should probably stick to versions found in your package manager, so you can ask maintainers for support if any issue arises.
 
 
 = Some popular IDE software with C++ and MinGW support =
@@ -116,12 +118,6 @@ In this example we will use Boost 1.64.0.
 # Once configuration is complete, let's build a static Boost library into a fresh clean folder, let's say "C:\Boost":<br/>start /b /wait b2 install --prefix="C:\Boost" --build-type=complete toolset=gcc variant=release link=static threading=multi runtime-link=static
 # After build is successfully done, you need to add it to your MinGW:<br/>Move "boost" directory from "C:\Boost\include\boost-1_64" into "include" subdirectory of your MinGW toolchain;<br/>Move all library files (*.a) from "C:\Boost\lib" into "lib" subdirectory of your MinGW toolchain.
 # Done. Your MinGW toolchain now contains a ready-to-use Boost library. You can now safely remove the now empty folder we used to built into ("C:\Boost").
-
-
-
-
-
-
 
 
 
