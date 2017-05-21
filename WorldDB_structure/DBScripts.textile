@@ -296,7 +296,17 @@ More Examples Can Be Found At: UpdateFields.h In Core
 
 * *SCRIPT&#95;COMMAND&#95;CAST&#95;SPELL = 15*
 ** datalong: "Spell ID":Spell.dbc#Content.
-** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will make the cast triggered.
+** datalong2: Cast Flags. Possible values in enum TriggerCastFlags
+** dataint1-dataint4 optional. If some of these are set to a spell id, a random spell out of datalong, datint1, ..,dataintX is cast.
+
+|_. Name|_. Value|_. Comment|
+|TRIGGERED_NONE|0|Not Triggered|
+|TRIGGERED_OLD_TRIGGERED|1|Legacy bool support|
+|TRIGGERED_IGNORE_HIT_CALCULATION|2|Will ignore calculating hit in SpellHitResult|
+|TRIGGERED_IGNORE_UNSELECTABLE_FLAG|4|Ignores UNIT_FLAG_NOT_SELECTABLE in CheckTarget|
+|TRIGGERED_INSTANT_CAST|8|Will ignore any cast time set in spell entry|
+|TRIGGERED_AUTOREPEAT|16|Will signal spell system that this is internal autorepeat call|
+|TRIGGERED_IGNORE_UNATTACKABLE_FLAG|32|Ignores UNIT_FLAG_NOT_ATTACKABLE in CheckTarget|
 
 
 * *SCRIPT&#95;COMMAND&#95;PLAY&#95;SOUND = 16*
