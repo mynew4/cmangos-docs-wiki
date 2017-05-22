@@ -467,13 +467,32 @@ h4. PointOpt
 
 h4. DetailsEmote
 
+Emote(s) played by the related NPC when you view the quest details before clicking the "Accept"-button.
+This is found in the SMSG_QUEST_GIVER_QUEST_DETAILS-packet in sniffs.
+
+h4. DetailsEmoteDelay 1-4
+
+Delay from the last DetailsEmote before this one is played (in milliseconds)
+This is found in the SMSG_QUEST_GIVER_QUEST_DETAILS-packet in sniffs.
+
+h4. IncompleteEmote
+
+Emote played by the related NPC when you view the quest details and one or more quest objective is not yet completed.
+
 h4. CompleteEmote
 
 Emote played by the related NPC at the time all quest objects are completed.
+This is found in the SMSG_QUEST_GIVER_REQUEST_ITEMS-packet in sniffs.
 
 h4. OfferRewardEmote
 
 Emote played by the NPC at the time the character is rewarded for the quest.
+This is found in the SMSG_QUEST_GIVER_OFFER_REWARD_MESSAGE-packet in sniffs.
+
+h4. OfferRewardEmote 1-4
+
+Delay from the last OfferRewardEmote before this one is played (in milliseconds)
+This is found in the SMSG_QUEST_GIVER_OFFER_REWARD_MESSAGE-packet in sniffs.
 
 h4. StartScript
 
