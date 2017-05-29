@@ -334,7 +334,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
 
 * *SCRIPT&#95;COMMAND&#95;MOVEMENT = 20*
 ** datalong: Change the movement type of a creature. Possible values: 0 = idle, 1 = random, 2 = waypoint.
-** datalong2: Wander distance (for random movement only).
+** datalong2: Wander distance (for random movement), pathId (for waypoint movement).
 ** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will set random movement around the current position.
 ** Resulting source must be a creature.
 
