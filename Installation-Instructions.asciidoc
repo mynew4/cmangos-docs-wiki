@@ -299,6 +299,7 @@ Installing and Configuring boost (Windows)
 |         |Win32                         |x64
 |VS 2013  |boost_x_xx_x-msvc-12.0-32.exe |boost_x_xx_x-msvc-12.0-64.exe
 |VS 2015  |boost_x_xx_x-msvc-14.0-32.exe |boost_x_xx_x-msvc-14.0-64.exe
+|VS 2017  |boost_x_xx_x-msvc-14.1-32.exe |boost_x_xx_x-msvc-14.1-64.exe
 |======================
 
 - Install the downloaded binaries.
@@ -318,7 +319,7 @@ Additional remarks regarding boost for advanced users (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you are not using cmake, the built-in project files assume that BOOST_ROOT environment variable is set.
 
-If you have already boost in another folder schema you can also define 'BOOST_LIBRARYDIR' to point to the right folder. Then only win32 or x64 will work according to the file you have on that folder.
+If you have already boost in another folder schema you can also define 'BOOST_LIBRARYDIR' to point to the right folder. Then only win32 or x64 will work according to the file you have on that folder. Point BOOST_LIBRARYDIR to the folder where the dll and lib files are, usually a subfolder of your boost root folder, e. g. the subfolder lib32-msvc-14.1.
 
 If you are using cmake to generate a solution and project files, the CMaNGOS cmake scripts should automatically detect the location of your boost installation, and configure the build accordingly.  If it is not detected, please ensure that your BOOST_ROOT environment variable is set properly.
 
@@ -332,6 +333,7 @@ Compiling CMaNGOS and ScriptDev2 (Windows)
 * Open the "sln" file that fits your version of Visual C++
   - mangosdVC120.sln for Visual Studio 2013
   - mangosdVC140.sln for Visual Studio 2015
+  - mangosdVC150.sln for Visual Studio 2017
 * Wait for Visual Studio to finish loading.
 * Open the menu "Build" -> "Configuration Manager"
   - Choose "Release" in the drop down box for "Active Solution Configuration"
@@ -390,9 +392,8 @@ Extract files from the client
 
 Windows
 ~~~~~~~
-* Copy the content of ++C:\Mangos\mangos\contrib\extractor_binary\++ into your ++C:\World of Warcraft++ folder
-* Copy the pre-compiled ++C:\Mangos\mangos\contrib\extractor\ad.exe++ binary, as well.
-* The GitHub repository does *not* currently contain pre-compiled binaries for vmap_assembler and vmap_extractor. You'll need to build these yourself (source code and VS solution files are in appropriately-named sub-folders of C:\Mangos\mangos\contrib), and copy the executable files created into your ++C:\World of Warcraft++ folder.
+* Copy the content of ++C:\Mangos\mangos\contrib\extractor_scripts\++ into your ++C:\World of Warcraft++ folder
+* You'll need to build ad, vmap_assembler, and vmap_extractor in a similar way you compiled CMaNGOS and ScriptDev2 (source code and VS solution files are in appropriately-named sub-folders of C:\Mangos\mangos\contrib), and copy the executable files (ad.exe, vmap_assembler.exe, and vmap_extractor.exe) created into your ++C:\World of Warcraft++ folder.
 * Run ++ExtractResources.sh++ from your ++C:\World of Warcraft++.
 
 For this you can open a "Git Bash" on your C:\World of Warcraft folder and type ++ExtractResources.sh++
