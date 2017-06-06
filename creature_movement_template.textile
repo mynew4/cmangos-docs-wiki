@@ -10,12 +10,13 @@ h3. Structure
 
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":creature_movement_template#entry|int(10) unsigned|NO|PRI|0||
-|"point":creature_movement_template#point|int(10) unsigned|NO|PRI|0||
+|"entry":creature_movement_template#entry|mediumint(8) unsigned|NO|PRI|0||
+|"pathId":creature_movement_template#pathId|int(11) unsigned|NO|PRI|0||
+|"point":creature_movement_template#point|mediumint(8) unsigned|NO|PRI|0||
 |"position_x":creature_movement_template#position_x|float|NO||0||
 |"position_y":creature_movement_template#position_y|float|NO||0||
 |"position_z":creature_movement_template#position_z|float|NO||0||
-|"waittime":creature_movement_template#waittime|int(5) unsigned|NO||0||
+|"waittime":creature_movement_template#waittime|int(10) unsigned|NO||0||
 |"script_id":creature_movement_template#script_id|mediumint(8) unsigned|NO||0||
 |"text1":creature_movement_template#text|int(11)|NO||0|Obsolete, Do not use this Field|
 |"text2":creature_movement_template#text|int(11)|NO||0|Obsolete, Do not use this Field|
@@ -34,6 +35,11 @@ h3. Description of the fields
 h4. entry
 
 The entry of the creature. See "creature_template.entry":Creature_template#Entry .
+
+h4. pathId
+
+0 means that this is the default path for any creature of the specified template. Any creature summoned, which is not assigned to another path, will start moving on pathId 0.
+Setting this field to any other value allows you to use it for setting different paths to different creatures of the same template in DBScripts and in EventAI.
 
 h4. point
 
