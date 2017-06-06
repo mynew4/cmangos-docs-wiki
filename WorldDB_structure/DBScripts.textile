@@ -268,6 +268,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
 * *SCRIPT&#95;COMMAND&#95;TEMP&#95;SUMMON&#95;CREATURE = 10*
 ** datalong: Entry of the summoned creature from "creature&#95;template.entry":creature_template#entry.
 ** datalong2: Despawn time (MILLIESECONDS). If set to 0 then the creature will be despawned only when killed.
+** datalong3: The "pathId":creature_movement_template#pathId you want the creature to immediately start moving on (if MovementType=2)
 ** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will summon the creature as active object.
 ** dataint: SetRun (bool). 0 = off (default), 1 = on
 ** x: Summon target x coordinate.
@@ -335,6 +336,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
 * *SCRIPT&#95;COMMAND&#95;MOVEMENT = 20*
 ** datalong: Change the movement type of a creature. Possible values: 0 = idle, 1 = random, 2 = waypoint.
 ** datalong2: Wander distance (for random movement), pathId (for waypoint movement).
+** datalong3: "creature_movement_template.pathId":creature_movement_template#pathId (if datalong is 2 = waypoint)
 ** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will set random movement around the current position.
 ** Resulting source must be a creature.
 
