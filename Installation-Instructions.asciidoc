@@ -43,11 +43,14 @@ Game client of:
 Some tools:
 
  * Git: https://git-scm.com/[Main Download Page]. Select the "Git Bash Here" and "Use Git Bash only" options from the respective pages of the http://tinypic.com/view.php?pic=v45smh&s=6#.V2vSH_krKHs[install Wizard] in order to follow along with these instructions; otherwise, just use the default install options. __Alternatively, you can install (http://sourceforge.net/projects/gitextensions/files/latest/download)[Git Extensions] instead, which comes with Git, MySYSGit, and KDiff).__
- * Visual C++ 2013 or newer: https://www.visualstudio.com/downloads/[Visual Studio Downloads] (https://www.visualstudio.com/vs/community/[Visual Studio Community] 2015 is recommended, but Express 2015 for Desktop will also do the job and is free, it is however not as good a choice for open source development as CE (Community Edition).
+ * CMAKE is isued now to generate visual studio project file as it's are not provided anymore https://cmake.org/[Download it from here].
+ * Visual C++ 2015 or newer: https://www.visualstudio.com/downloads/[Visual Studio Downloads] (https://www.visualstudio.com/vs/community/[Visual Studio Community] 2015 is recommended, but Express 2015 for Desktop will also do the job and is free, it is however not as good a choice for open source development as CE (Community Edition).
  * Any MySQL server such as http://dev.mysql.com/downloads/mysql/[MySQL server community edition] or http://www.apachefriends.org/en/xampp.html[XAMPP].
  * Any MySQL client (optional, for easy database access) such as http://dev.mysql.com/downloads/workbench/[MySQL Workbench] or http://code.google.com/p/sqlyog/downloads/list[SQLyog]
  * SVN (very optional, for easy download of alternative (not directly supported by the cmangos team) databases (ytdb / psdb)): http://tortoisesvn.net/downloads[Tortoise SVN].
  * An advanced text editor (optional) such as http://notepad-plus-plus.org/[Notepad++]. Definitely not required but will make editing the configuration files much easier in later steps.
+
+You can find https://youtu.be/drnlf4UMZ1w[here a video] of how to install Git, Visual Studio and CMAKE.
 
 
 Software requirements (*nix)
@@ -108,6 +111,9 @@ Tools
 
 Git::
   is a free distributed revision control or source code management tool which allows you to easily manage a virtual filesystem. With this tool, you'll download the code from CMaNGOS, ScriptDev2, and ACID.
+
+CMAKE::
+  its the most used tools that help to keep this project cross-platform.
 
 Microsoft Visual Studio::
   is used to created, modify and compile the code using C and C++ programming languages. With this tool, you'll compile CMaNGOS and ScriptDev2 on Windows.
@@ -178,6 +184,8 @@ After having opened Git bash in the right folder, simply type:
  git clone git://github.com/cmangos/mangos-cata.git mangos
 
 Submit this git command with enter/return. This will take a little time to complete, but afterwards you will have created a sub-directory named +mangos+ into which the CMaNGOS sources are cloned.
+
+A simple https://youtu.be/At3VUI9fOq4[video] of the process
 
 
 Get the world-database stuff
@@ -288,8 +296,13 @@ For instructions on how to compile boost from source code or general information
 
 Installing and Configuring boost (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Download prebuild boost binaries. https://youtu.be/lxHTOM9KZak[video]
+- Set BOOST_ROOT environement variable. https://youtu.be/uBe2GIW0Af4[video]
+Step by step::
+
 - Go to http://sourceforge.net/projects/boost/files/boost-binaries/
-- Select the folder with the highest version number (1.61.0 at the time of this writing)
+- Select the folder with the highest version number (1.64.0 at the time of this writing)
 - Download the correct version as indicated below *or* the ++boost_x_xx_x-bin-msvc-all-32-64.7z++. If you need the Win32 or x64 version depends on what architecture you would like your compiled server executable to use. For most people x64 is fine.
  * Note: *This has nothing to do with your Windows version*, apart from the fact that 64bit executables will not run on a 32bit Windows. It is very unlikely you have a 32bit OS but if you want to make sure that you have a 64bit one press <Win>+<Pause>.
  *  Note: You can install both the Win32 and the x64 binaries into the same directory, in case you want to switch build architectures. Visual Studio will automatically select the correct version.
@@ -297,7 +310,6 @@ Installing and Configuring boost (Windows)
 [width="40%",cols=">s,^2e,^2e",frame="topbot",options="header"]
 |======================
 |         |Win32                         |x64
-|VS 2013  |boost_x_xx_x-msvc-12.0-32.exe |boost_x_xx_x-msvc-12.0-64.exe
 |VS 2015  |boost_x_xx_x-msvc-14.0-32.exe |boost_x_xx_x-msvc-14.0-64.exe
 |VS 2017  |boost_x_xx_x-msvc-14.1-32.exe |boost_x_xx_x-msvc-14.1-64.exe
 |======================
@@ -308,7 +320,7 @@ Installing and Configuring boost (Windows)
 - Click on *Environment Variables*
 - At the bottom under *System variables* click *New*
  * Name: *BOOST_ROOT*
- * Value: *C:\local\boost_x_xx_x* _Replace the x with the version number you downloaded, e.g. boost_1_61_0._
+ * Value: *C:\local\boost_x_xx_x* _Replace the x with the version number you downloaded, e.g. boost_1_64_0._
 +
 --
   - If you changed the path while installing the binaries, you will have to do that here as well.
@@ -329,11 +341,15 @@ Note: In a typical boost installation environment with Visual Studio, the user w
 
 Compiling CMaNGOS and ScriptDev2 (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Go to your ++C:\Mangos\mangos\win++ folder
-* Open the "sln" file that fits your version of Visual C++
-  - mangosdVC120.sln for Visual Studio 2013
-  - mangosdVC140.sln for Visual Studio 2015
-  - mangosdVC150.sln for Visual Studio 2017
+An https://youtu.be/KlRM18SVCQA[video] of the build process is now available.
+
+* Launch cmake
+* Set the source bin to C:\Mangos\mangos
+* Set the destination folder to C:\Mangos\mangos\bin\buildir (create that folder if it doesn't exist)
+* Click 'Configure' button and set your compiler version and platform.
+* Select your options then click another time on 'Configure' button
+* Click 'Generate'button
+* Now you can click on 'Open' button or go to C:\Mangos\mangos\bin\buildir and click on the .sln file
 * Wait for Visual Studio to finish loading.
 * Open the menu "Build" -> "Configuration Manager"
   - Choose "Release" in the drop down box for "Active Solution Configuration"
@@ -393,7 +409,7 @@ Extract files from the client
 Windows
 ~~~~~~~
 * Copy the content of ++C:\Mangos\mangos\contrib\extractor_scripts\++ into your ++C:\World of Warcraft++ folder
-* You'll need to build ad, vmap_assembler, and vmap_extractor in a similar way you compiled CMaNGOS and ScriptDev2 (source code and VS solution files are in appropriately-named sub-folders of C:\Mangos\mangos\contrib), and copy the executable files (ad.exe, vmap_assembler.exe, and vmap_extractor.exe) created into your ++C:\World of Warcraft++ folder.
+* You'll need to build ad, vmap_assembler, and vmap_extractor in a similar way you compiled CMaNGOS and ScriptDev2 (Make sure you enabled the option in cmake options), and copy the executable files (ad.exe, vmap_assembler.exe, and vmap_extractor.exe) created into your ++C:\World of Warcraft++ folder.
 * Run ++ExtractResources.sh++ from your ++C:\World of Warcraft++.
 
 For this you can open a "Git Bash" on your C:\World of Warcraft folder and type ++ExtractResources.sh++
