@@ -13,7 +13,7 @@ h4. How can I get Playerbot ?
 
 * "Guide to building Playerbot":https://github.com/playerbot/mangos/wiki/Guide-to-build-Playerbot
 
-* "Guide to using Playerbot":https://github.com/playerbot/mangos/wiki/Guide-to-use-Playerbot
+* "Guide to using Playerbot":https://github.com/cmangos/issues/wiki/Guide-to-use-Playerbot
 
 * "Playerbot Development":https://github.com/playerbot/mangos/wiki/Develop-Playerbot
 
