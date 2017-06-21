@@ -14,9 +14,3 @@ h4. How can I get Playerbot ?
 * "Guide to building Playerbot":https://github.com/cmangos/issues/wiki/Guide-to-build-Playerbot
 
 * "Guide to using Playerbot":https://github.com/cmangos/issues/wiki/Guide-to-use-Playerbot
-
-* "Playerbot Development":https://github.com/cmangos/issues/wiki/Develop-Playerbot
-
-h4. Whats being worked on right now?
-
-* "Whats in the PiPes ?":https://github.com/cmangos/issues/wiki/Whats-In-the-Pipes%3F
