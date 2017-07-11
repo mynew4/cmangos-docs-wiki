@@ -380,7 +380,7 @@ Compiling CMaNGOS and ScriptDev2 (*nix)
   - *examples:*
 
  cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DPCH=1 -DDEBUG=0  <--- Just want to compile CMaNGOS
- cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DBUILD_EXTRACTOR=ON -DBUILD_VMAP_EXTRACTOR=ON -DBUILD_MMAP_EXTRACTOR=ON -DPCH=1 -DDEBUG=0  <--- Want compile CMaNGOS & the map extraction tools
+ cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DBUILD_EXTRACTORS=ON -DPCH=1 -DDEBUG=0  <--- Want compile CMaNGOS & the map extraction tools
 
 * Invoke ++make++ to compile CMaNGOS and ScriptDev2
 
