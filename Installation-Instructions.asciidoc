@@ -495,7 +495,7 @@ Fill world database:
 From the C:\Mangos folder invoke (in Git bash or depending on installation with double-click!)
 
 * ++cd classic-db++, ++cd tbc-db++ OR ++cd wotlk-db++ (choose the one appliciaple to your situation)
-* ++InstallFullDB.sh++
+* ++./InstallFullDB.sh++
 +
 This will create a config file named "InstallFullDB.config", looking like:
 +
