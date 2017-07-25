@@ -15,6 +15,7 @@ h3. Structure
 |"castBarCaption":Gameobject_template#castbarcaption|varchar(100)|NO||||
 |"faction":Gameobject_template#faction|int(4) unsigned|NO||0||
 |"flags":Gameobject_template#flags|int(4) unsigned|NO||0||
+|"ExtraFlags":Gameobject_template#ExtraFlags|int(11) unsigned|NO||0||
 |"size":Gameobject_template#size|float|NO||1||
 |"data0":Gameobject_template#data0-23|int(10) unsigned|NO||0||
 |"data1":Gameobject_template#data0-23|int(10) unsigned|NO||0||
@@ -115,6 +116,11 @@ h4. flags
 * 64 = Triggered (typically, summoned objects. Triggered by spell or other events)
 
 NOTE: All chests that contain only quest loots need to have flag 4 set as the core will only allow players who have the quest in their questlog to loot them.
+
+h4. ExtraFlags
+
+* 1 = GAMEOBJECT_EXTRA_FLAG_CUSTOM_ANIM_ON_USE (// GO that plays custom animation on usage)
+* 262144 = GAMEOBJECT_EXTRA_FLAG_FAR_VIEW (// GO with far view)
 
 h4. size
 
