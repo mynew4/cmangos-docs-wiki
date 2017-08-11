@@ -275,37 +275,37 @@ Some Known Possible Flags Are:
 
 |*Bit*|*Flag*|*Name*|*Comments*|
 |0|1|UNIT&#95;FLAG&#95;UNK&#95;0||
-|1|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE||
-|2|4|UNIT&#95;FLAG&#95;DISABLE&#95;MOVE||
-|3|8|UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE|(allow apply pvp rules to attackable state in addition to faction dependent state)|
+|1|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE|not attackable|
+|2|4|UNIT&#95;FLAG&#95;NON&#95;MOVING&#95;DEPRECATED|TODO: Needs research|
+|3|8|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED|players, pets, totems, guardians, companions, charms, any units associated with players|
 |4|16|UNIT&#95;FLAG&#95;RENAME||
-|5|32|UNIT&#95;FLAG&#95;RESTING||
+|5|32|UNIT&#95;FLAG&#95;PREPARATION|don't take reagents for spells with SPELL_ATTR_EX5_NO_REAGENT_WHILE_PREP|
 |6|64|UNIT&#95;FLAG&#95;UNK&#95;6||
-|7|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|(??) ((UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1) is NON&#95;PVP&#95;ATTACKABLE)|
-|8|256|UNIT&#95;FLAG&#95;OOC&#95;NOT&#95;ATTACKABLE|(2.0.8 - Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)|
-|9|512|UNIT&#95;FLAG&#95;PASSIVE|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
-|10|1024|UNIT&#95;FLAG&#95;LOOTING|(loot animation)|
-|11|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|(in combat?, 2.0.8)|
-|12|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon (?)|
-|13|8192|UNIT&#95;FLAG&#95;SILENCED|Can't cast spells|
-|14|16384|UNIT&#95;FLAG&#95;UNK&#95;14|(2.0.8)|
-|15|32768|UNIT&#95;FLAG&#95;UNK&#95;15||
-|16|65536|UNIT&#95;FLAG&#95;UNK&#95;16||
+|7|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1 is NON&#95;PVP&#95;ATTACKABLE|
+|8|256|UNIT&#95;FLAG&#95;IMMUNE&#95;TO&#95;PLAYER|Target is immune to players|
+|9|512|UNIT&#95;FLAG&#95;IMMUNE&#95;TO&#95;NPC|makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.|
+|10|1024|UNIT&#95;FLAG&#95;LOOTING|loot animation|
+|11|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|in combat?, 2.0.8|
+|12|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon(?)|
+|13|8192|UNIT&#95;FLAG&#95;SILENCED|silenced, 2.1.1|
+|14|16384|UNIT&#95;FLAG&#95;UNK&#95;14|2.0.8|
+|15|32768|UNIT&#95;FLAG&#95;UNK&#95;15|related to jerky movement in water?|
+|16|65536|UNIT&#95;FLAG&#95;UNK&#95;16|removes attackable icon|
 |17|131072|UNIT&#95;FLAG&#95;PACIFIED||
-|18|262144|UNIT&#95;FLAG&#95;DISABLE&#95;ROTATE|(stunned, 2.1.1)|
+|18|262144|UNIT&#95;FLAG&#95;STUNNED|stunned, 2.1.1|
 |19|524288|UNIT&#95;FLAG&#95;IN&#95;COMBAT||
-|20|1048576|UNIT&#95;FLAG&#95;TAXI&#95;FLIGHT|(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag)|
-|21|2097152|UNIT&#95;FLAG&#95;DISARMED|(disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.)|
+|20|1048576|UNIT&#95;FLAG&#95;TAXI&#95;FLIGHT|disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag|
+|21|2097152|UNIT&#95;FLAG&#95;DISARMED|disable melee spells casting..., "Required melee weapon" added to melee spells tooltip.|
 |22|4194304|UNIT&#95;FLAG&#95;CONFUSED||
 |23|8388608|UNIT&#95;FLAG&#95;FLEEING||
-|24|16777216|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED|(used in spell Eyes of the Beast for pet...)|
+|24|16777216|UNIT&#95;FLAG&#95;POSSESSED|remote control e.g. Eyes of the Beast: let master use melee attack, make unit unselectable via mouse for master in world (as if it was own character)|
 |25|33554432|UNIT&#95;FLAG&#95;NOT&#95;SELECTABLE|Can't be selected by mouse|
 |26|67108864|UNIT&#95;FLAG&#95;SKINNABLE||
-|27|134217728|UNIT&#95;FLAG&#95;MOUNT|(the client seems to handle it perfectly)|
+|27|134217728|UNIT&#95;FLAG&#95;MOUNT|the client seems to handle it perfectly|
 |28|268435456|UNIT&#95;FLAG&#95;UNK&#95;28||
-|29|536870912|UNIT&#95;FLAG&#95;UNK&#95;29|(used in Feing Death spell)|
+|29|536870912|UNIT&#95;FLAG&#95;UNK&#95;29|used in Feing Death spell|
 |30|1073741824|UNIT&#95;FLAG&#95;SHEATHE||
-|31|2147483648|UNIT&#95;FLAG&#95;UNK&#95;31|(set skinnable icon and also changes color of portrait)|
+|31|2147483648|UNIT&#95;FLAG&#95;UNK&#95;31|set skinnable icon and also changes color of portrait)(no affect in 2.4.3|
 
 
 h4. DynamicFlags
