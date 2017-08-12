@@ -2,7 +2,7 @@ Back to "world database":mangosdb_struct list of tables.
 
 h2. The `gossip_texts` table
 
-This table stores gossip texts used in SD2, for normal gossip implementation see "Gossip_menu":Gossip_menu and "npc_text":npc_text.
+This table stores gossip texts used in ScriptDevAI, for normal gossip implementation see "Gossip_menu":Gossip_menu and "npc_text":npc_text.
 
 h3. Structure
 
