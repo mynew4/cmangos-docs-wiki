@@ -5,8 +5,8 @@ h3. This is the list of tables in the regular 'mangos' database
 (ScriptLibrary) - Script library tables. These tables are maintained by script library projects (such as ScriptDev2). The DB teams do not touch them.
 
 |*Table*|*Content*|
-|"achievement_criteria_requirement":https://github.com/cmangos/issues/wiki/achievement_criteria_requirement (WotLK)|This table contains what need to be done to complete an achievement criteria.|
-|"achievement_reward":https://github.com/cmangos/issues/wiki/achievement_reward (WotLK)|This table contains the rewards for achievements added with Wrath of the Lichking.|
+|"achievement_criteria_requirement":https://github.com/cmangos/issues/wiki/achievement_criteria_requirement|This table contains what need to be done to complete an achievement criteria.|
+|"achievement_reward":https://github.com/cmangos/issues/wiki/achievement_reward|This table contains the rewards for achievements added with Wrath of the Lichking.|
 |"areatrigger_involvedrelation":https://github.com/cmangos/issues/wiki/areatrigger_involvedrelation (Reloadable)|Enable a trigger to finish one condition of a quest (explore)|
 |"areatrigger_tavern":https://github.com/cmangos/issues/wiki/areatrigger_tavern (Reloadable)|Enable a trigger when player enters a city or tavern. This causes the player to enter a resting state.|
 |"areatrigger_teleport":https://github.com/cmangos/issues/wiki/areatrigger_teleport (Reloadable)|Contains all the teleport triggers definition. This table is used to complete .dbc file information.|
@@ -70,7 +70,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"gameobject_template":https://github.com/cmangos/issues/wiki/gameobject_template|Contains template off all world’s objects.|
 |"gossip_menu":https://github.com/cmangos/issues/wiki/gossip_menu (Reloadable)|This table is used for displaying gossip when a player talks to an NPC.|
 |"gossip_menu_option":https://github.com/cmangos/issues/wiki/gossip_menu_option (Reloadable)|This table holds infos about menu options a gossip NPC can have.|
-|"gossip_texts":https://github.com/cmangos/issues/wiki/gossip_texts|?|
+|"gossip_texts":https://github.com/cmangos/issues/wiki/gossip_texts|This table stores gossip texts used in ScriptDevAI.|
 |"instance_dungeon_encounters":https://github.com/cmangos/issues/wiki/instance_dungeon_encounters|?|
 |"instance_encounters":https://github.com/cmangos/issues/wiki/instance_encounters|?|
 |"instance_template":https://github.com/cmangos/issues/wiki/instance_template|This table has all the templates for every instance.|
@@ -103,7 +103,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"pet_familystats":https://github.com/cmangos/issues/wiki/pet_familystats|?|
 |"pet_levelstats":https://github.com/cmangos/issues/wiki/pet_levelstats|This table holds information on individual pet base stats based on level.|
 |"pet_name_generation":https://github.com/cmangos/issues/wiki/pet_name_generation|This table holds pieces of names (first and last half) that are use for pet name generation.|
-|"petcreateinfo_spell":https://github.com/cmangos/issues/wiki/petcreateinfo_spell|?|
+|"petcreateinfo_spell":https://github.com/cmangos/issues/wiki/petcreateinfo_spell|This table controls what spells a tameable beast will have once tamed.|
 |"pickpocketing_loot_template":https://github.com/cmangos/issues/wiki/pickpocketing_loot_template (Reloadable)|Pickpocketing loot|
 |"player_classlevelstats":https://github.com/cmangos/issues/wiki/player_classlevelstats (CMaNGOS)|This table holds information on the base health and mana of characters when they level up. Each class has different level stats.|
 |"player_levelstats":https://github.com/cmangos/issues/wiki/player_levelstats (CMaNGOS)|This table holds information on the base health and mana of characters when they level up. Each class has different level stats.|
