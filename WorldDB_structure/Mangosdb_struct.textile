@@ -23,6 +23,8 @@ h3. This is the list of tables in the regular 'mangos' database
 |"creature_battleground":https://github.com/cmangos/issues/wiki/creature_battleground|This table contains the description of creatures spawned on battlegrounds.|
 |"creature_equip_template":https://github.com/cmangos/issues/wiki/creature_equip_template|This table contains all equipment mobs can wear.|
 |"creature_involvedrelation":https://github.com/cmangos/issues/wiki/creature_involvedrelation (Reloadable)|Holds NPC quest ender relations on which NPCs finishes which quests.|
+|"creature_linking":https://github.com/cmangos/issues/wiki/creature_linking|Creature Linking for Aggro/Respawn/Movement/Event by GUID|
+|"creature_linking_template":https://github.com/cmangos/issues/wiki/creature_linking_template|Creature Linking for Aggro/Respawn/Movement/Event by ENTRY|
 |"creature_loot_template":https://github.com/cmangos/issues/wiki/creature_loot_template (Reloadable)|Creature Loot|
 |"creature_model_info":https://github.com/cmangos/issues/wiki/creature_model_info|This table contains all models of mobs, their gender and other information that are model related.|
 |"creature_model_race":https://github.com/cmangos/issues/wiki/creature_model_race|This table contains data to override displayed models based on the race of the player.|
@@ -32,11 +34,12 @@ h3. This is the list of tables in the regular 'mangos' database
 |"creature_questrelation":https://github.com/cmangos/issues/wiki/creature_questrelation (Reloadable)|Holds NPC quest giver relations on which NPCs start which quests.|
 |"Creature_Template":https://github.com/cmangos/issues/wiki/creature_template|This table contains the description of creatures.|
 |"creature_template_addon":https://github.com/cmangos/issues/wiki/creature_template_addon|The creature_template_addon defines different things that are applied on creature with a certain ENTRY when it is loaded.|
-|"creature_linking_template":https://github.com/cmangos/issues/wiki/creature_linking_template|Creature Linking for Aggro/Respawn/Movement/Event|
 |"creature_template_classlevelstats":https://github.com/cmangos/issues/wiki/creature_template_classlevelstats|Unit Base Stats|
 |"creature_template_spells":https://github.com/cmangos/issues/wiki/creature_template_spells|?|
+|"costum_texts":https://github.com/cmangos/issues/wiki/costum_texts|?|
 |"db_script_string":https://github.com/cmangos/issues/wiki/db_script_string|Holds texts for scripts.|
 |"db_version":https://github.com/cmangos/issues/wiki/db_version|This table contains the version of the DB in use.|
+|"dbscript_string_template":https://github.com/cmangos/issues/wiki/dbscript_string_template|Holds texts for scripts.|
 |"dbscripts_on_creature_death":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated when a creature dies.|
 |"dbscripts_on_creature_movement":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated while a npc is moving.|
 |"dbscripts_on_event":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated whenever an event is activated by spell, gameobject or taxi waypoints.|
@@ -67,6 +70,9 @@ h3. This is the list of tables in the regular 'mangos' database
 |"gameobject_template":https://github.com/cmangos/issues/wiki/gameobject_template|Contains template off all world’s objects.|
 |"gossip_menu":https://github.com/cmangos/issues/wiki/gossip_menu (Reloadable)|This table is used for displaying gossip when a player talks to an NPC.|
 |"gossip_menu_option":https://github.com/cmangos/issues/wiki/gossip_menu_option (Reloadable)|This table holds infos about menu options a gossip NPC can have.|
+|"gossip_texts":https://github.com/cmangos/issues/wiki/gossip_texts|?|
+|"instance_dungeon_encounters":https://github.com/cmangos/issues/wiki/instance_dungeon_encounters|?|
+|"instance_encounters":https://github.com/cmangos/issues/wiki/instance_encounters|?|
 |"instance_template":https://github.com/cmangos/issues/wiki/instance_template|This table has all the templates for every instance.|
 |"item_convert":https://github.com/cmangos/issues/wiki/item_convert|?|
 |"item_enchantment_template":https://github.com/cmangos/issues/wiki/item_enchantment_template|This table holds enchantment chance information for items that should have either a random property or a random suffix attached to them.|
@@ -76,9 +82,11 @@ h3. This is the list of tables in the regular 'mangos' database
 |"item_template":https://github.com/cmangos/issues/wiki/item_template|Holds information on every item that exists in the game.|
 |"locales_creature":https://github.com/cmangos/issues/wiki/locales_creature|This table is used to provide to localized clients with localized string for creatures.|
 |"locales_gameobject":https://github.com/cmangos/issues/wiki/locales_gameobject|This table is used to provide to localized clients with localized string for gameobjects.|
+|"locales_gossip_menu_option":https://github.com/cmangos/issues/wiki/locales_gossip_menu_option|?|
 |"locales_item":https://github.com/cmangos/issues/wiki/locales_item|This table is used to provide to localized clients with localized string for items.|
 |"locales_npc_text":https://github.com/cmangos/issues/wiki/locales_npc_text|This table is used to provide localized clients with localized string for npc_texts.|
 |"locales_page_text":https://github.com/cmangos/issues/wiki/locales_page_text|This table is used to provide localized clients with localized string for page_texts.|
+|"locales_points_of_interest":https://github.com/cmangos/issues/wiki/locales_points_of_interest|?|
 |"locales_quest":https://github.com/cmangos/issues/wiki/locales_quest|This table is used to provide to localized clients with localized string for quest templates.|
 |"mail_level_reward":https://github.com/cmangos/issues/wiki/mail_level_reward (Reloadable)|This table holds information on sent mails when a character levels up. Can be specified by raceMask.|
 |"mail_loot_template":https://github.com/cmangos/issues/wiki/mail_loot_template (Reloadable)|?|
@@ -92,8 +100,10 @@ h3. This is the list of tables in the regular 'mangos' database
 |"npc_vendor":https://github.com/cmangos/issues/wiki/npc_vendor|This table holds the vendor data for all NPCs that sell items by GUID.|
 |"npc_vendor_template":https://github.com/cmangos/issues/wiki/npc_vendor_template|This table holds the vendor data for all NPCs that sell items by ENTRY.|
 |"page_text":https://github.com/cmangos/issues/wiki/page_text|This table holds the text for letter items.|
+|"pet_familystats":https://github.com/cmangos/issues/wiki/pet_familystats|?|
 |"pet_levelstats":https://github.com/cmangos/issues/wiki/pet_levelstats|This table holds information on individual pet base stats based on level.|
 |"pet_name_generation":https://github.com/cmangos/issues/wiki/pet_name_generation|This table holds pieces of names (first and last half) that are use for pet name generation.|
+|"petcreateinfo_spell":https://github.com/cmangos/issues/wiki/petcreateinfo_spell|?|
 |"pickpocketing_loot_template":https://github.com/cmangos/issues/wiki/pickpocketing_loot_template (Reloadable)|Pickpocketing loot|
 |"player_classlevelstats":https://github.com/cmangos/issues/wiki/player_classlevelstats (CMaNGOS)|This table holds information on the base health and mana of characters when they level up. Each class has different level stats.|
 |"player_levelstats":https://github.com/cmangos/issues/wiki/player_levelstats (CMaNGOS)|This table holds information on the base health and mana of characters when they level up. Each class has different level stats.|
@@ -117,6 +127,8 @@ h3. This is the list of tables in the regular 'mangos' database
 |"reputation_reward_rate":https://github.com/cmangos/issues/wiki/reputation_reward_rate (Reloadable)|Holds reputation multipliers for specific factions.|
 |"reputation_spillover_template":https://github.com/cmangos/issues/wiki/reputation_spillover_template|[Reputation Bleed Over](http://wowwiki.wikia.com/wiki/Exalted) Page Wrong|
 |"reserved_name":https://github.com/cmangos/issues/wiki/reserved_name (Reloadable)|This table serves as a simple list of names that players (gmlevel == 0) cannot use when naming their characters.|
+|"script_texts":https://github.com/cmangos/issues/wiki/script_texts|?|
+|"script_waypoint":https://github.com/cmangos/issues/wiki/script_waypoint|?|
 |"scripted_areatrigger":https://github.com/cmangos/issues/wiki/scripted_areatrigger (ScriptLibrary)|This table links areatriggers to C++ scripts.|
 |"scripted_event_id":https://github.com/cmangos/issues/wiki/scripted_event_id (ScriptLibrary)|This table links event id’s to C++ scripts.|
 |"skill_discovery_template":https://github.com/cmangos/issues/wiki/skill_discovery_template (Reloadable)|This table controls the so called "discovery" system of learning spells.|
@@ -129,6 +141,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"spell_chain":https://github.com/cmangos/issues/wiki/spell_chain (Reloadable) (CMaNGOS)|This table defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing.|
 |"spell_check":https://github.com/cmangos/issues/wiki/spell_check (CMaNGOS)|?|
 |"spell_elixir":https://github.com/cmangos/issues/wiki/spell_elixir (Reloadable) (CMaNGOS)|This table holds elixir information to be used to properly stack the elixirs.|
+|"spell_facing":https://github.com/cmangos/issues/wiki/spell_facing|?|
 |"spell_learn_spell":https://github.com/cmangos/issues/wiki/spell_learn_spell (Reloadable) (CMaNGOS)|This table holds information on spells that should be learned at the same time a player learns another spell.|
 |"spell_loot_template":https://github.com/cmangos/issues/wiki/spell_loot_template (Reloadable)|Spell loot|
 |"spell_pet_auras":https://github.com/cmangos/issues/wiki/spell_pet_auras|?|
