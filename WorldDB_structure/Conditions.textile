@@ -166,7 +166,7 @@ Returns if a player already got a quest rewarded
 Returns if a player has a quest taken
 
 * CONDITION_AD_COMMISSION_AURA (10)
-Returns if a player has one from AD commission aura active
+Returns if a Player has any Argent Dawn Commission Aura Active (17670,23930,24198,29112,29113)
 
 * CONDITION_NO_AURA (11)
 ** value1: spellid
