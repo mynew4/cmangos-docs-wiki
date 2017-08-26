@@ -20,6 +20,12 @@ This table format is used for different tables to control possible scripts activ
     ** SPELL&#95;EFFECT&#95;SCRIPT&#95;EFFECT (77)
     Source: caster; Target: target.
 
+* *`dbscripts&#95;on&#95;relay:* Holds scripts that can be activated by AI or other dbscripts. The usage of IDs is as following:
+    ** Vanilla - 1-9999
+    ** TBC     - 10000-19999
+    ** WotLK   - 20000+
+    Source and Target are defined by the mechanism that launched it.
+
 * *`dbscripts&#95;on&#95;quest&#95;start:* Holds scripts activated when a player accepts a quest.
     Source: quest giver (creature); Target: player; Script execution unique by source.
 
