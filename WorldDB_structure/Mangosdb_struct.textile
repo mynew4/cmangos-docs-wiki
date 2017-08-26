@@ -48,6 +48,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"dbscripts_on_gossip":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated on gossip_menu_option or gossip_menu.|
 |"dbscripts_on_quest_end":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated when a player finishes a quest.|
 |"dbscripts_on_quest_start":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated when a player accepts a quest.|
+|"dbscripts_on_relay":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts that are relayed from AI or other dbscripts.|
 |"dbscripts_on_spell":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts that can be activated by spells|
 |"disenchant_loot_template":https://github.com/cmangos/issues/wiki/disenchant_loot_template (Reloadable)|Item disenchant loot|
 |"exploration_basexp":https://github.com/cmangos/issues/wiki/exploration_basexp|This table controls the XP gained by characters when they explore new zones.|
