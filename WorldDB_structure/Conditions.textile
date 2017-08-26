@@ -208,7 +208,7 @@ Returns if a player is of/ has a higher/ has a lower level
 * CONDITION_NOITEM (16)
 ** value1: itemid
 ** value2: count
-Returns if a player has not count items
+Returns if a player has not count items in Inventory
 
 * CONDITION_SPELL (17)
 ** value1: spellid
