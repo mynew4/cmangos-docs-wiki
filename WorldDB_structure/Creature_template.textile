@@ -283,9 +283,9 @@ This Field Is a Bitmask That Represents What NPC Flags The Creature Has Assigned
 |20|1048576|Battlemaster|Creatures with this flag port players to battlegrounds.|
 |21|2097152|Auctioneer|Allows creature to display auction list.|
 |22|4194304|Stable Master|Has the option to stable pets for hunters.|
-|23|16777216|Instantloot|NPC could be loot immediately without killing, just after clicking on it. (Npc&#95;spellclick&#95;spells)|
+|23|8388608|Guild Banker|cause client to send 997 opcode|
+|24|16777216|SpellClick|cause client to send 1015 opcode (spell click), dynamic, set at loading and don't must be set in DB|
 |24|33554432|Player Vehicle|players with mounts that have vehicle data should have it set|
-|25|268435456|Guard ???? |Creatures with this flag act as guards in cities.|
 
 EXAMPLE:
 So If You Want An NPC That Is a Quest Giver, a Vendor And Can Also Repair You Just Add The Specific Flags Together: 
@@ -301,30 +301,30 @@ Some Known Possible Flags Are:
 
 |*Bit*|*Flag*|*Name*|*Comments*|
 |0|1|UNIT&#95;FLAG&#95;UNK&#95;0||
-|1|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE||
-|2|4|UNIT&#95;FLAG&#95;DISABLE&#95;MOVE||
-|3|8|UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE|(allow apply pvp rules to attackable state in addition to faction dependent state)|
+|1|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE|not attackable|
+|2|4|UNIT_FLAG_NON_MOVING_DEPRECATED|TODO: Needs research|
+|3|8|UNIT_FLAG_PLAYER_CONTROLLED|players, pets, totems, guardians, companions, charms, any units associated with players|
 |4|16|UNIT&#95;FLAG&#95;RENAME||
-|5|32|UNIT&#95;FLAG&#95;RESTING||
+|5|32|UNIT_FLAG_PREPARATION|don't take reagents for spells with SPELL_ATTR_EX5_NO_REAGENT_WHILE_PREP|
 |6|64|UNIT&#95;FLAG&#95;UNK&#95;6||
 |7|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|(??) ((UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1) is NON&#95;PVP&#95;ATTACKABLE)|
-|8|256|UNIT&#95;FLAG&#95;OOC&#95;NOT&#95;ATTACKABLE|(2.0.8 - Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)|
-|9|512|UNIT&#95;FLAG&#95;PASSIVE|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
+|8|256|UNIT_FLAG_IMMUNE_TO_PLAYER|Target is immune to players|
+|9|512|UNIT_FLAG_IMMUNE_TO_NPC|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
 |10|1024|UNIT&#95;FLAG&#95;LOOTING|(loot animation)|
 |11|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|(in combat?, 2.0.8)|
-|12|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon (?)|
+|12|4096|UNIT&#95;FLAG&#95;PVP|changed in 3.0.3|
 |13|8192|UNIT&#95;FLAG&#95;SILENCED|Can't cast spells|
 |14|16384|UNIT&#95;FLAG&#95;UNK&#95;14|(2.0.8)|
-|15|32768|UNIT&#95;FLAG&#95;UNK&#95;15||
-|16|65536|UNIT&#95;FLAG&#95;UNK&#95;16||
-|17|131072|UNIT&#95;FLAG&#95;PACIFIED||
-|18|262144|UNIT&#95;FLAG&#95;DISABLE&#95;ROTATE|(stunned, 2.1.1)|
+|15|32768|UNIT&#95;FLAG&#95;UNK&#95;15|Related to water movement|
+|16|65536|UNIT&#95;FLAG&#95;UNK&#95;16|removes attackable icon|
+|17|131072|UNIT&#95;FLAG&#95;PACIFIED|3.0.3 ok|
+|18|262144|UNIT_FLAG_STUNNED|3.0.3 ok|
 |19|524288|UNIT&#95;FLAG&#95;IN&#95;COMBAT||
 |20|1048576|UNIT&#95;FLAG&#95;TAXI&#95;FLIGHT|(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag)|
-|21|2097152|UNIT&#95;FLAG&#95;DISARMED|(disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.)|
+|21|2097152|UNIT&#95;FLAG&#95;DISARMED|(3.0.3, disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.)|
 |22|4194304|UNIT&#95;FLAG&#95;CONFUSED||
 |23|8388608|UNIT&#95;FLAG&#95;FLEEING||
-|24|16777216|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED|(used in spell Eyes of the Beast for pet...)|
+|24|16777216|UNIT_FLAG_POSSESSED|remote control e.g. Eyes of the Beast: let master use melee attack, make unit unselectable via mouse for master in world (as if it was own character)|
 |25|33554432|UNIT&#95;FLAG&#95;NOT&#95;SELECTABLE|Can't be selected by mouse|
 |26|67108864|UNIT&#95;FLAG&#95;SKINNABLE||
 |27|134217728|UNIT&#95;FLAG&#95;MOUNT|(the client seems to handle it perfectly)|
@@ -408,12 +408,20 @@ h4. SpeedWalk
 This Field Controls How Fast An NPC Moves When Walking. 
 This Value Comes From Sniff Packet Data.
 
+Divide sniffed value with 2.5.
+Sniffed WalkSpeed for a specific creature is 5. Divide it by 2.5 to get our DB value.
+5/2.5=2
+
 (Default Value Is: 1)
 
 h4. SpeedRun
 
 This Field Controls How Fast An NPC Moves When Running. 
 This Value Comes From Sniff Packet Data.
+
+Divide sniffed value with 7.
+Sniffed RunSpeed for a specific creature is 10. Divide it by 7 to get our DB value.
+10/7=1,42857
 
 (Default Value Is: 1.14286)
 
