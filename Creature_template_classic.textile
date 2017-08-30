@@ -366,12 +366,20 @@ h4. SpeedWalk
 This Field Controls How Fast An NPC Moves When Walking. 
 This Value Comes From Sniff Packet Data.
 
+Divide sniffed value with 2.5.
+Sniffed WalkSpeed for a specific creature is 5. Divide it by 2.5 to get our DB value.
+5/2.5=2
+
 (Default Value Is: 1)
 
 h4. SpeedRun
 
 This Field Controls How Fast An NPC Moves When Running. 
 This Value Comes From Sniff Packet Data.
+
+Divide sniffed value with 7.
+Sniffed RunSpeed for a specific creature is 10. Divide it by 7 to get our DB value.
+10/7=1,42857
 
 (Default Value Is: 1.14286)
 
