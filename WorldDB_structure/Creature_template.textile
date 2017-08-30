@@ -1,5 +1,7 @@
 Back to "world database":mangosdb_struct list of tables.
 
+*This Table Is For Worlk Core (for 3.3.5a)*
+
 *See also "creature_template_classic":creature_template_classic  (for 1.12.x)*
 *See also "creature_template_tbc":creature_template_tbc  (for 2.4.3)*
 
