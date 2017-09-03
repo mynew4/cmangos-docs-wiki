@@ -1,6 +1,6 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `db&#95;script&#95;string` table
+h2. The `dbscript&#95;string` table
 
 Holds texts for scripts.
 
@@ -8,21 +8,21 @@ h3. Structure
 
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":Db_script_string#entry|int(11) unsigned|NO|PRI|0||
-|"content_default":Db_script_string#content_default|text|NO||||
-|"content_loc1":Db_script_string#content_loc|text|YES||NULL||
-|"content_loc2":Db_script_string#content_loc|text|YES||NULL||
-|"content_loc3":Db_script_string#content_loc|text|YES||NULL||
-|"content_loc4":Db_script_string#content_loc|text|YES||NULL||
-|"content_loc5":Db_script_string#content_loc|text|YES||NULL||
-|"content_loc6":Db_script_string#content_loc|text|YES||NULL||
-|"content_loc7":Db_script_string#content_loc|text|YES||NULL||
-|"content_loc8":Db_script_string#content_loc|text|YES||NULL||
-|"sound":Db_script_string#sound|mediumint|NO||0||
-|"type":Db_script_string#type|tinyint|NO||0||
-|"language":Db_script_string#language|tinyint|NO||0||
-|"emote":Db_script_string#emote|smallint|NO||0||
-|"comment":Db_script_string#comment|text|YES||NULL||
+|"entry":Dbscript_string#entry|int(11) unsigned|NO|PRI|0||
+|"content_default":Dbscript_string#content_default|text|NO||||
+|"content_loc1":Dbscript_string#content_loc|text|YES||NULL||
+|"content_loc2":Dbscript_string#content_loc|text|YES||NULL||
+|"content_loc3":Dbscript_string#content_loc|text|YES||NULL||
+|"content_loc4":Dbscript_string#content_loc|text|YES||NULL||
+|"content_loc5":Dbscript_string#content_loc|text|YES||NULL||
+|"content_loc6":Dbscript_string#content_loc|text|YES||NULL||
+|"content_loc7":Dbscript_string#content_loc|text|YES||NULL||
+|"content_loc8":Dbscript_string#content_loc|text|YES||NULL||
+|"sound":Dbscript_string#sound|mediumint|NO||0||
+|"type":Dbscript_string#type|tinyint|NO||0||
+|"language":Dbscript_string#language|tinyint|NO||0||
+|"emote":Dbscript_string#emote|smallint|NO||0||
+|"comment":Dbscript_string#comment|text|YES||NULL||
 
 
 h3. Description of the fields
