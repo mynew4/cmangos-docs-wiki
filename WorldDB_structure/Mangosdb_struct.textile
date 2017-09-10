@@ -5,7 +5,6 @@ h3. This is the list of tables in the regular 'mangos' database
 (ScriptLibrary) - Script library tables. These tables are maintained by script library projects (such as ScriptDev2). The DB teams do not touch them.
 
 |Table|Content|
-|"access_requirement":https://github.com/cmangos/issues/wiki/access_requirement|This table contains requirements to enter a certain map.|
 |"achievement_criteria_requirement":https://github.com/cmangos/issues/wiki/achievement_criteria_requirement|This table contains what need to be done to complete an achievement criteria.|
 |"achievement_reward":https://github.com/cmangos/issues/wiki/achievement_reward|This table contains the rewards for achievements added with Wrath of the Lichking.|
 |"areatrigger_involvedrelation":https://github.com/cmangos/issues/wiki/areatrigger_involvedrelation (Reloadable)|Enable a trigger to finish one condition of a quest (explore)|
