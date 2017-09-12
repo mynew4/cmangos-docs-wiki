@@ -37,9 +37,9 @@ h3. This is the list of tables in the regular 'mangos' database
 |"creature_template_classlevelstats":https://github.com/cmangos/issues/wiki/creature_template_classlevelstats|Unit Base Stats|
 |"creature_template_spells":https://github.com/cmangos/issues/wiki/creature_template_spells|?|
 |"costum_texts":https://github.com/cmangos/issues/wiki/costum_texts|?|
-|"db_script_string":https://github.com/cmangos/issues/wiki/db_script_string|Holds texts for scripts.|
+|"dbscript_string":https://github.com/cmangos/issues/wiki/dbscript_string|Holds texts for scripts.|
 |"db_version":https://github.com/cmangos/issues/wiki/db_version|This table contains the version of the DB in use.|
-|"dbscript_string_template":https://github.com/cmangos/issues/wiki/dbscript_string_template|Holds texts for scripts.|
+|"dbscript_random_templates":https://github.com/cmangos/issues/wiki/dbscript_random_templates|Used to randomize texts and relay scripts|
 |"dbscripts_on_creature_death":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated when a creature dies.|
 |"dbscripts_on_creature_movement":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated while a npc is moving.|
 |"dbscripts_on_event":https://github.com/cmangos/issues/wiki/DBScripts (Reloadable)|Holds scripts activated whenever an event is activated by spell, gameobject or taxi waypoints.|
