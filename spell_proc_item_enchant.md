@@ -15,8 +15,6 @@ holds spell effects that need ppm rates.
 
 [spell_template.id](https://github.com/cmangos/issues/wiki/spell_template#id) of the spell
 
-This specified entry will be automatically targeted if it is near the unit casting the spell.
-
 #### ppmRate
 
 http://wowwiki.wikia.com/wiki/Procs_per_minute
