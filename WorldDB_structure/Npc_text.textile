@@ -100,11 +100,11 @@ This is the ID of the text entry. This ID comes from WDB cache. (First initializ
 
 h4. text0&#95;0
 
-Is this the first choice of locale 0?
+This is the locale text that is displayed if the NPC is a male.
 
 h4. text0&#95;1
 
-Second choice?
+This is the locale text that is displayed if the NPC is a female.
 
 h4. lang0
 
