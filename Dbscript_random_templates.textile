@@ -2,7 +2,7 @@ Back to "world database":mangosdb_struct list of tables.
 
 h2. The `dbscript_string_template` table
 
-Use this table to set up an infinite amount of texts or relay scripts to be randomized in the same action. Used in SCRIPT_COMMAND_TALK, SCRIPT_COMMAND_START_RELAY_SCRIPT and ACTION_T_START_RELAY_SCRIPT
+Use this table to set up an infinite amount of texts or relay scripts to be randomized in the same action. Used in SCRIPT_COMMAND_TALK, SCRIPT_COMMAND_START_RELAY_SCRIPT, ACTION_T_TEXT_NEW and ACTION_T_START_RELAY_SCRIPT
 
 h3. Structure
 
@@ -22,12 +22,12 @@ The ID of the random template.
 
 h4. type
 
-0 = DBScript string
+0 = DBScript_string or creature_ai_texts string
 1 = DBScripts_on_relay
 
 h4. target_id
 
-If type = 0: The string entry from "dbscript_string.entry":Dbscript_string#entry
+If type = 0: The string entry from "dbscript_string.entry":Dbscript_string#entry or "creature_ai_texts.entry":Creature_ai_texts#entry
 If type = 1: The dbscripts_on_relay ID you want to randomize
 
 h4. chance
