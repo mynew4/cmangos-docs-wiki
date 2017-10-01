@@ -505,3 +505,8 @@ _Side note: Only available on wotlk version._
 ** Resulting source must be a Creature.
 ** datalong = new creature entry. Must be different than the current one
 ** datalong2 = faction for which the entry is updated. 0 = Alliance, 1 = Horde. No other values are allowed
+
+* *SCRIPT_COMMAND_START_RELAY_SCRIPT= 45*
+** Resulting source must be a Unit. Target is not mandatory.
+** datalong = dbscripts_on_relay Id which should be launched
+** datalong2 = dbscript_random_template relay Id which should be launched. Takes precedence over relay Id.
