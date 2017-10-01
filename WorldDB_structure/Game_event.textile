@@ -40,6 +40,18 @@ h4. length
 
 Number of minutes the event will last after the start of the occurrence. (2880 = 2 days, 1440 = 1 day, etc) This value must be lower than occurrence one or the event will never stop.
 
+h4. holiday
+
+Holiday ID from enum HolidayIds in SharedDefines.h
+
+h4. linkedTo
+
+Linked event which must be active for this event to be able to be activated.
+
+h4. EventGroup
+
+Group of events, which are launched automatically daily(length=1440) or weekly(length=10080).
+
 h4. description
 
 String containing the name of the event displayed in console each time it starts or stops.
