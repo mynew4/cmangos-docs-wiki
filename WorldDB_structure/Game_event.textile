@@ -12,7 +12,9 @@ h3. Structure
 |"start_time":Game_event#start_time|timestamp|NO||0000-00-00 00:00:00||
 |"end_time":Game_event#end_time|timestamp|NO||0000-00-00 00:00:00||
 |"occurence":Game_event#occurence|bigint(20) unsigned|NO||5184000||
-|"length":Game_event#length|bigint(20) unsigned|NO||2592000||
+|"holiday":Game_event#holiday|mediumint(8) unsigned|NO||0||
+|"linkedTo":Game_event#linkedTo|mediumint(8) unsigned|NO||0||
+|"EventGroup":Game_event#EventGroup|mediumint(8) unsigned|NO||0||
 |"description":Game_event#description|varchar(255)|YES||None||
 
 
