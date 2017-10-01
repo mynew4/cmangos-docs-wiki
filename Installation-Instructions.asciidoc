@@ -422,14 +422,7 @@ You must extract *DBC/maps* and *vmaps* for CMaNGOS to work, *mmaps* are optiona
 
 *nix
 ~~~~
-On *nix this step is more complicated, you'll have to recompile all extractor tools.
-
-It is actually suggested to extract the client files from a Windows system.
-You need to copy them (by default configuration) into the directory into which you installed CMaNGOS:
-
- /mangos/run/bin
-
-If you want to stick to *nix or have no Windows system at your disposal see http://cmangos.net/thread-7481-post-46129.html#pid46129[here] (step 11) for information on how to do everything on *nix.
+Ever since extractors are no longer in repository, you will need to compile them yourself. The extraction process should work identically to Windows, since the scripts are portable.
 
 Install databases
 -----------------
