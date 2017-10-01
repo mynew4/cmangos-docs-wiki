@@ -11,29 +11,29 @@ h3. Structure
 
 |*ID*|*Name*|*Type*|
 |0|"Entry":Spell.dbc#entry|uint|
-|1|Category|uint|
-|2|Dispel|uint|
-|3|Mechanic|uint|
-|4|Attributes|uint|
-|5|AttributesEx|uint|
-|6|AttributesEx2|uint|
-|7|AttributesEx3|uint|
-|8|AttributesEx4|uint|
-|9|AttributesEx5|uint|
-|10|AttributesEx6|uint|
-|11|AttributesEx7|uint|
-|12|Stances|uint|
-|13|unk&#95;320&#95;2|uint|
-|14|StancesNot|uint|
-|15|unk&#95;320&#95;3|uint|
-|16|Targets|uint|
-|17|TargetCreatureType|uint|
-|18|requiresSpellFocus]]|uint|
-|19|FacingCasterFlags|uint|
-|20|CasterAuraState|uint|
-|21|TargetAuraState|uint|
-|22|CasterAuraStateNot|uint|
-|23|TargetAuraStateNot|uint|
+|1|"Category":Spell.dbc#|uint|
+|2|"Dispel":Spell.dbc#|uint|
+|3|"Mechanic":Spell.dbc#|uint|
+|4|"Attributes":Spell.dbc#|uint|
+|5|"AttributesEx":Spell.dbc#|uint|
+|6|"AttributesEx2":Spell.dbc#|uint|
+|7|"AttributesEx3":Spell.dbc#|uint|
+|8|"AttributesEx4":Spell.dbc#|uint|
+|9|"AttributesEx5":Spell.dbc#|uint|
+|10|"AttributesEx6":Spell.dbc#|uint|
+|11|"AttributesEx7":Spell.dbc#|uint|
+|12|"Stances":Spell.dbc#|uint|
+|13|"unk&#95;320&#95;2":Spell.dbc#|uint|
+|14|"StancesNot":Spell.dbc#|uint|
+|15|"unk&#95;320&#95;3":Spell.dbc#|uint|
+|16|"Targets":Spell.dbc#|uint|
+|17|"TargetCreatureType":Spell.dbc#|uint|
+|18|"RequiresSpellFocus":Spell.dbc#|uint|
+|19|"FacingCasterFlags":Spell.dbc#|uint|
+|20|"CasterAuraState":Spell.dbc#|uint|
+|21|"TargetAuraState":Spell.dbc#|uint|
+|22|"CasterAuraStateNot":Spell.dbc#|uint|
+|23|"TargetAuraStateNot":Spell.dbc#|uint|
 |24|casterAuraSpell|uint|
 |25|targetAuraSpell|uint|
 |26|excludeCasterAuraSpell|uint|
@@ -298,15 +298,39 @@ h4. StancesNot
 
 Determines specific stances in which caster cannot be for spell to be successfully cast.
 
+h4. Targets
+
+Determines the default targets for some effects. Seems to be connected to TARGET_NONE.
+
+h4. TargetCreatureType
+
+Specifies what creature types the spell can target, for example Humanoid or Beast.
+
+h4. RequiresSpellFocus
+
+Specifies the spell focus GO, around which the caster has to be for a successful cast.
+
+h4. FacingCasterFlags
+
+Specifies how the caster has to face the target so that the spell is successful. enum SpellFacingFlags in Unit.h
+
+h4. CasterAuraState
+
+Specifies the caster AuraState required for the cast to be successful.
+
+h4. TargetAuraState
+
+Specifies the target AuraState required for the cast to be successful.
+
+h4. CasterAuraStateNot
+
+Specifies which AuraState the caster must not have for the cast to be successful.
+
+h4. TargetAuraStateNot
+
+Specifies which AuraState the target must not have for the cast to be successful.
+
 TODO: Describe rest of columns
-|16|Targets|uint|
-|17|TargetCreatureType|uint|
-|18|requiresSpellFocus]]|uint|
-|19|FacingCasterFlags|uint|
-|20|CasterAuraState|uint|
-|21|TargetAuraState|uint|
-|22|CasterAuraStateNot|uint|
-|23|TargetAuraStateNot|uint|
 |24|casterAuraSpell|uint|
 |25|targetAuraSpell|uint|
 |26|excludeCasterAuraSpell|uint|
