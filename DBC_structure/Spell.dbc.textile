@@ -246,7 +246,7 @@ h3. Structure
 |233|SpellDifficultyId|uint|
 
 
-h3. Category
+h4. Category
 
 
 |*ID*|*Description*|
@@ -256,7 +256,7 @@ h3. Category
 |4|Entry|
 
 
-h3. powerType
+h4. powerType
 
 
 |*ID*|*Description*|
@@ -266,35 +266,35 @@ h3. powerType
 |3|Energy|
 
 
-h3. RequiresSpellFocus
+h4. RequiresSpellFocus
 
 Indicates that this spell needs a GO near (e.g. forges). Required object has the type "GAMEOBJECT&#95;TYPE&#95;SPELLFOCUS":Gameobject_template#type and "data0":Gameobject_template#data0-23 matches the RequiresSpellFocus value.
 
-h3. Entry
+h4. Entry
 
 Unique identifier of a spell
 
-h3. Category
+h4. Category
 
 Category ID based on which cooldown is determined. Spells with same category go into cooldown if one of them goes into cooldown.
 
-h3. Dispel
+h4. Dispel
 
 Dispel type of a spell. Some spells can only dispel specific types of spells, for example poisons.
 
-h3. Mechanic
+h4. Mechanic
 
 Spells effects utilize a mechanics. For example bleed, root, silence.
 
-h3. Attributes
+h4. Attributes
 
 Special rules for spells. There are several columns for attributes. These rules can do anything, and some can be name only.
 
-h3. Stances
+h4. Stances
 
 Determines specific stances in which caster must be for spell to be successfully cast.
 
-h3. StancesNot
+h4. StancesNot
 
 Determines specific stances in which caster cannot be for spell to be successfully cast.
 
