@@ -10,7 +10,7 @@ h3. Structure
 
 
 |*ID*|*Name*|*Type*|
-|0|Entry|uint|
+|0|Entry#Entry|uint|
 |1|Category|uint|
 |2|Dispel|uint|
 |3|Mechanic|uint|
