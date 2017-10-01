@@ -153,6 +153,7 @@ The following commands can be used:
 |42|SET&#95;EQUIPMENT&#95;SLOTS|Change equipment slots of the resulting source.|
 |43|RESET&#95;OBJECT|Reset a gameobject.|
 |44|UPDATE&#95;TEMPLATE|Update creature entry.|
+|45|SCRIPT&#95;COMMAND&#95;START&#95;RELAY&#95;SCRIPT|Launch relay script or relay template.|
 
 
 h4. Buddy Concept
