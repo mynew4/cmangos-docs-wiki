@@ -163,7 +163,11 @@ Returns if a player already got a quest rewarded
 
 * CONDITION_QUESTTAKEN (9)
 ** value1: Quest ID
-Returns if a player has a quest taken
+** value2: 
+
+|0|Returns true if quest is taken, no matter if completed or not|
+|1|Returns true if quest is taken but not completed|
+|2|Returns true if quest is taken and completed|
 
 * CONDITION_AD_COMMISSION_AURA (10)
 Returns if a Player has any Argent Dawn Commission Aura Active (17670,23930,24198,29112,29113)
