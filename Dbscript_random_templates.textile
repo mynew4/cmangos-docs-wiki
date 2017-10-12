@@ -1,6 +1,6 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `dbscript_string_template` table
+h2. The `dbscript_random_templates` table
 
 Use this table to set up an infinite amount of texts or relay scripts to be randomized in the same action. Used in SCRIPT_COMMAND_TALK, SCRIPT_COMMAND_START_RELAY_SCRIPT, ACTION_T_TEXT_NEW and ACTION_T_START_RELAY_SCRIPT
 
