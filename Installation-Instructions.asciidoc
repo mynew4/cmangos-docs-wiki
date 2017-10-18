@@ -553,6 +553,8 @@ CONFIG_FILE="./InstallFullDB.config"
 
 * ++cd ../..++
 
+If you get an error saying `./InstallFullDB.sh: line 126: mysql: command not found` then you need to add mysql.exe to the PATH variable. (Windows + Pause -> Advanced System Settings -> Environment Variables -> System Variables -> Edit Path and add the location of your mysql.exe)
+
 Basic concept of manual database filling
 ---------------------------------
 The database providers provide
