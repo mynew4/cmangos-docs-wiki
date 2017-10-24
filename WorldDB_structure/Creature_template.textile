@@ -407,7 +407,7 @@ Some values provided from the community:
 
 h4. SpeedWalk
 
-This Field Controls How Fast An NPC Moves When Walking. 
+This Field Controls How Fast An NPC Moves When Walking. Note: This field should only be used as an override if the model's default speed is not correct. ( "creature_model_info.SpeedWalk":creature_model_info#SpeedWalk )
 This Value Comes From Sniff Packet Data.
 
 Divide sniffed value with 2.5.
@@ -418,7 +418,7 @@ Sniffed WalkSpeed for a specific creature is 5. Divide it by 2.5 to get our DB v
 
 h4. SpeedRun
 
-This Field Controls How Fast An NPC Moves When Running. 
+This Field Controls How Fast An NPC Moves When Running. Note: This field should only be used as an override if the model's default speed is not correct. ( "creature_model_info.SpeedRun":creature_model_info#SpeedRun )
 This Value Comes From Sniff Packet Data.
 
 Divide sniffed value with 7.
