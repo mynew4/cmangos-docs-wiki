@@ -321,6 +321,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
 * *SCRIPT&#95;COMMAND&#95;PLAY&#95;SOUND = 16*
 ** datalong: "Sound ID":SoundEntries.dbc#Content.
 ** datalong2: bitmask: 0/1=anyone/target, 0/2=with distance dependent, 0/4=map wide, 0/8=zone wide; 1&#124;2 = 3 is target with distance dependent.
+** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL: play music instead of sound
 ** Source may be any object. Target may be any player.
 
 
