@@ -65,6 +65,7 @@ h4. type
 |4|CHAT_TYPE_WHISPER| whisper, needs a target|
 |5|CHAT_TYPE_BOSS_WHISPER|whipser, needs a target|
 |6|CHAT_TYPE_ZONE_YELL|'red' text, displayed to everyone in the zone|
+|7|CHAT_TYPE_ZONE_EMOTE|'brown' zone-wide text emote|
 
 h4. language
 
