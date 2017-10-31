@@ -86,6 +86,7 @@ This is a description of the values in "type":Conditions#type
 |36|CONDITION_DEAD_OR_AWAY||
 |37|CONDITION_CREATURE_IN_RANGE||
 |38|CONDITION_PVP_SCRIPT||
+|39|CONDITION_SPAWN_COUNT|Returns if specified count of creature entry exists on map|
 
 
 (&#42;) Meta-Condition types CONDITION_AND (-1) and CONDITION_OR (-2) which are used as: value1 (as condition_entry) AND / OR value2 (as condition_entry). With these meta-conditions it is possible to create tree like and very complicated combined conditions (like HasAura && (HasItem || HasQuest))
@@ -339,3 +340,9 @@ Returns if the creature of the given entry is found in the given range
 ** value1: area_id of the outdoor PvP script
 ** value2: opvp_condition_id (defined in the actual script)
 Returns the result of the outdoor PvP script function IsConditionFulfilled (which must be implemented for the required scripts)
+
+* CONDITION_SPAWN_COUNT (39)
+** value1: "creature_template.entry":creature_template#entry
+** value2: Minimum amount of specified creature to exist on map for condition to return true
+Condition returns true if there are more than or equal amounts of creature on map.
+Note: The creature specified in value1 must have ExtraFlags CREATURE_EXTRA_FLAG_COUNT_SPAWNS!
