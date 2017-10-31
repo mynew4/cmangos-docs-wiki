@@ -377,6 +377,7 @@ This Field Controls the Application Of Flags That Controls Certain NPC Specific 
 |32768|CREATURE&#95;EXTRA&#95;FLAG&#95;WALK&#95;IN&#95;WATER|creature is forced to walk in water even it can swim|
 |65536|CREATURE&#95;EXTRA&#95;FLAG&#95;CIVILIAN|CreatureInfo->civilian substitute (for new expansions)|
 |131072|CREATURE&#95;EXTRA&#95;FLAG&#95;NO&#95;MELEE|creature can't melee|
+|2097152|CREATURE_EXTRA_FLAG_COUNT_SPAWNS|Creatures with this flag will be counted, allowing you to get the mapwide amount of spawns of the specific creature. This flag is required when using CONDITION_SPAWN_COUNT.|
 
 h4. CreatureTypeFlags
 
