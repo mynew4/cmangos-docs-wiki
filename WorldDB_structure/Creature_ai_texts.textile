@@ -67,6 +67,8 @@ This is the method the text is displayed.
 |3|Boss Emote|
 |4|Whisper|
 |5|Boss Whisper|
+|6|Zone Yell|
+|7|Zone Text Emote|
 
 
 h4. language
