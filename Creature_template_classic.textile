@@ -266,8 +266,8 @@ Some Known Possible Flags Are:
 |5|32|UNIT&#95;FLAG&#95;RESTING||
 |6|64|UNIT&#95;FLAG&#95;UNK&#95;6||
 |7|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|(??) ((UNIT&#95;FLAG&#95;PVP&#95;ATTACKABLE + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1) is NON&#95;PVP&#95;ATTACKABLE)|
-|8|256|UNIT&#95;FLAG&#95;OOC&#95;NOT&#95;ATTACKABLE|(2.0.8 - Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)|
-|9|512|UNIT&#95;FLAG&#95;PASSIVE|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
+|8|256|UNIT&#95;FLAG&#95;IMMUNE&#95;TO&#95;PLAYER|Target is immune to players (2.0.8 - Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)|
+|9|512|UNIT&#95;FLAG&#95;IMMUNE&#95;TO&#95;NPC|(makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.)|
 |10|1024|UNIT&#95;FLAG&#95;LOOTING|(loot animation)|
 |11|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|(in combat?, 2.0.8)|
 |12|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon (?)|
