@@ -32,7 +32,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"creature_movement_template":https://github.com/cmangos/issues/wiki/creature_movement_template|This table holds all the information on each single ENTRY creature’s waypoints.|
 |"creature_onkill_reputation":https://github.com/cmangos/issues/wiki/creature_onkill_reputation|This table controls the reputation given by creatures when killed by other players.|
 |"creature_questrelation":https://github.com/cmangos/issues/wiki/creature_questrelation (Reloadable)|Holds NPC quest giver relations on which NPCs start which quests.|
-|"Creature_Template":https://github.com/cmangos/issues/wiki/creature_template|This table contains the description of creatures.|
+|"creature_template":https://github.com/cmangos/issues/wiki/creature_template|This table contains the description of creatures.|
 |"creature_template_addon":https://github.com/cmangos/issues/wiki/creature_template_addon|The creature_template_addon defines different things that are applied on creature with a certain ENTRY when it is loaded.|
 |"creature_template_classlevelstats":https://github.com/cmangos/issues/wiki/creature_template_classlevelstats|Unit Base Stats|
 |"creature_template_spells":https://github.com/cmangos/issues/wiki/creature_template_spells|?|
