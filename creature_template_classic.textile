@@ -1,11 +1,9 @@
 Back to "world database":mangosdb_struct list of tables.
 
-*This Table Is For Classic Core (for 1.12.x)*
+*This table is for "cmangos-classic":https://github.com/cmangos/mangos-classic (1.12.x)*
 
-*See also "creature_template_tbc":creature_template_tbc (for 2.4.3)*
-*See also "creature_template":creature_template (for 3.3.5a)*
-
-
+*See also "creature_template_tbc":creature_template_tbc (2.4.3)*
+*See also "creature_template":creature_template (3.3.5a)*
 
 h2. The `creature&#95;template&#95;classic` table
 
