@@ -3,7 +3,7 @@ Back to "world database":mangosdb_struct list of tables.
 *This table is for "cmangos-tbc":https://github.com/cmangos/mangos-tbc (2.4.3)*
 
 *See also "creature_template_classic":creature_template_classic  (1.12.x)*
-*See also "creature_template":creature_template (3.3.5a)
+*See also "creature_template":creature_template (3.3.5a)*
 
 h2. The `creature&#95;template&#95;tbc` table
 
