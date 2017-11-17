@@ -1,11 +1,10 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `gossip&#95;menu&#95;option` table
+h2. The `reputation_spillover_template` table
 
-This table holds infos about menu options a gossip NPC can have. Examples of options : &quot;Train me!&quot;, &quot;I want to unlearn my talents&quot;, ...
+This table holds data about the "Reputation Bleed Over":http://wowwiki.wikia.com/wiki/Exalted -Effect
 
 h3. Structure
-
 
 |*Field*|*Type*|*Attributes*|*Key*|*Null*|*Default*|
 |"faction":Reputation_spillover_template#faction|smallint(6)|unsigned|PRI|NO|0|
@@ -18,7 +17,6 @@ h3. Structure
 |"faction3":Reputation_spillover_template#faction1/2/3|smallint(6)|unsigned||NO|0|
 |"rate_3":Reputation_spillover_template#rate|float(0)|signed||NO|0|
 |"rank_3":Reputation_spillover_template#rank|tinyint(3)|unsigned||NO|0|
-
 
 h3. Description of the fields
 
