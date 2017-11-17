@@ -174,7 +174,7 @@ h3. This is the list of tables in the regular 'mangos' database
 (Reloadable)|reference loot (loot groups)|
 |"reputation_reward_rate":https://github.com/cmangos/issues/wiki/reputation_reward_rate
 (Reloadable)|holds reputation multipliers for specific factions.|
-|"reputation_spillover_template":https://github.com/cmangos/issues/wiki/reputation_spillover_template|[Reputation Bleed Over](http://wowwiki.wikia.com/wiki/Exalted) Page Wrong|
+|"reputation_spillover_template":https://github.com/cmangos/issues/wiki/reputation_spillover_template|holds information about the "Reputation Bleed Over":http://wowwiki.wikia.com/wiki/Exalted -Effect|
 |"reserved_name":https://github.com/cmangos/issues/wiki/reserved_name
 (Reloadable)|serves as a simple list of names that players (gmlevel == 0) cannot use when naming their characters.|
 |"script_texts":https://github.com/cmangos/issues/wiki/script_texts|?|
