@@ -1,4 +1,4 @@
-h3. Event AI Tables
+h3. EventAI Tables
 
 "Creature&#95;ai&#95;scripts":creature_ai_scripts
 
@@ -6,28 +6,30 @@ h3. Event AI Tables
 
 "creature_ai_texts":creature_ai_texts
 
-h2. Event AI Documentation
+h2. EventAI Documentation
 
 The Manual-like and most-recent documentation for EventAI can be found in "doc/EventAI.txt":https://github.com/cmangos/mangos-wotlk/blob/master/doc/EventAI.txt
 
-h2. Event AI Guide
+h2. EventAI Guide
 
 ScriptDev2 was integrated into cmangos on 04 sept 2015 and enables us to handle DB-based scripting that allows the use of a database (MySQL only right now) to specify the actions that a creature script will do.
 
-The script is called EventAI and will be so called throughout the rest of this guide. A basic EventAI script works with and requires only two pieces of information: <u>When it happens</u> and <u>What happens when</u>. 
+The script is called EventAI and will be referenced like this for the rest of this guide. A basic EventAI script works with and requires only two pieces of information: <u>When it happens</u> and <u>What happens when</u>. 
 
-The first piece of information (the <u>Event</u>) will be referred to as the event. Anyone that wants to create entries for the EventAI script needs to answer the two questions above. 
-The second piece of information (the <u>Action</u>) will be referred to as the <u>Action</u>. Currently, a single EventAI script entry can have up to three actions. 
+The first piece of information (the <u>When it happens</u>) will be referred to as the <u>event</u>.
 
+The second piece of information (the <u>What happens when</u>) will be referred to as the <u>action</u>. 
+Currently, a single EventAI script entry can have up to three actions. 
 
-
-Throughout the script's lifecycle, it will continually perform the actions given when a defined event happens. Some events will only occur once while others can be timed so that they occur at a specified interval.
+Anyone that wants to create entries for the EventAI script needs to answer the two questions above.
+Throughout the script's lifecycle, it will continually perform the actions given when a defined event happens.
+Some events will only occur once while others can be timed so that they occur at a specified interval.
 
 Now that the basic idea of the script has been explained, let's get down to the fun details. For convenience, reference tables will be provided at the end of this article that will contain short descriptions for fast lookup. Here will be included longer and more thorough descriptions. We shall first start out with what events are currently defined by the EventAI script. An event can use up to three different parameters and these parameters control different things depending on the event. If a parameter isn't specifically named for the event, it will not be used for that event.
 
-One more thing: event AI can support phases. A &quot;phase&quot; is just a way to group certain events + actions together so that the creature will perform certain actions based on what event it is currently on. The way the phase system works in event AI is that for every event added, it needs to be specified under which phases the event SHOULD NOT occur. This is a bit confusing at first, so let's look at it more closely. A creature can have more than one phase, up to a max of 32 different phases (with the first one being phase 0, and last one being phase 31). How the phase selection field works is that it contains a 32bit number. Each bit in the number represents a possible phase, with the bit in the least significant position signifying phase 0 and the most significant bit signifying phase 31. The default value of zero in this field has no bits set and since the field controls when the event should NOT trigger, it would then mean that the event will always be triggered independent of the current phase the creature is in. Therefore, if you want to specify what phases the event should occur in, you need to add up all of the corresponding bits for all the other phases where the event shouldn't trigger in (confusing...yes).
+EventAI can also support phases. A <u>phase</u> is just a way to group certain events + actions together so that the creature will perform certain actions based on what event it is currently on. The way the phase system works in EventAI is that for every event added, it needs to be specified under which phases the event <u>SHOULD NOT</u> occur. This is a bit confusing at first, so let's look at it more closely. A creature can have more than one phase, up to a max of 32 different phases (with the first one being phase 0, and last one being phase 31). How the phase selection field works is that it contains a 32bit number. Each bit in the number represents a possible phase, with the bit in the least significant position signifying phase 0 and the most significant bit signifying phase 31. The default value of zero in this field has no bits set and since the field controls when the event should NOT trigger, it would then mean that the event will always be triggered independent of the current phase the creature is in. Therefore, if you want to specify what phases the event should occur in, you need to add up all of the corresponding bits for all the other phases where the event shouldn't trigger in (confusing...yes).
 
-For example, let's say that a certain creature using event AI will have a max of four phases. We are then dealing with a 4 bit number in this field. Let's further say that that certain creature has an event that will only trigger in its phase 2 (a timed spell cast for instance). Then the field should contain all of the phases the event SHOULDN'T be triggered in...then out of the four bits, we leave the *third* bit alone (off) and turn on all of the other bits so we get 1011 which is equal to 11, so we put in 11 as the inverse phase mask for the event entry. As another example, let's say that the same creature previously mentioned has another event that is only triggered in the phase 0 and phase 3. This would mean that we need to ignore phase 1 and 2, so our bitmask would be 0110 which is equal to 6 so we put in 6 for this event's inverse phase mask field. Please note that both examples were tailored for a creature with four and only four phases. If you decide to add more phases later on, you will have to redefine all of the nonzero bitmasks for all of the mob's events.
+For example, let's say that a certain creature using EventAI will have a max of four phases. We are then dealing with a 4 bit number in this field. Let's further say that that certain creature has an event that will only trigger in its phase 2 (a timed spell cast for instance). Then the field should contain all of the phases the event SHOULDN'T be triggered in...then out of the four bits, we leave the *third* bit alone (off) and turn on all of the other bits so we get 1011 which is equal to 11, so we put in 11 as the inverse phase mask for the event entry. As another example, let's say that the same creature previously mentioned has another event that is only triggered in the phase 0 and phase 3. This would mean that we need to ignore phase 1 and 2, so our bitmask would be 0110 which is equal to 6 so we put in 6 for this event's inverse phase mask field. Please note that both examples were tailored for a creature with four and only four phases. If you decide to add more phases later on, you will have to redefine all of the nonzero bitmasks for all of the mob's events.
 
 Every event also has a chance field that controls the chance of that event actually occurring. Using a value of 0 in this field will make the event never occur. Values are from 0 to 100.
 
@@ -170,10 +172,10 @@ h3. Action Explanations
 
 * *0 = ACTION&#95;T&#95;NONE*: Does nothing!
 
-* *1 = ACTION&#95;T&#95;SAY*: Displays the -TextId as defined. In case -TextId2 and optionally -TextId3, the output will be randomized. Type text are defined in the "EventAI_texts":eventai_texts table (say, yell, whisper, etc) along with other options for the text. All values are required to be negative.
-** Parameter 1: The entry of the text that the NPC should use from "eventai_texts":eventai_texts table. Optionally a entry from other tables can be used (such as "custom_texts":custom_texts).Entry are required to be negative and exist in a &#42;&#95;texts-table. The type text to be displayed are defined in the texts-table itself (Say, Yell, Whisper, Emote Text, Boss Whisper, Boss Emote)Other options are also to be defined in the texts-table, such as a sound to be heard with the text and the language used in output (common, dwarvish, etc).In case this entry has a localized version of the text, the localized text will be displayed in client that support this locale.
-** Parameter 2: Optional. TextId can be defined in addition. The same apply to this as explained above, however eventAI will randomize between the two.
-** Parameter 3: Optional, if Parameter 2 exist. In this case, eventAI will randomize between three.
+* *1 = ACTION&#95;T&#95;SAY*: Displays the -TextId as defined. In case -TextId2 and optionally -TextId3, the output will be randomized. Type text are defined in the "creature_ai_texts":creature_ai_texts table (say, yell, whisper, etc) along with other options for the text. All values are required to be negative.
+** Parameter 1: The entry of the text that the NPC should use from "eventai_texts":eventai_texts table. Optionally a entry from other tables can be used (such as "custom_texts":custom_texts).Entry are required to be negative and exist in a &#42;&#95;texts-table. The type text to be displayed are defined in the texts-table itself (Say, Yell, Whisper, Emote Text, Boss Whisper, Boss Emote) Other options are also to be defined in the texts-table, such as a sound to be heard with the text and the language used in output (common, dwarvish, etc).In case this entry has a localized version of the text, the localized text will be displayed in client that support this locale.
+** Parameter 2: Optional. TextId can be defined in addition. The same apply to this as explained above, however EventAI will randomize between the two.
+** Parameter 3: Optional, if Parameter 2 exist. In this case, EventAI will randomize between three.
 
 * *2 = ACTION&#95;T&#95;YELL*: UNUSED
 
@@ -280,10 +282,10 @@ h3. Action Explanations
 ** Parameter 1: The minimum of the phase range.
 ** Parameter 2: The maximum of the phase range. The number here must be greater than the one in parameter 1.
 
-* *32 = ACTION&#95;T&#95;SUMMON*: Summons a creature using the data specified in the separate "summons":creature_ai_summons table.
+* *32 = ACTION&#95;T&#95;SUMMON*: Summons a creature using the data specified in the separate "creature_ai_summons":creature_ai_summons table.
 ** Parameter 1: The creature template ID to be summoned. The value here needs to be a valid creature template ID.
 ** Parameter 2: The target type defining who the summoned creature will attack. The value in this field needs to be a valid target type as specified in the reference tables below. NOTE: Using target type 0 will cause the summoned creature to not attack anyone.
-** Parameter 3: The summon ID from the eventai&#95;summons table controlling the position (and spawntime) where the summoned mob should be spawned at.
+** Parameter 3: The summon ID from the "creature_ai_summons":creature_ai_summons table controlling the position (and spawntime) where the summoned mob should be spawned at.
 
 * *33 = ACTION&#95;T&#95;KILLED&#95;MONSTER*: When activated, this action will call KilledMonster() function for the player. It can be used to give creature credit for killing a creature (note that it can be ANY creature including certain quest specific triggers). In general if the quest is set to be accompished on different creatures (e.g. &quot;Credit&quot; templates).
 ** Parameter 1: The creature template ID. The value here must be a valid creature template ID.
