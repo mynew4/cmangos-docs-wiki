@@ -1,8 +1,10 @@
 h3. This is the list of tables in the regular 'mangos' database
 
-(Reloadable) - Reloadable in-game with the .reload command.
-(CMaNGOS) - CMaNGOS table. These tables are either used by MaNGOS internally, or they are maintained by the CMaNGOS team. Either way, the DB teams do not touch them.
-(ScriptLibrary) - Script library tables. These tables are maintained by script library projects (such as ScriptDev2). The DB teams do not touch them.
+(Reloadable) - are in-game reloadable with the .reload command.
+
+(Core) - used by CMaNGOS-Core internally, or they are maintained by the CMaNGOS-Core-Team.
+
+(Classic) (TBC) (WotLK) (Cata) - used since or only in a certain version of CMaNGOS-Core
 
 |Table|Content|
 |"achievement_criteria_requirement":https://github.com/cmangos/issues/wiki/achievement_criteria_requirement|contains what need to be done to complete an achievement criteria.|
@@ -17,7 +19,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"battleground_template":https://github.com/cmangos/issues/wiki/battleground_template|contains information about the different battlegrounds.|
 |"battlemaster_entry":https://github.com/cmangos/issues/wiki/battlemaster_entry|holds information on which NPC can start what battleground or arena.|
 |"command":https://github.com/cmangos/issues/wiki/command
-(Reloadable) (CMaNGOS)|holds help and security information for commands.|
+(Reloadable) (Core)|holds help and security information for commands.|
 |"conditions":https://github.com/cmangos/issues/wiki/conditions|With this table and the new conditions it is possible to create tree like and very complicated combined conditions.|
 |"creature":https://github.com/cmangos/issues/wiki/creature|contains individual creature spawn data. Spawn of a creature is an instance of the creature object in the world.|
 |"creature_addon":https://github.com/cmangos/issues/wiki/creature_template_addon|defines different things that are applied on creature with a certain GUID when it is loaded.|
@@ -103,7 +105,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"item_convert":https://github.com/cmangos/issues/wiki/item_convert|?|
 |"item_enchantment_template":https://github.com/cmangos/issues/wiki/item_enchantment_template|holds enchantment chance information for items that should have either a random property or a random suffix attached to them.|
 |"item_expire_convert":https://github.com/cmangos/issues/wiki/item_expire_convert
-(CMaNGOS) (Reloadable)|contains pairs of times which turn into an other item after a certain amount of time.|
+(Reloadable) (Core)|contains pairs of times which turn into an other item after a certain amount of time.|
 |"item_loot_template":https://github.com/cmangos/issues/wiki/item_loot_template
 (Reloadable)|Item loot|
 |"item_required_target":https://github.com/cmangos/issues/wiki/item_required_target
@@ -139,19 +141,19 @@ h3. This is the list of tables in the regular 'mangos' database
 |"pickpocketing_loot_template":https://github.com/cmangos/issues/wiki/pickpocketing_loot_template
 (Reloadable)|Pickpocketing loot|
 |"player_classlevelstats":https://github.com/cmangos/issues/wiki/player_classlevelstats
-(CMaNGOS)|holds information on the base health and mana of characters when they level up. Each class has different level stats.|
+(Core)|holds information on the base health and mana of characters when they level up. Each class has different level stats.|
 |"player_levelstats":https://github.com/cmangos/issues/wiki/player_levelstats
-(CMaNGOS)|holds information on the base health and mana of characters when they level up. Each class has different level stats.|
+(Core)|holds information on the base health and mana of characters when they level up. Each class has different level stats.|
 |"player_xp_for_level":https://github.com/cmangos/issues/wiki/player_xp_for_level
-(CMaNGOS)|includes information on how much experience needed for next level. Comes from sniffs.|
+(Core)|includes information on how much experience needed for next level. Comes from sniffs.|
 |"playercreateinfo":https://github.com/cmangos/issues/wiki/playercreateinfo
-(CMaNGOS)|holds the start positions of each class-race combinations for all newly created characters.|
+(Core)|holds the start positions of each class-race combinations for all newly created characters.|
 |"playercreateinfo_action":https://github.com/cmangos/issues/wiki/playercreateinfo_action
-(CMaNGOS)|holds information on what default actions a brand new character should start out with.|
+(Core)|holds information on what default actions a brand new character should start out with.|
 |"playercreateinfo_item":https://github.com/cmangos/issues/wiki/playercreateinfo_item
-(CMaNGOS)|holds information on what items each race-class combination of a new character starts out with.|
+(Core)|holds information on what items each race-class combination of a new character starts out with.|
 |"playercreateinfo_spell":https://github.com/cmangos/issues/wiki/playercreateinfo_spell
-(CMaNGOS)|holds information on what spells newly created characters should start out with.|
+(Core)|holds information on what spells newly created characters should start out with.|
 |"points_of_interest":https://github.com/cmangos/issues/wiki/points_of_interest
 (Reloadable)|?|
 |"pool_creature":https://github.com/cmangos/issues/wiki/pool_creature|contains all pooled creatures by GUID that are part of a pool_template.|
@@ -178,43 +180,43 @@ h3. This is the list of tables in the regular 'mangos' database
 |"script_texts":https://github.com/cmangos/issues/wiki/script_texts|?|
 |"script_waypoint":https://github.com/cmangos/issues/wiki/script_waypoint|?|
 |"scripted_areatrigger":https://github.com/cmangos/issues/wiki/scripted_areatrigger
-(ScriptLibrary)|This table links areatriggers to C++ scripts.|
+(Core)|This table links areatriggers to C++ scripts.|
 |"scripted_event_id":https://github.com/cmangos/issues/wiki/scripted_event_id
-(ScriptLibrary)|This table links event id’s to C++ scripts.|
+(Core)|This table links event id’s to C++ scripts.|
 |"skill_discovery_template":https://github.com/cmangos/issues/wiki/skill_discovery_template
 (Reloadable)|controls the so called "discovery" system of learning spells.|
 |"skill_extra_item_template":https://github.com/cmangos/issues/wiki/skill_extra_item_template|holds information about when using certain profession spells, you have the chance of creating more than one copy of the item.|
 |"skill_fishing_base_level":https://github.com/cmangos/issues/wiki/skill_fishing_base_level|controls the minimum skill level required in fishing to fish in a certain area.|
 |"skinning_loot_template":https://github.com/cmangos/issues/wiki/skinning_loot_template|Skinning loot|
 |"spell_affect":https://github.com/cmangos/issues/wiki/spell_affect
-(Reloadable) (CMaNGOS)|holds information on what spells are affected by what spell mods.|
+(Reloadable) (Core)|holds information on what spells are affected by what spell mods.|
 |"spell_area":https://github.com/cmangos/issues/wiki/spell_area
 (Reloadable)|holds information on what spells are applied to npcs/players in some areas.|
 |"spell_bonus_data":https://github.com/cmangos/issues/wiki/spell_bonus_data
-(Reloadable) (CMaNGOS)|is used for storing custom damage/healing bonus coefficients.|
+(Reloadable) (Core)|is used for storing custom damage/healing bonus coefficients.|
 |"spell_chain":https://github.com/cmangos/issues/wiki/spell_chain
-(Reloadable) (CMaNGOS)|defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing.|
+(Reloadable) (Core)|defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing.|
 |"spell_check":https://github.com/cmangos/issues/wiki/spell_check
-(CMaNGOS)|?|
+(Core)|?|
 |"spell_elixir":https://github.com/cmangos/issues/wiki/spell_elixir
-(Reloadable) (CMaNGOS)|holds elixir information to be used to properly stack the elixirs.|
+(Reloadable) (Core)|holds elixir information to be used to properly stack the elixirs.|
 |"spell_facing":https://github.com/cmangos/issues/wiki/spell_facing|?|
 |"spell_learn_spell":https://github.com/cmangos/issues/wiki/spell_learn_spell
-(Reloadable) (CMaNGOS)|holds information on spells that should be learned at the same time a player learns another spell.|
+(Reloadable) (Core)|holds information on spells that should be learned at the same time a player learns another spell.|
 |"spell_loot_template":https://github.com/cmangos/issues/wiki/spell_loot_template
 (Reloadable)|Spell loot|
 |"spell_pet_auras":https://github.com/cmangos/issues/wiki/spell_pet_auras|?|
 |"spell_proc_event":https://github.com/cmangos/issues/wiki/spell_proc_event
-(Reloadable) (CMaNGOS)|holds information on what events (or procs) certain spells are activated.|
+(Reloadable) (Core)|holds information on what events (or procs) certain spells are activated.|
 |"spell_proc_item_enchant":https://github.com/cmangos/issues/wiki/spell_proc_item_enchant
-(Reloadable) (CMaNGOS)|?|
+(Reloadable) (Core)|?|
 |"spell_script_target":https://github.com/cmangos/issues/wiki/spell_script_target
 (Reloadable)|holds information on spell effects which require a specific target in either alive or dead state (for creatures).|
 |"spell_target_position":https://github.com/cmangos/issues/wiki/spell_target_position
 (Reloadable)|holds coordinate information on where the player should be teleported to when a spell with effect SPELL_EFFECT_TELEPORT_UNITS.|
 |"spell_template":https://github.com/cmangos/issues/wiki/spell_template|contains the description of spells.|
 |"spell_threat":https://github.com/cmangos/issues/wiki/spell_threat
-(Reloadable) (CMaNGOS)|holds threat values on all spells that should either give or take away threat.|
+(Reloadable) (Core)|holds threat values on all spells that should either give or take away threat.|
 |"transports":https://github.com/cmangos/issues/wiki/transports|contains all type 15 transports (Boats and Zeppelins).|
 |"vehicle_accessory":https://github.com/cmangos/issues/wiki/vehicle_accessory|?|
 |"world_template":https://github.com/cmangos/issues/wiki/world_template|?|
