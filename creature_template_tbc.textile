@@ -41,6 +41,11 @@ h3. Structure
 |"CreatureTypeFlags":creature_template_tbc#creaturetypeflags|int(10) unsigned|YES||0||
 |"SpeedWalk":creature_template_tbc#speedwalk|float|YES||1||
 |"SpeedRun":creature_template_tbc#speedrun|float|YES||1.14286||
+|"Detection":creature_template_tbc#detection|int|NO||20||
+|"CallForHelp":creature_template_tbc#callforhelp|int|NO||0||
+|"Pursuit":creature_template_tbc#pursuit|int|NO||0||
+|"Leash":creature_template_tbc#leash|int|NO||0||
+|"Timeout":creature_template_tbc#timeout|int|NO||0||
 |"UnitClass":creature_template_tbc#unitclass|int unsigned|NO||0||
 |"Rank":creature_template_tbc#rank|tinyint(3) unsigned|YES||0||
 |"Expansion":creature_template_tbc#expansion|tinyint(3) unsigned|NO||0||
@@ -72,6 +77,7 @@ h3. Structure
 |"KillCredit1":creature_template_tbc#killcredit1|int(11) unsigned|NO||0||
 |"KillCredit2":creature_template_tbc#killcredit2|int(11) unsigned|NO||0||
 |"MechanicImmuneMask":creature_template_tbc#mechanicimmunemask|int(10) unsigned|NO||0||
+|"SchoolImmuneMask":Creature_template#schoolimmunemask|int(10) unsigned|NO||0||
 |"ResistanceHoly":creature_template_tbc#resistanceholy|int(10) unsigned|NO||0||
 |"ResistanceFire":creature_template_tbc#resistancefire|smallint(5)|NO||0||
 |"ResistanceNature":creature_template_tbc#resistancenature|smallint(5)|NO||0||
@@ -393,6 +399,24 @@ This Field Controls How Fast An NPC Moves When Running.
 This Value Comes From Sniff Packet Data.
 
 (Default Value Is: 1.14286)
+
+h4. Detection
+
+Aggro Range, more info to come
+
+(Default Value Is: 20)
+
+h4. CallForHelp
+
+more info to come
+
+h4. Pursuit
+
+more info to come
+
+h4. Leash
+
+more info to come
 
 h4. UnitClass
 
@@ -782,6 +806,21 @@ Uses references from SpellMechanic.dbc.
 |16384|MECHANIC&#95;BLEED|536870912|MECHANIC&#95;SAPPED|
 
 To combine immunities just add values. Immune to everything corresponds to the value 1073741823.
+
+h4. SchoolImmuneMask
+
+This makes the NPC immune to specific spell schools.
+
+|_. Type|_. Bitmask|
+|SPELL&#95;SCHOOL&#95;NORMAL|1|
+|SPELL&#95;SCHOOL&#95;HOLY|2|
+|SPELL&#95;SCHOOL&#95;FIRE|4|
+|SPELL&#95;SCHOOL&#95;NATURE|8|
+|SPELL&#95;SCHOOL&#95;FROST|16|
+|SPELL&#95;SCHOOL&#95;SHADOW|32|
+|SPELL&#95;SCHOOL&#95;ARCANE|64|
+
+To combine spell school immunities just add values. Immune to everything corresponds to the value 127.
 
 h4. ResistanceHoly
 
