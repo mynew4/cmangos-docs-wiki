@@ -43,6 +43,11 @@ h3. Structure
 |"CreatureTypeFlags":Creature_template#creaturetypeflags|int(10) unsigned|YES||0||
 |"SpeedWalk":Creature_template#speedwalk|float|YES||1||
 |"SpeedRun":Creature_template#speedrun|float|YES||1.14286||
+|"Detection":creature_template_tbc#detection|int|NO||20||
+|"CallForHelp":creature_template_tbc#callforhelp|int|NO||0||
+|"Pursuit":creature_template_tbc#pursuit|int|NO||0||
+|"Leash":creature_template_tbc#leash|int|NO||0||
+|"Timeout":creature_template_tbc#timeout|int|NO||0||
 |"UnitClass":Creature_template#unitclass|int unsigned|NO||0||
 |"Rank":Creature_template#rank|tinyint(3) unsigned|YES||0||
 |"Expansion":Creature_template#expansion|tinyint(3) unsigned|NO||0||
@@ -429,6 +434,24 @@ Sniffed RunSpeed for a specific creature is 10. Divide it by 7 to get our DB val
 10/7=1,42857
 
 (Default Value Is: 1.14286)
+
+h4. Detection
+
+Aggro Range, more info to come
+
+(Default Value Is: 20)
+
+h4. CallForHelp
+
+more info to come
+
+h4. Pursuit
+
+more info to come
+
+h4. Leash
+
+more info to come
 
 h4. UnitClass
 
@@ -827,16 +850,16 @@ h4. SchoolImmuneMask
 
 This makes the NPC immune to specific spell schools.
 
-|_. Bitmask|_. Type|_. Bit|
-|1|SPELL&#95;SCHOOL&#95;NORMAL|0|
-|2|SPELL&#95;SCHOOL&#95;HOLY|1|
-|4|SPELL&#95;SCHOOL&#95;FIRE|2|
-|8|SPELL&#95;SCHOOL&#95;NATURE|3|
-|16|SPELL&#95;SCHOOL&#95;FROST|4|
-|32|SPELL&#95;SCHOOL&#95;SHADOW|5|
-|64|SPELL&#95;SCHOOL&#95;ARCANE|6|
+|_. Type|_. Bitmask|
+|SPELL&#95;SCHOOL&#95;NORMAL|1|
+|SPELL&#95;SCHOOL&#95;HOLY|2|
+|SPELL&#95;SCHOOL&#95;FIRE|4|
+|SPELL&#95;SCHOOL&#95;NATURE|8|
+|SPELL&#95;SCHOOL&#95;FROST|16|
+|SPELL&#95;SCHOOL&#95;SHADOW|32|
+|SPELL&#95;SCHOOL&#95;ARCANE|64|
 
-The code is checking the database value against 1 << spellInfo->School so it should match the spell schools defined in the code (SharedDefines.h). Or translated into bits and mask values you can use in the database:
+To combine spell school immunities just add values. Immune to everything corresponds to the value 127.
 
 h4. ResistanceHoly
 
