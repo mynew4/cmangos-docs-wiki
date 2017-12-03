@@ -92,7 +92,7 @@ h3. 3.0.3 Character Data Table
 |73|UNIT_FIELD_MAXOFFHANDDAMAGE||
 |74|UNIT_FIELD_BYTES_1|(stealthFlag << 16) &#124; (petTalentPoints << 8) &#124; (standState)|
 
-*standState*
+*standState* - TODO: after this shift all by one
 
 bc. PLAYER_STATE_NONE              = 0
 PLAYER_STATE_SIT               = 1
