@@ -35,9 +35,9 @@ CAST(SUBSTRING_INDEX(`data`, ' ', -131) AS CHAR)) WHERE CAST(SUBSTRING_INDEX(SUB
 
 Again, don't forget to backup first!!
 
-h3. 3.0.3 Character Data Table
+h3. 3.3.5 Character Data Table
 
-*This table was last updated for 3.0.3 values.*
+*This table was last updated for 3.3.5 values.*
 
 |_. Index|_. Value Name|_. Comments|
 |0|OBJECT_FIELD_GUID|Character GUID (full GUID includes both index 0 and index 1 as 64bit number)|
