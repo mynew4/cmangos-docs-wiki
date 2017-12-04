@@ -377,10 +377,13 @@ Compiling CMaNGOS and ScriptDev2 (*nix)
   - ++-DCMAKE_INSTALL_PREFIX=\../mangos/run++ to install into the "run" subfolder of /home/mangos folder, otherwise this will install to /opt/mangos
   - ++-DPCH=1++ to compile with PCH mode (much faster after updates).
   - ++-DDEBUG=0++ to remove debug mode from compiling
+  - ++-DBUILD_PLAYERBOT=ON++ to build with playerbots enabled
+
   - *examples:*
 
  cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DPCH=1 -DDEBUG=0  <--- Just want to compile CMaNGOS
  cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DBUILD_EXTRACTORS=ON -DPCH=1 -DDEBUG=0  <--- Want compile CMaNGOS & the map extraction tools
+ cmake ../mangos -DCMAKE_INSTALL_PREFIX=\../mangos/run -DBUILD_EXTRACTORS=ON -DPCH=1 -DDEBUG=0  <--- Want compile CMaNGOS & the map extraction tools & playerbots
 
 * Invoke ++make++ to compile CMaNGOS and ScriptDev2
 
@@ -422,7 +425,13 @@ You must extract *DBC/maps* and *vmaps* for CMaNGOS to work, *mmaps* are optiona
 
 *nix
 ~~~~
-Ever since extractors are no longer in repository, you will need to compile them yourself. The extraction process should work identically to Windows, since the scripts are portable.
+Ever since extractors are no longer in repository, you will need to compile them yourself. The extraction process should work identically to Windows, since the scripts are portable. 
+
+If you followed this guide the file can be found in:
+
+* Executables: ++/home/mangos/mangos/run/bin/tools++
+
+* Scripts: ++/home/mangos/mangos/contrib/extractor_scripts++
 
 Install databases
 -----------------
