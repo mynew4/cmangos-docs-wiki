@@ -6,17 +6,16 @@ This table holds information on what events (or procs) certain spells are activa
 
 h3. Structure
 
-
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |"entry":Spell_proc_event#entry|smallint(6) unsigned|NO|PRI|0||
 |"SchoolMask":Spell_proc_event#schoolmask|tinyint(4)|NO||0||
-|"Category":Spell_proc_event#category|smallint(6)|NO||0||
-|"SkillID":Spell_proc_event#skillid|smallint(6)|NO||0||
 |"SpellFamilyName":Spell_proc_event#spellfamilyname|smallint(6) unsigned|NO||0||
-|"SpellFamilyMask":Spell_proc_event#spellfamilymask|bigint(40) unsigned|NO||0||
+|"SpellFamilyMask":Spell_proc_event#spellfamilymask|bigint(40) unsigned|NO||0|Different for Expansions|
 |"procFlags":Spell_proc_event#procflags|int(11) unsigned|NO||0||
+|"procEx":Spell_proc_event#procex|int(11) unsigned|NO||0||
 |"ppmRate":Spell_proc_event#ppmrate|float|NO||0||
-
+|"CustomChance":Spell_proc_event#customchance|float|NO||0||
+|"Cooldown":Spell_proc_event#cooldown|float|NO||0||
 
 h3. Description of the fields
 
@@ -37,15 +36,6 @@ This field contains a bitmask that controls on what types of spell damages the p
 |5|32|Shadow|
 |6|64|Arcane|
 
-
-h4. Category
-
-This field controls what spell categories can proc the aura's triggered spell.
-
-h4. SkillID
-
-This field controls what spells' skill IDs can proc the triggered spell. For example all talent spells in a tab share a certain skill ID. See SkillLine.dbc
-
 h4. SpellFamilyName
 
 This field controls what family name spells can proc the triggered spell.
@@ -63,10 +53,9 @@ This field controls what family name spells can proc the triggered spell.
 |11|Shaman|
 |13|Potion|
 
-
 h4. SpellFamilyMask
 
-This field controls what spells' family flags can proc the triggered spell.
+These fields control what spells' family flags can proc the triggered spell.
 
 h4. procFlags
 
@@ -107,7 +96,108 @@ A bitmask controlling what events trigger the spell. To combine possible events,
 |1073741824|PROC&#95;FLAG&#95;TARGET&#95;BLOCK|On enemy blocks|
 |2147483648|PROC&#95;FLAG&#95;MISS|On miss melee attack|
 
+New:
+
+    PROC_FLAG_NONE                          = 0x00000000,
+
+    PROC_FLAG_KILLED                        = 0x00000001,// 00 Killed by aggressor
+
+    PROC_FLAG_KILL                          = 0x00000002,// 01 Kill target (in most cases need XP/Honor reward, see Unit::IsTriggeredAtSpellProcEvent for additinoal check)
+
+    PROC_FLAG_SUCCESSFUL_MELEE_HIT          = 0x00000004,// 02 Successful melee auto attack
+
+    PROC_FLAG_TAKEN_MELEE_HIT               = 0x00000008,// 03 Taken damage from melee auto attack hit
+
+    PROC_FLAG_SUCCESSFUL_MELEE_SPELL_HIT    = 0x00000010,// 04 Successful attack by Spell that use melee weapon
+
+    PROC_FLAG_TAKEN_MELEE_SPELL_HIT         = 0x00000020,// 05 Taken damage by Spell that use melee weapon
+
+    PROC_FLAG_SUCCESSFUL_RANGED_HIT         = 0x00000040,// 06 Successful Ranged auto attack
+
+    PROC_FLAG_TAKEN_RANGED_HIT              = 0x00000080,// 07 Taken damage from ranged auto attack
+
+    PROC_FLAG_SUCCESSFUL_RANGED_SPELL_HIT   = 0x00000100,// 08 Successful Ranged attack by Spell that use ranged weapon
+
+    PROC_FLAG_TAKEN_RANGED_SPELL_HIT        = 0x00000200,// 09 Taken damage by Spell that use ranged weapon
+
+    PROC_FLAG_DONE_SPELL_NONE_DMG_CLASS_POS     = 0x00000400,// 10 Done positive spell that has dmg class none
+
+    PROC_FLAG_TAKEN_SPELL_NONE_DMG_CLASS_POS    = 0x00000800,// 11 Taken positive spell that has dmg class none
+
+    PROC_FLAG_DONE_SPELL_NONE_DMG_CLASS_NEG     = 0x00001000,// 12 Done negative spell that has dmg class none
+
+    PROC_FLAG_TAKEN_SPELL_NONE_DMG_CLASS_NEG    = 0x00002000,// 13 Taken negative spell that has dmg class none
+
+    PROC_FLAG_DONE_SPELL_MAGIC_DMG_CLASS_POS    = 0x00004000,// 14 Successful cast positive spell (by default only on healing)
+
+    PROC_FLAG_TAKEN_SPELL_MAGIC_DMG_CLASS_POS   = 0x00008000,// 15 Taken positive spell hit (by default only on healing)
+
+    PROC_FLAG_DONE_SPELL_MAGIC_DMG_CLASS_NEG    = 0x00010000,// 16 Successful negative spell cast (by default only on damage)
+
+    PROC_FLAG_TAKEN_SPELL_MAGIC_DMG_CLASS_NEG   = 0x00020000,// 17 Taken negative spell (by default only on damage)
+
+    PROC_FLAG_ON_DO_PERIODIC                = 0x00040000,// 18 Successful do periodic (damage / healing, determined by PROC_EX_PERIODIC_POSITIVE or negative if no procEx)
+
+    PROC_FLAG_ON_TAKE_PERIODIC              = 0x00080000,// 19 Taken spell periodic (damage / healing, determined by PROC_EX_PERIODIC_POSITIVE or negative if no procEx)
+
+    PROC_FLAG_TAKEN_ANY_DAMAGE              = 0x00100000,// 20 Taken any damage
+
+    PROC_FLAG_ON_TRAP_ACTIVATION            = 0x00200000,// 21 On trap activation
+
+    PROC_FLAG_TAKEN_OFFHAND_HIT             = 0x00400000,// 22 Taken off-hand melee attacks(not used)
+
+    PROC_FLAG_SUCCESSFUL_OFFHAND_HIT        = 0x00800000 // 23 Successful off-hand melee attacks
+
+h4. procEx
+
+    PROC_EX_NONE                = 0x0000000,// If none can tigger on Hit/Crit only (passive spells MUST defined by SpellFamily flag)
+
+    PROC_EX_NORMAL_HIT          = 0x0000001,// If set only from normal hit (only damage spells)
+
+    PROC_EX_CRITICAL_HIT        = 0x0000002,
+
+    PROC_EX_MISS                = 0x0000004,
+
+    PROC_EX_RESIST              = 0x0000008,
+
+    PROC_EX_DODGE               = 0x0000010,
+
+    PROC_EX_PARRY               = 0x0000020,
+
+    PROC_EX_BLOCK               = 0x0000040,
+
+    PROC_EX_EVADE               = 0x0000080,
+
+    PROC_EX_IMMUNE              = 0x0000100,
+
+    PROC_EX_DEFLECT             = 0x0000200,
+
+    PROC_EX_ABSORB              = 0x0000400,
+
+    PROC_EX_REFLECT             = 0x0000800,
+
+    PROC_EX_INTERRUPT           = 0x0001000,// Melee hit result can be Interrupt (not used)
+
+    PROC_EX_RESERVED1           = 0x0002000,
+
+    PROC_EX_RESERVED2           = 0x0004000,
+
+    PROC_EX_RESERVED3           = 0x0008000,
+
+    PROC_EX_EX_TRIGGER_ALWAYS   = 0x0010000,// If set trigger always ( no matter another flags) used for drop charges
+
+    PROC_EX_EX_ONE_TIME_TRIGGER = 0x0020000,// If set trigger always but only one time (not used)
+
+    PROC_EX_PERIODIC_POSITIVE   = 0x0040000,// For periodic heal
 
 h4. ppmRate
 
 This field controls the times per minute that the spell should proc. If zero, then the value is taken from the DBC entry.
+
+h4. CustomChance
+
+Changed Proc Chance from spell_template information
+
+h4. Cooldown
+
+Internal Cooldown
