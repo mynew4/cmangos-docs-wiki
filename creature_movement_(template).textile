@@ -1,0 +1,61 @@
+Back to "world database":mangosdb_struct list of tables.
+
+h2. The `creature&#95;movement&#95;(template)` table
+
+holds information on each creature's waypoints. In essence, a waypoint just defines a path that the creature will follow by going from point to point. More specifically, once the creature arrives at a point, it can do different things like cast a spell, do an emote, etc. Usually this table is filled through the .wp command (and its various subcommands) in the world.
+
+Please note that for a creature to use waypoints, its "MovementType":creature#MovementType must be 2.
+
+h3. Structure
+
+|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+|"entry":creature_movement_(template)#id|int(10) unsigned|NO|PRI|0||
+|"pathId":creature_movement_(template)#pathId|int(10) unsigned|NO|PRI|0||
+|"point":Creature_movement_(template)#point|int(10) unsigned|NO|PRI|0||
+|"position_x":creature_movement_(template)#position_x|float|NO||0||
+|"position_y":creature_movement_(template)#position_y|float|NO||0||
+|"position_z":creature_movement_(template)#position_z|float|NO||0||
+|"waittime":creature_movement_(template)#waittime|int(5) unsigned|NO||0||
+|"script_id":creature_movement_(template)#script_id|mediumint(8) unsigned|NO||0||
+|"orientation":creature_movement_(template)#orientation|float|YES||0||
+
+h3. Description of the fields
+
+h4. entry
+
+The entry of the creature if creature_movement_(template). See "creature_template.entry":Creature_template#Entry.
+
+h4. pathId
+
+Random Paths an entry can get assigned.
+
+h4. point
+
+Defines the waypoint number. A creature will go from waypoint to waypoint in the order controlled by this field.
+
+h4. position&#95;x
+
+The X position of the waypoint.
+
+h4. position&#95;y
+
+The Y position of the waypoint.
+
+h4. position&#95;z
+
+The Z position of the waypoint.
+
+h4. waittime
+
+The time that the creature will wait before heading to the next waypoint, in milliseconds.
+
+h4. script&#95;id
+
+Reference to "DBScripts_on_creature_movement":DBScripts_on_creature_movement .
+
+h4. orientation
+
+The orientation the creature will face once it reaches the waypoint. 
+(North = 0.0; South = pi (3.14159))
+
+Setting this field to 100 means the creature will not change its orientation upon reaching the waypoint.
