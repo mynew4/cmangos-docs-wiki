@@ -301,6 +301,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
 
 * *SCRIPT&#95;COMMAND&#95;REMOVE&#95;AURA = 14*
 ** datalong: "Spell ID":Spell.dbc#Content.
+** data&#95;flags &amp; SCRIPT&#95;FLAG&#95;COMMAND&#95;ADDITIONAL will remove aura from the source only for the target unit.
 
 
 * *SCRIPT&#95;COMMAND&#95;CAST&#95;SPELL = 15*
