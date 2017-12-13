@@ -22,7 +22,7 @@ h3. This is the list of tables in the regular 'mangos' database
 (Reloadable) (Core)|holds help and security information for commands.|
 |"conditions":https://github.com/cmangos/issues/wiki/conditions|With this table and the new conditions it is possible to create tree like and very complicated combined conditions.|
 |"creature":https://github.com/cmangos/issues/wiki/creature|contains individual creature spawn data. Spawn of a creature is an instance of the creature object in the world.|
-|"creature_addon":https://github.com/cmangos/issues/wiki/creature_template_addon|defines different things that are applied on creature with a certain GUID when it is loaded.|
+|"creature_addon":https://github.com/cmangos/issues/wiki/creature_(template_)addon|defines different things that are applied on creature with a certain GUID when it is loaded.|
 |"creature_ai_scripts":https://github.com/cmangos/issues/wiki/creature_ai_scripts
 (Reloadable)|ACID (Artificial Creature Intelligence Database) EventAI|
 |"creature_ai_summons":https://github.com/cmangos/issues/wiki/creature_ai_summons
@@ -45,7 +45,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"creature_questrelation":https://github.com/cmangos/issues/wiki/creature_questrelation
 (Reloadable)|holds NPC quest giver relations on which NPCs start which quests.|
 |"creature_template":https://github.com/cmangos/issues/wiki/creature_template|contains the description of creatures.|
-|"creature_template_addon":https://github.com/cmangos/issues/wiki/creature_template_addon|defines different things that are applied on creature with a certain ENTRY when it is loaded.|
+|"creature_template_addon":https://github.com/cmangos/issues/wiki/creature_(template_)addon|defines different things that are applied on creature with a certain ENTRY when it is loaded.|
 |"creature_template_classlevelstats":https://github.com/cmangos/issues/wiki/creature_template_classlevelstats|Unit Base Stats|
 |"creature_template_spells":https://github.com/cmangos/issues/wiki/creature_template_spells|holds creature spell data|
 |"costum_texts":https://github.com/cmangos/issues/wiki/costum_texts|?|
