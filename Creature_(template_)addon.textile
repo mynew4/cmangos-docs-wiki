@@ -1,15 +1,17 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `creature&#95;(template)&#95;addon` tables
+h2. The `creature&#95;(template&#95;)addon` tables
 
-The creature&#95;addon and creature&#95;template&#95;addon tables define different things that are applied on creatures when they are loaded. These &quot;different things&quot; can be for example to have the creature be mounted, to have it emote something, to have it display an aura effect, etc. Through the use of the fields in this table, many things can be changed about the outward visual appearance of the creature. The creature&#95;template&#95;addon table affects all creatures with that creature template ID while the creature&#95;addon table affects individually spawned creatures (so that two creatures using the same template can look different).
+define different things that are applied on creatures when they are loaded, either by "`creature`.`guid`":https://github.com/cmangos/issues/wiki/Creature#guid or "`creature_template`.`entry`":https://github.com/cmangos/issues/wiki/Creature_template#entry. 
+So two creatures using the same creature&#95;template&#95;addon can look different, if one is additionally defined in creature&#95;addon.
 
-NOTE: A creature&#95;addon record will override a creature&#95;template&#95;addon record should they overlap on the same creature.
+Through the use of the fields in this table, many things can be changed about the outward visual appearance of the creature. Potential usage examples are: to have the creature be mounted, to have it emote something, to have it display an aura effect, etc. 
 
-NOTICE: The data for this table is largely incomplete and is mostly just a regurgitation of what the client receives from the server. This article is a WIP as to what all the possible values are.
+NOTE: 
+* A creature&#95;addon record will override a creature&#95;template&#95;addon record should they overlap on the same creature.
+* The data for this table is largely incomplete and is mostly just a regurgitation of what the client receives from the server. This article is a WIP as to what all the possible values are.
 
 h3. Structure
-
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |"entry/guid":Creature_template_addon#entry/guid|mediumint(8) unsigned|NO|PRI|0||
@@ -21,7 +23,6 @@ h3. Structure
 |"moveflags":Creature_template_addon#moveflags|int(10) unsigned|NO||0||
 |"auras":Creature_template_addon#auras|text|YES||||
 
-
 h3. Description of the fields
 
 h4. entry/guid
@@ -32,34 +33,36 @@ h4. mount
 
 The model ID of the mount to be used to make the creature appear mounted. The value here overrides the value for the creature's unit field UNIT&#95;FIELD&#95;MOUNTDISPLAYID. List of known values and what their visual effects on the creature
 
-h4. bytes1
+h4. bytes1 (UNIT_FIELD_BYTES_1,0)
 
-UNIT_BYTE1_FLAG_ALWAYS_STAND = 0x01,
-UNIT_BYTE1_FLAG_UNK_2        = 0x02, // Creature that can fly and are not on the ground appear to have this flag. If they are on the ground, flag is not present.
-UNIT_BYTE1_FLAG_UNTRACKABLE  = 0x04,
-UNIT_BYTE1_UNK               = 0x1 // Makes NPC Kneel
-UNIT_BYTE1_UNK               = 0x3 // Makes NPC Laydown
-UNIT_BYTE1_FLAG_ALL          = 0xFF
+|Bit|Name|Comment|
+|0|UNIT_STAND_STATE_STAND|normal behavior|
+|1|UNIT_STAND_STATE_SIT|sitting on ground|
+|2|UNIT_STAND_STATE_SIT_CHAIR|sitting on normal chair|
+|3|UNIT_STAND_STATE_SLEEP|sleeping|
+|4|UNIT_STAND_STATE_SIT_LOW_CHAIR|sitting on low chair|
+|5|UNIT_STAND_STATE_SIT_MEDIUM_CHAIR|sitting on medium chair|
+|6|UNIT_STAND_STATE_SIT_HIGH_CHAIR|sitting on high chair|
+|7|UNIT_STAND_STATE_DEAD|play dead|
+|8|UNIT_STAND_STATE_KNEEL|kneel|
+|9|UNIT_STAND_STATE_CUSTOM|Depends on model animation. Submerge, freeze, hide, hibernate, rest|
 
-h4. b2_0_sheath
+h4. bytes1_flags (UNIT_FIELD_BYTES_1,3)
 
-SheathState.
-0 = All Weapons Sheathed by Default
-1 = Melee Weapon NOT Sheathed by Default (Melee Weapon In Hand)
-2 = Ranged Weapon NOT Sheathed by Default (Ranged Weapon In Hand)
+|Flag|Name|Comment|
+|0x01|UNIT_BYTE1_FLAG_ALWAYS_STAND|always stand state|
+|0x02|UNIT_BYTE1_FLAG_FLY_ANIM|Creature that can fly and are not on the ground appear to have this flag. If they are on the ground, flag is not present.|
+|0x04|UNIT_BYTE1_FLAG_UNTRACKABLE|untrackable|
+|0x08|unknown|unknown|
+|0x10|UNIT_BYTE1_UNK|Makes NPC Kneel|
+|0xFF|UNIT_BYTE1_FLAG_ALL|all|
 
-h4. b2&#95;1&#95;pvp&#95;state
+h4. b2_0_sheath (UNIT_FIELD_BYTES_2,0)
 
-UnitPVPStateFlags
-
-UNIT_BYTE2_FLAG_PVP         = 0x01,
-UNIT_BYTE2_FLAG_UNK1        = 0x02,
-UNIT_BYTE2_FLAG_FFA_PVP     = 0x04,
-UNIT_BYTE2_FLAG_SANCTUARY   = 0x08,
-UNIT_BYTE2_FLAG_UNK4        = 0x10,
-UNIT_BYTE2_FLAG_UNK5        = 0x20,
-UNIT_BYTE2_FLAG_UNK6        = 0x40,
-UNIT_BYTE2_FLAG_UNK7        = 0x80
+|Bit|Name|Comment|
+|0|SHEATH_STATE_UNARMED|all weapons sheathed|
+|1|SHEATH_STATE_MELEE|melee weapon(s) unsheathed|
+|2|SHEATH_STATE_RANGED|ranged weapon(s) unsheathed|
 
 h4. emote
 
@@ -68,13 +71,183 @@ Emote ID that the creature should continually perform.
 COMPLETE LIST OF EMOTES CAN BE FOUND IN: Emotes.dbc
 (They Are Different Between Client Versions)
 
+|Bit|Name|
+|0|EMOTE_ONESHOT_NONE|
+|1|EMOTE_ONESHOT_TALK|
+|2|EMOTE_ONESHOT_BOW|
+|3|EMOTE_ONESHOT_WAVE|
+|4|EMOTE_ONESHOT_CHEER|
+|5|EMOTE_ONESHOT_EXCLAMATION|
+|6|EMOTE_ONESHOT_QUESTION|
+|7|EMOTE_ONESHOT_EAT|
+|10|EMOTE_STATE_DANCE|
+|11|EMOTE_ONESHOT_LAUGH|
+|12|EMOTE_STATE_SLEEP|
+|13|EMOTE_STATE_SIT|
+|14|EMOTE_ONESHOT_RUDE|
+|15|EMOTE_ONESHOT_ROAR|
+|16|EMOTE_ONESHOT_KNEEL|
+|17|EMOTE_ONESHOT_KISS|
+|18|EMOTE_ONESHOT_CRY|
+|19|EMOTE_ONESHOT_CHICKEN|
+|20|EMOTE_ONESHOT_BEG|
+|21|EMOTE_ONESHOT_APPLAUD|
+|22|EMOTE_ONESHOT_SHOUT|
+|23|EMOTE_ONESHOT_FLEX|
+|24|EMOTE_ONESHOT_SHY|
+|25|EMOTE_ONESHOT_POINT|
+|26|EMOTE_STATE_STAND|
+|27|EMOTE_STATE_READYUNARMED|
+|28|EMOTE_STATE_WORK|
+|29|EMOTE_STATE_POINT|
+|30|EMOTE_STATE_NONE|
+|33|EMOTE_ONESHOT_WOUND|
+|34|EMOTE_ONESHOT_WOUNDCRITICAL|
+|35|EMOTE_ONESHOT_ATTACKUNARMED|
+|36|EMOTE_ONESHOT_ATTACK1H|
+|37|EMOTE_ONESHOT_ATTACK2HTIGHT|
+|38|EMOTE_ONESHOT_ATTACK2HLOOSE|
+|39|EMOTE_ONESHOT_PARRYUNARMED|
+|43|EMOTE_ONESHOT_PARRYSHIELD|
+|44|EMOTE_ONESHOT_READYUNARMED|
+|45|EMOTE_ONESHOT_READY1H|
+|48|EMOTE_ONESHOT_READYBOW|
+|50|EMOTE_ONESHOT_SPELLPRECAST|
+|51|EMOTE_ONESHOT_SPELLCAST|
+|53|EMOTE_ONESHOT_BATTLEROAR|
+|54|EMOTE_ONESHOT_SPECIALATTACK1H|
+|60|EMOTE_ONESHOT_KICK|
+|61|EMOTE_ONESHOT_ATTACKTHROWN|
+|64|EMOTE_STATE_STUN|
+|65|EMOTE_STATE_DEAD|
+|66|EMOTE_ONESHOT_SALUTE|
+|68|EMOTE_STATE_KNEEL|
+|69|EMOTE_STATE_USESTANDING|
+|70|EMOTE_ONESHOT_WAVE_NOSHEATHE|
+|71|EMOTE_ONESHOT_CHEER_NOSHEATHE|
+|92|EMOTE_ONESHOT_EAT_NOSHEATHE|
+|93|EMOTE_STATE_STUN_NOSHEATHE|
+|94|EMOTE_ONESHOT_DANCE|
+|113|EMOTE_ONESHOT_SALUTE_NOSHEATH|
+|133|EMOTE_STATE_USESTANDING_NOSHEATHE|
+|153|EMOTE_ONESHOT_LAUGH_NOSHEATHE|
+|173|EMOTE_STATE_WORK_NOSHEATHE|
+|193|EMOTE_STATE_SPELLPRECAST|
+|213|EMOTE_ONESHOT_READYRIFLE|
+|214|EMOTE_STATE_READYRIFLE|
+|233|EMOTE_STATE_WORK_NOSHEATHE_MINING|
+|234|EMOTE_STATE_WORK_NOSHEATHE_CHOPWOOD|
+|253|EMOTE_zzOLDONESHOT_LIFTOFF|
+|254|EMOTE_ONESHOT_LIFTOFF|
+|273|EMOTE_ONESHOT_YES|
+|274|EMOTE_ONESHOT_NO|
+|275|EMOTE_ONESHOT_TRAIN|
+|293|EMOTE_ONESHOT_LAND|
+|313|EMOTE_STATE_AT_EASE|
+|333|EMOTE_STATE_READY1H|
+|353|EMOTE_STATE_SPELLKNEELSTART|
+|373|EMOTE_STATE_SUBMERGED|
+|374|EMOTE_ONESHOT_SUBMERGE|
+|375|EMOTE_STATE_READY2H|
+|376|EMOTE_STATE_READYBOW|
+|377|EMOTE_ONESHOT_MOUNTSPECIAL|
+|378|EMOTE_STATE_TALK|
+|379|EMOTE_STATE_FISHING|
+|380|EMOTE_ONESHOT_FISHING|
+|381|EMOTE_ONESHOT_LOOT|
+|382|EMOTE_STATE_WHIRLWIND|
+|383|EMOTE_STATE_DROWNED|
+|384|EMOTE_STATE_HOLD_BOW|
+|385|EMOTE_STATE_HOLD_RIFLE|
+|386|EMOTE_STATE_HOLD_THROWN|
+|387|EMOTE_ONESHOT_DROWN|
+|388|EMOTE_ONESHOT_STOMP|
+|389|EMOTE_ONESHOT_ATTACKOFF|
+|390|EMOTE_ONESHOT_ATTACKOFFPIERCE|
+|391|EMOTE_STATE_ROAR|
+|392|EMOTE_STATE_LAUGH|
+|393|EMOTE_ONESHOT_CREATURE_SPECIAL|
+|394|EMOTE_ONESHOT_JUMPLANDRUN|
+|395|EMOTE_ONESHOT_JUMPEND|
+|396|EMOTE_ONESHOT_TALK_NOSHEATHE|
+|397|EMOTE_ONESHOT_POINT_NOSHEATHE|
+|398|EMOTE_STATE_CANNIBALIZE|
+|399|EMOTE_ONESHOT_JUMPSTART|
+|400|EMOTE_STATE_DANCESPECIAL|
+|401|EMOTE_ONESHOT_DANCESPECIAL|
+|402|EMOTE_ONESHOT_CUSTOMSPELL01|
+|403|EMOTE_ONESHOT_CUSTOMSPELL02|
+|404|EMOTE_ONESHOT_CUSTOMSPELL03|
+|405|EMOTE_ONESHOT_CUSTOMSPELL04|
+|406|EMOTE_ONESHOT_CUSTOMSPELL05|
+|407|EMOTE_ONESHOT_CUSTOMSPELL06|
+|408|EMOTE_ONESHOT_CUSTOMSPELL07|
+|409|EMOTE_ONESHOT_CUSTOMSPELL08|
+|410|EMOTE_ONESHOT_CUSTOMSPELL09|
+|411|EMOTE_ONESHOT_CUSTOMSPELL10|
+|412|EMOTE_STATE_EXCLAIM|
+|415|EMOTE_STATE_SIT_CHAIR_MED|
+|422|EMOTE_STATE_SPELLEFFECT_HOLD|
+|423|EMOTE_STATE_EAT_NO_SHEATHE|
+|424|EMOTE_STATE_MOUNT|
+|425|EMOTE_STATE_READY2HL|
+|426|EMOTE_STATE_SIT_CHAIR_HIGH|
+|427|EMOTE_STATE_FALL|
+|428|EMOTE_STATE_LOOT|
+|429|EMOTE_STATE_SUBMERGED_NEW|
+|430|EMOTE_ONESHOT_COWER|
+|431|EMOTE_STATE_COWER|
+|432|EMOTE_ONESHOT_USESTANDING|
+|433|EMOTE_STATE_STEALTH_STAND|
+|434|EMOTE_ONESHOT_OMNICAST_GHOUL|
+|435|EMOTE_ONESHOT_ATTACKBOW|
+|436|EMOTE_ONESHOT_ATTACKRIFLE|
+|437|EMOTE_STATE_SWIM_IDLE|
+|438|EMOTE_STATE_ATTACK_UNARMED|
+|439|EMOTE_ONESHOT_SPELLCAST_W_SOUND|
+|440|EMOTE_ONESHOT_DODGE|
+|441|EMOTE_ONESHOT_PARRY1H|
+|442|EMOTE_ONESHOT_PARRY2H|
+|443|EMOTE_ONESHOT_PARRY2HL|
+|444|EMOTE_STATE_FLYFALL|
+|445|EMOTE_ONESHOT_FLYDEATH|
+|446|EMOTE_STATE_FLY_FALL|
+|447|EMOTE_ONESHOT_FLY_SIT_GROUND_DOWN|
+|448|EMOTE_ONESHOT_FLY_SIT_GROUND_UP|
+|449|EMOTE_ONESHOT_EMERGE|
+|450|EMOTE_ONESHOT_DRAGONSPIT|
+|451|EMOTE_STATE_SPECIALUNARMED|
+|452|EMOTE_ONESHOT_FLYGRAB|
+|453|EMOTE_STATE_FLYGRABCLOSED|
+|454|EMOTE_ONESHOT_FLYGRABTHROWN|
+|455|EMOTE_STATE_FLY_SIT_GROUND|
+|456|EMOTE_STATE_WALKBACKWARDS|
+|457|EMOTE_ONESHOT_FLYTALK|
+|458|EMOTE_ONESHOT_FLYATTACK1H|
+|459|EMOTE_STATE_CUSTOMSPELL08|
+|460|EMOTE_ONESHOT_FLY_DRAGONSPIT|
+|461|EMOTE_STATE_SIT_CHAIR_LOW|
+|462|EMOTE_ONE_SHOT_STUN|
+|463|EMOTE_ONESHOT_SPELLCAST_OMNI|
+|465|EMOTE_STATE_READYTHROWN|
+|466|EMOTE_ONESHOT_WORK_CHOPWOOD|
+|467|EMOTE_ONESHOT_WORK_MINING|
+|468|EMOTE_STATE_SPELL_CHANNEL_OMNI|
+|469|EMOTE_STATE_SPELL_CHANNEL_DIRECTED|
+|470|EMOTE_STAND_STATE_NONE|
+|471|EMOTE_STATE_READYJOUST|
+|473|EMOTE_STATE_STRANGULATE|
+|474|EMOTE_STATE_READYSPELLOMNI|
+|475|EMOTE_STATE_HOLD_JOUST|
+|476|EMOTE_ONESHOT_CRY_JAINA|
+
 h4. moveflags
 
 Flags controlling how the creature will behave animation-wise while moving. <span style="color: red">This table is 100% wrong as of 3.1. It is still here for a period of time for reference and to convert values in DB.
 
 See the proper table under this one</span>
 
-|_. Bit|_. Name|_. Comment|
+|Bit|Name|Comment|
 |0|MOVEMENTFLAG&#95;NONE||
 |1|MOVEMENTFLAG&#95;FORWARD|instantly teleport creature, then creature move forward animation but no real movement|
 |2|MOVEMENTFLAG&#95;BACKWARD|instantly teleport creature, then creature move back animation but no real movement|
@@ -109,10 +282,9 @@ See the proper table under this one</span>
 |1073741824|MOVEMENTFLAG&#95;UNK9|Causes creature to hover at stand state (not include moving)|
 |2147483648|MOVEMENTFLAG&#95;UNK10|Causes creature to roll to strange angle|
 
-
 <span style="color: red">Proper table as of 3.1</span>
 
-|_. Bit|_. Name|_. Comment|
+|Bit|Name|Comment|
 |0|MONSTER&#95;MOVE&#95;NONE|InhabitType]] and "MovementType":creature_template#MovementType|
 |1|MONSTER&#95;MOVE&#95;FORWARD|Instantly teleport creature, then creature move forward animation but no real movement|
 |2|MONSTER&#95;MOVE&#95;BACKWARD|Instantly teleport creature, then creature move back animation but no real movement|
@@ -145,7 +317,6 @@ See the proper table under this one</span>
 |268435456|MONSTER&#95;MOVE&#95;UNK11|Run|
 |536870912|MONSTER&#95;MOVE&#95;UNK12|Run|
 |1073741824|MONSTER&#95;MOVE&#95;UNK13|Levitating|
-
 
 Note: MONSTER&#95;MOVE&#95;SPLINE&#95;FLY = MONSTER&#95;MOVE&#95;WALK + MONSTER&#95;MOVE&#95;SPLINE and makes creature fly by points. Note2: Copy from Mangos
 
