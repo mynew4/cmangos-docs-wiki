@@ -17,4 +17,6 @@ holds spell effects that need ppm rates.
 
 #### ppmRate
 
+This field controls the times per minute that the spell should proc. If zero, then the value is taken from the DBC entry.
+
 http://wowwiki.wikia.com/wiki/Procs_per_minute
