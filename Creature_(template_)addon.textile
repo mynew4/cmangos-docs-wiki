@@ -14,14 +14,14 @@ NOTE:
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry/guid":Creature_template_addon#entry/guid|mediumint(8) unsigned|NO|PRI|0||
-|"mount":Creature_template_addon#mount|mediumint(8) unsigned|NO||0||
-|"bytes1":Creature_template_addon#bytes1|int(10) unsigned|NO||0||
-|"b2_0_sheath":Creature_template_addon#b2_0_sheath|tinyint(3) unsigned|NO||0||
-|"b2_1_pvp_state":Creature_template_addon#b2_1_pvp_state|tinyint(3) unsigned|NO||0||
-|"emote":Creature_template_addon#emote|mediumint(8) unsigned|NO||0||
-|"moveflags":Creature_template_addon#moveflags|int(10) unsigned|NO||0||
-|"auras":Creature_template_addon#auras|text|YES||||
+|"entry/guid":creature_(template_)addon#entry/guid|mediumint(8) unsigned|NO|PRI|0||
+|"mount":creature_(template_)addon#mount|mediumint(8) unsigned|NO||0||
+|"bytes1":creature_(template_)addon#bytes1|int(10) unsigned|NO||0||
+|"b2_0_sheath":creature_(template_)addon#b2_0_sheath|tinyint(3) unsigned|NO||0||
+|"b2_1_pvp_state":creature_(template_)addon#b2_1_pvp_state|tinyint(3) unsigned|NO||0||
+|"emote":creature_(template_)addon#emote|mediumint(8) unsigned|NO||0||
+|"moveflags":creature_(template_)addon#moveflags|int(10) unsigned|NO||0||
+|"auras":creature_(template_)addon#auras|text|YES||||
 
 h3. Description of the fields
 
@@ -322,12 +322,10 @@ Note: MONSTER&#95;MOVE&#95;SPLINE&#95;FLY = MONSTER&#95;MOVE&#95;WALK + MONSTER&
 
 h4. auras
 
-This field controls any auras to be applied on the creature (both in effect and visually). The syntax for for an individual aura entry is &quot;<spell ID> <index>&quot;. An aura is defined not just by the spell that applies it but also by the individual spell affect that applies it. Therefore, the effect index must be specified along with the spell ID. Each spell can have a maximum of three spell effects, so the effect index can only be 0, 1, or 2. To apply multiple auras, you can add more aura entries, separating each entry by a space. Remember that if a spell applies multiple auras, you need to specify an aura entry for each effect index if you want to apply more than one aura from the same spell.
-
-<span style="color: red">NOTE: Currently (Rev 5067) auras defined in creature&#95;template&#95;addon are not being properly added. Only add auras for creatures in creature&#95;addon.</span>
+This field controls any auras to be applied on the creature (both in effect and visually). To apply multiple auras, you can add more aura entries, separating each entry by a space.
 
 List of useful aura entries:
 
-* '16380 0' - Makes the creature invisible.
-* '18950 0 18950 1' - Makes the creature detect other invisible units (players or creatures).
+* '16380' - Makes the creature invisible.
+* '18950' - Makes the creature detect other invisible units (players or creatures).
 * '37613' - Casting teleport forever.
