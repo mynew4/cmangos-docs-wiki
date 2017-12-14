@@ -8,11 +8,11 @@ The gold price for each item is in its item template as "BuyPrice":item_template
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid/entry":Npc_vendor_template#entry|int(10) unsigned|NO|PRI|0||
-|"item":Npc_vendor_template#item|int(10) unsigned|NO|PRI|0||
-|"maxcount":Npc_vendor_template#maxcount|int(10) unsigned|NO||0||
-|"incrtime":Npc_vendor_template#incrtime|int(10) unsigned|NO||0||
-|"ExtendedCost":Npc_vendor_template#extendedcost|mediumint(8) unsigned|NO||0||
+|"guid/entry":npc_vendor(_template)#guid/entry|int(10) unsigned|NO|PRI|0||
+|"item":npc_vendor(_template)#item|int(10) unsigned|NO|PRI|0||
+|"maxcount":npc_vendor(_template)#maxcount|int(10) unsigned|NO||0||
+|"incrtime":npc_vendor(_template)#incrtime|int(10) unsigned|NO||0||
+|"ExtendedCost":npc_vendor(_template)#extendedcost|mediumint(8) unsigned|NO||0||
 
 h3. Description of the fields
 
