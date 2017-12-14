@@ -209,7 +209,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"spell_proc_event":https://github.com/cmangos/issues/wiki/spell_proc_event
 (Reloadable) (Core)|holds information on how certain spells activate, which proc other spells.|
 |"spell_proc_item_enchant":https://github.com/cmangos/issues/wiki/spell_proc_item_enchant
-(Reloadable) (Core)|?|
+(Reloadable) (Core)|holds information (ppmRate) for item (weapon) enchants|
 |"spell_script_target":https://github.com/cmangos/issues/wiki/spell_script_target
 (Reloadable)|holds information on spell effects which require a specific target in either alive or dead state (for creatures).|
 |"spell_target_position":https://github.com/cmangos/issues/wiki/spell_target_position
