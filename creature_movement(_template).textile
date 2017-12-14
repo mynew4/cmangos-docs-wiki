@@ -9,8 +9,8 @@ Please note that for a creature to use waypoints, its "MovementType":creature#Mo
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid/entry":creature_movement(_template)#(gu)id/entry|int(10) unsigned|NO|PRI|0||
-|"pathId":creature_movement_template#pathId|int(11) unsigned|NO|PRI|0|CURRENTLY TEMPLATE ONLY|
+|"guid/entry":creature_movement(_template)#guid/entry|int(10) unsigned|NO|PRI|0||
+|"pathId":creature_movement(_template)#pathId|int(11) unsigned|NO|PRI|0|CURRENTLY TEMPLATE ONLY|
 |"point":creature_movement(_template)#point|int(10) unsigned|NO|PRI|0||
 |"position_x":creature_movement(_template)#position_x|float|NO||0||
 |"position_y":creature_movement(_template)#position_y|float|NO||0||
