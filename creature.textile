@@ -2,31 +2,30 @@ Back to "world database":mangosdb_struct list of tables.
 
 h2. The `creature` table
 
-Contains individual creature spawn data. Spawn of a creature is an instance of the creature object in the world.
+contains individual creature spawn data. Spawn of a creature is an instance of the creature object in the world.
 
 h3. Structure
 
-
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":Creature#guid|int(10) unsigned|NO|PRI|None|auto&#95;increment|
-|"id":Creature#id|mediumint(8) unsigned|NO|MUL|0||
-|"map":Creature#map|smallint(5) unsigned|NO|MUL|0||
-|"spawnMask":Creature#spawnmask|tinyint(3) unsigned|NO||1||
-|"phaseMask":Creature#phasemask|smallint(5) unsigned|NO||1||
-|"modelid":Creature#modelid|mediumint(8) unsigned|YES||0||
-|"equipment_id":Creature#equipment_id|mediumint(9)|NO||0||
-|"position_x":Creature#position_x|float|NO||0||
-|"position_y":Creature#position_y|float|NO||0||
-|"position_z":Creature#position_z|float|NO||0||
-|"orientation":Creature#orientation|float|NO||0||
-|"spawntimesecs":Creature#spawntimesecs|int(10) unsigned|NO||120||
-|"spawndist":Creature#spawndist|float|NO||5||
-|"currentwaypoint":Creature#currentwaypoint|mediumint(8) unsigned|NO||0||
-|"curhealth":Creature#curhealth|int(10) unsigned|NO||1||
-|"curmana":Creature#curmana|int(10) unsigned|NO||0||
-|"DeathState":Creature#deathstate|tinyint(3) unsigned|NO||0||
-|"MovementType":Creature#movementtype|tinyint(3) unsigned|NO||0||
-
+|"guid":creature#guid|int(10) unsigned|NO|PRI|None|auto&#95;increment|
+|"id":creature#id|mediumint(8) unsigned|NO|MUL|0||
+|"map":creature#map|smallint(5) unsigned|NO|MUL|0||
+|"spawnMask":creature#spawnmask|tinyint(3) unsigned|NO||1||
+|"phaseMask":creature#phasemask|smallint(5) unsigned|NO||1|(WotLK)|
+|"modelid":creature#modelid|mediumint(8) unsigned|YES||0||
+|"equipment_id":creature#equipment_id|mediumint(9)|NO||0||
+|"position_x":creature#position_x|float|NO||0||
+|"position_y":creature#position_y|float|NO||0||
+|"position_z":creature#position_z|float|NO||0||
+|"orientation":creature#orientation|float|NO||0||
+|"spawntimesecsmin":creature#spawntimesecsmin|int(10) unsigned|NO||120||
+|"spawntimesecsmax":creature#spawntimesecsmax|int(10) unsigned|NO||120||
+|"spawndist":creature#spawndist|float|NO||5||
+|"currentwaypoint":creature#currentwaypoint|mediumint(8) unsigned|NO||0||
+|"curhealth":creature#curhealth|int(10) unsigned|NO||1||
+|"curmana":creature#curmana|int(10) unsigned|NO||0||
+|"DeathState":creature#deathstate|tinyint(3) unsigned|NO||0||
+|"MovementType":creature#movementtype|tinyint(3) unsigned|NO||0||
 
 h3. Description of the fields
 
@@ -54,7 +53,6 @@ Controls under which difficulties the creature will be spawned.
 |8|Spawned only in 25-man-heroic versions of maps|
 |15|Spawned in all versions of maps|
 
-
 h4. phaseMask
 
 Defines which phase the creature belongs. 1 is default phase, rest are from spell's aura 261, (Aura #261) (4) = phasemask = 4.
@@ -63,19 +61,19 @@ h4. modelid
 
 The model ID associated with this creature. Note that two creatures that use the same template can have different models. See "creature_model_info":creature_model_info for more information on model-specific characteristics.
 
-h4. equipment&#95;id
+h4. equipment_id
 
 The ID of the equipment that the creature is using. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
 
-h4. position&#95;x
+h4. position_x
 
 The X position of the creature.
 
-h4. position&#95;y
+h4. position_y
 
 The Y position of the creature.
 
-h4. position&#95;z
+h4. position_z
 
 The Z position of the creature.
 
@@ -83,9 +81,13 @@ h4. orientation
 
 The orientation of the creature. (North = 0.0; South = pi (3.14159))
 
-h4. spawntimesecs
+h4. spawntimesecsmin
 
-The respawn time of the creature in seconds.
+The minimum respawn time of the creature in seconds.
+
+h4 spawntimesecsmax
+
+The maximum respawn time of the creature in seconds.
 
 h4. spawndist
 
@@ -109,4 +111,5 @@ The creature's death state. A boolean, 0 = Alive, 1 = Corpse lying dead around (
 
 h4. MovementType
 
-The movement type associated with this creature. Usually the same as "creature&#95;template.MovementType":creature_template#MovementType but can be different. See "creature&#95;template.MovementType":creature_template#MovementType for possible values.
+The movement type associated with this creature.
+See "creature&#95;template.MovementType":creature_template#MovementType for possible values.
