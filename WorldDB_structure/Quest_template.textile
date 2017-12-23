@@ -1,11 +1,10 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `quest&#95;template` table
+h2. The `quest_template` table
 
-Contains all basic definitions of quests available.
+contains all basic definitions of quests available.
 
 h3. Structure
-
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |"entry":Quest_template#entry|int(10) unsigned|NO|PRI|0||
@@ -166,7 +165,18 @@ If QuestLevel = -1, the quest uses current player level as its level.
 
 h4. Type
 
-These values are ID taken from QuestInfo.dbc 
+These values are ID taken from QuestInfo.dbc
+
+|ID|Name|
+|1|Group|
+|21|Life|
+|41|PvP|
+|62|Raid|
+|81|Dungeon|
+|82|World Event|
+|83|Legendary|
+|84|Escort|
+|85|Heroic|
 
 h4. RequiredClasses
 
@@ -237,22 +247,21 @@ This flag field defines more specifically the type of quest it is. Aside from th
 At the moment (rev 6055), the core does not actually handle these flags any differently (again, except for the daily flag and the sharable flag).
 
 |_. Bit|_. Name|_. Comments|
-|0|QUEST&#95;FLAGS&#95;NONE|No flags, so no groups assigned to this quest.|
-|1|QUEST&#95;FLAGS&#95;STAY&#95;ALIVE|If the player dies, the quest is failed. (?)|
-|2|QUEST&#95;FLAGS&#95;EVENT|Escort quests or any other event-driven quests. If player in party, all players that can accept this quest will receive confirmation box to accept quest.|
-|4|QUEST&#95;FLAGS&#95;EXPLORATION|Involves the activation of an areatrigger.|
-|8|QUEST&#95;FLAGS&#95;SHARABLE|Allows the quest to be shared with other players.|
-|16|QUEST&#95;FLAGS&#95;NONE2|Unknown at this time and not used.|
-|32|QUEST&#95;FLAGS&#95;EPIC|Epic class quests (hunter) (??)|
-|64|QUEST&#95;FLAGS&#95;RAID|Raid or similiar player group needed for quest.|
-|128|QUEST&#95;FLAGS&#95;TBC|Added with or after TBC.|
-|256|QUEST&#95;FLAGS&#95;UNK2|Quest needs extra non-objective items dropped (eg. ReqSourceID fields) (?)|
-|512|QUEST&#95;FLAGS&#95;HIDDEN&#95;REWARDS|Item and monetary rewards are hidden in the initial quest details page and in the quest log but will appear once ready to be rewarded.|
-|1024|QUEST&#95;FLAGS&#95;AUTO&#95;REWARDED|These quests are automatically rewarded on quest complete.|
-|2048|QUEST&#95;FLAGS&#95;TBC&#95;RACES|Blood elf/draenei starting zone quests.|
-|4096|QUEST&#95;FLAGS&#95;DAILY|Daily repeatable quests (only flag that the core applies specific behavior for)|
-|8192|QUEST&#95;FLAGS&#95;UNK5|Grizzly Hills PvP daily? Puts PvP-tag on? No idea.)|
-
+|0|QUEST_FLAGS_NONE|No flags, so no groups assigned to this quest.|
+|1|QUEST_FLAGS_STAY_ALIVE|If the player dies, the quest is failed. (?)|
+|2|QUEST_FLAGS_EVENT|Escort quests or any other event-driven quests. If player in party, all players that can accept this quest will receive confirmation box to accept quest.|
+|4|QUEST_FLAGS_EXPLORATION|Involves the activation of an areatrigger.|
+|8|QUEST_FLAGS_SHARABLE|Allows the quest to be shared with other players.|
+|16|QUEST_FLAGS_NONE2|Unknown at this time and not used.|
+|32|QUEST_FLAGS_EPIC|Epic class quests (hunter) (??)|
+|64|QUEST_FLAGS_RAID|Raid or similiar player group needed for quest.|
+|128|QUEST_FLAGS_TBC|Added with or after TBC.|
+|256|QUEST_FLAGS_UNK2|Quest needs extra non-objective items dropped (eg. ReqSourceID fields) (?)|
+|512|QUEST_FLAGS_HIDDEN_REWARDS|Item and monetary rewards are hidden in the initial quest details page and in the quest log but will appear once ready to be rewarded.|
+|1024|QUEST_FLAGS_AUTO_REWARDED|These quests are automatically rewarded on quest complete.|
+|2048|QUEST_FLAGS_TBC_RACES|Blood elf/draenei starting zone quests.|
+|4096|QUEST_FLAGS_DAILY|Daily repeatable quests (only flag that the core applies specific behavior for)|
+|8192|QUEST_FLAGS_UNK5|Grizzly Hills PvP daily? Puts PvP-tag on? No idea.)|
 
 Like all flag based fields, *QuestFlags* can be added for the different types of quest.
 
