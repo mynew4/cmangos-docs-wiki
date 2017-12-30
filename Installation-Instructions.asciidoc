@@ -297,13 +297,18 @@ For instructions on how to compile boost from source code or general information
 Installing and Configuring boost (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Download prebuild boost binaries. https://youtu.be/lxHTOM9KZak[video]
-- Set BOOST_ROOT environement variable. https://youtu.be/uBe2GIW0Af4[video]
-Step by step::
+Video Guide::
 
-- Go to http://sourceforge.net/projects/boost/files/boost-binaries/
-- Select the folder with the highest version number (1.64.0 at the time of this writing)
-- Download the correct version as indicated below *or* the ++boost_x_xx_x-bin-msvc-all-32-64.7z++. If you need the Win32 or x64 version depends on what architecture you would like your compiled server executable to use. For most people x64 is fine.
+- https://youtu.be/lxHTOM9KZak[Download prebuild boost binaries]
+- https://youtu.be/uBe2GIW0Af4[Set BOOST_ROOT environment variable]
+
+Step-by-step Guide::
+
+- Go to https://sourceforge.net/projects/boost/files/boost-binaries
+ * Version 1.64.0 is working as of 2017-12-30.
+ * You can try a more recent version if you want.
+ * There have been problems reported with version 1.66.0.
+- Download the correct version as indicated in the table below *or* the ++boost_x_xx_x-bin-msvc-all-32-64.7z++ (the x_xx_x part is the boost version). If you need the Win32 or x64 version depends on what architecture you would like your compiled server executable to use. For most people x64 is fine.
  * Note: *This has nothing to do with your Windows version*, apart from the fact that 64bit executables will not run on a 32bit Windows. It is very unlikely you have a 32bit OS but if you want to make sure that you have a 64bit one press <Win>+<Pause>.
  *  Note: You can install both the Win32 and the x64 binaries into the same directory, in case you want to switch build architectures. Visual Studio will automatically select the correct version.
 
@@ -326,6 +331,7 @@ Step by step::
   - If you changed the path while installing the binaries, you will have to do that here as well.
 --
  * Confirm
+- To make sure all programs are aware of the added environment variable reboot your system.
 
 Additional remarks regarding boost for advanced users (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
