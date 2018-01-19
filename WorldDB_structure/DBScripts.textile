@@ -235,9 +235,9 @@ _Side note: If position is very near to current position, or x=y=z=0, then only 
 ** datalong2: Flag bit(s) to set.
 
 |FIELD TO MODIFY|HEX VALUES|DECIMAL INDEX VALUE|COMMENTS|
-|UNIT&#95;FIELD&#95;FLAGS|0x0006 + 0x0028|46-TBC 59-WOTLK|Modify UnitFlags for NPC (Source Must Be Unit)|
-|UNIT&#95;DYNAMIC&#95;FLAGS|0x0006 + 0x009E|164-TBC 78-WOTLK|Modify DynamicFlags for NPC (Source Must Be Unit)|
-|UNIT&#95;NPC&#95;FLAGS|0x0006 + 0x00A2|168-TBC 82-WOTLK|Modify NPCFlags for NPC (Source Must Be Unit)|
+|UNIT&#95;FIELD&#95;FLAGS|0x0006 + 0x0028|46-TBC  59-WOTLK|Modify UnitFlags for NPC (Source Must Be Unit)|
+|UNIT&#95;DYNAMIC&#95;FLAGS|0x0006 + 0x009E|164-TBC  78-WOTLK|Modify DynamicFlags for NPC (Source Must Be Unit)|
+|UNIT&#95;NPC&#95;FLAGS|0x0006 + 0x00A2|168-TBC  82-WOTLK|Modify NPCFlags for NPC (Source Must Be Unit)|
 
 More Examples Can Be Found At: UpdateFields.h In Core
 
