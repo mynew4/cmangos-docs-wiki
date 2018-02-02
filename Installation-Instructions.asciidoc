@@ -345,6 +345,10 @@ For instructions on how to compile boost from source code or general information
 
 Note: In a typical boost installation environment with Visual Studio, the user will configure their Visual Studio property sheets to point to the boost installation.  This will allow boost to be found by all projects on that system.  For information on configuring property sheets, look https://msdn.microsoft.com/en-us/library/669zx6zc.aspx[here].
 
+If you're experiencing issues with CMake (The following Boost libraries could not be found), you will have to rename folder in boost directory.
+
+ (boost\lib32-msvc-14.1 -> boost\lib)
+
 Compiling CMaNGOS and ScriptDev2 (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 An https://youtu.be/KlRM18SVCQA[video] of the build process is now available.
