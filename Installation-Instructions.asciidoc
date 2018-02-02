@@ -356,6 +356,7 @@ An https://youtu.be/KlRM18SVCQA[video] of the build process is now available.
 * Launch cmake
 * Set the source bin to C:\Mangos\mangos
 * Set the destination folder to C:\Mangos\mangos\bin\buildir (create that folder if it doesn't exist)
+* Tick 'BUILD_EXTRACTORS' 
 * Click 'Configure' button and set your compiler version and platform.
 * Select your options then click another time on 'Configure' button
 * Click 'Generate'button
@@ -407,8 +408,6 @@ Compiling CMaNGOS and ScriptDev2 (*nix)
 Install CMaNGOS binary files
 ----------------------------
 * Transfer the files from your compile folder (likely ++C:\Mangos\mangos\bin\Win32_Release++) into ++C:\Mangos\run++
-* Go to ++C:\Mangos\mangos\src\mangosd++ and copy ++mangosd.conf.dist.in++ to ++C:\Mangos\run++ and rename it to ++mangosd.conf++
-* Go to ++C:\Mangos\mangos\src\realmd++ and copy ++realmd.conf.dist.in++ to ++C:\Mangos\run++ and rename it to ++realmd.conf++
 * Go to ++C:\Mangos\mangos\src\game\AuctionHouseBot++ and copy ++ahbot.conf.dist.in++ to ++C:\Mangos\run++ and rename it to ++ahbot.conf++
 
 On *nix this is partly done with the ++make install++ command (from the build directory).
@@ -421,8 +420,7 @@ Extract files from the client
 
 Windows
 ~~~~~~~
-* Copy the content of ++C:\Mangos\mangos\contrib\extractor_scripts\++ into your ++C:\World of Warcraft++ folder
-* You'll need to build ad, vmap_assembler, and vmap_extractor in a similar way you compiled CMaNGOS and ScriptDev2 (Make sure you enabled the option in cmake options), and copy the executable files (ad.exe, vmap_assembler.exe, and vmap_extractor.exe) created into your ++C:\World of Warcraft++ folder.
+* Copy the content of ++C:\Mangos\mangos\bin\Win32_Release\Extractors\++ into your ++C:\World of Warcraft++ folder
 * Run ++ExtractResources.sh++ from your ++C:\World of Warcraft++.
 
 For this you can open a "Git Bash" on your C:\World of Warcraft folder and type ++ExtractResources.sh++
