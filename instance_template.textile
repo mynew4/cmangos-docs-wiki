@@ -1,6 +1,6 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `instance&#95;template` table
+h2. The `instance_template` table
 
 This table has all the templates for every instance. When a group enters an instance, a new copy of that instance is made from the values in these fields.
 
@@ -13,11 +13,7 @@ h3. Structure
 |"levelMax":Instance_template#levelmax|int(10) unsigned|NO||0||
 |"maxPlayers":Instance_template#maxplayers|int(10) unsigned|NO||0||
 |"reset_delay":Instance_template#reset_delay|int(10) unsigned|NO||0||
-|"startLocX":Instance_template#startlocx|float|YES||None||
-|"startLocY":Instance_template#startlocy|float|YES||None||
-|"startLocZ":Instance_template#startlocz|float|YES||None||
-|"startLocO":Instance_template#startloco|float|YES||None||
-|"script":Instance_template#script|varchar(255)|NO||||
+|"ScriptName":Instance_template#ScriptName|varchar(255)|NO||||
 |"mountAllowed":Instance_template#mountAllowed|tinyint(3) unsigned|NO||0||
 
 h3. Description of the fields
@@ -42,27 +38,11 @@ h4. maxPlayers
 
 The maximum number of players that can enter as a group/raid in the instance.
 
-h4. reset&#95;delay
+h4. reset_delay
 
 The number of days between each global reset for the map. If zero, the value is taken from DBC files. The resulting value is multiplied by the Rate.InstanceResetTime config.
 
-h4. startLocX
-
-Defines the starting X location where players will be ported (if different from default).
-
-h4. startLocY
-
-Defines the starting Y location where players will be ported (if different from default).
-
-h4. startLocZ
-
-Defines the starting Z location where players will be ported (if different from default).
-
-h4. startLocO
-
-Defines the starting orientation that players will face. (if different from default).
-
-h4. script
+h4. ScriptName
 
 The name of the instance script that the instance will use and apply (if any).
 
