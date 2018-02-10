@@ -2,7 +2,7 @@ Back to [world database](https://github.com/cmangos/issues/wiki/mangosdb_struct)
 
 ## The `world_template` table
 
-This table holds the ScriptNames of the world maps 0, 1, 530, 571.
+holds the ScriptNames of the world maps 0, 1, 530, 571.
 
 ### Structure
 
