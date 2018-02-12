@@ -30,10 +30,6 @@ orientation|float|NO||0||
 #### id
 The guid of the creature if creature_movement. See [creature_guid](https://github.com/cmangos/issues/wiki/creature)
 
-#### pathId
-
-Random Paths an entry can get assigned.
-
 #### point
 
 Defines the waypoint number. A creature will go from waypoint to waypoint in the order controlled by this field.
