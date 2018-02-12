@@ -19,9 +19,9 @@ To add waypoints in-game:
 [position_x](https://github.com/cmangos/issues/wiki/creature_movement#position_x)|float|NO||0||
 [position_y](https://github.com/cmangos/issues/wiki/creature_movement#position_y)|float|NO||0||
 [position_z](https://github.com/cmangos/issues/wiki/creature_movement#position_z)|float|NO||0||
-[waittime]https://github.com/cmangos/issues/wiki/creature_movement#waittime)|int(10)|NO||0||
-[script_id]https://github.com/cmangos/issues/wiki/creature_movement#script_id)|mediumint(8)|NO||0||
-[orientation]https://github.com/cmangos/issues/wiki/creature_movement#orentation)|float|NO||0||
+[waittime](https://github.com/cmangos/issues/wiki/creature_movement#waittime)|int(10)|NO||0||
+[script_id](https://github.com/cmangos/issues/wiki/creature_movement#script_id)|mediumint(8)|NO||0||
+[orientation](https://github.com/cmangos/issues/wiki/creature_movement#orentation)|float|NO||0||
 
 
 ### Description of the fields
