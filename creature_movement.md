@@ -1,6 +1,6 @@
 Back to [world database](https://github.com/cmangos/issues/wiki/mangosdb_struct) list of tables
 
-## The `creature_movement_(template)` table
+## The `creature_movement` table
 ***
 
 This table holds information on each unique creature (guid) waypoint.  In essence, a waypoint just defines a path that the creature will follow by going from point to point. More specifically, once the creature arrives at a point, it can do different things like cast a spell, do an emote, etc. Usually this table is filled through the .wp command (and its various subcommands) in the world.
