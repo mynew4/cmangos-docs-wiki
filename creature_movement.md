@@ -14,7 +14,7 @@ To add waypoints in-game:
 
 *Field* | *Type* | *Null* | *Key* | *Default* | *Extra*
 ------------ | ------------- | -----------  | -----------  | -----------  | -----------
-id|int(10) unsigned|NO|PRI|0||
+[id](https://github.com/cmangos/issues/wiki/creature_movement#id)|int(10) unsigned|NO|PRI|0||
 point|mediumint(8)|NO|PRI|0||
 position_x|float|NO||0||
 position_y|float|NO||0||
