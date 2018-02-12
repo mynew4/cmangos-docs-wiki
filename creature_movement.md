@@ -5,7 +5,7 @@ Back to [world database](https://github.com/cmangos/issues/wiki/mangosdb_struct)
 
 This table holds information on each unique creature (guid) waypoint.  In essence, a waypoint just defines a path that the creature will follow by going from point to point. More specifically, once the creature arrives at a point, it can do different things like cast a spell, do an emote, etc. Usually this table is filled through the .wp command (and its various subcommands) in the world.
 
-Please note that for a creature to use waypoints, its MovementType must be 2. Movetype must also be set to "way"
+Please note that for a creature to use waypoints, its MovementType must be 2.
 
 To add waypoints in-game:
 - .npc setmovetype way creature guid or select npc
