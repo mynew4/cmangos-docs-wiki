@@ -8,8 +8,8 @@ This table holds information on each unique creature (guid) waypoint.  In essenc
 Please note that for a creature to use waypoints, its MovementType must be 2. Movetype must also be set to "way"
 
 To add waypoints in-game:
-- .npc setmovetype way <creature guid> or select npc
-- .wp add <guid> or select npc
+- .npc setmovetype way<creature guid or select npc
+- .wp add guid or select npc
 
 ### Structure:
 
