@@ -1,33 +1,162 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `spell&#95;template` table
+h2. The `spell_template` table
 
+holds data about every spell used.
 
 h3. Structure
 
-
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"id":spell_template#id|int(11) unsigned|NO||0||
-|"proc_flags":spell_template#proc_flags|int(11) unsigned|NO||0||
-|proc_chance|int(11) unsigned|NO||0||
-|duration_index|int(11) unsigned|NO||0||
-|effect0|int(11) unsigned|NO||0||
-|effect_implicit_target_a|int(11) unsigned|NO||0||
-|effect0_radius_idx|int(11) unsigned|NO||0||
-|effect0_apply_aura_name|int(11) unsigned|NO||0||
-|effect0_misc_value|int(11) unsigned|NO||0||
-|effect0_misc_value_b|int(11) unsigned|NO||0||
-|effect0_trigger_spell|int(11) unsigned|NO||0||
-|comments|varchar(255)|NO||||
-
+|"Id":spell_template#Id|INT(11) UNSIGNED|NO||0||
+|"Category":spell_template#Category|INT(11) UNSIGNED|NO||0||
+|"Dispel":spell_template#Dispel|INT(11) UNSIGNED|NO||0||
+|"Mechanic":spell_template#Mechanic|INT(11) UNSIGNED|NO||0||
+|"Attributes":spell_template#Attributes|INT(11) UNSIGNED|NO||0||
+|"AttributesEx":spell_template#AttributesEx|INT(11) UNSIGNED|NO||0||
+|"AttributesEx2":spell_template#AttributesEx2|INT(11) UNSIGNED|NO||0||
+|"AttributesEx3":spell_template#AttributesEx3|INT(11) UNSIGNED|NO||0||
+|"AttributesEx4":spell_template#AttributesEx4|INT(11) UNSIGNED|NO||0||
+|"AttributesEx5":spell_template#AttributesEx5|INT(11) UNSIGNED|NO||0||
+|"AttributesEx6":spell_template#AttributesEx6|INT(11) UNSIGNED|NO||0||
+|"Stances":spell_template#Stances|INT(11) UNSIGNED|NO||0||
+|"StancesNot":spell_template#StancesNot|INT(11) UNSIGNED|NO||0||
+|"Targets":spell_template#Targets|INT(11) UNSIGNED|NO||0||
+|"TargetCreatureType":spell_template#TargetCreatureType|INT(11) UNSIGNED|NO||0||
+|"RequiresSpellFocus":spell_template#RequiresSpellFocus|INT(11) UNSIGNED|NO||0||
+|"FacingCasterFlags":spell_template#FacingCasterFlags|INT(11) UNSIGNED|NO||0||
+|"CasterAuraState":spell_template#CasterAuraState|INT(11) UNSIGNED|NO||0||
+|"TargetAuraState":spell_template#TargetAuraState|INT(11) UNSIGNED|NO||0||
+|"CasterAuraStateNot":spell_template#CasterAuraStateNot|INT(11) UNSIGNED|NO||0||
+|"TargetAuraStateNot":spell_template#TargetAuraStateNot|INT(11) UNSIGNED|NO||0||
+|"CastingTimeIndex":spell_template#CastingTimeIndex|INT(11) UNSIGNED|NO||0||
+|"RecoveryTime":spell_template#RecoveryTime|INT(11) UNSIGNED|NO||0||
+|"CategoryRecoveryTime":spell_template#CategoryRecoveryTime|INT(11) UNSIGNED|NO||0||
+|"InterruptFlags":spell_template#InterruptFlags|INT(11) UNSIGNED|NO||0||
+|"AuraInterruptFlags":spell_template#AuraInterruptFlags|INT(11) UNSIGNED|NO||0||
+|"ChannelInterruptFlags":spell_template#ChannelInterruptFlags|INT(11) UNSIGNED|NO||0||
+|"procFlags":spell_template#procFlags|INT(11) UNSIGNED|NO||0||
+|"procChance":spell_template#procChance|INT(11) UNSIGNED|NO||0||
+|"procCharges":spell_template#procCharges|INT(11) UNSIGNED|NO||0||
+|"maxLevel":spell_template#maxLevel|INT(11) UNSIGNED|NO||0||
+|"baseLevel":spell_template#baseLevel|INT(11) UNSIGNED|NO||0||
+|"spellLevel":spell_template#spellLevel|INT(11) UNSIGNED|NO||0||
+|"DurationIndex":spell_template#DurationIndex|int(11) unsigned|NO||0||
+|"powerType":spell_template#powerType|INT(11) UNSIGNED|NO||0||
+|"manaCost":spell_template#manaCost|INT(11) UNSIGNED|NO||0||
+|"manaCostPerlevel":spell_template#manaCostPerlevel|INT(11) UNSIGNED|NO||0||
+|"manaPerSecond":spell_template#manaPerSecond|INT(11) UNSIGNED|NO||0||
+|"manaPerSecondPerLevel":spell_template#manaPerSecondPerLevel|INT(11) UNSIGNED|NO||0||
+|"rangeIndex":spell_template#rangeIndex|INT(11) UNSIGNED|NO||1||
+|"speed":spell_template#speed|FLOAT|NO||0||
+|"StackAmount":spell_template#StackAmount|INT(11) UNSIGNED|NO||0||
+|"Totem1":spell_template#Totem1|INT(11) UNSIGNED|NO||0||
+|"Totem2":spell_template#Totem2|INT(11) UNSIGNED|NO||0||
+|"Reagent1":spell_template#Reagent1|INT(11) UNSIGNED|NO||0||
+|"ReagentCount1":spell_template#ReagentCount1|INT(11) UNSIGNED|NO||0||
+|"EquippedItemClass":spell_template#EquippedItemClass|INT(11) UNSIGNED|NO||-1||
+|"EquippedItemSubClassMask":spell_template#EquippedItemSubClassMask|INT(11) UNSIGNED|NO||0||
+|"EquippedItemInventoryTypeMask":spell_template#EquippedItemInventoryTypeMask|INT(11) UNSIGNED|NO||0||
+|"Effect1":spell_template#Effect1|INT(11) UNSIGNED|NO||0||
+|"EffectDieSides1":spell_template#EffectDieSides1|INT(11) UNSIGNED|NO||0||
+|"EffectBaseDice1":spell_template#EffectBaseDice1|INT(11) UNSIGNED|NO||0||
+|"EffectDicePerLevel1":spell_template#EffectDicePerLevel1|FLOAT|NO||0||
+|"EffectRealPointsPerLevel1":spell_template#EffectRealPointsPerLevel1|FLOAT|NO||0||
+|"EffectBasePoints1":spell_template#EffectBasePoints1|INT(11) UNSIGNED|NO||0||
+|"EffectMechanic1":spell_template#EffectMechanic1|INT(11) UNSIGNED|NO||0||
+|"EffectImplicitTargetA1":spell_template#EffectImplicitTargetA1|INT(11) UNSIGNED|NO||0||
+|"EffectImplicitTargetB1":spell_template#EffectImplicitTargetB1|INT(11) UNSIGNED|NO||0||
+|"EffectRadiusIndex1":spell_template#EffectRadiusIndex1|INT(11) UNSIGNED|NO||0||
+|"EffectApplyAuraName1":spell_template#EffectApplyAuraName1|INT(11) UNSIGNED|NO||0||
+|"EffectAmplitude1":spell_template#EffectAmplitude1|INT(11) UNSIGNED|NO||0||
+|"EffectMultipleValue1":spell_template#EffectMultipleValue1|FLOAT|NO||0||
+|"EffectChainTarget1":spell_template#EffectChainTarget1|INT(11) UNSIGNED|NO||0||
+|"EffectItemType1":spell_template#EffectItemType1|INT(11) UNSIGNED|NO||0||
+|"EffectMiscValue1":spell_template#EffectMiscValue1|INT(11) UNSIGNED|NO||0||
+|"EffectMiscValueB1":spell_template#EffectMiscValueB1|INT(11)|NO||0||
+|"EffectTriggerSpell1":spell_template#EffectTriggerSpell1|INT(11) UNSIGNED|NO||0||
+|"EffectPointsPerComboPoint1":spell_template#EffectPointsPerComboPoint1|FLOAT|NO||0||
+|"SpellVisual":spell_template#SpellVisual|INT(11) UNSIGNED|NO||0||
+|"SpellIconID":spell_template#SpellIconID|INT(11) UNSIGNED|NO||0||
+|"activeIconID":spell_template#activeIconID|INT(11) UNSIGNED|NO||0||
+|"spellPriority":spell_template#spellPriority|INT(11) UNSIGNED|NO||0||
+|"SpellName":spell_template#SpellName|TEXT|NO||0||
+|"Rank":spell_template#Rank|TEXT|NULL||0||
+|"ManaCostPercentage":spell_template#ManaCostPercentage|INT(11) UNSIGNED|NO||0||
+|"StartRecoveryCategory":spell_template#StartRecoveryCategory|INT(11) UNSIGNED|NO||0||
+|"StartRecoveryTime":spell_template#StartRecoveryTime|INT(11) UNSIGNED|NO||0||
+|"MaxTargetLevel":spell_template#MaxTargetLevel|INT(11) UNSIGNED|NO||0||
+|"SpellFamilyName":spell_template#SpellFamilyName|INT(11) UNSIGNED|NO||0||
+|"SpellFamilyFlags":spell_template#SpellFamilyFlags|BIGINT(20) UNSIGNED|NO||0||
+|"MaxAffectedTargets":spell_template#MaxAffectedTargets|INT(11) UNSIGNED|NO||0||
+|"DmgClass":spell_template#DmgClass|INT(11) UNSIGNED|NO||0||
+|"PreventionType":spell_template#PreventionType|INT(11) UNSIGNED|NO||0||
+|"DmgMultiplier1":spell_template#DmgMultiplier1|INT(11) UNSIGNED|NO||0||
+|"TotemCategory1":spell_template#TotemCategory1|INT(11) UNSIGNED|NO||0||
+|"TotemCategory2":spell_template#TotemCategory2|INT(11) UNSIGNED|NO||0||
+|"AreaId":spell_template#AreaId|INT(11) UNSIGNED|NO||0||
+|"SchoolMask":spell_template#SchoolMask|INT(11) UNSIGNED|NO||0||
+|"IsServerSide":spell_template#IsServerSide|INT(11) UNSIGNED|NO||0||
+|"AttributesServerside":spell_template#AttributesServerside|INT(11) UNSIGNED|NO||0||
 
 h3. Description of the fields
 
-h4. id
+h4. Id
 
-The new spell ID.
+The spell ID.
 
-h4. proc_flags
+h4. Category
+
+h4. Dispel
+
+h4. Mechanic
+
+h4. Attributes
+
+h4. AttributesEx
+
+h4. AttributesEx2
+
+h4. AttributesEx3
+
+h4. AttributesEx4
+
+h4. AttributesEx5
+
+h4. AttributesEx6
+
+h4. Stances
+
+h4. StancesNot
+
+h4. Targets
+
+h4. TargetCreatureType
+
+h4. RequiresSpellFocus
+
+h4. FacingCasterFlags
+
+h4. CasterAuraState
+
+h4. TargetAuraState
+
+h4. CasterAuraStateNot
+
+h4. TargetAuraStateNot
+
+h4. CastingTimeIndex
+
+h4. RecoveryTime
+
+h4. CategoryRecoveryTime
+
+h4. InterruptFlags
+
+h4. AuraInterruptFlags
+
+h4. ChannelInterruptFlags
+
+h4. procFlags
 
 |*Bit*|*Flag*|*Comment*|
 |0|Killed||
@@ -56,3 +185,126 @@ h4. proc_flags
 |23|Successful Offhand Hit||
 |24|Death||
 
+h4. procChance
+
+h4. procCharges
+
+h4. maxLevel
+
+h4. baseLevel
+
+h4. spellLevel
+
+h4. DurationIndex
+
+h4. powerType
+
+h4. manaCost
+
+h4. manaCostPerlevel
+
+h4. manaPerSecond
+
+h4. manaPerSecondPerLevel
+
+h4. rangeIndex
+
+h4. speed
+
+h4. StackAmount
+
+h4. Totem1
+
+h4. Totem2
+
+h4. Reagent1
+
+h4. ReagentCount1
+
+h4. EquippedItemClass
+
+h4. EquippedItemSubClassMask
+
+h4. EquippedItemInventoryTypeMask
+
+h4. Effect1
+
+h4. EffectDieSides1
+
+h4. EffectBaseDice1
+
+h4. EffectDicePerLevel1
+
+h4. EffectRealPointsPerLevel1
+
+h4. EffectBasePoints1
+
+h4. EffectMechanic1
+
+h4. EffectImplicitTargetA1
+
+h4. EffectImplicitTargetB1
+
+h4. EffectRadiusIndex1
+
+h4. EffectApplyAuraName1
+
+h4. EffectAmplitude1
+
+h4. EffectMultipleValue1
+
+h4. EffectChainTarget1
+
+h4. EffectItemType1
+
+h4. EffectMiscValue1
+
+h4. EffectMiscValueB1
+
+h4. EffectTriggerSpell1
+
+h4. EffectPointsPerComboPoint1
+
+h4. SpellVisual
+
+h4. SpellIconID
+
+h4. activeIconID
+
+h4. spellPriority
+
+h4. SpellName
+
+h4. Rank
+
+h4. ManaCostPercentage
+
+h4. StartRecoveryCategory
+
+h4. StartRecoveryTime
+
+h4. MaxTargetLevel
+
+h4. SpellFamilyName
+
+h4. SpellFamilyFlags
+
+h4. MaxAffectedTargets
+
+h4. DmgClass
+
+h4. PreventionType
+
+h4. DmgMultiplier1
+
+h4. TotemCategory1
+
+h4. TotemCategory2
+
+h4. AreaId
+
+h4. SchoolMask
+
+h4. IsServerSide
+
+h4. AttributesServerside
