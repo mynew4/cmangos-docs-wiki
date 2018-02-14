@@ -6,97 +6,97 @@ holds data about every spell used.
 
 h3. Structure
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"Id":spell_template#Id|INT(11) UNSIGNED|NO||0||
-|"Category":spell_template#Category|INT(11) UNSIGNED|NO||0||
-|"Dispel":spell_template#Dispel|INT(11) UNSIGNED|NO||0||
-|"Mechanic":spell_template#Mechanic|INT(11) UNSIGNED|NO||0||
-|"Attributes":spell_template#Attributes|INT(11) UNSIGNED|NO||0||
-|"AttributesEx":spell_template#AttributesEx|INT(11) UNSIGNED|NO||0||
-|"AttributesEx2":spell_template#AttributesEx2|INT(11) UNSIGNED|NO||0||
-|"AttributesEx3":spell_template#AttributesEx3|INT(11) UNSIGNED|NO||0||
-|"AttributesEx4":spell_template#AttributesEx4|INT(11) UNSIGNED|NO||0||
-|"AttributesEx5":spell_template#AttributesEx5|INT(11) UNSIGNED|NO||0||
-|"AttributesEx6":spell_template#AttributesEx6|INT(11) UNSIGNED|NO||0||
-|"Stances":spell_template#Stances|INT(11) UNSIGNED|NO||0||
-|"StancesNot":spell_template#StancesNot|INT(11) UNSIGNED|NO||0||
-|"Targets":spell_template#Targets|INT(11) UNSIGNED|NO||0||
-|"TargetCreatureType":spell_template#TargetCreatureType|INT(11) UNSIGNED|NO||0||
-|"RequiresSpellFocus":spell_template#RequiresSpellFocus|INT(11) UNSIGNED|NO||0||
-|"FacingCasterFlags":spell_template#FacingCasterFlags|INT(11) UNSIGNED|NO||0||
-|"CasterAuraState":spell_template#CasterAuraState|INT(11) UNSIGNED|NO||0||
-|"TargetAuraState":spell_template#TargetAuraState|INT(11) UNSIGNED|NO||0||
-|"CasterAuraStateNot":spell_template#CasterAuraStateNot|INT(11) UNSIGNED|NO||0||
-|"TargetAuraStateNot":spell_template#TargetAuraStateNot|INT(11) UNSIGNED|NO||0||
-|"CastingTimeIndex":spell_template#CastingTimeIndex|INT(11) UNSIGNED|NO||0||
-|"RecoveryTime":spell_template#RecoveryTime|INT(11) UNSIGNED|NO||0||
-|"CategoryRecoveryTime":spell_template#CategoryRecoveryTime|INT(11) UNSIGNED|NO||0||
-|"InterruptFlags":spell_template#InterruptFlags|INT(11) UNSIGNED|NO||0||
-|"AuraInterruptFlags":spell_template#AuraInterruptFlags|INT(11) UNSIGNED|NO||0||
-|"ChannelInterruptFlags":spell_template#ChannelInterruptFlags|INT(11) UNSIGNED|NO||0||
-|"procFlags":spell_template#procFlags|INT(11) UNSIGNED|NO||0||
-|"procChance":spell_template#procChance|INT(11) UNSIGNED|NO||0||
-|"procCharges":spell_template#procCharges|INT(11) UNSIGNED|NO||0||
-|"maxLevel":spell_template#maxLevel|INT(11) UNSIGNED|NO||0||
-|"baseLevel":spell_template#baseLevel|INT(11) UNSIGNED|NO||0||
-|"spellLevel":spell_template#spellLevel|INT(11) UNSIGNED|NO||0||
-|"DurationIndex":spell_template#DurationIndex|int(11) unsigned|NO||0||
-|"powerType":spell_template#powerType|INT(11) UNSIGNED|NO||0||
-|"manaCost":spell_template#manaCost|INT(11) UNSIGNED|NO||0||
-|"manaCostPerlevel":spell_template#manaCostPerlevel|INT(11) UNSIGNED|NO||0||
-|"manaPerSecond":spell_template#manaPerSecond|INT(11) UNSIGNED|NO||0||
-|"manaPerSecondPerLevel":spell_template#manaPerSecondPerLevel|INT(11) UNSIGNED|NO||0||
-|"rangeIndex":spell_template#rangeIndex|INT(11) UNSIGNED|NO||1||
-|"speed":spell_template#speed|FLOAT|NO||0||
-|"StackAmount":spell_template#StackAmount|INT(11) UNSIGNED|NO||0||
-|"Totem1":spell_template#Totem1|INT(11) UNSIGNED|NO||0||
-|"Totem2":spell_template#Totem2|INT(11) UNSIGNED|NO||0||
-|"Reagent1":spell_template#Reagent1|INT(11) UNSIGNED|NO||0||
-|"ReagentCount1":spell_template#ReagentCount1|INT(11) UNSIGNED|NO||0||
-|"EquippedItemClass":spell_template#EquippedItemClass|INT(11) UNSIGNED|NO||-1||
-|"EquippedItemSubClassMask":spell_template#EquippedItemSubClassMask|INT(11) UNSIGNED|NO||0||
-|"EquippedItemInventoryTypeMask":spell_template#EquippedItemInventoryTypeMask|INT(11) UNSIGNED|NO||0||
-|"Effect1":spell_template#Effect1|INT(11) UNSIGNED|NO||0||
-|"EffectDieSides1":spell_template#EffectDieSides1|INT(11) UNSIGNED|NO||0||
-|"EffectBaseDice1":spell_template#EffectBaseDice1|INT(11) UNSIGNED|NO||0||
-|"EffectDicePerLevel1":spell_template#EffectDicePerLevel1|FLOAT|NO||0||
-|"EffectRealPointsPerLevel1":spell_template#EffectRealPointsPerLevel1|FLOAT|NO||0||
-|"EffectBasePoints1":spell_template#EffectBasePoints1|INT(11) UNSIGNED|NO||0||
-|"EffectMechanic1":spell_template#EffectMechanic1|INT(11) UNSIGNED|NO||0||
-|"EffectImplicitTargetA1":spell_template#EffectImplicitTargetA1|INT(11) UNSIGNED|NO||0||
-|"EffectImplicitTargetB1":spell_template#EffectImplicitTargetB1|INT(11) UNSIGNED|NO||0||
-|"EffectRadiusIndex1":spell_template#EffectRadiusIndex1|INT(11) UNSIGNED|NO||0||
-|"EffectApplyAuraName1":spell_template#EffectApplyAuraName1|INT(11) UNSIGNED|NO||0||
-|"EffectAmplitude1":spell_template#EffectAmplitude1|INT(11) UNSIGNED|NO||0||
-|"EffectMultipleValue1":spell_template#EffectMultipleValue1|FLOAT|NO||0||
-|"EffectChainTarget1":spell_template#EffectChainTarget1|INT(11) UNSIGNED|NO||0||
-|"EffectItemType1":spell_template#EffectItemType1|INT(11) UNSIGNED|NO||0||
-|"EffectMiscValue1":spell_template#EffectMiscValue1|INT(11) UNSIGNED|NO||0||
-|"EffectMiscValueB1":spell_template#EffectMiscValueB1|INT(11)|NO||0||
-|"EffectTriggerSpell1":spell_template#EffectTriggerSpell1|INT(11) UNSIGNED|NO||0||
-|"EffectPointsPerComboPoint1":spell_template#EffectPointsPerComboPoint1|FLOAT|NO||0||
-|"SpellVisual":spell_template#SpellVisual|INT(11) UNSIGNED|NO||0||
-|"SpellIconID":spell_template#SpellIconID|INT(11) UNSIGNED|NO||0||
-|"activeIconID":spell_template#activeIconID|INT(11) UNSIGNED|NO||0||
-|"spellPriority":spell_template#spellPriority|INT(11) UNSIGNED|NO||0||
-|"SpellName":spell_template#SpellName|TEXT|NO||0||
-|"Rank":spell_template#Rank|TEXT|NULL||0||
-|"ManaCostPercentage":spell_template#ManaCostPercentage|INT(11) UNSIGNED|NO||0||
-|"StartRecoveryCategory":spell_template#StartRecoveryCategory|INT(11) UNSIGNED|NO||0||
-|"StartRecoveryTime":spell_template#StartRecoveryTime|INT(11) UNSIGNED|NO||0||
-|"MaxTargetLevel":spell_template#MaxTargetLevel|INT(11) UNSIGNED|NO||0||
-|"SpellFamilyName":spell_template#SpellFamilyName|INT(11) UNSIGNED|NO||0||
-|"SpellFamilyFlags":spell_template#SpellFamilyFlags|BIGINT(20) UNSIGNED|NO||0||
-|"MaxAffectedTargets":spell_template#MaxAffectedTargets|INT(11) UNSIGNED|NO||0||
-|"DmgClass":spell_template#DmgClass|INT(11) UNSIGNED|NO||0||
-|"PreventionType":spell_template#PreventionType|INT(11) UNSIGNED|NO||0||
-|"DmgMultiplier1":spell_template#DmgMultiplier1|INT(11) UNSIGNED|NO||0||
-|"TotemCategory1":spell_template#TotemCategory1|INT(11) UNSIGNED|NO||0||
-|"TotemCategory2":spell_template#TotemCategory2|INT(11) UNSIGNED|NO||0||
-|"AreaId":spell_template#AreaId|INT(11) UNSIGNED|NO||0||
-|"SchoolMask":spell_template#SchoolMask|INT(11) UNSIGNED|NO||0||
-|"IsServerSide":spell_template#IsServerSide|INT(11) UNSIGNED|NO||0||
-|"AttributesServerside":spell_template#AttributesServerside|INT(11) UNSIGNED|NO||0||
+|*ID*|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
+||"Id":spell_template#Id|INT(11) UNSIGNED|NO||0||
+||"Category":spell_template#Category|INT(11) UNSIGNED|NO||0||
+||"Dispel":spell_template#Dispel|INT(11) UNSIGNED|NO||0||
+||"Mechanic":spell_template#Mechanic|INT(11) UNSIGNED|NO||0||
+||"Attributes":spell_template#Attributes|INT(11) UNSIGNED|NO||0||
+||"AttributesEx":spell_template#AttributesEx|INT(11) UNSIGNED|NO||0||
+||"AttributesEx2":spell_template#AttributesEx2|INT(11) UNSIGNED|NO||0||
+||"AttributesEx3":spell_template#AttributesEx3|INT(11) UNSIGNED|NO||0||
+||"AttributesEx4":spell_template#AttributesEx4|INT(11) UNSIGNED|NO||0||
+||"AttributesEx5":spell_template#AttributesEx5|INT(11) UNSIGNED|NO||0||
+||"AttributesEx6":spell_template#AttributesEx6|INT(11) UNSIGNED|NO||0||
+||"Stances":spell_template#Stances|INT(11) UNSIGNED|NO||0||
+||"StancesNot":spell_template#StancesNot|INT(11) UNSIGNED|NO||0||
+||"Targets":spell_template#Targets|INT(11) UNSIGNED|NO||0||
+||"TargetCreatureType":spell_template#TargetCreatureType|INT(11) UNSIGNED|NO||0||
+||"RequiresSpellFocus":spell_template#RequiresSpellFocus|INT(11) UNSIGNED|NO||0||
+||"FacingCasterFlags":spell_template#FacingCasterFlags|INT(11) UNSIGNED|NO||0||
+||"CasterAuraState":spell_template#CasterAuraState|INT(11) UNSIGNED|NO||0||
+||"TargetAuraState":spell_template#TargetAuraState|INT(11) UNSIGNED|NO||0||
+||"CasterAuraStateNot":spell_template#CasterAuraStateNot|INT(11) UNSIGNED|NO||0||
+||"TargetAuraStateNot":spell_template#TargetAuraStateNot|INT(11) UNSIGNED|NO||0||
+||"CastingTimeIndex":spell_template#CastingTimeIndex|INT(11) UNSIGNED|NO||0||
+||"RecoveryTime":spell_template#RecoveryTime|INT(11) UNSIGNED|NO||0||
+||"CategoryRecoveryTime":spell_template#CategoryRecoveryTime|INT(11) UNSIGNED|NO||0||
+||"InterruptFlags":spell_template#InterruptFlags|INT(11) UNSIGNED|NO||0||
+||"AuraInterruptFlags":spell_template#AuraInterruptFlags|INT(11) UNSIGNED|NO||0||
+||"ChannelInterruptFlags":spell_template#ChannelInterruptFlags|INT(11) UNSIGNED|NO||0||
+||"procFlags":spell_template#procFlags|INT(11) UNSIGNED|NO||0||
+||"procChance":spell_template#procChance|INT(11) UNSIGNED|NO||0||
+||"procCharges":spell_template#procCharges|INT(11) UNSIGNED|NO||0||
+||"maxLevel":spell_template#maxLevel|INT(11) UNSIGNED|NO||0||
+||"baseLevel":spell_template#baseLevel|INT(11) UNSIGNED|NO||0||
+||"spellLevel":spell_template#spellLevel|INT(11) UNSIGNED|NO||0||
+||"DurationIndex":spell_template#DurationIndex|int(11) unsigned|NO||0||
+||"powerType":spell_template#powerType|INT(11) UNSIGNED|NO||0||
+||"manaCost":spell_template#manaCost|INT(11) UNSIGNED|NO||0||
+||"manaCostPerlevel":spell_template#manaCostPerlevel|INT(11) UNSIGNED|NO||0||
+||"manaPerSecond":spell_template#manaPerSecond|INT(11) UNSIGNED|NO||0||
+||"manaPerSecondPerLevel":spell_template#manaPerSecondPerLevel|INT(11) UNSIGNED|NO||0||
+||"rangeIndex":spell_template#rangeIndex|INT(11) UNSIGNED|NO||1||
+||"speed":spell_template#speed|FLOAT|NO||0||
+||"StackAmount":spell_template#StackAmount|INT(11) UNSIGNED|NO||0||
+||"Totem1":spell_template#Totem1|INT(11) UNSIGNED|NO||0||
+||"Totem2":spell_template#Totem2|INT(11) UNSIGNED|NO||0||
+||"Reagent1":spell_template#Reagent1|INT(11) UNSIGNED|NO||0||
+||"ReagentCount1":spell_template#ReagentCount1|INT(11) UNSIGNED|NO||0||
+||"EquippedItemClass":spell_template#EquippedItemClass|INT(11) UNSIGNED|NO||-1||
+||"EquippedItemSubClassMask":spell_template#EquippedItemSubClassMask|INT(11) UNSIGNED|NO||0||
+||"EquippedItemInventoryTypeMask":spell_template#EquippedItemInventoryTypeMask|INT(11) UNSIGNED|NO||0||
+||"Effect1":spell_template#Effect1|INT(11) UNSIGNED|NO||0||
+||"EffectDieSides1":spell_template#EffectDieSides1|INT(11) UNSIGNED|NO||0||
+||"EffectBaseDice1":spell_template#EffectBaseDice1|INT(11) UNSIGNED|NO||0||
+||"EffectDicePerLevel1":spell_template#EffectDicePerLevel1|FLOAT|NO||0||
+||"EffectRealPointsPerLevel1":spell_template#EffectRealPointsPerLevel1|FLOAT|NO||0||
+||"EffectBasePoints1":spell_template#EffectBasePoints1|INT(11) UNSIGNED|NO||0||
+||"EffectMechanic1":spell_template#EffectMechanic1|INT(11) UNSIGNED|NO||0||
+||"EffectImplicitTargetA1":spell_template#EffectImplicitTargetA1|INT(11) UNSIGNED|NO||0||
+||"EffectImplicitTargetB1":spell_template#EffectImplicitTargetB1|INT(11) UNSIGNED|NO||0||
+||"EffectRadiusIndex1":spell_template#EffectRadiusIndex1|INT(11) UNSIGNED|NO||0||
+||"EffectApplyAuraName1":spell_template#EffectApplyAuraName1|INT(11) UNSIGNED|NO||0||
+||"EffectAmplitude1":spell_template#EffectAmplitude1|INT(11) UNSIGNED|NO||0||
+||"EffectMultipleValue1":spell_template#EffectMultipleValue1|FLOAT|NO||0||
+||"EffectChainTarget1":spell_template#EffectChainTarget1|INT(11) UNSIGNED|NO||0||
+||"EffectItemType1":spell_template#EffectItemType1|INT(11) UNSIGNED|NO||0||
+||"EffectMiscValue1":spell_template#EffectMiscValue1|INT(11) UNSIGNED|NO||0||
+||"EffectMiscValueB1":spell_template#EffectMiscValueB1|INT(11)|NO||0||
+||"EffectTriggerSpell1":spell_template#EffectTriggerSpell1|INT(11) UNSIGNED|NO||0||
+||"EffectPointsPerComboPoint1":spell_template#EffectPointsPerComboPoint1|FLOAT|NO||0||
+||"SpellVisual":spell_template#SpellVisual|INT(11) UNSIGNED|NO||0||
+||"SpellIconID":spell_template#SpellIconID|INT(11) UNSIGNED|NO||0||
+||"activeIconID":spell_template#activeIconID|INT(11) UNSIGNED|NO||0||
+||"spellPriority":spell_template#spellPriority|INT(11) UNSIGNED|NO||0||
+||"SpellName":spell_template#SpellName|TEXT|NO||0||
+||"Rank":spell_template#Rank|TEXT|NULL||0||
+||"ManaCostPercentage":spell_template#ManaCostPercentage|INT(11) UNSIGNED|NO||0||
+||"StartRecoveryCategory":spell_template#StartRecoveryCategory|INT(11) UNSIGNED|NO||0||
+||"StartRecoveryTime":spell_template#StartRecoveryTime|INT(11) UNSIGNED|NO||0||
+||"MaxTargetLevel":spell_template#MaxTargetLevel|INT(11) UNSIGNED|NO||0||
+||"SpellFamilyName":spell_template#SpellFamilyName|INT(11) UNSIGNED|NO||0||
+||"SpellFamilyFlags":spell_template#SpellFamilyFlags|BIGINT(20) UNSIGNED|NO||0||
+||"MaxAffectedTargets":spell_template#MaxAffectedTargets|INT(11) UNSIGNED|NO||0||
+||"DmgClass":spell_template#DmgClass|INT(11) UNSIGNED|NO||0||
+||"PreventionType":spell_template#PreventionType|INT(11) UNSIGNED|NO||0||
+||"DmgMultiplier1":spell_template#DmgMultiplier1|INT(11) UNSIGNED|NO||0||
+||"TotemCategory1":spell_template#TotemCategory1|INT(11) UNSIGNED|NO||0||
+||"TotemCategory2":spell_template#TotemCategory2|INT(11) UNSIGNED|NO||0||
+||"AreaId":spell_template#AreaId|INT(11) UNSIGNED|NO||0||
+||"SchoolMask":spell_template#SchoolMask|INT(11) UNSIGNED|NO||0||
+||"IsServerSide":spell_template#IsServerSide|INT(11) UNSIGNED|NO||0||
+||"AttributesServerside":spell_template#AttributesServerside|INT(11) UNSIGNED|NO||0||
 
 h3. Description of the fields
 
@@ -106,11 +106,25 @@ The spell ID.
 
 h4. Category
 
+Category ID based on which cooldown is determined. Spells with same category go into cooldown if one of them goes into cooldown.
+
+|*ID*|*Description*|
+|0|Default|
+|1|Summon guards|
+|2|Entry|
+|4|Entry|
+
 h4. Dispel
+
+Dispel type of a spell. Some spells can only dispel specific types of spells, for example poisons.
 
 h4. Mechanic
 
+Spells effects utilize a mechanics. For example bleed, root, silence.
+
 h4. Attributes
+
+Special rules for spells. There are several columns for attributes. These rules can do anything, and some can be name only.
 
 h4. AttributesEx
 
@@ -126,23 +140,45 @@ h4. AttributesEx6
 
 h4. Stances
 
+Determines specific stances in which caster must be for spell to be successfully cast.
+
 h4. StancesNot
+
+Determines specific stances in which caster cannot be for spell to be successfully cast.
 
 h4. Targets
 
+Determines the default targets for some effects. Seems to be connected to TARGET_NONE.
+
 h4. TargetCreatureType
+
+Specifies what creature types the spell can target, for example Humanoid or Beast.
 
 h4. RequiresSpellFocus
 
+Specifies the spell focus GO, around which the caster has to be for a successful cast.
+
+Indicates that this spell needs a GO near (e.g. forges). Required object has the type "GAMEOBJECT_TYPE_SPELLFOCUS":Gameobject_template#type and "data0":Gameobject_template#data0-23 matches the RequiresSpellFocus value.
+
 h4. FacingCasterFlags
+
+Specifies how the caster has to face the target so that the spell is successful. enum SpellFacingFlags in Unit.h
 
 h4. CasterAuraState
 
+Specifies the caster AuraState required for the cast to be successful.
+
 h4. TargetAuraState
+
+Specifies the target AuraState required for the cast to be successful.
 
 h4. CasterAuraStateNot
 
+Specifies which AuraState the caster must not have for the cast to be successful.
+
 h4. TargetAuraStateNot
+
+Specifies which AuraState the target must not have for the cast to be successful.
 
 h4. CastingTimeIndex
 
@@ -198,6 +234,12 @@ h4. spellLevel
 h4. DurationIndex
 
 h4. powerType
+
+|*ID*|*Description*|
+|0|Mana|
+|1|Rage|
+|2|?|
+|3|Energy|
 
 h4. manaCost
 
@@ -308,3 +350,217 @@ h4. SchoolMask
 h4. IsServerSide
 
 h4. AttributesServerside
+
+---
+
+TODO: Describe rest of columns
+|24|casterAuraSpell|uint|
+|25|targetAuraSpell|uint|
+|26|excludeCasterAuraSpell|uint|
+|27|excludeTargetAuraSpell|uint|
+|28|CastingTimeIndex|uint|
+|29|RecoveryTime|uint|
+|30|CategoryRecoveryTime|uint|
+|31|InterruptFlags|uint|
+|32|AuraInterruptFlags|uint|
+|33|ChannelInterruptFlags|uint|
+|34|procFlags|uint|
+|35|procChance|uint|
+|36|procCharges|uint|
+|37|maxLevel|uint|
+|38|baseLevel|uint|
+|39|spellLevel|uint|
+|40|DurationIndex|uint|
+|41|"powerType":Spell.dbc#powertype|uint|
+|42|manaCost|uint|
+|43|manaCostPerlevel|uint|
+|44|manaPerSecond|uint|
+|45|manaPerSecondPerLevel|uint|
+|46|rangeIndex|uint|
+|47|speed|float|
+|48|modalNextSpell|uint|
+|49|StackAmount|uint|
+|50|Totem1|uint|
+|51|Totem2|uint|
+|52|Reagent1|int|
+|53|Reagent2|int|
+|54|Reagent3|int|
+|55|Reagent4|int|
+|56|Reagent5|int|
+|57|Reagent6|int|
+|58|Reagent7|int|
+|59|Reagent8|int|
+|60|ReagentCount1|uint|
+|61|ReagentCount2|uint|
+|62|ReagentCount3|uint|
+|63|ReagentCount4|uint|
+|64|ReagentCount5|uint|
+|65|ReagentCount6|uint|
+|66|ReagentCount7|uint|
+|67|ReagentCount8|uint|
+|68|EquippedItemClass|int|
+|69|EquippedItemSubClassMask|int|
+|70|EquippedItemInventoryTypeMask|int|
+|71|Effect1|uint|
+|72|Effect2|uint|
+|73|Effect3|uint|
+|74|EffectDieSides1|int|
+|75|EffectDieSides2|int|
+|76|EffectDieSides3|int|
+|77|EffectRealPointsPerLevel1|float|
+|78|EffectRealPointsPerLevel2|float|
+|79|EffectRealPointsPerLevel3|float|
+|80|EffectBasePoints1|int|
+|81|EffectBasePoints2|int|
+|82|EffectBasePoints3|int|
+|83|EffectMechanic1|uint|
+|84|EffectMechanic2|uint|
+|85|EffectMechanic3|uint|
+|86|EffectImplicitTargetA1|uint|
+|87|EffectImplicitTargetA2|uint|
+|88|EffectImplicitTargetA3|uint|
+|89|EffectImplicitTargetB1|uint|
+|90|EffectImplicitTargetB2|uint|
+|91|EffectImplicitTargetB3|uint|
+|92|EffectRadiusIndex1|uint|
+|93|EffectRadiusIndex2|uint|
+|94|EffectRadiusIndex3|uint|
+|95|EffectApplyAuraName1|uint|
+|96|EffectApplyAuraName2|uint|
+|97|EffectApplyAuraName3|uint|
+|98|EffectAmplitude1|uint|
+|99|EffectAmplitude2|uint|
+|100|EffectAmplitude3|uint|
+|101|EffectValueMultiplier1|float|
+|102|EffectValueMultiplier2|float|
+|103|EffectValueMultiplier3|float|
+|104|EffectChainTarget1|uint|
+|105|EffectChainTarget2|uint|
+|106|EffectChainTarget3|uint|
+|107|EffectItemType1|uint|
+|108|EffectItemType2|uint|
+|109|EffectItemType3|uint|
+|110|EffectMiscValue1|int|
+|111|EffectMiscValue2|int|
+|112|EffectMiscValue3|int|
+|113|EffectMiscValueB1|int|
+|114|EffectMiscValueB2|int|
+|115|EffectMiscValueB3|int|
+|116|EffectTriggerSpell1|uint|
+|117|EffectTriggerSpell2|uint|
+|118|EffectTriggerSpell3|uint|
+|119|EffectPointsPerComboPoint1|float|
+|120|EffectPointsPerComboPoint2|float|
+|121|EffectPointsPerComboPoint3|float|
+|122|EffectSpellClassMask1|flag96|
+|123|EffectSpellClassMask2|flag96|
+|124|EffectSpellClassMask3|flag96|
+|125|EffectSpellClassMask4|flag96|
+|126|EffectSpellClassMask5|flag96|
+|127|EffectSpellClassMask6|flag96|
+|128|EffectSpellClassMask7|flag96|
+|129|EffectSpellClassMask8|flag96|
+|130|EffectSpellClassMask9|flag96|
+|131|SpellVisual1|uint|
+|132|SpellVisual2|uint|
+|133|SpellIconID|uint|
+|134|activeIconID|uint|
+|135|spellPriority|uint|
+|136|SpellName&#95;0|string|
+|137|SpellName&#95;1|string|
+|138|SpellName&#95;2|string|
+|139|SpellName&#95;3|string|
+|140|SpellName&#95;4|string|
+|141|SpellName&#95;5|string|
+|142|SpellName&#95;6|string|
+|143|SpellName&#95;7|string|
+|144|SpellName&#95;8|string|
+|145|SpellName&#95;9|string|
+|146|SpellName&#95;10|string|
+|147|SpellName&#95;11|string|
+|148|SpellName&#95;12|string|
+|149|SpellName&#95;13|string|
+|150|SpellName&#95;14|string|
+|151|SpellName&#95;15|string|
+|152|SpellNameFlag|uint|
+|153|Rank&#95;0|string|
+|154|Rank&#95;1|string|
+|155|Rank&#95;2|string|
+|156|Rank&#95;3|string|
+|157|Rank&#95;4|string|
+|158|Rank&#95;5|string|
+|159|Rank&#95;6|string|
+|160|Rank&#95;7|string|
+|161|Rank&#95;8|string|
+|162|Rank&#95;9|string|
+|163|Rank&#95;10|string|
+|164|Rank&#95;11|string|
+|165|Rank&#95;12|string|
+|166|Rank&#95;13|string|
+|167|Rank&#95;14|string|
+|168|Rank&#95;15|string|
+|169|RankFlags|uint|
+|170|Description&#95;0|string|
+|171|Description&#95;1|string|
+|172|Description&#95;2|string|
+|173|Description&#95;3|string|
+|174|Description&#95;4|string|
+|175|Description&#95;5|string|
+|176|Description&#95;6|string|
+|177|Description&#95;7|string|
+|178|Description&#95;8|string|
+|179|Description&#95;9|string|
+|180|Description&#95;10|string|
+|181|Description&#95;11|string|
+|182|Description&#95;12|string|
+|183|Description&#95;13|string|
+|184|Description&#95;14|string|
+|185|Description&#95;15|string|
+|186|DescriptionFlags|uint|
+|187|ToolTip&#95;0|string|
+|188|ToolTip&#95;1|string|
+|189|ToolTip&#95;2|string|
+|190|ToolTip&#95;3|string|
+|191|ToolTip&#95;4|string|
+|192|ToolTip&#95;5|string|
+|193|ToolTip&#95;6|string|
+|194|ToolTip&#95;7|string|
+|195|ToolTip&#95;8|string|
+|196|ToolTip&#95;9|string|
+|197|ToolTip&#95;10|string|
+|198|ToolTip&#95;11|string|
+|199|ToolTip&#95;12|string|
+|200|ToolTip&#95;13|string|
+|201|ToolTip&#95;14|string|
+|202|ToolTip&#95;15|string|
+|203|ToolTipFlags|uint|
+|204|ManaCostPercentage|uint|
+|205|StartRecoveryCategory|uint|
+|206|StartRecoveryTime|uint|
+|207|MaxTargetLevel|uint|
+|208|SpellFamilyName|uint|
+|209|SpellFamilyFlagsLow|flag96|
+|210|SpellFamilyFlagsHigh|flag96|
+|211|SpellFamilyFlags2|flag96|
+|212|MaxAffectedTargets|uint|
+|213|DmgClass|uint|
+|214|PreventionType|uint|
+|215|StanceBarOrder|uint|
+|216|EffectDamageMultiplier1|float|
+|217|EffectDamageMultiplier2|float|
+|218|EffectDamageMultiplier3|float|
+|219|MinFactionId|uint|
+|220|MinReputation|uint|
+|221|RequiredAuraVision|uint|
+|222|TotemCategory1|uint|
+|223|TotemCategory2|uint|
+|224|AreaGroupId|int|
+|225|SchoolMask|uint|
+|226|runeCostID|uint|
+|227|spellMissileID|uint|
+|228|PowerDisplayId|uint|
+|229|EffectBonusMultiplier1|float|
+|230|EffectBonusMultiplier2|float|
+|231|EffectBonusMultiplier3|float|
+|232|spellDescriptionVariableID|uint|
+|233|SpellDifficultyId|uint|
