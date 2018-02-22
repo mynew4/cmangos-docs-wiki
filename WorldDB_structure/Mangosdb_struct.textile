@@ -2,7 +2,7 @@ h3. This is the list of tables in the regular 'mangos' database
 
 (Reloadable) - are in-game reloadable with the .reload command.
 
-(Core) - used by CMaNGOS-Core internally, or they are maintained by the CMaNGOS-Core-Team.
+(Core) - Changes to these tables are to be commited and reviewed in CMaNGOS-Core Repositories NOT CMaNGOS-DB Repositories due to their complexity and relations.
 
 (Classic) (TBC) (WotLK) (Cata) - used since or only in a certain version of CMaNGOS-Core
 
@@ -193,30 +193,28 @@ h3. This is the list of tables in the regular 'mangos' database
 |"spell_area":https://github.com/cmangos/issues/wiki/spell_area
 (Reloadable)|holds information on what spells are applied to npcs/players in some areas.|
 |"spell_bonus_data":https://github.com/cmangos/issues/wiki/spell_bonus_data
-(Reloadable) (Core)|is used for storing custom damage/healing bonus coefficients.|
+(Reloadable)|is used for storing custom damage/healing bonus coefficients.|
 |"spell_chain":https://github.com/cmangos/issues/wiki/spell_chain
-(Reloadable) (Core)|defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing.|
-|"spell_check":https://github.com/cmangos/issues/wiki/spell_check
-(Core)|?|
+(Reloadable)|defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing.|
+|"spell_check":https://github.com/cmangos/issues/wiki/spell_check|?|
 |"spell_elixir":https://github.com/cmangos/issues/wiki/spell_elixir
-(Reloadable) (Core)|holds elixir information to be used to properly stack the elixirs.|
+(Reloadable)|holds elixir information to be used to properly stack the elixirs.|
 |"spell_facing":https://github.com/cmangos/issues/wiki/spell_facing|?|
 |"spell_learn_spell":https://github.com/cmangos/issues/wiki/spell_learn_spell
-(Reloadable) (Core)|holds information on spells that should be learned at the same time a player learns another spell.|
+(Reloadable)|holds information on spells that should be learned at the same time a player learns another spell.|
 |"spell_loot_template":https://github.com/cmangos/issues/wiki/spell_loot_template
 (Reloadable)|Spell loot|
 |"spell_pet_auras":https://github.com/cmangos/issues/wiki/spell_pet_auras|?|
 |"spell_proc_event":https://github.com/cmangos/issues/wiki/spell_proc_event
-(Reloadable) (Core)|holds information on how certain spells activate, which proc other spells.|
+(Reloadable)|holds information on how certain spells activate, which proc other spells.|
 |"spell_proc_item_enchant":https://github.com/cmangos/issues/wiki/spell_proc_item_enchant
-(Reloadable) (Core)|holds information (ppmRate) for item (weapon) enchants|
-|"spell_script_target":https://github.com/cmangos/issues/wiki/spell_script_target
-(Reloadable)|holds information on spell effects which require a specific target in either alive or dead state (for creatures).|
+(Reloadable)|holds information (ppmRate) for item (weapon) enchants|
+|"spell_script_target":https://github.com/cmangos/issues/wiki/spell_script_target (Reloadable)|holds information on spell effects which require a specific target in either alive or dead state (for creatures).|
 |"spell_target_position":https://github.com/cmangos/issues/wiki/spell_target_position
 (Reloadable)|holds coordinate information on where the player should be teleported to when a spell with effect SPELL_EFFECT_TELEPORT_UNITS.|
-|"spell_template":https://github.com/cmangos/issues/wiki/spell_template|contains the description of spells.|
+|"spell_template":https://github.com/cmangos/issues/wiki/spell_template (Core)|contains the description of spells.|
 |"spell_threat":https://github.com/cmangos/issues/wiki/spell_threat
-(Reloadable) (Core)|holds threat values on all spells that should either give or take away threat.|
+(Reloadable)|holds threat values on all spells that should either give or take away threat.|
 |"transports":https://github.com/cmangos/issues/wiki/transports|contains all type 15 transports (Boats and Zeppelins).|
 |"vehicle_accessory":https://github.com/cmangos/issues/wiki/vehicle_accessory|?|
 |"world_template":https://github.com/cmangos/issues/wiki/world_template|holds the ScriptNames of the world maps 0, 1, 530, 571|
