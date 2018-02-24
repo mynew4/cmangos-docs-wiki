@@ -182,6 +182,57 @@ Specifies which AuraState the target must not have for the cast to be successful
 
 h4. CastingTimeIndex
 
+CastingTime (Id) that defines how long it takes for the spell to cast in milliseconds.
+
+|ID|CastTime|CastTimePerLevel|MinCastTime|
+|1|0|0|0|
+|2|250|0|250|
+|3|500|0|500|
+|4|1000|0|1000|
+|5|2000|XXX|XXX|
+|6|5000|XXX|XXX|
+|7|10000|XXX|XXX|
+|8|20000|XXX|XXX|
+|9|30000|XXX|XXX|
+|10|1000|-100|500|
+|11|2000|-100|1000|
+|12|5000|-100|2500|
+|13|30000|-1000|10000|
+|14|3000|XXX|XXX|
+|15|4000|XXX|XXX|
+|16|1500|XXX|XXX|
+|17|XXX|XXX|XXX|
+|18|-1000000|XXX|XXX|
+|19|2500|XXX|XXX|
+|20|2500|XXX|XXX|
+|21|2600|XXX|XXX|
+|22|3500|XXX|XXX|
+|23|1800|XXX|XXX|
+|24|XXX|XXX|XXX|
+|25|XXX|XXX|XXX|
+|26|XXX|XXX|XXX|
+|27|XXX|XXX|XXX|
+|28|XXX|XXX|XXX|
+|29|XXX|XXX|XXX|
+|30|XXX|XXX|XXX|
+|31|XXX|XXX|XXX|
+|32|XXX|XXX|XXX|
+|33|XXX|XXX|XXX|
+|34|XXX|XXX|XXX|
+|35|XXX|XXX|XXX|
+|36|XXX|XXX|XXX|
+|37|XXX|XXX|XXX|
+|38|XXX|XXX|XXX|
+|39|XXX|XXX|XXX|
+|50|XXX|XXX|XXX|
+|70|300000|XXX|XXX|
+|90|XXX|XXX|XXX|
+|91|XXX|XXX|XXX|
+|170|8000|XXX|XXX|
+|170|6000|XXX|XXX|
+|192|15000|XXX|XXX|
+|193|12000|XXX|XXX|
+
 h4. RecoveryTime
 
 h4. CategoryRecoveryTime
