@@ -17,6 +17,7 @@ h3. Structure
 |"RequiredRaces":Quest_template#requiredraces|smallint(5)|NO||0||
 |"RequiredSkill":Quest_template#requiredskill|smallint(5)|NO||0||
 |"RequiredSkillValue":Quest_template#requiredskillvalue|smallint(5) unsigned|NO||0||
+|"RequiredCondition":Quest_template#RequiredCondition|smallint(5) unsigned|NO||0||
 |"RepObjectiveFaction":Quest_template#repobjectivefaction|smallint(5) unsigned|NO||0||
 |"RepObjectiveValue":Quest_template#repobjectivevalue|mediumint(9)|NO||0||
 |"RequiredMinRepFaction":Quest_template#requiredminrepfaction|mediumint(5) unsigned|NO||0||
@@ -28,13 +29,13 @@ h3. Structure
 |"QuestFlags":Quest_template#questflags|smallint(5) unsigned|NO||0||
 |"SpecialFlags":Quest_template#specialflags|tinyint(3) unsigned|NO||0||
 |"CharTitleId":Quest_template#chartitleid|tinyint(3) unsigned|NO||0||
-|"PlayersSlain":Quest_template#playersslain|tinyint(3) unsigned|NO||0||
-|"BonusTalents":Quest_template#bonustalents|tinyint(3) unsigned|NO||0||
+|"PlayersSlain":Quest_template#playersslain|tinyint(3) unsigned|NO||0|WOTLK|
+|"BonusTalents":Quest_template#bonustalents|tinyint(3) unsigned|NO||0|WOTLK|
 |"PrevQuestId":Quest_template#prevquestid|mediumint(9)|NO||0||
 |"NextQuestId":Quest_template#nextquestid|mediumint(9)|NO||0||
 |"ExclusiveGroup":Quest_template#exclusivegroup|mediumint(9)|NO||0||
 |"NextQuestInChain":Quest_template#nextquestinchain|mediumint(8)|NO||0||
-|"RewXPId":Quest_template#rewxpid|tinyint(3) unsigned|NO||0||
+|"RewXPId":Quest_template#rewxpid|tinyint(3) unsigned|NO||0|WOTLK|
 |"SrcItemId":Quest_template#srcitemid|mediumint(8) unsigned|NO||0||
 |"SrcItemCount":Quest_template#srcitemcount|tinyint(3)|NO||0||
 |"SrcSpell":Quest_template#srcspell|mediumint(8)|NO||0||
@@ -121,15 +122,22 @@ h3. Structure
 |"DetailsEmote2":Quest_template#detailsemote|smallint(5) unsigned|NO||0||
 |"DetailsEmote3":Quest_template#detailsemote|smallint(5) unsigned|NO||0||
 |"DetailsEmote4":Quest_template#detailsemote|smallint(5) unsigned|NO||0||
+|"DetailsEmoteDelay1":Quest_template#DetailsEmoteDelay|smallint(5) unsigned|NO||0||
+|"DetailsEmoteDelay2":Quest_template#DetailsEmoteDelay|smallint(5) unsigned|NO||0||
+|"DetailsEmoteDelay3":Quest_template#DetailsEmoteDelay|smallint(5) unsigned|NO||0||
+|"DetailsEmoteDelay4":Quest_template#DetailsEmoteDelay|smallint(5) unsigned|NO||0||
 |"IncompleteEmote":Quest_template#incompleteemote|smallint(5) unsigned|NO||0||
 |"CompleteEmote":Quest_template#completeemote|smallint(5) unsigned|NO||0||
 |"OfferRewardEmote1":Quest_template#offerrewardemote|smallint(5) unsigned|NO||0||
 |"OfferRewardEmote2":Quest_template#offerrewardemote|smallint(5) unsigned|NO||0||
 |"OfferRewardEmote3":Quest_template#offerrewardemote|smallint(5) unsigned|NO||0||
 |"OfferRewardEmote4":Quest_template#offerrewardemote|smallint(5) unsigned|NO||0||
+|"OfferRewardEmoteDelay1":Quest_template#OfferRewardEmoteDelay|smallint(5) unsigned|NO||0||
+|"OfferRewardEmoteDelay2":Quest_template#OfferRewardEmoteDelay|smallint(5) unsigned|NO||0||
+|"OfferRewardEmoteDelay3":Quest_template#OfferRewardEmoteDelay|smallint(5) unsigned|NO||0||
+|"OfferRewardEmoteDelay4":Quest_template#OfferRewardEmoteDelay|smallint(5) unsigned|NO||0||
 |"StartScript":Quest_template#startscript|mediumint(8) unsigned|NO||0||
 |"CompleteScript":Quest_template#completescript|mediumint(8) unsigned|NO||0||
-
 
 h4. entry
 
@@ -207,6 +215,8 @@ NOTE: For Cataclysm Client Goblin=256 and Worgen=2097152
 h4. RequiredSkillValue
 
 Player skill value requirement for skill if in "ZoneOrSort":quest_template#ZoneOrSort field &lt; 0 and have some from skill related values.
+
+h4. RequiredCondition
 
 h4. RepObjectiveFaction
 
@@ -479,7 +489,7 @@ h4. DetailsEmote
 Emote(s) played by the related NPC when you view the quest details before clicking the "Accept"-button.
 This is found in the SMSG_QUEST_GIVER_QUEST_DETAILS-packet in sniffs.
 
-h4. DetailsEmoteDelay 1-4
+h4. DetailsEmoteDelay
 
 Delay from the last DetailsEmote before this one is played (in milliseconds)
 This is found in the SMSG_QUEST_GIVER_QUEST_DETAILS-packet in sniffs.
@@ -498,7 +508,7 @@ h4. OfferRewardEmote
 Emote played by the NPC at the time the character is rewarded for the quest.
 This is found in the SMSG_QUEST_GIVER_OFFER_REWARD_MESSAGE-packet in sniffs.
 
-h4. OfferRewardEmote 1-4
+h4. OfferRewardEmoteDelay
 
 Delay from the last OfferRewardEmote before this one is played (in milliseconds)
 This is found in the SMSG_QUEST_GIVER_OFFER_REWARD_MESSAGE-packet in sniffs.
