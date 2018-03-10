@@ -14,14 +14,14 @@ NOTE:
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry/guid":creature_(template_)addon#entry/guid|mediumint(8) unsigned|NO|PRI|0||
-|"mount":creature_(template_)addon#mount|mediumint(8) unsigned|NO||0||
-|"bytes1":creature_(template_)addon#bytes1|int(10) unsigned|NO||0||
-|"b2_0_sheath":creature_(template_)addon#b2_0_sheath|tinyint(3) unsigned|NO||0||
-|"b2_1_pvp_state":creature_(template_)addon#b2_1_pvp_state|tinyint(3) unsigned|NO||0||
-|"emote":creature_(template_)addon#emote|mediumint(8) unsigned|NO||0||
-|"moveflags":creature_(template_)addon#moveflags|int(10) unsigned|NO||0||
-|"auras":creature_(template_)addon#auras|text|YES||||
+|"entry/guid":creature_template_addon#entry/guid|mediumint(8) unsigned|NO|PRI|0||
+|"mount":creature_template_addon#mount|mediumint(8) unsigned|NO||0||
+|"bytes1":creature_template_addon#bytes1|int(10) unsigned|NO||0||
+|"b2_0_sheath":creature_template_addon#b2_0_sheath|tinyint(3) unsigned|NO||0||
+|"b2_1_pvp_state":creature_template_addon#b2_1_pvp_state|tinyint(3) unsigned|NO||0||
+|"emote":creature_template_addon#emote|mediumint(8) unsigned|NO||0||
+|"moveflags":creature_template_addon#moveflags|int(10) unsigned|NO||0||
+|"auras":creature_template_addon#auras|text|YES||||
 
 h3. Description of the fields
 
