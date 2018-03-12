@@ -324,13 +324,21 @@ h4. Effect1
 
 h4. EffectDieSides1
 
+Random Value of the Die that is rolled for the SPELL_EFFECT
+Max(EffectDieSides1) + (EffectBaseDice1 + EffectBasePoints1) = MaxValue for SPELL_EFFECT
+
 h4. EffectBaseDice1
+
+Base Value for the SPELL_EFFECT, mostly 1
+EffectBaseDice1 + EffectBasePoints1 = MinValue for SPELL_EFFECT
 
 h4. EffectDicePerLevel1
 
 h4. EffectRealPointsPerLevel1
 
 h4. EffectBasePoints1
+
+Value added to EffectBaseDice1
 
 h4. EffectMechanic1
 
