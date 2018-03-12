@@ -20,7 +20,7 @@ h3. Structure
 |"IconName":creature_template_tbc#iconname|char(100)|YES||Null||
 |"MinLevel":creature_template_tbc#minlevel|tinyint(3) unsigned|YES||1||
 |"MaxLevel":creature_template_tbc#maxlevel|tinyint(3) unsigned|YES||1||
-|"HeroicEntry":Creature_template_tbc#heroicentry|mediumint(8) unsigned|NO||0||
+|"HeroicEntry":creature_template_tbc#heroicentry|mediumint(8) unsigned|NO||0||
 |"ModelId1":creature_template_tbc#modelid1|mediumint(8) unsigned|NO||0||
 |"ModelId2":creature_template_tbc#modelid2|mediumint(8) unsigned|NO||0||
 |"ModelId3":creature_template_tbc#modelid3|mediumint(8) unsigned|NO||0||
@@ -76,7 +76,7 @@ h3. Structure
 |"KillCredit1":creature_template_tbc#killcredit1|int(11) unsigned|NO||0||
 |"KillCredit2":creature_template_tbc#killcredit2|int(11) unsigned|NO||0||
 |"MechanicImmuneMask":creature_template_tbc#mechanicimmunemask|int(10) unsigned|NO||0||
-|"SchoolImmuneMask":Creature_template#schoolimmunemask|int(10) unsigned|NO||0||
+|"SchoolImmuneMask":Creature_template_tbc#schoolimmunemask|int(10) unsigned|NO||0||
 |"ResistanceHoly":creature_template_tbc#resistanceholy|int(10) unsigned|NO||0||
 |"ResistanceFire":creature_template_tbc#resistancefire|smallint(5)|NO||0||
 |"ResistanceNature":creature_template_tbc#resistancenature|smallint(5)|NO||0||
@@ -102,8 +102,9 @@ h4. Entry
 
 This is the Primary NPC Entry Number and is Also the Dungeon Normal Mode / Raid 10-Man Normal Mode Entry.
 
-|DUNGEON&#95;DIFFICULTY&#95;NORMAL|
-|RAID&#95;DIFFICULTY&#95;10MAN&#95;NORMAL|
+|DUNGEON_DIFFICULTY_NORMAL|
+|RAID_DIFFICULTY_10MAN_NORMAL|
+|RAID_DIFFICULTY_25MAN_NORMAL|
 
 h4. Name
 
@@ -127,23 +128,23 @@ The Maximum Level of the Creature if the Creature Has a Level Range. For Creatur
 
 h4. HeroicEntry
 
-If This Value is NOT Zero Then This Field Refers to a Creature&#95;Template Entry. This Field is to be Used for a Specific Versions of an NPC in Heroic Dungeons.
+If This Value is NOT Zero Then This Field Refers to a Creature_Template Entry. This Field is to be Used for a Specific Versions of an NPC in Heroic Dungeons.
 
 h4. ModelId1
 
-Primary Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
+Primary Graphical Model That The Client Applies On This Creature. This is a "Creature_Model_Info.Entry":Creature_Model_Info#Entry
 
 h4. ModelId2
 
-Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature_Model_Info.Entry":Creature_Model_Info#Entry
 
 h4. ModelId3
 
-Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature_Model_Info.Entry":Creature_Model_Info#Entry
 
 h4. ModelId4
 
-Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature&#95;Model&#95;Info.Entry":Creature_Model_Info#Entry
+Optional Extra Graphical Model That The Client Applies On This Creature. This is a "Creature_Model_Info.Entry":Creature_Model_Info#Entry
 
 h4. FactionAlliance
 
@@ -217,11 +218,13 @@ The NPC Is Limited To ONLY Movement On This:
 
 h4. RegenerateStats
 
-This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Boolean Value 1 or 0)
+This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Data Flag)
 
 |Value|Description|
 |0|NPC Does NOT Regenerate Stats When Out Of Comabt|
-|1|NPC DOES Regenerate Stats When Out Of Comabt|
+|1|NPC DOES Regenerate Health When Out Of Comabt|
+|2|NPC DOES Regenerate Power (Mana) When Out Of Comabt|
+|3|NPC DOES Regenerate Health AND Power (Mana) When Out Of Comabt|
 
 h4. RacialLeader
 
@@ -263,9 +266,10 @@ This Field Is a Bitmask That Represents What NPC Flags The Creature Has Assigned
 |20|1048576|Battlemaster|Creatures with this flag port players to battlegrounds.|
 |21|2097152|Auctioneer|Allows creature to display auction list.|
 |22|4194304|Stable Master|Has the option to stable pets for hunters.|
-|23|16777216|Instantloot|NPC could be loot immediately without killing, just after clicking on it. (Npc&#95;spellclick&#95;spells)|
-|24|33554432|Player Vehicle|players with mounts that have vehicle data should have it set|
-|25|268435456|Guard ???? |Creatures with this flag act as guards in cities.|
+|23|8388608|Guild Banker|cause client to send 997 opcode|
+|24|16777216|SpellClick/Instantloot|cause client to send 1015 opcode (spell click), dynamic, set at loading and don't must be set in DB. (Npc_spellclick_spells)|
+|25|33554432|Player Vehicle|players with mounts that have vehicle data should have it set|
+|26|268435456|Guard ?|Creatures with this flag act as guards in cities.|
 
 EXAMPLE:
 So If You Want An NPC That Is a Quest Giver, a Vendor And Can Also Repair You Just Add The Specific Flags Together: 
@@ -280,38 +284,38 @@ This Field Allows The Manual Application Of Unit Flags To NPC. This Is a Bitmask
 Some Known Possible Flags Are:
 
 |*Bit*|*Flag*|*Name*|*Comments*|
-|0|1|UNIT&#95;FLAG&#95;UNK&#95;0||
-|1|2|UNIT&#95;FLAG&#95;NON&#95;ATTACKABLE|not attackable|
-|2|4|UNIT&#95;FLAG&#95;NON&#95;MOVING&#95;DEPRECATED|TODO: Needs research|
-|3|8|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED|players, pets, totems, guardians, companions, charms, any units associated with players|
-|4|16|UNIT&#95;FLAG&#95;RENAME||
-|5|32|UNIT&#95;FLAG&#95;PREPARATION|don't take reagents for spells with SPELL_ATTR_EX5_NO_REAGENT_WHILE_PREP|
-|6|64|UNIT&#95;FLAG&#95;UNK&#95;6||
-|7|128|UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1|UNIT&#95;FLAG&#95;PLAYER&#95;CONTROLLED + UNIT&#95;FLAG&#95;NOT&#95;ATTACKABLE&#95;1 is NON&#95;PVP&#95;ATTACKABLE|
-|8|256|UNIT&#95;FLAG&#95;IMMUNE&#95;TO&#95;PLAYER|Target is immune to players|
-|9|512|UNIT&#95;FLAG&#95;IMMUNE&#95;TO&#95;NPC|makes unable to attack everything. Almost identical to &quot;civilian&quot;. Will not engage in combat unless &quot;called upon&quot; or engaged by another unit.|
-|10|1024|UNIT&#95;FLAG&#95;LOOTING|loot animation|
-|11|2048|UNIT&#95;FLAG&#95;PET&#95;IN&#95;COMBAT|in combat?, 2.0.8|
-|12|4096|UNIT&#95;FLAG&#95;PVP|Allows item spells to be casted upon(?)|
-|13|8192|UNIT&#95;FLAG&#95;SILENCED|silenced, 2.1.1|
-|14|16384|UNIT&#95;FLAG&#95;UNK&#95;14|2.0.8|
-|15|32768|UNIT&#95;FLAG&#95;UNK&#95;15|related to jerky movement in water?|
-|16|65536|UNIT&#95;FLAG&#95;UNK&#95;16|removes attackable icon|
-|17|131072|UNIT&#95;FLAG&#95;PACIFIED||
-|18|262144|UNIT&#95;FLAG&#95;STUNNED|stunned, 2.1.1|
-|19|524288|UNIT&#95;FLAG&#95;IN&#95;COMBAT||
-|20|1048576|UNIT&#95;FLAG&#95;TAXI&#95;FLIGHT|disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag|
-|21|2097152|UNIT&#95;FLAG&#95;DISARMED|disable melee spells casting..., "Required melee weapon" added to melee spells tooltip.|
-|22|4194304|UNIT&#95;FLAG&#95;CONFUSED||
-|23|8388608|UNIT&#95;FLAG&#95;FLEEING||
-|24|16777216|UNIT&#95;FLAG&#95;POSSESSED|remote control e.g. Eyes of the Beast: let master use melee attack, make unit unselectable via mouse for master in world (as if it was own character)|
-|25|33554432|UNIT&#95;FLAG&#95;NOT&#95;SELECTABLE|Can't be selected by mouse|
-|26|67108864|UNIT&#95;FLAG&#95;SKINNABLE||
-|27|134217728|UNIT&#95;FLAG&#95;MOUNT|the client seems to handle it perfectly|
-|28|268435456|UNIT&#95;FLAG&#95;UNK&#95;28||
-|29|536870912|UNIT&#95;FLAG&#95;UNK&#95;29|used in Feing Death spell|
-|30|1073741824|UNIT&#95;FLAG&#95;SHEATHE||
-|31|2147483648|UNIT&#95;FLAG&#95;UNK&#95;31|set skinnable icon and also changes color of portrait)(no affect in 2.4.3|
+|0|1|UNIT_FLAG_UNK_0|Movement checks disabled, likely paired with loss of client control packet.|
+|1|2|UNIT_FLAG_NON_ATTACKABLE|not attackable|
+|2|4|UNIT_FLAG_CLIENT_CONTROL_LOST|Generic unspecified loss of control initiated by server script, movement checks disabled, paired with loss of client control packet.|
+|3|8|UNIT_FLAG_PLAYER_CONTROLLED|players, pets, totems, guardians, companions, charms, any units associated with players|
+|4|16|UNIT_FLAG_RENAME||
+|5|32|UNIT_FLAG_PREPARATION|don't take reagents for spells with SPELL_ATTR_EX5_NO_REAGENT_WHILE_PREP|
+|6|64|UNIT_FLAG_UNK_6|Related to Movement? often paired with UNIT_FLAG_SWIMMING|
+|7|128|UNIT_FLAG_NOT_ATTACKABLE_1|UNIT_FLAG_PVP + UNIT_FLAG_NOT_ATTACKABLE_1 = UNIT_FLAG_NON_PVP_ATTACKABLE - blue color target|
+|8|256|UNIT_FLAG_IMMUNE_TO_PLAYER|Target is immune to players|
+|9|512|UNIT_FLAG_IMMUNE_TO_NPC|makes you unable to attack everything. Almost identical to our "civilian"-term. Will ignore it's surroundings and not engage in combat unless "called upon" or engaged by another unit.|
+|10|1024|UNIT_FLAG_LOOTING|loot animation|
+|11|2048|UNIT_FLAG_PET_IN_COMBAT|in combat?, 2.0.8|
+|12|4096|UNIT_FLAG_PVP|Allows item spells to be casted upon. changed in 3.0.3|
+|13|8192|UNIT_FLAG_SILENCED|silenced, 2.1.1|
+|14|16384|UNIT_FLAG_PERSUADED|persuaded, 2.0.8|
+|15|32768|UNIT_FLAG_SWIMMING|controls water swimming animation - TODO: confirm whether dynamic or static|
+|16|65536|UNIT_FLAG_NON_ATTACKABLE_2|removes attackable icon, if on yourself, cannot assist self but can cast TARGET_SELF spells - added by SPELL_AURA_MOD_UNATTACKABLE|
+|17|131072|UNIT_FLAG_PACIFIED|3.0.3 ok|
+|18|262144|UNIT_FLAG_STUNNED|Unit is a subject to stun, turn and strafe movement disabled|
+|19|524288|UNIT_FLAG_IN_COMBAT||
+|20|1048576|UNIT_FLAG_TAXI_FLIGHT|Unit is on taxi, paired with a duplicate loss of client control packet (likely a legacy serverside hack). Disables any spellcasts not allowed in taxi flight client-side.|
+|21|2097152|UNIT_FLAG_DISARMED|disable melee spells casting..., "Required melee weapon" added to melee spells tooltip.|
+|22|4194304|UNIT_FLAG_CONFUSED|Unit is a subject to confused movement, movement checks disabled, paired with loss of client control packet.|
+|23|8388608|UNIT_FLAG_FLEEING|Unit is a subject to fleeing movement, movement checks disabled, paired with loss of client control packet.|
+|24|16777216|UNIT_FLAG_POSSESSED|Unit is under remote control by another unit, movement checks disabled, paired with loss of client control packet. New master is allowed to use melee attack and can't select this unit via mouse in the world (as if it was own character).|
+|25|33554432|UNIT_FLAG_NOT_SELECTABLE|Can't be selected by mouse|
+|26|67108864|UNIT_FLAG_SKINNABLE||
+|27|134217728|UNIT_FLAG_MOUNT|the client seems to handle it perfectly|
+|28|268435456|UNIT_FLAG_UNK_28||
+|29|536870912|UNIT_FLAG_UNK_29|used in Feing Death spell|
+|30|1073741824|UNIT_FLAG_SHEATHE||
+|31|2147483648|UNIT_FLAG_UNK_31|set skinnable icon and also changes color of portrait)(no affect in 2.4.3|
 
 h4. DynamicFlags
 
@@ -320,15 +324,15 @@ This Field Flags Controls The Visual Appearance Of The Creature. These Flag Valu
 Some Known Flag Values Are:
 
 |*Flag*|*Name*|*Comments*|
-|0|UNIT&#95;DYNFLAG&#95;NONE||
-|1|UNIT&#95;DYNFLAG&#95;LOOTABLE||
-|2|UNIT&#95;DYNFLAG&#95;TRACK&#95;UNIT||
-|4|UNIT&#95;DYNFLAG&#95;TAPPED|Lua_UnitIsTapped - Makes creatures name appear grey (good for simulating dead creatures) ???|
-|8|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;PLAYER|Lua_UnitIsTappedByPlayer|
-|16|UNIT&#95;DYNFLAG&#95;SPECIALINFO|Shows creatures basic stats (Health, damage, resistances, tamable).|
-|32|UNIT&#95;DYNFLAG&#95;DEAD|Makes the creature appear dead (this DOES NOT make the creatures name grey)|
-|64|UNIT&#95;DYNFLAG&#95;REFER&#95;A&#95;FRIEND||
-|128|UNIT&#95;DYNFLAG&#95;TAPPED&#95;BY&#95;ALL&#95;THREAT&#95;LIST|Lua_UnitIsTappedByAllThreatList|
+|0|UNIT_DYNFLAG_NONE||
+|1|UNIT_DYNFLAG_LOOTABLE||
+|2|UNIT_DYNFLAG_TRACK_UNIT||
+|4|UNIT_DYNFLAG_TAPPED|Lua_UnitIsTapped - Makes creatures name appear grey (good for simulating dead creatures) ???|
+|8|UNIT_DYNFLAG_TAPPED_BY_PLAYER|Lua_UnitIsTappedByPlayer|
+|16|UNIT_DYNFLAG_SPECIALINFO|Shows creatures basic stats (Health, damage, resistances, tamable).|
+|32|UNIT_DYNFLAG_DEAD|Makes the creature appear dead (this DOES NOT make the creatures name grey)|
+|64|UNIT_DYNFLAG_REFER_A_FRIEND||
+|128|UNIT_DYNFLAG_TAPPED_BY_ALL_THREAT_LIST|Lua_UnitIsTappedByAllThreatList|
 
 h4. ExtraFlags
 
@@ -354,48 +358,53 @@ This Field Controls the Application Of Flags That Controls Certain NPC Specific 
 |65536|0x00010000|CREATURE_EXTRA_FLAG_CIVILIAN|CreatureInfo->civilian substitute (for expansions as Civilian Colum was removed)|
 |131072|0x00020000|CREATURE_EXTRA_FLAG_NO_MELEE|creature can't melee|
 |262144|0x00040000|CREATURE_EXTRA_FLAG_FAR_VIEW|creature with far view|
-|524288|0x00080000|CREATURE_EXTRA_FLAG_EMPTY|fill|
+|524288|0x00080000|CREATURE_EXTRA_FLAG_FORCE_ATTACKING_CAPABILITY|SetForceAttackingCapability(true); for nonattackable, nontargetable creatures that should be able to attack nontheless|
 |1048576|0x00100000|CREATURE_EXTRA_FLAG_IGNORE_USED_POSITION|ignore creature when checking used positions around target|
 |2097152|0x00200000|CREATURE_EXTRA_FLAG_COUNT_SPAWNS|count creature spawns in Map*|
+|4194304|0x00400000|CREATURE_EXTRA_FLAG_HASTE_SPELL_IMMUNITY|immunity to COT or Mind Numbing Poison - very common in instances|
 
 h4. CreatureTypeFlags
 
 This Field Controls If a Mob Is Minable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The "Skinning_Loot_Template":Skinning_Loot_Template Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side. 
 
-It will be send to the client in SMSG&#95;CREATURE&#95;QUERY&#95;RESPONSE
+It will be send to the client in SMSG_CREATURE_QUERY_RESPONSE
 
 Some values provided from the community:
 
 |*Flag*|*Name*|*Comments*|
-|1|CREATURE&#95;TYPEFLAGS&#95;TAMEABLE|Makes the mob tameable (must also be a beast and have family set)|
-|2|CREATURE&#95;TYPEFLAGS&#95;GHOST&#95;VISIBLE|Sets Creatures that can ALSO be seen when player is a ghost. Used in CanInteract function by client, can't be attacked|
-|4|CREATURE&#95;TYPEFLAGS&#95;UNK3|Sets "BOSS" flag for tooltips|
-|8|CREATURE&#95;TYPEFLAGS&#95;UNK4||
-|16|CREATURE&#95;TYPEFLAGS&#95;UNK5|Controls something in client tooltip related to creature faction|
-|32|CREATURE&#95;TYPEFLAGS&#95;UNK6|Something related to Sound|
-|64|CREATURE&#95;TYPEFLAGS&#95;UNK7|Related to attackable / not attackable creatures with spells|
-|128|CREATURE&#95;TYPEFLAGS&#95;UNK8|has something to do with unit interaction / quest status requests|
-|136|CREATURE&#95;TYPEFLAGS&#95;NON&#95;PVP&#95;PLAYER||
-|256|CREATURE&#95;TYPEFLAGS&#95;HERBLOOT|Makes Mob Corpse Herbable - Uses Skinning Loot Field|
-|512|CREATURE&#95;TYPEFLAGS&#95;MININGLOOT|Makes Mob Corpse Mineable - Uses Skinning Loot Field|
-|1024|CREATURE&#95;TYPEFLAGS&#95;ANIMATION&#95;UNK11|no idea, but it used by client|
-|2048|CREATURE&#95;TYPEFLAGS&#95;ANIMATION&#95;UNK12|related to possibility to cast spells while mounted|
-|4096|CREATURE&#95;TYPEFLAGS&#95;CAN&#95;ASSIST|Can aid any player or group in combat. Typically seen for escorting NPC's|
-|8192|CREATURE&#95;TYPEFLAGS&#95;UNK14|checked from calls in Lua_PetHasActionBar|
-|16384|CREATURE&#95;TYPEFLAGS&#95;UNK15|Lua_UnitGUID, client does guid_low &= 0xFF000000 if this flag is set|
-|32768|CREATURE&#95;TYPEFLAGS&#95;ENGINEERLOOT|Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field|
+|1|CREATURE_TYPEFLAGS_TAMEABLE|Makes the mob tameable (must also be a beast and have family set)|
+|2|CREATURE_TYPEFLAGS_GHOST_VISIBLE|Sets Creatures that can ALSO be seen when player is a ghost. Used in CanInteract function by client, can't be attacked|
+|4|CREATURE_TYPEFLAGS_UNK3|Sets "BOSS" flag for tooltips|
+|8|CREATURE_TYPEFLAGS_UNK4||
+|16|CREATURE_TYPEFLAGS_UNK5|Controls something in client tooltip related to creature faction|
+|32|CREATURE_TYPEFLAGS_UNK6|Something related to Sound|
+|64|CREATURE_TYPEFLAGS_UNK7|Related to attackable / not attackable creatures with spells|
+|128|CREATURE_TYPEFLAGS_UNK8|has something to do with unit interaction / quest status requests|
+|136|CREATURE_TYPEFLAGS_NON_PVP_PLAYER||
+|256|CREATURE_TYPEFLAGS_HERBLOOT|Makes Mob Corpse Herbable - Uses Skinning Loot Field|
+|512|CREATURE_TYPEFLAGS_MININGLOOT|Makes Mob Corpse Mineable - Uses Skinning Loot Field|
+|1024|CREATURE_TYPEFLAGS_ANIMATION_UNK11|no idea, but it used by client|
+|2048|CREATURE_TYPEFLAGS_ANIMATION_UNK12|related to possibility to cast spells while mounted|
+|4096|CREATURE_TYPEFLAGS_CAN_ASSIST|Can aid any player or group in combat. Typically seen for escorting NPC's|
+|8192|CREATURE_TYPEFLAGS_UNK14|checked from calls in Lua_PetHasActionBar|
+|16384|CREATURE_TYPEFLAGS_UNK15|Lua_UnitGUID, client does guid_low &= 0xFF000000 if this flag is set|
+|32768|CREATURE_TYPEFLAGS_ENGINEERLOOT|Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field|
 
 h4. SpeedWalk
 
-This Field Controls How Fast An NPC Moves When Walking. 
-This Value Comes From Sniff Packet Data.
+This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Packet Data. 
+Note: This field should only be used as an override if the model's default SpeedWalk is not correct for the creature_template.entry. ( "creature_model_info.SpeedWalk":creature_model_info#SpeedWalk )
+
+`SpeedWalk` = (sniffed value / 2.5)
 
 (Default Value Is: 1)
 
 h4. SpeedRun
 
-This Field Controls How Fast An NPC Moves When Running. 
-This Value Comes From Sniff Packet Data.
+This Field Controls How Fast An NPC Moves When Running. This Value Comes From Sniff Packet Data. 
+Note: This field should only be used as an override if the model's default SpeedRun is not correct for the creature_template.entry. ( "creature_model_info.SpeedRun":creature_model_info#SpeedRun )
+
+`SpeedRun` = (sniffed value / 7)
 
 (Default Value Is: 1.14286)
 
@@ -432,10 +441,10 @@ In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures:
 (Class: 1,2,8)
 
 |_. ID|_. Name|
-|CLASS&#95;WARRIOR|1|
-|CLASS&#95;PALADIN|2|
-|CLASS&#95;ROGUE|4|
-|CLASS&#95;MAGE|8|
+|CLASS_WARRIOR|1|
+|CLASS_PALADIN|2|
+|CLASS_ROGUE|4|
+|CLASS_MAGE|8|
 
 This Value is Contained in Sniff Data: UNIT_FIELD_BYTES_0 located in SMSG_UPDATE_OBJECT
 It is a Critical Field in Determining Class Level Stats For the NPC. 
@@ -716,13 +725,13 @@ NPC's Melee Damage School. All Melee Damage Will Be Done As This Spell School Da
 NOTE: 0 (Normal) = Physical Damage
 
 |_. ID|_. Name|
-|0|SPELL&#95;SCHOOL&#95;NORMAL|
-|1|SPELL&#95;SCHOOL&#95;HOLY|
-|2|SPELL&#95;SCHOOL&#95;FIRE|
-|3|SPELL&#95;SCHOOL&#95;NATURE|
-|4|SPELL&#95;SCHOOL&#95;FROST|
-|5|SPELL&#95;SCHOOL&#95;SHADOW|
-|6|SPELL&#95;SCHOOL&#95;ARCANE|
+|0|SPELL_SCHOOL_NORMAL|
+|1|SPELL_SCHOOL_HOLY|
+|2|SPELL_SCHOOL_FIRE|
+|3|SPELL_SCHOOL_NATURE|
+|4|SPELL_SCHOOL_FROST|
+|5|SPELL_SCHOOL_SHADOW|
+|6|SPELL_SCHOOL_ARCANE|
 
 h4. MinLootGold
 
@@ -749,24 +758,24 @@ NOTE:
 h4. LootId
 
 The ID of the Loot Template that this NPC uses to generate loot from. 
-See "creature&#95;loot&#95;template.entry":creature_loot_template#entry
+See "creature_loot_template.entry":creature_loot_template#entry
 
 h4. PickpocketLootId
 
 The ID of the Pickpocketing Loot Template that this NPC should use to generate pickpocketing loot from. 
-See "pickpocketing&#95;loot&#95;template.entry":pickpocketing_loot_template#entry
+See "pickpocketing_loot_template.entry":pickpocketing_loot_template#entry
 
 h4. SkinningLootId
 
 The ID of the Skinning Loot Template that this NPC should use to generate skinning loot from. 
-See "skinning&#95;loot&#95;template.entry":skinning_loot_template#entry
+See "skinning_loot_template.entry":skinning_loot_template#entry
 
-NOTE: This is a Multi-Profession Loot Based On "CreatureTypeFlags":Creature_template#CreatureTypeFlags
+CreatureTypeFlags can define the profession required to loot the creature.
 
 |*Type*|*Info*|
-|CREATURE&#95;TYPEFLAGS&#95;HERBLOOT|Makes Mob Corpse Herbable - Uses Skinning Loot Field|
-|CREATURE&#95;TYPEFLAGS&#95;MININGLOOT|Makes Mob Corpse Mineable - Uses Skinning Loot Field|
-|CREATURE&#95;TYPEFLAGS&#95;ENGINEERLOOT|Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field|
+|CREATURE_TYPEFLAGS_HERBLOOT|Makes Mob Corpse Herbable - Uses Skinning Loot Field|
+|CREATURE_TYPEFLAGS_MININGLOOT|Makes Mob Corpse Mineable - Uses Skinning Loot Field|
+|CREATURE_TYPEFLAGS_ENGINEERLOOT|Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field|
 
 For These Other Types Use Skinning_Loot_Template For Loot To Be Generated By These Other Professions Also
 
@@ -782,26 +791,26 @@ Note: Some Quests Require Additional Quest Kill Credit
 
 h4. MechanicImmuneMask
 
-This makes the NPC immune to specific spell natures. See Spell.dbc at row effect&#95;X&#95;mechanic&#95;id.
+This makes the NPC immune to specific spell natures. See Spell.dbc at row effect_X_mechanic_id.
 
 Uses references from SpellMechanic.dbc.
 
 |_. Bit|_. Type|_. Bit|_. Type|
-|1|MECHANIC&#95;CHARM|32768|MECHANIC&#95;BANDAGE|
-|2|MECHANIC&#95;CONFUSED|65536|MECHANIC&#95;POLYMORPH|
-|4|MECHANIC&#95;DISARM|131072|MECHANIC&#95;BANISH|
-|8|MECHANIC&#95;DISTRACT|262144|MECHANIC&#95;SHIELD|
-|16|MECHANIC&#95;FEAR|524288|MECHANIC&#95;SHACKLE|
-|32|MECHANIC&#95;FUMBLE|1048576|MECHANIC&#95;MOUNT|
-|64|MECHANIC&#95;ROOT|2097152|MECHANIC&#95;PERSUADE|
-|128|MECHANIC&#95;PACIFY|4194304|MECHANIC&#95;TURN|
-|256|MECHANIC&#95;SILENCE|8388608|MECHANIC&#95;HORROR|
-|512|MECHANIC&#95;SLEEP|16777216|MECHANIC&#95;INVULNERABILITY|
-|1024|MECHANIC&#95;SNARE|33554432|MECHANIC&#95;INTERRUPT|
-|2048|MECHANIC&#95;STUN|67108864|MECHANIC&#95;DAZE|
-|4096|MECHANIC&#95;FREEZE|134217728|MECHANIC&#95;DISCOVERY|
-|8192|MECHANIC&#95;KNOCKOUT|268435456|MECHANIC&#95;IMMUNE&#95;SHIELD|
-|16384|MECHANIC&#95;BLEED|536870912|MECHANIC&#95;SAPPED|
+|1|MECHANIC_CHARM|32768|MECHANIC_BANDAGE|
+|2|MECHANIC_CONFUSED|65536|MECHANIC_POLYMORPH|
+|4|MECHANIC_DISARM|131072|MECHANIC_BANISH|
+|8|MECHANIC_DISTRACT|262144|MECHANIC_SHIELD|
+|16|MECHANIC_FEAR|524288|MECHANIC_SHACKLE|
+|32|MECHANIC_FUMBLE|1048576|MECHANIC_MOUNT|
+|64|MECHANIC_ROOT|2097152|MECHANIC_PERSUADE|
+|128|MECHANIC_PACIFY|4194304|MECHANIC_TURN|
+|256|MECHANIC_SILENCE|8388608|MECHANIC_HORROR|
+|512|MECHANIC_SLEEP|16777216|MECHANIC_INVULNERABILITY|
+|1024|MECHANIC_SNARE|33554432|MECHANIC_INTERRUPT|
+|2048|MECHANIC_STUN|67108864|MECHANIC_DAZE|
+|4096|MECHANIC_FREEZE|134217728|MECHANIC_DISCOVERY|
+|8192|MECHANIC_KNOCKOUT|268435456|MECHANIC_IMMUNE_SHIELD|
+|16384|MECHANIC_BLEED|536870912|MECHANIC_SAPPED|
 
 To combine immunities just add values. Immune to everything corresponds to the value 1073741823.
 
@@ -810,13 +819,13 @@ h4. SchoolImmuneMask
 This makes the NPC immune to specific spell schools.
 
 |_. Type|_. Bitmask|
-|SPELL&#95;SCHOOL&#95;NORMAL|1|
-|SPELL&#95;SCHOOL&#95;HOLY|2|
-|SPELL&#95;SCHOOL&#95;FIRE|4|
-|SPELL&#95;SCHOOL&#95;NATURE|8|
-|SPELL&#95;SCHOOL&#95;FROST|16|
-|SPELL&#95;SCHOOL&#95;SHADOW|32|
-|SPELL&#95;SCHOOL&#95;ARCANE|64|
+|SPELL_SCHOOL_NORMAL|1|
+|SPELL_SCHOOL_HOLY|2|
+|SPELL_SCHOOL_FIRE|4|
+|SPELL_SCHOOL_NATURE|8|
+|SPELL_SCHOOL_FROST|16|
+|SPELL_SCHOOL_SHADOW|32|
+|SPELL_SCHOOL_ARCANE|64|
 
 To combine spell school immunities just add values. Immune to everything corresponds to the value 127.
 
@@ -866,22 +875,22 @@ If the NPC is a Trainer (Has Trainer NPCFlag Set), then this field controls what
 NOTE: Both this field and the related field must be filled in for a trainer to work correctly.
 
 |_. ID|_. Type|_. Related Field|_. Comments|
-|0|TRAINER&#95;TYPE&#95;CLASS|trainer&#95;class|Trains Class Spells|
-|1|TRAINER&#95;TYPE&#95;MOUNTS|trainer&#95;race|Trains Riding Skill|
-|2|TRAINER&#95;TYPE&#95;TRADESKILLS|trainer&#95;spell|Trains Professions|
-|3|TRAINER&#95;TYPE&#95;PETS|trainer&#95;class|Trains Pet Skills|
+|0|TRAINER_TYPE_CLASS|trainer_class|Trains Class Spells|
+|1|TRAINER_TYPE_MOUNTS|trainer_race|Trains Riding Skill|
+|2|TRAINER_TYPE_TRADESKILLS|trainer_spell|Trains Professions|
+|3|TRAINER_TYPE_PETS|trainer_class|Trains Pet Skills|
 
 h4. TrainerSpell
 
-If the NPC is a trainer that teaches professions ("trainer&#95;type":creature_template#trainer_type == 2), then the player must already know the spell ID specified here to be able to talk to this NPC.
+If the NPC is a trainer that teaches professions ("trainer_type":creature_template#trainer_type == 2), then the player must already know the spell ID specified here to be able to talk to this NPC.
 
 h4. TrainerClass
 
-If the NPC is a class trainer or a pet trainer ("trainer&#95;type":creature_template#trainer_type == 0 or 3), then the player's class must be the same as the value specified here to talk to this trainer. For pet trainers, this value must be 3 (hunter). See "character.class":character#class
+If the NPC is a class trainer or a pet trainer ("trainer_type":creature_template#trainer_type == 0 or 3), then the player's class must be the same as the value specified here to talk to this trainer. For pet trainers, this value must be 3 (hunter). See "character.class":character#class
 
 h4. TrainerRace
 
-If the NPC is a mount trainer ("trainer&#95;type":creature_template#trainer_type == 1), then the player's race must be the same as the value specified here to talk to this trainer. See "character.race":character#race
+If the NPC is a mount trainer ("trainer_type":creature_template#trainer_type == 1), then the player's race must be the same as the value specified here to talk to this trainer. See "character.race":character#race
 
 h4. TrainerTemplateId
 
@@ -893,11 +902,11 @@ The id refers to the "npc_vendor_template.":npc_vendor_template.
 
 h4. EquipmentTemplateId
 
-The default ID of the equipment that this creature should display. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
+The default ID of the equipment that this creature should display. See "creature_equip_template.entry":creature_equip_template#entry
 
 h4. GossipMenuId
 
-Reference to a "gossip&#95;menu&#95;id":gossip_menu.
+Reference to a "gossip_menu_id":gossip_menu.
 
 
 h4. AIName
