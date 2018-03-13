@@ -7,7 +7,7 @@ contains individual creature spawn data. Spawn of a creature is an instance of t
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":creature#guid|int(10) unsigned|NO|PRI|None|auto&#95;increment|
+|"guid":creature#guid|int(10) unsigned|NO|PRI|None|auto_increment|
 |"id":creature#id|mediumint(8) unsigned|NO|MUL|0||
 |"map":creature#map|smallint(5) unsigned|NO|MUL|0||
 |"spawnMask":creature#spawnmask|tinyint(3) unsigned|NO||1||
@@ -35,7 +35,7 @@ A unique identifier given to each creature to distinguish one creature from anot
 
 h4. id
 
-The id of the template that is used when instantiating this creature. See "creature&#95;template.entry":creature_template#entry
+The id of the template that is used when instantiating this creature. See "creature_template.entry":creature_template#entry
 
 h4. map
 
@@ -63,7 +63,7 @@ The model ID associated with this creature. Note that two creatures that use the
 
 h4. equipment_id
 
-The ID of the equipment that the creature is using. See "creature&#95;equip&#95;template.entry":creature_equip_template#entry
+The ID of the equipment that the creature is using. See "creature_equip_template.entry":creature_equip_template#entry
 
 h4. position_x
 
@@ -85,7 +85,7 @@ h4. spawntimesecsmin
 
 The minimum respawn time of the creature in seconds.
 
-h4 spawntimesecsmax
+h4. spawntimesecsmax
 
 The maximum respawn time of the creature in seconds.
 
@@ -95,7 +95,7 @@ The maximum distance that the creature should spawn from its spawn point. Also c
 
 h4. currentwaypoint
 
-The current waypoint number that the creature is on, if any. See "creature&#95;movement.point":creature_movement#point
+The current waypoint number that the creature is on, if any. See "creature_movement.point":creature_movement#point
 
 h4. curhealth
 
@@ -107,9 +107,11 @@ The current mana that the creature has.
 
 h4. DeathState
 
-The creature's death state. A boolean, 0 = Alive, 1 = Corpse lying dead around (no gossip possible when dead, if you need corpse-gossip use dynamicflags&#124;32)
+The creature's death state. 
+A boolean, 0 = Alive, 1 = Corpse lying dead around (no gossip possible when dead, if you need corpse-gossip use dynamicflags|32)
 
 h4. MovementType
 
-The movement type associated with this creature.
-See "creature&#95;template.MovementType":creature_template#MovementType for possible values.
+See "creature_template.MovementType":creature_template#MovementType for possible values.
+
+creature_movement and creature_movement_template need to have MovementType set to 2 for a guid.
