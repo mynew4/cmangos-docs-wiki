@@ -39,8 +39,8 @@ h3. This is the list of tables in the regular 'mangos' database
 (Reloadable)|Creature Loot|
 |"creature_model_info":https://github.com/cmangos/issues/wiki/creature_model_info|contains all models of mobs, their gender and other information that are model related.|
 |"creature_model_race":https://github.com/cmangos/issues/wiki/creature_model_race|contains data to override displayed models based on the race of the player.|
-|"creature_movement":https://github.com/cmangos/issues/wiki/creature_movement(_template)|holds all the information on each single GUID creature’s waypoints.|
-|"creature_movement_template":https://github.com/cmangos/issues/wiki/creature_movement(_template)|holds all the information on each single ENTRY creature’s waypoints.|
+|"creature_movement":https://github.com/cmangos/issues/wiki/creature_movement_template|holds all the information on each single GUID creature’s waypoints.|
+|"creature_movement_template":https://github.com/cmangos/issues/wiki/creature_movement_template|holds all the information on each single ENTRY creature’s waypoints.|
 |"creature_onkill_reputation":https://github.com/cmangos/issues/wiki/creature_onkill_reputation|controls the reputation given by creatures when killed by other players.|
 |"creature_questrelation":https://github.com/cmangos/issues/wiki/creature_questrelation
 (Reloadable)|holds NPC quest giver relations on which NPCs start which quests.|
