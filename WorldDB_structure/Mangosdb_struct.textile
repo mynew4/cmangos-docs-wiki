@@ -155,7 +155,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"playercreateinfo_spell":https://github.com/cmangos/issues/wiki/playercreateinfo_spell
 (Core)|holds information on what spells newly created characters should start out with.|
 |"points_of_interest":https://github.com/cmangos/issues/wiki/points_of_interest
-(Reloadable)|?|
+(Reloadable)|comes from sniffs.|
 |"pool_creature":https://github.com/cmangos/issues/wiki/pool_creature|contains all pooled creatures by GUID that are part of a pool_template.|
 |"pool_creature_template":https://github.com/cmangos/issues/wiki/pool_creature_template|contains all pooled creatures by ENTRY that are part of a pool_template.|
 |"pool_gameobject":https://github.com/cmangos/issues/wiki/pool_gameobject|contains all pooled gameobjects by GUID that are part of a pool_template.|
@@ -165,9 +165,9 @@ h3. This is the list of tables in the regular 'mangos' database
 |"prospecting_loot_template":https://github.com/cmangos/issues/wiki/prospecting_loot_template
 (Reloadable)|Prospecting loot|
 |"quest_poi":https://github.com/cmangos/issues/wiki/quest_poi
-(Reloadable)|Comes from sniffs.|
+(Reloadable)|comes from sniffs.|
 |"quest_poi_points":https://github.com/cmangos/issues/wiki/quest_poi_points
-(Reloadable)|Comes from sniffs. Visually speaking, this table is used to identify the X and Y coordinates on the map (not the minimap – the main map) where a quest’s question mark should appear.|
+(Reloadable)|comes from sniffs. Visually speaking, this table is used to identify the X and Y coordinates on the map (not the minimap – the main map) where a quest’s question mark should appear.|
 |"quest_template":https://github.com/cmangos/issues/wiki/quest_template
 (Reloadable)|contains all basic definitions of quests available.|
 |"reference_loot_template":https://github.com/cmangos/issues/wiki/reference_loot_template
