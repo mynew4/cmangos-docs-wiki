@@ -9,15 +9,15 @@ Please note that for a creature to use waypoints, its "MovementType":creature#Mo
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid/entry":creature_movement(_template)#guid/entry|int(10) unsigned|NO|PRI|0||
-|"pathId":creature_movement(_template)#pathId|int(11) unsigned|NO|PRI|0|CURRENTLY TEMPLATE ONLY|
-|"point":creature_movement(_template)#point|int(10) unsigned|NO|PRI|0||
-|"position_x":creature_movement(_template)#position_x|float|NO||0||
-|"position_y":creature_movement(_template)#position_y|float|NO||0||
-|"position_z":creature_movement(_template)#position_z|float|NO||0||
-|"waittime":creature_movement(_template)#waittime|int(5) unsigned|NO||0||
-|"script_id":creature_movement(_template)#script_id|mediumint(8) unsigned|NO||0||
-|"orientation":creature_movement(_template)#orientation|float|YES||0||
+|"guid/entry":creature_movement_template#guid/entry|int(10) unsigned|NO|PRI|0||
+|"pathId":creature_movement_template#pathId|int(11) unsigned|NO|PRI|0|CURRENTLY TEMPLATE ONLY|
+|"point":creature_movement_template#point|int(10) unsigned|NO|PRI|0||
+|"position_x":creature_movement_template#position_x|float|NO||0||
+|"position_y":creature_movement_template#position_y|float|NO||0||
+|"position_z":creature_movement_template#position_z|float|NO||0||
+|"waittime":creature_movement_template#waittime|int(5) unsigned|NO||0||
+|"script_id":creature_movement_template#script_id|mediumint(8) unsigned|NO||0||
+|"orientation":creature_movement_template#orientation|float|YES||0||
 
 h3. Description of the fields
 
@@ -34,15 +34,15 @@ h4. point
 
 Defines the waypoint number. A creature will go from waypoint to waypoint in the order controlled by this field.
 
-h4. position
+h4. position_x
 
 The X position of the waypoint.
 
-h4. position
+h4. position_y
 
 The Y position of the waypoint.
 
-h4. position
+h4. position_z
 
 The Z position of the waypoint.
 
