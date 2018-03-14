@@ -23,6 +23,10 @@ NOTICE: The data for this table is largely incomplete and is mostly just a regur
 |[spell2](creature_template_spells#spell2)||NO||0|
 |[spell3](creature_template_spells#spell3)||NO||0|
 |[spell4](creature_template_spells#spell4)||NO||0|
+|[spell5](creature_template_spells#spell4)||NO||0|
+|[spell6](creature_template_spells#spell4)||NO||0|
+|[spell7](creature_template_spells#spell4)||NO||0|
+|[spell8](creature_template_spells#spell4)||NO||0|
 
 ### Description of the fields
 
