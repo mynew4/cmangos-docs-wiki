@@ -63,7 +63,7 @@ h4. event_type
 |7|EVENT_T_EVADE|NU|NU|NU|NU|Expires on Evade|
 |8|EVENT_T_SPELLHIT|"spellId":spell_template#Id|"schoolMask":creature_ai_script#schoolMask|RepeatMin|RepeatMax|Expires on (Param1) "spellId":spell_template#Id or on (Param2) "schoolMask":creature_ai_script#schoolMask spellhit. Will repeat every (Param3) and (Param4)|
 |9|EVENT_T_RANGE|MinDist|MaxDist|RepeatMin|RepeatMax|Expires when current target distance is greater than (Param1) and less than (Param2). Will repeat every (Param3) and (Param4)|
-|10|EVENT_T_OOC_LOS|Hostile 0 Friendly 1|MaxRange|RepeatMin|RepeatMax|OOC - Expires when a (Param1) Hostile 0 / Friendly 1 unit moves within (Param2) distance to creature. Will repeat every (Param3) and (Param4)|
+|10|EVENT_T_OOC_LOS|noHostile|MaxRange|RepeatMin|RepeatMax|OOC - Expires when a unit (friendly only if Param1 = 1) moves within (Param2) distance to creature. Will repeat every (Param3) and (Param4)|
 |11|EVENT_T_SPAWNED|NU|NU|NU|NU|Expires on Spawn|
 |12|EVENT_T_TARGET_HP|HPMax%|HPMin%|RepeatMin|RepeatMax|Expires when current target HP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
 |13|EVENT_T_TARGET_CASTING|RepeatMin|RepeatMax|NU|NU|Expires when current target is casting a spell. Will repeat every (Param1) and (Param2)|
