@@ -1,8 +1,8 @@
 h3. EventAI Tables
 
-"creature_ai_scripts":creature_ai_scripts
-"creature_ai_summons":creature_ai_summons
-"creature_ai_texts":creature_ai_texts
+"creature_ai_scripts":creature_ai_scripts for EventAI (ACID) scripted NPCs
+"creature_ai_summons":creature_ai_summons for "Summon IDs":creature_ai_summons#id used in ACTION_T_SUMMON_ID (32)
+"creature_ai_texts":creature_ai_texts for Texts used by ACTION_T_TEXT (1) and ACTION_T_TEXT_NEW (54)
 
 h2. EventAI Documentation
 
@@ -45,45 +45,46 @@ EventAI can also support phases. A <u>phase</u> is just a way to group certain e
 
 All of the "events":creature_ai_script#event_type, "actions":creature_ai_script#action_type and possible "targets":creature_ai_script#Target are summarized and described below.
 
-*NU = Not Used*
-*IC = In Combat Only*
-*OOC = Out Of Combat Only*
+* NU = Not Used*
+* IC = In Combat Only*
+* OOC = Out Of Combat Only*
+* US = Unsupported
 
 h4. event_type
 
 |ID|_. Name|_. Param1|_. Param2|_. Param3|_. Param4|_. Description|
-|0|EVENT_T_TIMER_IN_COMBAT|InitialMin|InitialMax|RepeatMin|RepeatMax|IC - Expires first between (Param1) and (Param2) and then between every (Param3) and (Param4)|
-|1|EVENT_T_TIMER_OOC|InitialMin|InitialMax|RepeatMin|RepeatMax|OOC - Expires first between (Param1) and (Param2) and then between every (Param3) and (Param4)|
-|2|EVENT_T_HP|HPMax%|HPMin%|RepeatMin|RepeatMax|IC - Expires when HP is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
-|3|EVENT_T_MANA|ManaMax%|ManaMin%|RepeatMin|RepeatMax|IC - Expires once Mana% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
-|4|EVENT_T_AGGRO|NU|NU|NU|NU|Expires upon initial aggro (does not repeat)|
-|5|EVENT_T_KILL|RepeatMin|RepeatMax|NU|NU|Expires upon killing a player. Will repeat every (Param1) and (Param2)|
-|6|EVENT_T_DEATH|NU|NU|NU|NU|Expires upon Death|
-|7|EVENT_T_EVADE|NU|NU|NU|NU|Expires upon creature EnterEvadeMode()|
-|8|EVENT_T_SPELLHIT|SpellID|School|RepeatMin|RepeatMax|Expires upon Spell hit. If (param1) is set will only expire on that spell. If (param2) will only expire on spells of that school. Will repeat every (Param3) and (Param4)|
-|9|EVENT_T_RANGE|MinDist|MaxDist|RepeatMin|RepeatMax|Expires when the highest threat target distance is greater than (Param1) and less than (Param2). Will repeat every (Param3) and (Param4)|
-|10|EVENT_T_OOC_LOS|NoHostile|NoFriendly|RepeatMin|RepeatMax|Expires when a Player moves within visible distance to creature. Does not expire for Hostile Players if (Param1) is not 0. Does not expire for Friendly Players if (Param2) is not 0. Will repeat every (Param3) and (Param4) . Does not expire for creatures or pet or when the creature is in combat|
-|11|EVENT_T_SPAWNED|NU|NU|NU|NU|Expires at initial spawn and at creature respawn|
-|12|EVENT_T_TARGET_HP|HPMax%|HPMin%|RepeatMin|RepeatMax|Expires when Current Target's HP is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
-|13|EVENT_T_TARGET_CASTING|RepeatMin|RepeatMax|NU|NU|Expires when the player is casting a spell. Will repeat every (Param1) and (Param2)|
-|14|EVENT_T_FRIENDLY_HP|HPDeficit|Radius|RepeatMin|RepeatMax|Expires when a friendly unit in radius(param2) has at least (param1) HP missing. Will repeat every (Param3) and (Param4)|
-|15|EVENT_T_FRIENDLY_IS_CC|DispelType|Radius|RepeatMin|RepeatMax|Expires when a friendly unit is Crowd controlled within the given radius (param2). Will repeat every (Param3) and (Param4)|
-|16|EVENT_T_FRIENDLY_MISSING_BUFF|SpellId|Radius|RepeatMin|RepeatMax|Expires when a friendly unit is missing aura's given by spell (param1) within radius (param2). Will repeat every (Param3) and (Param4)|
-|17|EVENT_T_SUMMONED_UNIT|CreatureId|RepeatMin|RepeatMax|NU|Expires after creature with entry(Param1) is spawned or for all spawns if param1 = 0. Will repeat every (Param2) and (Param3)|
-|18|EVENT_T_TARGET_MANA|ManaMax%|ManaMin%|RepeatMin|RepeatMax|Expires when Current Target's MP is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
-|21|EVENT_T_REACHED_HOME|NU|NU|NU|NU|Expires when creature reach it's home(spawn) location after Evade|
-|22|EVENT_T_RECEIVE_EMOTE|EmoteId|Condition|CondValue1|CondValue2|Expires when creature receive emote with text emote id(enum TextEmotes). Condition can be defined. If set, then most conditions has additional value (see enum ConditionType)|
-|23|EVENT_T_AURA|SpellId|AmmountInStack|RepeatMin|RepeatMax|Expires when creature have spell (Param1) auras applied stack greater or equal provided in Param2 amount. Will repeat every (Param3) and (Param4)|
-|24|EVENT_T_TARGET_AURA|SpellId|AmmountInStack|RepeatMin|RepeatMax|Expires when target unit have spell (Param1) auras applied stack greater or equal provided in Param2 amount. Will repeat every (Param3) and (Param4)|
-|25|EVENT_T_SUMMONED_JUST_DIED|CreatureId|RepeatMin|RepeatMax|NU|Expires after creature with entry = (Param1) is die (Param1 = 0 means all spawns). Will repeat every (Param2) and (Param3)|
-|26|EVENT_T_SUMMONED_JUST_DESPAWN|CreatureId|RepeatMin|RepeatMax|NU|Expires before creature with entry = (Param1) is despawn (Param1 = 0 means all spawns). Will repeat every (Param2) and (Param3)|
-|27|EVENT_T_MISSING_AURA|SpellID|AmmountInStack|RepeatMin|RepeatMax|Param1 = SpellID, Param2 = Number of time stacked expected, Param3/4 Repeat Min/Max|
-|28|EVENT_T_TARGET_MISSING_AURA|SpellID|AmmountInStack|RepeatMin|RepeatMax|Param1 = SpellID, Param2 = Number of time stacked expected, Param3/4 Repeat Min/Max|
-|29|EVENT_T_TIMER_GENERIC|InitialMin|InitialMax|RepeatMin|RepeatMax|InitialMin, InitialMax, RepeatMin, RepeatMax|
-|30|EVENT_T_RECEIVE_AI_EVENT|AIEventType|Sender-Entry|NU|NU|AIEventType, Sender-Entry, NU, NU|
-|31|EVENT_T_ENERGY|EnergyMax%|EnergyMin%|RepeatMin|RepeatMax|EnergyMax%, EnergyMin%, RepeatMin, RepeatMax|
-|32|EVENT_T_SELECT_ATTACKING_TARGET|MinRange|MaxRange|RepeatMin|RepeatMax|MinRange, MaxRange, RepeatMin, RepeatMax|
-|33|EVENT_T_FACING_TARGET|BackOrFront|NU|RepeatMin|RepeatMax|BackOrFront (behind = 0 / infront = 1, NU, RepeatMin, RepeatMax|
+|0|EVENT_T_TIMER_IN_COMBAT|InitialMin|InitialMax|RepeatMin|RepeatMax|IC - Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
+|1|EVENT_T_TIMER_OOC|InitialMin|InitialMax|RepeatMin|RepeatMax|OOC - Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
+|2|EVENT_T_HP|HPMax%|HPMin%|RepeatMin|RepeatMax|IC - Expires when HP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
+|3|EVENT_T_MANA|ManaMax%|ManaMin%|RepeatMin|RepeatMax|IC - Expires when Mana% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
+|4|EVENT_T_AGGRO|NU|NU|NU|NU|Expires on Aggro|
+|5|EVENT_T_KILL|RepeatMin|RepeatMax|NU|NU|Expires on Player Kill. Will repeat every (Param3) and (Param4)|
+|6|EVENT_T_DEATH|NU|NU|NU|NU|Expires on Death|
+|7|EVENT_T_EVADE|NU|NU|NU|NU|Expires on Evade|
+|8|EVENT_T_SPELLHIT|"spellId":spell_template#Id|"schoolMask":creature_ai_script#schoolMask|RepeatMin|RepeatMax|Expires on (Param1) "spellId":spell_template#Id or on (Param2) "schoolMask":creature_ai_script#schoolMask spellhit. Will repeat every (Param3) and (Param4)|
+|9|EVENT_T_RANGE|MinDist|MaxDist|RepeatMin|RepeatMax|Expires when current target distance is greater than (Param1) and less than (Param2). Will repeat every (Param3) and (Param4)|
+|10|EVENT_T_OOC_LOS|Hostile 0 Friendly 1|NoFriendly|RepeatMin|RepeatMax|OOC - Expires when a (Param1) Hostile 0 / Friendly 1 unit moves within (Param2) distance to creature. Will repeat every (Param3) and (Param4)|
+|11|EVENT_T_SPAWNED|NU|NU|NU|NU|Expires on Spawn|
+|12|EVENT_T_TARGET_HP|HPMax%|HPMin%|RepeatMin|RepeatMax|Expires when current target HP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
+|13|EVENT_T_TARGET_CASTING|RepeatMin|RepeatMax|NU|NU|Expires when current target is casting a spell. Will repeat every (Param1) and (Param2)|
+|14|EVENT_T_FRIENDLY_HP|HPDeficit|Radius|RepeatMin|RepeatMax|Expires when a friendly unit has at least (param1) HP missing in (param2) radius. Will repeat every (Param3) and (Param4)|
+|15|EVENT_T_FRIENDLY_IS_CC|DispelType (US)|Radius|RepeatMin|RepeatMax|Expires when a friendly unit is crowd controlled in (param2) radius. Will repeat every (Param3) and (Param4)|
+|16|EVENT_T_FRIENDLY_MISSING_BUFF|"spellId":spell_template#Id|Radius|RepeatMin|RepeatMax|Expires when a friendly unit is missing aura given by (param1) "spellId":spell_template#Id in (param2) radius. Will repeat every (Param3) and (Param4)|
+|17|EVENT_T_SUMMONED_UNIT|CreatureEntry|RepeatMin|RepeatMax|NU|Expires when creature with (Param1) CreatureEntry spawned or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)|
+|18|EVENT_T_TARGET_MANA|ManaMax%|ManaMin%|RepeatMin|RepeatMax|Expires when current target MP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
+|21|EVENT_T_REACHED_HOME|NU|NU|NU|NU|Expires on Reached Home (after Evade)|
+|22|EVENT_T_RECEIVE_EMOTE|TextEmotes|"ConditionType":conditions#condition_entry|NU|NU|Expires when creature receive TextEmotes [enum TextEmotes](https://github.com/cmangos/mangos-cata/blob/b76261946597de1200effc4236409a3978414056/src/game/Globals/SharedDefines.h#L1643) paired with a potential condition|
+|23|EVENT_T_AURA|"spellId":spell_template#Id|AmmountInStack|RepeatMin|RepeatMax|Expires when creature have spell (Param1) aura stacks applied greater or equal to (Param2) amount. Will repeat every (Param3) and (Param4)|
+|24|EVENT_T_TARGET_AURA|"spellId":spell_template#Id|AmmountInStack|RepeatMin|RepeatMax|Expires when current target have spell (Param1) aura stacks applied greater or equal to (Param2) amount. Will repeat every (Param3) and (Param4)|
+|25|EVENT_T_SUMMONED_JUST_DIED|CreatureEntry|RepeatMin|RepeatMax|NU|Expires after creature with (Param1) "CreatureEntry":creature_template#entry died or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)|
+|26|EVENT_T_SUMMONED_JUST_DESPAWN|CreatureEntry|RepeatMin|RepeatMax|NU|Expires before creature with (Param1) "CreatureEntry":creature_template#entry despawned or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)|
+|27|EVENT_T_MISSING_AURA|"spellId":spell_template#Id|AmmountInStack|RepeatMin|RepeatMax|Expires when creature have spell (Param1) aura stacks applied less than (Param2) amount. Will repeat every (Param3) and (Param4)|
+|28|EVENT_T_TARGET_MISSING_AURA|"spellId":spell_template#Id|AmmountInStack|RepeatMin|RepeatMax|Expires when current target have spell (Param1) aura stacks applied less than (Param2) amount. Will repeat every (Param3) and (Param4)|
+|29|EVENT_T_TIMER_GENERIC|InitialMin|InitialMax|RepeatMin|RepeatMax|Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
+|30|EVENT_T_RECEIVE_AI_EVENT|"AIEventType":creature_ai_script#AIEventType|Sender-Entry|NU|NU|Expires when the creature receives an (Param1) "AIEventType":creature_ai_script#AIEventType, sent by (Param2 != 0) "Sender-Entry":creature_template#entry. If (Param2 = 0) then sent by any creature|
+|31|EVENT_T_ENERGY|EnergyMax%|EnergyMin%|RepeatMin|RepeatMax|Expires when Energy% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4) if Condition: between (Param1) and (Param2) are still met|
+|32|EVENT_T_SELECT_ATTACKING_TARGET|MinRange|MaxRange|RepeatMin|RepeatMax|Expires when threat table has target with distance between (Param1) and (Param2). Will repeat every (Param3) and (Param4) if Condition: between (Param1) and (Param2) are still met|
+|33|EVENT_T_FACING_TARGET|Back(0)OrFront(1)|NU|RepeatMin|RepeatMax|Expires when creature is (behind = 0 / infront = 1 of target. Will repeat every (Param3) and (Param4) if Condition: (Param1) is still met|
 
 Now that all of the supported events have been listed and described, we shall now move on to the actions that can be performed. Each event can take up to three actions. The actions will all be performed when the event is triggered and they will be performed in the order that they have been defined. This means that, for a certain event, action 1 will be performed first, followed by action 2, then lastly by action 3. Just like event definitions, each action can use up to three different parameters but not all actions will use all three parameters. If a parameter isn't mentioned for an action, then that action does not need that parameter.
 
@@ -94,64 +95,79 @@ One last note before we start looking at individual actions is about the texts. 
 h4. action_type
 
 |ID|_. Name|_. Param 1|_. Param 2|_. Param 3|_. Description|
-|0|ACTION_T_NONE|NU|NU|NU|NU|Does nothing|
-|1|ACTION_T_TEXT|-TextId1,|-TextId2,|-TextId3|deprecated, use 54 for 1 / 4+ texts and texts that require targeting*: Displays the -TextId as defined. In case -TextId2 and optionally -TextId3, the output will be randomized. Type text are defined in the "creature_ai_texts":creature_ai_texts table (say, yell, whisper, etc) along with other options for the text. All values are required to be negative|
-|2|ACTION_T_SET_FACTION|FactionId|Flags|NU|Changes faction for a creature. When param1 is zero, creature will revert to it's default faction. Flags will determine when faction is restored to default (evade, respawn etc)|
-|3|ACTION_T_MORPH_TO_ENTRY_OR_MODEL|CreatureEntry|modelId|NU|Creature_template entry(param1) OR modelId (param2) (or 0 for both to demorph)|
-|4|ACTION_T_SOUND|SoundId|NU|NU|Creature plays sound|
-|5|ACTION_T_EMOTE|EmoteId|NU|NU|Creature does visual emote|
+|0|ACTION_T_NONE|NU|NU|NU|NU|Does nothing!|
+|1|ACTION_T_TEXT|-TextId1|-TextId2|-TextId3|deprecated, [use action 54 for 1 / 4+ "texts":creature_ai_texts] and "texts":creature_ai_texts that require text targeting for correct text output: Displays the -TextId(s)(randomized) as defined in "creature_ai_texts":creature_ai_texts. Optionally "custom_texts":custom_texts. All values are required to be negative. Optionally "custom_texts":custom_texts can be used|
+|2|ACTION_T_SET_FACTION|factionId|TemporaryFactionFlags|NU|Changes faction for a creature. When (Param1) is zero, creature will revert to it's default faction. Flags will determine when faction is restored to default (evade, respawn etc)|
+|3|ACTION_T_MORPH_TO_ENTRY_OR_MODEL|CreatureEntry|"modelId":creature_template#modelId1|NU|"CreatureEntry":creature_template#entry(param1) OR "modelId":creature_template#modelId1 (param2) (or 0 for both to demorph)|
+|4|ACTION_T_SOUND|SoundId|NU|NU|Creature plays Sound. IDs are contained in the DBC files|
+|5|ACTION_T_EMOTE|"emoteId":creature_template_addon#emote|NU|NU|Creature does visual emote. IDs are contained in the DBC files|
 |6|ACTION_T_RANDOM_SAY|NU|NU|NU|deprecated|
 |7|ACTION_T_RANDOM_YELL|NU|NU|NU|deprecated|
 |8|ACTION_T_RANDOM_TEXTEMOTE|NU|NU|NU|deprecated|
 |9|ACTION_T_RANDOM_SOUND|Sound ID 1|Sound ID 2|Sound ID 3|Picks a sound ID at random and plays it; -1 = action skipped if chosen|
 |10|ACTION_T_RANDOM_EMOTE|Emote ID 1|Emote ID 2|Emote ID 3|Picks an emote ID at random and does visual emote; -1 = action skipped if chosen|
-|11|ACTION_T_CAST|Spell ID|"Target":creature_ai_script#Target|"castFlags":creature_ai_script#castFlags|Casts spell on a target with specified "castFlags":creature_ai_script#castFlags|
-|12|ACTION_T_SPAWN|CreatureEntry|"Target":creature_ai_script#Target|Duration&#42;|Spawns a creature at itself for a given duration (infinite if zero, only with t_type != 0) that will attack a target|
-|13|ACTION_T_THREAT_SINGLE_PCT|Threat %|"Target":creature_ai_script#Target|NU|Modifies the target's threat by a percent|
-|14|ACTION_T_THREAT_ALL_PCT|Threat %|NU|NU|Modifies everyone's threat by a percent|
-|15|ACTION_T_QUEST_EVENT|Quest ID|"Target":creature_ai_script#Target|NU|Satisfies external script objective for a quest for the target (must be a player)|
-|16|ACTION_T_CAST_EVENT|CreatureEntry|Spell ID|"Target":creature_ai_script#Target|Emulates spell cast on the creature for the target (must be a player) [hacky]|
-|17|ACTION_T_SET_UNIT_FIELD|Field_Number|Value|"Target":creature_ai_script#Target|Sets unit field at the index to the value given for the target|
-|18|ACTION_T_SET_UNIT_FLAG|Flag(s)|"Target":creature_ai_script#Target|NU|Sets flag(s) on the target|
-|19|ACTION_T_REMOVE_UNIT_FLAG|Flag(s)|"Target":creature_ai_script#Target|NU|Removes flag(s) from the target|
-|20|ACTION_T_AUTO_ATTACK|Boolean|NU|NU|If 0, stops auto melee; else continues/starts it|
-|21|ACTION_T_COMBAT_MOVEMENT|Boolean|NU|NU|If 0, stops combat movement; else continues/starts it|
-|22|ACTION_T_SET_PHASE|Phase #|NU|NU|Sets current phase to number given|
-|23|ACTION_T_INC_PHASE|Number|NU|NU|Increments (or decrements) the phase by given number|
-|24|ACTION_T_EVADE|NU|NU|NU|Force creature reset. Exit combat + lose threat|
+|11|ACTION_T_CAST|"spellId":spell_template#Id|"Target":creature_ai_script#Target|"castFlags":creature_ai_script#castFlags|Creature cast spell on a target with specified "castFlags":creature_ai_script#castFlags|
+|12|ACTION_T_SPAWN|CreatureEntry|"Target":creature_ai_script#Target|Duration in milliseconds|Creature spawns a creature with (Param1) CreatureEntry at Target for a given duration (infinite if zero)|
+|13|ACTION_T_THREAT_SINGLE_PCT|Threat %|"Target":creature_ai_script#Target|NU|Modifies "Target":creature_ai_script#Target threat by a percent (-100 to +100)|
+|14|ACTION_T_THREAT_ALL_PCT|Threat %|NU|NU|Modifies everyone's threat by a percent (-100 to +100), will not cause Evade|
+|15|ACTION_T_QUEST_EVENT|Quest ID|"Target":creature_ai_script#Target|NU|Satisfies external script objective for a quest for the target (MUST be a player)|
+|16|ACTION_T_CAST_EVENT|CreatureEntry|"spellId":spell_template#Id|"Target":creature_ai_script#Target|Emulates spell cast on the creature for the target (must be a player) [hacky]|
+|17|ACTION_T_SET_UNIT_FIELD|"EUnitField":creature_ai_script#EUnitFields|Value|"Target":creature_ai_script#Target|Sets unit field at the index to the value given for the target. More information on the field value indeces can be found at "character data":character data|
+|18|ACTION_T_SET_UNIT_FLAG|"UnitFlag(s)":creature_template#unitflags|"Target":creature_ai_script#Target|NU|Sets flag(s) on the target|
+|19|ACTION_T_REMOVE_UNIT_FLAG|"UnitFlag(s)":creature_template#unitflags|"Target":creature_ai_script#Target|NU|Removes flag(s) from the target|
+|20|ACTION_T_AUTO_ATTACK|Boolean|NU|NU|If 0 cant melee, else (1) continues/starts it|
+|21|ACTION_T_COMBAT_MOVEMENT|Boolean|NU|NU|If 0 stops movement, else (1) continues/starts it|
+|22|ACTION_T_SET_PHASE|Phase #|NU|NU|Sets current phase to number given. This number must be an integer between 0 and 31 inclusive|
+|23|ACTION_T_INC_PHASE|Number|NU|NU|deprecated, increments (or decrements) the phase by given number|
+|24|ACTION_T_EVADE|NU|NU|NU|Force creature reset. Exit combat + lose threat, true Evade|
 |25|ACTION_T_FLEE_FOR_ASSIST|NU|NU|NU|Force creature to flee from combat|
-|26|ACTION_T_QUEST_EVENT_ALL|Quest ID|NU|NU|Satisfies external objective for a quest for all players in threat list|
-|27|ACTION_T_CAST_EVENT_ALL|Quest ID|Spell ID|NU|Emulates spell cast on creature for all players in threat list|
-|28|ACTION_T_REMOVEAURASFROMSPELL|"Target":creature_ai_script#Target|Spell ID|NU|Removes all auras from a spell ID from the target|
-|29|ACTION_T_RANGED_MOVEMENT|Distance|Angle|NU|Uses ranged movement generator keeping the creature at a distance|
+|26|ACTION_T_QUEST_EVENT_ALL|Quest ID|NU|NU|Satisfies external objective for a quest for all players in threat list similar to ACTION_T_QUEST_EVENT|
+|27|ACTION_T_CAST_EVENT_ALL|Quest ID|"spellId":spell_template#Id|NU|Emulates spell cast on creature for all players in threat list similar to ACTION_T_CAST_EVENT|
+|28|ACTION_T_REMOVEAURASFROMSPELL|"Target":creature_ai_script#Target|"spellId":spell_template#Id|NU|Removes all auras from a "spellId":spell_template#Id from the target|
+|29|ACTION_T_RANGED_MOVEMENT|Distance|Angle|NU|creature sets ranged movement generator keeping the creature at a distance. Note that specifying zero angle and distance will make it just melee instead|
 |30|ACTION_T_RANDOM_PHASE|Phase 1|Phase 2|Phase 3|Randomly chooses a phase from the list of three phases|
-|31|ACTION_T_RANDOM_PHASE_RANGE|Min Phase|Max Phase|NU|Chooses a random phase in the range specified|
-|32|ACTION_T_SUMMON_ID|CreatureEntry|"Target":creature_ai_script#Target|Summon ID|Summons a creature at the coords specified for the given summon id that will attack a target|
-|33|ACTION_T_KILLED_MONSTER|CreatureEntry|"Target":creature_ai_script#Target|NU|Simulates a kill for a mob of ID given for the player from the "Target":creature_ai_script#Target|
-|34|ACTION_T_SET_INST_DATA|Field|Value|NU|Sets new value for the field given in the instance script|
+|31|ACTION_T_RANDOM_PHASE_RANGE|Min Phase|Max Phase|NU|Chooses a random phase in the range specified. This number must be an integer between 0 and 31 inclusive|
+|32|ACTION_T_SUMMON_ID|CreatureEntry|"Target":creature_ai_script#Target|Summon ID|Summons a creature using the data specified in the separate "creature_ai_summons":creature_ai_summons table|
+|33|ACTION_T_KILLED_MONSTER|CreatureEntry|"Target":creature_ai_script#Target|NU|Simulates a kill for a "CreatureEntry":creature_template#entry given for the player from the "Target":creature_ai_script#Target|
+|34|ACTION_T_SET_INST_DATA|Field|32 bit Value|NU|Sets data for the instance. Note that this will only work when the creature is inside an instantiable zone that has a valid script (ScriptedInstance) assigned.|
 |35|ACTION_T_SET_INST_DATA64|Field|"Target":creature_ai_script#Target|NU|Stores target's GUID at the field given in the instance script|
-|36|ACTION_T_UPDATE_TEMPLATE|Entry|Fraction|NU|Temporarily changes creature entry to new entry|
+|36|ACTION_T_UPDATE_TEMPLATE|"CreatureEntry":creature_template#entry|Faction|NU|This function temporarily changes creature entry to new entry, display is changed, loot is changed, but AI is not changed. At respawn creature will be reverted to original entry. Alliance(0) or Horde (1)|
 |37|ACTION_T_DIE|NU|NU|NU|Kills the creature|
 |38|ACTION_T_ZONE_COMBAT_PULSE|NU|NU|NU|Places all players within the instance into combat with the creature. Only works in combat and only works inside of instances|
 |39|ACTION_T_CALL_FOR_HELP|Radius|NU|NU|Call any friendly creatures (if its not in combat/etc) in radius attack creature target|
-|40|ACTION_T_SET_SHEATH|Sheath|NU|NU|Let set sheath state for creature (0-no weapon show (not used mostly by creatures), 1-melee weapon show, 2-ranged weapon show)|
-|41|ACTION_T_FORCE_DESPAWN|delay|NU|NU|Despawns the creature, If 0 despawn instant, other despawn after delay (in ms)|
-|42|ACTION_T_SET_INVINCIBILITY_HP_LEVEL|flat or %|(0 = flat) (1 = %)|NU|MinHpValue, format(0-flat,1-percent from max health)|
-|43|ACTION_T_MOUNT_TO_ENTRY_OR_MODEL|entry|modelId|NU|Creature_template entry(param1) OR modelId (param2) (or 0 for both to unmount)|
-|44|ACTION_T_CHANCED_TEXT|Chance|-TextId1|-TextId2|deprecated, use 54. Chance to display the text, TextId1, optionally TextId2. If more than just -TextId1 is defined, randomize. Negative values|
-|45|ACTION_T_THROW_AI_EVENT|AIEventType|Radius|Target|Throws an AIEvent of type (Param1) to nearby friendly Npcs in range of (Param2), Invoker of event is Target|
-|46|ACTION_T_SET_THROW_MASK|EventTypeMask|NU|NU|Marks for which AIEvents the npc will throw AIEvents on its own|
-|47|ACTION_T_SET_STAND_STATE|StandState|NU|NU|Set the unit stand state (Param1) of the current creature|
-|48|ACTION_T_CHANGE_MOVEMENT|MovementType|WanderDistance|NU|Change the unit movement type (Param1). If the movement type is Random Movement (1), the WanderDistance (Param2) must be provided. If the movement type is Waypoint Movement (2), Param2 is PathId|
-|49|ACTION_T_DYNAMIC_MOVEMENT|Boolean|NU|NU|Enable dynamic movement behavior (1 = on; 0 = off)|
-|50|ACTION_T_SET_REACT_STATE|ReactState|NU|NU|Change react state of the creature|
-|51|ACTION_T_PAUSE_WAYPOINTS|Boolean|NU|NU|DoPause 0: unpause waypoint 1|
-|52|ACTION_T_INTERRUPT_SPELL|CurrentSpellTypes|NU|NU|Interrupt spell in given slot for creature|
-|53|ACTION_T_START_RELAY_SCRIPT|RelayIDorTemplate|Target|NU|Launches dbscripts_on_relay script, either static one, or when param1 is < 0 then random one chosen from dbscript_random_templates|
-|54|ACTION_T_TEXT_NEW|TextId|Target|TemplateId|Displays text, either static one or when param3 != 0, then random one chosen from dbscript_random_templates|
+|40|ACTION_T_SET_SHEATH|SheathState|NU|NU|Set SheathState for creature (0-no weapon show (not used mostly by creatures), 1-melee weapon show, 2-ranged weapon show)|
+|41|ACTION_T_FORCE_DESPAWN|msDelay|NU|NU|Despawns the creature, If 0 despawn instant, other despawn after delay (in ms)|
+|42|ACTION_T_SET_INVINCIBILITY_HP_LEVEL|Value|HP_Level(0) or HP_Percent(1)|NU|Set minimum health level for creature that can be set at damage as flat value or percent from max health|
+|43|ACTION_T_MOUNT_TO_ENTRY_OR_MODEL|"CreatureEntry":creature_template#entry|"modelId":creature_template#modelId1|NU|"CreatureEntry":creature_template#entry (param1) or "modelId":creature_template#modelId1 (param2) or 0 for both to dismount|
+|44|ACTION_T_CHANCED_TEXT|Chance|-TextId1|-TextId2|deprecated, use 54! Chance to display the text, TextId1, optionally TextId2. If more than just -TextId1 is defined, randomize. Negative values|
+|45|ACTION_T_THROW_AI_EVENT|"AIEventType":creature_ai_script#AIEventType|Radius|"Target":creature_ai_script#Target|Throws an "AIEventType":creature_ai_script#AIEventType (Param1) to friendly Npcs in range (Param2), Invoker of event is Target|
+|46|ACTION_T_SET_THROW_MASK|EventTypeMask|NU|NU|Marks for which AIEvents the npc will throw AIEvents on its own.|
+|47|ACTION_T_SET_STAND_STATE|"UnitStandStateType":creature_template_addon#bytes1-unit_field_bytes_10|NU|NU|Set the UnitStandStateType (Param1) of the current creature|
+|48|ACTION_T_CHANGE_MOVEMENT|"MovementType":creature#MovementType|spawndist/PathId|NU|Change the creature MovementGeneratorType (Param1). If the movement type is Random Movement (1), the spawndist (Param2) must be provided. If the movement type is Waypoint Movement (2), (Param2) is PathId|
+|49|ACTION_T_DYNAMIC_MOVEMENT|Off(0)On(1)|NU|NU|Disable / Enable dynamic movement behavior|
+|50|ACTION_T_SET_REACT_STATE|"ReactState":creature_ai_scripts#ReactStates|NU|NU|Change ReactState of the creature|
+|51|ACTION_T_PAUSE_WAYPOINTS|DoPause(0)UnPause(1)|NU|NU|Pause waypoints of creature, DoPause 0: unpause waypoint 1|
+|52|ACTION_T_INTERRUPT_SPELL|"CurrentSpellType":creature_ai_script#CurrentSpellTypes|NU|NU|Interrupt spell in given slot for creature|
+|53|ACTION_T_START_RELAY_SCRIPT|RelayIDorTemplate|"Target":creature_ai_script#Target|NU|Launches dbscripts_on_relay script, either static one, or when (Param1) is < 0 then random one chosen from dbscript_random_templates|
+|54|ACTION_T_TEXT_NEW|-TextId|Target|TemplateId|Displays text, either static one or when (Param3) != 0, then random one chosen from dbscript_random_templates|
 |55|ACTION_T_ATTACK_START|Target|NU|NU|Starts attacking Target|
-|56|ACTION_T_DESPAWN_GUARDIANS|CreatureEntry|NU|NU|Despawns guardian with specified entry, or if 0 despawns all guardians|
+|56|ACTION_T_DESPAWN_GUARDIANS|"CreatureEntry":creature_template#entry|NU|NU|Despawns guardian with specified entry, or if 0 despawns all guardians|
 |57|ACTION_T_SET_RANGED_MODE|Boolean|chaseDistance|type|Not yet implemented - Enable ranged mode (1 = on; 0 = off), distance to chase at, type of ranged mode (not yet implemented)|
+
+h4. EventFlags
+
+|_. Bit|_. Name|_. Description|
+|1|EFLAG_REPEATABLE|Event repeats (Does not repeat if this flag is not set)|
+|2|EFLAG_NORMAL|Event only occurs in Normal instance difficulty|
+|4|EFLAG_HEROIC|Event only occurs in Heroic instance difficulty|
+|8|EFLAG_RESERVED_3|Used in master for difficulty 2|
+|16|EFLAG_RESERVED_4|Used in master for difficulty 3|
+|32|EFLAG_RANDOM_ACTION|Random use action1, 2, or 3|
+|64|EFLAG_RESERVED_6|Reserved|
+|128|EFLAG_DEBUG_ONLY|Event only occurs in debug build|
+|256|EFLAG_RANGED_MODE_ONLY|Event only occurs in ranged mode|
+|512|EFLAG_MELEE_MODE_ONLY|Event only occurs in melee mode|
+|1024|EFLAG_COMBAT_ACTION|Only one per cycle|
 
 h4. Target
 
@@ -186,38 +202,6 @@ h4. castFlags
 |256|CAST_MAIN_SPELL|Marks main spell for AI Type = Range Mode (Warrior / Paladin / Mage)|
 |512|CAST_PLAYER_ONLY|Selects only player targets - substitution for EAI not having more params|
 
-h4. Condition Type
-
-(For Event_type 22)
-
-|_. Condition|_. Value 1|_. Value 2|_. Description|
-|0 None|0|0|Nothing.|
-|1 Aura|SpellID|"effindex"|If the SpellID's aura is on you.|
-|2 Item|ItemID|Amount|If you have the item in your inventory.|
-|3 Item Equipped|ItemId|Amount|If you have the item equipped on your character.|
-|4 Zone ID|ZoneID|NU|Taken from AreaTable.dbc.|
-|5 Reputation|FactionID|Minimum Rank|Taken from FactionTemplate.dbc. Exalted is 42000.|
-|6 Team|Team Value|NU|Use 469 if alliance, 67 if Horde|
-|7 Skill|SkillID|Min Amount|Values taken from SkillLine.dbc.|
-|8 Quest Rewarded|QuestID|NU|If you have already completed that QuestID.|
-|9 Quest Taken|QuestID|NU|If you are currently on that QuestID.|
-|12 Active Event|EventID|NU|This is *not* from your database. This value is from the DBC file enum HolidayIds.|
-
-h4. EventFlags
-
-|_. Bit|_. Name|_. Description|
-|1|EFLAG_REPEATABLE|Event repeats (Does not repeat if this flag is not set)|
-|2|EFLAG_NORMAL|Event only occurs in Normal instance difficulty|
-|4|EFLAG_HEROIC|Event only occurs in Heroic instance difficulty|
-|8|EFLAG_RESERVED_3|Used in master for difficulty 2|
-|16|EFLAG_RESERVED_4|Used in master for difficulty 3|
-|32|EFLAG_RANDOM_ACTION|Random use action1, 2, or 3|
-|64|EFLAG_RESERVED_6|Reserved|
-|128|EFLAG_DEBUG_ONLY|Event only occurs in debug build|
-|256|EFLAG_RANGED_MODE_ONLY|Event only occurs in ranged mode|
-|512|EFLAG_MELEE_MODE_ONLY|Event only occurs in melee mode|
-|1024|EFLAG_COMBAT_ACTION|Only one per cycle|
-
 h4. Instance_Data_Flags
 
 |_. Value|_. Type|_. Description|
@@ -225,3 +209,83 @@ h4. Instance_Data_Flags
 |2|Evade|Creature remove from Combat|
 |3|Death|Creature just die|
 |4|Special|Need for more as one enemy in a fight (like 4 horseman)|
+
+h4. schoolMask
+
+|_. Value|_. Type|
+|1|SPELL_SCHOOL_MASK_NORMAL (Physical)|
+|2|SPELL_SCHOOL_MASK_HOLY|
+|4|SPELL_SCHOOL_MASK_FIRE|
+|8|SPELL_SCHOOL_MASK_NATURE|
+|16|SPELL_SCHOOL_MASK_FROST|
+|32|SPELL_SCHOOL_MASK_SHADOW|
+|64|SPELL_SCHOOL_MASK_ARCANE|
+|124|SPELL_SCHOOL_MASK_SPELL (without Holy)|
+|126|SPELL_SCHOOL_MASK_MAGIC|
+|127|SPELL_SCHOOL_MASK_ALL|
+
+h4. DispelType
+
+|_. Value|_. Type|
+|0|DISPEL_NONE|
+|1|DISPEL_MAGIC|
+|2|DISPEL_CURSE|
+|3|DISPEL_DISEASE|
+|4|DISPEL_POISON|
+|5|DISPEL_STEALTH|
+|6|DISPEL_INVISIBILITY|
+|7|DISPEL_ALL|
+
+h4. AIEventType
+
+|_. Value|_. Type|_. Sender|_. Invoker|
+|0|AI_EVENT_JUST_DIED|Killed Npc|Killer|
+|1|AI_EVENT_CRITICAL_HEALTH|Hurt Npc|DamageDealer - Expected to be sent by 10% health|
+|2|AI_EVENT_LOST_HEALTH|Hurt Npc|DamageDealer - Expected to be sent by 50% health|
+|3|AI_EVENT_LOST_SOME_HEALTH|Hurt Npc|DamageDealer - Expected to be sent by 90% health|
+|4|AI_EVENT_GOT_FULL_HEALTH|Healed Npc|Healer|
+|5|AI_EVENT_CUSTOM_EVENTAI_A|Npc that throws custom event|TARGET_T_ACTION_INVOKER (if exists)|
+|6|AI_EVENT_CUSTOM_EVENTAI_B|Npc that throws custom event|TARGET_T_ACTION_INVOKER (if exists)|
+|7|AI_EVENT_GOT_CCED|CCed Npc|Caster that CCed|
+|8|AI_EVENT_CUSTOM_EVENTAI_C|Npc that throws custom event|TARGET_T_ACTION_INVOKER (if exists)|
+|9|AI_EVENT_CUSTOM_EVENTAI_D|Npc that throws custom event|TARGET_T_ACTION_INVOKER (if exists)|
+|10|AI_EVENT_CUSTOM_EVENTAI_E|Npc that throws custom event|TARGET_T_ACTION_INVOKER (if exists)|
+|11|AI_EVENT_CUSTOM_EVENTAI_F|Npc that throws custom event|TARGET_T_ACTION_INVOKER (if exists)|
+
+h4. TemporaryFactionFlags
+
+|Bit|Hex|Type|Description|
+|0|0x00|TEMPFACTION_NONE|When no flag is used in temporary faction change, faction will be persistent. It will then require manual change back to default/another faction when changed once|
+|1|0x01|TEMPFACTION_RESTORE_RESPAWN|Default faction will be restored at respawn| 
+|2|0x02|TEMPFACTION_RESTORE_COMBAT_STOP|at CombatStop() (happens at creature death, at evade or custom scripte among others)|
+|4|0x04|TEMPFACTION_RESTORE_REACH_HOME|at reaching home in home movement (evade), if not already done at CombatStop()| 
+|8|0x08|TEMPFACTION_TOGGLE_NON_ATTACKABLE|Remove UNIT_FLAG_NON_ATTACKABLE(0x02) when faction is changed (reapply when temp-faction is removed)|
+|16|0x10|TEMPFACTION_TOGGLE_IMMUNE_TO_PLAYER|Remove UNIT_FLAG_IMMUNE_TO_PLAYER(0x100) when faction is changed (reapply when temp-faction is removed)|
+|32|0x20|TEMPFACTION_TOGGLE_IMMUNE_TO_NPC|Remove UNIT_FLAG_PASSIVE(0x200) when faction is changed (reapply when temp-faction is removed)|
+|64|0x40|TEMPFACTION_TOGGLE_PACIFIED|Remove UNIT_FLAG_PACIFIED(0x20000) when faction is changed (reapply when temp-faction is removed)|
+|128|0x80|TEMPFACTION_TOGGLE_NOT_SELECTABLE|Remove UNIT_FLAG_NOT_SELECTABLE(0x2000000) when faction is changed (reapply when temp-faction is removed)|
+
+h4. EUnitFields
+
+|_. Value|_. Type|_. Description|
+|24|UNIT_FIELD_POWER2|Mana|
+|34|UNIT_FIELD_LEVEL|Level|
+|150|UNIT_FIELD_BOUNDINGRADIUS|bounding_radius|
+|151|UNIT_FIELD_COMBATREACH|combat_reach|
+|164|UNIT_DYNAMIC_FLAGS|DynamicFlags|
+|168|UNIT_NPC_FLAGS|NpcFlags|
+
+h4. ReactStates
+
+|_. Value|_. Type|_. Description|
+|0|REACT_PASSIVE|Wont attack on its own, maybe due to CallForHelp|
+|1|REACT_DEFENSIVE|Will attack when attacked|
+|2|REACT_AGGRESSIVE|Will attack (default)|
+
+h4. CurrentSpellTypes
+
+|_. Value|_. Type|_. Description|
+|0|CURRENT_MELEE_SPELL||
+|1|CURRENT_GENERIC_SPELL||
+|2|CURRENT_AUTOREPEAT_SPELL||
+|3|CURRENT_CHANNELED_SPELL||
