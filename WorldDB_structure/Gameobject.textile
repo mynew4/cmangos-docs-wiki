@@ -75,11 +75,19 @@ The orientation. (North = 0, South = 3.14159)
 
 h4. rotation0
 
+GameObject Rotation: X:
+
 h4. rotation1
+
+GameObject Rotation: Y:
 
 h4. rotation2
 
+GameObject Rotation: Z:
+
 h4. rotation3
+
+GameObject Rotation: W:
 
 h4. spawntimesecs
 
