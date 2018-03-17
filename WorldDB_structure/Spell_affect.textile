@@ -29,7 +29,7 @@ This field controls what class a spell needs to have to be affected by the modif
 
 h4. SpellFamilyName
 
-SpellFamilyName need to align for affecting/affected Spell(s).
+SpellFamilyName need to align for affecting/affected Spell(s). Note that only (Rank 1) of a spell needs to be inserted, which then applies to all ranks of a spell.
 
 |_. ID|_. Family Name|_. ID|_. Family Name|
 |0|Generic|9|Hunter|
