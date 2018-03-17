@@ -147,6 +147,8 @@ It is a good idea to start off your installation with some basic directory struc
 
 #### For Windows
 
+https://gist.github.com/Muehe/175d2e761169327d50c40eda2b6d4a32#running[CMaNGOS Installation Guide for Windows ]
+
 For this guide we will assume that you will use +C:\Mangos+ as base directory under which you put everything.
 
 All shell commands are expected to be typed from a *Git bash* started from the +C:\Mangos+ directory. To do so, right-click onto +C:\Mangos+ in the windows explorer, and select +Git bash here+ from the context menu.
