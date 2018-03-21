@@ -8,11 +8,9 @@ holds creature spell data, which was previously hold in [creature_template](http
 
 TotemAI uses creature_template_spells for spell reference.
 
-Creatures of with creature_template_spells data, which are subject to Mind Control - Spells will hold these Spells as Actions in the Mind Controlers Action Bar.
+Creatures with creature_template_spells entry, which are subject to Aura Id 2 (SPELL_AURA_MOD_POSSESS) will hold these spells as actions in the Pet Action Bar.
 
-creature_template_spells data can also give information missing CreatureAI. However, this has to be evaltuated carfully, as creatures might hold spell data, which is either incorrect or has spells inserted which they only have available when possessed.
-
-NOTICE: The data for this table is largely incomplete and is mostly just a regurgitation of what the client receives from the server. This article is a WIP as to what all the possible values are.
+creature_template_spells data can also give information on missing CreatureAI. However, this has to be evaltuated carefully, as creatures might hold spell data, which is either incorrect or has spells inserted which they only have available when possessed / used as pet.
 
 ### Structure
 
