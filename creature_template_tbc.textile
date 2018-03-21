@@ -221,10 +221,10 @@ h4. RegenerateStats
 This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Data Flag)
 
 |Value|Description|
-|0|NPC Does NOT Regenerate Stats When Out Of Comabt|
-|1|NPC DOES Regenerate Health When Out Of Comabt|
-|2|NPC DOES Regenerate Power (Mana) When Out Of Comabt|
-|3|NPC DOES Regenerate Health AND Power (Mana) When Out Of Comabt|
+|0|NPC Does NOT Regenerate Stats When Out Of Combat|
+|1|NPC DOES Regenerate Health When Out Of Combat|
+|2|NPC DOES Regenerate Power (Mana) When Out Of Combat|
+|3|NPC DOES Regenerate Health AND Power (Mana) When Out Of Combat|
 
 h4. RacialLeader
 
@@ -301,8 +301,8 @@ Some Known Possible Flags Are:
 |14|16384|UNIT_FLAG_PERSUADED|persuaded, 2.0.8|
 |15|32768|UNIT_FLAG_SWIMMING|controls water swimming animation - TODO: confirm whether dynamic or static|
 |16|65536|UNIT_FLAG_NON_ATTACKABLE_2|removes attackable icon, if on yourself, cannot assist self but can cast TARGET_SELF spells - added by SPELL_AURA_MOD_UNATTACKABLE|
-|17|131072|UNIT_FLAG_PACIFIED|3.0.3 ok|
-|18|262144|UNIT_FLAG_STUNNED|Unit is a subject to stun, turn and strafe movement disabled|
+|17|131072|UNIT_FLAG_PACIFIED|pacified, 3.0.3|
+|18|262144|UNIT_FLAG_STUNNED|stunned, 2.1.1 Unit is a subject to stun, turn and strafe movement disabled|
 |19|524288|UNIT_FLAG_IN_COMBAT||
 |20|1048576|UNIT_FLAG_TAXI_FLIGHT|Unit is on taxi, paired with a duplicate loss of client control packet (likely a legacy serverside hack). Disables any spellcasts not allowed in taxi flight client-side.|
 |21|2097152|UNIT_FLAG_DISARMED|disable melee spells casting..., "Required melee weapon" added to melee spells tooltip.|
@@ -315,7 +315,7 @@ Some Known Possible Flags Are:
 |28|268435456|UNIT_FLAG_UNK_28||
 |29|536870912|UNIT_FLAG_UNK_29|used in Feing Death spell|
 |30|1073741824|UNIT_FLAG_SHEATHE||
-|31|2147483648|UNIT_FLAG_UNK_31|set skinnable icon and also changes color of portrait)(no affect in 2.4.3|
+|31|2147483648|UNIT_FLAG_UNK_31|set skinnable icon and also changes color of portrait)(no affect in 2.4.3)|
 
 h4. DynamicFlags
 
@@ -365,11 +365,9 @@ This Field Controls the Application Of Flags That Controls Certain NPC Specific 
 
 h4. CreatureTypeFlags
 
-This Field Controls If a Mob Is Minable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The "Skinning_Loot_Template":Skinning_Loot_Template Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side. 
+This Field Controls If a Mob Is Mineable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The "Skinning_Loot_Template":Skinning_Loot_Template Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side.
 
 It will be send to the client in SMSG_CREATURE_QUERY_RESPONSE
-
-Some values provided from the community:
 
 |*Flag*|*Name*|*Comments*|
 |1|CREATURE_TYPEFLAGS_TAMEABLE|Makes the mob tameable (must also be a beast and have family set)|
@@ -379,7 +377,7 @@ Some values provided from the community:
 |16|CREATURE_TYPEFLAGS_UNK5|Controls something in client tooltip related to creature faction|
 |32|CREATURE_TYPEFLAGS_UNK6|Something related to Sound|
 |64|CREATURE_TYPEFLAGS_UNK7|Related to attackable / not attackable creatures with spells|
-|128|CREATURE_TYPEFLAGS_UNK8|has something to do with unit interaction / quest status requests|
+|128|CREATURE_TYPEFLAGS_INTERACT_DEAD|has something to do with unit interaction / quest status requests|
 |136|CREATURE_TYPEFLAGS_NON_PVP_PLAYER||
 |256|CREATURE_TYPEFLAGS_HERBLOOT|Makes Mob Corpse Herbable - Uses Skinning Loot Field|
 |512|CREATURE_TYPEFLAGS_MININGLOOT|Makes Mob Corpse Mineable - Uses Skinning Loot Field|
@@ -392,7 +390,7 @@ Some values provided from the community:
 
 h4. SpeedWalk
 
-This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Packet Data. 
+This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Packet Data.
 Note: This field should only be used as an override if the model's default SpeedWalk is not correct for the creature_template.entry. ( "creature_model_info.SpeedWalk":creature_model_info#SpeedWalk )
 
 `SpeedWalk` = (sniffed value / 2.5)
