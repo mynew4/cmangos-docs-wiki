@@ -43,7 +43,7 @@ let's say that a certain creature using EventAI will have a max of four phases. 
 
 EventAI can also support phases. A <u>phase</u> is just a way to group certain events + actions together so that the creature will perform certain actions based on what event it is currently on. The way the phase system works in EventAI is that for every event added, it needs to be specified under which phases the event <u>SHOULD NOT</u> occur. This is a bit confusing at first, so let's look at it more closely. A creature can have more than one phase, up to a max of 32 different phases (with the first one being phase 0, and last one being phase 31). How the phase selection field works is that it contains a 32bit number. Each bit in the number represents a possible phase, with the bit in the least significant position signifying phase 0 and the most significant bit signifying phase 31. The default value of zero in this field has no bits set and since the field controls when the event should NOT trigger, it would then mean that the event will always be triggered independent of the current phase the creature is in. Therefore, if you want to specify what phases the event should occur in, you need to add up all of the corresponding bits for all the other phases where the event shouldn't trigger in (confusing...yes).
 
-All of the "events":creature_ai_script#event_type, "actions":creature_ai_script#action_type and possible "targets":creature_ai_script#Target are summarized and described below.
+All of the "events":creature_ai_script#event_type, "actions":creature_ai_script#action_type and possible "targets":creature_ai_scripts#target are summarized and described below.
 
 * NU = Not Used*
 * IC = In Combat Only*
@@ -88,7 +88,7 @@ h4. event_type
 
 Now that all of the supported events have been listed and described, we shall now move on to the actions that can be performed. Each event can take up to three actions. The actions will all be performed when the event is triggered and they will be performed in the order that they have been defined. This means that, for a certain event, action 1 will be performed first, followed by action 2, then lastly by action 3. Just like event definitions, each action can use up to three different parameters but not all actions will use all three parameters. If a parameter isn't mentioned for an action, then that action does not need that parameter.
 
-Before we start to list and explain the different actions that can be taken, we must first look at how the EventAI targeting system works. Due to technical reasons in how targetting is handled, the EventAI script cannot target anything or anyone that is not in its threat list or is not the scripted creature itself. It also can't currently target anyone specific in its threat list except by their position in the threat list. However, even then it can only target specifically the current victim, the second unit in its threat list, and the last unit in its threat list. It can also target units in its threat list at random and has two options for that: anyone in its threat list at random, or anyone in its threat list excluding the unit with the most threat. Aside from all of those external targets, the script can always target itself. More information on the "Target":creature_ai_script#Target can be found in the reference tables at the end of this guide.
+Before we start to list and explain the different actions that can be taken, we must first look at how the EventAI targeting system works. Due to technical reasons in how targetting is handled, the EventAI script cannot target anything or anyone that is not in its threat list or is not the scripted creature itself. It also can't currently target anyone specific in its threat list except by their position in the threat list. However, even then it can only target specifically the current victim, the second unit in its threat list, and the last unit in its threat list. It can also target units in its threat list at random and has two options for that: anyone in its threat list at random, or anyone in its threat list excluding the unit with the most threat. Aside from all of those external targets, the script can always target itself. More information on the "target":creature_ai_scripts#target can be found in the reference tables at the end of this guide.
 
 One last note before we start looking at individual actions is about the texts. The EventAI script has support for localized text entries. Therefore, you can define what the mob will say in more than one language all in another table and the script will show the corresponding localized text to the corresponding client (english text to enUS/enGB clients, german text to deDE clients, etc). All of the localized text entries will have a unique text ID assigned to them and it is that text ID that will be used by any actions that require textual input.
 
@@ -106,15 +106,15 @@ h4. action_type
 |8|ACTION_T_RANDOM_TEXTEMOTE|NU|NU|NU|deprecated|
 |9|ACTION_T_RANDOM_SOUND|Sound ID 1|Sound ID 2|Sound ID 3|Picks a sound ID at random and plays it; -1 = action skipped if chosen|
 |10|ACTION_T_RANDOM_EMOTE|Emote ID 1|Emote ID 2|Emote ID 3|Picks an emote ID at random and does visual emote; -1 = action skipped if chosen|
-|11|ACTION_T_CAST|"spellId":spell_template#Id|"Target":creature_ai_script#Target|"castFlags":creature_ai_script#castFlags|Creature cast spell on a target with specified "castFlags":creature_ai_script#castFlags|
-|12|ACTION_T_SPAWN|CreatureEntry|"Target":creature_ai_script#Target|Duration in milliseconds|Creature spawns a creature with (Param1) CreatureEntry at Target for a given duration (infinite if zero)|
-|13|ACTION_T_THREAT_SINGLE_PCT|Threat %|"Target":creature_ai_script#Target|NU|Modifies "Target":creature_ai_script#Target threat by a percent (-100 to +100)|
+|11|ACTION_T_CAST|"spellId":spell_template#Id|"target":creature_ai_scripts#target|"castFlags":creature_ai_script#castFlags|Creature cast spell on a target with specified "castFlags":creature_ai_script#castFlags|
+|12|ACTION_T_SPAWN|CreatureEntry|"target":creature_ai_scripts#target|Duration in milliseconds|Creature spawns a creature with (Param1) CreatureEntry at Target for a given duration (infinite if zero)|
+|13|ACTION_T_THREAT_SINGLE_PCT|Threat %|"target":creature_ai_scripts#target|NU|Modifies "target":creature_ai_scripts#target threat by a percent (-100 to +100)|
 |14|ACTION_T_THREAT_ALL_PCT|Threat %|NU|NU|Modifies everyone's threat by a percent (-100 to +100), will not cause Evade|
-|15|ACTION_T_QUEST_EVENT|Quest ID|"Target":creature_ai_script#Target|NU|Satisfies external script objective for a quest for the target (MUST be a player)|
-|16|ACTION_T_CAST_EVENT|CreatureEntry|"spellId":spell_template#Id|"Target":creature_ai_script#Target|Emulates spell cast on the creature for the target (must be a player) [hacky]|
-|17|ACTION_T_SET_UNIT_FIELD|"EUnitField":creature_ai_script#EUnitFields|Value|"Target":creature_ai_script#Target|Sets unit field at the index to the value given for the target. More information on the field value indeces can be found at "character data":character data|
-|18|ACTION_T_SET_UNIT_FLAG|"UnitFlag(s)":creature_template#unitflags|"Target":creature_ai_script#Target|NU|Sets flag(s) on the target|
-|19|ACTION_T_REMOVE_UNIT_FLAG|"UnitFlag(s)":creature_template#unitflags|"Target":creature_ai_script#Target|NU|Removes flag(s) from the target|
+|15|ACTION_T_QUEST_EVENT|Quest ID|"target":creature_ai_scripts#target|NU|Satisfies external script objective for a quest for the target (MUST be a player)|
+|16|ACTION_T_CAST_EVENT|CreatureEntry|"spellId":spell_template#Id|"target":creature_ai_scripts#target|Emulates spell cast on the creature for the target (must be a player) [hacky]|
+|17|ACTION_T_SET_UNIT_FIELD|"EUnitField":creature_ai_script#EUnitFields|Value|"target":creature_ai_scripts#target|Sets unit field at the index to the value given for the target. More information on the field value indeces can be found at "character data":character data|
+|18|ACTION_T_SET_UNIT_FLAG|"UnitFlag(s)":creature_template#unitflags|"target":creature_ai_scripts#target|NU|Sets flag(s) on the target|
+|19|ACTION_T_REMOVE_UNIT_FLAG|"UnitFlag(s)":creature_template#unitflags|"target":creature_ai_scripts#target|NU|Removes flag(s) from the target|
 |20|ACTION_T_AUTO_ATTACK|Boolean|NU|NU|If 0 cant melee, else (1) continues/starts it|
 |21|ACTION_T_COMBAT_MOVEMENT|Boolean|NU|NU|If 0 stops movement, else (1) continues/starts it|
 |22|ACTION_T_SET_PHASE|Phase #|NU|NU|Sets current phase to number given. This number must be an integer between 0 and 31 inclusive|
@@ -123,14 +123,14 @@ h4. action_type
 |25|ACTION_T_FLEE_FOR_ASSIST|NU|NU|NU|Force creature to flee from combat|
 |26|ACTION_T_QUEST_EVENT_ALL|Quest ID|NU|NU|Satisfies external objective for a quest for all players in threat list similar to ACTION_T_QUEST_EVENT|
 |27|ACTION_T_CAST_EVENT_ALL|Quest ID|"spellId":spell_template#Id|NU|Emulates spell cast on creature for all players in threat list similar to ACTION_T_CAST_EVENT|
-|28|ACTION_T_REMOVEAURASFROMSPELL|"Target":creature_ai_script#Target|"spellId":spell_template#Id|NU|Removes all auras from a "spellId":spell_template#Id from the target|
+|28|ACTION_T_REMOVEAURASFROMSPELL|"target":creature_ai_scripts#target|"spellId":spell_template#Id|NU|Removes all auras from a "spellId":spell_template#Id from the target|
 |29|ACTION_T_RANGED_MOVEMENT|Distance|Angle|NU|creature sets ranged movement generator keeping the creature at a distance. Note that specifying zero angle and distance will make it just melee instead|
 |30|ACTION_T_RANDOM_PHASE|Phase 1|Phase 2|Phase 3|Randomly chooses a phase from the list of three phases|
 |31|ACTION_T_RANDOM_PHASE_RANGE|Min Phase|Max Phase|NU|Chooses a random phase in the range specified. This number must be an integer between 0 and 31 inclusive|
-|32|ACTION_T_SUMMON_ID|CreatureEntry|"Target":creature_ai_script#Target|Summon ID|Summons a creature using the data specified in the separate "creature_ai_summons":creature_ai_summons table|
-|33|ACTION_T_KILLED_MONSTER|CreatureEntry|"Target":creature_ai_script#Target|NU|Simulates a kill for a "CreatureEntry":creature_template#entry given for the player from the "Target":creature_ai_script#Target|
+|32|ACTION_T_SUMMON_ID|CreatureEntry|"target":creature_ai_scripts#target|Summon ID|Summons a creature using the data specified in the separate "creature_ai_summons":creature_ai_summons table|
+|33|ACTION_T_KILLED_MONSTER|CreatureEntry|"target":creature_ai_scripts#target|NU|Simulates a kill for a "CreatureEntry":creature_template#entry given for the player from the "target":creature_ai_scripts#target|
 |34|ACTION_T_SET_INST_DATA|Field|32 bit Value|NU|Sets data for the instance. Note that this will only work when the creature is inside an instantiable zone that has a valid script (ScriptedInstance) assigned.|
-|35|ACTION_T_SET_INST_DATA64|Field|"Target":creature_ai_script#Target|NU|Stores target's GUID at the field given in the instance script|
+|35|ACTION_T_SET_INST_DATA64|Field|"target":creature_ai_scripts#target|NU|Stores target's GUID at the field given in the instance script|
 |36|ACTION_T_UPDATE_TEMPLATE|"CreatureEntry":creature_template#entry|Faction|NU|This function temporarily changes creature entry to new entry, display is changed, loot is changed, but AI is not changed. At respawn creature will be reverted to original entry. Alliance(0) or Horde (1)|
 |37|ACTION_T_DIE|NU|NU|NU|Kills the creature|
 |38|ACTION_T_ZONE_COMBAT_PULSE|NU|NU|NU|Places all players within the instance into combat with the creature. Only works in combat and only works inside of instances|
@@ -140,7 +140,7 @@ h4. action_type
 |42|ACTION_T_SET_INVINCIBILITY_HP_LEVEL|Value|HP_Level(0) or HP_Percent(1)|NU|Set minimum health level for creature that can be set at damage as flat value or percent from max health|
 |43|ACTION_T_MOUNT_TO_ENTRY_OR_MODEL|"CreatureEntry":creature_template#entry|"modelId":creature_template#modelId1|NU|"CreatureEntry":creature_template#entry (param1) or "modelId":creature_template#modelId1 (param2) or 0 for both to dismount|
 |44|ACTION_T_CHANCED_TEXT|Chance|-TextId1|-TextId2|deprecated, use 54! Chance to display the text, TextId1, optionally TextId2. If more than just -TextId1 is defined, randomize. Negative values|
-|45|ACTION_T_THROW_AI_EVENT|"AIEventType":creature_ai_script#AIEventType|Radius|"Target":creature_ai_script#Target|Throws an "AIEventType":creature_ai_script#AIEventType (Param1) to friendly Npcs in range (Param2), Invoker of event is Target|
+|45|ACTION_T_THROW_AI_EVENT|"AIEventType":creature_ai_script#AIEventType|Radius|"target":creature_ai_scripts#target|Throws an "AIEventType":creature_ai_script#AIEventType (Param1) to friendly Npcs in range (Param2), Invoker of event is Target|
 |46|ACTION_T_SET_THROW_MASK|EventTypeMask|NU|NU|Marks for which AIEvents the npc will throw AIEvents on its own.|
 |47|ACTION_T_SET_STAND_STATE|"UnitStandStateType":creature_template_addon#bytes1-unit_field_bytes_10|NU|NU|Set the UnitStandStateType (Param1) of the current creature|
 |48|ACTION_T_CHANGE_MOVEMENT|"MovementType":creature#MovementType|spawndist/PathId|NU|Change the creature MovementGeneratorType (Param1). If the movement type is Random Movement (1), the spawndist (Param2) must be provided. If the movement type is Waypoint Movement (2), (Param2) is PathId|
@@ -148,7 +148,7 @@ h4. action_type
 |50|ACTION_T_SET_REACT_STATE|"ReactState":creature_ai_scripts#ReactStates|NU|NU|Change ReactState of the creature|
 |51|ACTION_T_PAUSE_WAYPOINTS|DoPause(0)UnPause(1)|NU|NU|Pause waypoints of creature, DoPause 0: unpause waypoint 1|
 |52|ACTION_T_INTERRUPT_SPELL|"CurrentSpellType":creature_ai_script#CurrentSpellTypes|NU|NU|Interrupt spell in given slot for creature|
-|53|ACTION_T_START_RELAY_SCRIPT|RelayIDorTemplate|"Target":creature_ai_script#Target|NU|Launches dbscripts_on_relay script, either static one, or when (Param1) is < 0 then random one chosen from dbscript_random_templates|
+|53|ACTION_T_START_RELAY_SCRIPT|RelayIDorTemplate|"target":creature_ai_scripts#target|NU|Launches dbscripts_on_relay script, either static one, or when (Param1) is < 0 then random one chosen from dbscript_random_templates|
 |54|ACTION_T_TEXT_NEW|-TextId|Target|TemplateId|Displays text, either static one or when (Param3) != 0, then random one chosen from dbscript_random_templates|
 |55|ACTION_T_ATTACK_START|Target|NU|NU|Starts attacking Target|
 |56|ACTION_T_DESPAWN_GUARDIANS|"CreatureEntry":creature_template#entry|NU|NU|Despawns guardian with specified entry, or if 0 despawns all guardians|
