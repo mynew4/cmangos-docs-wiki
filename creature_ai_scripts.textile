@@ -289,3 +289,5 @@ h4. Instance_Data_Flags
 |2|Evade|Creature remove from Combat|
 |3|Death|Creature just die|
 |4|Special|Need for more as one enemy in a fight (like 4 horseman)|
+
+h4. event_inverse_phase_mask
