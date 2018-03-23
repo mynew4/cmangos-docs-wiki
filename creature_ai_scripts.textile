@@ -31,7 +31,7 @@ h3. Structure
 |"event_type":creature_ai_scripts#event_type||NO|||Event|
 |"event_inverse_phase_mask":creature_ai_scripts#event_inverse_phase_mask||NO|||PhaseMask|
 |"event_chance":creature_ai_scripts#event_chance||NO|||Chance. Using a value of 0 in this field will make the event never occur. Values are from 0 to 100.|
-|"event_flags":creature_ai_scripts#EventFlags||NO|||Every event also has a `chance` field that controls the chance of that event actually occurring. Using a value of 0 in this field will make the event never occur. Values are from 0 to 100.|
+|"event_flags":creature_ai_scripts#eventflags||NO|||Every event also has a `chance` field that controls the chance of that event actually occurring. Using a value of 0 in this field will make the event never occur. Values are from 0 to 100.|
 |"event_param":creature_ai_scripts#event_param||NO|||event_param1-3 for Event|
 |"action_type":creature_ai_scripts#action_type||NO|||action_type1-3 for Event|
 |"action_param":creature_ai_scripts#action_param||NO|||action_param1-3 for action_type1-3|
