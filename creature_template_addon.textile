@@ -57,9 +57,12 @@ h4. bytes1_flags (UNIT_FIELD_BYTES_1,3)
 |0x10|UNIT_BYTE1_UNK|Makes NPC Kneel|
 |0xFF|UNIT_BYTE1_FLAG_ALL|all|
 
-131072   = no name  & health bar visible with plate mode on OOC
-1179648  = no name & health bar visible with plate mode on OOC & IC
-33554432 = related to stealth and not visible health bar with plate mode on
+|Flag|Description|
+|65536|?|
+|131072|no name & health bar visible with plate mode on OOC|
+|1048576|no name & health bar visible with plate mode on IC|
+|1179648|no name & health bar visible with plate mode on OOC & IC|
+|33554432|no name & health bar visible with plate mode on while stealthed|
 
 h4. b2_0_sheath (UNIT_FIELD_BYTES_2,0)
 
