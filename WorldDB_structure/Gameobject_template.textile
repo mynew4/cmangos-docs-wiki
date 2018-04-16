@@ -167,7 +167,7 @@ The content of the data fields depends on the "gameobject type":#type
 ** data3: consumable (State: Boolean flag)
 ** data4: minRestock (Min successful loot attempts for Mining, Herbalism etc)
 ** data5: maxRestock (Max successful loot attempts for Mining, Herbalism etc)
-** data6: lootedEvent (unknown ID)
+** data6: lootedEvent ("dbscripts_on_event":DBScripts)
 ** data7: linkedTrap ("gameobject&#95;template.entry":gameobject_template#entry (Spawned GO type 6))
 ** data8: questID ("quest&#95;template.entry":quest_template#entry of completed quest)
 ** data9: level (minimal level required to open this gameobject)
