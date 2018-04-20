@@ -352,7 +352,7 @@ Object type not used
 ** data17: maxTime (in seconds)
 ** data18: large? (Boolean flag)
 
-* *GAMEOBJECT&#95;TYPE&#95;AURAGENERATOR = 30*
+* *GAMEOBJECT&#95;TYPE&#95;AURA_GENERATOR = 30*
 ** data0: startOpen (Boolean flag)
 ** data1: radius (Distance)
 ** data2: auraID1 (Spell Id from spell.dbc)
