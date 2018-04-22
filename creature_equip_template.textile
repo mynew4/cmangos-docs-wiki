@@ -22,6 +22,8 @@ h4. equipentry1
 
 This is the item of the equipment used in right hand (Mainhand) from "`item_template`.`entry`":https://github.com/cmangos/issues/wiki/item_template#entry.
 
+Shields cant be set as equipentry1.
+
 h4. equipentry2
 
 This is the item of the equipment used in left hand (Offhand) from "`item_template`.`entry`":https://github.com/cmangos/issues/wiki/item_template#entry.
