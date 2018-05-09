@@ -18,7 +18,7 @@ h3. Structure
 |"mount":creature_template_addon#mount|mediumint(8) unsigned|NO||0||
 |"bytes1":creature_template_addon#bytes1|int(10) unsigned|NO||0||
 |"b2_0_sheath":creature_template_addon#b2_0_sheath|tinyint(3) unsigned|NO||0||
-|"b2_1_pvp_state":creature_template_addon#b2_1_pvp_state|tinyint(3) unsigned|NO||0||
+|"b2_1_flags":creature_template_addon#b2_1_flags|tinyint(3) unsigned|NO||0||
 |"emote":creature_template_addon#emote|mediumint(8) unsigned|NO||0||
 |"moveflags":creature_template_addon#moveflags|int(10) unsigned|NO||0||
 |"auras":creature_template_addon#auras|text|YES||||
@@ -33,7 +33,9 @@ h4. mount
 
 The model ID of the mount to be used to make the creature appear mounted. The value here overrides the value for the creature's unit field UNIT_FIELD_MOUNTDISPLAYID. List of known values and what their visual effects on the creature
 
-h4. bytes1 (UNIT_FIELD_BYTES_1,0)
+h4. bytes1
+
+(UNIT_FIELD_BYTES_1,0)
 
 |Bit|Name|Comment|
 |0|UNIT_STAND_STATE_STAND|normal behavior|
@@ -47,28 +49,36 @@ h4. bytes1 (UNIT_FIELD_BYTES_1,0)
 |8|UNIT_STAND_STATE_KNEEL|kneel|
 |9|UNIT_STAND_STATE_CUSTOM|Depends on model animation. Submerge, freeze, hide, hibernate, rest|
 
-h4. bytes1_flags (UNIT_FIELD_BYTES_1,3)
+h4. bytes1_flags
+
+(UNIT_FIELD_BYTES_1,3) used instead of bytes1 in some cases.
 
 |Flag|Name|Comment|
 |0x01|UNIT_BYTE1_FLAG_ALWAYS_STAND|always stand state|
 |0x02|UNIT_BYTE1_FLAG_FLY_ANIM|Creature that can fly and are not on the ground appear to have this flag. If they are on the ground, flag is not present.|
 |0x04|UNIT_BYTE1_FLAG_UNTRACKABLE|untrackable|
-|0x08|unknown|unknown|
-|0x10|UNIT_BYTE1_UNK|Makes NPC Kneel|
+|65536|?|?|
+|131072|?|no name & health bar visible with plate mode on (name only when targeted)|
+|1048576|?|?|
+|33554432|?|linked to stealth (name not visible in stealth)|
 |0xFF|UNIT_BYTE1_FLAG_ALL|all|
 
-|Flag|Description|
-|65536|?|
-|131072|no name & health bar visible with plate mode on (name only when targeted)|
-|1048576|?|
-|33554432|linked to stealth|
+h4. b2_0_sheath
 
-h4. b2_0_sheath (UNIT_FIELD_BYTES_2,0)
+(UNIT_FIELD_BYTES_2,0)
 
 |Bit|Name|Comment|
 |0|SHEATH_STATE_UNARMED|all weapons sheathed|
 |1|SHEATH_STATE_MELEE|melee weapon(s) unsheathed|
 |2|SHEATH_STATE_RANGED|ranged weapon(s) unsheathed|
+
+h4. b2_1_flags
+
+(UNIT_FIELD_BYTES_2,1)
+
+|Bit|Name|Comment|
+|16|UNIT_BYTE2_CREATURE_DEBUFF_LIMIT|?|
+|40|UNIT_BYTE2_PLAYER_CONTROLLED_DEBUFF_LIMIT|?|
 
 h4. emote
 
