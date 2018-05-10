@@ -57,9 +57,9 @@ h4. bytes1_flags
 |0x01|UNIT_BYTE1_FLAG_ALWAYS_STAND|always stand state|
 |0x02|UNIT_BYTE1_FLAG_FLY_ANIM|Creature that can fly and are not on the ground appear to have this flag. If they are on the ground, flag is not present.|
 |0x04|UNIT_BYTE1_FLAG_UNTRACKABLE|untrackable|
-|65536|?|?|
+|65536|?|Linked to Defensive Stance?|
 |131072|?|no name & health bar visible with plate mode on (name only when targeted)|
-|1048576|?|?|
+|1048576|?|Linked to Defensive Stance?|
 |33554432|?|linked to stealth (name not visible in stealth)|
 |0xFF|UNIT_BYTE1_FLAG_ALL|all|
 
