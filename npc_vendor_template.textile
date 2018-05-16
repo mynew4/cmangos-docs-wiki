@@ -2,24 +2,26 @@ Back to "world database":mangosdb_struct list of tables.
 
 h2. The `npc_vendor(_template)` table
 
-holds the vendor data for all NPCs that sell items by "`creature`.`guid`":https://github.com/cmangos/issues/wiki/Creature#guid or "`creature_template`.`entry`":https://github.com/cmangos/issues/wiki/Creature_template#entry.
+holds the vendor data for all NPCs that sell items by "`creature_template`.`entry`":https://github.com/cmangos/issues/wiki/Creature_template#entry or "creature_template.VendorTemplateId":creature_template#VendorTemplateId.
+
 The gold price for each item is in its item template as "BuyPrice":item_template#BuyPrice.
 
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid/entry":npc_vendor(_template)#guid/entry|int(10) unsigned|NO|PRI|0||
-|"item":npc_vendor(_template)#item|int(10) unsigned|NO|PRI|0||
-|"maxcount":npc_vendor(_template)#maxcount|int(10) unsigned|NO||0||
-|"incrtime":npc_vendor(_template)#incrtime|int(10) unsigned|NO||0||
-|"ExtendedCost":npc_vendor(_template)#extendedcost|mediumint(8) unsigned|NO||0||
+|"entry/VendorTemplateId":npc_vendor_template#guid/entry|int(10) unsigned|NO|PRI|0||
+|"item":npc_vendor_template#item|int(10) unsigned|NO|PRI|0||
+|"maxcount":npc_vendor_template#maxcount|int(10) unsigned|NO||0||
+|"incrtime":npc_vendor_template#incrtime|int(10) unsigned|NO||0||
+|"ExtendedCost":npc_vendor_template#extendedcost|mediumint(8) unsigned|NO||0||
 
 h3. Description of the fields
 
-h4. guid/entry
+h4. entry/VendorTemplateId
 
-The "`creature`.`guid`":https://github.com/cmangos/issues/wiki/Creature#guid or "`creature_template`.`entry`":https://github.com/cmangos/issues/wiki/Creature_template#entry of the creature. 
-In case of `npc_vendor_template` it's the entry of a vending_list, which is applied in "creature_template.VendorTemplateId":creature_template#VendorTemplateId
+For npc_vendor it's the "`creature_template`.`entry`":https://github.com/cmangos/issues/wiki/Creature_template#entry of the creature
+
+For npc_vendor_template it's the "creature_template.VendorTemplateId":creature_template#VendorTemplateId of the vending_list which is sold by this entry.
 
 h4. item
 
