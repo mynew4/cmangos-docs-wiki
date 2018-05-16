@@ -8,8 +8,8 @@ holds the ScriptNames of the world maps 0, 1, 530, 571.
 
 | Field| Type| Null| Key| Default| Extra|
 | ---|---| ---|--- |--- |--- |
-|[map](https://github.com/cmangos/issues/wiki/Map.dbc)|smallint(5) unsigned|NO|PRI|||
-|ScriptName|varchar|NO|PRI|||
+|[map](world_template#map)|smallint(5) unsigned|NO|PRI|||
+|[ScriptName](world_template#ScriptName)|varchar|NO|PRI|||
 
 #### map
 
