@@ -4,6 +4,8 @@ Back to [world database](https://github.com/cmangos/issues/wiki/Mangosdb_struct)
 
 holds data on gameobjects that are pooled by their [`gameobject_template`.`entry`](gameobject_template#entry).
 
+All gameobjects have to be located on the same [`instance_template`.`map`](https://github.com/cmangos/issues/wiki/instance_template#map) / [`world_template``map`](https://github.com/cmangos/issues/wiki/world_template#map).
+
 ### Structure
 
 | Field | Type | Null | Key | Default |
