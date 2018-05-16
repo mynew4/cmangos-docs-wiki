@@ -4,6 +4,8 @@ Back to [world database](https://github.com/cmangos/issues/wiki/Mangosdb_struct)
 
 holds data on creatures that are pooled by their [`creature_template`.`entry`](Creature_template#entry).
 
+All creatures have to be located on the same [`instance_template`.`map`](https://github.com/cmangos/issues/wiki/instance_template#map) / [`world_template``map`](https://github.com/cmangos/issues/wiki/world_template#map).
+
 ### Structure
 
 | Field | Type | Null | Key | Default |
@@ -17,7 +19,7 @@ holds data on creatures that are pooled by their [`creature_template`.`entry`](C
 
 #### id
 
-[`creature_template`.`entry`](Creature_template#entry) of the creatures
+[`creature_template`.`entry`](Creature_template#entry) of the creature
 
 #### pool_entry
 
