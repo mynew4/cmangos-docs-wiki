@@ -129,10 +129,10 @@ h3. This is the list of tables in the regular 'mangos' database
 |"npc_spellclick_spells":https://github.com/cmangos/issues/wiki/npc_spellclick_spells
 (Reloadable)|holds information about spells to be casted upon receiving CMSG_SPELLCLICK.|
 |"npc_text":https://github.com/cmangos/issues/wiki/npc_text|contains the texts that are used for gossip.|
-|"npc_trainer":https://github.com/cmangos/issues/wiki/npc_trainer_template|holds all the information on training NPC by GUID. All spells listed in the table are learning spells.|
-|"npc_trainer_template":https://github.com/cmangos/issues/wiki/npc_trainer_template|holds all the information on training NPC by ENTRY. All spells listed in the table are learning spells.|
-|"npc_vendor":https://github.com/cmangos/issues/wiki/npc_vendor(_template)|holds the vendor data for all NPCs that sell items by GUID.|
-|"npc_vendor_template":https://github.com/cmangos/issues/wiki/npc_vendor(_template)|holds the vendor data for all NPCs that sell items by ENTRY.|
+|"npc_trainer":https://github.com/cmangos/issues/wiki/npc_trainer_template|holds the spell data for all trainers by ENTRY.|
+|"npc_trainer_template":https://github.com/cmangos/issues/wiki/npc_trainer_template|holds the spell data for all trainers by TrainerTemplateId.|
+|"npc_vendor":https://github.com/cmangos/issues/wiki/npc_vendor_template|holds the vendor data for all NPCs that sell items by ENTRY.|
+|"npc_vendor_template":https://github.com/cmangos/issues/wiki/npc_vendor_template|holds the vendor data for all NPCs that sell items by VendorTemplateId.|
 |"page_text":https://github.com/cmangos/issues/wiki/page_text|holds the text for letter items.|
 |"pet_familystats":https://github.com/cmangos/issues/wiki/pet_familystats|?|
 |"pet_levelstats":https://github.com/cmangos/issues/wiki/pet_levelstats|holds information on individual pet base stats based on level.|
