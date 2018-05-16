@@ -1,23 +1,25 @@
 Back to "world database":mangosdb_struct list of tables.
 
-h2. The `spell&#95;proc&#95;event` table
+h2. The `spell_proc_event` table
 
 holds information on how certain spells activate, which proc other spells.
-All spells in this table must have **Aura Id 42 (SPELL_AURA_PROC_TRIGGER_SPELL)** as one of its **Effects**. 
+
+All spells in this table must have **Aura Id 42 (SPELL_AURA_PROC_TRIGGER_SPELL)** as one of its **Effects**.
+ 
 Any entries in this table will overwrite the existing proc settings for this "spell_template#id":https://github.com/cmangos/issues/wiki/spell_template.
 
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":Spell_proc_event#entry|smallint(6) unsigned|NO|PRI|0||
-|"SchoolMask":Spell_proc_event#schoolmask|tinyint(4)|NO||0||
-|"SpellFamilyName":Spell_proc_event#spellfamilyname|smallint(6) unsigned|NO||0||
-|"SpellFamilyMask":Spell_proc_event#spellfamilymask|bigint(40) unsigned|NO||0|Different Setup through Expansions|
-|"procFlags":Spell_proc_event#procflags|int(11) unsigned|NO||0||
-|"procEx":Spell_proc_event#procex|int(11) unsigned|NO||0||
-|"ppmRate":Spell_proc_event#ppmrate|float|NO||0||
-|"CustomChance":Spell_proc_event#customchance|float|NO||0||
-|"Cooldown":Spell_proc_event#cooldown|float|NO||0||
+|"entry":spell_proc_event#entry|smallint(6) unsigned|NO|PRI|0||
+|"SchoolMask":spell_proc_event#schoolmask|tinyint(4)|NO||0||
+|"SpellFamilyName":spell_proc_event#spellfamilyname|smallint(6) unsigned|NO||0||
+|"SpellFamilyMask":spell_proc_event#spellfamilymask|bigint(40) unsigned|NO||0|Different Setup through Expansions|
+|"procFlags":spell_proc_event#procflags|int(11) unsigned|NO||0||
+|"procEx":spell_proc_event#procex|int(11) unsigned|NO||0||
+|"ppmRate":spell_proc_event#ppmrate|float|NO||0||
+|"CustomChance":spell_proc_event#customchance|float|NO||0||
+|"Cooldown":spell_proc_event#cooldown|float|NO||0||
 
 h3. Description of the fields
 
