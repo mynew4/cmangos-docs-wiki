@@ -9,10 +9,10 @@ These spell effects require a specific target in either alive or dead state (for
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":Spell_script_target#entry|int(6) unsigned|NO|PRI|||
-|"type":Spell_script_target#type|int(8) unsigned|NO|PRI|0||
-|"targetEntry":Spell_script_target#targetentry|int(11) unsigned|NO|PRI|0||
-|"inverseEffectMask":Spell_script_target#inverseeffectmask|mediumint(8) unsigned|NO||0||
+|"entry":spell_script_target#entry|int(6) unsigned|NO|PRI|||
+|"type":spell_script_target#type|int(8) unsigned|NO|PRI|0||
+|"targetEntry":spell_script_target#targetentry|int(11) unsigned|NO|PRI|0||
+|"inverseEffectMask":spell_script_target#inverseeffectmask|mediumint(8) unsigned|NO||0||
 
 h3. Description of the fields
 
