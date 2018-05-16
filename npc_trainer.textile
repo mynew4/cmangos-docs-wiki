@@ -1,0 +1,1 @@
+# REDIRECT "npc_trainer_template":https://github.com/cmangos/issues/wiki/npc_trainer_template
