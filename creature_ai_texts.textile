@@ -1,11 +1,10 @@
 Back to "creature_ai_scripts":creature_ai_scripts tables.
 
-h2. The `creature&#95;ai&#95;texts` table
+h2. The `creature_ai_texts` table
 
 This table holds all the texts used within the eventai (ACID) scripts. This table handles the actual text, display type (say/yell/emote) and corresponding sounds or emote (if any).
 
 h3. Structure
-
 
 |Field|Type|Attributes|Can be null|Default|Comments|
 |"entry":Creature_ai_texts#entry|int(11)|signed|NO|0|Text Entry|
@@ -74,6 +73,26 @@ This is the method the text is displayed.
 h4. language
 
 This is the ingame language of the text. Languages are from "Languages.dbc.":Languages.dbc.
+
+|_. ID|_. Name|_. Description|
+|0|UNIVERSAL|Text in this language is understood by ALL Races.|
+|1|ORCISH|Text in this language is understood ONLY by Horde Races.|
+|2|DARNASSIAN|Text in this language is understood ONLY by the Night Elf Race.|
+|3|TAURAHE|Text in this language is understood ONLY by the Tauren Race.|
+|6|DWARVISH|Text in this language is understood ONLY by the Dwarf Race.|
+|7|COMMON|Text in this language is understood ONLY by Alliance Races.|
+|8|DEMONIC|Text in this language is understood ONLY by the Demon Race (Not Implemented).|
+|9|TITAN|This language was used by Sargeras to speak with other Titians (Not Implemented).|
+|10|THALASSIAN|Text in this language is understood ONLY by the Blood Elf Race.|
+|11|DRACONIC|Text in this language is understood ONLY by the Dragon Race.|
+|12|KALIMAG|Text will display as Kalimag (not readable by players, language of all elementals)|
+|13|GNOMISH|Text in this language is understood ONLY by the Gnome Race.|
+|14|TROLL|Text in this language is understood ONLY by the Troll Race.|
+|33|GUTTERSPEAK|Text in this language is understood ONLY by the Undead Race.|
+|35|DRAENEI|Text in this language is understood ONLY by the Draenai Race.|
+|36|ZOMBIE|(not currently used?)|
+|37|GNOMISH BINARY|Binary language used by Alliance when drinking Binary Brew|
+|38|GOBLIN BINARY|Binary language used by Horce when drinking Binary Brew|                                                                                                    
 
 h4. emote
 
