@@ -215,6 +215,8 @@ h3. This is the list of tables in the regular 'mangos' database
 |"spell_template":https://github.com/cmangos/issues/wiki/spell_template (Core)|contains the description of spells.|
 |"spell_threat":https://github.com/cmangos/issues/wiki/spell_threat
 (Reloadable)|holds threat values on all spells that should either give or take away threat.|
+|"taxi_shortcuts":https://github.com/cmangos/issues/wiki/taxi_shortcuts
+(Reloadable)|holds information about shortcuts for each individual taxi flight.|
 |"transports":https://github.com/cmangos/issues/wiki/transports|contains all type 15 transports (Boats and Zeppelins).|
 |"vehicle_accessory":https://github.com/cmangos/issues/wiki/vehicle_accessory|?|
 |"world_template":https://github.com/cmangos/issues/wiki/world_template|holds the ScriptNames of the world maps 0, 1, 530, 571|
