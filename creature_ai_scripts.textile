@@ -1,3 +1,5 @@
+Back to "world database":mangosdb_struct list of tables.
+
 h3. EventAI Tables
 
 "creature_ai_scripts":creature_ai_scripts for EventAI (ACID) scripted NPCs
@@ -152,7 +154,7 @@ h4. action_type
 |54|ACTION_T_TEXT_NEW|-TextId|Target|TemplateId|Displays text, either static one or when (Param3) != 0, then random one chosen from dbscript_random_templates|
 |55|ACTION_T_ATTACK_START|Target|NU|NU|Starts attacking Target|
 |56|ACTION_T_DESPAWN_GUARDIANS|"CreatureEntry":creature_template#entry|NU|NU|Despawns guardian with specified entry, or if 0 despawns all guardians|
-|57|NOT_IMPLEMENTED_ACTION_T_SET_RANGED_MODE|Boolean|chaseDistance|RangeModeType|Enable ranged mode (0 = Off 1 = On, distance to chase at, "RangeModeType":creature_ai_scripts#RangeModeType|
+|57|NOT_IMPLEMENTED_ACTION_T_SET_RANGED_MODE|"RangeModeType":creature_ai_scripts#RangeModeType|chaseDistance|NU|Enable "RangeModeType":creature_ai_scripts#RangeModeType, distance to chase at, NU|
 
 h4. EventFlags
 
