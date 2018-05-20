@@ -177,7 +177,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"reputation_spillover_template":https://github.com/cmangos/issues/wiki/reputation_spillover_template|holds information about the "Reputation Bleed Over":http://wowwiki.wikia.com/wiki/Exalted -Effect|
 |"reserved_name":https://github.com/cmangos/issues/wiki/reserved_name
 (Reloadable)|serves as a simple list of names that players (gmlevel == 0) cannot use when naming their characters.|
-|"script_texts":https://github.com/cmangos/issues/wiki/script_texts|?|
+|"script_texts":https://github.com/cmangos/issues/wiki/script_texts|holds all the texts used by core scripted creatures/entities (ScriptDev)|
 |"script_waypoint":https://github.com/cmangos/issues/wiki/script_waypoint|?|
 |"scripted_areatrigger":https://github.com/cmangos/issues/wiki/scripted_areatrigger
 (Core)|This table links areatriggers to C++ scripts.|
