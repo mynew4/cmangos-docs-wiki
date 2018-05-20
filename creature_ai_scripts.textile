@@ -128,7 +128,7 @@ h4. action_type
 |28|ACTION_T_REMOVEAURASFROMSPELL|"target":creature_ai_scripts#target|"spellId":spell_template#Id|NU|Removes all auras from a "spellId":spell_template#Id from the target|
 |29|ACTION_T_RANGED_MOVEMENT|Distance|Angle|NU|creature sets ranged movement generator keeping the creature at a distance. Note that specifying zero angle and distance will make it just melee instead|
 |30|ACTION_T_RANDOM_PHASE|Phase 1|Phase 2|Phase 3|Randomly chooses a phase from the list of three phases|
-|31|ACTION_T_RANDOM_PHASE_RANGE|Min Phase|Max Phase|NU|Chooses a random phase in the range specified. This number must be an integer between 0 and 31 inclusive|
+|31|ACTION_T_RANDOM_PHASE_RANGE|Min Phase|Max Phase + 1|NU|Chooses a random phase in the range specified. This number must be an integer between 0 and 31 inclusive|
 |32|ACTION_T_SUMMON_ID|"CreatureEntry":creature_template#entry|"target":creature_ai_scripts#target|Summon ID|Summons a creature using the data specified in the separate "creature_ai_summons":creature_ai_summons table|
 |33|ACTION_T_KILLED_MONSTER|"CreatureEntry":creature_template#entry|"target":creature_ai_scripts#target|NU|Simulates a kill for a "CreatureEntry":creature_template#entry given for the player from the "target":creature_ai_scripts#target|
 |34|ACTION_T_SET_INST_DATA|Field|32 bit Value|NU|Sets data for the instance. Note that this will only work when the creature is inside an instantiable zone that has a valid script (ScriptedInstance) assigned.|
