@@ -167,9 +167,9 @@ h4. EventFlags
 |32|EFLAG_RANDOM_ACTION|Random use action1, 2, or 3|
 |64|EFLAG_RESERVED_6|Reserved|
 |128|EFLAG_DEBUG_ONLY|Event only occurs in debug build|
-|256|EFLAG_RANGED_MODE_ONLY|Event only occurs in ranged mode (not yet implemented)|
-|512|EFLAG_MELEE_MODE_ONLY|Event only occurs in melee mode (not yet implemented)|
-|1024|EFLAG_COMBAT_ACTION|Only one per cycle (not yet implemented)|
+|256|NOT_IMPLEMENTED_EFLAG_RANGED_MODE_ONLY|Event only occurs in ranged mode (not yet implemented)|
+|512|NOT_IMPLEMENTED_EFLAG_MELEE_MODE_ONLY|Event only occurs in melee mode (not yet implemented)|
+|1024|NOT_IMPLEMENTED_EFLAG_COMBAT_ACTION|Only one per cycle (not yet implemented)|
 
 h4. Target
 
@@ -189,6 +189,7 @@ h4. Target
 |12|TARGET_T_EVENT_SPECIFIC|Filled by specific event|
 |13|TARGET_T_PLAYER_INVOKER|Player who initiated hostile contact with this npc|
 |14|TARGET_T_PLAYER_TAPPED|Player who currently holds to score the kill credit from the npc|
+|15|NOT_IMPLEMENTED_TARGET_T_NONE|Default spell target - sets nullptr which should be most common spell fill|
 
 h4. castFlags
 
@@ -201,8 +202,9 @@ h4. castFlags
 |32|CAST_AURA_NOT_PRESENT|Only casts the spell on the target if the target does not have the aura from that spell on itself already.|
 |64|CAST_IGNORE_UNSELECTABLE_TARGET|Can target UNIT_FLAG_NOT_SELECTABLE - Needed in some scripts|
 |128|CAST_SWITCH_CASTER_TARGET|Switches target and caster for spell cast|
-|256|CAST_MAIN_SPELL|Marks main spell for AI Type = Action 57 ACTION_T_SET_RANGED_MODE|
-|512|CAST_PLAYER_ONLY|Selects only player targets - substitution for EAI not having more params|
+|256|NOT_IMPLEMENTED_CAST_MAIN_SPELL|Marks main spell for AI Type = Action 57 ACTION_T_SET_RANGED_MODE|
+|512|NOT_IMPLEMENTED_CAST_PLAYER_ONLY|Selects only player targets - substitution for EAI not having more params|
+|1024|NOT_IMPLEMENTED_CAST_DISTANCE_YOURSELF|If spell with this cast flag hits main aggro target, caster distances himself - EAI only|
 
 h4. schoolMask
 
