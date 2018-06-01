@@ -55,30 +55,29 @@ This table format is used for different tables to control possible scripts activ
     ** For gossip_menu_option when gossip holder is creature - Source: gossip holder (creature); Target: player; Script execution unique by source.
     ** For gossip_menu_option when gossip holder is gameobject - Source: player; Target: gossip holder (gameobject); Script execution unique by target.
 
-NOTE: An entry in this table may have more than one row as a script may do more than just one action. Also each action the script may make can have a separate delay attached to it. In that case, the core will activate the appropriate action after the correct delay.
+NOTE: An entry in this table may have more than one row as a script may do more than just one action. Also each action the script may make can have a separate "delay":dbscripts#delay attached to it. In that case, the core will activate the appropriate action after the correct "delay":dbscripts#delay.
 
 h3. Structure
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"id":DBScripts#id|int(8) unsigned|NO||0||
-|"delay":DBScripts#delay|int(10) unsigned|NO||0||
-|"command":DBScripts#command|mediumint(8) unsigned|NO||0||
-|"datalong":DBScripts#otherfields|mediumint(8) unsigned|NO||0||
-|"datalong2":DBScripts#otherfields|int(10) unsigned|NO||0||
-|"datalong3":DBScripts#otherfields|int(11) unsigned|NO||0||
-|"buddy_entry":DBScripts#buddy_entry|int(10) unsigned|NO||0||
-|"search_radius":DBScripts#search_radius|int(10) unsigned|NO||0||
-|"data_flags":DBScripts#data_flags|tinyint(3) unsigned|NO||0||
-|"dataint":DBScripts#otherfields|int(11)|NO||0||
-|"dataint2":DBScripts#otherfields|int(11)|NO||0||
-|"dataint3":DBScripts#otherfields|int(11)|NO||0||
-|"dataint4":DBScripts#otherfields|int(11)|NO||0||
-|"x":DBScripts#otherfields|float|NO||0||
-|"y":DBScripts#otherfields|float|NO||0||
-|"z":DBScripts#otherfields|float|NO||0||
-|"o":DBScripts#otherfields|float|NO||0||
-|"comments":DBScripts#otherfields|VARCHAR(255)|NO||NULL||
-
+|"id":dbscripts#id|int(8) unsigned|NO||0||
+|"delay":dbscripts#delay|int(10) unsigned|NO||0||
+|"command":dbscripts#command|mediumint(8) unsigned|NO||0||
+|"datalong":dbscripts#otherfields|mediumint(8) unsigned|NO||0||
+|"datalong2":dbscripts#otherfields|int(10) unsigned|NO||0||
+|"datalong3":dbscripts#otherfields|int(11) unsigned|NO||0||
+|"buddy_entry":dbscripts#buddy_entry|int(10) unsigned|NO||0||
+|"search_radius":dbscripts#search_radius|int(10) unsigned|NO||0||
+|"data_flags":dbscripts#data_flags|tinyint(3) unsigned|NO||0||
+|"dataint":dbscripts#otherfields|int(11)|NO||0||
+|"dataint2":dbscripts#otherfields|int(11)|NO||0||
+|"dataint3":dbscripts#otherfields|int(11)|NO||0||
+|"dataint4":dbscripts#otherfields|int(11)|NO||0||
+|"x":dbscripts#otherfields|float|NO||0||
+|"y":dbscripts#otherfields|float|NO||0||
+|"z":dbscripts#otherfields|float|NO||0||
+|"o":dbscripts#otherfields|float|NO||0||
+|"comments":dbscripts#otherfields|VARCHAR(255)|NO||NULL||
 
 h3. Description of the fields
 
@@ -101,110 +100,111 @@ h4. delay
 Delay in seconds before this current step of the script activates. 0 = instant.
 
 NOTE: Delay is Cumulative From Script to Script with same ID.
-Example: Script 1 Has 5 seconds delay and then if you want script 2 to trigger 3 seconds later you would use delay value 8 for script 2 in the sequence.
+Example: Script 1 Has 5 seconds delay and then if you want script 2 to trigger 3 seconds later you would use delay value 8 (5+3) for script 2 in the sequence.
 
 h4. command
 
-The type of action performed by the script after "delay":#delay seconds have passed. The value of this field affects what other fields also need to be set.
+The type of action performed by the script after "delay":dbscripts#delay seconds have passed. The value of this field affects what other fields also need to be set.
 
-The following commands can be used:
+The following commands can be used (enum ScriptCommand):
 
 |_. Command|_. Name|_. Description|
-|0|TALK|Creature say/whisper/yell/textemote.|
-|1|EMOTE|Plays emote on a player/creature.|
-|2|FIELD_SET|Change the value at an index for the player.|
-|3|MOVE_TO|Relocate creature to a destination|
-|4|FLAG_SET|Turns on bits on a flag field at an index for the player.|
-|5|FLAG_REMOVE|Turns off bits on a flag field at an index for the player.|
-|6|TELEPORT_TO|Teleports the player to a location.|
-|7|QUEST_EXPLORED|Satisfies the explore requirement for a quest.|
-|8|KILL_CREDIT|Satisfies the kill credit requirement for a quest.|
-|9|RESPAWN_GAMEOBJECT|Spawns a despawned gameobject.|
-|10|TEMP_SUMMON_CREATURE|Temporarily summon a creature.|
-|11|OPEN_DOOR|Opens a door gameobject (type == 0).|
-|12|CLOSE_DOOR|Closes a door gameobject (type == 0).|
-|13|ACTIVATE_OBJECT|Activate (use) a gameobject.|
-|14|REMOVE_AURA|Removes an aura due to a spell.|
-|15|CAST_SPELL|Casts a spell.|
-|16|PLAY_SOUND|Plays a sound.|
-|17|CREATE_ITEM|Creates an item.|
-|18|DESPAWN_SELF|Despawns a creature with some delay.|
-|19|PLAY_MOVIE|Plays a movie to the target player.|
-|20|MOVEMENT|Change the movement type of a creature (idle, random, waypoint).|
-|21|SET_ACTIVEOBJECT|Set a creature as active object.|
-|22|SET_FACTION|Changes the faction of a creature.|
-|23|MORPH_TO_ENTRY_OR_MODEL|Morphs a creature go a given model.|
-|24|MOUNT_TO_ENTRY_OR_MODEL|Mounts or dismounts a creature to mount entry or model.|
-|25|SET_RUN|Makes a creature start or stop running.|
-|26|ATTACK_START|Makes a creature attack things within a radius.|
-|27|GO_LOCK_STATE|Change the GO lock or interact flags.|
-|28|STAND_STATE|Change the stand state of a creature.|
-|29|MODIFY_NPC_FLAG|Change NPC flags of a creature.|
-|30|SEND_TAXI_PATH|Sends a player on a give taxi path.|
-|31|TERMINATE_SCRIPT|Stop script execution if a given creature entry meets conditions.|
-|32|PAUSE_WAYPOINTS|Pause or unpause waypoint movement.|
-|33|XP_USER|Enable or disable experience gain for a player.|
-|34|TERMINATE_CONDITION|Stop script execution when a give condition is met.|
-|35|SEND_AI_EVENT|Send a give AI event for EventAI around the source with a given radius.|
-|36|SET_FACING|Turn resulting source to resulting target.|
-|37|MOVE_DYNAMIC|Move resulting source to a random point around resulting target or to resulting target.|
-|38|SEND_MAIL|Send mail from resulting source to resulting target.|
-|39|SET_FLY|Makes a creature start or stop flying.|
-|40|DESPAWN_OBJECT|Despawns a gameobject.|
-|41|RESPAWN_CREATURE|Respawns a creature.|
-|42|SET_EQUIPMENT_SLOTS|Change equipment slots of the resulting source.|
-|43|RESET_OBJECT|Reset a gameobject.|
-|44|UPDATE_TEMPLATE|Update creature entry.|
+|0|SCRIPT_COMMAND_TALK|Creature say/whisper/yell/textemote.|
+|1|SCRIPT_COMMAND_EMOTE|Plays emote on a player/creature.|
+|2|SCRIPT_COMMAND_FIELD_SET|Change the value at an index for the player.|
+|3|SCRIPT_COMMAND_MOVE_TO|Relocate creature to a destination|
+|4|SCRIPT_COMMAND_FLAG_SET|Turns on bits on a flag field at an index for the player.|
+|5|SCRIPT_COMMAND_FLAG_REMOVE|Turns off bits on a flag field at an index for the player.|
+|6|SCRIPT_COMMAND_TELEPORT_TO|Teleports the player to a location.|
+|7|SCRIPT_COMMAND_QUEST_EXPLORED|Satisfies the explore requirement for a quest.|
+|8|SCRIPT_COMMAND_KILL_CREDIT|Satisfies the kill credit requirement for a quest.|
+|9|SCRIPT_COMMAND_RESPAWN_GAMEOBJECT|Spawns a despawned gameobject.|
+|10|SCRIPT_COMMAND_TEMP_SPAWN_CREATURE|Temporarily summon a creature.|
+|11|SCRIPT_COMMAND_OPEN_DOOR|Opens a door gameobject (type == 0).|
+|12|SCRIPT_COMMAND_CLOSE_DOOR|Closes a door gameobject (type == 0).|
+|13|SCRIPT_COMMAND_ACTIVATE_OBJECT|Activate (use) a gameobject.|
+|14|SCRIPT_COMMAND_REMOVE_AURA|Removes an aura due to a spell.|
+|15|SCRIPT_COMMAND_CAST_SPELL|Casts a spell.|
+|16|SCRIPT_COMMAND_PLAY_SOUND|Plays a sound.|
+|17|SCRIPT_COMMAND_CREATE_ITEM|Creates an item.|
+|18|SCRIPT_COMMAND_DESPAWN_SELF|Despawns a creature with some delay.|
+|19|SCRIPT_COMMAND_PLAY_MOVIE|Plays a movie to the target player.|
+|20|SCRIPT_COMMAND_MOVEMENT|Change the movement type of a creature (idle, random, waypoint).|
+|21|SCRIPT_COMMAND_SET_ACTIVEOBJECT|Set a creature as active object.|
+|22|SCRIPT_COMMAND_SET_FACTION|Changes the faction of a creature.|
+|23|SCRIPT_COMMAND_MORPH_TO_ENTRY_OR_MODEL|Morphs a creature go a given model.|
+|24|SCRIPT_COMMAND_MOUNT_TO_ENTRY_OR_MODEL|Mounts or dismounts a creature to mount entry or model.|
+|25|SCRIPT_COMMAND_SET_RUN|Makes a creature start or stop running.|
+|26|SCRIPT_COMMAND_ATTACK_START|Makes a creature attack things within a radius.|
+|27|SCRIPT_COMMAND_GO_LOCK_STATE|Change the GO lock or interact flags.|
+|28|SCRIPT_COMMAND_STAND_STATE|Change the stand state of a creature.|
+|29|SCRIPT_COMMAND_MODIFY_NPC_FLAGS|Change NPC flags of a creature.|
+|30|SCRIPT_COMMAND_SEND_TAXI_PATH|Sends a player on a give taxi path.|
+|31|SCRIPT_COMMAND_TERMINATE_SCRIPT|Stop script execution if a given creature entry meets conditions.|
+|32|SCRIPT_COMMAND_PAUSE_WAYPOINTS|Pause or unpause waypoint movement.|
+|33|SCRIPT_COMMAND_RESERVED_1|Enable or disable experience gain for a player.|
+|34|SCRIPT_COMMAND_TERMINATE_COND|Stop script execution when a give condition is met.|
+|35|SCRIPT_COMMAND_SEND_AI_EVENT|Send a give AI event for EventAI around the source with a given radius.|
+|36|SCRIPT_COMMAND_SET_FACING|Turn resulting source to resulting target.|
+|37|SCRIPT_COMMAND_MOVE_DYNAMIC|Move resulting source to a random point around resulting target or to resulting target.|
+|38|SCRIPT_COMMAND_SEND_MAIL|Send mail from resulting source to resulting target.|
+|39|SCRIPT_COMMAND_SET_FLY|Makes a creature start or stop flying.|
+|40|SCRIPT_COMMAND_DESPAWN_GO|Despawns a gameobject.|
+|41|SCRIPT_COMMAND_RESPAWN|Respawns a creature.|
+|42|SCRIPT_COMMAND_SET_EQUIPMENT_SLOTS|Change equipment slots of the resulting source.|
+|43|SCRIPT_COMMAND_RESET_GO|Reset a gameobject.|
+|44|SCRIPT_COMMAND_UPDATE_TEMPLATE|Update creature entry.|
 |45|SCRIPT_COMMAND_START_RELAY_SCRIPT|Launch relay script or relay template.|
+|46|SCRIPT_COMMAND_CAST_CUSTOM_SPELL|resSource = Unit, cast spell at resTarget = Unit|
 
 h4. buddy_entry
 
-Commands except the ones requiring a player (like KILL_CREDIT) have support for the buddy concept. This means that if an entry for buddy_entry is provided, aside from source and target as listed above also a "buddy" is available.
+Commands except the ones requiring a player (like KILL_CREDIT) have support for the buddy concept. 
 
-Which one on the three (originalSource, originalTarget, buddy) will be used in the command, depends on the data_flags (enum ScriptInfoDataFlags) Note that some commands (like EMOTE) use only the resulting source for an action.
+This means that if an entry for buddy_entry is provided, aside from source and target as listed above also a "buddy" is available.
 
-Possible combinations of the flags SCRIPT_FLAG_BUDDY_AS_TARGET = 0x01 SCRIPT_FLAG_REVERSE_DIRECTION = 0x02 SCRIPT_FLAG_SOURCE_TARGETS_SELF = 0x04 are:
+Which one on the three (originalSource, originalTarget, buddy) will be used in the "command":dbscripts#command, depends on the "data_flags":dbscripts#data_flags (enum ScriptInfoDataFlags) Note that some commands (like EMOTE) use only the resulting source for an action.
 
-0: originalSource / buddyIfProvided -> originalTarget
+Possible combinations of the "data_flags":dbscripts#data_flags |SCRIPT_FLAG_BUDDY_AS_TARGET 0x01|SCRIPT_FLAG_REVERSE_DIRECTION 0x02|SCRIPT_FLAG_SOURCE_TARGETS_SELF 0x04| are:
 
-1: originalSource -> buddy
+Where "A -> B" means that the "command":dbscripts#command is executed from A with B as target.
 
-2: originalTarget -> originalSource / buddyIfProvided
-
-3: buddy -> originalSource
-
-4: originalSource / buddyIfProvided -> originalSource / buddyIfProvided
-
-5: originalSource -> originalSource
-
-6: originalTarget -> originalTarget
-
-7: buddy -> buddy
-
-Where "A -> B" means that the command is executed from A with B as target.
+|Hex|A -> B|
+|0x00|originalSource / buddyIfProvided -> originalTarget|
+|0x01|originalSource -> buddy|
+|0x02|originalTarget -> originalSource / buddyIfProvided|
+|0x03|buddy -> originalSource|
+|0x04|originalSource / buddyIfProvided -> originalSource / buddyIfProvided|
+|0x05|originalSource -> originalSource|
+|0x06|originalTarget -> originalTarget|
+|0x07|buddy -> buddy|
 
 h4. search_radius
 
-Range in which the buddy defined in "buddy_entry":DBScripts#buddy_entry will be searched.
-If data_flags|16, this field is interpreted as the "buddy_entry":DBScripts#buddy_entry's GUID.
+Range in which the buddy defined in "buddy_entry":dbscripts#buddy_entry will be searched by "creature_template.entry":creature_template#entry.
+
+|& data_flags|Description|
+|& SCRIPT_FLAG_BUDDY_BY_GUID|"creature.guid":creature#guid instead of "creature_template.entry":creature_template#entry|
+|& SCRIPT_FLAG_BUDDY_BY_POOL|"pool_creature.pool_entry":pool_creature#pool_entry instead of "creature_template.entry":creature_template#entry|
 
 h4. data_flags
 
 Defined in "enum ScriptInfoDataFlags"
 
-|Bit|Hex|Type|Description|
+|Hex|Type|Description|
+|0|0x00|DEFAULT|s/b -> t|
 |1|0x01|SCRIPT_FLAG_BUDDY_AS_TARGET|s -> b|
 |2|0x02|SCRIPT_FLAG_REVERSE_DIRECTION|t* -> s* (* result after previous flag is evaluated)|
 |4|0x04|SCRIPT_FLAG_SOURCE_TARGETS_SELF|s* -> s* (* result after previous flag is evaluated)|
 |8|0x08|SCRIPT_FLAG_COMMAND_ADDITIONAL|Only for some commands possible.|
-|16|0x10|SCRIPT_FLAG_BUDDY_BY_GUID|Interpret "search_radius":DBScripts#search_radius as "buddy_entry":DBScripts#buddy_entry's GUID.|
+|16|0x10|SCRIPT_FLAG_BUDDY_BY_GUID|Interpret "search_radius":dbscripts#search_radius as "buddy_entry":dbscripts#buddy_entry GUID.|
 |32|0x20|SCRIPT_FLAG_BUDDY_IS_PET|Do not search for an npc, but for a pet.|
 |64|0x40|SCRIPT_FLAG_BUDDY_IS_DESPAWNED|Search for a creature that is despawned or dead.|
 |128|0x80|SCRIPT_FLAG_BUDDY_BY_POOL|buddy should be part of a pool|
 
 h4. OtherFields
 
-Depending on what command was used, the meaning and use for the following fields varies.
+Depending on what "command":dbscripts#command was used, the meaning and use for the following fields varies.
 
 * *SCRIPT_COMMAND_TALK = 0*
 ** All information of the text (type, language, associated sound, emote) is stored in the "dbscript_string.":dbscript_string table
@@ -222,7 +222,7 @@ Depending on what command was used, the meaning and use for the following fields
 
 * *SCRIPT_COMMAND_MOVE_TO = 3*
 ** datalong2: Length of the motion. This calculates as travel_speed*100. Use 0 for creature default movement.
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL will teleport the creature to the given location.
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL will teleport the creature to the given location.
 ** x: X position to move to.
 ** y: Y position to move to.
 ** z: Z position to move to.
@@ -271,7 +271,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
 ** datalong: Entry of the summoned creature from "creature_template.entry":creature_template#entry.
 ** datalong2: Despawn time (MILLIESECONDS). If set to 0 then the creature will be despawned only when killed.
 ** datalong3: The "pathId":creature_movement_template#pathId you want the creature to immediately start moving on (if MovementType=2)
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL will summon the creature as active object.
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL will summon the creature as active object.
 ** dataint: SetRun (bool). 0 = off (default), 1 = on
 ** x: Summon target x coordinate.
 ** y: Summon target y coordinate.
@@ -291,13 +291,13 @@ More Examples Can Be Found At: UpdateFields.h In Core
 
 * *SCRIPT_COMMAND_REMOVE_AURA = 14*
 ** datalong: "Spell ID":spell_template#Id.
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL will remove aura from the source only for the target unit.
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL will remove aura from the source only for the target unit.
 
 * *SCRIPT_COMMAND_CAST_SPELL = 15*
 ** datalong: "Spell ID":spell_template#Id.
-** datalong2: TriggerCastFlags
+** datalong2: "TriggerCastFlags":dbscripts#TriggerCastFlags
 ** buddy_entry: "entry":creature_template#entry of the target
-** search_radius: radius to search for buddy_entry or "guid":creature#guid of the specific guid if data_flags|16 is set
+** search_radius: radius to search for "buddy_entry":dbscripts#buddy_entry or "guid":creature#guid of the specific guid if "data_flags":dbscripts#data_flags|16 is set
 ** dataint1-dataint4 optional. If some of these are set to a spell id, a random spell out of datalong, datint1, ..,dataintX is cast.
 
 h4. TriggerCastFlags
@@ -317,7 +317,7 @@ h4. TriggerCastFlags
 * *SCRIPT_COMMAND_PLAY_SOUND = 16*
 ** datalong: "Sound ID":SoundEntries.dbc#Content.
 ** datalong2: bitmask: 0/1=anyone/target, 0/2=with distance dependent, 0/4=map wide, 0/8=zone wide; 1&#124;2 = 3 is target with distance dependent.
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL: play music instead of sound
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL: play music instead of sound
 ** Source may be any object. Target may be any player.
 
 * *SCRIPT_COMMAND_CREATE_ITEM = 17*
@@ -337,7 +337,7 @@ h4. TriggerCastFlags
 * *SCRIPT_COMMAND_MOVEMENT = 20*
 ** datalong: Change the movement type of a creature. Possible values: 0 = idle, 1 = random, 2 = waypoint.
 ** datalong2: Wander distance (for random movement), "creature_movement_template.pathId":creature_movement_template#pathId (for waypoint movement).
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL will set random movement around the current position.
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL will set random movement around the current position.
 ** Resulting source must be a creature.
 
 * *SCRIPT_COMMAND_SET_ACTIVEOBJECT = 21*
@@ -349,24 +349,25 @@ h4. TriggerCastFlags
 ** Resulting source must be a creature.
 ** datalong2: Temporary faction flags
 
-|TEMPFACTION_NONE|0x00|When no flag is used in temporary faction change, faction will be persistent. It will then require manual change back to default/another faction when changed once.|
-|TEMPFACTION_RESTORE_RESPAWN|0x01|Default faction will be restored at respawn.|
-|TEMPFACTION_RESTORE_COMBAT_STOP|0x02|at CombatStop() (happens at creature death, at evade or custom scripte among others).|
-|TEMPFACTION_RESTORE_REACH_HOME|0x04|... at reaching home in home movement (evade), if not already done at CombatStop().|
-|TEMPFACTION_TOGGLE_NON_ATTACKABLE|0x08|Remove UNIT_FLAG_NON_ATTACKABLE(0x02) when faction is changed (reapply when temp-faction is removed).|
-|TEMPFACTION_TOGGLE_OOC_NOT_ATTACK|0x10|Remove UNIT_FLAG_OOC_NOT_ATTACKABLE(0x100) when faction is changed (reapply when temp-faction is removed.)|
-|TEMPFACTION_TOGGLE_PASSIVE|0x20|Remove UNIT_FLAG_PASSIVE(0x200) when faction is changed (reapply when temp-faction is removed)|
-|TEMPFACTION_TOGGLE_PACIFIED|0x40|Remove UNIT_FLAG_PACIFIED(0x20000) when faction is changed (reapply when temp-faction is removed)|
-|TEMPFACTION_TOGGLE_NOT_SELECTABLE|0x80|Remove UNIT_FLAG_NOT_SELECTABLE(0x2000000) when faction is changed (reapply when temp-faction is removed)|
+|Bit|Hex|Description|
+|0|0x00|TEMPFACTION_NONE|When no flag is used in temporary faction change, faction will be persistent. It will then require manual change back to default/another faction when changed once.|
+|1|0x01|TEMPFACTION_RESTORE_RESPAWN|Default faction will be restored at respawn.|
+|2|0x02|TEMPFACTION_RESTORE_COMBAT_STOP|at CombatStop() (happens at creature death, at evade or custom scripte among others).|
+|4|0x04|TEMPFACTION_RESTORE_REACH_HOME|at reaching home in home movement (evade), if not already done at CombatStop().|
+|8|0x08|TEMPFACTION_TOGGLE_NON_ATTACKABLE|Remove UNIT_FLAG_NON_ATTACKABLE(0x02) when faction is changed (reapply when temp-faction is removed).|
+|16|0x10|TEMPFACTION_TOGGLE_OOC_NOT_ATTACK|Remove UNIT_FLAG_OOC_NOT_ATTACKABLE(0x100) when faction is changed (reapply when temp-faction is removed.)|
+|32|0x20|TEMPFACTION_TOGGLE_PASSIVE|Remove UNIT_FLAG_PASSIVE(0x200) when faction is changed (reapply when temp-faction is removed)|
+|64|0x40|TEMPFACTION_TOGGLE_PACIFIED|Remove UNIT_FLAG_PACIFIED(0x20000) when faction is changed (reapply when temp-faction is removed)|
+|128|0x80|TEMPFACTION_TOGGLE_NOT_SELECTABLE|Remove UNIT_FLAG_NOT_SELECTABLE(0x2000000) when faction is changed (reapply when temp-faction is removed)|
 
 * *SCRIPT_COMMAND_MORPH_TO_ENTRY_OR_MODEL = 23*
-** datalong: Creature "entry":creature_template#entry or "model_id":creature_template#modelid (depending on data_flags). If set to 0 then the creature will demorph.
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL to use datalong value as model_id explicit.
+** datalong: Creature "entry":creature_template#entry or "model_id":creature_template#modelid (depending on "data_flags":dbscripts#data_flags). If set to 0 then the creature will demorph.
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL to use datalong value as model_id explicit.
 ** Resulting source must be a creature.
 
 * *SCRIPT_COMMAND_MOUNT_TO_ENTRY_OR_MODEL = 24*
-** datalong: Creature "entry":creature_template#entry or "model_id":creature_template#modelid (depending on data_flags). If set to 0 then the creature will dismount.
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL to use datalong value as model_id explicit.
+** datalong: Creature "entry":creature_template#entry or "model_id":creature_template#modelid (depending on "data_flags":dbscripts#data_flags). If set to 0 then the creature will dismount.
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL to use datalong value as model_id explicit.
 ** Resulting source must be creature.
 
 * *SCRIPT_COMMAND_SET_RUN = 25*
@@ -380,34 +381,37 @@ h4. TriggerCastFlags
 ** Resulting source must be gameobject.
 ** datalong:
 
-|flag_go_lock|0x01|
-|flag_go_unlock|0x02|
-|flag_go_nonInteract|0x04|
-|flag_go_interact|0x08|
+|Bit|Hex|Name|
+|1|0x01|flag_go_lock|
+|2|0x02|flag_go_unlock|
+|4|0x04|flag_go_nonInteract|
+|8|0x08|flag_go_interact|
 
 * *SCRIPT_COMMAND_STAND_STATE = 28*
 ** Resulting source must be a creature.
 ** datalong: stand state (enum UnitStandStateType)
 
-|UNIT_STAND_STATE_STAND|0|
-|UNIT_STAND_STATE_SIT|1|
-|UNIT_STAND_STATE_SIT_CHAIR|2|
-|UNIT_STAND_STATE_SLEEP|3|
-|UNIT_STAND_STATE_SIT_LOW_CHAIR|4|
-|UNIT_STAND_STATE_SIT_MEDIUM_CHAIR|5|
-|UNIT_STAND_STATE_SIT_HIGH_CHAIR|6|
-|UNIT_STAND_STATE_DEAD|7|
-|UNIT_STAND_STATE_KNEEL|8|
-|UNIT_STAND_STATE_CUSTOM|9|
+|Bit|Name|Comment|
+|0|UNIT_STAND_STATE_STAND|normal behavior|
+|1|UNIT_STAND_STATE_SIT|sitting on ground|
+|2|UNIT_STAND_STATE_SIT_CHAIR|sitting on normal chair|
+|3|UNIT_STAND_STATE_SLEEP|sleeping|
+|4|UNIT_STAND_STATE_SIT_LOW_CHAIR|sitting on low chair|
+|5|UNIT_STAND_STATE_SIT_MEDIUM_CHAIR|sitting on medium chair|
+|6|UNIT_STAND_STATE_SIT_HIGH_CHAIR|sitting on high chair|
+|7|UNIT_STAND_STATE_DEAD|play dead|
+|8|UNIT_STAND_STATE_KNEEL|kneel|
+|9|UNIT_STAND_STATE_CUSTOM|Depends on model animation. Submerge, freeze, hide, hibernate, rest|
 
 * *SCRIPT_COMMAND_MODIFY_NPC_FLAGS = 29*
 ** Resulting source must be a creature.
 ** datalong: NPC Flags
 ** datalong2:
 
-|toggle|0x00|
-|add|0x01|
-|remove|0x02|
+|Hex|Action|
+|0x00|Toggle|
+|0x01|Add|
+|0x02|Remove|
 
 * *SCRIPT_COMMAND_SEND_TAXY_PATH = 30*
 ** datalong: "Taxi path id":TaxiPath.dbc#Content.
@@ -417,10 +421,11 @@ h4. TriggerCastFlags
 ** datalong: "Creature entry":creature_template#entry if provided.
 ** datalong2: Search distance.
 ** dataint: Change of "waittime":creature_movement#waittime (MILLIESECONDS) of a current waypoint movement type. Negative values will decrease time.
-** data_flags:
+** "data_flags":dbscripts#data_flags
 
-|!(data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL)|If creature is not found or not alive, terminate script.|
-|data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL|If creature is found and alive, terminate script.|
+|& data_flags|Description|
+|& SCRIPT_FLAG_COMMAND_ADDITIONAL 8 0x08|If creature is found and alive, terminate script.|
+|! SCRIPT_FLAG_COMMAND_ADDITIONAL|If creature is not found or not alive, terminate script.|
 
 * *SCRIPT_COMMAND_PAUSE_WAYPOINTS = 32*
 ** datalong: 1 = Pause or 0 = Unpause waypoint movement.
@@ -434,10 +439,11 @@ _Side note: Only available on wotlk version._
 * *SCRIPT_COMMAND_TERMINATE_CONDITION = 34*
 ** datalong: "Condition entry":conditions#condition_entry to check.
 ** datalong2: "Quest entry":quest_template#entry to mark as failed for the player (if provided).
-** data_flags:
+** "data_flags":dbscripts#data_flags
 
-|!(data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL)|Terminate when condition is true.|
-|data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL|Terminate when condition is false.|
+|& data_flags|Description|
+|& SCRIPT_FLAG_COMMAND_ADDITIONAL 8 0x08|Terminate when condition is false.|
+|! SCRIPT_FLAG_COMMAND_ADDITIONAL|Terminate when condition is true.|
 
 * *SCRIPT_COMMAND_SEND_AI_EVENT = 35*
 ** datalong: AI event id. Only EventAI events are accepted. Supported types see CreatureAI.h enum AIEventType.
@@ -446,7 +452,7 @@ _Side note: Only available on wotlk version._
 
 * *SCRIPT_COMMAND_SET_FACING = 36*
 ** Resulting source must be a creature; Resulting target must be a Worldobject.
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL also set TargetGuid of resultingSource to resultingTarget. In this case resultingTarget MUST be Creature/ Player
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL also set TargetGuid of resultingSource to resultingTarget. In this case resultingTarget MUST be Creature/ Player
 ** datalong != 0 Reset TargetGuid, Reset orientation
 
 * *SCRIPT_COMMAND_MOVE_DYNAMIC = 37*
@@ -454,7 +460,7 @@ _Side note: Only available on wotlk version._
 ** datalong = 0:  Move resulting source towards resulting target
 ** datalong != 0: Move resulting source to a random point between datalong2..datalong around resulting target.
 ** orientation != 0: Obtain a random point around resulting target in direction of orientation
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL Obtain a point in direction of resulting target->GetOrientation + orientation
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL Obtain a point in direction of resulting target->GetOrientation + orientation
 ** for resulting target == resulting source and orientation == 0 this will mean resulting source moving forward
 
 * *SCRIPT_COMMAND_SEND_MAIL = 38*
@@ -466,7 +472,7 @@ _Side note: Only available on wotlk version._
 * *SCRIPT_COMMAND_SET_FLY = 39*
 ** Resulting source must be a creature.
 ** datalong = bool 0=off, 1=on
-** data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL set/unset byte flag UNIT_BYTE1_FLAG_FLY_ANIM
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL set/unset byte flag UNIT_BYTE1_FLAG_FLY_ANIM
 
 * *SCRIPT_COMMAND_DESPAWN_GO = 40*
 ** Resulting target must be a Gameobject. Please note that not all gameobject types support this command.
@@ -491,3 +497,9 @@ _Side note: Only available on wotlk version._
 ** Resulting source must be a Unit. Target is not mandatory.
 ** datalong = dbscripts_on_relay Id which should be launched
 ** datalong2 = dbscript_random_template relay Id which should be launched. Takes precedence over relay Id.
+
+* *SCRIPT_COMMAND_CAST_CUSTOM_SPELL= 46*
+** Resulting source must be a Unit. Target is Unit.
+** datalong = spellid
+** datalong2 = castFlags, enum "TriggerCastFlags":dbscripts#TriggerCastFlags
+** dataint1-3 define the &bp value for the spell. At least one field is required.
