@@ -648,8 +648,8 @@ h4. sheath
 Controls how the item is put away on the character (pressing the 'Z' hotkey).
 
 |_. ID|_. Type|_. Position|
-|1|Two Handed Weapon|Diagonally accross the back pointing down|
-|2|Staff|Diagonally accross the back poiting up|
+|1|Two Handed Weapon|Diagonally across the back pointing down|
+|2|Staff|Diagonally across the back pointing up|
 |3|One Handed|To the side|
 |4|Shield|On the back in the middle|
 |5|Enchanter's Rod||
