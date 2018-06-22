@@ -28,8 +28,9 @@ h4. type
 
 |ID|Type|
 |0|Gameobject|
-|1|Creature|
+|1|Creature by Entry|
 |2|Creature which must be dead (killed by Player or Npc)|
+|3|Creature by Guid|
 
 NOTE: A creature corpse and a creature that _looks_ dead are two different things. One is actually dead and the other is just using an emote or spell to appear dead.
 
