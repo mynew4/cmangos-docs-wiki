@@ -76,6 +76,8 @@ h3. This is some dbc file description and content for small ones
 
 * "SpellIcon.dbc":SpellIcon.dbc
 
+* "SummonPoperties.dbc":SummonPoperties.dbc [U]
+
 * "TaxiPath.dbc":TaxiPath.dbc
 
 * "TotemCategory.dbc":TotemCategory.dbc [U]
