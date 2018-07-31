@@ -3,6 +3,7 @@ h3. General
 * "Beginner's Guide":https://github.com/cmangos/issues/wiki/Beginners-Guide-Home
 * "Installation Instructions":https://github.com/cmangos/issues/wiki/Installation-Instructions
 * "FAQ (Frequently Asked Questions)":https://github.com/cmangos/issues/wiki/FAQ-Frequently-Asked-Questions
+* "CMaNGOS Discord":https://discord.gg/nSaXpCn
 
 h3. Development
 
