@@ -2,7 +2,7 @@ Back to "dbc files":dbc_files list.
 
 h3. AreaGroup.dbc
 
-This DBC stores Glyph IDs used in "Character&#95;glyphs":Character glyphs table.
+This DBC stores IDs used in "AreaGroupId":Spell.dbc#spelldbc in Spell.dbc and "AreaId":https://github.com/cmangos/issues/wiki/spell_template#areaid in Spell_template.
 
 *Version is : 3.3.5a*
 
@@ -27,8 +27,9 @@ h3. *Structure*
 
 h4. ID
 
-Area ID's used from "AreaTable.dbc.":AreaTable.dbc.
+"AreaId":https://github.com/cmangos/issues/wiki/spell_template#areaid in Spell_template uses this Id for specify the allowed areas for a successful cast. 
 
 h4. Entry1-7
 
-Area ID's used from "AreaTable.dbc.Not":AreaTable.dbc.Not sure what these are used for, possibly to group several small areas into one larger area or category.
+Entry ID's taken from "AreaTable.dbc":https://github.com/cmangos/issues/wiki/AreaTable.dbc#content
+Groups several small areas into one larger area or category.
