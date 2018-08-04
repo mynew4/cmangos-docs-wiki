@@ -7,96 +7,96 @@ holds data about every spell used.
 h3. Structure
 
 |*ID*|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-||"Id":spell_template#Id|INT(11) UNSIGNED|NO||0||
-||"Category":spell_template#Category|INT(11) UNSIGNED|NO||0||
-||"Dispel":spell_template#Dispel|INT(11) UNSIGNED|NO||0||
-||"Mechanic":spell_template#Mechanic|INT(11) UNSIGNED|NO||0||
-||"Attributes":spell_template#Attributes|INT(11) UNSIGNED|NO||0||
-||"AttributesEx":spell_template#AttributesEx|INT(11) UNSIGNED|NO||0||
-||"AttributesEx2":spell_template#AttributesEx2|INT(11) UNSIGNED|NO||0||
-||"AttributesEx3":spell_template#AttributesEx3|INT(11) UNSIGNED|NO||0||
-||"AttributesEx4":spell_template#AttributesEx4|INT(11) UNSIGNED|NO||0||
-||"AttributesEx5":spell_template#AttributesEx5|INT(11) UNSIGNED|NO||0||
-||"AttributesEx6":spell_template#AttributesEx6|INT(11) UNSIGNED|NO||0||
-||"Stances":spell_template#Stances|INT(11) UNSIGNED|NO||0||
-||"StancesNot":spell_template#StancesNot|INT(11) UNSIGNED|NO||0||
-||"Targets":spell_template#Targets|INT(11) UNSIGNED|NO||0||
-||"TargetCreatureType":spell_template#TargetCreatureType|INT(11) UNSIGNED|NO||0||
-||"RequiresSpellFocus":spell_template#RequiresSpellFocus|INT(11) UNSIGNED|NO||0||
-||"FacingCasterFlags":spell_template#FacingCasterFlags|INT(11) UNSIGNED|NO||0||
-||"CasterAuraState":spell_template#CasterAuraState|INT(11) UNSIGNED|NO||0||
-||"TargetAuraState":spell_template#TargetAuraState|INT(11) UNSIGNED|NO||0||
-||"CasterAuraStateNot":spell_template#CasterAuraStateNot|INT(11) UNSIGNED|NO||0||
-||"TargetAuraStateNot":spell_template#TargetAuraStateNot|INT(11) UNSIGNED|NO||0||
-||"CastingTimeIndex":spell_template#CastingTimeIndex|INT(11) UNSIGNED|NO||0||
-||"RecoveryTime":spell_template#RecoveryTime|INT(11) UNSIGNED|NO||0||
-||"CategoryRecoveryTime":spell_template#CategoryRecoveryTime|INT(11) UNSIGNED|NO||0||
-||"InterruptFlags":spell_template#InterruptFlags|INT(11) UNSIGNED|NO||0||
-||"AuraInterruptFlags":spell_template#AuraInterruptFlags|INT(11) UNSIGNED|NO||0||
-||"ChannelInterruptFlags":spell_template#ChannelInterruptFlags|INT(11) UNSIGNED|NO||0||
-||"procFlags":spell_template#procFlags|INT(11) UNSIGNED|NO||0||
-||"procChance":spell_template#procChance|INT(11) UNSIGNED|NO||0||
-||"procCharges":spell_template#procCharges|INT(11) UNSIGNED|NO||0||
-||"maxLevel":spell_template#maxLevel|INT(11) UNSIGNED|NO||0||
-||"baseLevel":spell_template#baseLevel|INT(11) UNSIGNED|NO||0||
-||"spellLevel":spell_template#spellLevel|INT(11) UNSIGNED|NO||0||
-||"DurationIndex":spell_template#DurationIndex|int(11) unsigned|NO||0||
-||"powerType":spell_template#powerType|INT(11) UNSIGNED|NO||0||
-||"manaCost":spell_template#manaCost|INT(11) UNSIGNED|NO||0||
-||"manaCostPerlevel":spell_template#manaCostPerlevel|INT(11) UNSIGNED|NO||0||
-||"manaPerSecond":spell_template#manaPerSecond|INT(11) UNSIGNED|NO||0||
-||"manaPerSecondPerLevel":spell_template#manaPerSecondPerLevel|INT(11) UNSIGNED|NO||0||
-||"rangeIndex":spell_template#rangeIndex|INT(11) UNSIGNED|NO||1||
+||"Id":spell_template#id|INT(11) UNSIGNED|NO||0||
+||"Category":spell_template#category|INT(11) UNSIGNED|NO||0||
+||"Dispel":spell_template#dispel|INT(11) UNSIGNED|NO||0||
+||"Mechanic":spell_template#mechanic|INT(11) UNSIGNED|NO||0||
+||"Attributes":spell_template#attributes|INT(11) UNSIGNED|NO||0||
+||"AttributesEx":spell_template#attributesex|INT(11) UNSIGNED|NO||0||
+||"AttributesEx2":spell_template#attributesex2|INT(11) UNSIGNED|NO||0||
+||"AttributesEx3":spell_template#attributesex3|INT(11) UNSIGNED|NO||0||
+||"AttributesEx4":spell_template#attributesex4|INT(11) UNSIGNED|NO||0||
+||"AttributesEx5":spell_template#attributesex5|INT(11) UNSIGNED|NO||0||
+||"AttributesEx6":spell_template#attributesex6|INT(11) UNSIGNED|NO||0||
+||"Stances":spell_template#stances|INT(11) UNSIGNED|NO||0||
+||"StancesNot":spell_template#stancesnot|INT(11) UNSIGNED|NO||0||
+||"Targets":spell_template#targets|INT(11) UNSIGNED|NO||0||
+||"TargetCreatureType":spell_template#targetcreaturetype|INT(11) UNSIGNED|NO||0||
+||"RequiresSpellFocus":spell_template#requiresspellfocus|INT(11) UNSIGNED|NO||0||
+||"FacingCasterFlags":spell_template#facingcasterflags|INT(11) UNSIGNED|NO||0||
+||"CasterAuraState":spell_template#casteraurastate|INT(11) UNSIGNED|NO||0||
+||"TargetAuraState":spell_template#targetaurastate|INT(11) UNSIGNED|NO||0||
+||"CasterAuraStateNot":spell_template#casteraurastatenot|INT(11) UNSIGNED|NO||0||
+||"TargetAuraStateNot":spell_template#targetaurastatenot|INT(11) UNSIGNED|NO||0||
+||"CastingTimeIndex":spell_template#castingtimeindex|INT(11) UNSIGNED|NO||0||
+||"RecoveryTime":spell_template#recoverytime|INT(11) UNSIGNED|NO||0||
+||"CategoryRecoveryTime":spell_template#categoryrecoverytime|INT(11) UNSIGNED|NO||0||
+||"InterruptFlags":spell_template#interruptflags|INT(11) UNSIGNED|NO||0||
+||"AuraInterruptFlags":spell_template#aurainterruptflags|INT(11) UNSIGNED|NO||0||
+||"ChannelInterruptFlags":spell_template#channelinterruptflags|INT(11) UNSIGNED|NO||0||
+||"procFlags":spell_template#procflags|INT(11) UNSIGNED|NO||0||
+||"procChance":spell_template#procchance|INT(11) UNSIGNED|NO||0||
+||"procCharges":spell_template#proccharges|INT(11) UNSIGNED|NO||0||
+||"maxLevel":spell_template#maxlevel|INT(11) UNSIGNED|NO||0||
+||"baseLevel":spell_template#baselevel|INT(11) UNSIGNED|NO||0||
+||"spellLevel":spell_template#spelllevel|INT(11) UNSIGNED|NO||0||
+||"DurationIndex":spell_template#durationindex|int(11) unsigned|NO||0||
+||"powerType":spell_template#powertype|INT(11) UNSIGNED|NO||0||
+||"manaCost":spell_template#manacost|INT(11) UNSIGNED|NO||0||
+||"manaCostPerlevel":spell_template#manacostperlevel|INT(11) UNSIGNED|NO||0||
+||"manaPerSecond":spell_template#manapersecond|INT(11) UNSIGNED|NO||0||
+||"manaPerSecondPerLevel":spell_template#manapersecondperlevel|INT(11) UNSIGNED|NO||0||
+||"rangeIndex":spell_template#rangeindex|INT(11) UNSIGNED|NO||1||
 ||"speed":spell_template#speed|FLOAT|NO||0||
-||"StackAmount":spell_template#StackAmount|INT(11) UNSIGNED|NO||0||
-||"Totem1":spell_template#Totem1|INT(11) UNSIGNED|NO||0||
-||"Totem2":spell_template#Totem2|INT(11) UNSIGNED|NO||0||
-||"Reagent1":spell_template#Reagent1|INT(11) UNSIGNED|NO||0||
-||"ReagentCount1":spell_template#ReagentCount1|INT(11) UNSIGNED|NO||0||
-||"EquippedItemClass":spell_template#EquippedItemClass|INT(11) UNSIGNED|NO||-1||
-||"EquippedItemSubClassMask":spell_template#EquippedItemSubClassMask|INT(11) UNSIGNED|NO||0||
-||"EquippedItemInventoryTypeMask":spell_template#EquippedItemInventoryTypeMask|INT(11) UNSIGNED|NO||0||
-||"Effect1":spell_template#Effect1|INT(11) UNSIGNED|NO||0||
-||"EffectDieSides1":spell_template#EffectDieSides1|INT(11) UNSIGNED|NO||0||
-||"EffectBaseDice1":spell_template#EffectBaseDice1|INT(11) UNSIGNED|NO||0||
-||"EffectDicePerLevel1":spell_template#EffectDicePerLevel1|FLOAT|NO||0||
-||"EffectRealPointsPerLevel1":spell_template#EffectRealPointsPerLevel1|FLOAT|NO||0||
-||"EffectBasePoints1":spell_template#EffectBasePoints1|INT(11) UNSIGNED|NO||0||
-||"EffectMechanic1":spell_template#EffectMechanic1|INT(11) UNSIGNED|NO||0||
-||"EffectImplicitTargetA1":spell_template#EffectImplicitTargetA1|INT(11) UNSIGNED|NO||0||
-||"EffectImplicitTargetB1":spell_template#EffectImplicitTargetB1|INT(11) UNSIGNED|NO||0||
-||"EffectRadiusIndex1":spell_template#EffectRadiusIndex1|INT(11) UNSIGNED|NO||0||
-||"EffectApplyAuraName1":spell_template#EffectApplyAuraName1|INT(11) UNSIGNED|NO||0||
-||"EffectAmplitude1":spell_template#EffectAmplitude1|INT(11) UNSIGNED|NO||0||
-||"EffectMultipleValue1":spell_template#EffectMultipleValue1|FLOAT|NO||0||
-||"EffectChainTarget1":spell_template#EffectChainTarget1|INT(11) UNSIGNED|NO||0||
-||"EffectItemType1":spell_template#EffectItemType1|INT(11) UNSIGNED|NO||0||
-||"EffectMiscValue1":spell_template#EffectMiscValue1|INT(11) UNSIGNED|NO||0||
-||"EffectMiscValueB1":spell_template#EffectMiscValueB1|INT(11)|NO||0||
-||"EffectTriggerSpell1":spell_template#EffectTriggerSpell1|INT(11) UNSIGNED|NO||0||
-||"EffectPointsPerComboPoint1":spell_template#EffectPointsPerComboPoint1|FLOAT|NO||0||
-||"SpellVisual":spell_template#SpellVisual|INT(11) UNSIGNED|NO||0||
-||"SpellIconID":spell_template#SpellIconID|INT(11) UNSIGNED|NO||0||
-||"activeIconID":spell_template#activeIconID|INT(11) UNSIGNED|NO||0||
-||"spellPriority":spell_template#spellPriority|INT(11) UNSIGNED|NO||0||
-||"SpellName":spell_template#SpellName|TEXT|NO||0||
-||"Rank":spell_template#Rank|TEXT|NULL||0||
-||"ManaCostPercentage":spell_template#ManaCostPercentage|INT(11) UNSIGNED|NO||0||
-||"StartRecoveryCategory":spell_template#StartRecoveryCategory|INT(11) UNSIGNED|NO||0||
-||"StartRecoveryTime":spell_template#StartRecoveryTime|INT(11) UNSIGNED|NO||0||
-||"MaxTargetLevel":spell_template#MaxTargetLevel|INT(11) UNSIGNED|NO||0||
-||"SpellFamilyName":spell_template#SpellFamilyName|INT(11) UNSIGNED|NO||0||
-||"SpellFamilyFlags":spell_template#SpellFamilyFlags|BIGINT(20) UNSIGNED|NO||0||
-||"MaxAffectedTargets":spell_template#MaxAffectedTargets|INT(11) UNSIGNED|NO||0||
-||"DmgClass":spell_template#DmgClass|INT(11) UNSIGNED|NO||0||
-||"PreventionType":spell_template#PreventionType|INT(11) UNSIGNED|NO||0||
-||"DmgMultiplier1":spell_template#DmgMultiplier1|INT(11) UNSIGNED|NO||0||
-||"TotemCategory1":spell_template#TotemCategory1|INT(11) UNSIGNED|NO||0||
-||"TotemCategory2":spell_template#TotemCategory2|INT(11) UNSIGNED|NO||0||
-||"AreaId":spell_template#AreaId|INT(11) UNSIGNED|NO||0||
-||"SchoolMask":spell_template#SchoolMask|INT(11) UNSIGNED|NO||0||
-||"IsServerSide":spell_template#IsServerSide|INT(11) UNSIGNED|NO||0||
-||"AttributesServerside":spell_template#AttributesServerside|INT(11) UNSIGNED|NO||0||
+||"StackAmount":spell_template#stackamount|INT(11) UNSIGNED|NO||0||
+||"Totem1":spell_template#totem1|INT(11) UNSIGNED|NO||0||
+||"Totem2":spell_template#totem2|INT(11) UNSIGNED|NO||0||
+||"Reagent1":spell_template#reagent1|INT(11) UNSIGNED|NO||0||
+||"ReagentCount1":spell_template#reagentcount1|INT(11) UNSIGNED|NO||0||
+||"EquippedItemClass":spell_template#equippeditemclass|INT(11) UNSIGNED|NO||-1||
+||"EquippedItemSubClassMask":spell_template#equippeditemsubclassmask|INT(11) UNSIGNED|NO||0||
+||"EquippedItemInventoryTypeMask":spell_template#equippediteminventorytypemask|INT(11) UNSIGNED|NO||0||
+||"Effect1":spell_template#effect1|INT(11) UNSIGNED|NO||0||
+||"EffectDieSides1":spell_template#effectdiesides1|INT(11) UNSIGNED|NO||0||
+||"EffectBaseDice1":spell_template#effectbasedice1|INT(11) UNSIGNED|NO||0||
+||"EffectDicePerLevel1":spell_template#effectdiceperlevel1|FLOAT|NO||0||
+||"EffectRealPointsPerLevel1":spell_template#effectrealpointsperlevel1|FLOAT|NO||0||
+||"EffectBasePoints1":spell_template#effectbasepoints1|INT(11) UNSIGNED|NO||0||
+||"EffectMechanic1":spell_template#effectmechanic1|INT(11) UNSIGNED|NO||0||
+||"EffectImplicitTargetA1":spell_template#effectimplicittargeta1|INT(11) UNSIGNED|NO||0||
+||"EffectImplicitTargetB1":spell_template#effectimplicittargetb1|INT(11) UNSIGNED|NO||0||
+||"EffectRadiusIndex1":spell_template#effectradiusindex1|INT(11) UNSIGNED|NO||0||
+||"EffectApplyAuraName1":spell_template#effectapplyauraname1|INT(11) UNSIGNED|NO||0||
+||"EffectAmplitude1":spell_template#effectamplitude1|INT(11) UNSIGNED|NO||0||
+||"EffectMultipleValue1":spell_template#effectmultiplevalue1|FLOAT|NO||0||
+||"EffectChainTarget1":spell_template#effectchaintarget1|INT(11) UNSIGNED|NO||0||
+||"EffectItemType1":spell_template#effectitemtype1|INT(11) UNSIGNED|NO||0||
+||"EffectMiscValue1":spell_template#effectmiscvalue1|INT(11) UNSIGNED|NO||0||
+||"EffectMiscValueB1":spell_template#effectmiscvalueb1|INT(11)|NO||0||
+||"EffectTriggerSpell1":spell_template#effecttriggerspell1|INT(11) UNSIGNED|NO||0||
+||"EffectPointsPerComboPoint1":spell_template#effectpointspercombopoint1|FLOAT|NO||0||
+||"SpellVisual":spell_template#spellvisual|INT(11) UNSIGNED|NO||0||
+||"SpellIconID":spell_template#spelliconid|INT(11) UNSIGNED|NO||0||
+||"activeIconID":spell_template#activeiconid|INT(11) UNSIGNED|NO||0||
+||"spellPriority":spell_template#spellpriority|INT(11) UNSIGNED|NO||0||
+||"SpellName":spell_template#spellname|TEXT|NO||0||
+||"Rank":spell_template#rank|TEXT|NULL||0||
+||"ManaCostPercentage":spell_template#manacostpercentage|INT(11) UNSIGNED|NO||0||
+||"StartRecoveryCategory":spell_template#startrecoverycategory|INT(11) UNSIGNED|NO||0||
+||"StartRecoveryTime":spell_template#startrecoverytime|INT(11) UNSIGNED|NO||0||
+||"MaxTargetLevel":spell_template#maxtargetlevel|INT(11) UNSIGNED|NO||0||
+||"SpellFamilyName":spell_template#spellfamilyname|INT(11) UNSIGNED|NO||0||
+||"SpellFamilyFlags":spell_template#spellfamilyflags|BIGINT(20) UNSIGNED|NO||0||
+||"MaxAffectedTargets":spell_template#maxaffectedtargets|INT(11) UNSIGNED|NO||0||
+||"DmgClass":spell_template#dmgclass|INT(11) UNSIGNED|NO||0||
+||"PreventionType":spell_template#preventiontype|INT(11) UNSIGNED|NO||0||
+||"DmgMultiplier1":spell_template#dmgmultiplier1|INT(11) UNSIGNED|NO||0||
+||"TotemCategory1":spell_template#totemcategory1|INT(11) UNSIGNED|NO||0||
+||"TotemCategory2":spell_template#totemcategory2|INT(11) UNSIGNED|NO||0||
+||"AreaId":spell_template#areaid|INT(11) UNSIGNED|NO||0||
+||"SchoolMask":spell_template#schoolmask|INT(11) UNSIGNED|NO||0||
+||"IsServerSide":spell_template#isserverside|INT(11) UNSIGNED|NO||0||
+||"AttributesServerside":spell_template#attributesserverside|INT(11) UNSIGNED|NO||0||
 
 h3. Description of the fields
 
