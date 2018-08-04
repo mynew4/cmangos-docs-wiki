@@ -404,6 +404,9 @@ h4. TotemCategory2
 
 h4. AreaId
 
+Specifies the Allowed areas for a successful cast.
+IDs taken from "AreaGroup.dbc":AreaGroup.dbc
+
 h4. SchoolMask
 
 h4. IsServerSide
@@ -430,7 +433,6 @@ TODO: Describe rest of columns
 |38|baseLevel|uint|
 |39|spellLevel|uint|
 |40|DurationIndex|uint|
-|41|"powerType":Spell.dbc#powertype|uint|
 |42|manaCost|uint|
 |43|manaCostPerlevel|uint|
 |44|manaPerSecond|uint|
@@ -463,13 +465,11 @@ TODO: Describe rest of columns
 |71|Effect1|uint|
 |72|Effect2|uint|
 |73|Effect3|uint|
-|74|EffectDieSides1|int|
 |75|EffectDieSides2|int|
 |76|EffectDieSides3|int|
 |77|EffectRealPointsPerLevel1|float|
 |78|EffectRealPointsPerLevel2|float|
 |79|EffectRealPointsPerLevel3|float|
-|80|EffectBasePoints1|int|
 |81|EffectBasePoints2|int|
 |82|EffectBasePoints3|int|
 |83|EffectMechanic1|uint|
@@ -613,7 +613,6 @@ TODO: Describe rest of columns
 |221|RequiredAuraVision|uint|
 |222|TotemCategory1|uint|
 |223|TotemCategory2|uint|
-|224|AreaGroupId|int|
 |225|SchoolMask|uint|
 |226|runeCostID|uint|
 |227|spellMissileID|uint|
