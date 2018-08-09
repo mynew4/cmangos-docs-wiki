@@ -157,7 +157,7 @@ All shell commands are expected to be typed from a *Git bash* started from the +
 
 create a new user to run your mangos server under
 
- useradd -m -d /home/mangos -c "MANGoS" -U mangos
+ useradd -m -d /home/mangos -c "MaNGOS" -U mangos
 
 This guide assumes you will use this new user personnal folder (+/home/mangos+) as a base folder under which you will put everything.
 
