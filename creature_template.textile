@@ -239,7 +239,7 @@ The NPC Is Limited To ONLY Movement On This:
 |4|Always Flying|
 |5|Over Ground Always Flying|
 |6|Over Water Always Flying|
-|7|Always Flying Over Anything|
+|7|Always Flying Over Anything (But can also walk and swim)|
 
 h4. RegenerateStats
 
