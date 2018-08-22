@@ -215,10 +215,13 @@ Object type not used
 ** data0: chairslots (number of players that can sit down on it)
 ** data1: chairorientation? (number of usable side?)
 
-* *GAMEOBJECT_TYPE_SPELLFOCUS = 8*
+* *GAMEOBJECT_TYPE_SPELL_FOCUS = 8*
 ** data0: spellFocusType (from SpellFocusObject.dbc)
 ** data1: diameter (so radius*2)
 ** data2: linkedTrap ("gameobject_template.entry":gameobject_template#entry (Spawned GO type 6))
+** data3: serverOnly? (1: Visible to GM only, 0: Visible to all players)
+** data4: questID (Required active quest_template.entry to work)
+** data5: large? (Boolean flag)
 
 * *GAMEOBJECT_TYPE_TEXT = 9*
 ** data0: pageID ("page_text.entry":page_text#entry)
