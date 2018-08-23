@@ -283,6 +283,7 @@ This field is a bitmask and controls only two extra requirements and has only 4 
 * 1: Makes the quest repeatable.
 * 2: Makes the quest only completable by some external event (an entry in "areatrigger_involvedrelation,":areatrigger_involvedrelation, spell effect quest complete or an entry in "spell_scripts":spell_scripts with command 7 as some examples)
 * 3: Both repeatable and completable only through an external event
+* 4: Quest resets for player at beginning of month (must be combined with SpecialFlags 1 (repeatable))
 
 h4. CharTitleId
 
