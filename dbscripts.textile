@@ -267,7 +267,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
 ** datalong: Guid of the gameobject to respawn. See "gameobject.guid":gameobject#guid.  Can be skipped for buddy.
 ** datalong2: Despawn time in seconds. If the value is &lt; 5 seconds then 5 seconds is used instead.
 
-* *SCRIPT_COMMAND_TEMP_SUMMON_CREATURE = 10*
+* *SCRIPT_COMMAND_TEMP_SPAWN_CREATURE = 10*
 ** datalong: Entry of the summoned creature from "creature_template.entry":creature_template#entry.
 ** datalong2: Despawn time (MILLIESECONDS). If set to 0 then the creature will be despawned only when killed.
 ** datalong3: The "pathId":creature_movement_template#pathId you want the creature to immediately start moving on (if MovementType=2)
