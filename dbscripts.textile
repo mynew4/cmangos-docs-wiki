@@ -323,6 +323,7 @@ h4. TriggerCastFlags
 * *SCRIPT_COMMAND_CREATE_ITEM = 17*
 ** datalong: "Item entry":item_template#Content.
 ** datalong2: Amount.
+** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL: remove the item from player by the given amount
 ** Source or target must be a player.
 
 * *SCRIPT_COMMAND_DESPAWN_SELF = 18*
