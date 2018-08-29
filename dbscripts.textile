@@ -356,8 +356,8 @@ h4. TriggerCastFlags
 |2|0x02|TEMPFACTION_RESTORE_COMBAT_STOP|at CombatStop() (happens at creature death, at evade or custom scripte among others).|
 |4|0x04|TEMPFACTION_RESTORE_REACH_HOME|at reaching home in home movement (evade), if not already done at CombatStop().|
 |8|0x08|TEMPFACTION_TOGGLE_NON_ATTACKABLE|Remove UNIT_FLAG_NON_ATTACKABLE(0x02) when faction is changed (reapply when temp-faction is removed).|
-|16|0x10|TEMPFACTION_TOGGLE_OOC_NOT_ATTACK|Remove UNIT_FLAG_OOC_NOT_ATTACKABLE(0x100) when faction is changed (reapply when temp-faction is removed.)|
-|32|0x20|TEMPFACTION_TOGGLE_PASSIVE|Remove UNIT_FLAG_PASSIVE(0x200) when faction is changed (reapply when temp-faction is removed)|
+|16|0x10|TEMPFACTION_TOGGLE_IMMUNE_TO_PLAYER|Remove UNIT_FLAG_IMMUNE_TO_PLAYER(0x100) when faction is changed (reapply when temp-faction is removed.)|
+|32|0x20|TEMPFACTION_TOGGLE_IMMUNE_TO_NPC|Remove UNIT_FLAG_IMMUNE_TO_NPC(0x200) when faction is changed (reapply when temp-faction is removed)|
 |64|0x40|TEMPFACTION_TOGGLE_PACIFIED|Remove UNIT_FLAG_PACIFIED(0x20000) when faction is changed (reapply when temp-faction is removed)|
 |128|0x80|TEMPFACTION_TOGGLE_NOT_SELECTABLE|Remove UNIT_FLAG_NOT_SELECTABLE(0x2000000) when faction is changed (reapply when temp-faction is removed)|
 
