@@ -160,10 +160,10 @@ h4. EventFlags
 
 |_. Bit|_. Name|_. Description|
 |1|EFLAG_REPEATABLE|Event repeats (Does not repeat if this flag is not set)|
-|2|EFLAG_NORMAL|Event only occurs in Normal instance difficulty|
-|4|EFLAG_HEROIC|Event only occurs in Heroic instance difficulty|
-|8|EFLAG_RESERVED_3|Used in master for difficulty 2|
-|16|EFLAG_RESERVED_4|Used in master for difficulty 3|
+|2|EFLAG_NORMAL, EFLAG_DIFFICULTY_0|Event only occurs in Normal instance difficulty + [wotlk: (10-Man Normal)]|
+|4|EFLAG_HEROIC, EFLAG_DIFFICULTY_1|Event only occurs in Heroic instance difficulty + [wotlk: (25-Man Normal)]|
+|8|EFLAG_DIFFICULTY_2|Event only occurs in [wotlk: (10-Man Heroic)]|
+|16|EFLAG_DIFFICULTY_3|Event only occurs in [wotlk (25-Man Heroic)]|
 |32|EFLAG_RANDOM_ACTION|Random use action1, 2, or 3|
 |64|EFLAG_RESERVED_6|Reserved|
 |128|EFLAG_DEBUG_ONLY|Event only occurs in debug build|
