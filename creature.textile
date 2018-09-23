@@ -93,6 +93,11 @@ h4. spawndist
 
 The maximum distance that the creature should spawn from its spawn point. Also controls how far away the creature can walk from its spawn point if its "MovementType":creature#MovementType = 1.
 
+|_. Value|_. Comment|
+|1|Orientation change only|
+|2|Lowest random movement value|
+|5|Default random movement value|
+
 h4. currentwaypoint
 
 The current waypoint number that the creature is on, if any. See "creature_movement.point":creature_movement#point
