@@ -202,9 +202,9 @@ h4. castFlags
 |32|CAST_AURA_NOT_PRESENT|Only casts the spell on the target if the target does not have the aura from that spell on itself already.|
 |64|CAST_IGNORE_UNSELECTABLE_TARGET|Can target UNIT_FLAG_NOT_SELECTABLE - Needed in some scripts|
 |128|CAST_SWITCH_CASTER_TARGET|Switches target and caster for spell cast|
-|256|NOT_IMPLEMENTED_CAST_MAIN_SPELL|Marks main spell for AI Type = Action 57 ACTION_T_SET_RANGED_MODE|
-|512|NOT_IMPLEMENTED_CAST_PLAYER_ONLY|Selects only player targets - substitution for EAI not having more params|
-|1024|NOT_IMPLEMENTED_CAST_DISTANCE_YOURSELF|If spell with this cast flag hits main aggro target, caster distances himself - EAI only|
+|256|CAST_MAIN_SPELL|Marks main spell for AI Type = Action 57 ACTION_T_SET_RANGED_MODE|
+|512|CAST_PLAYER_ONLY|Selects only player targets - substitution for EAI not having more params|
+|1024|CAST_DISTANCE_YOURSELF|If spell with this cast flag hits main aggro target, caster distances himself - EAI only|
 
 h4. schoolMask
 
@@ -327,3 +327,10 @@ bytes1
 |9|UNIT_STAND_STATE_CUSTOM|Depends on model animation. Submerge, freeze, hide, hibernate, rest|
 
 h4. event_inverse_phase_mask
+
+h4. Ranged mode - reference usage
+
+('58902','589','11','0','100','0','0','0','0','0','0','0','57','1','35','0','0','0','0','0','0','0','0','0','Defias Pillager - Enable Caster Mode on Spawn'),
+('58905','589','0','0','100','1025','0','0','3400','4900','0','0','11','20793','1','256','0','0','0','0','0','0','0','0','Defias Pillager - Cast Fireball'),
+
+The ranged mode was designed to be toggled on spawn, but can effectively by toggled on phase change on other condition when needed. It automatically reverts itself on evade. It works in connection with its modes, and automatically changes chase distance. A main casting spell, which is supposed to be lowest in priority (highest ID), needs to use 256 cast flag. This notes that when this spell returns OOM error, ranged mode automatically adjusts its behaviour. Ranged mode also responds to kicks and silence on this spell. Last notable feature with ranged mode is distancing, which only occurs if cast flag 1024 is set, and when creature is in melee mode, and the target is hit, creature runs away from main aggro targets melee reach.
