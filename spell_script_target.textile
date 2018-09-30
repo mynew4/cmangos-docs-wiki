@@ -2,7 +2,7 @@ Back to "world database":mangosdb_struct list of tables.
 
 h2. The `spell_script_target` table
 
-Used to control SpellEffect with ImpliciteTargetA-B == 7|8|38|40|46|52.
+Used to control SpellEffect with ImpliciteTargetA-B == 7|8|22|38|40|46|52.
 
 These spell effects require a specific target in either alive or dead state (for creatures).
 
