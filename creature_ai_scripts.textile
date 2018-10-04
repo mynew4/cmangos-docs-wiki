@@ -69,9 +69,9 @@ h4. event_type
 |11|EVENT_T_SPAWNED|NU|NU|NU|NU|Expires on Spawn|
 |12|EVENT_T_TARGET_HP|HPMax%|HPMin%|RepeatMin|RepeatMax|Expires when current target HP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
 |13|EVENT_T_TARGET_CASTING|RepeatMin|RepeatMax|NU|NU|Expires when current target is casting a spell. Will repeat every (Param1) and (Param2)|
-|14|EVENT_T_FRIENDLY_HP|HPDeficit|Radius|RepeatMin|RepeatMax|Expires when a friendly unit has at least (param1) HP missing in (param2) radius. Will repeat every (Param3) and (Param4)|
-|15|EVENT_T_FRIENDLY_IS_CC|DispelType (US)|Radius|RepeatMin|RepeatMax|Expires when a friendly unit is crowd controlled in (param2) radius. Will repeat every (Param3) and (Param4)|
-|16|EVENT_T_FRIENDLY_MISSING_BUFF|"spellId":spell_template#Id|Radius|RepeatMin|RepeatMax|Expires when a friendly unit is missing aura given by (param1) "spellId":spell_template#Id in (param2) radius. Will repeat every (Param3) and (Param4)|
+|14|EVENT_T_FRIENDLY_HP|HPDeficit|Radius|RepeatMin|RepeatMax|Expires when a friendly unit (Target = 12) has at least (param1) HP missing in (param2) radius. Will repeat every (Param3) and (Param4)|
+|15|EVENT_T_FRIENDLY_IS_CC|DispelType (US)|Radius|RepeatMin|RepeatMax|Expires when a friendly unit (Target = 12) is crowd controlled in (param2) radius. Will repeat every (Param3) and (Param4)|
+|16|EVENT_T_FRIENDLY_MISSING_BUFF|"spellId":spell_template#Id|Radius|RepeatMin|RepeatMax|Expires when a friendly unit (Target = 12) is missing aura given by (param1) "spellId":spell_template#Id in (param2) radius. Will repeat every (Param3) and (Param4)|
 |17|EVENT_T_SUMMONED_UNIT|"CreatureEntry":creature_template#entry|RepeatMin|RepeatMax|NU|Expires when creature with (Param1) "CreatureEntry":creature_template#entry spawned or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)|
 |18|EVENT_T_TARGET_MANA|ManaMax%|ManaMin%|RepeatMin|RepeatMax|Expires when current target MP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)|
 |21|EVENT_T_REACHED_HOME|NU|NU|NU|NU|Expires on Reached Home (after Evade)|
@@ -181,12 +181,12 @@ h4. Target
 |4|TARGET_T_HOSTILE_RANDOM|Targets a random unit from the threat list|
 |5|TARGET_T_HOSTILE_RANDOM_NOT_TOP|Targets a random unit from the threat list excluding the one with the most threat|
 |6|TARGET_T_ACTION_INVOKER|Targets the unit that caused the event; only for certain events only.|
-|7|TARGET_T_ACTION_INVOKER_OWNER|Targets unit who is responsible for Event to occur (only works for EVENT_T_AGGRO, EVENT_T_KILL, EVENT_T_DEATH, EVENT_T_SPELLHIT, EVENT_T_OOC_LOS, EVENT_T_FRIENDLY_HP, EVENT_T_FRIENDLY_IS_CC, EVENT_T_FRIENDLY_MISSING_BUFF, EVENT_T_RECEIVE_EMOTE, EVENT_T_RECEIVE_AI_EVENT)|
+|7|TARGET_T_ACTION_INVOKER_OWNER|Targets unit who is responsible for Event to occur (only works for EVENT_T_AGGRO, EVENT_T_KILL, EVENT_T_DEATH, EVENT_T_SPELLHIT, EVENT_T_OOC_LOS, EVENT_T_RECEIVE_EMOTE, EVENT_T_RECEIVE_AI_EVENT)|
 |8|TARGET_T_HOSTILE_RANDOM_PLAYER|Targets Random Player on The Threat List|
 |9|TARGET_T_HOSTILE_RANDOM_NOT_TOP_PLAYER|Targets Any Random Player Except Top Threat|
 |10|TARGET_T_EVENT_SENDER|Creature who sent a received AIEvent - only triggered by EVENT_T_RECEIVE_AI_EVENT|
 |11|TARGET_T_SPAWNER|Owner of unit if exists|
-|12|TARGET_T_EVENT_SPECIFIC|Filled by specific event|
+|12|TARGET_T_EVENT_SPECIFIC|Filled by specific event (works for EVENT_T_FRIENDLY_HP, EVENT_T_FRIENDLY_IS_CC, EVENT_T_FRIENDLY_MISSING_BUFF)|
 |13|TARGET_T_PLAYER_INVOKER|Player who initiated hostile contact with this npc|
 |14|TARGET_T_PLAYER_TAPPED|Player who currently holds to score the kill credit from the npc|
 |15|NOT_IMPLEMENTED_TARGET_T_NONE|Default spell target - sets nullptr which should be most common spell fill|
