@@ -388,6 +388,7 @@ Item ID that is needed indirectly by the quest. For example, the quests asks for
 h4. ReqSourceCount
 
 The maximum number of copies of the item in ReqSourceID that can be picked up (and dropped by the core).
+Setting this value to 0 means the item stack size will be the maximum amount that is dropped by core.
 
 h4. ReqCreatureOrGOId
 
