@@ -413,6 +413,7 @@ Install CMaNGOS binary files
 ----------------------------
 * Transfer the files from your compile folder (likely ++C:\Mangos\mangos\bin\Win32_Release++) into ++C:\Mangos\run++
 * Go to ++C:\Mangos\mangos\src\game\AuctionHouseBot++ and copy ++ahbot.conf.dist.in++ to ++C:\Mangos\run++ and rename it to ++ahbot.conf++
+* If you compiled project with the PlayeBots enabled, go to ++C:\Mangos\mangos\src\game\PlayerBot++ and copy ++playerbot.conf.dist.in++ to ++C:\Mangos\run++ and rename it to ++playerbot.conf++
 
 On *nix this is partly done with the ++make install++ command (from the build directory).
 
@@ -686,10 +687,12 @@ With the default installations, you should get a working environment out of the 
 You will need to manually update the configuration files within your "run" directory (ie C:\Mangos\run ).
 
 The files are:
+
 * mangosd.conf: Holds configuration for the mangosd executable
 * realmd.conf: Holds configuration for the realmd executable
 * scriptdev2.conf: Holds configuration for ScriptDev2's settings(no longer used and may not exist)
 * (Very optional) ahbot.conf: Holds configuration for AHBot (by default disabled)
+* (optional, only if you enabled PlayerBots during complilation) playerbot.conf: Holds configuration for PlayerBots (by default disabled)
 
 Most important to configure are the database settings. You will need this if you decided to use a different password/user then the "default" combination of mangos/mangos.
 
