@@ -455,8 +455,7 @@ _Side note: Only available on wotlk version._
 
 * *SCRIPT_COMMAND_SET_FACING = 36*
 ** Resulting source must be a creature; Resulting target must be a Worldobject.
-** "data_flags":dbscripts#data_flags & SCRIPT_FLAG_COMMAND_ADDITIONAL also set TargetGuid of resultingSource to resultingTarget. In this case resultingTarget MUST be Creature/ Player
-** datalong != 0 Reset TargetGuid, Reset orientation
+** datalong != 0 Reset orientation
 
 * *SCRIPT_COMMAND_MOVE_DYNAMIC = 37*
 ** Resulting source must be a creature; Resulting target must be a Worldobject.
