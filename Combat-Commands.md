@@ -42,10 +42,10 @@ The following commands are for combat related situations.
 
   ### Examples:
 
-    /t TheTank combat orders tank
+    /t TheTank orders combat tank
 
-    /t MyHealer combat orders heal
+    /t MyHealer orders combat heal
 
-    /t TheBrutal combat orders assist TheTank
+    /t TheBrutal orders combat assist TheTank
 
-    /t TheBrutal combat orders protect MyHealer
+    /t TheBrutal orders combat protect MyHealer
