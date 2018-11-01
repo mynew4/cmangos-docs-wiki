@@ -31,3 +31,4 @@ NOTE: Called when menu shown (not when clicked)
 h4. condition&#95;id
 
 "condition&#95;id":conditions
+If the gossip_menu has more than one text with true conditions, then the text with highest condition_id will be shown.
