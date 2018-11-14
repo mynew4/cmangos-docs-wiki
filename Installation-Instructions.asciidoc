@@ -271,7 +271,7 @@ Directory structure
 
 Now you should have the following subfolders:
 
- - ++mangos++ (containing the sources of CMaNGOS and optionally ScriptDev2)
+ - ++mangos++ (containing the sources of CMaNGOS)
  - ++classic-db++ OR ++tbc-db++ OR ++wotlk-db++ OR ++Database++ containing the content of your database-provider
 
 For windows we suggest creating an additional ++run++ folder, on *nix this can be useful if you don't want to install to ++/opt++ or so
@@ -283,8 +283,8 @@ For *nix or cmake compile we suggest creating an additional ++build++ folder, th
  - ++build++
 
 
-Compiling CMaNGOS and ScriptDev2
---------------------------------
+Compiling CMaNGOS
+-----------------
 
 Installing and Configuring boost (UNIX)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -353,7 +353,7 @@ If you're experiencing issues with CMake (The following Boost libraries could no
 
  (boost\lib32-msvc-14.1 -> boost\lib)
 
-Compiling CMaNGOS and ScriptDev2 (Windows)
+Compiling CMaNGOS (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 An https://youtu.be/KlRM18SVCQA[video] of the build process is now available.
 
@@ -378,7 +378,7 @@ An https://youtu.be/KlRM18SVCQA[video] of the build process is now available.
 
 If you cannot solve an error, please use the official forums or IRC channels to ask for help
 
-Compiling CMaNGOS and ScriptDev2 (*nix)
+Compiling CMaNGOS (*nix)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your ++/home/mangos++ folder
 
@@ -434,7 +434,7 @@ Depending on your installation settings, a simple double click onto the ++Extrac
 
 You must extract *DBC/maps* and *vmaps* for CMaNGOS to work, *mmaps* are optional (and take very long)
 
-* When finish, move the folders ++maps++, ++dbc++ and ++vmaps++ - optionally ++mmaps++ - that have been created in your ++C:\World of Warcraft++ to your ++C:\Mangos\run++ (the buildings folder is not required and can be deleted).
+* When finish, move the folders ++maps++, ++dbc++, ++Cameras++ and ++vmaps++ - optionally ++mmaps++ - that have been created in your ++C:\World of Warcraft++ to your ++C:\Mangos\run++ (the buildings folder is not required and can be deleted).
 
 *nix
 ~~~~
