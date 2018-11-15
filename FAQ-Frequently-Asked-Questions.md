@@ -18,8 +18,8 @@
 
 ### My server has errors when I try to start it
 * First you should review the [Installation Instructions](https://github.com/cmangos/issues/wiki/Installation-Instructions) again to be sure you didn't miss any steps and that every step was done according to the instructions.  
-* Second, search the forums for an solution (most errors have been encountered before and so there is usually a thread someone on the forums discussing it).
-* Third, if you can't find any answers, seek out help in IRC (#cmangos channel) or on the [cmangos.net forums](http://cmangos.net/index.php).
+* Second, search the forums or Discord for a solution (most errors have been encountered before and so there is usually a thread someone on the forums discussing it).
+* Third, if you can't find any answers, use one of the methods mentioned [above](#what-should-i-do-when-i-encounter-a-problem) to ask the developers for help.
 
 ### Error in mangosd application:
 ```
