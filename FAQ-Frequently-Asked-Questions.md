@@ -7,7 +7,7 @@
   * For compile problems: Look into the log, on *nix you can create a log with `make > compile.log 2>&1`
   * For problems with the server: Look for the file, *Server.log*, in your server's home directory.
 
-### I'm a beginner, where should I get started?
+### I'm a beginner and want to understand how CMaNGOS works, where should I get started?
 * See the [Beginner's Guide](https://github.com/cmangos/issues/wiki/Beginners-Guide-Home).
 
 ### How do I install CMaNGOS?
