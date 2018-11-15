@@ -1,5 +1,9 @@
 ### What should I do when I encounter a problem?
-* In general, read the log file and see if you can work out the problem from there on your own; if you can't, seek out help in IRC (#cmangos channel) or on the [cmangos.net forums](http://cmangos.net/index.php). Every application generates a log file somewhere that can be opened and reviewed.
+* In general, read the log file and see if you can work out the problem from there on your own; if you can't, seek out help on:
+  * Discord: https://discord.gg/Dgzerzb
+  * IRC ([#cmangos](irc://irc.rizon.net/#cmangos))
+  * the [cmangos.net forums](https://forum.cmangos.net/)
+* Every application generates a log file somewhere that can be opened and reviewed.
   * For compile problems: Look into the log, on *nix you can create a log with `make > compile.log 2>&1`
   * For problems with the server: Look for the file, *Server.log*, in your server's home directory.
 
