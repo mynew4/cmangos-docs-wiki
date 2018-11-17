@@ -73,6 +73,8 @@ Compilation of the server core and extractor tool binaries is optional. If you d
 * https://github.com/cmangos/mangos-tbc/releases
 * https://github.com/cmangos/mangos-wotlk/releases
 
+We will provide more information about how to setup a server with released files when it will be possible.
+
 ### More Information
 
 This guide is intended only for Windows and provides one of many ways to setup a CMaNGOS server. You can find a [more detailed installation guide](https://github.com/cmangos/issues/wiki/Installation-Instructions) (including alternative programs, Linux/Mac setup, etc.) in the [Wiki](https://github.com/cmangos/issues/wiki). If you get stuck you can find us here:
