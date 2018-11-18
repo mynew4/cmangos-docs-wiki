@@ -3,13 +3,13 @@ Installation Instructions
 
 How to install C(ontinued)-MaNGOS from scratch and how to update it.
 
-This Guide will help you for Windows or *nix (Ubuntu, Debian) and for all supported clients: Classic - TBC - WotLK - Cata - WoD.
+This Guide will help you for Windows or *nix (Ubuntu, Debian) and for all supported clients: Classic - TBC - WotLK.
 
 Instructions covering Mac OS X (10.6 & 10.7) specific steps are available https://github.com/cmangos/issues/wiki/Build-CMaNGOS-for-Mac-OS-X[here] in addition of this guide.
 
-For other environments (like FreeBSD, ARM and similar) please consider our http://cmangos.net/forum-5.html[Installation, Configuration & Upgrades - Subforum] for assistance.
+For other environments (like FreeBSD, ARM and similar) please consider our https://forum.cmangos.net[forum] for assistance.
 
-If you run into issues during installation or need help understanding one of the following steps, please visit http://cmangos.net/forum-5.html[our forum] to look for solutions and ask questions.
+If you run into issues during installation or need help understanding one of the following steps, please visit https://discord.gg/Dgzerzb[discord] to look for solutions and ask questions.
 
 These Installation Instructions are expected to be current, so please read through every step again to ensure that you didn't skip or misunderstand something before going to the forums.
 
@@ -19,16 +19,12 @@ If you are an absolute beginner to programming and compiling then you may want t
 Addresses
 ---------
 
- * CMaNGOS: http://www.cmangos.net[forum] | https://github.com/cmangos[git repositories] | http://qchat.rizon.net/?channels=%23cmangos[irc] (irc.rizon.net #cmangos)
- * boost: http://www.boost.org[main page]
- * ScriptDev2 (Integrated into the core): http://cmangos.net/forum-32.html[forum]
- * ACID (Integrated into the databases): http://cmangos.net/forum-34.html[forum]
+ * CMaNGOS: https://cmangos.net[site] | https://forum.cmangos.net[forum] | https://github.com/cmangos[git repositories] | https://discord.gg/Dgzerzb[discord]
  * Classic-DB: https://github.com/cmangos/classic-db/issues[forum] | https://github.com/cmangos/classic-db.git[git repository]
  * TBC-DB: https://github.com/cmangos/tbc-db/issues[forum] | https://github.com/cmangos/tbc-db.git[git repository]
  * WOTLK-DB: https://github.com/cmangos/wotlk-db/issues[forum] | https://github.com/cmangos/wotlk-db.git[git repository]
  * YTDB: http://ytdb.ru[forum] | http://svn2.assembla.com/svn/ytdbase/[svn repository]
  * PSDB: http://project-silvermoon.forumotion.com/[forum] | http://subversion.assembla.com/svn/psmdb_wotlk/[svn repository]
- * UDB 4.3.4: http://udb.no-ip.org/index.php[forum, scroll down to UDB 4.3.4] | https://github.com/UDB-434/Database[git repository]
 
 Software requirements (Windows)
 -------------------------------
@@ -38,7 +34,6 @@ Game client of:
  * World of Warcraft Classic (1.12.x) for cmangos-classic
  * World of Warcraft TBC (2.4.3) for cmangos-tbc
  * World of Warcraft WotLK (3.3.5a) for for cmangos-wotlk
- * World of Warcraft Cataclysm (4.3.4) for for cmangos-cata
 
 Some tools:
 
@@ -51,7 +46,7 @@ Some tools:
  * An advanced text editor (optional) such as http://notepad-plus-plus.org/[Notepad++]. Definitely not required but will make editing the configuration files much easier in later steps.
 
 You can find https://youtu.be/drnlf4UMZ1w[here a video] of how to install Git, Visual Studio and CMAKE.
-
+An alternative page for a detailled installation guid on https://github.com/cmangos/issues/wiki/Detailed-installation-guide-for-Microsoft-Windows[windows installation]
 
 Software requirements (*nix)
 ----------------------------
@@ -100,7 +95,6 @@ Alternative databases::
   A few other teams also provide databases that work with the cmangos core, and while we here at cmangos don't directly support them they still are a valid choice, and to some a more prefered one.
   - YTDB (for WotLK - 3.3.5a)
   - PSDB (for WotLK - 3.3.5a)
-  - UDB 4.3.4 (for Cata - 4.3.4)
 
 World Of Warcraft Client::
   is a client to connect to the server. It's your own copy of the game.
@@ -181,10 +175,6 @@ After having opened Git bash in the right folder, simply type:
 
  git clone git://github.com/cmangos/mangos-wotlk.git mangos
 
- * Cataclysm:
-
- git clone git://github.com/cmangos/mangos-cata.git mangos
-
 Submit this git command with enter/return. This will take a little time to complete, but afterwards you will have created a sub-directory named +mangos+ into which the CMaNGOS sources are cloned.
 
 A simple https://youtu.be/At3VUI9fOq4[video] of the process
@@ -231,14 +221,6 @@ YTDB (WotLK)
 
 This will create a new folder (likely ++ytdbase++) in which YTDB SQL-files are located.
 
-YTDB (CATA)
-^^^^^^^^^^^^
-*On Windows*
-
-* Open ++C:\Mangos++ in the explorer, right-click on the right hand side
-* Select "Tortoise SVN Checkout" from the context menu.
-* Insert as SVN-URL: ++http://svn2.assembla.com/svn/ytdbase/Mangos/Cataclysm/++
-
 *On *nix*
 
  svn co http://svn2.assembla.com/svn/ytdbase/Mangos/Cataclysm ytdbase/
@@ -256,14 +238,6 @@ PSDB (WotLK)
 *On *nix*
 
  svn co http://svn.assembla.com/svn/psmdb_wotlk/
-
-UDB 4.3.4(CATA)
-^^^^^^^^^^^^^^^
-* Open ++C:\Mangos++ with git bash.
-
- git clone git://github.com/UDB-434/Database.git
-
-This will create a new subfolder ++Database++ in which the UDB-DB for cata SQL-files are located.
 
 
 Directory structure
@@ -668,12 +642,6 @@ Do you wish to continue? (y/n)
 *Support for YTDB Needed.*
 
 
-Fill ScriptDev2 database:
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
- mysql -uroot -p mangos < mangos/sql/scriptdev2/scriptdev2.sql
-
-
 Configuring CMaNGOS
 --------------------
 This part should be an extra wiki-page: Meaning of config files from mangos/sd2
@@ -730,16 +698,6 @@ Your locale folder may be named differently according to your region ("enUS", "e
  set realmlist 127.0.0.1
 
 *Always use the wow.exe and NOT the launcher to start your WoW-Client*
-
-
-Additional settings for Cata client:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You should:
-
-1. Use a patched wow.exe
-2. Add ++set patchlist localhost++ line in addition to realmlist line in realmlist.wtf
-3. Delete or rename wow.mfil and wow.tfil files
 
 
 Running your Server
@@ -805,7 +763,6 @@ Example:
  * 0) Basic version
  * 1) The Burning Crusade
  * 2) Wrath of the Lich King
- * 3) Cataclysm
 
 Example:
 
