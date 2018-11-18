@@ -46,7 +46,8 @@ Some tools:
  * An advanced text editor (optional) such as http://notepad-plus-plus.org/[Notepad++]. Definitely not required but will make editing the configuration files much easier in later steps.
 
 You can find https://youtu.be/drnlf4UMZ1w[here a video] of how to install Git, Visual Studio and CMAKE.
-An alternative page for a detailled installation guid on https://github.com/cmangos/issues/wiki/Detailed-installation-guide-for-Microsoft-Windows[windows installation]
+
+An alternative page for a detailled installation guide on https://github.com/cmangos/issues/wiki/Detailed-installation-guide-for-Microsoft-Windows[windows installation]
 
 Software requirements (*nix)
 ----------------------------
