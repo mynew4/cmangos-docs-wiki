@@ -269,6 +269,7 @@ h4. TemporaryFactionFlags
 h4. EUnitFields
 
 |_. Value|_. Type|_. Description|
+|22|UNIT_FIELD_HEALTH|Health|
 |24|UNIT_FIELD_POWER2|Mana|
 |34|UNIT_FIELD_LEVEL|Level|
 |150|UNIT_FIELD_BOUNDINGRADIUS|bounding_radius|
