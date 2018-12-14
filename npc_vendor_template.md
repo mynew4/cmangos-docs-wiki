@@ -3,7 +3,7 @@ Back to [world database](mangosdb_struct) list of tables.
 The \`npc\_vendor(\_template)\` table
 -------------------------------------
 
-holds the vendor data for all NPCs that sell items by [\`creature\_template\`.\`entry\`](https://github.com/cmangos/issues/wiki/Creature_template#entry) or [creature\_template.VendorTemplateId](creature_template#VendorTemplateId).
+holds the vendor data for all NPCs that sell items by [\`creature\_template\`.\`entry\`](Creature_template#entry) or [creature\_template.VendorTemplateId](creature_template#VendorTemplateId).
 
 The gold price for each item is in its item template as [BuyPrice](item_template#BuyPrice).
 
@@ -21,7 +21,7 @@ The gold price for each item is in its item template as [BuyPrice](item_template
 
 #### entry/VendorTemplateId
 
-For npc\_vendor it's the [\`creature\_template\`.\`entry\`](https://github.com/cmangos/issues/wiki/Creature_template#entry) of the creature
+For npc\_vendor it's the [\`creature\_template\`.\`entry\`](Creature_template#entry) of the creature
 
 For npc\_vendor\_template it's the [creature\_template.VendorTemplateId](creature_template#VendorTemplateId) of the vending\_list which is sold by this entry.
 

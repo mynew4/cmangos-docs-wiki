@@ -3,7 +3,7 @@ Back to [world database](mangosdb_struct) list of tables.
 The \`creature\_(template\_)addon\` tables
 ------------------------------------------
 
-define different things that are applied on creatures when they are loaded, either by [\`creature\`.\`guid\`](https://github.com/cmangos/issues/wiki/Creature#guid) or [\`creature\_template\`.\`entry\`](https://github.com/cmangos/issues/wiki/Creature_template#entry).
+define different things that are applied on creatures when they are loaded, either by [\`creature\`.\`guid\`](Creature#guid) or [\`creature\_template\`.\`entry\`](Creature_template#entry).
 So two creatures using the same creature\_template\_addon can look different, if one is additionally defined in creature\_addon.
 
 Through the use of the fields in this table, many things can be changed about the outward visual appearance of the creature. Potential usage examples are: to have the creature be mounted, to have it emote something, to have it display an aura effect, etc.

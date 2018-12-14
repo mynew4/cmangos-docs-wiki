@@ -11,7 +11,7 @@ Switches work just like it sounds.. they turn settings for bots On, OFF, Or mayb
 
 /t BOTNAME follow near (orders bot to decrement follow distance -1.0 from what it is now)
 
-/t BOTNAME follow auto (turns auto variable follow distance on/off) see [Automatic Action](https://github.com/cmangos/issues/wiki/Automatic-Action) for details.
+/t BOTNAME follow auto (turns auto variable follow distance on/off) see [Automatic Action](Automatic-Action) for details.
 
 /t BOTNAME stay
 

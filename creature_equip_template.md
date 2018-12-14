@@ -22,14 +22,14 @@ Unique Id of the equipment, no link with any official data. This id is free.
 
 #### equipentry1
 
-This is the item of the equipment used in right hand (Mainhand) from [\`item\_template\`.\`entry\`](https://github.com/cmangos/issues/wiki/item_template#entry).
+This is the item of the equipment used in right hand (Mainhand) from [\`item\_template\`.\`entry\`](item_template#entry).
 
 Shields cant be set as equipentry1.
 
 #### equipentry2
 
-This is the item of the equipment used in left hand (Offhand) from [\`item\_template\`.\`entry\`](https://github.com/cmangos/issues/wiki/item_template#entry).
+This is the item of the equipment used in left hand (Offhand) from [\`item\_template\`.\`entry\`](item_template#entry).
 
 #### equipentry3
 
-This is the item of the equipment used in distance slot (Ranged). It comes from [\`item\_template\`.\`entry\`](https://github.com/cmangos/issues/wiki/item_template#entry).
+This is the item of the equipment used in distance slot (Ranged). It comes from [\`item\_template\`.\`entry\`](item_template#entry).

@@ -5,7 +5,7 @@ How to install C(ontinued)-MaNGOS from scratch and how to update it.
 
 This Guide will help you for Windows or *nix (Ubuntu, Debian) and for all supported clients: Classic - TBC - WotLK.
 
-Instructions covering Mac OS X (10.6 & 10.7) specific steps are available https://github.com/cmangos/issues/wiki/Build-CMaNGOS-for-Mac-OS-X[here] in addition of this guide.
+Instructions covering Mac OS X (10.6 & 10.7) specific steps are available Build-CMaNGOS-for-Mac-OS-X[here] in addition of this guide.
 
 For other environments (like FreeBSD, ARM and similar) please consider our https://forum.cmangos.net[forum] for assistance.
 
@@ -13,7 +13,7 @@ If you run into issues during installation or need help understanding one of the
 
 These Installation Instructions are expected to be current, so please read through every step again to ensure that you didn't skip or misunderstand something before going to the forums.
 
-If you are an absolute beginner to programming and compiling then you may want to go through the https://github.com/cmangos/issues/wiki/Beginners-Guide-Home[Beginner's Guide] first.
+If you are an absolute beginner to programming and compiling then you may want to go through the Beginners-Guide-Home[Beginner's Guide] first.
 
 
 Addresses
@@ -47,7 +47,7 @@ Some tools:
 
 You can find https://youtu.be/drnlf4UMZ1w[here a video] of how to install Git, Visual Studio and CMAKE.
 
-An alternative page for a detailled installation guide on https://github.com/cmangos/issues/wiki/Detailed-installation-guide-for-Microsoft-Windows[windows installation]
+An alternative page for a detailled installation guide on Detailed-installation-guide-for-Microsoft-Windows[windows installation]
 
 Software requirements (*nix)
 ----------------------------
@@ -267,7 +267,7 @@ The CMaNGOS cmake scripts should automatically detect the location of your boost
 
 On most *nix you just have to install boost development libraries from your distribution package repositories.
 
-On Debian and Ubuntu you can simply install the ++libboost-all-dev++ meta-package. On Fedora there should be a package named ++boost-devel++ (untested). If you followed the https://github.com/cmangos/issues/wiki/Installation-Instructions#software-requirements-nix[Software requirements (*nix)] step above you should have the respective package installed already.
+On Debian and Ubuntu you can simply install the ++libboost-all-dev++ meta-package. On Fedora there should be a package named ++boost-devel++ (untested). If you followed the Installation-Instructions#software-requirements-nix[Software requirements (*nix)] step above you should have the respective package installed already.
 
 For instructions on how to compile boost from source code or general information, see the boost http://www.boost.org/more/getting_started/index.html[Getting Started] guide.
 

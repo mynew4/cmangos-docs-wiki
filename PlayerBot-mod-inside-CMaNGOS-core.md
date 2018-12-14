@@ -8,13 +8,13 @@ The bots assist in all aspects of normal game play, combat, trading, questing an
 
 #### What can Playerbot do ?
 
--   [Check out the Awesome Features of Playerbot!](https://github.com/cmangos/issues/wiki/Playerbot-Features)
+-   [Check out the Awesome Features of Playerbot!](Playerbot-Features)
 
 #### How can I get Playerbot ?
 
--   [Guide to building Playerbot](https://github.com/cmangos/issues/wiki/Guide-to-build-Playerbot)
+-   [Guide to building Playerbot](Guide-to-build-Playerbot)
 
 <!-- -->
 
--   [Guide to using Playerbot](https://github.com/cmangos/issues/wiki/Guide-to-use-Playerbot)
+-   [Guide to using Playerbot](Guide-to-use-Playerbot)
 

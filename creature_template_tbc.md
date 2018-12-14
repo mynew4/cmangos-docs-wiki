@@ -8,9 +8,9 @@ Back to [world database](mangosdb_struct) list of tables.
 The \`creature\_template\_tbc\` table
 -------------------------------------
 
-This table contains the description of creatures. Each spawned [creature](https://github.com/cmangos/issues/wiki/creature) is an instance of a creature\_template present in this table.
+This table contains the description of creatures. Each spawned [creature](creature) is an instance of a creature\_template present in this table.
 
-This means every [creature](https://github.com/cmangos/issues/wiki/creature) MUST be defined in this table.
+This means every [creature](creature) MUST be defined in this table.
 
 ### Structure
 

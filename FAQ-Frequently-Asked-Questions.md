@@ -8,16 +8,16 @@
   * For problems with the server: Look for the file, *Server.log*, in your server's home directory.
 
 ### I'm a beginner and want to understand how CMaNGOS works, where should I get started?
-* See the [Beginner's Guide](https://github.com/cmangos/issues/wiki/Beginners-Guide-Home).
+* See the [Beginner's Guide](Beginners-Guide-Home).
 
 ### How do I install CMaNGOS?
-* See the [Installation Instructions](https://github.com/cmangos/issues/wiki/Installation-Instructions).
+* See the [Installation Instructions](Installation-Instructions).
 
 ### Error: "MySQL is not recognized as an internal or external command"
 * You need to add MySQL to your path environment so that windows recognizes the command by default. See [here](http://dev.mysql.com/doc/mysql-windows-excerpt/5.1/en/mysql-installation-windows-path.html) for a walk through from MySQL.
 
 ### My server has errors when I try to start it
-* First you should review the [Installation Instructions](https://github.com/cmangos/issues/wiki/Installation-Instructions) again to be sure you didn't miss any steps and that every step was done according to the instructions.  
+* First you should review the [Installation Instructions](Installation-Instructions) again to be sure you didn't miss any steps and that every step was done according to the instructions.  
 * Second, search the forums or Discord for a solution (most errors have been encountered before and so there is usually a thread someone on the forums discussing it).
 * Third, if you can't find any answers, use one of the methods mentioned [above](#what-should-i-do-when-i-encounter-a-problem) to ask the developers for help.
 
@@ -28,7 +28,7 @@ ERROR:
 ERROR:  [B] You need: --> _version_
 ```
 * You need to update your database to the correct version to match the core.
-* See the [here](https://github.com/cmangos/issues/wiki/Installation-Instructions#basic-concept-of-database-filling) in the Installation Instructions for details.
+* See the [here](Installation-Instructions#basic-concept-of-database-filling) in the Installation Instructions for details.
 
 ### I cannot login to my server
 If your server is running and you just can't connect to it then there are several possible issues:
@@ -55,7 +55,7 @@ If your server is running and you just can't connect to it then there are severa
   * You can get a list of all your realms with the following: ```SELECT * FROM realmlist;```
 
 * Ensure that the user account you are trying to log in with is created:
-  * See the [Installation Instructions](https://github.com/cmangos/issues/wiki/Installation-Instructions).
+  * See the [Installation Instructions](Installation-Instructions).
   * To add an account, type the below line directly into the server command prompt (mangosd) replacing $accountName with the name of the account and $accountPassword with the password to be used:  
   `account create $accountName $accountPassword`
 
@@ -91,7 +91,7 @@ If your server is running and you just can't connect to it then there are severa
 * Maybe you still have invisibility on, try `.gm visi on`  
 
 ### How do I make custom items?
-* CMaNGOS developers do not actively support custom items as we are focused on true emulation. That being said, you can always ask for help on the forums or lookup some guides around the internet. If you are up to the task, check out the [item_template](https://github.com/cmangos/issues/wiki/Item_template) wiki entry to get started from the ground up.
+* CMaNGOS developers do not actively support custom items as we are focused on true emulation. That being said, you can always ask for help on the forums or lookup some guides around the internet. If you are up to the task, check out the [item_template](Item_template) wiki entry to get started from the ground up.
 
 ### The ".gm fly" command doesn't work
 * This command does not work for classic core. If you are on another core, check your syntax and make sure you installed everything correctly.  

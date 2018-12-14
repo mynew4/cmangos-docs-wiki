@@ -20,7 +20,7 @@ These spell effects require a specific target in either alive or dead state (for
 
 #### entry
 
-The spell ID. [spell\_template\#id](https://github.com/cmangos/issues/wiki/spell_template)
+The spell ID. [spell\_template\#id](spell_template)
 
 When adding a new entry, be sure to check to see if the spell triggers another spell. If it does, don't forget to check that spell as well to see if it has ImplictTargetA-B = 38 || ImpliciteTargetA-B == 7 and if it does, add an entry in this table for it as well.
 

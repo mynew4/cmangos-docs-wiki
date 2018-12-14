@@ -1,4 +1,4 @@
-Back to [world database](https://github.com/cmangos/issues/wiki/mangosdb_struct) list of tables
+Back to [world database](mangosdb_struct) list of tables
 
 ## The `creature_movement` table
 ***
@@ -14,20 +14,20 @@ To add waypoints in-game:
 
 *Field* | *Type* | *Null* | *Key* | *Default* | *Extra*
 ------------ | ------------- | -----------  | -----------  | -----------  | -----------
-[id](https://github.com/cmangos/issues/wiki/creature_movement#id)|int(10) unsigned|NO|PRI|0||
-[point](https://github.com/cmangos/issues/wiki/creature_movement#point)|mediumint(8)|NO|PRI|0||
-[position_x](https://github.com/cmangos/issues/wiki/creature_movement#position_x)|float|NO||0||
-[position_y](https://github.com/cmangos/issues/wiki/creature_movement#position_y)|float|NO||0||
-[position_z](https://github.com/cmangos/issues/wiki/creature_movement#position_z)|float|NO||0||
-[waittime](https://github.com/cmangos/issues/wiki/creature_movement#waittime)|int(10)|NO||0||
-[script_id](https://github.com/cmangos/issues/wiki/creature_movement#script_id)|mediumint(8)|NO||0||
-[orientation](https://github.com/cmangos/issues/wiki/creature_movement#orentation)|float|NO||0||
+[id](creature_movement#id)|int(10) unsigned|NO|PRI|0||
+[point](creature_movement#point)|mediumint(8)|NO|PRI|0||
+[position_x](creature_movement#position_x)|float|NO||0||
+[position_y](creature_movement#position_y)|float|NO||0||
+[position_z](creature_movement#position_z)|float|NO||0||
+[waittime](creature_movement#waittime)|int(10)|NO||0||
+[script_id](creature_movement#script_id)|mediumint(8)|NO||0||
+[orientation](creature_movement#orentation)|float|NO||0||
 
 
 ### Description of the fields
 
 #### id
-The guid of the creature if creature_movement. See [creature_guid](https://github.com/cmangos/issues/wiki/creature)
+The guid of the creature if creature_movement. See [creature_guid](creature)
 
 #### point
 
@@ -51,7 +51,7 @@ The time that the creature will wait before heading to the next waypoint, in mil
 
 #### script&#95;id
 
-Reference to [DBScripts_on_creature_movement](https://github.com/cmangos/issues/wiki/DBScripts_on_creature_movement)
+Reference to [DBScripts_on_creature_movement](DBScripts_on_creature_movement)
 
 #### orientation
 

@@ -5,10 +5,10 @@ Playerbot lets you add another character from your account as a bot that you can
 Check out all the things your Characters can do from the categories below!
 
 
-### [Automatic Action](https://github.com/cmangos/issues/wiki/Automatic-Action)
+### [Automatic Action](Automatic-Action)
 
-### [Interaction](https://github.com/cmangos/issues/wiki/Bot-Interaction)
+### [Interaction](Bot-Interaction)
 
-### [TradeSkills](https://github.com/cmangos/issues/wiki/Bot-TradeSkills)
+### [TradeSkills](Bot-TradeSkills)
 
-### [Bot Commands](https://github.com/cmangos/issues/wiki/Bot-Commands)
+### [Bot Commands](Bot-Commands)

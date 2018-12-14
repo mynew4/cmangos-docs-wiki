@@ -1,4 +1,4 @@
-Back to [dbc files](https://github.com/cmangos/issues/wiki/dbc_files) list of tables.
+Back to [dbc files](dbc_files) list of tables.
 
 ## The `SummonProperties` dbc
 

@@ -19,16 +19,16 @@ Of course the most important commands are ...
 
 Haha, now go check out all these commands you can use!
 
-### [Summon Bots](https://github.com/cmangos/issues/wiki/Summon-Bots)
+### [Summon Bots](Summon-Bots)
 
-### [Switches](https://github.com/cmangos/issues/wiki/Bot-Switches)
+### [Switches](Bot-Switches)
 
-### [Combat](https://github.com/cmangos/issues/wiki/Combat-Commands)
+### [Combat](Combat-Commands)
 
-### [Skill Commands](https://github.com/cmangos/issues/wiki/Skill-Commands)
+### [Skill Commands](Skill-Commands)
 
-### [InterAction Commands](https://github.com/cmangos/issues/wiki/InterAction-Commands)
+### [InterAction Commands](InterAction-Commands)
 
-### [Equipment Commands](https://github.com/cmangos/issues/wiki/Equipment-Commands)
+### [Equipment Commands](Equipment-Commands)
 
-### [Pet Taming Commands](https://github.com/cmangos/issues/wiki/Pet-Taming-Commands)
+### [Pet Taming Commands](Pet-Taming-Commands)

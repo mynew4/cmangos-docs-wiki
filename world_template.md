@@ -1,4 +1,4 @@
-Back to [world database](https://github.com/cmangos/issues/wiki/mangosdb_struct) list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
 ## The `world_template` table
 
@@ -13,7 +13,7 @@ holds the ScriptNames of the world maps 0, 1, 530, 571.
 
 #### map
 
-id from https://github.com/cmangos/issues/wiki/Map.dbc the ScriptName is applied to.
+id from Map.dbc the ScriptName is applied to.
 
 #### ScriptName
 

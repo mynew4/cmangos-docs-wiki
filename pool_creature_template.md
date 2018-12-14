@@ -1,10 +1,10 @@
-Back to [world database](https://github.com/cmangos/issues/wiki/Mangosdb_struct) list of tables.
+Back to [world database](Mangosdb_struct) list of tables.
 
 ## The `pool_creature_template` table
 
 holds data on creatures that are pooled by their [`creature_template`.`entry`](Creature_template#entry).
 
-All creatures have to be located on the same [`instance_template`.`map`](https://github.com/cmangos/issues/wiki/instance_template#map) / [`world_template``map`](https://github.com/cmangos/issues/wiki/world_template#map).
+All creatures have to be located on the same [`instance_template`.`map`](instance_template#map) / [`world_template``map`](world_template#map).
 
 ### Structure
 

@@ -3,9 +3,9 @@ Back to [world database](mangosdb_struct) list of tables.
 The \`creature\_movement(\_template)\` table
 --------------------------------------------
 
-holds all the information on creature's waypoints by [\`creature\`.\`guid\`](https://github.com/cmangos/issues/wiki/Creature#guid) or [\`creature\_template\`.\`entry\`](https://github.com/cmangos/issues/wiki/Creature_template#entry). In essence, a waypoint just defines a path that the creature will follow by going from point to point. More specifically, once the creature arrives at a point, it can do different things like cast a spell, do an emote, etc. Usually this table is filled through the .wp command (and its various subcommands) in the world.
+holds all the information on creature's waypoints by [\`creature\`.\`guid\`](Creature#guid) or [\`creature\_template\`.\`entry\`](Creature_template#entry). In essence, a waypoint just defines a path that the creature will follow by going from point to point. More specifically, once the creature arrives at a point, it can do different things like cast a spell, do an emote, etc. Usually this table is filled through the .wp command (and its various subcommands) in the world.
 
-Please note that for a creature to use waypoints, its [MovementType](creature#MovementType) must be 2 for its [\`creature\`.\`guid\`](https://github.com/cmangos/issues/wiki/Creature#guid).
+Please note that for a creature to use waypoints, its [MovementType](creature#MovementType) must be 2 for its [\`creature\`.\`guid\`](Creature#guid).
 
 ### Structure
 

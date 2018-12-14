@@ -1,8 +1,8 @@
-Back to [world database](https://github.com/cmangos/issues/wiki/Mangosdb_struct) list of tables.
+Back to [world database](Mangosdb_struct) list of tables.
 
 ## The `creature_template_spells` table
 
-holds creature spell data, which was previously hold in [creature_template](https://github.com/cmangos/issues/wiki/creature_template) table.
+holds creature spell data, which was previously hold in [creature_template](creature_template) table.
 
 ### General Use
 

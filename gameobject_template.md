@@ -136,7 +136,7 @@ The content of the data fields depends on the [gameobject type](#type)
 
 -   **GAMEOBJECT\_TYPE\_DOOR = 0**
     -   data0: startOpen (Boolean flag)
-    -   data1: open (LockId from [Lock.dbc](https://github.com/cmangos/issues/wiki/Lock.dbc))
+    -   data1: open (LockId from [Lock.dbc](Lock.dbc))
     -   data2: autoClose (65536 \* seconds(sniff value)) (e.g. open after 5 min = 300 \* 65536 = 19660800)
     -   data3: noDamageImmune (Boolean flag)
     -   data4: openTextID (Unknown Text ID)
@@ -145,7 +145,7 @@ The content of the data fields depends on the [gameobject type](#type)
 <!-- -->
 -   **GAMEOBJECT\_TYPE\_BUTTON = 1**
     -   data0: startOpen (State)
-    -   data1: open (LockId from [Lock.dbc](https://github.com/cmangos/issues/wiki/Lock.dbc))
+    -   data1: open (LockId from [Lock.dbc](Lock.dbc))
     -   data2: autoClose (65536 \* seconds(sniff value))
     -   data3: linkedTrap ([gameobject\_template.entry](gameobject_template#entry) (Spawned GO type 6))
     -   data4: noDamageImmune (Boolean flag)

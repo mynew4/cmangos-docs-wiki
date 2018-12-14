@@ -98,6 +98,6 @@ Mmaps are similar overlays that tell the server where to route creatures and NPC
 ## Okay that's great, now what?
 Now we move on to how all of these things work together.
 
-Next: [How Everything Fits Together](https://github.com/cmangos/issues/wiki/Beginners-Guide-How-Everything-Fits-Together)
+Next: [How Everything Fits Together](Beginners-Guide-How-Everything-Fits-Together)
 
-[Beginner's Guide Home](https://github.com/cmangos/issues/wiki/Beginners-Guide-Home)
+[Beginner's Guide Home](Beginners-Guide-Home)

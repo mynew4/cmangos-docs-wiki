@@ -2,7 +2,7 @@
 
 There alot of different tradeskills, and options for them.
 
-You can check The [TradeSkills](https://github.com/cmangos/issues/wiki/Bot-TradeSkills) page for more information as well.
+You can check The [TradeSkills](Bot-TradeSkills) page for more information as well.
 
 ### TradeSkill Commands:
 

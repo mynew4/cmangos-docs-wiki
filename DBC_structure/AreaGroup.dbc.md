@@ -2,7 +2,7 @@ Back to [dbc files](dbc_files) list.
 
 ### AreaGroup.dbc
 
-This DBC stores IDs used in [AreaGroupId](Spell.dbc#spelldbc) in Spell.dbc and [AreaId](https://github.com/cmangos/issues/wiki/spell_template#areaid) in Spell\_template.
+This DBC stores IDs used in [AreaGroupId](Spell.dbc#spelldbc) in Spell.dbc and [AreaId](spell_template#areaid) in Spell\_template.
 
 **Version is : 3.3.5a**
 
@@ -22,9 +22,9 @@ This DBC stores IDs used in [AreaGroupId](Spell.dbc#spelldbc) in Spell.dbc and [
 <hr />
 #### ID
 
-[AreaId](https://github.com/cmangos/issues/wiki/spell_template#areaid) in Spell\_template uses this Id for specify the allowed areas for a successful cast.
+[AreaId](spell_template#areaid) in Spell\_template uses this Id for specify the allowed areas for a successful cast.
 
 #### Entry1-7
 
-Entry ID's taken from [AreaTable.dbc](https://github.com/cmangos/issues/wiki/AreaTable.dbc#content)
+Entry ID's taken from [AreaTable.dbc](AreaTable.dbc#content)
 Groups several small areas into one larger area or category.

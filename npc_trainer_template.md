@@ -20,9 +20,9 @@ This table holds all the information on training NPCs. All spells listed in the 
 
 #### entry
 
-[creature\_template.entry](https://github.com/cmangos/issues/wiki/creature_template#entry) for npc\_trainer (unique trainers which share no npc\_trainer\_template with other entries)
+[creature\_template.entry](creature_template#entry) for npc\_trainer (unique trainers which share no npc\_trainer\_template with other entries)
 
-[creature\_template.trainertemplateid](https://github.com/cmangos/issues/wiki/creature_template#trainertemplateid) for npc\_trainer\_template
+[creature\_template.trainertemplateid](creature_template#trainertemplateid) for npc\_trainer\_template
 
 #### spell
 

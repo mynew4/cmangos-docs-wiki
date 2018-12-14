@@ -17,7 +17,7 @@ Don't forget to install the command line tools (Preferences>Download for the las
 
 **A C++11 compliant compiler**
 
-See [this guide](https://github.com/cmangos/issues/wiki/Getting-a-C--11-compiler-on-Mac-OS-X) on our wiki.
+See [this guide](Getting-a-C--11-compiler-on-Mac-OS-X) on our wiki.
 
 **Boost lib**
 
@@ -234,6 +234,6 @@ Several hours later, when the mmaps are generated, we move them to the server bi
 `$mv dbc maps mmaps ~/mangos/run/bin/`
 
 
-You have now complete all the steps that are specific to Mac OS X. For all the remaining steps (mainly configuration, database management and server startup), you can refer to the CMaNGOS Installation guide: https://github.com/cmangos/issues/wiki/Installation-Instructions
+You have now complete all the steps that are specific to Mac OS X. For all the remaining steps (mainly configuration, database management and server startup), you can refer to the CMaNGOS Installation guide: Installation-Instructions
 
 *Note: for MySQL, we advice using the very nice and free front end client: Sequel Pro http://www.sequelpro.com/*

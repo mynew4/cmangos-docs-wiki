@@ -7,7 +7,7 @@ holds information on how certain spells activate, which proc other spells.
 
 All spells in this table must have **Aura Id 42 (SPELL\_AURA\_PROC\_TRIGGER\_SPELL)** as one of its **Effects**.
 
-Any entries in this table will overwrite the existing proc settings for this [spell\_template\#id](https://github.com/cmangos/issues/wiki/spell_template).
+Any entries in this table will overwrite the existing proc settings for this [spell\_template\#id](spell_template).
 
 ### Structure
 

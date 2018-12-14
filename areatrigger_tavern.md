@@ -16,7 +16,7 @@ Enable a trigger when player enters a city or tavern. This causes the player to 
 
 #### id
 
-This is the trigger identifier, see [AreaTrigger.dbc](https://github.com/cmangos/issues/wiki/AreaTrigger.dbc)
+This is the trigger identifier, see [AreaTrigger.dbc](AreaTrigger.dbc)
 
 #### name
 

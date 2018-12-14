@@ -5,7 +5,7 @@ Each Spell has up to three effects, which have generic behaviour, determined by 
 Spell script can be anything ranging from triggering additional spells under certain conditions, to restricting targets of given spell.
 
 Spell.dbc - is the source of spell definitions. Tells us what effects/values/targets etc a given spell has.
-Description of Spell.dbc https://github.com/cmangos/issues/wiki/Spell.dbc
+Description of Spell.dbc Spell.dbc
 
 Triggered spells - There are 3 main kinds of triggered spells:
 1. Event/AI triggered

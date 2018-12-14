@@ -1,4 +1,4 @@
-Back to [world database](https://github.com/cmangos/issues/wiki/mangosdb_struct) list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
 ## The `spell_cone` table
 
@@ -12,13 +12,13 @@ Original Data is extracted from `Cata-Client`. Values are backwards compatible w
 
 | Field| Type| Null| Key| Default| Extra|
 | ---|---| ---|--- |--- |--- |
-|[Id](https://github.com/cmangos/issues/wiki/spell_cone#Id)|int(11) unsigned|NO|PRI|0||
-|[ConeDegrees](https://github.com/cmangos/issues/wiki/spell_cone#ConeDegrees)|int(11)|NO|PRI|60||
+|[Id](spell_cone#Id)|int(11) unsigned|NO|PRI|0||
+|[ConeDegrees](spell_cone#ConeDegrees)|int(11)|NO|PRI|60||
 
 #### Id
 
-[spell_cone.Id](https://github.com/cmangos/issues/wiki/spell_cone#Id) of the spell
+[spell_cone.Id](spell_cone#Id) of the spell
 
 #### ConeDegrees
 
-[spell_cone.ConeDegrees](https://github.com/cmangos/issues/wiki/spell_cone#ConeDegrees) of the spell.
+[spell_cone.ConeDegrees](spell_cone#ConeDegrees) of the spell.

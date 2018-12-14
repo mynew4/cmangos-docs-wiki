@@ -595,11 +595,11 @@ This is found in the SMSG\_QUEST\_GIVER\_OFFER\_REWARD\_MESSAGE-packet in sniffs
 
 #### StartScript
 
-ID of the start script. See [DBScripts.id](https://github.com/cmangos/issues/wiki/DBScripts#id)
+ID of the start script. See [DBScripts.id](DBScripts#id)
 
 #### CompleteScript
 
-ID of the end script. See [DBScripts.id](https://github.com/cmangos/issues/wiki/DBScripts#id)
+ID of the end script. See [DBScripts.id](DBScripts#id)
 
 Examples
 --------

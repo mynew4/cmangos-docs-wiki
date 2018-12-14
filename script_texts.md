@@ -1,4 +1,4 @@
-Back to [world database](https://github.com/cmangos/issues/wiki/mangosdb_struct) list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
 ## The `script_texts` table
 
@@ -8,21 +8,21 @@ holds all the texts used by core scripted creatures (ScriptDev). This table hand
 
 |Field|Type|Attributes|Null|Default|Comments|
 |--- |--- |--- |--- |--- |--- |
-|[entry](https://github.com/cmangos/issues/wiki/script_texts#entry)|int(11)|signed|NO|0|Text Entry|
-|[content_default](https://github.com/cmangos/issues/wiki/script_texts#content_default)|text||YES|NULL|Default Locale Text|
-|[content_loc1](https://github.com/cmangos/issues/wiki/script_texts#content_loc)|text||YES|NULL|Locale 1 Text|
-|[content_loc2](https://github.com/cmangos/issues/wiki/script_texts#content_loc)|text||YES|NULL|Locale 2 Text|
-|[content_loc3](https://github.com/cmangos/issues/wiki/script_texts#content_loc)|text||YES|NULL|Locale 3 Text|
-|[content_loc4](https://github.com/cmangos/issues/wiki/script_texts#content_loc)|text||YES|NULL|Locale 4 Text|
-|[content_loc5](https://github.com/cmangos/issues/wiki/script_texts#content_loc)|text||YES|NULL|Locale 5 Text|
-|[content_loc6](https://github.com/cmangos/issues/wiki/script_texts#content_loc)|text||YES|NULL|Locale 6 Text|
-|[content_loc7](https://github.com/cmangos/issues/wiki/script_texts#content_loc)|text||YES|NULL|Locale 7 Text|
-|[content_loc8](https://github.com/cmangos/issues/wiki/script_texts#content_loc)|text||YES|NULL|Locale 8 Text|
-|[sound](https://github.com/cmangos/issues/wiki/script_texts#sound)|int(11)|unsigned|NO|0|Sound Id|
-|[type](https://github.com/cmangos/issues/wiki/script_texts#type)|int(11)|unsigned|NO|0|Text Type|
-|[language](https://github.com/cmangos/issues/wiki/script_texts#language)|int(11)|unsigned|NO|0|Text Language|
-|[emote](https://github.com/cmangos/issues/wiki/script_texts#emote)|int(11)|unsigned|NO|0|Emote Id|
-|[comment](https://github.com/cmangos/issues/wiki/script_texts#comment)|text||YES|NULL|Comment|
+|[entry](script_texts#entry)|int(11)|signed|NO|0|Text Entry|
+|[content_default](script_texts#content_default)|text||YES|NULL|Default Locale Text|
+|[content_loc1](script_texts#content_loc)|text||YES|NULL|Locale 1 Text|
+|[content_loc2](script_texts#content_loc)|text||YES|NULL|Locale 2 Text|
+|[content_loc3](script_texts#content_loc)|text||YES|NULL|Locale 3 Text|
+|[content_loc4](script_texts#content_loc)|text||YES|NULL|Locale 4 Text|
+|[content_loc5](script_texts#content_loc)|text||YES|NULL|Locale 5 Text|
+|[content_loc6](script_texts#content_loc)|text||YES|NULL|Locale 6 Text|
+|[content_loc7](script_texts#content_loc)|text||YES|NULL|Locale 7 Text|
+|[content_loc8](script_texts#content_loc)|text||YES|NULL|Locale 8 Text|
+|[sound](script_texts#sound)|int(11)|unsigned|NO|0|Sound Id|
+|[type](script_texts#type)|int(11)|unsigned|NO|0|Text Type|
+|[language](script_texts#language)|int(11)|unsigned|NO|0|Text Language|
+|[emote](script_texts#emote)|int(11)|unsigned|NO|0|Emote Id|
+|[comment](script_texts#comment)|text||YES|NULL|Comment|
 
 ### Description of the fields
 
@@ -51,7 +51,7 @@ This is the actual text presented in the Localization #(1-8) Clients
 
 #### sound
 
-This is the sound Id that will play with along with the corresponding text. All sounds are from [SoundEntries.dbc](https://github.com/cmangos/issues/wiki/SoundEntries.dbc).
+This is the sound Id that will play with along with the corresponding text. All sounds are from [SoundEntries.dbc](SoundEntries.dbc).
 
 #### type
 
@@ -70,7 +70,7 @@ This is the method the text is displayed.
 
 #### language
 
-This is the ingame language of the text. Languages are from [Languages.dbc](https://github.com/cmangos/issues/wiki/Languages.dbc).
+This is the ingame language of the text. Languages are from [Languages.dbc](Languages.dbc).
 
 |ID|Name|Description|
 |--- |--- |--- |
