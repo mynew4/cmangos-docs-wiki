@@ -1,33 +1,33 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `game&#95;graveyard&#95;zone` table
+The \`game\_graveyard\_zone\` table
+-----------------------------------
 
 Contains informations about zones connected to world's graveyards.
 
-This table set if character die in zone ghost&#95;zone and graveyard with id accept his team (HORDE or ALIANCE or both) and this is nearest graveyard then character's ghost will be teleported to graveyard id.
+This table set if character die in zone ghost\_zone and graveyard with id accept his team (HORDE or ALIANCE or both) and this is nearest graveyard then character's ghost will be teleported to graveyard id.
 
-For a list of all existing graveyard zones and their respective IDs, check out "WorldSafeLocs.dbc":WorldSafeLocs.dbc
+For a list of all existing graveyard zones and their respective IDs, check out [WorldSafeLocs.dbc](WorldSafeLocs.dbc)
 
-h3. Structure
+### Structure
 
+| **Field**                                     | **Type**         | **Null** | **Key** | **Default** | **Extra** |
+|-----------------------------------------------|------------------|----------|---------|-------------|-----------|
+| [id](Game_graveyard_zone#id)                  | int(10) unsigned | NO       |         | 0           |           |
+| [ghost\_zone](Game_graveyard_zone#ghost_zone) | int(10) unsigned | NO       |         | 0           |           |
+| [faction](Game_graveyard_zone#faction)        | int(10) unsigned | NO       |         | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"id":Game_graveyard_zone#id|int(10) unsigned|NO||0||
-|"ghost_zone":Game_graveyard_zone#ghost_zone|int(10) unsigned|NO||0||
-|"faction":Game_graveyard_zone#faction|int(10) unsigned|NO||0||
+### Description of the fields
 
+#### id
 
-h3. Description of the fields
+Graveyard's ID. See [WorldSafeLocs.dbc](WorldSafeLocs.dbc)
 
-h4. id
+#### ghost\_zone
 
-Graveyard's ID. See "WorldSafeLocs.dbc":WorldSafeLocs.dbc
+Zone's Id of ghost position before teleportation to graveyard. See [AreaTable.dbc](AreaTable.dbc)
 
-h4. ghost&#95;zone
-
-Zone's Id of ghost position before teleportation to graveyard. See "AreaTable.dbc":AreaTable.dbc
-
-h4. faction
+#### faction
 
 Graveyard's team.
 

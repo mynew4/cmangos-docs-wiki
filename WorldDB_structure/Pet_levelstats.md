@@ -1,63 +1,63 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `pet&#95;levelstats` table
+The \`pet\_levelstats\` table
+-----------------------------
 
 This table holds information on individual pet base stats based on level.
 
-h3. Structure
+### Structure
 
+| **Field**                                        | **Type**             | **Null** | **Key** | **Default** | **Extra** |
+|--------------------------------------------------|----------------------|----------|---------|-------------|-----------|
+| [creature\_entry](Pet_levelstats#creature_entry) | int(10) unsigned     | NO       | PRI     |             |           |
+| [level](Pet_levelstats#level)                    | tinyint(3) unsigned  | NO       | PRI     |             |           |
+| [hp](Pet_levelstats#hp)                          | smallint(5) unsigned | NO       |         |             |           |
+| [mana](Pet_levelstats#mana)                      | smallint(5) unsigned | NO       |         |             |           |
+| [armor](Pet_levelstats#armor)                    | int(10) unsigned     | NO       |         | 0           |           |
+| [str](Pet_levelstats#str)                        | smallint(5) unsigned | NO       |         |             |           |
+| [agi](Pet_levelstats#agi)                        | smallint(5) unsigned | NO       |         |             |           |
+| [sta](Pet_levelstats#sta)                        | smallint(5) unsigned | NO       |         |             |           |
+| [inte](Pet_levelstats#inte)                      | smallint(5) unsigned | NO       |         |             |           |
+| [spi](Pet_levelstats#spi)                        | smallint(5) unsigned | NO       |         |             |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"creature_entry":Pet_levelstats#creature_entry|int(10) unsigned|NO|PRI|||
-|"level":Pet_levelstats#level|tinyint(3) unsigned|NO|PRI|||
-|"hp":Pet_levelstats#hp|smallint(5) unsigned|NO||||
-|"mana":Pet_levelstats#mana|smallint(5) unsigned|NO||||
-|"armor":Pet_levelstats#armor|int(10) unsigned|NO||0||
-|"str":Pet_levelstats#str|smallint(5) unsigned|NO||||
-|"agi":Pet_levelstats#agi|smallint(5) unsigned|NO||||
-|"sta":Pet_levelstats#sta|smallint(5) unsigned|NO||||
-|"inte":Pet_levelstats#inte|smallint(5) unsigned|NO||||
-|"spi":Pet_levelstats#spi|smallint(5) unsigned|NO||||
+### Description of the fields
 
+#### creature\_entry
 
-h3. Description of the fields
+The pet creature template ID. See [creature\_template.entry](creature_template#entry)
 
-h4. creature&#95;entry
-
-The pet creature template ID. See "creature&#95;template.entry":creature_template#entry
-
-h4. level
+#### level
 
 The pet level.
 
-h4. hp
+#### hp
 
-The base health of the pet at level = "level":#level.
+The base health of the pet at level = [level](#level).
 
-h4. mana
+#### mana
 
-The base mana of the pet at level = "level":#level.
+The base mana of the pet at level = [level](#level).
 
-h4. armor
+#### armor
 
-The base armor of the pet at level = "level":#level.
+The base armor of the pet at level = [level](#level).
 
-h4. str
+#### str
 
-The base strength of the pet at level = "level":#level.
+The base strength of the pet at level = [level](#level).
 
-h4. agi
+#### agi
 
-The base agility of the pet at level = "level":#level.
+The base agility of the pet at level = [level](#level).
 
-h4. sta
+#### sta
 
-The base stamina of the pet at level = "level":#level.
+The base stamina of the pet at level = [level](#level).
 
-h4. inte
+#### inte
 
-The base intelligence of the pet at level = "level":#level.
+The base intelligence of the pet at level = [level](#level).
 
-h4. spi
+#### spi
 
-The base spirit of the pet at level = "level":#level.
+The base spirit of the pet at level = [level](#level).

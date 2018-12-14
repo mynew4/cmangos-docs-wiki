@@ -1,1 +1,2 @@
-# REDIRECT "loot_template":loot_template
+1.  REDIRECT [loot\_template](loot_template)
+

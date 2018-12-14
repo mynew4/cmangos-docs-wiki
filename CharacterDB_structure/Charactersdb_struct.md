@@ -1,97 +1,145 @@
-h3. This is the list of tables in the 'characters' database
+### This is the list of tables in the 'characters' database
 
-* "account_data":account_data
+-   [account\_data](account_data)
 
-* "arena_team":arena_team
+<!-- -->
+-   [arena\_team](arena_team)
 
-* "arena_team_member":arena_team_member
+<!-- -->
+-   [arena\_team\_member](arena_team_member)
 
-* "arena_team_stats":arena_team_stats
+<!-- -->
+-   [arena\_team\_stats](arena_team_stats)
 
-* "auctionhouse":auctionhouse
+<!-- -->
+-   [auctionhouse](auctionhouse)
 
-* "bugreport":bugreport
+<!-- -->
+-   [bugreport](bugreport)
 
-* "characters":characters
+<!-- -->
+-   [characters](characters)
 
-* "character_achievement":character_achievement
+<!-- -->
+-   [character\_achievement](character_achievement)
 
-* "character_achievement_progress":character_achievement_progress
+<!-- -->
+-   [character\_achievement\_progress](character_achievement_progress)
 
-* "character_action":character_action
+<!-- -->
+-   [character\_action](character_action)
 
-* "character_aura":character_aura
+<!-- -->
+-   [character\_aura](character_aura)
 
-* "character_gifts":character_gifts
+<!-- -->
+-   [character\_gifts](character_gifts)
 
-* "character_glyphs":character_glyphs
+<!-- -->
+-   [character\_glyphs](character_glyphs)
 
-* "character_homebind":character_homebind
+<!-- -->
+-   [character\_homebind](character_homebind)
 
-* "character_instance":character_instance
+<!-- -->
+-   [character\_instance](character_instance)
 
-* "character_inventory":character_inventory
+<!-- -->
+-   [character\_inventory](character_inventory)
 
-* "character_pet":character_pet
+<!-- -->
+-   [character\_pet](character_pet)
 
-* "character_queststatus":character_queststatus
+<!-- -->
+-   [character\_queststatus](character_queststatus)
 
-* "character_queststatus_daily":character_queststatus_daily
+<!-- -->
+-   [character\_queststatus\_daily](character_queststatus_daily)
 
-* "character_reputation":character_reputation
+<!-- -->
+-   [character\_reputation](character_reputation)
 
-* "character_social":character_social
+<!-- -->
+-   [character\_social](character_social)
 
-* "character_spell":character_spell
+<!-- -->
+-   [character\_spell](character_spell)
 
-* "character_spell_cooldown":character_spell_cooldown
+<!-- -->
+-   [character\_spell\_cooldown](character_spell_cooldown)
 
-* "character_ticket":character_ticket
+<!-- -->
+-   [character\_ticket](character_ticket)
 
-* "character_tutorial":character_tutorial
+<!-- -->
+-   [character\_tutorial](character_tutorial)
 
-* "corpse":corpse
+<!-- -->
+-   [corpse](corpse)
 
-* "groups":groups
+<!-- -->
+-   [groups](groups)
 
-* "group_instance":group_instance
+<!-- -->
+-   [group\_instance](group_instance)
 
-* "group_member":group_member
+<!-- -->
+-   [group\_member](group_member)
 
-* "guild":guild
+<!-- -->
+-   [guild](guild)
 
-* "guild_bank_eventlog":guild_bank_eventlog
+<!-- -->
+-   [guild\_bank\_eventlog](guild_bank_eventlog)
 
-* "guild_bank_item":guild_bank_item
+<!-- -->
+-   [guild\_bank\_item](guild_bank_item)
 
-* "guild_bank_right":guild_bank_right
+<!-- -->
+-   [guild\_bank\_right](guild_bank_right)
 
-* "guild_bank_tab":guild_bank_tab
+<!-- -->
+-   [guild\_bank\_tab](guild_bank_tab)
 
-* "guild_eventlog":guild_eventlog
+<!-- -->
+-   [guild\_eventlog](guild_eventlog)
 
-* "guild_member":guild_member
+<!-- -->
+-   [guild\_member](guild_member)
 
-* "guild_rank":guild_rank
+<!-- -->
+-   [guild\_rank](guild_rank)
 
-* "instance":instance
+<!-- -->
+-   [instance](instance)
 
-* "instance_reset":instance_reset
+<!-- -->
+-   [instance\_reset](instance_reset)
 
-* "item_instance":item_instance
+<!-- -->
+-   [item\_instance](item_instance)
 
-* "item_text":item_text
+<!-- -->
+-   [item\_text](item_text)
 
-* "mail":mail
+<!-- -->
+-   [mail](mail)
 
-* "mail_items":mail_items
+<!-- -->
+-   [mail\_items](mail_items)
 
-* "pet_aura":pet_aura
+<!-- -->
+-   [pet\_aura](pet_aura)
 
-* "pet_spell":pet_spell
+<!-- -->
+-   [pet\_spell](pet_spell)
 
-* "pet_spell_cooldown":pet_spell_cooldown
+<!-- -->
+-   [pet\_spell\_cooldown](pet_spell_cooldown)
 
-* "petition":petition
+<!-- -->
+-   [petition](petition)
 
-* "petition_sign":petition_sign
+<!-- -->
+-   [petition\_sign](petition_sign)
+

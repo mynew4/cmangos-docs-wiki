@@ -1,30 +1,30 @@
-Back to "realm database":realmdb_struct list of tables.
+Back to [realm database](realmdb_struct) list of tables.
 
-h2. The `realmcharacters` table
+The \`realmcharacters\` table
+-----------------------------
 
 This table holds information on the number of characters each account has for each realm.
 
-h3. Structure
+### Structure
 
+| **Field**                            | **Type**            | **Null** | **Key** | **Default** | **Extra** |
+|--------------------------------------|---------------------|----------|---------|-------------|-----------|
+| [realmid](Realmcharacters#realmid)   | int(11) unsigned    | NO       | PRI     | 0           |           |
+| [acctid](Realmcharacters#acctid)     | bigint(20) unsigned | NO       | PRI     |             |           |
+| [numchars](Realmcharacters#numchars) | tinyint(3) unsigned | NO       |         | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"realmid":Realmcharacters#realmid|int(11) unsigned|NO|PRI|0||
-|"acctid":Realmcharacters#acctid|bigint(20) unsigned|NO|PRI|||
-|"numchars":Realmcharacters#numchars|tinyint(3) unsigned|NO||0||
+### Description of the fields
 
+#### realmid
 
-h3. Description of the fields
+The ID of the realm. See [realmlist.id](realmlist#id)
 
-h4. realmid
+#### acctid
 
-The ID of the realm. See "realmlist.id":realmlist#id
+The account ID. See [account.id](account#id)
 
-h4. acctid
-
-The account ID. See "account.id":account#id
-
-h4. numchars
+#### numchars
 
 The number of characters the account has on the realm.
 
-"Category: Realm database tables":Category: Realm database tables
+[Category: Realm database tables](Category): Realm database tables

@@ -1,1 +1,2 @@
-# REDIRECT "creature_template_addon":creature_template_addon
+1.  REDIRECT [creature\_template\_addon](creature_template_addon)
+

@@ -1,15 +1,16 @@
-Back to "wdb files":wdb_files list.
+Back to [wdb files](wdb_files) list.
 
-h3. `itemtextcahe` wdb
+### \`itemtextcahe\` wdb
 
 This wdb contains some information of seen items.
 
-*Version is : 3.3.5a*
+**Version is : 3.3.5a**
 
-h3. Structure
+### Structure
 
+| **Name** | **Type** |
+|----------|----------|
+| id       | UInteger |
+| text     | String   |
 
-|*Name*|*Type*|
-|id|UInteger|
-|text|String|
 

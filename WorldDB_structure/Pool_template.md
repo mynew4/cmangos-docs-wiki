@@ -1,23 +1,23 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `pool&#95;template` table
+The \`pool\_template\` table
+----------------------------
 
 Contains all pool instances that participate to any game event.
 
-h3. Structure
+### Structure
 
+| **Field**                             | **Type**              | **Null** | **Key** | **Default** | **Extra** |
+|---------------------------------------|-----------------------|----------|---------|-------------|-----------|
+| [entry](Pool_template#entry)          | mediumint(8) unsigned | NO       | PRI     | 0           |           |
+| [max\_limit](Pool_template#max_limit) | int(10) unsigned      | NO       |         | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":Pool_template#entry|mediumint(8) unsigned|NO|PRI|0||
-|"max_limit":Pool_template#max_limit|int(10) unsigned|NO||0||
+### Description of the fields
 
-
-h3. Description of the fields
-
-h4. entry
+#### entry
 
 Pool's ID.
 
-h4. max&#95;limit
+#### max\_limit
 
 Max number of objects (0) is no limit.

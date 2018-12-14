@@ -1,112 +1,112 @@
-Back to the "characters database":charactersdb_struct list of tables.
+Back to the [characters database](charactersdb_struct) list of tables.
 
-h2. The `character&#95;pet` table
+The \`character\_pet\` table
+----------------------------
 
 This table holds the pet data for each pet summoned by anyone in the game.
 
-h3. Structure
+### Structure
 
+| **Field**                                             | **Type**            | **Null** | **Key** | **Default** | **Extra** |
+|-------------------------------------------------------|---------------------|----------|---------|-------------|-----------|
+| [id](Character_pet#id)                                | int(11) unsigned    | NO       | PRI     | 0           |           |
+| [entry](Character_pet#entry)                          | int(11) unsigned    | NO       |         | 0           |           |
+| [owner](Character_pet#owner)                          | int(11) unsigned    | NO       | MUL     | 0           |           |
+| [modelid](Character_pet#modelid)                      | int(11) unsigned    | YES      |         | 0           |           |
+| [CreatedBySpell](Character_pet#createdbyspell)        | int(11) unsigned    | NO       |         | 0           |           |
+| [PetType](Character_pet#pettype)                      | tinyint(3) unsigned | NO       |         | 0           |           |
+| [level](Character_pet#level)                          | int(11) unsigned    | NO       |         | 1           |           |
+| [exp](Character_pet#exp)                              | int(11) unsigned    | NO       |         | 0           |           |
+| [Reactstate](Character_pet#reactstate)                | tinyint(1) unsigned | NO       |         | 0           |           |
+| [talentpoints](Character_pet#talentpoints)            | int(11) unsigned    | NO       |         | 0           |           |
+| [name](Character_pet#name)                            | varchar(100)        | YES      |         | Pet         |           |
+| [renamed](Character_pet#renamed)                      | tinyint(1) unsigned | NO       |         | 0           |           |
+| [slot](Character_pet#slot)                            | int(11) unsigned    | NO       |         | 0           |           |
+| [curhealth](Character_pet#curhealth)                  | int(11) unsigned    | NO       |         | 1           |           |
+| [curmana](Character_pet#curmana)                      | int(11) unsigned    | NO       |         | 0           |           |
+| [curhappiness](Character_pet#curhappiness)            | int(11) unsigned    | NO       |         | 0           |           |
+| [savetime](Character_pet#savetime)                    | bigint(20) unsigned | NO       |         | 0           |           |
+| [resettalents\_cost](Character_pet#resettalents_cost) | int(11) unsigned    | NO       |         | 0           |           |
+| [resettalents\_time](Character_pet#resettalents_time) | bigint(20) unsigned | NO       |         | 0           |           |
+| [abdata](Character_pet#abdata)                        | longtext            | YES      |         | None        |           |
+| [teachspelldata](Character_pet#teachspelldata)        | longtext            | YES      |         | None        |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"id":Character_pet#id|int(11) unsigned|NO|PRI|0||
-|"entry":Character_pet#entry|int(11) unsigned|NO||0||
-|"owner":Character_pet#owner|int(11) unsigned|NO|MUL|0||
-|"modelid":Character_pet#modelid|int(11) unsigned|YES||0||
-|"CreatedBySpell":Character_pet#createdbyspell|int(11) unsigned|NO||0||
-|"PetType":Character_pet#pettype|tinyint(3) unsigned|NO||0||
-|"level":Character_pet#level|int(11) unsigned|NO||1||
-|"exp":Character_pet#exp|int(11) unsigned|NO||0||
-|"Reactstate":Character_pet#reactstate|tinyint(1) unsigned|NO||0||
-|"talentpoints":Character_pet#talentpoints|int(11) unsigned|NO||0||
-|"name":Character_pet#name|varchar(100)|YES||Pet||
-|"renamed":Character_pet#renamed|tinyint(1) unsigned|NO||0||
-|"slot":Character_pet#slot|int(11) unsigned|NO||0||
-|"curhealth":Character_pet#curhealth|int(11) unsigned|NO||1||
-|"curmana":Character_pet#curmana|int(11) unsigned|NO||0||
-|"curhappiness":Character_pet#curhappiness|int(11) unsigned|NO||0||
-|"savetime":Character_pet#savetime|bigint(20) unsigned|NO||0||
-|"resettalents_cost":Character_pet#resettalents_cost|int(11) unsigned|NO||0||
-|"resettalents_time":Character_pet#resettalents_time|bigint(20) unsigned|NO||0||
-|"abdata":Character_pet#abdata|longtext|YES||None||
-|"teachspelldata":Character_pet#teachspelldata|longtext|YES||None||
+### Description of the fields
 
-
-h3. Description of the fields
-
-h4. id
+#### id
 
 The special pet ID. This is a unique identifier among all pets.
 
-h4. entry
+#### entry
 
-The creature entry of this pet. See "creature&#95;template.entry":creature_template#entry
+The creature entry of this pet. See [creature\_template.entry](creature_template#entry)
 
-h4. owner
+#### owner
 
-The GUID of the pet's owner. See "character.guid":character#guid
+The GUID of the pet's owner. See [character.guid](character#guid)
 
-h4. modelid
+#### modelid
 
 The model ID to use to display the pet.
 
-h4. CreatedBySpell
+#### CreatedBySpell
 
 The ID of the spell that has created this pet. For hunters, this is usually the Tame Beast spell. For warlocks or other classes (mages), it is the spell ID that summoned the creature. See Spell.dbc column 1
 
-h4. PetType
+#### PetType
 
 The type of pet that this is. 0 = summoned pet, 1 = tamed pet
 
-h4. level
+#### level
 
 The current level of the pet.
 
-h4. exp
+#### exp
 
 The current experience that this pet has. For summoned pets, this field is always 0.
 
-h4. Reactstate
+#### Reactstate
 
 The current reaction state of the pet (passive, aggressive, etc).
 
-h4. talentpoints
+#### talentpoints
 
-h4. name
+#### name
 
 The pet's name.
 
-h4. renamed
+#### renamed
 
 Boolean 1 or 0. 1 = Pet has been renamed, 0 = Pet has never been renamed and still uses the same name as the creature that was tamed.
 
-h4. slot
+#### slot
 
 The pet slot that the pet is in. The slot is a number between 0 and 3 inclusive.
 
-h4. curhealth
+#### curhealth
 
 The current pet health at the time it was saved to DB.
 
-h4. curmana
+#### curmana
 
 The current pet mana at the time it was saved to DB.
 
-h4. curhappiness
+#### curhappiness
 
 The current pet happiness.
 
-h4. savetime
+#### savetime
 
 The time when the pet was last saved, in Unix time.
 
-h4. resettalents&#95;cost
+#### resettalents\_cost
 
-h4. resettalents&#95;time
+#### resettalents\_time
 
-h4. abdata
+#### abdata
 
 data about pet action bar and action type ten pairs of action bar entry (from 1 to 10) and action or spell IDs
 
-h4. teachspelldata
+#### teachspelldata
 
 This field holds IDs of spells that have been taught to this pet, abilities that this pet has.

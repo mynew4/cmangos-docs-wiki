@@ -1,50 +1,142 @@
-Back to "characters database":charactersdb_struct list of tables.
+Back to [characters database](charactersdb_struct) list of tables.
 
-h2. The `item&#95;instance` table
+The \`item\_instance\` table
+----------------------------
 
 This table holds individual item instance information for all items currently equipped or in some kind of character bag or bank.
 
-h3. Structure
+### Structure
 
+| **Field**                               | **Type**         | **Null** | **Key** | **Default** | **Extra** |
+|-----------------------------------------|------------------|----------|---------|-------------|-----------|
+| [guid](Item_instance#guid)              | int(11) unsigned | NO       | PRI     | 0           |           |
+| [owner\_guid](Item_instance#owner_guid) | int(11) unsigned | NO       | MUL     | 0           |           |
+| [data](Item_instance#data)              | longtext         | YES      |         |             |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":Item_instance#guid|int(11) unsigned|NO|PRI|0||
-|"owner_guid":Item_instance#owner_guid|int(11) unsigned|NO|MUL|0||
-|"data":Item_instance#data|longtext|YES||||
+### Description of the fields
 
-
-h3. Description of the fields
-
-h4. guid
+#### guid
 
 The GUID of the item. This number is unique for each item instance.
 
-h4. owner&#95;guid
+#### owner\_guid
 
-The GUID of the character who has ownership of this item. See "character.guid":character#guid
+The GUID of the character who has ownership of this item. See [character.guid](character#guid)
 
-h4. data
+#### data
 
 Much like the data field in the character table, this field has many number fields all separated by a space which contain specific individual item information like any enchantments applied to the item, etc.
 
-|_. Index|_. Value Name|_. Comments|
-|0|OBJECT&#95;FIELD&#95;GUID|Item GUID|
-|2|OBJECT&#95;FIELD&#95;TYPE|Should be 3 (TYPE&#95;OBJECT + TYPE&#95;ITEM)|
-|3|OBJECT&#95;FIELD&#95;ENTRY|entry|
-|4|OBJECT&#95;FIELD&#95;SCALE&#95;X|1.0|
-|5|OBJECT&#95;FIELD&#95;PADDING||
-|6|ITEM&#95;FIELD&#95;OWNER|owner&#95;guid|
-|8|ITEM&#95;FIELD&#95;CONTAINED|If the item is in a bag, the GUID of the bag item; otherwise owner GUID.|
-|10|ITEM&#95;FIELD&#95;CREATOR|GUID of character who created the item.|
-|12|ITEM&#95;FIELD&#95;GIFTCREATOR|GUID of character who created the "item":character_gifts#item_guid.|
-|14|ITEM&#95;FIELD&#95;STACK&#95;COUNT|Current number of item copies in the stack.|
-|15|ITEM&#95;FIELD&#95;DURATION|Current duration (in milliseconds)|
-|16|ITEM&#95;FIELD&#95;SPELL&#95;CHARGES||
-|21|ITEM&#95;FIELD&#95;FLAGS|Flags (from "item&#95;template":Item_template#flags)|
-|22|ITEM&#95;FIELD&#95;ENCHANTMENT||
-|55|ITEM&#95;FIELD&#95;PROPERTY&#95;SEED|Also called ITEM&#95;FIELD&#95;SUFFIX&#95;FACTOR|
-|56|ITEM&#95;FIELD&#95;RANDOM&#95;PROPERTIES&#95;ID||
-|57|ITEM&#95;FIELD&#95;ITEM&#95;TEXT&#95;ID|Text id used and shown by the item.|
-|58|ITEM&#95;FIELD&#95;DURABILITY|Current item durability.|
-|59|ITEM&#95;FIELD&#95;MAXDURABILITY|Maximum item durability.|
+<table>
+<colgroup>
+<col width="6%" />
+<col width="31%" />
+<col width="61%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index</th>
+<th>Value Name</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>OBJECT_FIELD_GUID</td>
+<td>Item GUID</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>OBJECT_FIELD_TYPE</td>
+<td>Should be 3 (TYPE_OBJECT + TYPE_ITEM)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>OBJECT_FIELD_ENTRY</td>
+<td>entry</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>OBJECT_FIELD_SCALE_X</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>OBJECT_FIELD_PADDING</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>ITEM_FIELD_OWNER</td>
+<td>owner_guid</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>ITEM_FIELD_CONTAINED</td>
+<td>If the item is in a bag, the GUID of the bag item; otherwise owner GUID.</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>ITEM_FIELD_CREATOR</td>
+<td>GUID of character who created the item.</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>ITEM_FIELD_GIFTCREATOR</td>
+<td>GUID of character who created the <a href="character_gifts#item_guid.">item</a></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>ITEM_FIELD_STACK_COUNT</td>
+<td>Current number of item copies in the stack.</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>ITEM_FIELD_DURATION</td>
+<td>Current duration (in milliseconds)</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>ITEM_FIELD_SPELL_CHARGES</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td>ITEM_FIELD_FLAGS</td>
+<td>Flags (from <a href="Item_template#flags">item_template</a>)</td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td>ITEM_FIELD_ENCHANTMENT</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>55</td>
+<td>ITEM_FIELD_PROPERTY_SEED</td>
+<td>Also called ITEM_FIELD_SUFFIX_FACTOR</td>
+</tr>
+<tr class="even">
+<td>56</td>
+<td>ITEM_FIELD_RANDOM_PROPERTIES_ID</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>57</td>
+<td>ITEM_FIELD_ITEM_TEXT_ID</td>
+<td>Text id used and shown by the item.</td>
+</tr>
+<tr class="even">
+<td>58</td>
+<td>ITEM_FIELD_DURABILITY</td>
+<td>Current item durability.</td>
+</tr>
+<tr class="odd">
+<td>59</td>
+<td>ITEM_FIELD_MAXDURABILITY</td>
+<td>Maximum item durability.</td>
+</tr>
+</tbody>
+</table>
+
 

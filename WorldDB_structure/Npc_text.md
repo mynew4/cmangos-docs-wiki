@@ -1,281 +1,282 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `npc&#95;text` table
+The \`npc\_text\` table
+-----------------------
 
 This table contains the texts that are used for gossip. More research needs to be done on this table.
 Text is showed in start of talk window.
 
-h3. Structure
+### Structure
 
+| **Field**                    | **Type**            | **Null** | **Key** | **Default** | **Extra** |
+|------------------------------|---------------------|----------|---------|-------------|-----------|
+| [ID](Npc_text#id)            | int(11) unsigned    | NO       | PRI     | 0           |           |
+| [text0\_0](Npc_text#text0_0) | longtext            | YES      |         |             |           |
+| [text0\_1](Npc_text#text0_1) | longtext            | YES      |         |             |           |
+| [lang0](Npc_text#lang0)      | bigint(20) unsigned | NO       |         | 0           |           |
+| [prob0](Npc_text#prob0)      | float               | NO       |         | 0           |           |
+| [em0\_0](Npc_text#em0_0)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em0\_1](Npc_text#em0_1)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em0\_2](Npc_text#em0_2)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em0\_3](Npc_text#em0_3)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em0\_4](Npc_text#em0_4)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em0\_5](Npc_text#em0_5)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [text1\_0](Npc_text#text1_0) | longtext            | YES      |         |             |           |
+| [text1\_1](Npc_text#text1_1) | longtext            | YES      |         |             |           |
+| [lang1](Npc_text#lang1)      | bigint(20) unsigned | NO       |         | 0           |           |
+| [prob1](Npc_text#prob1)      | float               | NO       |         | 0           |           |
+| [em1\_0](Npc_text#em1_0)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em1\_1](Npc_text#em1_1)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em1\_2](Npc_text#em1_2)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em1\_3](Npc_text#em1_3)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em1\_4](Npc_text#em1_4)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em1\_5](Npc_text#em1_5)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [text2\_0](Npc_text#text2_0) | longtext            | YES      |         |             |           |
+| [text2\_1](Npc_text#text2_1) | longtext            | YES      |         |             |           |
+| [lang2](Npc_text#lang2)      | bigint(20) unsigned | NO       |         | 0           |           |
+| [prob2](Npc_text#prob2)      | float               | NO       |         | 0           |           |
+| [em2\_0](Npc_text#em2_0)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em2\_1](Npc_text#em2_1)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em2\_2](Npc_text#em2_2)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em2\_3](Npc_text#em2_3)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em2\_4](Npc_text#em2_4)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em2\_5](Npc_text#em2_5)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [text3\_0](Npc_text#text3_0) | longtext            | YES      |         |             |           |
+| [text3\_1](Npc_text#text3_1) | longtext            | YES      |         |             |           |
+| [lang3](Npc_text#lang3)      | bigint(20) unsigned | NO       |         | 0           |           |
+| [prob3](Npc_text#prob3)      | float               | NO       |         | 0           |           |
+| [em3\_0](Npc_text#em3_0)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em3\_1](Npc_text#em3_1)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em3\_2](Npc_text#em3_2)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em3\_3](Npc_text#em3_3)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em3\_4](Npc_text#em3_4)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em3\_5](Npc_text#em3_5)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [text4\_0](Npc_text#text4_0) | longtext            | YES      |         |             |           |
+| [text4\_1](Npc_text#text4_1) | longtext            | YES      |         |             |           |
+| [lang4](Npc_text#lang4)      | bigint(20) unsigned | NO       |         | 0           |           |
+| [prob4](Npc_text#prob4)      | float               | NO       |         | 0           |           |
+| [em4\_0](Npc_text#em4_0)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em4\_1](Npc_text#em4_1)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em4\_2](Npc_text#em4_2)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em4\_3](Npc_text#em4_3)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em4\_4](Npc_text#em4_4)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em4\_5](Npc_text#em4_5)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [text5\_0](Npc_text#text5_0) | longtext            | YES      |         |             |           |
+| [text5\_1](Npc_text#text5_1) | longtext            | YES      |         |             |           |
+| [lang5](Npc_text#lang5)      | bigint(20) unsigned | NO       |         | 0           |           |
+| [prob5](Npc_text#prob5)      | float               | NO       |         | 0           |           |
+| [em5\_0](Npc_text#em5_0)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em5\_1](Npc_text#em5_1)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em5\_2](Npc_text#em5_2)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em5\_3](Npc_text#em5_3)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em5\_4](Npc_text#em5_4)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em5\_5](Npc_text#em5_5)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [text6\_0](Npc_text#text6_0) | longtext            | YES      |         |             |           |
+| [text6\_1](Npc_text#text6_1) | longtext            | YES      |         |             |           |
+| [lang6](Npc_text#lang6)      | bigint(20) unsigned | NO       |         | 0           |           |
+| [prob6](Npc_text#prob6)      | float               | NO       |         | 0           |           |
+| [em6\_0](Npc_text#em6_0)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em6\_1](Npc_text#em6_1)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em6\_2](Npc_text#em6_2)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em6\_3](Npc_text#em6_3)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em6\_4](Npc_text#em6_4)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em6\_5](Npc_text#em6_5)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [text7\_0](Npc_text#text7_0) | longtext            | YES      |         |             |           |
+| [text7\_1](Npc_text#text7_1) | longtext            | YES      |         |             |           |
+| [lang7](Npc_text#lang7)      | bigint(20) unsigned | NO       |         | 0           |           |
+| [prob7](Npc_text#prob7)      | float               | NO       |         | 0           |           |
+| [em7\_0](Npc_text#em7_0)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em7\_1](Npc_text#em7_1)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em7\_2](Npc_text#em7_2)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em7\_3](Npc_text#em7_3)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em7\_4](Npc_text#em7_4)     | bigint(20) unsigned | NO       |         | 0           |           |
+| [em7\_5](Npc_text#em7_5)     | bigint(20) unsigned | NO       |         | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"ID":Npc_text#id|int(11) unsigned|NO|PRI|0||
-|"text0_0":Npc_text#text0_0|longtext|YES||||
-|"text0_1":Npc_text#text0_1|longtext|YES||||
-|"lang0":Npc_text#lang0|bigint(20) unsigned|NO||0||
-|"prob0":Npc_text#prob0|float|NO||0||
-|"em0_0":Npc_text#em0_0|bigint(20) unsigned|NO||0||
-|"em0_1":Npc_text#em0_1|bigint(20) unsigned|NO||0||
-|"em0_2":Npc_text#em0_2|bigint(20) unsigned|NO||0||
-|"em0_3":Npc_text#em0_3|bigint(20) unsigned|NO||0||
-|"em0_4":Npc_text#em0_4|bigint(20) unsigned|NO||0||
-|"em0_5":Npc_text#em0_5|bigint(20) unsigned|NO||0||
-|"text1_0":Npc_text#text1_0|longtext|YES||||
-|"text1_1":Npc_text#text1_1|longtext|YES||||
-|"lang1":Npc_text#lang1|bigint(20) unsigned|NO||0||
-|"prob1":Npc_text#prob1|float|NO||0||
-|"em1_0":Npc_text#em1_0|bigint(20) unsigned|NO||0||
-|"em1_1":Npc_text#em1_1|bigint(20) unsigned|NO||0||
-|"em1_2":Npc_text#em1_2|bigint(20) unsigned|NO||0||
-|"em1_3":Npc_text#em1_3|bigint(20) unsigned|NO||0||
-|"em1_4":Npc_text#em1_4|bigint(20) unsigned|NO||0||
-|"em1_5":Npc_text#em1_5|bigint(20) unsigned|NO||0||
-|"text2_0":Npc_text#text2_0|longtext|YES||||
-|"text2_1":Npc_text#text2_1|longtext|YES||||
-|"lang2":Npc_text#lang2|bigint(20) unsigned|NO||0||
-|"prob2":Npc_text#prob2|float|NO||0||
-|"em2_0":Npc_text#em2_0|bigint(20) unsigned|NO||0||
-|"em2_1":Npc_text#em2_1|bigint(20) unsigned|NO||0||
-|"em2_2":Npc_text#em2_2|bigint(20) unsigned|NO||0||
-|"em2_3":Npc_text#em2_3|bigint(20) unsigned|NO||0||
-|"em2_4":Npc_text#em2_4|bigint(20) unsigned|NO||0||
-|"em2_5":Npc_text#em2_5|bigint(20) unsigned|NO||0||
-|"text3_0":Npc_text#text3_0|longtext|YES||||
-|"text3_1":Npc_text#text3_1|longtext|YES||||
-|"lang3":Npc_text#lang3|bigint(20) unsigned|NO||0||
-|"prob3":Npc_text#prob3|float|NO||0||
-|"em3_0":Npc_text#em3_0|bigint(20) unsigned|NO||0||
-|"em3_1":Npc_text#em3_1|bigint(20) unsigned|NO||0||
-|"em3_2":Npc_text#em3_2|bigint(20) unsigned|NO||0||
-|"em3_3":Npc_text#em3_3|bigint(20) unsigned|NO||0||
-|"em3_4":Npc_text#em3_4|bigint(20) unsigned|NO||0||
-|"em3_5":Npc_text#em3_5|bigint(20) unsigned|NO||0||
-|"text4_0":Npc_text#text4_0|longtext|YES||||
-|"text4_1":Npc_text#text4_1|longtext|YES||||
-|"lang4":Npc_text#lang4|bigint(20) unsigned|NO||0||
-|"prob4":Npc_text#prob4|float|NO||0||
-|"em4_0":Npc_text#em4_0|bigint(20) unsigned|NO||0||
-|"em4_1":Npc_text#em4_1|bigint(20) unsigned|NO||0||
-|"em4_2":Npc_text#em4_2|bigint(20) unsigned|NO||0||
-|"em4_3":Npc_text#em4_3|bigint(20) unsigned|NO||0||
-|"em4_4":Npc_text#em4_4|bigint(20) unsigned|NO||0||
-|"em4_5":Npc_text#em4_5|bigint(20) unsigned|NO||0||
-|"text5_0":Npc_text#text5_0|longtext|YES||||
-|"text5_1":Npc_text#text5_1|longtext|YES||||
-|"lang5":Npc_text#lang5|bigint(20) unsigned|NO||0||
-|"prob5":Npc_text#prob5|float|NO||0||
-|"em5_0":Npc_text#em5_0|bigint(20) unsigned|NO||0||
-|"em5_1":Npc_text#em5_1|bigint(20) unsigned|NO||0||
-|"em5_2":Npc_text#em5_2|bigint(20) unsigned|NO||0||
-|"em5_3":Npc_text#em5_3|bigint(20) unsigned|NO||0||
-|"em5_4":Npc_text#em5_4|bigint(20) unsigned|NO||0||
-|"em5_5":Npc_text#em5_5|bigint(20) unsigned|NO||0||
-|"text6_0":Npc_text#text6_0|longtext|YES||||
-|"text6_1":Npc_text#text6_1|longtext|YES||||
-|"lang6":Npc_text#lang6|bigint(20) unsigned|NO||0||
-|"prob6":Npc_text#prob6|float|NO||0||
-|"em6_0":Npc_text#em6_0|bigint(20) unsigned|NO||0||
-|"em6_1":Npc_text#em6_1|bigint(20) unsigned|NO||0||
-|"em6_2":Npc_text#em6_2|bigint(20) unsigned|NO||0||
-|"em6_3":Npc_text#em6_3|bigint(20) unsigned|NO||0||
-|"em6_4":Npc_text#em6_4|bigint(20) unsigned|NO||0||
-|"em6_5":Npc_text#em6_5|bigint(20) unsigned|NO||0||
-|"text7_0":Npc_text#text7_0|longtext|YES||||
-|"text7_1":Npc_text#text7_1|longtext|YES||||
-|"lang7":Npc_text#lang7|bigint(20) unsigned|NO||0||
-|"prob7":Npc_text#prob7|float|NO||0||
-|"em7_0":Npc_text#em7_0|bigint(20) unsigned|NO||0||
-|"em7_1":Npc_text#em7_1|bigint(20) unsigned|NO||0||
-|"em7_2":Npc_text#em7_2|bigint(20) unsigned|NO||0||
-|"em7_3":Npc_text#em7_3|bigint(20) unsigned|NO||0||
-|"em7_4":Npc_text#em7_4|bigint(20) unsigned|NO||0||
-|"em7_5":Npc_text#em7_5|bigint(20) unsigned|NO||0||
+### Description of the fields
 
-
-h3. Description of the fields
-
-h4. ID
+#### ID
 
 This is the ID of the text entry. This ID comes from WDB cache. (First initialized to database from Blizzard WDB cache)
 
-h4. text0&#95;0
+#### text0\_0
 
 This is the locale text that is displayed if the NPC is a male.
 
-h4. text0&#95;1
+#### text0\_1
 
 This is the locale text that is displayed if the NPC is a female.
 
-h4. lang0
+#### lang0
 
 The language of the text in game (post list of possible values)
 
-h4. prob0
+#### prob0
 
 This is the probability that the NPC will say this text
-* 1 means always.
 
-h4. em0&#95;0
+-   1 means always.
 
-emX_[0,2,6] - Delay for emote 1,2,3
-emX_[1,3,5] - EmoteID 1,2,3
+#### em0\_0
 
-h4. em0&#95;1
+emX\_\[0,2,6\] - Delay for emote 1,2,3
+emX\_\[1,3,5\] - EmoteID 1,2,3
 
-Emote on ?
-
-h4. em0&#95;2
+#### em0\_1
 
 Emote on ?
 
-h4. em0&#95;3
+#### em0\_2
 
 Emote on ?
 
-h4. em0&#95;4
+#### em0\_3
 
 Emote on ?
 
-h4. em0&#95;5
+#### em0\_4
 
 Emote on ?
 
-h4. text1&#95;0
+#### em0\_5
 
-h4. text1&#95;1
+Emote on ?
 
-h4. lang1
+#### text1\_0
 
-h4. prob1
+#### text1\_1
 
-h4. em1&#95;0
+#### lang1
 
-h4. em1&#95;1
+#### prob1
 
-h4. em1&#95;2
+#### em1\_0
 
-h4. em1&#95;3
+#### em1\_1
 
-h4. em1&#95;4
+#### em1\_2
 
-h4. em1&#95;5
+#### em1\_3
 
-h4. text2&#95;0
+#### em1\_4
 
-h4. text2&#95;1
+#### em1\_5
 
-h4. lang2
+#### text2\_0
 
-h4. prob2
+#### text2\_1
 
-h4. em2&#95;0
+#### lang2
 
-h4. em2&#95;1
+#### prob2
 
-h4. em2&#95;2
+#### em2\_0
 
-h4. em2&#95;3
+#### em2\_1
 
-h4. em2&#95;4
+#### em2\_2
 
-h4. em2&#95;5
+#### em2\_3
 
-h4. text3&#95;0
+#### em2\_4
 
-h4. text3&#95;1
+#### em2\_5
 
-h4. lang3
+#### text3\_0
 
-h4. prob3
+#### text3\_1
 
-h4. em3&#95;0
+#### lang3
 
-h4. em3&#95;1
+#### prob3
 
-h4. em3&#95;2
+#### em3\_0
 
-h4. em3&#95;3
+#### em3\_1
 
-h4. em3&#95;4
+#### em3\_2
 
-h4. em3&#95;5
+#### em3\_3
 
-h4. text4&#95;0
+#### em3\_4
 
-h4. text4&#95;1
+#### em3\_5
 
-h4. lang4
+#### text4\_0
 
-h4. prob4
+#### text4\_1
 
-h4. em4&#95;0
+#### lang4
 
-h4. em4&#95;1
+#### prob4
 
-h4. em4&#95;2
+#### em4\_0
 
-h4. em4&#95;3
+#### em4\_1
 
-h4. em4&#95;4
+#### em4\_2
 
-h4. em4&#95;5
+#### em4\_3
 
-h4. text5&#95;0
+#### em4\_4
 
-h4. text5&#95;1
+#### em4\_5
 
-h4. lang5
+#### text5\_0
 
-h4. prob5
+#### text5\_1
 
-h4. em5&#95;0
+#### lang5
 
-h4. em5&#95;1
+#### prob5
 
-h4. em5&#95;2
+#### em5\_0
 
-h4. em5&#95;3
+#### em5\_1
 
-h4. em5&#95;4
+#### em5\_2
 
-h4. em5&#95;5
+#### em5\_3
 
-h4. text6&#95;0
+#### em5\_4
 
-h4. text6&#95;1
+#### em5\_5
 
-h4. lang6
+#### text6\_0
 
-h4. prob6
+#### text6\_1
 
-h4. em6&#95;0
+#### lang6
 
-h4. em6&#95;1
+#### prob6
 
-h4. em6&#95;2
+#### em6\_0
 
-h4. em6&#95;3
+#### em6\_1
 
-h4. em6&#95;4
+#### em6\_2
 
-h4. em6&#95;5
+#### em6\_3
 
-h4. text7&#95;0
+#### em6\_4
 
-h4. text7&#95;1
+#### em6\_5
 
-h4. lang7
+#### text7\_0
 
-h4. prob7
+#### text7\_1
 
-h4. em7&#95;0
+#### lang7
 
-h4. em7&#95;1
+#### prob7
 
-h4. em7&#95;2
+#### em7\_0
 
-h4. em7&#95;3
+#### em7\_1
 
-h4. em7&#95;4
+#### em7\_2
 
-h4. em7&#95;5
+#### em7\_3
+
+#### em7\_4
+
+#### em7\_5

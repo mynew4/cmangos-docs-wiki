@@ -1,34 +1,36 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `gossip&#95;menu` table
+The \`gossip\_menu\` table
+--------------------------
 
 This table is used for displaying gossip when a player talks to an NPC.
 
-h3. Structure
+### Structure
 
-|*Field*|*Type*|*Attributes*|*Key*|*Null*|*Default*|
-|"entry":Gossip_menu#entry|smallint(6)|unsigned|PRI|NO|0|
-|"text_id":Gossip_menu#text_id|mediumint(8)|unsigned|PRI|NO|0|
-|"script_id":Gossip_menu#script_id|mediumint(8)|unsigned||NO|0|
-|"condition_id":Gossip_menu#condition_id|mediumint(8)|unsigned||NO|0|
+| **Field**                                 | **Type**     | **Attributes** | **Key** | **Null** | **Default** |
+|-------------------------------------------|--------------|----------------|---------|----------|-------------|
+| [entry](Gossip_menu#entry)                | smallint(6)  | unsigned       | PRI     | NO       | 0           |
+| [text\_id](Gossip_menu#text_id)           | mediumint(8) | unsigned       | PRI     | NO       | 0           |
+| [script\_id](Gossip_menu#script_id)       | mediumint(8) | unsigned       |         | NO       | 0           |
+| [condition\_id](Gossip_menu#condition_id) | mediumint(8) | unsigned       |         | NO       | 0           |
 
-h3. Description of the fields
+### Description of the fields
 
-h4. entry
+#### entry
 
-Gossip ID from "gossip&#95;menu&#95;id":creature_template#gossip_menu_id and "gameobject&#95;template.GAMEOBJECT&#95;TYPE&#95;QUESTGIVER.data3":gameobject_template#data0-23
+Gossip ID from [gossip\_menu\_id](creature_template#gossip_menu_id) and [gameobject\_template.GAMEOBJECT\_TYPE\_QUESTGIVER.data3](gameobject_template#data0-23)
 
-h4. text&#95;id
+#### text\_id
 
-Reference to "npc&#95;text.id":npc_text#ID.
+Reference to [npc\_text.id](npc_text#ID).
 
-h4. script&#95;id
+#### script\_id
 
 If set a DBScript with this ID will be started of the selected text
 NOTE: Called when menu shown (not when clicked)
-"dbscripts_on_gossip":DBScripts
+[dbscripts\_on\_gossip](DBScripts)
 
-h4. condition&#95;id
+#### condition\_id
 
-"condition&#95;id":conditions
-If the gossip_menu has more than one text with true conditions, then the text with highest condition_id will be shown.
+[condition\_id](conditions)
+If the gossip\_menu has more than one text with true conditions, then the text with highest condition\_id will be shown.

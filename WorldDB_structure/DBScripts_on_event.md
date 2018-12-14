@@ -1,1 +1,2 @@
-# REDIRECT "DBScripts":DBScripts
+1.  REDIRECT [DBScripts](DBScripts)
+

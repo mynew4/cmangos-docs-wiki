@@ -1,139 +1,140 @@
-Back to "wdb files":wdb_files list.
+Back to [wdb files](wdb_files) list.
 
-h3. `itemcache` wdb
+### \`itemcache\` wdb
 
 This wdb contains some information of seen items.
 
-*Version is : 3.3.5a*
+**Version is : 3.3.5a**
 
-h3. Structure
+### Structure
 
+| **Name**                  | **Type** |
+|---------------------------|----------|
+| entry                     | UInteger |
+| class                     | UInteger |
+| subclass                  | UInteger |
+| unk0                      | Integer  |
+| name                      | String   |
+| displayid                 | UInteger |
+| Quality                   | UInteger |
+| Flags                     | UInteger |
+| Flags2                    | UInteger |
+| BuyPrice                  | UInteger |
+| SellPrice                 | UInteger |
+| InventoryType             | UInteger |
+| AllowableClass            | Integer  |
+| AllowableRace             | Integer  |
+| ItemLevel                 | UInteger |
+| RequiredLevel             | UInteger |
+| RequiredSkill             | UInteger |
+| RequiredSkillRank         | UInteger |
+| RequiredSpell             | UInteger |
+| RequiredHonorRank         | UInteger |
+| RequiredCityRank          | UInteger |
+| RequiredReputationFaction | UInteger |
+| RequiredReputationRank    | UInteger |
+| MaxCount                  | UInteger |
+| Stackable                 | UInteger |
+| ContainerSlots            | UInteger |
+| StatsCount                | UInteger |
+| stat\_type1               | UInteger |
+| stat\_value1              | Integer  |
+| stat\_type2               | UInteger |
+| stat\_value2              | Integer  |
+| stat\_type3               | UInteger |
+| stat\_value3              | Integer  |
+| stat\_type4               | UInteger |
+| stat\_value4              | Integer  |
+| stat\_type5               | UInteger |
+| stat\_value5              | Integer  |
+| stat\_type6               | UInteger |
+| stat\_value6              | Integer  |
+| stat\_type7               | UInteger |
+| stat\_value7              | Integer  |
+| stat\_type8               | UInteger |
+| stat\_value8              | Integer  |
+| stat\_type9               | UInteger |
+| stat\_value9              | Integer  |
+| stat\_type10              | UInteger |
+| stat\_value10             | Integer  |
+| ScalingStatDistribution   | UInteger |
+| ScalingStatValue          | UInteger |
+| DmgMin1                   | float    |
+| DmgMax1                   | float    |
+| DmgType1                  | UInteger |
+| DmgMin2                   | float    |
+| DmgMax2                   | float    |
+| DmgType2                  | UInteger |
+| Armor                     | UInteger |
+| HolyRes                   | UInteger |
+| FireRes                   | UInteger |
+| NatureRes                 | UInteger |
+| FrostRes                  | UInteger |
+| ShadowRes                 | UInteger |
+| ArcaneRes                 | UInteger |
+| Delay                     | UInteger |
+| AmmoType                  | UInteger |
+| RangedModRange            | float    |
+| SpellId\_1                | UInteger |
+| SpellTrigger\_1           | UInteger |
+| SpellCharges\_1           | Integer  |
+| SpellCooldown\_1          | Integer  |
+| SpellCategory\_1          | UInteger |
+| SpellCategoryCooldown\_1  | Integer  |
+| SpellId\_2                | UInteger |
+| SpellTrigger\_2           | UInteger |
+| SpellCharges\_2           | Integer  |
+| SpellCooldown\_2          | Integer  |
+| SpellCategory\_2          | UInteger |
+| SpellCategorycooldown\_2  | Integer  |
+| SpellId\_3                | UInteger |
+| SpellTrigger\_3           | UInteger |
+| SpellCharges\_3           | Integer  |
+| SpellCooldown\_3          | Integer  |
+| SpellCategory\_3          | UInteger |
+| SpellCategoryCooldown\_3  | Integer  |
+| SpellId\_4                | UInteger |
+| SpellTrigger\_4           | UInteger |
+| SpellCharges\_4           | Integer  |
+| SpellCooldown\_4          | Integer  |
+| SpellCategory\_4          | UInteger |
+| SpellCategoryCooldown\_4  | Integer  |
+| SpellId\_5                | UInteger |
+| SpellTrigger\_5           | UInteger |
+| SpellCharges\_5           | Integer  |
+| SpellCooldown\_5          | Integer  |
+| SpellCategory\_5          | UInteger |
+| SpellCategoryCooldown\_5  | Integer  |
+| Bonding                   | UInteger |
+| Description               | String   |
+| PageText                  | UInteger |
+| LanguageID                | UInteger |
+| PageMaterial              | UInteger |
+| Startquest                | UInteger |
+| LockId                    | UInteger |
+| Material                  | Integer  |
+| Sheath                    | UInteger |
+| RandomProperty            | UInteger |
+| RandomSuffix              | UInteger |
+| Block                     | UInteger |
+| ItemSet                   | UInteger |
+| MaxDurability             | UInteger |
+| Area                      | UInteger |
+| Map                       | Integer  |
+| BagFamily                 | Integer  |
+| TotemCategory             | Integer  |
+| SocketColor\_1            | Integer  |
+| SocketContent\_1          | Integer  |
+| SocketColor\_2            | Integer  |
+| SocketContent\_2          | Integer  |
+| SocketColor\_3            | Integer  |
+| SocketContent\_3          | Integer  |
+| SocketBonus               | Integer  |
+| GemProperties             | Integer  |
+| RequiredDisenchantSkill   | Integer  |
+| ArmorDamageModifier       | float    |
+| Duration                  | Integer  |
+| ItemLimitCategory         | UInteger |
+| HolidayID                 | UInteger |
 
-|*Name*|*Type*|
-|entry|UInteger|
-|class|UInteger|
-|subclass|UInteger|
-|unk0|Integer|
-|name|String|
-|displayid|UInteger|
-|Quality|UInteger|
-|Flags|UInteger|
-|Flags2|UInteger|
-|BuyPrice|UInteger|
-|SellPrice|UInteger|
-|InventoryType|UInteger|
-|AllowableClass|Integer|
-|AllowableRace|Integer|
-|ItemLevel|UInteger|
-|RequiredLevel|UInteger|
-|RequiredSkill|UInteger|
-|RequiredSkillRank|UInteger|
-|RequiredSpell|UInteger|
-|RequiredHonorRank|UInteger|
-|RequiredCityRank|UInteger|
-|RequiredReputationFaction|UInteger|
-|RequiredReputationRank|UInteger|
-|MaxCount|UInteger|
-|Stackable|UInteger|
-|ContainerSlots|UInteger|
-|StatsCount|UInteger|
-|stat&#95;type1|UInteger|
-|stat&#95;value1|Integer|
-|stat&#95;type2|UInteger|
-|stat&#95;value2|Integer|
-|stat&#95;type3|UInteger|
-|stat&#95;value3|Integer|
-|stat&#95;type4|UInteger|
-|stat&#95;value4|Integer|
-|stat&#95;type5|UInteger|
-|stat&#95;value5|Integer|
-|stat&#95;type6|UInteger|
-|stat&#95;value6|Integer|
-|stat&#95;type7|UInteger|
-|stat&#95;value7|Integer|
-|stat&#95;type8|UInteger|
-|stat&#95;value8|Integer|
-|stat&#95;type9|UInteger|
-|stat&#95;value9|Integer|
-|stat&#95;type10|UInteger|
-|stat&#95;value10|Integer|
-|ScalingStatDistribution|UInteger|
-|ScalingStatValue|UInteger|
-|DmgMin1|float|
-|DmgMax1|float|
-|DmgType1|UInteger|
-|DmgMin2|float|
-|DmgMax2|float|
-|DmgType2|UInteger|
-|Armor|UInteger|
-|HolyRes|UInteger|
-|FireRes|UInteger|
-|NatureRes|UInteger|
-|FrostRes|UInteger|
-|ShadowRes|UInteger|
-|ArcaneRes|UInteger|
-|Delay|UInteger|
-|AmmoType|UInteger|
-|RangedModRange|float|
-|SpellId&#95;1|UInteger|
-|SpellTrigger&#95;1|UInteger|
-|SpellCharges&#95;1|Integer|
-|SpellCooldown&#95;1|Integer|
-|SpellCategory&#95;1|UInteger|
-|SpellCategoryCooldown&#95;1|Integer|
-|SpellId&#95;2|UInteger|
-|SpellTrigger&#95;2|UInteger|
-|SpellCharges&#95;2|Integer|
-|SpellCooldown&#95;2|Integer|
-|SpellCategory&#95;2|UInteger|
-|SpellCategorycooldown&#95;2|Integer|
-|SpellId&#95;3|UInteger|
-|SpellTrigger&#95;3|UInteger|
-|SpellCharges&#95;3|Integer|
-|SpellCooldown&#95;3|Integer|
-|SpellCategory&#95;3|UInteger|
-|SpellCategoryCooldown&#95;3|Integer|
-|SpellId&#95;4|UInteger|
-|SpellTrigger&#95;4|UInteger|
-|SpellCharges&#95;4|Integer|
-|SpellCooldown&#95;4|Integer|
-|SpellCategory&#95;4|UInteger|
-|SpellCategoryCooldown&#95;4|Integer|
-|SpellId&#95;5|UInteger|
-|SpellTrigger&#95;5|UInteger|
-|SpellCharges&#95;5|Integer|
-|SpellCooldown&#95;5|Integer|
-|SpellCategory&#95;5|UInteger|
-|SpellCategoryCooldown&#95;5|Integer|
-|Bonding|UInteger|
-|Description|String|
-|PageText|UInteger|
-|LanguageID|UInteger|
-|PageMaterial|UInteger|
-|Startquest|UInteger|
-|LockId|UInteger|
-|Material|Integer|
-|Sheath|UInteger|
-|RandomProperty|UInteger|
-|RandomSuffix|UInteger|
-|Block|UInteger|
-|ItemSet|UInteger|
-|MaxDurability|UInteger|
-|Area|UInteger|
-|Map|Integer|
-|BagFamily|Integer|
-|TotemCategory|Integer|
-|SocketColor&#95;1|Integer|
-|SocketContent&#95;1|Integer|
-|SocketColor&#95;2|Integer|
-|SocketContent&#95;2|Integer|
-|SocketColor&#95;3|Integer|
-|SocketContent&#95;3|Integer|
-|SocketBonus|Integer|
-|GemProperties|Integer|
-|RequiredDisenchantSkill|Integer|
-|ArmorDamageModifier|float|
-|Duration|Integer|
-|ItemLimitCategory|UInteger|
-|HolidayID|UInteger|
 

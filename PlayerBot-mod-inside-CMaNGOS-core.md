@@ -1,16 +1,20 @@
-h1. What is PlayerBot
+What is PlayerBot
+=================
 
 The "PlayerBot Mod" is an optional core modification inside the CMaNGOS core.
 
 It lets you add additional characters from your account (normally up to 9), as bots that you control.
 The bots assist in all aspects of normal game play, combat, trading, questing and much much more....
 
-h4. What can Playerbot do ?
+#### What can Playerbot do ?
 
-* "Check out the Awesome Features of Playerbot!":https://github.com/cmangos/issues/wiki/Playerbot-Features
+-   [Check out the Awesome Features of Playerbot!](https://github.com/cmangos/issues/wiki/Playerbot-Features)
 
-h4. How can I get Playerbot ?
+#### How can I get Playerbot ?
 
-* "Guide to building Playerbot":https://github.com/cmangos/issues/wiki/Guide-to-build-Playerbot
+-   [Guide to building Playerbot](https://github.com/cmangos/issues/wiki/Guide-to-build-Playerbot)
 
-* "Guide to using Playerbot":https://github.com/cmangos/issues/wiki/Guide-to-use-Playerbot
+<!-- -->
+
+-   [Guide to using Playerbot](https://github.com/cmangos/issues/wiki/Guide-to-use-Playerbot)
+

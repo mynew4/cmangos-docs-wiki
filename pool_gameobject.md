@@ -1,26 +1,28 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `pool_gameobject` table
+The \`pool\_gameobject\` table
+------------------------------
 
-Contains all gameobjects pooled by their "`gameobject`.`guid`":gameobject#guid.
+Contains all gameobjects pooled by their [\`gameobject\`.\`guid\`](gameobject#guid).
 
-h3. Structure
+### Structure
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":pool_gameobject#guid|int(10) unsigned|NO|PRI|0||
-|"pool_entry":pool_gameobject#pool_entry|mediumint(8) unsigned|NO|PRI|0||
-|"chance":pool_gameobject#chance|float unsigned|NO||0||
+| **Field**                                 | **Type**              | **Null** | **Key** | **Default** | **Extra** |
+|-------------------------------------------|-----------------------|----------|---------|-------------|-----------|
+| [guid](pool_gameobject#guid)              | int(10) unsigned      | NO       | PRI     | 0           |           |
+| [pool\_entry](pool_gameobject#pool_entry) | mediumint(8) unsigned | NO       | PRI     | 0           |           |
+| [chance](pool_gameobject#chance)          | float unsigned        | NO       |         | 0           |           |
 
-h3. Description of the fields
+### Description of the fields
 
-h4. guid
+#### guid
 
-Gameobject's GUID. A reference to "`gameobject`.`guid`":gameobject#guid.
+Gameobject's GUID. A reference to [\`gameobject\`.\`guid\`](gameobject#guid).
 
-h4. pool_entry
+#### pool\_entry
 
-Pool's ID. See "pool_template":pool_template
+Pool's ID. See [pool\_template](pool_template)
 
-h4. chance
+#### chance
 
 Chance the gameobject will be spawned in the pool.

@@ -1,23 +1,23 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `creature&#95;questrelation` table
+The \`creature\_questrelation\` table
+-------------------------------------
 
 Holds NPC quest giver relations on which NPCs start which quests.
 
-h3. Structure
+### Structure
 
+| **Field**                             | **Type**              | **Null** | **Key** | **Default** | **Extra** |
+|---------------------------------------|-----------------------|----------|---------|-------------|-----------|
+| [id](Creature_questrelation#id)       | mediumint(8) unsigned | NO       | PRI     | 0           |           |
+| [quest](Creature_questrelation#quest) | mediumint(8) unsigned | NO       | PRI     | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"id":Creature_questrelation#id|mediumint(8) unsigned|NO|PRI|0||
-|"quest":Creature_questrelation#quest|mediumint(8) unsigned|NO|PRI|0||
+### Description of the fields
 
+#### id
 
-h3. Description of the fields
+The ID of the creature. See [creature\_template.entry](creature_template#entry)
 
-h4. id
+#### quest
 
-The ID of the creature. See "creature&#95;template.entry":creature_template#entry
-
-h4. quest
-
-The quest ID that the creature starts. See "quest&#95;template.entry":quest_template#entry
+The quest ID that the creature starts. See [quest\_template.entry](quest_template#entry)

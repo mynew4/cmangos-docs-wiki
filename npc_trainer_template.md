@@ -1,43 +1,45 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `npc_trainer(_template)` table
+The \`npc\_trainer(\_template)\` table
+--------------------------------------
 
 This table holds all the information on training NPCs. All spells listed in the table are learning spells. This means that the main effect of the spells listed here is to teach spells to the target (which is the player in this case). Any other spell that is not a learning spell will be ignored and an error message will be shown in the console window. Learning spells usually have the same name as their actual spell counterparts and are listed as Uncategorized in Wowhead.
 
-h3. Structure
+### Structure
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":npc_trainer_template#entry|int(11)|NO|PRI|0||
-|"spell":npc_trainer_template#spell|int(11)|NO|PRI|0||
-|"spellcost":npc_trainer_template#spellcost|int(11)|YES||0||
-|"reqskill":npc_trainer_template#reqskill|int(10) unsigned|YES||0||
-|"reqskillvalue":npc_trainer_template#reqskillvalue|int(10) unsigned|YES||0||
-|"reqlevel":npc_trainer_template#reqlevel|int(10) unsigned|YES||0||
+| **Field**                                           | **Type**         | **Null** | **Key** | **Default** | **Extra** |
+|-----------------------------------------------------|------------------|----------|---------|-------------|-----------|
+| [entry](npc_trainer_template#entry)                 | int(11)          | NO       | PRI     | 0           |           |
+| [spell](npc_trainer_template#spell)                 | int(11)          | NO       | PRI     | 0           |           |
+| [spellcost](npc_trainer_template#spellcost)         | int(11)          | YES      |         | 0           |           |
+| [reqskill](npc_trainer_template#reqskill)           | int(10) unsigned | YES      |         | 0           |           |
+| [reqskillvalue](npc_trainer_template#reqskillvalue) | int(10) unsigned | YES      |         | 0           |           |
+| [reqlevel](npc_trainer_template#reqlevel)           | int(10) unsigned | YES      |         | 0           |           |
 
-h3. Description of the fields
+### Description of the fields
 
-h4. entry
+#### entry
 
-"creature_template.entry":https://github.com/cmangos/issues/wiki/creature_template#entry for npc_trainer (unique trainers which share no npc_trainer_template with other entries)
+[creature\_template.entry](https://github.com/cmangos/issues/wiki/creature_template#entry) for npc\_trainer (unique trainers which share no npc\_trainer\_template with other entries)
 
-"creature_template.trainertemplateid":https://github.com/cmangos/issues/wiki/creature_template#trainertemplateid for npc_trainer_template
+[creature\_template.trainertemplateid](https://github.com/cmangos/issues/wiki/creature_template#trainertemplateid) for npc\_trainer\_template
 
-h4. spell
+#### spell
 
 The learning spell ID.
 
-h4. spellcost
+#### spellcost
 
 The cost that the player needs to pay in order to learn the spell.
 
-h4. reqskill
+#### reqskill
 
 The required skill the player needs to have in order to be able to learn the spell. See ID in SkillLine.dbc
 
-h4. reqskillvalue
+#### reqskillvalue
 
-The proficiency in the skill from "reqskill":#reqskill that the player needs to meet in order to learn the spell.
+The proficiency in the skill from [reqskill](#reqskill) that the player needs to meet in order to learn the spell.
 
-h4. reqlevel
+#### reqlevel
 
 The level the player needs to be in order to learn the spell.

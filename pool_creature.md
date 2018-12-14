@@ -1,26 +1,28 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `pool_creature` table
+The \`pool\_creature\` table
+----------------------------
 
-Contains all creatures pooled by their "`creature`.`guid`":Creature#guid.
+Contains all creatures pooled by their [\`creature\`.\`guid\`](Creature#guid).
 
-h3. Structure
+### Structure
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":pool_creature#guid|int(10) unsigned|NO|PRI|0||
-|"pool_entry":pool_creature#pool_entry|mediumint(8) unsigned|NO|PRI|0||
-|"chance":pool_creature#chance|float unsigned|NO||0||
+| **Field**                               | **Type**              | **Null** | **Key** | **Default** | **Extra** |
+|-----------------------------------------|-----------------------|----------|---------|-------------|-----------|
+| [guid](pool_creature#guid)              | int(10) unsigned      | NO       | PRI     | 0           |           |
+| [pool\_entry](pool_creature#pool_entry) | mediumint(8) unsigned | NO       | PRI     | 0           |           |
+| [chance](pool_creature#chance)          | float unsigned        | NO       |         | 0           |           |
 
-h3. Description of the fields
+### Description of the fields
 
-h4. guid
+#### guid
 
-Creature's GUID. See "`creature`.`guid`":Creature#guid.
+Creature's GUID. See [\`creature\`.\`guid\`](Creature#guid).
 
-h4. pool_entry
+#### pool\_entry
 
-Pool's ID. See "pool_template":pool_template
+Pool's ID. See [pool\_template](pool_template)
 
-h4. chance
+#### chance
 
 Chance the creature will be spawned in the pool.

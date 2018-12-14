@@ -1,33 +1,33 @@
-Back to "characters database":charactersdb_struct list of tables.
+Back to [characters database](charactersdb_struct) list of tables.
 
-h2. The `pet&#95;spell` table
+The \`pet\_spell\` table
+------------------------
 
 This table holds information on individual pet spells.
 
-h3. Structure
+### Structure
 
+| **Field**                  | **Type**         | **Null** | **Key** | **Default** | **Extra** |
+|----------------------------|------------------|----------|---------|-------------|-----------|
+| [guid](Pet_spell#guid)     | int(11) unsigned | NO       | PRI     | 0           |           |
+| [spell](Pet_spell#spell)   | int(11) unsigned | NO       | PRI     | 0           |           |
+| [slot](Pet_spell#slot)     | int(11) unsigned | NO       |         | 0           |           |
+| [active](Pet_spell#active) | int(11) unsigned | NO       |         | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":Pet_spell#guid|int(11) unsigned|NO|PRI|0||
-|"spell":Pet_spell#spell|int(11) unsigned|NO|PRI|0||
-|"slot":Pet_spell#slot|int(11) unsigned|NO||0||
-|"active":Pet_spell#active|int(11) unsigned|NO||0||
+### Description of the fields
 
+#### guid
 
-h3. Description of the fields
+The pet GUID. See [character\_pet.id](character_pet#id)
 
-h4. guid
-
-The pet GUID. See "character&#95;pet.id":character_pet#id
-
-h4. spell
+#### spell
 
 The spell ID. See Spell.dbc
 
-h4. slot
+#### slot
 
 The slot the spell icon is in in the pet bar.
 
-h4. active
+#### active
 
 Boolean 0 or 1 controlling if the spell is active or not.

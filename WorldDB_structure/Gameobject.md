@@ -1,107 +1,138 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `gameobject` table
+The \`gameobject\` table
+------------------------
 
 This table holds the individual object data on each spawned game object in the world. This data along with the object's template data is read and used to instantiate the objects in the world.
 
-h3. Structure
+### Structure
 
+| **Field**                                 | **Type**             | **Null** | **Key** | **Default** | **Extra**       |
+|-------------------------------------------|----------------------|----------|---------|-------------|-----------------|
+| [guid](Gameobject#guid)                   | int(10) unsigned     | NO       | PRI     | None        | auto\_increment |
+| [id](Gameobject#id)                       | int(10) unsigned     | NO       |         | 0           |                 |
+| [map](Gameobject#map)                     | int(10) unsigned     | NO       |         | 0           |                 |
+| [spawnMask](Gameobject#spawnmask)         | tinyint(3) unsigned  | NO       |         | 1           |                 |
+| [phaseMask](Gameobject#phasemask)         | smallint(5) unsigned | NO       |         | 1           |                 |
+| [position\_x](Gameobject#position_x)      | float                | NO       |         | 0           |                 |
+| [position\_y](Gameobject#position_y)      | float                | NO       |         | 0           |                 |
+| [position\_z](Gameobject#position_z)      | float                | NO       |         | 0           |                 |
+| [orientation](Gameobject#orientation)     | float                | NO       |         | 0           |                 |
+| [rotation0](Gameobject#rotation0)         | float                | NO       |         | 0           |                 |
+| [rotation1](Gameobject#rotation1)         | float                | NO       |         | 0           |                 |
+| [rotation2](Gameobject#rotation2)         | float                | NO       |         | 0           |                 |
+| [rotation3](Gameobject#rotation3)         | float                | NO       |         | 0           |                 |
+| [spawntimesecs](Gameobject#spawntimesecs) | int(10) unsigned     | NO       |         | 0           |                 |
+| [animprogress](Gameobject#animprogress)   | int(10) unsigned     | NO       |         | 0           |                 |
+| [state](Gameobject#state)                 | int(10) unsigned     | NO       |         | 1           |                 |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":Gameobject#guid|int(10) unsigned|NO|PRI|None|auto&#95;increment|
-|"id":Gameobject#id|int(10) unsigned|NO||0||
-|"map":Gameobject#map|int(10) unsigned|NO||0||
-|"spawnMask":Gameobject#spawnmask|tinyint(3) unsigned|NO||1||
-|"phaseMask":Gameobject#phasemask|smallint(5) unsigned|NO||1||
-|"position_x":Gameobject#position_x|float|NO||0||
-|"position_y":Gameobject#position_y|float|NO||0||
-|"position_z":Gameobject#position_z|float|NO||0||
-|"orientation":Gameobject#orientation|float|NO||0||
-|"rotation0":Gameobject#rotation0|float|NO||0||
-|"rotation1":Gameobject#rotation1|float|NO||0||
-|"rotation2":Gameobject#rotation2|float|NO||0||
-|"rotation3":Gameobject#rotation3|float|NO||0||
-|"spawntimesecs":Gameobject#spawntimesecs|int(10) unsigned|NO||0||
-|"animprogress":Gameobject#animprogress|int(10) unsigned|NO||0||
-|"state":Gameobject#state|int(10) unsigned|NO||1||
+### Description of the fields
 
-
-h3. Description of the fields
-
-h4. guid
+#### guid
 
 The global unique identifier for the game object. This field must be unique among all game objects.
 
-h4. id
+#### id
 
-The template ID of the gameobject. See "gameobject&#95;template.entry":gameobject_template#entry
+The template ID of the gameobject. See [gameobject\_template.entry](gameobject_template#entry)
 
-h4. map
+#### map
 
-The map ID where this object is spawned. See "Map.dbc":Map.dbc
+The map ID where this object is spawned. See [Map.dbc](Map.dbc)
 
-h4. spawnMask
+#### spawnMask
 
 Controls under which difficulties the object is spawned. Combine value to get wished case.
 
-|_. Value|_. Comment|
-|0|Not spawned|
-|1|Spawned only in normal versions of maps (includes maps without additional difficulty modes)|
-|2|Spawned only in difficulty = 1 versions of maps (mostly heroic)|
-|4|Spawned only in difficulty = 2 versions of maps|
-|8|Spawned only in difficulty = 3 versions of maps|
-|15|Spawned in all versions of maps|
+<table style="width:100%;">
+<colgroup>
+<col width="7%" />
+<col width="92%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Not spawned</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Spawned only in normal versions of maps (includes maps without additional difficulty modes)</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Spawned only in difficulty = 1 versions of maps (mostly heroic)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Spawned only in difficulty = 2 versions of maps</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Spawned only in difficulty = 3 versions of maps</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>Spawned in all versions of maps</td>
+</tr>
+</tbody>
+</table>
 
+#### phaseMask
 
-h4. phaseMask
+Controls what phase gameobject is at. 1=default phase. Phase masks are got from Aura 261 effect ( (Aura \#261) (4) ) = phasemask = 4.
 
-Controls what phase gameobject is at. 1=default phase. Phase masks are got from Aura 261 effect ( (Aura #261) (4) ) = phasemask = 4.
-
-h4. position&#95;x
+#### position\_x
 
 The X position.
 
-h4. position&#95;y
+#### position\_y
 
 The Y position.
 
-h4. position&#95;z
+#### position\_z
 
 The Z position.
 
-h4. orientation
+#### orientation
 
 The orientation. (North = 0, South = 3.14159)
 
-h4. rotation0
+#### rotation0
 
 GameObject Rotation: X:
 
-h4. rotation1
+#### rotation1
 
 GameObject Rotation: Y:
 
-h4. rotation2
+#### rotation2
 
 GameObject Rotation: Z:
 
-h4. rotation3
+#### rotation3
 
 GameObject Rotation: W:
 
-h4. spawntimesecs
+#### spawntimesecs
 
 Time in seconds for this object to respawn.
 
-Using a negative value will result in the object starting out by being &quot;despawned&quot; until a script will spawn it. It will then despawn after the amount of time specified here has passed.
+Using a negative value will result in the object starting out by being "despawned" until a script will spawn it. It will then despawn after the amount of time specified here has passed.
 
-h4. animprogress
+#### animprogress
 
 Not really known what this is used for at this time. However, always set it to 100 for chests.
 
-h4. state
+#### state
 
 Only for chests.
 
-* 1 = closed
-* 0 = open
+-   1 = closed
+-   0 = open
+

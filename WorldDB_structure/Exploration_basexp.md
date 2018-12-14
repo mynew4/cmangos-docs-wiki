@@ -1,23 +1,23 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `exploration&#95;basexp` table
+The \`exploration\_basexp\` table
+---------------------------------
 
 This table controls the XP gained by characters when they explore new zones.
 
-h3. Structure
+### Structure
 
+| **Field**                           | **Type**   | **Null** | **Key** | **Default** | **Extra** |
+|-------------------------------------|------------|----------|---------|-------------|-----------|
+| [level](Exploration_basexp#level)   | tinyint(2) | NO       | PRI     | 0           |           |
+| [basexp](Exploration_basexp#basexp) | int(11)    | NO       |         | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"level":Exploration_basexp#level|tinyint(2)|NO|PRI|0||
-|"basexp":Exploration_basexp#basexp|int(11)|NO||0||
+### Description of the fields
 
-
-h3. Description of the fields
-
-h4. level
+#### level
 
 The level of the character.
 
-h4. basexp
+#### basexp
 
 The XP the character receives at the specified level.

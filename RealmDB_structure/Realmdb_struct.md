@@ -1,13 +1,19 @@
-h3. This is the list of tables in the 'realmd' database
+### This is the list of tables in the 'realmd' database
 
-* "account":account
+-   [account](account)
 
-* "account_banned":account_banned
+<!-- -->
+-   [account\_banned](account_banned)
 
-* "ip_banned":ip_banned
+<!-- -->
+-   [ip\_banned](ip_banned)
 
-* "realmcharacters":realmcharacters
+<!-- -->
+-   [realmcharacters](realmcharacters)
 
-* "realmd_db_version":realmd_db_version
+<!-- -->
+-   [realmd\_db\_version](realmd_db_version)
 
-* "realmlist":realmlist
+<!-- -->
+-   [realmlist](realmlist)
+

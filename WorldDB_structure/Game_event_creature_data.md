@@ -1,50 +1,51 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `game&#95;event&#95;creature&#95;data` table
+The \`game\_event\_creature\_data\` table
+-----------------------------------------
 
 Contains all creature instances that need to change display id and/or equipment during defined game events.
 
-h3. Structure
+### Structure
 
+| **Field**                                              | **Type**              | **Null** | **Key** | **Default** | **Extra** |
+|--------------------------------------------------------|-----------------------|----------|---------|-------------|-----------|
+| [guid](Game_event_creature_data#guid)                  | int(10) unsigned      | NO       | PRI     |             |           |
+| [entry\_id](Game_event_creature_data#id)               | mediumint(8) unsigned | NO       |         |             |           |
+| [modelid](Game_event_creature_data#modelid)            | mediumint(8) unsigned | NO       |         | 0           |           |
+| [equipment\_id](Game_event_creature_data#equipment_id) | mediumint(8) unsigned | NO       |         | 0           |           |
+| [spell\_start](Game_event_creature_data#spell_start)   | mediumint(8) unsigned | NO       |         | 0           |           |
+| [spell\_end](Game_event_creature_data#spell_end)       | mediumint(8) unsigned | NO       |         | 0           |           |
+| [event](Game_event_creature_data#event)                | mediumint(5) unsigned | NO       | PRI     | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":Game_event_creature_data#guid|int(10) unsigned|NO|PRI|||
-|"entry_id":Game_event_creature_data#id|mediumint(8) unsigned|NO||||
-|"modelid":Game_event_creature_data#modelid|mediumint(8) unsigned|NO||0||
-|"equipment_id":Game_event_creature_data#equipment_id|mediumint(8) unsigned|NO||0||
-|"spell_start":Game_event_creature_data#spell_start|mediumint(8) unsigned|NO||0||
-|"spell_end":Game_event_creature_data#spell_end|mediumint(8) unsigned|NO||0||
-|"event":Game_event_creature_data#event|mediumint(5) unsigned|NO|PRI|0||
+### Description of the fields
 
+#### guid
 
-h3. Description of the fields
+Guid of the creature participating in the event ([creature.guid](creature#guid))
 
-h4. guid
+#### entry\_id
 
-Guid of the creature participating in the event ("creature.guid":creature#guid)
+Creature\_template entry to change the GUID to during the event
 
-h4. entry&#95;id
+#### modelid
 
-Creature_template entry to change the GUID to during the event
+New model to be used while the event is active (Refers to [creature\_model\_info.modelid](creature_model_info#modelid)) Use 0 if only the [equipment](#equipment_id) is to be changed during event.
 
-h4. modelid
+#### equipment\_id
 
-New model to be used while the event is active (Refers to "creature&#95;model&#95;info.modelid":creature_model_info#modelid) Use 0 if only the "equipment":#equipment_id is to be changed during event.
+New equipment to be used during the event (Refers to [creature\_equip\_template.entry](creature_equip_template#entry))) Use 0 if only the [model](#modelid) is to be changed during event.
 
-h4. equipment&#95;id
-
-New equipment to be used during the event (Refers to "creature&#95;equip&#95;template.entry":creature_equip_template#entry)) Use 0 if only the "model":#modelid is to be changed during event.
-
-h4. spell&#95;start
+#### spell\_start
 
 Spell for NPC to cast when game event starts
 
-h4. spell&#95;end
+#### spell\_end
 
 Spell for NPC to cast when game event ends
 
-h4. event
+#### event
 
-Entry of the event ("game&#95;event.entry":game_event#entry)
+Entry of the event ([game\_event.entry](game_event#entry))
 
-* In this table, event entry can only be positive
+-   In this table, event entry can only be positive
+

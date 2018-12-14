@@ -1,136 +1,152 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `achievement&#95;criteria&#95;requirement` table
+The \`achievement\_criteria\_requirement\` table
+------------------------------------------------
 
 This table contains what need to be done to complete an achievement criteria.
 
-h3. Structure
+### Structure
 
+| Field                                                        | Type         | Attributes | Can be null | Default | Comments |
+|--------------------------------------------------------------|--------------|------------|-------------|---------|----------|
+| [criteria\_id](Achievement_criteria_requirement#criteria_id) | mediumint(8) | signed     | NO          | None    |          |
+| [type](Achievement_criteria_requirement#type)                | tintint(3)   | unsigned   | NO          | 0       |          |
+| [value1](Achievement_criteria_requirement#otherfields)       | mediumint(8) | unsigned   | NO          | 0       |          |
+| [value2](Achievement_criteria_requirement#otherfields)       | mediumint(8) | unsigned   | NO          | 0       |          |
 
-|Field|Type|Attributes|Can be null|Default|Comments|
-|"criteria_id":Achievement_criteria_requirement#criteria_id|mediumint(8)|signed|NO|None||
-|"type":Achievement_criteria_requirement#type|tintint(3)|unsigned|NO|0||
-|"value1":Achievement_criteria_requirement#otherfields|mediumint(8)|unsigned|NO|0||
-|"value2":Achievement_criteria_requirement#otherfields|mediumint(8)|unsigned|NO|0||
+### Description of the fields
 
+#### criteria\_id
 
-h3. Description of the fields
+Column 0 (ID) of achievement\_criteria.dbc This DBC contains the achievement\_id on 2nd column and will be later extracted to show relations.
 
-h4. criteria&#95;id
-
-Column 0 (ID) of achievement&#95;criteria.dbc This DBC contains the achievement&#95;id on 2nd column and will be later extracted to show relations.
-
-h4. type
+#### type
 
 Describes how to use value1 and value2.
 
-|_. Type|_. Name|
-|0|TYPE&#95;NONE|
-|1|TYPE&#95;T&#95;CREATURE|
-|2|TYPE&#95;T&#95;PLAYER&#95;CLASS&#95;RACE|
-|3|TYPE&#95;T&#95;PLAYER&#95;LESS&#95;HEALTH|
-|4|TYPE&#95;T&#95;PLAYER&#95;DEAD|
-|5|TYPE&#95;S&#95;AURA|
-|6|TYPE&#95;S&#95;AREA|
-|7|TYPE&#95;T&#95;AURA|
-|8|TYPE&#95;VALUE|
-|9|TYPE&#95;T&#95;LEVEL|
-|10|TYPE&#95;T&#95;GENDER|
-|11|TYPE&#95;DISABLED|
-|12|TYPE&#95;MAP&#95;DIFFICULTY|
-|13|TYPE&#95;MAP&#95;PLAYER&#95;COUNT|
-|14|TYPE&#95;T&#95;TEAM|
-|15|TYPE&#95;S&#95;DRUNK|
-|16|TYPE&#95;HOLIDAY|
-|17|TYPE&#95;BG&#95;LOSS&#95;TEAM&#95;SCORE|
-|18|TYPE&#95;INSTANCE&#95;SCRIPT|
-|19|TYPE&#95;S&#95;EQUIPED&#95;ITEM&#95;LVL|
-|20|TYPE&#95;REQUIRE&#95;NTH&#95;BIRTHDAY|
-|21|TYPE&#95;REQUIRE&#95;KNOWN&#95;TITLE|
+| Type | Name                          |
+|------|-------------------------------|
+| 0    | TYPE\_NONE                    |
+| 1    | TYPE\_T\_CREATURE             |
+| 2    | TYPE\_T\_PLAYER\_CLASS\_RACE  |
+| 3    | TYPE\_T\_PLAYER\_LESS\_HEALTH |
+| 4    | TYPE\_T\_PLAYER\_DEAD         |
+| 5    | TYPE\_S\_AURA                 |
+| 6    | TYPE\_S\_AREA                 |
+| 7    | TYPE\_T\_AURA                 |
+| 8    | TYPE\_VALUE                   |
+| 9    | TYPE\_T\_LEVEL                |
+| 10   | TYPE\_T\_GENDER               |
+| 11   | TYPE\_DISABLED                |
+| 12   | TYPE\_MAP\_DIFFICULTY         |
+| 13   | TYPE\_MAP\_PLAYER\_COUNT      |
+| 14   | TYPE\_T\_TEAM                 |
+| 15   | TYPE\_S\_DRUNK                |
+| 16   | TYPE\_HOLIDAY                 |
+| 17   | TYPE\_BG\_LOSS\_TEAM\_SCORE   |
+| 18   | TYPE\_INSTANCE\_SCRIPT        |
+| 19   | TYPE\_S\_EQUIPED\_ITEM\_LVL   |
+| 20   | TYPE\_REQUIRE\_NTH\_BIRTHDAY  |
+| 21   | TYPE\_REQUIRE\_KNOWN\_TITLE   |
 
+#### OtherFields
 
-h4. OtherFields
+Depending on what Type was set, the meaning and use for the following fields varies. TYPE\_T are for targets and TYPE\_S are for sources
 
-Depending on what Type was set, the meaning and use for the following fields varies. TYPE&#95;T are for targets and TYPE&#95;S are for sources
+-   **TYPE\_T\_CREATURE = 1**
+    -   value1: Target creature\_template.[entry](creature_template#entry)
 
-* *TYPE&#95;T&#95;CREATURE = 1*
-** value1: Target creature&#95;template."entry":creature_template#entry
+<!-- -->
+-   '''TYPE\_T\_PLAYER\_CLASS\_RACE = 2 '''
+    -   value1: Target Player class
+    -   value2: Target Player race
 
-* '''TYPE&#95;T&#95;PLAYER&#95;CLASS&#95;RACE = 2 '''
-** value1: Target Player class
-** value2: Target Player race
+<!-- -->
+-   '''TYPE\_T\_PLAYER\_LESS\_HEALTH = 3 '''
+    -   value1: Target Health percentage
 
-* '''TYPE&#95;T&#95;PLAYER&#95;LESS&#95;HEALTH = 3 '''
-** value1: Target Health percentage
+<!-- -->
+-   '''TYPE\_T\_PLAYER\_DEAD = 4 '''
+    -   value1: Team value the source player and target dead player must both meet
 
-* '''TYPE&#95;T&#95;PLAYER&#95;DEAD = 4 '''
-** value1: Team value the source player and target dead player must both meet
+<!-- -->
+-   '''TYPE\_S\_AURA = 5 '''
+    -   value1: Spell ID
+    -   value2: Effect index
 
-* '''TYPE&#95;S&#95;AURA = 5 '''
-** value1: Spell ID
-** value2: Effect index
+<!-- -->
+-   '''TYPE\_S\_AREA = 6 '''
+    -   value1: Area ID from [AreaTable.dbc](AreaTable.dbc)
 
-* '''TYPE&#95;S&#95;AREA = 6 '''
-** value1: Area ID from "AreaTable.dbc":AreaTable.dbc
+<!-- -->
+-   '''TYPE\_T\_AURA = 7 '''
+    -   value1: Spell ID
+    -   value2: Effect index
 
-* '''TYPE&#95;T&#95;AURA = 7 '''
-** value1: Spell ID
-** value2: Effect index
+<!-- -->
+-   **TYPE\_VALUE = 8**
+    -   value1: Min Value. Value provided with achievement update must be not less that limit
 
-* *TYPE&#95;VALUE = 8*
-** value1: Min Value. Value provided with achievement update must be not less that limit
+<!-- -->
+-   **TYPE\_T\_LEVEL = 9**
+    -   value1: Target Min Level
 
-* *TYPE&#95;T&#95;LEVEL = 9*
-** value1: Target Min Level
+<!-- -->
+-   **TYPE\_T\_GENDER = 10**
+    -   value1: Gender: 0=Male, 1=Female
 
-* *TYPE&#95;T&#95;GENDER = 10*
-** value1: Gender: 0=Male, 1=Female
-
-* *TYPE&#95;DISABLED = 11*
+<!-- -->
+-   **TYPE\_DISABLED = 11**
 
 Used to prevent achievement criteria to complete if not all requirements are implemented and listed in this table
 
-* *TYPE&#95;MAP&#95;DIFFICULTY = 12*
-** value1: Map difficulty:
+-   **TYPE\_MAP\_DIFFICULTY = 12**
+    -   value1: Map difficulty:
 
+| Description                     | Flag |
+|---------------------------------|------|
+| DUNGEON\_DIFFICULTY\_NORMAL     | 0    |
+| DUNGEON\_DIFFICULTY\_HEROIC     | 1    |
+| RAID\_DIFFICULTY\_10MAN\_NORMAL | 0    |
+| RAID\_DIFFICULTY\_25MAN\_NORMAL | 1    |
+| RAID\_DIFFICULTY\_10MAN\_HEROIC | 2    |
+| RAID\_DIFFICULTY\_25MAN\_HEROIC | 3    |
 
-|Description|Flag|
-|DUNGEON&#95;DIFFICULTY&#95;NORMAL|0|
-|DUNGEON&#95;DIFFICULTY&#95;HEROIC|1|
-|RAID&#95;DIFFICULTY&#95;10MAN&#95;NORMAL|0|
-|RAID&#95;DIFFICULTY&#95;25MAN&#95;NORMAL|1|
-|RAID&#95;DIFFICULTY&#95;10MAN&#95;HEROIC|2|
-|RAID&#95;DIFFICULTY&#95;25MAN&#95;HEROIC|3|
+-   **TYPE\_MAP\_PLAYER\_COUNT = 13**
+    -   value1: Count. For criteria "with less than %u people in the zone"
 
+<!-- -->
+-   **TYPE\_T\_TEAM = 14**
+    -   value1: Team: HORDE = 67, ALLIANCE = 469
 
-* *TYPE&#95;MAP&#95;PLAYER&#95;COUNT = 13*
-** value1: Count. For criteria &quot;with less than %u people in the zone&quot;
+<!-- -->
+-   **TYPE\_S\_DRUNK = 15**
+    -   value1: Druken State. DRUNKEN\_SOBER = 0, DRUNKEN\_TIPSY = 1, DRUNKEN\_DRUNK = 2, DRUNKEN\_SMASHED = 3
 
-* *TYPE&#95;T&#95;TEAM = 14*
-** value1: Team: HORDE = 67, ALLIANCE = 469
+<!-- -->
+-   **TYPE\_HOLIDAY = 16**
+    -   value1: Holiday ID which must be active from Holiday.dbc and [game\_event](Game_event#holiday)
 
-* *TYPE&#95;S&#95;DRUNK = 15*
-** value1: Druken State. DRUNKEN&#95;SOBER = 0, DRUNKEN&#95;TIPSY = 1, DRUNKEN&#95;DRUNK = 2, DRUNKEN&#95;SMASHED = 3
+<!-- -->
+-   '''TYPE\_BG\_LOSS\_TEAM\_SCORE = 17 '''
+    -   value1: min\_score
+    -   value2: max\_score
 
-* *TYPE&#95;HOLIDAY = 16*
-** value1: Holiday ID which must be active from Holiday.dbc and "game&#95;event":Game_event#holiday
-
-* '''TYPE&#95;BG&#95;LOSS&#95;TEAM&#95;SCORE = 17 '''
-** value1: min&#95;score
-** value2: max&#95;score
-
-* '''TYPE&#95;INSTANCE&#95;SCRIPT = 18 '''
+<!-- -->
+-   '''TYPE\_INSTANCE\_SCRIPT = 18 '''
 
 Make instance script call for check current criteria requirements fit
 
-* '''TYPE&#95;S&#95;EQUIPED&#95;ITEM&#95;LVL = 19 '''
-** value1: item&#95;level
-** value2: item&#95;quality
+-   '''TYPE\_S\_EQUIPED\_ITEM\_LVL = 19 '''
+    -   value1: item\_level
+    -   value2: item\_quality
 
-For equipped item in slot `misc1` to item level and quality
+For equipped item in slot \`misc1\` to item level and quality
 
-* '''TYPE&#95;REQUIRE&#95;NTH&#95;BIRTHDAY = 20 '''
-** value1: nth-birthday
+-   '''TYPE\_REQUIRE\_NTH\_BIRTHDAY = 20 '''
+    -   value1: nth-birthday
 
-* '''TYPE&#95;CRITERIA&#95;REQUIRE&#95;KNOWN&#95;TITLE = 21 '''
-** value1: "title&#95;id":CharTitles.dbc
+<!-- -->
+-   '''TYPE\_CRITERIA\_REQUIRE\_KNOWN\_TITLE = 21 '''
+    -   value1: [title\_id](CharTitles.dbc)
+

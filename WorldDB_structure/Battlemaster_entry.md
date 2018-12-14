@@ -1,23 +1,23 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `battlemaster&#95;entry` table
+The \`battlemaster\_entry\` table
+---------------------------------
 
 Holds information on which NPC can start what battleground or arena.
 
-h3. Structure
+### Structure
 
+| **Field**                                      | **Type**              | **Null** | **Key** | **Default** | **Extra**                |
+|------------------------------------------------|-----------------------|----------|---------|-------------|--------------------------|
+| [entry](Battlemaster_entry#entry)              | mediumint(8) unsigned | NO       | PRI     | 0           | Entry of a creature      |
+| [bg\_template](Battlemaster_entry#bg_template) | mediumint(8) unsigned | NO       |         | 0           | Battleground template id |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"entry":Battlemaster_entry#entry|mediumint(8) unsigned|NO|PRI|0|Entry of a creature|
-|"bg_template":Battlemaster_entry#bg_template|mediumint(8) unsigned|NO||0|Battleground template id|
+### Description of the fields
 
+#### entry
 
-h3. Description of the fields
+The ID of the creature. See [creature\_template.entry](creature_template#entry)
 
-h4. entry
+#### bg\_template
 
-The ID of the creature. See "creature&#95;template.entry":creature_template#entry
-
-h4. bg&#95;template
-
-The battleground template ID. See "Battleground_template":Battleground_template
+The battleground template ID. See [Battleground\_template](Battleground_template)

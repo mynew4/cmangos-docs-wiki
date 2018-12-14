@@ -1,26 +1,26 @@
-Back to the "characters database":charactersdb_struct list of tables.
+Back to the [characters database](charactersdb_struct) list of tables.
 
-h2. The `character&#95;achievement` table
+The \`character\_achievement\` table
+------------------------------------
 
 This table holds information for each character and its achievement.
 
-h3. Structure
+### Structure
 
+| **Field**                                        | **Type**         | **Null** | **Key** | **Default** | **Extra** |
+|--------------------------------------------------|------------------|----------|---------|-------------|-----------|
+| [guid](Character_achievement#guid)               | int(11) unsigned | NO       | PRIMARY |             |           |
+| [achievement](Character_achievement#achievement) | int(11)          | NO       | PRIMARY |             |           |
+| [date](Character_achievement#date)               | int(11)          | NO       |         |             |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"guid":Character_achievement#guid|int(11) unsigned|NO|PRIMARY|||
-|"achievement":Character_achievement#achievement|int(11)|NO|PRIMARY|||
-|"date":Character_achievement#date|int(11)|NO||||
+#### guid
 
+The GUID of the character. See [character.guid](character#guid)
 
-h4. guid
+#### achievement
 
-The GUID of the character. See "character.guid":character#guid
+The ID of the achievement. See [achievements.dbc](achievements.dbc)
 
-h4. achievement
-
-The ID of the achievement. See "achievements.dbc":achievements.dbc
-
-h4. date
+#### date
 
 Unix timestamp when achievement was completed.

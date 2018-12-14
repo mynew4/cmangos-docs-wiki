@@ -1,62 +1,62 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `spell&#95;area` table
+The \`spell\_area\` table
+-------------------------
 
 This table holds information on what spells are applied to npcs/players in some areas.
 
-h3. Structure
+### Structure
 
+| **Field**                                             | **Type**              | **Null** | **Key** | **Default** | **Extra** |
+|-------------------------------------------------------|-----------------------|----------|---------|-------------|-----------|
+| [spell](Spell_area#spell)                             | mediumint(8) unsigned | NO       | PRI     | 0           |           |
+| [area](Spell_area#area)                               | mediumint(8) unsigned | NO       | PRI     | 0           |           |
+| [quest\_start](Spell_area#quest_start)                | mediumint(8) unsigned | NO       | PRI     | 0           |           |
+| [quest\_start\_active](Spell_area#quest_start_active) | tinyint(1) unsigned   | NO       | PRI     | 0           |           |
+| [quest\_end](Spell_area#quest_end)                    | mediumint(8) unsigned | NO       |         | 0           |           |
+| [condition\_id](Spell_area#condition_id)              | mediumint(8)          | NO       | PRI     | 0           |           |
+| [aura\_spell](Spell_area#aura_spell)                  | mediumint(8)          | NO       | PRI     | 0           |           |
+| [racemask](Spell_area#racemask)                       | mediumint(8) unsigned | NO       | PRI     | 0           |           |
+| [gender](Spell_area#gender)                           | tinyint(1) unsigned   | NO       | PRI     | 2           |           |
+| [autocast](Spell_area#autocast)                       | tinyint(1) unsigned   | NO       |         | 0           |           |
 
-|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-|"spell":Spell_area#spell|mediumint(8) unsigned|NO|PRI|0||
-|"area":Spell_area#area|mediumint(8) unsigned|NO|PRI|0||
-|"quest_start":Spell_area#quest_start|mediumint(8) unsigned|NO|PRI|0||
-|"quest_start_active":Spell_area#quest_start_active|tinyint(1) unsigned|NO|PRI|0||
-|"quest_end":Spell_area#quest_end|mediumint(8) unsigned|NO||0||
-|"condition_id":Spell_area#condition_id|mediumint(8)|NO|PRI|0||
-|"aura_spell":Spell_area#aura_spell|mediumint(8)|NO|PRI|0||
-|"racemask":Spell_area#racemask|mediumint(8) unsigned|NO|PRI|0||
-|"gender":Spell_area#gender|tinyint(1) unsigned|NO|PRI|2||
-|"autocast":Spell_area#autocast|tinyint(1) unsigned|NO||0||
+### Description of the fields
 
+#### spell
 
-h3. Description of the fields
+The spell ID that will be castet. Reference to [Spell.dbc.](Spell.dbc).
 
-h4. spell
+#### area
 
-The spell ID that will be castet. Reference to "Spell.dbc.":Spell.dbc.
+Reference to [AreaTable.dbc.](AreaTable.dbc). Player must be in this area.
 
-h4. area
+#### quest\_start
 
-Reference to "AreaTable.dbc.":AreaTable.dbc. Player must be in this area.
+Reference to [quest\_template.](quest_template). This quest must be available or active and must not be completed. Exact behaviour depends on [quest\_start\_active](spell_area#quest_start_active).
 
-h4. quest&#95;start
+#### quest\_start\_active
 
-Reference to "quest_template.":quest_template. This quest must be available or active and must not be completed. Exact behaviour depends on "quest&#95;start&#95;active":spell_area#quest_start_active.
+Boolean value. If set to 0 the quest [quest\_start](spell_area#quest_start) must be available and not activ. If set to 1 the quest [quest\_start](spell_area#quest_start) must be available or active in players' log.
 
-h4. quest&#95;start&#95;active
+#### quest\_end
 
-Boolean value. If set to 0 the quest "quest&#95;start":spell_area#quest_start must be available and not activ. If set to 1 the quest "quest&#95;start":spell_area#quest_start must be available or active in players' log.
+Reference to [quest\_template.](quest_template). This quest must not be completed.
 
-h4. quest&#95;end
+#### condition\_id
 
-Reference to "quest_template.":quest_template. This quest must not be completed.
+Reference to [conditions.](conditions).
 
-h4. condition_id
+#### aura\_spell
 
-Reference to "conditions.":conditions.
+Reference to [Spell.dbc.](Spell.dbc). Player must have this aura to activate the spell. Negativ values stand for "not has aura" requirement.
 
-h4. aura&#95;spell
-
-Reference to "Spell.dbc.":Spell.dbc. Player must have this aura to activate the spell. Negativ values stand for &quot;not has aura&quot; requirement.
-
-h4. racemask
+#### racemask
 
 Only these races are target of the spell.
 
-*Race*
+**Race**
 
-These values are 2^ID taken from "CharRaces.dbc":CharRaces.dbc 
+These values are 2^ID taken from [CharRaces.dbc](CharRaces.dbc)
 
 <big>Examples</big>
 
@@ -66,14 +66,14 @@ These values are 2^ID taken from "CharRaces.dbc":CharRaces.dbc
 
 (1 + 4 + 8 + 64 + 1024) = 1101 = only Alliance
 
-h4. gender
+#### gender
 
 Only this gender is target of the spell.
 
-* 0: Male
-* 1: Female
-* 2: Both
+-   0: Male
+-   1: Female
+-   2: Both
 
-h4. autocast
+#### autocast
 
 Boolean value.

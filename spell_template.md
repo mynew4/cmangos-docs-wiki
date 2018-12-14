@@ -1,419 +1,425 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `spell_template` table
+The \`spell\_template\` table
+-----------------------------
 
 holds data about every spell used.
 
-h3. Structure
+### Structure
 
-|*ID*|*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
-||"Id":spell_template#id|INT(11) UNSIGNED|NO||0||
-||"Category":spell_template#category|INT(11) UNSIGNED|NO||0||
-||"Dispel":spell_template#dispel|INT(11) UNSIGNED|NO||0||
-||"Mechanic":spell_template#mechanic|INT(11) UNSIGNED|NO||0||
-||"Attributes":spell_template#attributes|INT(11) UNSIGNED|NO||0||
-||"AttributesEx":spell_template#attributesex|INT(11) UNSIGNED|NO||0||
-||"AttributesEx2":spell_template#attributesex2|INT(11) UNSIGNED|NO||0||
-||"AttributesEx3":spell_template#attributesex3|INT(11) UNSIGNED|NO||0||
-||"AttributesEx4":spell_template#attributesex4|INT(11) UNSIGNED|NO||0||
-||"AttributesEx5":spell_template#attributesex5|INT(11) UNSIGNED|NO||0||
-||"AttributesEx6":spell_template#attributesex6|INT(11) UNSIGNED|NO||0||
-||"Stances":spell_template#stances|INT(11) UNSIGNED|NO||0||
-||"StancesNot":spell_template#stancesnot|INT(11) UNSIGNED|NO||0||
-||"Targets":spell_template#targets|INT(11) UNSIGNED|NO||0||
-||"TargetCreatureType":spell_template#targetcreaturetype|INT(11) UNSIGNED|NO||0||
-||"RequiresSpellFocus":spell_template#requiresspellfocus|INT(11) UNSIGNED|NO||0||
-||"FacingCasterFlags":spell_template#facingcasterflags|INT(11) UNSIGNED|NO||0||
-||"CasterAuraState":spell_template#casteraurastate|INT(11) UNSIGNED|NO||0||
-||"TargetAuraState":spell_template#targetaurastate|INT(11) UNSIGNED|NO||0||
-||"CasterAuraStateNot":spell_template#casteraurastatenot|INT(11) UNSIGNED|NO||0||
-||"TargetAuraStateNot":spell_template#targetaurastatenot|INT(11) UNSIGNED|NO||0||
-||"CastingTimeIndex":spell_template#castingtimeindex|INT(11) UNSIGNED|NO||0||
-||"RecoveryTime":spell_template#recoverytime|INT(11) UNSIGNED|NO||0||
-||"CategoryRecoveryTime":spell_template#categoryrecoverytime|INT(11) UNSIGNED|NO||0||
-||"InterruptFlags":spell_template#interruptflags|INT(11) UNSIGNED|NO||0||
-||"AuraInterruptFlags":spell_template#aurainterruptflags|INT(11) UNSIGNED|NO||0||
-||"ChannelInterruptFlags":spell_template#channelinterruptflags|INT(11) UNSIGNED|NO||0||
-||"procFlags":spell_template#procflags|INT(11) UNSIGNED|NO||0||
-||"procChance":spell_template#procchance|INT(11) UNSIGNED|NO||0||
-||"procCharges":spell_template#proccharges|INT(11) UNSIGNED|NO||0||
-||"maxLevel":spell_template#maxlevel|INT(11) UNSIGNED|NO||0||
-||"baseLevel":spell_template#baselevel|INT(11) UNSIGNED|NO||0||
-||"spellLevel":spell_template#spelllevel|INT(11) UNSIGNED|NO||0||
-||"DurationIndex":spell_template#durationindex|int(11) unsigned|NO||0||
-||"powerType":spell_template#powertype|INT(11) UNSIGNED|NO||0||
-||"manaCost":spell_template#manacost|INT(11) UNSIGNED|NO||0||
-||"manaCostPerlevel":spell_template#manacostperlevel|INT(11) UNSIGNED|NO||0||
-||"manaPerSecond":spell_template#manapersecond|INT(11) UNSIGNED|NO||0||
-||"manaPerSecondPerLevel":spell_template#manapersecondperlevel|INT(11) UNSIGNED|NO||0||
-||"rangeIndex":spell_template#rangeindex|INT(11) UNSIGNED|NO||1||
-||"speed":spell_template#speed|FLOAT|NO||0||
-||"StackAmount":spell_template#stackamount|INT(11) UNSIGNED|NO||0||
-||"Totem1":spell_template#totem1|INT(11) UNSIGNED|NO||0||
-||"Totem2":spell_template#totem2|INT(11) UNSIGNED|NO||0||
-||"Reagent1":spell_template#reagent1|INT(11) UNSIGNED|NO||0||
-||"ReagentCount1":spell_template#reagentcount1|INT(11) UNSIGNED|NO||0||
-||"EquippedItemClass":spell_template#equippeditemclass|INT(11) UNSIGNED|NO||-1||
-||"EquippedItemSubClassMask":spell_template#equippeditemsubclassmask|INT(11) UNSIGNED|NO||0||
-||"EquippedItemInventoryTypeMask":spell_template#equippediteminventorytypemask|INT(11) UNSIGNED|NO||0||
-||"Effect1":spell_template#effect1|INT(11) UNSIGNED|NO||0||
-||"EffectDieSides1":spell_template#effectdiesides1|INT(11) UNSIGNED|NO||0||
-||"EffectBaseDice1":spell_template#effectbasedice1|INT(11) UNSIGNED|NO||0||
-||"EffectDicePerLevel1":spell_template#effectdiceperlevel1|FLOAT|NO||0||
-||"EffectRealPointsPerLevel1":spell_template#effectrealpointsperlevel1|FLOAT|NO||0||
-||"EffectBasePoints1":spell_template#effectbasepoints1|INT(11) UNSIGNED|NO||0||
-||"EffectMechanic1":spell_template#effectmechanic1|INT(11) UNSIGNED|NO||0||
-||"EffectImplicitTargetA1":spell_template#effectimplicittargeta1|INT(11) UNSIGNED|NO||0||
-||"EffectImplicitTargetB1":spell_template#effectimplicittargetb1|INT(11) UNSIGNED|NO||0||
-||"EffectRadiusIndex1":spell_template#effectradiusindex1|INT(11) UNSIGNED|NO||0||
-||"EffectApplyAuraName1":spell_template#effectapplyauraname1|INT(11) UNSIGNED|NO||0||
-||"EffectAmplitude1":spell_template#effectamplitude1|INT(11) UNSIGNED|NO||0||
-||"EffectMultipleValue1":spell_template#effectmultiplevalue1|FLOAT|NO||0||
-||"EffectChainTarget1":spell_template#effectchaintarget1|INT(11) UNSIGNED|NO||0||
-||"EffectItemType1":spell_template#effectitemtype1|INT(11) UNSIGNED|NO||0||
-||"EffectMiscValue1":spell_template#effectmiscvalue1|INT(11) UNSIGNED|NO||0||
-||"EffectMiscValueB1":spell_template#effectmiscvalueb1|INT(11)|NO||0||
-||"EffectTriggerSpell1":spell_template#effecttriggerspell1|INT(11) UNSIGNED|NO||0||
-||"EffectPointsPerComboPoint1":spell_template#effectpointspercombopoint1|FLOAT|NO||0||
-||"SpellVisual":spell_template#spellvisual|INT(11) UNSIGNED|NO||0||
-||"SpellIconID":spell_template#spelliconid|INT(11) UNSIGNED|NO||0||
-||"activeIconID":spell_template#activeiconid|INT(11) UNSIGNED|NO||0||
-||"spellPriority":spell_template#spellpriority|INT(11) UNSIGNED|NO||0||
-||"SpellName":spell_template#spellname|TEXT|NO||0||
-||"Rank":spell_template#rank|TEXT|NULL||0||
-||"ManaCostPercentage":spell_template#manacostpercentage|INT(11) UNSIGNED|NO||0||
-||"StartRecoveryCategory":spell_template#startrecoverycategory|INT(11) UNSIGNED|NO||0||
-||"StartRecoveryTime":spell_template#startrecoverytime|INT(11) UNSIGNED|NO||0||
-||"MaxTargetLevel":spell_template#maxtargetlevel|INT(11) UNSIGNED|NO||0||
-||"SpellFamilyName":spell_template#spellfamilyname|INT(11) UNSIGNED|NO||0||
-||"SpellFamilyFlags":spell_template#spellfamilyflags|BIGINT(20) UNSIGNED|NO||0||
-||"MaxAffectedTargets":spell_template#maxaffectedtargets|INT(11) UNSIGNED|NO||0||
-||"DmgClass":spell_template#dmgclass|INT(11) UNSIGNED|NO||0||
-||"PreventionType":spell_template#preventiontype|INT(11) UNSIGNED|NO||0||
-||"DmgMultiplier1":spell_template#dmgmultiplier1|INT(11) UNSIGNED|NO||0||
-||"TotemCategory1":spell_template#totemcategory1|INT(11) UNSIGNED|NO||0||
-||"TotemCategory2":spell_template#totemcategory2|INT(11) UNSIGNED|NO||0||
-||"AreaId":spell_template#areaid|INT(11) UNSIGNED|NO||0||
-||"SchoolMask":spell_template#schoolmask|INT(11) UNSIGNED|NO||0||
-||"IsServerSide":spell_template#isserverside|INT(11) UNSIGNED|NO||0||
-||"AttributesServerside":spell_template#attributesserverside|INT(11) UNSIGNED|NO||0||
+| **ID** | **Field**                                                                     | **Type**             | **Null** | **Key** | **Default** | **Extra** |
+|--------|-------------------------------------------------------------------------------|----------------------|----------|---------|-------------|-----------|
+|        | [Id](spell_template#id)                                                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Category](spell_template#category)                                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Dispel](spell_template#dispel)                                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Mechanic](spell_template#mechanic)                                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Attributes](spell_template#attributes)                                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AttributesEx](spell_template#attributesex)                                   | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AttributesEx2](spell_template#attributesex2)                                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AttributesEx3](spell_template#attributesex3)                                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AttributesEx4](spell_template#attributesex4)                                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AttributesEx5](spell_template#attributesex5)                                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AttributesEx6](spell_template#attributesex6)                                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Stances](spell_template#stances)                                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [StancesNot](spell_template#stancesnot)                                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Targets](spell_template#targets)                                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [TargetCreatureType](spell_template#targetcreaturetype)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [RequiresSpellFocus](spell_template#requiresspellfocus)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [FacingCasterFlags](spell_template#facingcasterflags)                         | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [CasterAuraState](spell_template#casteraurastate)                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [TargetAuraState](spell_template#targetaurastate)                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [CasterAuraStateNot](spell_template#casteraurastatenot)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [TargetAuraStateNot](spell_template#targetaurastatenot)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [CastingTimeIndex](spell_template#castingtimeindex)                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [RecoveryTime](spell_template#recoverytime)                                   | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [CategoryRecoveryTime](spell_template#categoryrecoverytime)                   | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [InterruptFlags](spell_template#interruptflags)                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AuraInterruptFlags](spell_template#aurainterruptflags)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [ChannelInterruptFlags](spell_template#channelinterruptflags)                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [procFlags](spell_template#procflags)                                         | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [procChance](spell_template#procchance)                                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [procCharges](spell_template#proccharges)                                     | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [maxLevel](spell_template#maxlevel)                                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [baseLevel](spell_template#baselevel)                                         | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [spellLevel](spell_template#spelllevel)                                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [DurationIndex](spell_template#durationindex)                                 | int(11) unsigned     | NO       |         | 0           |           |
+|        | [powerType](spell_template#powertype)                                         | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [manaCost](spell_template#manacost)                                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [manaCostPerlevel](spell_template#manacostperlevel)                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [manaPerSecond](spell_template#manapersecond)                                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [manaPerSecondPerLevel](spell_template#manapersecondperlevel)                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [rangeIndex](spell_template#rangeindex)                                       | INT (11) UNSIGNED    | NO       |         | 1           |           |
+|        | [speed](spell_template#speed)                                                 | FLOAT                | NO       |         | 0           |           |
+|        | [StackAmount](spell_template#stackamount)                                     | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Totem1](spell_template#totem1)                                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Totem2](spell_template#totem2)                                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Reagent1](spell_template#reagent1)                                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [ReagentCount1](spell_template#reagentcount1)                                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EquippedItemClass](spell_template#equippeditemclass)                         | INT (11) UNSIGNED    | NO       |         | -1          |           |
+|        | [EquippedItemSubClassMask](spell_template#equippeditemsubclassmask)           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EquippedItemInventoryTypeMask](spell_template#equippediteminventorytypemask) | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [Effect1](spell_template#effect1)                                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectDieSides1](spell_template#effectdiesides1)                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectBaseDice1](spell_template#effectbasedice1)                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectDicePerLevel1](spell_template#effectdiceperlevel1)                     | FLOAT                | NO       |         | 0           |           |
+|        | [EffectRealPointsPerLevel1](spell_template#effectrealpointsperlevel1)         | FLOAT                | NO       |         | 0           |           |
+|        | [EffectBasePoints1](spell_template#effectbasepoints1)                         | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectMechanic1](spell_template#effectmechanic1)                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectImplicitTargetA1](spell_template#effectimplicittargeta1)               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectImplicitTargetB1](spell_template#effectimplicittargetb1)               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectRadiusIndex1](spell_template#effectradiusindex1)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectApplyAuraName1](spell_template#effectapplyauraname1)                   | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectAmplitude1](spell_template#effectamplitude1)                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectMultipleValue1](spell_template#effectmultiplevalue1)                   | FLOAT                | NO       |         | 0           |           |
+|        | [EffectChainTarget1](spell_template#effectchaintarget1)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectItemType1](spell_template#effectitemtype1)                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectMiscValue1](spell_template#effectmiscvalue1)                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectMiscValueB1](spell_template#effectmiscvalueb1)                         | INT (11)             | NO       |         | 0           |           |
+|        | [EffectTriggerSpell1](spell_template#effecttriggerspell1)                     | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [EffectPointsPerComboPoint1](spell_template#effectpointspercombopoint1)       | FLOAT                | NO       |         | 0           |           |
+|        | [SpellVisual](spell_template#spellvisual)                                     | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [SpellIconID](spell_template#spelliconid)                                     | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [activeIconID](spell_template#activeiconid)                                   | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [spellPriority](spell_template#spellpriority)                                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [SpellName](spell_template#spellname)                                         | TEXT                 | NO       |         | 0           |           |
+|        | [Rank](spell_template#rank)                                                   | TEXT                 | NULL     |         | 0           |           |
+|        | [ManaCostPercentage](spell_template#manacostpercentage)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [StartRecoveryCategory](spell_template#startrecoverycategory)                 | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [StartRecoveryTime](spell_template#startrecoverytime)                         | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [MaxTargetLevel](spell_template#maxtargetlevel)                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [SpellFamilyName](spell_template#spellfamilyname)                             | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [SpellFamilyFlags](spell_template#spellfamilyflags)                           | BIGINT (20) UNSIGNED | NO       |         | 0           |           |
+|        | [MaxAffectedTargets](spell_template#maxaffectedtargets)                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [DmgClass](spell_template#dmgclass)                                           | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [PreventionType](spell_template#preventiontype)                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [DmgMultiplier1](spell_template#dmgmultiplier1)                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [TotemCategory1](spell_template#totemcategory1)                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [TotemCategory2](spell_template#totemcategory2)                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AreaId](spell_template#areaid)                                               | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [SchoolMask](spell_template#schoolmask)                                       | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [IsServerSide](spell_template#isserverside)                                   | INT (11) UNSIGNED    | NO       |         | 0           |           |
+|        | [AttributesServerside](spell_template#attributesserverside)                   | INT (11) UNSIGNED    | NO       |         | 0           |           |
 
-h3. Description of the fields
+### Description of the fields
 
-h4. Id
+#### Id
 
 The spell ID.
 
-h4. Category
+#### Category
 
 Category ID based on which cooldown is determined. Spells with same category go into cooldown if one of them goes into cooldown.
 
-|*ID*|*Description*|
-|0|Default|
-|1|Summon guards|
-|2|Entry|
-|4|Entry|
+| **ID** | **Description** |
+|--------|-----------------|
+| 0      | Default         |
+| 1      | Summon guards   |
+| 2      | Entry           |
+| 4      | Entry           |
 
-h4. Dispel
+#### Dispel
 
 Dispel type of a spell. Some spells can only dispel specific types of spells, for example poisons.
 
-h4. Mechanic
+#### Mechanic
 
 Spells effects utilize a mechanics. For example bleed, root, silence.
 
-h4. Attributes
+#### Attributes
 
 Special rules for spells. There are several columns for attributes. These rules can do anything, and some can be name only.
 
-h4. AttributesEx
+#### AttributesEx
 
-h4. AttributesEx2
+#### AttributesEx2
 
-h4. AttributesEx3
+#### AttributesEx3
 
-h4. AttributesEx4
+#### AttributesEx4
 
-h4. AttributesEx5
+#### AttributesEx5
 
-h4. AttributesEx6
+#### AttributesEx6
 
-h4. Stances
+#### Stances
 
 Determines specific stances in which caster must be for spell to be successfully cast.
 
-h4. StancesNot
+#### StancesNot
 
 Determines specific stances in which caster cannot be for spell to be successfully cast.
 
-h4. Targets
+#### Targets
 
-Determines the default targets for some effects. Seems to be connected to TARGET_NONE.
+Determines the default targets for some effects. Seems to be connected to TARGET\_NONE.
 
-h4. TargetCreatureType
+#### TargetCreatureType
 
 Specifies what creature types the spell can target, for example Humanoid or Beast.
 
-h4. RequiresSpellFocus
+#### RequiresSpellFocus
 
 Specifies the spell focus GO, around which the caster has to be for a successful cast.
 
-Indicates that this spell needs a GO near (e.g. forges). Required object has the type "GAMEOBJECT_TYPE_SPELLFOCUS":Gameobject_template#type and "data0":Gameobject_template#data0-23 matches the RequiresSpellFocus value.
+Indicates that this spell needs a GO near (e.g. forges). Required object has the type [GAMEOBJECT\_TYPE\_SPELLFOCUS](Gameobject_template#type) and [data0](Gameobject_template#data0-23) matches the RequiresSpellFocus value.
 
-h4. FacingCasterFlags
+#### FacingCasterFlags
 
 Specifies how the caster has to face the target so that the spell is successful. enum SpellFacingFlags in Unit.h
 
-h4. CasterAuraState
+#### CasterAuraState
 
 Specifies the caster AuraState required for the cast to be successful.
 
-h4. TargetAuraState
+#### TargetAuraState
 
 Specifies the target AuraState required for the cast to be successful.
 
-h4. CasterAuraStateNot
+#### CasterAuraStateNot
 
 Specifies which AuraState the caster must not have for the cast to be successful.
 
-h4. TargetAuraStateNot
+#### TargetAuraStateNot
 
 Specifies which AuraState the target must not have for the cast to be successful.
 
-h4. CastingTimeIndex
+#### CastingTimeIndex
 
 CastingTime (Id) that defines how long it takes for the spell to cast in milliseconds.
 
-|ID|CastTime|CastTimePerLevel|MinCastTime|
-|1|0|0|0|
-|2|250|0|250|
-|3|500|0|500|
-|4|1000|0|1000|
-|5|2000|XXX|XXX|
-|6|5000|XXX|XXX|
-|7|10000|XXX|XXX|
-|8|20000|XXX|XXX|
-|9|30000|XXX|XXX|
-|10|1000|-100|500|
-|11|2000|-100|1000|
-|12|5000|-100|2500|
-|13|30000|-1000|10000|
-|14|3000|XXX|XXX|
-|15|4000|XXX|XXX|
-|16|1500|XXX|XXX|
-|17|XXX|XXX|XXX|
-|18|-1000000|XXX|XXX|
-|19|2500|XXX|XXX|
-|20|2500|XXX|XXX|
-|21|2600|XXX|XXX|
-|22|3500|XXX|XXX|
-|23|1800|XXX|XXX|
-|24|XXX|XXX|XXX|
-|25|XXX|XXX|XXX|
-|26|XXX|XXX|XXX|
-|27|XXX|XXX|XXX|
-|28|XXX|XXX|XXX|
-|29|XXX|XXX|XXX|
-|30|XXX|XXX|XXX|
-|31|XXX|XXX|XXX|
-|32|XXX|XXX|XXX|
-|33|XXX|XXX|XXX|
-|34|XXX|XXX|XXX|
-|35|XXX|XXX|XXX|
-|36|XXX|XXX|XXX|
-|37|XXX|XXX|XXX|
-|38|XXX|XXX|XXX|
-|39|XXX|XXX|XXX|
-|50|XXX|XXX|XXX|
-|70|300000|XXX|XXX|
-|90|XXX|XXX|XXX|
-|91|XXX|XXX|XXX|
-|170|8000|XXX|XXX|
-|170|6000|XXX|XXX|
-|192|15000|XXX|XXX|
-|193|12000|XXX|XXX|
+| ID  | CastTime | CastTimePerLevel | MinCastTime |
+|-----|----------|------------------|-------------|
+| 1   | 0        | 0                | 0           |
+| 2   | 250      | 0                | 250         |
+| 3   | 500      | 0                | 500         |
+| 4   | 1000     | 0                | 1000        |
+| 5   | 2000     | XXX              | XXX         |
+| 6   | 5000     | XXX              | XXX         |
+| 7   | 10000    | XXX              | XXX         |
+| 8   | 20000    | XXX              | XXX         |
+| 9   | 30000    | XXX              | XXX         |
+| 10  | 1000     | -100             | 500         |
+| 11  | 2000     | -100             | 1000        |
+| 12  | 5000     | -100             | 2500        |
+| 13  | 30000    | -1000            | 10000       |
+| 14  | 3000     | XXX              | XXX         |
+| 15  | 4000     | XXX              | XXX         |
+| 16  | 1500     | XXX              | XXX         |
+| 17  | XXX      | XXX              | XXX         |
+| 18  | -1000000 | XXX              | XXX         |
+| 19  | 2500     | XXX              | XXX         |
+| 20  | 2500     | XXX              | XXX         |
+| 21  | 2600     | XXX              | XXX         |
+| 22  | 3500     | XXX              | XXX         |
+| 23  | 1800     | XXX              | XXX         |
+| 24  | XXX      | XXX              | XXX         |
+| 25  | XXX      | XXX              | XXX         |
+| 26  | XXX      | XXX              | XXX         |
+| 27  | XXX      | XXX              | XXX         |
+| 28  | XXX      | XXX              | XXX         |
+| 29  | XXX      | XXX              | XXX         |
+| 30  | XXX      | XXX              | XXX         |
+| 31  | XXX      | XXX              | XXX         |
+| 32  | XXX      | XXX              | XXX         |
+| 33  | XXX      | XXX              | XXX         |
+| 34  | XXX      | XXX              | XXX         |
+| 35  | XXX      | XXX              | XXX         |
+| 36  | XXX      | XXX              | XXX         |
+| 37  | XXX      | XXX              | XXX         |
+| 38  | XXX      | XXX              | XXX         |
+| 39  | XXX      | XXX              | XXX         |
+| 50  | XXX      | XXX              | XXX         |
+| 70  | 300000   | XXX              | XXX         |
+| 90  | XXX      | XXX              | XXX         |
+| 91  | XXX      | XXX              | XXX         |
+| 170 | 8000     | XXX              | XXX         |
+| 170 | 6000     | XXX              | XXX         |
+| 192 | 15000    | XXX              | XXX         |
+| 193 | 12000    | XXX              | XXX         |
 
-h4. RecoveryTime
+#### RecoveryTime
 
-h4. CategoryRecoveryTime
+#### CategoryRecoveryTime
 
-h4. InterruptFlags
+#### InterruptFlags
 
-h4. AuraInterruptFlags
+#### AuraInterruptFlags
 
-h4. ChannelInterruptFlags
+#### ChannelInterruptFlags
 
-h4. procFlags
+#### procFlags
 
-|*Bit*|*Flag*|*Comment*|
-|0|Killed||
-|1|Kill||
-|2|Successful Melee Hit||
-|3|Taken Melee Hit||
-|4|Successful Melee Spell Hit||
-|5|Taken Melee Spell Hit||
-|6|Successful Ranged Hit||
-|7|Taken Ranged Hit||
-|8|Successful Ranged Spell Hit||
-|9|Taken Ranged Spell Hit||
-|10|Successful Positive Aoe Hit||
-|11|Taken Positive Aoe||
-|12|Successful Aoe Spell Hit||
-|13|Taken Aoe Spell Hit||
-|14|Successful Positive Spell||
-|15|Taken Positive Spell||
-|16|Successful Negative Spell Hit||
-|17|Taken Negative Spell Hit||
-|18|On Do Periodic||
-|19|On Take Periodic||
-|20|Taken Any Damage||
-|21|On Trap Activation||
-|22|Successful Mainhand Hit||
-|23|Successful Offhand Hit||
-|24|Death||
+| **Bit** | **Flag**                      | **Comment** |
+|---------|-------------------------------|-------------|
+| 0       | Killed                        |             |
+| 1       | Kill                          |             |
+| 2       | Successful Melee Hit          |             |
+| 3       | Taken Melee Hit               |             |
+| 4       | Successful Melee Spell Hit    |             |
+| 5       | Taken Melee Spell Hit         |             |
+| 6       | Successful Ranged Hit         |             |
+| 7       | Taken Ranged Hit              |             |
+| 8       | Successful Ranged Spell Hit   |             |
+| 9       | Taken Ranged Spell Hit        |             |
+| 10      | Successful Positive Aoe Hit   |             |
+| 11      | Taken Positive Aoe            |             |
+| 12      | Successful Aoe Spell Hit      |             |
+| 13      | Taken Aoe Spell Hit           |             |
+| 14      | Successful Positive Spell     |             |
+| 15      | Taken Positive Spell          |             |
+| 16      | Successful Negative Spell Hit |             |
+| 17      | Taken Negative Spell Hit      |             |
+| 18      | On Do Periodic                |             |
+| 19      | On Take Periodic              |             |
+| 20      | Taken Any Damage              |             |
+| 21      | On Trap Activation            |             |
+| 22      | Successful Mainhand Hit       |             |
+| 23      | Successful Offhand Hit        |             |
+| 24      | Death                         |             |
 
-h4. procChance
+#### procChance
 
-h4. procCharges
+#### procCharges
 
-h4. maxLevel
+#### maxLevel
 
-h4. baseLevel
+#### baseLevel
 
-h4. spellLevel
+#### spellLevel
 
-h4. DurationIndex
+#### DurationIndex
 
-h4. powerType
+#### powerType
 
-|*ID*|*Description*|
-|0|Mana|
-|1|Rage|
-|2|?|
-|3|Energy|
+| **ID** | **Description** |
+|--------|-----------------|
+| 0      | Mana            |
+| 1      | Rage            |
+| 2      | ?               |
+| 3      | Energy          |
 
-h4. manaCost
+#### manaCost
 
-h4. manaCostPerlevel
+#### manaCostPerlevel
 
-h4. manaPerSecond
+#### manaPerSecond
 
-h4. manaPerSecondPerLevel
+#### manaPerSecondPerLevel
 
-h4. rangeIndex
+#### rangeIndex
 
-h4. speed
+#### speed
 
-h4. StackAmount
+#### StackAmount
 
-h4. Totem1
+#### Totem1
 
-h4. Totem2
+#### Totem2
 
-h4. Reagent1
+#### Reagent1
 
-h4. ReagentCount1
+#### ReagentCount1
 
-h4. EquippedItemClass
+#### EquippedItemClass
 
-h4. EquippedItemSubClassMask
+#### EquippedItemSubClassMask
 
-h4. EquippedItemInventoryTypeMask
+#### EquippedItemInventoryTypeMask
 
-h4. Effect1
+#### Effect1
 
-h4. EffectDieSides1
+#### EffectDieSides1
 
-Random Value of the Die that is rolled for the SPELL_EFFECT
-Max(EffectDieSides1) + (EffectBaseDice1 + EffectBasePoints1) = MaxValue for SPELL_EFFECT
+Random Value of the Die that is rolled for the SPELL\_EFFECT
+Max(EffectDieSides1) + (EffectBaseDice1 + EffectBasePoints1) = MaxValue for SPELL\_EFFECT
 
-h4. EffectBaseDice1
+#### EffectBaseDice1
 
-Base Value for the SPELL_EFFECT, mostly 1
-EffectBaseDice1 + EffectBasePoints1 = MinValue for SPELL_EFFECT
+Base Value for the SPELL\_EFFECT, mostly 1
+EffectBaseDice1 + EffectBasePoints1 = MinValue for SPELL\_EFFECT
 
-h4. EffectDicePerLevel1
+#### EffectDicePerLevel1
 
-h4. EffectRealPointsPerLevel1
+#### EffectRealPointsPerLevel1
 
-h4. EffectBasePoints1
+#### EffectBasePoints1
 
 Value added to EffectBaseDice1
 
-h4. EffectMechanic1
+#### EffectMechanic1
 
-h4. EffectImplicitTargetA1
+#### EffectImplicitTargetA1
 
-h4. EffectImplicitTargetB1
+#### EffectImplicitTargetB1
 
-h4. EffectRadiusIndex1
+#### EffectRadiusIndex1
 
-h4. EffectApplyAuraName1
+#### EffectApplyAuraName1
 
-h4. EffectAmplitude1
+#### EffectAmplitude1
 
-h4. EffectMultipleValue1
+#### EffectMultipleValue1
 
-h4. EffectChainTarget1
+#### EffectChainTarget1
 
-h4. EffectItemType1
+#### EffectItemType1
 
-h4. EffectMiscValue1
+#### EffectMiscValue1
 
-h4. EffectMiscValueB1
+#### EffectMiscValueB1
 
-h4. EffectTriggerSpell1
+#### EffectTriggerSpell1
 
-h4. EffectPointsPerComboPoint1
+#### EffectPointsPerComboPoint1
 
-h4. SpellVisual
+#### SpellVisual
 
-h4. SpellIconID
+#### SpellIconID
 
-h4. activeIconID
+#### activeIconID
 
-h4. spellPriority
+#### spellPriority
 
-h4. SpellName
+#### SpellName
 
-h4. Rank
+#### Rank
 
-h4. ManaCostPercentage
+#### ManaCostPercentage
 
-h4. StartRecoveryCategory
+#### StartRecoveryCategory
 
-h4. StartRecoveryTime
+#### StartRecoveryTime
 
-h4. MaxTargetLevel
+#### MaxTargetLevel
 
-h4. SpellFamilyName
+#### SpellFamilyName
 
-h4. SpellFamilyFlags
+#### SpellFamilyFlags
 
-h4. MaxAffectedTargets
+#### MaxAffectedTargets
 
-h4. DmgClass
+#### DmgClass
 
-h4. PreventionType
+#### PreventionType
 
-h4. DmgMultiplier1
+#### DmgMultiplier1
 
-h4. TotemCategory1
+#### TotemCategory1
 
-h4. TotemCategory2
+#### TotemCategory2
 
-h4. AreaId
+#### AreaId
 
 Specifies the Allowed areas for a successful cast.
-IDs taken from "AreaGroup.dbc":AreaGroup.dbc
+IDs taken from [AreaGroup.dbc](AreaGroup.dbc)
 
-h4. SchoolMask
+#### SchoolMask
 
-h4. IsServerSide
+#### IsServerSide
 
-h4. AttributesServerside
+#### AttributesServerside
 
----
+------------------------------------------------------------------------
 
 TODO: Describe rest of columns
 |24|casterAuraSpell|uint|
@@ -525,73 +531,73 @@ TODO: Describe rest of columns
 |133|SpellIconID|uint|
 |134|activeIconID|uint|
 |135|spellPriority|uint|
-|136|SpellName&#95;0|string|
-|137|SpellName&#95;1|string|
-|138|SpellName&#95;2|string|
-|139|SpellName&#95;3|string|
-|140|SpellName&#95;4|string|
-|141|SpellName&#95;5|string|
-|142|SpellName&#95;6|string|
-|143|SpellName&#95;7|string|
-|144|SpellName&#95;8|string|
-|145|SpellName&#95;9|string|
-|146|SpellName&#95;10|string|
-|147|SpellName&#95;11|string|
-|148|SpellName&#95;12|string|
-|149|SpellName&#95;13|string|
-|150|SpellName&#95;14|string|
-|151|SpellName&#95;15|string|
+|136|SpellName\_0|string|
+|137|SpellName\_1|string|
+|138|SpellName\_2|string|
+|139|SpellName\_3|string|
+|140|SpellName\_4|string|
+|141|SpellName\_5|string|
+|142|SpellName\_6|string|
+|143|SpellName\_7|string|
+|144|SpellName\_8|string|
+|145|SpellName\_9|string|
+|146|SpellName\_10|string|
+|147|SpellName\_11|string|
+|148|SpellName\_12|string|
+|149|SpellName\_13|string|
+|150|SpellName\_14|string|
+|151|SpellName\_15|string|
 |152|SpellNameFlag|uint|
-|153|Rank&#95;0|string|
-|154|Rank&#95;1|string|
-|155|Rank&#95;2|string|
-|156|Rank&#95;3|string|
-|157|Rank&#95;4|string|
-|158|Rank&#95;5|string|
-|159|Rank&#95;6|string|
-|160|Rank&#95;7|string|
-|161|Rank&#95;8|string|
-|162|Rank&#95;9|string|
-|163|Rank&#95;10|string|
-|164|Rank&#95;11|string|
-|165|Rank&#95;12|string|
-|166|Rank&#95;13|string|
-|167|Rank&#95;14|string|
-|168|Rank&#95;15|string|
+|153|Rank\_0|string|
+|154|Rank\_1|string|
+|155|Rank\_2|string|
+|156|Rank\_3|string|
+|157|Rank\_4|string|
+|158|Rank\_5|string|
+|159|Rank\_6|string|
+|160|Rank\_7|string|
+|161|Rank\_8|string|
+|162|Rank\_9|string|
+|163|Rank\_10|string|
+|164|Rank\_11|string|
+|165|Rank\_12|string|
+|166|Rank\_13|string|
+|167|Rank\_14|string|
+|168|Rank\_15|string|
 |169|RankFlags|uint|
-|170|Description&#95;0|string|
-|171|Description&#95;1|string|
-|172|Description&#95;2|string|
-|173|Description&#95;3|string|
-|174|Description&#95;4|string|
-|175|Description&#95;5|string|
-|176|Description&#95;6|string|
-|177|Description&#95;7|string|
-|178|Description&#95;8|string|
-|179|Description&#95;9|string|
-|180|Description&#95;10|string|
-|181|Description&#95;11|string|
-|182|Description&#95;12|string|
-|183|Description&#95;13|string|
-|184|Description&#95;14|string|
-|185|Description&#95;15|string|
+|170|Description\_0|string|
+|171|Description\_1|string|
+|172|Description\_2|string|
+|173|Description\_3|string|
+|174|Description\_4|string|
+|175|Description\_5|string|
+|176|Description\_6|string|
+|177|Description\_7|string|
+|178|Description\_8|string|
+|179|Description\_9|string|
+|180|Description\_10|string|
+|181|Description\_11|string|
+|182|Description\_12|string|
+|183|Description\_13|string|
+|184|Description\_14|string|
+|185|Description\_15|string|
 |186|DescriptionFlags|uint|
-|187|ToolTip&#95;0|string|
-|188|ToolTip&#95;1|string|
-|189|ToolTip&#95;2|string|
-|190|ToolTip&#95;3|string|
-|191|ToolTip&#95;4|string|
-|192|ToolTip&#95;5|string|
-|193|ToolTip&#95;6|string|
-|194|ToolTip&#95;7|string|
-|195|ToolTip&#95;8|string|
-|196|ToolTip&#95;9|string|
-|197|ToolTip&#95;10|string|
-|198|ToolTip&#95;11|string|
-|199|ToolTip&#95;12|string|
-|200|ToolTip&#95;13|string|
-|201|ToolTip&#95;14|string|
-|202|ToolTip&#95;15|string|
+|187|ToolTip\_0|string|
+|188|ToolTip\_1|string|
+|189|ToolTip\_2|string|
+|190|ToolTip\_3|string|
+|191|ToolTip\_4|string|
+|192|ToolTip\_5|string|
+|193|ToolTip\_6|string|
+|194|ToolTip\_7|string|
+|195|ToolTip\_8|string|
+|196|ToolTip\_9|string|
+|197|ToolTip\_10|string|
+|198|ToolTip\_11|string|
+|199|ToolTip\_12|string|
+|200|ToolTip\_13|string|
+|201|ToolTip\_14|string|
+|202|ToolTip\_15|string|
 |203|ToolTipFlags|uint|
 |204|ManaCostPercentage|uint|
 |205|StartRecoveryCategory|uint|

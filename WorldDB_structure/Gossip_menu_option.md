@@ -1,115 +1,115 @@
-Back to "world database":mangosdb_struct list of tables.
+Back to [world database](mangosdb_struct) list of tables.
 
-h2. The `gossip&#95;menu&#95;option` table
+The \`gossip\_menu\_option\` table
+----------------------------------
 
-This table holds infos about menu options a gossip NPC can have. Examples of options : &quot;Train me!&quot;, &quot;I want to unlearn my talents&quot;, ...
+This table holds infos about menu options a gossip NPC can have. Examples of options : "Train me!", "I want to unlearn my talents", ...
 
-h3. Structure
+### Structure
 
+| **Field**                                                     | **Type**     | **Attributes** | **Key** | **Null** | **Default** |
+|---------------------------------------------------------------|--------------|----------------|---------|----------|-------------|
+| [menu\_id](Gossip_menu_option#menu_id)                        | smallint(6)  | unsigned       | PRI     | NO       | 0           |
+| [id](Gossip_menu_option#id)                                   | smallint(6)  | unsigned       | PRI     | NO       | 0           |
+| [option\_icon](Gossip_menu_option#option_icon)                | smallint(6)  | unsigned       | PRI     | NO       | 0           |
+| [option\_text](Gossip_menu_option#option_text)                | text         | signed         |         | YES      | NULL        |
+| [option\_id](Gossip_menu_option#option_id)                    | tinyint(3)   | unsigned       |         | NO       | 0           |
+| [npc\_option\_npcflag](Gossip_menu_option#npc_option_npcflag) | int(10)      | unsigned       |         | NO       | 0           |
+| [action\_menu\_id](Gossip_menu_option#action_menu_id)         | mediumint(8) | unsigned       |         | NO       | 0           |
+| [action\_poi\_id](Gossip_menu_option#action_poi_id)           | mediumint(8) | unsigned       |         | NO       | 0           |
+| [action\_script\_id](Gossip_menu_option#action_script_id)     | mediumint(8) | unsigned       |         | NO       | 0           |
+| [box\_coded](Gossip_menu_option#box_coded)                    | tinyint(3)   | unsigned       |         | NO       | 0           |
+| [box\_money](Gossip_menu_option#box_money)                    | int(11)      | unsigned       |         | NO       | 0           |
+| [box\_text](Gossip_menu_option#box_text)                      | text         | signed         |         | YES      | NULL        |
+| [condition\_id](Gossip_menu_option#condition_id)              | mediumint(8) | unsigned       |         | NO       | 0           |
 
-|*Field*|*Type*|*Attributes*|*Key*|*Null*|*Default*|
-|"menu_id":Gossip_menu_option#menu_id|smallint(6)|unsigned|PRI|NO|0|
-|"id":Gossip_menu_option#id|smallint(6)|unsigned|PRI|NO|0|
-|"option_icon":Gossip_menu_option#option_icon|smallint(6)|unsigned|PRI|NO|0|
-|"option_text":Gossip_menu_option#option_text|text|signed||YES|NULL|
-|"option_id":Gossip_menu_option#option_id|tinyint(3)|unsigned||NO|0|
-|"npc_option_npcflag":Gossip_menu_option#npc_option_npcflag|int(10)|unsigned||NO|0|
-|"action_menu_id":Gossip_menu_option#action_menu_id|mediumint(8)|unsigned||NO|0|
-|"action_poi_id":Gossip_menu_option#action_poi_id|mediumint(8)|unsigned||NO|0|
-|"action_script_id":Gossip_menu_option#action_script_id|mediumint(8)|unsigned||NO|0|
-|"box_coded":Gossip_menu_option#box_coded|tinyint(3)|unsigned||NO|0|
-|"box_money":Gossip_menu_option#box_money|int(11)|unsigned||NO|0|
-|"box_text":Gossip_menu_option#box_text|text|signed||YES|NULL|
-|"condition_id":Gossip_menu_option#condition_id|mediumint(8)|unsigned||NO|0|
+### Description of the fields
 
+#### menu\_id
 
-h3. Description of the fields
+Gossip entry from [Gossip\_menu.entry](Gossip_menu#entry) this option is associated with.
 
-h4. menu&#95;id
+#### id
 
-Gossip entry from "Gossip&#95;menu.entry":Gossip_menu#entry this option is associated with.
+The id associated with this gossip\_menu\_option. Must be unique for a given menu\_id
 
-h4. id
+#### option\_icon
 
-The id associated with this gossip&#95;menu&#95;option. Must be unique for a given menu&#95;id
+| Value | ICON Name                 | description                       |
+|-------|---------------------------|-----------------------------------|
+| 0     | GOSSIP\_ICON\_CHAT        | white chat bubble                 |
+| 1     | GOSSIP\_ICON\_VENDOR      | brown bag                         |
+| 2     | GOSSIP\_ICON\_TAXI        | flight                            |
+| 3     | GOSSIP\_ICON\_TRAINER     | book                              |
+| 4     | GOSSIP\_ICON\_INTERACT\_1 | interaction wheel                 |
+| 5     | GOSSIP\_ICON\_INTERACT\_2 | interaction wheel                 |
+| 6     | GOSSIP\_ICON\_MONEY\_BAG  | brown bag with yellow dot         |
+| 7     | GOSSIP\_ICON\_TALK        | white chat bubble with black dots |
+| 8     | GOSSIP\_ICON\_TABARD      | tabard                            |
+| 9     | GOSSIP\_ICON\_BATTLE      | two swords                        |
+| 10    | GOSSIP\_ICON\_DOT         | yellow dot                        |
 
-h4. option&#95;icon
+#### option\_text
 
-|_. Value|_. ICON Name|_. description|
-|0|GOSSIP&#95;ICON&#95;CHAT|white chat bubble|
-|1|GOSSIP&#95;ICON&#95;VENDOR|brown bag|
-|2|GOSSIP&#95;ICON&#95;TAXI|flight|
-|3|GOSSIP&#95;ICON&#95;TRAINER|book|
-|4|GOSSIP&#95;ICON&#95;INTERACT&#95;1|interaction wheel|
-|5|GOSSIP&#95;ICON&#95;INTERACT&#95;2|interaction wheel|
-|6|GOSSIP&#95;ICON&#95;MONEY&#95;BAG|brown bag with yellow dot|
-|7|GOSSIP&#95;ICON&#95;TALK|white chat bubble with black dots|
-|8|GOSSIP&#95;ICON&#95;TABARD|tabard|
-|9|GOSSIP&#95;ICON&#95;BATTLE|two swords|
-|10|GOSSIP&#95;ICON&#95;DOT|yellow dot|
+This is is the text that you want displayed for this option. Examples would be "Train Me!" "Get off my lawn", "Learn Dual Spec".
 
+#### option\_id
 
-h4. option&#95;text
+| option\_id | Option name                       | npc\_option\_npcflag |
+|------------|-----------------------------------|----------------------|
+| 0          | GOSSIP\_OPTION\_NONE              | 0                    |
+| 1          | GOSSIP\_OPTION\_GOSSIP            | 1                    |
+| 2          | GOSSIP\_OPTION\_QUESTGIVER        | 2                    |
+| 3          | GOSSIP\_OPTION\_VENDOR            | 128                  |
+| 4          | GOSSIP\_OPTION\_TAXIVENDOR        | 8192                 |
+| 5          | GOSSIP\_OPTION\_TRAINER           | 16                   |
+| 6          | GOSSIP\_OPTION\_SPIRITHEALER      | 16384                |
+| 7          | GOSSIP\_OPTION\_SPIRITGUIDE       | 32768                |
+| 8          | GOSSIP\_OPTION\_INNKEEPER         | 65536                |
+| 9          | GOSSIP\_OPTION\_BANKER            | 131072               |
+| 10         | GOSSIP\_OPTION\_PETITIONER        | 262144               |
+| 11         | GOSSIP\_OPTION\_TABARDDESIGNER    | 524288               |
+| 12         | GOSSIP\_OPTION\_BATTLEFIELD       | 1048576              |
+| 13         | GOSSIP\_OPTION\_AUCTIONEER        | 2097152              |
+| 14         | GOSSIP\_OPTION\_STABLEPET         | 4194304              |
+| 15         | GOSSIP\_OPTION\_ARMORER           | 4096                 |
+| 16         | GOSSIP\_OPTION\_UNLEARNTALENTS    | 16\*                 |
+| 17         | GOSSIP\_OPTION\_UNLEARNPETTALENTS | 16\*                 |
+| 18         | GOSSIP\_OPTION\_LEARNDUALSPEC     | 16\*                 |
 
-This is is the text that you want displayed for this option. Examples would be &quot;Train Me!&quot; &quot;Get off my lawn&quot;, &quot;Learn Dual Spec&quot;.
+`*   bonus option for GOSSIP_OPTION_TRAINER` `NOTE: For NPC you must be combinate option_id and npc_option_npcflag, you also need the npc_flag in creature_template`
 
-h4. option&#95;id
+#### npc\_option\_npcflag
 
-|_. option&#95;id|_. Option name|_. npc&#95;option&#95;npcflag|
-|0|GOSSIP&#95;OPTION&#95;NONE|0|
-|1|GOSSIP&#95;OPTION&#95;GOSSIP|1|
-|2|GOSSIP&#95;OPTION&#95;QUESTGIVER|2|
-|3|GOSSIP&#95;OPTION&#95;VENDOR|128|
-|4|GOSSIP&#95;OPTION&#95;TAXIVENDOR|8192|
-|5|GOSSIP&#95;OPTION&#95;TRAINER|16|
-|6|GOSSIP&#95;OPTION&#95;SPIRITHEALER|16384|
-|7|GOSSIP&#95;OPTION&#95;SPIRITGUIDE|32768|
-|8|GOSSIP&#95;OPTION&#95;INNKEEPER|65536|
-|9|GOSSIP&#95;OPTION&#95;BANKER|131072|
-|10|GOSSIP&#95;OPTION&#95;PETITIONER|262144|
-|11|GOSSIP&#95;OPTION&#95;TABARDDESIGNER|524288|
-|12|GOSSIP&#95;OPTION&#95;BATTLEFIELD|1048576|
-|13|GOSSIP&#95;OPTION&#95;AUCTIONEER|2097152|
-|14|GOSSIP&#95;OPTION&#95;STABLEPET|4194304|
-|15|GOSSIP&#95;OPTION&#95;ARMORER|4096|
-|16|GOSSIP&#95;OPTION&#95;UNLEARNTALENTS|16&#42;|
-|17|GOSSIP&#95;OPTION&#95;UNLEARNPETTALENTS|16&#42;|
-|18|GOSSIP&#95;OPTION&#95;LEARNDUALSPEC|16&#42;|
+This is the npcflag that the NPC must have to have this option display. See [option\_id](#option_id)
 
-
-@*   bonus option for GOSSIP_OPTION_TRAINER@ @NOTE: For NPC you must be combinate option_id and npc_option_npcflag, you also need the npc_flag in creature_template@
-
-h4. npc&#95;option&#95;npcflag
-
-This is the npcflag that the NPC must have to have this option display. See "option&#95;id":#option_id
-
-h4. action&#95;menu&#95;id
+#### action\_menu\_id
 
 If you want to create a sub-menu, this is the ID to link to create that sub-menu.
 This sub-menu will be displayed when you click on the current menu.
 
-NOTE: If you want gossip window to close when selecting this gossip option use -1 for this value. 
+NOTE: If you want gossip window to close when selecting this gossip option use -1 for this value.
 
-h4. action&#95;poi&#95;id
+#### action\_poi\_id
 
-If you want a POI (point of interest) to display on the minimap, this is the `entry` from `points&#95;of&#95;interest`
+If you want a POI (point of interest) to display on the minimap, this is the \`entry\` from \`points\_of\_interest\`
 
-h4. action&#95;script&#95;id
+#### action\_script\_id
 
-The ID from the `dbscripts&#95;on&#95;gossip` table if this gossip option has a script.
+The ID from the \`dbscripts\_on\_gossip\` table if this gossip option has a script.
 
-h4. box&#95;coded
+#### box\_coded
 
 If you want a box to display where you have to enter a code, this is the field you use. I have no clue how it works, will have to look at the code...
 
-h4. box&#95;money
+#### box\_money
 
 Money asked (in copper).
 
-h4. box&#95;text
+#### box\_text
 
 Confirmation text before activating the gossip.
 
-h4. condition&#95;id
+#### condition\_id
 
-If set the option will only be displayed if the condition linked to "condition&#95;id":conditions fits
+If set the option will only be displayed if the condition linked to [condition\_id](conditions) fits
