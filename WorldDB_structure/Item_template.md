@@ -795,8 +795,8 @@ The duration of the item in seconds. If positive, it is the duration measured in
 
 #### ExtraFlags
 
-| ID  | Type             |
-|-----|------------------|
-| 0   | None             |
-| 1   | None Consumable  |
-| 2   | Raltime Duration |
+| ID  | Type              |
+| --- | ----------------- |
+| 0   | None              |
+| 1   | None Consumable   |
+| 2   | Realtime Duration |
