@@ -797,5 +797,5 @@ h4. ExtraFlags
 |_. ID|_. Type|
 |0|None|
 |1|None Consumable|
-|2|Raltime Duration|
+|2|Realtime Duration|
 
