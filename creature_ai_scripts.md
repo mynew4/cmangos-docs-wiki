@@ -2,9 +2,9 @@ Back to [world database](mangosdb_struct) list of tables.
 
 ### EventAI Tables
 
-[creature\_ai\_scripts](creature_ai_scripts) for EventAI (ACID) scripted NPCs
-[creature\_ai\_summons](creature_ai_summons) for [Summon IDs](creature_ai_summons#id) used in ACTION\_T\_SUMMON\_ID (32)
-[creature\_ai\_texts](creature_ai_texts) for Texts used by ACTION\_T\_TEXT (1) and ACTION\_T\_TEXT\_NEW (54)
+[creature\_ai\_scripts](creature_ai_scripts) for EventAI (ACID) scripted NPCs  
+[creature\_ai\_summons](creature_ai_summons) for [Summon IDs](creature_ai_summons#id) used in ACTION\_T\_SUMMON\_ID (32)  
+[creature\_ai\_texts](creature_ai_texts) for Texts used by ACTION\_T\_TEXT (1) and ACTION\_T\_TEXT\_NEW (54)  
 
 EventAI Documentation
 ---------------------
@@ -29,108 +29,18 @@ Some events will only occur once while others can be timed so that they occur at
 
 ### Structure
 
-<table style="width:100%;">
-<colgroup>
-<col width="25%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="59%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Field</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Null</strong></th>
-<th><strong>Key</strong></th>
-<th><strong>Default</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="creature_ai_scripts#id">id</a></td>
-<td></td>
-<td>NO</td>
-<td>PRI</td>
-<td>None</td>
-<td>Primary Key</td>
-</tr>
-<tr class="even">
-<td><a href="creature_ai_scripts#id">creature_id</a></td>
-<td></td>
-<td>NO</td>
-<td></td>
-<td></td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-</tr>
-<tr class="odd">
-<td><a href="creature_ai_scripts#event_type">event_type</a></td>
-<td></td>
-<td>NO</td>
-<td></td>
-<td></td>
-<td>Event</td>
-</tr>
-<tr class="even">
-<td><a href="creature_ai_scripts#event_inverse_phase_mask">event_inverse_phase_mask</a></td>
-<td></td>
-<td>NO</td>
-<td></td>
-<td></td>
-<td>PhaseMask</td>
-</tr>
-<tr class="odd">
-<td><a href="creature_ai_scripts#event_chance">event_chance</a></td>
-<td></td>
-<td>NO</td>
-<td></td>
-<td></td>
-<td>Chance. Using a value of 0 in this field will make the event never occur. Values are from 0 to 100.</td>
-</tr>
-<tr class="even">
-<td><a href="creature_ai_scripts#eventflags">event_flags</a></td>
-<td></td>
-<td>NO</td>
-<td></td>
-<td></td>
-<td>Every event also has a `chance` field that controls the chance of that event actually occurring. Using a value of 0 in this field will make the event never occur. Values are from 0 to 100.</td>
-</tr>
-<tr class="odd">
-<td><a href="creature_ai_scripts#event_param">event_param</a></td>
-<td></td>
-<td>NO</td>
-<td></td>
-<td></td>
-<td>event_param1-3 for Event</td>
-</tr>
-<tr class="even">
-<td><a href="creature_ai_scripts#action_type">action_type</a></td>
-<td></td>
-<td>NO</td>
-<td></td>
-<td></td>
-<td>action_type1-3 for Event</td>
-</tr>
-<tr class="odd">
-<td><a href="creature_ai_scripts#action_param">action_param</a></td>
-<td></td>
-<td>NO</td>
-<td></td>
-<td></td>
-<td>action_param1-3 for action_type1-3</td>
-</tr>
-<tr class="even">
-<td><a href="creature_ai_scripts#comment">comment</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>comment describing the actions performed on event</td>
-</tr>
-</tbody>
-</table>
+| Field                                                                    | Type | Null | Key | Default | Description                                                                                                                                                                                  |
+| ------------------------------------------------------------------------ | ---- | ---- | --- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](creature_ai_scripts#id)                                             |      | NO   | PRI | None    | Primary Key                                                                                                                                                                                  |
+| [creature_id](creature_ai_scripts#id)                                    |      | NO   |     |         | [CreatureEntry](creature_template#entry)                                                                                                                                                     |
+| [event_type](creature_ai_scripts#event_type)                             |      | NO   |     |         | Event                                                                                                                                                                                        |
+| [event_inverse_phase_mask](creature_ai_scripts#event_inverse_phase_mask) |      | NO   |     |         | PhaseMask                                                                                                                                                                                    |
+| [event_chance](creature_ai_scripts#event_chance)                         |      | NO   |     |         | Chance. Using a value of 0 in this field will make the event never occur. Values are from 0 to 100.                                                                                          |
+| [event_flags](creature_ai_scripts#eventflags)                            |      | NO   |     |         | Every event also has a `chance` field that controls the chance of that event actually occurring. Using a value of 0 in this field will make the event never occur. Values are from 0 to 100. |
+| [event_param](creature_ai_scripts#event_param)                           |      | NO   |     |         | event_param1-3 for Event                                                                                                                                                                     |
+| [action_type](creature_ai_scripts#action_type)                           |      | NO   |     |         | action_type1-3 for Event                                                                                                                                                                     |
+| [action_param](creature_ai_scripts#action_param)                         |      | NO   |     |         | action_param1-3 for action_type1-3                                                                                                                                                           |
+| [comment](creature_ai_scripts#comment)                                   |      |      |     |         | comment describing the actions performed on event                                                                                                                                            |
 
 Example:
 
@@ -147,319 +57,40 @@ All of the [events](creature_ai_scripts#event_type), [EventFlags](creature_ai_sc
 
 #### event\_type
 
-<table>
-<colgroup>
-<col width="1%" />
-<col width="9%" />
-<col width="12%" />
-<col width="12%" />
-<col width="3%" />
-<col width="3%" />
-<col width="57%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ID</th>
-<th>Name</th>
-<th>Param1</th>
-<th>Param2</th>
-<th>Param3</th>
-<th>Param4</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>EVENT_T_TIMER_IN_COMBAT</td>
-<td>InitialMin</td>
-<td>InitialMax</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>IC - Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>EVENT_T_TIMER_OOC</td>
-<td>InitialMin</td>
-<td>InitialMax</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>OOC - Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>EVENT_T_HP</td>
-<td>HPMax%</td>
-<td>HPMin%</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>IC - Expires when HP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>EVENT_T_MANA</td>
-<td>ManaMax%</td>
-<td>ManaMin%</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>IC - Expires when Mana% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>EVENT_T_AGGRO</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires on Aggro</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>EVENT_T_KILL</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires on Player Kill. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>EVENT_T_DEATH</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires on Death</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>EVENT_T_EVADE</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires on Evade</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>EVENT_T_SPELLHIT</td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td><a href="creature_ai_scripts#schoolMask">schoolMask</a></td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires on (Param1) <a href="spell_template#Id">spellId</a> or on (Param2) <a href="creature_ai_scripts#schoolMask">schoolMask</a> spellhit. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>EVENT_T_RANGE</td>
-<td>MinDist</td>
-<td>MaxDist</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when current target distance is greater than (Param1) and less than (Param2). Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>EVENT_T_OOC_LOS</td>
-<td>noHostile</td>
-<td>MaxRange</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>OOC - Expires when a unit (friendly only if Param1 = 1) moves within (Param2) distance to creature. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>EVENT_T_SPAWNED</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires on Spawn</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>EVENT_T_TARGET_HP</td>
-<td>HPMax%</td>
-<td>HPMin%</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when current target HP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>EVENT_T_TARGET_CASTING</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires when current target is casting a spell. Will repeat every (Param1) and (Param2)</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>EVENT_T_FRIENDLY_HP</td>
-<td>HPDeficit</td>
-<td>Radius</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when a friendly unit (Target = 12) has at least (param1) HP missing in (param2) radius. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>EVENT_T_FRIENDLY_IS_CC</td>
-<td>DispelType (US)</td>
-<td>Radius</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when a friendly unit (Target = 12) is crowd controlled in (param2) radius. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>EVENT_T_FRIENDLY_MISSING_BUFF</td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td>Radius</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when a friendly unit (Target = 12) is missing aura given by (param1) <a href="spell_template#Id">spellId</a> in (param2) radius. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>EVENT_T_SUMMONED_UNIT</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>NU</td>
-<td>Expires when creature with (Param1) <a href="creature_template#entry">CreatureEntry</a> spawned or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)</td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>EVENT_T_TARGET_MANA</td>
-<td>ManaMax%</td>
-<td>ManaMin%</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when current target MP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>21</td>
-<td>EVENT_T_REACHED_HOME</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires on Reached Home (after Evade)</td>
-</tr>
-<tr class="odd">
-<td>22</td>
-<td>EVENT_T_RECEIVE_EMOTE</td>
-<td>TextEmote</td>
-<td><a href="conditions#condition_entry">ConditionId</a></td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires when creature receives <a href="https://github.com/cmangos/mangos-cata/blob/b76261946597de1200effc4236409a3978414056/src/game/Globals/SharedDefines.h#L1643">TextEmotes</a> from player paired with a potential condition (Param 2)</td>
-</tr>
-<tr class="even">
-<td>23</td>
-<td>EVENT_T_AURA</td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td>AmmountInStack</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when creature has spell (Param1) aura stacks applied greater or equal to (Param2) amount. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="odd">
-<td>24</td>
-<td>EVENT_T_TARGET_AURA</td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td>AmmountInStack</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when current target have spell (Param1) aura stacks applied greater or equal to (Param2) amount. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>25</td>
-<td>EVENT_T_SUMMONED_JUST_DIED</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>NU</td>
-<td>Expires after creature with (Param1) <a href="creature_template#entry">CreatureEntry</a> died or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)</td>
-</tr>
-<tr class="odd">
-<td>26</td>
-<td>EVENT_T_SUMMONED_JUST_DESPAWN</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>NU</td>
-<td>Expires before creature with (Param1) <a href="creature_template#entry">CreatureEntry</a> despawned or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)</td>
-</tr>
-<tr class="even">
-<td>27</td>
-<td>EVENT_T_MISSING_AURA</td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td>AmmountInStack</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when creature have spell (Param1) aura stacks applied less than (Param2) amount. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="odd">
-<td>28</td>
-<td>EVENT_T_TARGET_MISSING_AURA</td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td>AmmountInStack</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when current target have spell (Param1) aura stacks applied less than (Param2) amount. Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="even">
-<td>29</td>
-<td>EVENT_T_TIMER_GENERIC</td>
-<td>InitialMin</td>
-<td>InitialMax</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)</td>
-</tr>
-<tr class="odd">
-<td>30</td>
-<td>EVENT_T_RECEIVE_AI_EVENT</td>
-<td><a href="creature_ai_scripts#AIEventType">AIEventType</a></td>
-<td>Sender-Entry</td>
-<td>NU</td>
-<td>NU</td>
-<td>Expires when the creature receives an (Param1) <a href="creature_ai_scripts#AIEventType">AIEventType</a>, sent by (Param2 != 0) <a href="creature_template#entry">Sender-Entry</a>. If (Param2 = 0) then sent by any creature</td>
-</tr>
-<tr class="even">
-<td>31</td>
-<td>EVENT_T_ENERGY</td>
-<td>EnergyMax%</td>
-<td>EnergyMin%</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when Energy% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4) if Condition: between (Param1) and (Param2) are still met</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>EVENT_T_SELECT_ATTACKING_TARGET</td>
-<td>MinRange</td>
-<td>MaxRange</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when threat table has target with distance between (Param1) and (Param2). Will repeat every (Param3) and (Param4) if Condition: between (Param1) and (Param2) are still met</td>
-</tr>
-<tr class="even">
-<td>33</td>
-<td>EVENT_T_FACING_TARGET</td>
-<td>Back(0)OrFront(1)</td>
-<td>NU</td>
-<td>RepeatMin</td>
-<td>RepeatMax</td>
-<td>Expires when creature is (behind = 0 / infront = 1 of target. Will repeat every (Param3) and (Param4) if Condition: (Param1) is still met</td>
-</tr>
-</tbody>
-</table>
-
+| ID  | Name                                | Param1                                         | Param2                                       | Param3    | Param4    | Description                                                                                                                                                                                                                                  |
+| --- | ----------------------------------- | ---------------------------------------------- | -------------------------------------------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | EVENT_T_TIMER_IN_COMBAT             | InitialMin                                     | InitialMax                                   | RepeatMin | RepeatMax | IC - Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)                                                                                                                                                    |
+| 1   | EVENT_T_TIMER_OOC                   | InitialMin                                     | InitialMax                                   | RepeatMin | RepeatMax | OOC - Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)                                                                                                                                                   |
+| 2   | EVENT_T_HP                          | HPMax%                                         | HPMin%                                       | RepeatMin | RepeatMax | IC - Expires when HP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)                                                                                                                                              |
+| 3   | EVENT_T_MANA                        | ManaMax%                                       | ManaMin%                                     | RepeatMin | RepeatMax | IC - Expires when Mana% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)                                                                                                                                            |
+| 4   | EVENT_T_AGGRO                       | NU                                             | NU                                           | NU        | NU        | Expires on Aggro                                                                                                                                                                                                                             |
+| 5   | EVENT_T_KILL                        | RepeatMin                                      | RepeatMax                                    | NU        | NU        | Expires on Player Kill. Will repeat every (Param3) and (Param4)                                                                                                                                                                              |
+| 6   | EVENT_T_DEATH                       | NU                                             | NU                                           | NU        | NU        | Expires on Death                                                                                                                                                                                                                             |
+| 7   | EVENT_T_EVADE                       | NU                                             | NU                                           | NU        | NU        | Expires on Evade                                                                                                                                                                                                                             |
+| 8   | EVENT_T_SPELLHIT                    | [spellId](spell_template#Id)                   | [schoolMask](creature_ai_scripts#schoolMask) | RepeatMin | RepeatMax | Expires on (Param1) [schoolMask](creature_ai_scripts#schoolMask) spellhit. Will repeat every (Param3) and (Param4)                                                                                                                           |
+| 9   | EVENT\_T\_RANGE                     | MinDist                                        | MaxDist                                      | RepeatMin | RepeatMax | Expires when current target distance is greater than (Param1) and less than (Param2). Will repeat every (Param3) and (Param4)                                                                                                                |
+| 10  | EVENT\_T\_OOC\_LOS                  | noHostile                                      | MaxRange                                     | RepeatMin | RepeatMax | OOC - Expires when a unit (friendly only if Param1 = 1) moves within (Param2) distance to creature. Will repeat every (Param3) and (Param4)                                                                                                  |
+| 11  | EVENT\_T\_SPAWNED                   | NU                                             | NU                                           | NU        | NU        | Expires on Spawn                                                                                                                                                                                                                             |
+| 12  | EVENT\_T\_TARGET\_HP                | HPMax%                                         | HPMin%                                       | RepeatMin | RepeatMax | Expires when current target HP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)                                                                                                                                    |
+| 13  | EVENT\_T\_TARGET\_CASTING           | RepeatMin                                      | RepeatMax                                    | NU        | NU        | Expires when current target is casting a spell. Will repeat every (Param1) and (Param2)                                                                                                                                                      |
+| 14  | EVENT\_T\_FRIENDLY\_HP              | HPDeficit                                      | Radius                                       | RepeatMin | RepeatMax | Expires when a friendly unit (Target = 12) has at least (param1) HP missing in (param2) radius. Will repeat every (Param3) and (Param4)                                                                                                      |
+| 15  | EVENT\_T\_FRIENDLY\_IS\_CC          | DispelType (US)                                | Radius                                       | RepeatMin | RepeatMax | Expires when a friendly unit (Target = 12) is crowd controlled in (param2) radius. Will repeat every (Param3) and (Param4)                                                                                                                   |
+| 16  | EVENT\_T\_FRIENDLY\_MISSING\_BUFF   | [spellId](spell_template#Id)                   | Radius                                       | RepeatMin | RepeatMax | Expires when a friendly unit (Target = 12) is missing aura given by (param1) [spellId](spell_template#Id) in (param2) radius. Will repeat every (Param3) and (Param4)                                                                        |
+| 17  | EVENT\_T\_SUMMONED\_UNIT            | [CreatureEntry](creature_template#entry)       | RepeatMin                                    | RepeatMax | NU        | Expires when creature with (Param1) [CreatureEntry](creature_template#entry) spawned or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)                                                                              |
+| 18  | EVENT\_T\_TARGET\_MANA              | ManaMax%                                       | ManaMin%                                     | RepeatMin | RepeatMax | Expires when current target MP% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4)                                                                                                                                    |
+| 21  | EVENT\_T\_REACHED\_HOME             | NU                                             | NU                                           | NU        | NU        | Expires on Reached Home (after Evade)                                                                                                                                                                                                        |
+| 22  | EVENT\_T\_RECEIVE\_EMOTE            | TextEmote                                      | [ConditionId](conditions#condition_entry)    | NU        | NU        | Expires when creature receives [TextEmotes](https://github.com/cmangos/mangos-cata/blob/b76261946597de1200effc4236409a3978414056/src/game/Globals/SharedDefines.h#L1643) from player paired with a potential condition (Param 2)             |
+| 23  | EVENT\_T\_AURA                      | [spellId](spell_template#Id)                   | AmmountInStack                               | RepeatMin | RepeatMax | Expires when creature has spell (Param1) aura stacks applied greater or equal to (Param2) amount. Will repeat every (Param3) and (Param4)                                                                                                    |
+| 24  | EVENT\_T\_TARGET\_AURA              | [spellId](spell_template#Id)                   | AmmountInStack                               | RepeatMin | RepeatMax | Expires when current target have spell (Param1) aura stacks applied greater or equal to (Param2) amount. Will repeat every (Param3) and (Param4)                                                                                             |
+| 25  | EVENT\_T\_SUMMONED\_JUST\_DIED      | [CreatureEntry](creature_template#entry)       | RepeatMin                                    | RepeatMax | NU        | Expires after creature with (Param1) [CreatureEntry](creature_template#entry) died or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)                                                                                |
+| 26  | EVENT\_T\_SUMMONED\_JUST\_DESPAWN   | [CreatureEntry](creature_template#entry)       | RepeatMin                                    | RepeatMax | NU        | Expires before creature with (Param1) [CreatureEntry](creature_template#entry) despawned or for all spawns if (Param1 = 0). Will repeat every (Param2) and (Param3)                                                                          |
+| 27  | EVENT\_T\_MISSING\_AURA             | [spellId](spell_template#Id)                   | AmmountInStack                               | RepeatMin | RepeatMax | Expires when creature have spell (Param1) aura stacks applied less than (Param2) amount. Will repeat every (Param3) and (Param4)                                                                                                             |
+| 28  | EVENT\_T\_TARGET\_MISSING\_AURA     | [spellId](spell_template#Id)                   | AmmountInStack                               | RepeatMin | RepeatMax | Expires when current target have spell (Param1) aura stacks applied less than (Param2) amount. Will repeat every (Param3) and (Param4)                                                                                                       |
+| 29  | EVENT\_T\_TIMER\_GENERIC            | InitialMin                                     | InitialMax                                   | RepeatMin | RepeatMax | Expires first between (Param1) and (Param2). Will repeat every (Param3) and (Param4)                                                                                                                                                         |
+| 30  | EVENT\_T\_RECEIVE\_AI\_EVENT        | [AIEventType](creature_ai_scripts#AIEventType) | Sender-Entry                                 | NU        | NU        | Expires when the creature receives an (Param1) [Sender-Entry](creature_template#entry). If (Param2 = 0) then sent by any creature |
+| 31  | EVENT\_T\_ENERGY                    | EnergyMax%                                     | EnergyMin%                                   | RepeatMin | RepeatMax | Expires when Energy% is between (Param1) and (Param2). Will repeat every (Param3) and (Param4) if Condition: between (Param1) and (Param2) are still met                                                                                     |
+| 32  | EVENT\_T\_SELECT\_ATTACKING\_TARGET | MinRange                                       | MaxRange                                     | RepeatMin | RepeatMax | Expires when threat table has target with distance between (Param1) and (Param2). Will repeat every (Param3) and (Param4) if Condition: between (Param1) and (Param2) are still met                                                          |
+| 33  | EVENT\_T\_FACING\_TARGET            | Back(0)OrFront(1)                              | NU                                           | RepeatMin | RepeatMax | Expires when creature is (behind = 0 / infront = 1 of target. Will repeat every (Param3) and (Param4) if Condition: (Param1) is still met                                                                                                    |
 Now that all of the supported events have been listed and described, we shall now move on to the actions that can be performed.
 
 Each event can take up to three actions. The actions will all be performed when the event is triggered and they will be performed in the order that they have been defined. This means that, for a certain event, action 1 will be performed first, followed by action 2, then lastly by action 3.
@@ -468,775 +99,129 @@ Just like event definitions, each action can use up to three different parameter
 
 #### action\_type
 
-<table>
-<colgroup>
-<col width="0%" />
-<col width="6%" />
-<col width="11%" />
-<col width="11%" />
-<col width="7%" />
-<col width="61%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ID</th>
-<th>Name</th>
-<th>Param 1</th>
-<th>Param 2</th>
-<th>Param 3</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>ACTION_T_NONE</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Does nothing!</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>ACTION_T_TEXT</td>
-<td>-TextId1</td>
-<td>-TextId2</td>
-<td>-TextId3</td>
-<td>deprecated, [use action 54 for 1 / 4+ <a href="creature_ai_texts%5D">texts</a> and <a href="creature_ai_texts">texts</a> that require text targeting for correct text output: Displays the -TextId(s)(randomized) as defined in <a href="creature_ai_texts" class="uri">creature_ai_texts</a>. Optionally <a href="custom_texts" class="uri">custom_texts</a>. All values are required to be negative. Optionally <a href="custom_texts" class="uri">custom_texts</a> can be used</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>ACTION_T_SET_FACTION</td>
-<td>factionId</td>
-<td><a href="creature_ai_scripts#TemporaryFactionFlags">TemporaryFactionFlags</a></td>
-<td>NU</td>
-<td>Changes faction for a creature. When (Param1) is zero, creature will revert to it's default faction. Flags will determine when faction is restored to default (evade, respawn etc)</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>ACTION_T_MORPH_TO_ENTRY_OR_MODEL</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td><a href="creature_template#modelId1">modelId</a></td>
-<td>NU</td>
-<td><a href="creature_template#entry(param1)">CreatureEntry</a> OR <a href="creature_template#modelId1">modelId</a> (param2) (or 0 for both to demorph)</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>ACTION_T_SOUND</td>
-<td>SoundId</td>
-<td>NU</td>
-<td>NU</td>
-<td>Creature plays Sound. IDs are contained in the DBC files</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>ACTION_T_EMOTE</td>
-<td><a href="creature_template_addon#emote">emoteId</a></td>
-<td>NU</td>
-<td>NU</td>
-<td>Creature does visual emote. IDs are contained in the DBC files</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>ACTION_T_RANDOM_SAY</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>deprecated</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>ACTION_T_RANDOM_YELL</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>deprecated</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>ACTION_T_RANDOM_TEXTEMOTE</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>deprecated</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>ACTION_T_RANDOM_SOUND</td>
-<td>Sound ID 1</td>
-<td>Sound ID 2</td>
-<td>Sound ID 3</td>
-<td>Picks a sound ID at random and plays it; -1 = action skipped if chosen</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>ACTION_T_RANDOM_EMOTE</td>
-<td>Emote ID 1</td>
-<td>Emote ID 2</td>
-<td>Emote ID 3</td>
-<td>Picks an emote ID at random and does visual emote; -1 = action skipped if chosen</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>ACTION_T_CAST</td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td><a href="creature_ai_scripts#castFlags">castFlags</a></td>
-<td>Creature cast spell on a target with specified <a href="creature_ai_scripts#castFlags">castFlags</a></td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>ACTION_T_SPAWN</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>Duration in milliseconds</td>
-<td>Creature spawns a creature with (Param1) <a href="creature_template#entry">CreatureEntry</a> at Target for a given duration (infinite if zero)</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>ACTION_T_THREAT_SINGLE_PCT</td>
-<td>Threat %</td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>NU</td>
-<td>Modifies <a href="creature_ai_scripts#Target">target</a> threat by a percent (-100 to +100)</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>ACTION_T_THREAT_ALL_PCT</td>
-<td>Threat %</td>
-<td>NU</td>
-<td>NU</td>
-<td>Modifies everyone's threat by a percent (-100 to +100), will not cause Evade</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>ACTION_T_QUEST_EVENT</td>
-<td>Quest ID</td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>NU</td>
-<td>Satisfies external script objective for a quest for the target (MUST be a player)</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>ACTION_T_CAST_EVENT</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>Emulates spell cast on the creature for the target (must be a player) [hacky]</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>ACTION_T_SET_UNIT_FIELD</td>
-<td><a href="creature_ai_scripts#EUnitFields">EUnitFields</a></td>
-<td>Value</td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>Sets unit field at the index to the value given for the target. More information on the field value indeces can be found at <a href="character">character data</a> data</td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>ACTION_T_SET_UNIT_FLAG</td>
-<td><a href="creature_template#unitflags">UnitFlags</a></td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>NU</td>
-<td>Sets flag(s) on the target</td>
-</tr>
-<tr class="even">
-<td>19</td>
-<td>ACTION_T_REMOVE_UNIT_FLAG</td>
-<td><a href="creature_template#unitflags">UnitFlags</a></td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>NU</td>
-<td>Removes flag(s) from the target</td>
-</tr>
-<tr class="odd">
-<td>20</td>
-<td>ACTION_T_AUTO_ATTACK</td>
-<td>Boolean</td>
-<td>NU</td>
-<td>NU</td>
-<td>If 0 cant melee, else (1) continues/starts it</td>
-</tr>
-<tr class="even">
-<td>21</td>
-<td>ACTION_T_COMBAT_MOVEMENT</td>
-<td>Boolean</td>
-<td>NU</td>
-<td>NU</td>
-<td>If 0 stops movement, else (1) continues/starts it</td>
-</tr>
-<tr class="odd">
-<td>22</td>
-<td>ACTION_T_SET_PHASE</td>
-<td>Phase #</td>
-<td>NU</td>
-<td>NU</td>
-<td>Sets current phase to number given. This number must be an integer between 0 and 31 inclusive</td>
-</tr>
-<tr class="even">
-<td>23</td>
-<td>ACTION_T_INC_PHASE</td>
-<td>Number</td>
-<td>NU</td>
-<td>NU</td>
-<td>deprecated, increments (or decrements) the phase by given number</td>
-</tr>
-<tr class="odd">
-<td>24</td>
-<td>ACTION_T_EVADE</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Force creature reset. Exit combat + lose threat, true Evade</td>
-</tr>
-<tr class="even">
-<td>25</td>
-<td>ACTION_T_FLEE_FOR_ASSIST</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Force creature to flee from combat</td>
-</tr>
-<tr class="odd">
-<td>26</td>
-<td>ACTION_T_QUEST_EVENT_ALL</td>
-<td>Quest ID</td>
-<td>NU</td>
-<td>NU</td>
-<td>Satisfies external objective for a quest for all players in threat list similar to ACTION_T_QUEST_EVENT</td>
-</tr>
-<tr class="even">
-<td>27</td>
-<td>ACTION_T_CAST_EVENT_ALL</td>
-<td>Quest ID</td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td>NU</td>
-<td>Emulates spell cast on creature for all players in threat list similar to ACTION_T_CAST_EVENT</td>
-</tr>
-<tr class="odd">
-<td>28</td>
-<td>ACTION_T_REMOVEAURASFROMSPELL</td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td><a href="spell_template#Id">spellId</a></td>
-<td>NU</td>
-<td>Removes all auras from a <a href="spell_template#Id">spellId</a> from the target</td>
-</tr>
-<tr class="even">
-<td>29</td>
-<td>ACTION_T_RANGED_MOVEMENT</td>
-<td>Distance</td>
-<td>Angle</td>
-<td>NU</td>
-<td>creature sets ranged movement generator keeping the creature at a distance. Note that specifying zero angle and distance will make it just melee instead</td>
-</tr>
-<tr class="odd">
-<td>30</td>
-<td>ACTION_T_RANDOM_PHASE</td>
-<td>Phase 1</td>
-<td>Phase 2</td>
-<td>Phase 3</td>
-<td>Randomly chooses a phase from the list of three phases</td>
-</tr>
-<tr class="even">
-<td>31</td>
-<td>ACTION_T_RANDOM_PHASE_RANGE</td>
-<td>Min Phase</td>
-<td>Max Phase + 1</td>
-<td>NU</td>
-<td>Chooses a random phase in the range specified. This number must be an integer between 0 and 31 inclusive</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>ACTION_T_SUMMON_ID</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>Summon ID</td>
-<td>Summons a creature using the data specified in the separate <a href="creature_ai_summons" class="uri">creature_ai_summons</a> table</td>
-</tr>
-<tr class="even">
-<td>33</td>
-<td>ACTION_T_KILLED_MONSTER</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>NU</td>
-<td>Simulates a kill for a <a href="creature_template#entry">CreatureEntry</a> given for the player from the <a href="creature_ai_scripts#Target">target</a></td>
-</tr>
-<tr class="odd">
-<td>34</td>
-<td>ACTION_T_SET_INST_DATA</td>
-<td>Field</td>
-<td>32 bit Value</td>
-<td>NU</td>
-<td>Sets data for the instance. Note that this will only work when the creature is inside an instantiable zone that has a valid script (ScriptedInstance) assigned.</td>
-</tr>
-<tr class="even">
-<td>35</td>
-<td>ACTION_T_SET_INST_DATA64</td>
-<td>Field</td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>NU</td>
-<td>Stores target's GUID at the field given in the instance script</td>
-</tr>
-<tr class="odd">
-<td>36</td>
-<td>ACTION_T_UPDATE_TEMPLATE</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td>Faction</td>
-<td>NU</td>
-<td>This function temporarily changes creature entry to new entry, display is changed, loot is changed, but AI is not changed. At respawn creature will be reverted to original entry. Alliance(0) or Horde (1)</td>
-</tr>
-<tr class="even">
-<td>37</td>
-<td>ACTION_T_DIE</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Kills the creature</td>
-</tr>
-<tr class="odd">
-<td>38</td>
-<td>ACTION_T_ZONE_COMBAT_PULSE</td>
-<td>NU</td>
-<td>NU</td>
-<td>NU</td>
-<td>Places all players within the instance into combat with the creature. Only works in combat and only works inside of instances</td>
-</tr>
-<tr class="even">
-<td>39</td>
-<td>ACTION_T_CALL_FOR_HELP</td>
-<td>Radius</td>
-<td>NU</td>
-<td>NU</td>
-<td>Call any friendly creatures (if its not in combat/etc) in radius attack creature target</td>
-</tr>
-<tr class="odd">
-<td>40</td>
-<td>ACTION_T_SET_SHEATH</td>
-<td><a href="creature_ai_scripts#SheathState">SheathState</a></td>
-<td>NU</td>
-<td>NU</td>
-<td>Set SheathState for creature (0-no weapon show (not used mostly by creatures), 1-melee weapon show, 2-ranged weapon show)</td>
-</tr>
-<tr class="even">
-<td>41</td>
-<td>ACTION_T_FORCE_DESPAWN</td>
-<td>msDelay</td>
-<td>NU</td>
-<td>NU</td>
-<td>Despawns the creature, If 0 despawn instant, other despawn after delay (in ms)</td>
-</tr>
-<tr class="odd">
-<td>42</td>
-<td>ACTION_T_SET_INVINCIBILITY_HP_LEVEL</td>
-<td>Value</td>
-<td>HP_Level(0) or HP_Percent(1)</td>
-<td>NU</td>
-<td>Set minimum health level for creature that can be set at damage as flat value or percent from max health</td>
-</tr>
-<tr class="even">
-<td>43</td>
-<td>ACTION_T_MOUNT_TO_ENTRY_OR_MODEL</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td><a href="creature_template#modelId1">modelId</a></td>
-<td>NU</td>
-<td><a href="creature_template#entry">CreatureEntry</a> (param1) or <a href="creature_template#modelId1">modelId</a> (param2) or 0 for both to dismount</td>
-</tr>
-<tr class="odd">
-<td>44</td>
-<td>ACTION_T_CHANCED_TEXT</td>
-<td>Chance</td>
-<td>-TextId1</td>
-<td>-TextId2</td>
-<td>deprecated, use 54! Chance to display the text, TextId1, optionally TextId2. If more than just -TextId1 is defined, randomize. Negative values</td>
-</tr>
-<tr class="even">
-<td>45</td>
-<td>ACTION_T_THROW_AI_EVENT</td>
-<td><a href="creature_ai_scripts#AIEventType">AIEventType</a></td>
-<td>Radius</td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>Throws an <a href="creature_ai_scripts#AIEventType">AIEventType</a> (Param1) to friendly Npcs in range (Param2), Invoker of event is Target</td>
-</tr>
-<tr class="odd">
-<td>46</td>
-<td>ACTION_T_SET_THROW_MASK</td>
-<td>EventTypeMask</td>
-<td>NU</td>
-<td>NU</td>
-<td>Marks for which AIEvents the npc will throw AIEvents on its own.</td>
-</tr>
-<tr class="even">
-<td>47</td>
-<td>ACTION_T_SET_STAND_STATE</td>
-<td><a href="creature_template_addon#UnitStandStateType">UnitStandStateType</a></td>
-<td>NU</td>
-<td>NU</td>
-<td>Set the UnitStandStateType (Param1) of the current creature</td>
-</tr>
-<tr class="odd">
-<td>48</td>
-<td>ACTION_T_CHANGE_MOVEMENT</td>
-<td><a href="creature#MovementType">MovementType</a></td>
-<td>spawndist/PathId</td>
-<td>NU</td>
-<td>Change the creature MovementGeneratorType (Param1). If the movement type is Random Movement (1), the spawndist (Param2) must be provided. If the movement type is Waypoint Movement (2), (Param2) is PathId</td>
-</tr>
-<tr class="even">
-<td>49</td>
-<td>ACTION_T_DYNAMIC_MOVEMENT</td>
-<td>Off(0)On(1)</td>
-<td>NU</td>
-<td>NU</td>
-<td>Disable / Enable dynamic movement behavior</td>
-</tr>
-<tr class="odd">
-<td>50</td>
-<td>ACTION_T_SET_REACT_STATE</td>
-<td><a href="creature_ai_scripts#ReactStates">ReactStates</a></td>
-<td>NU</td>
-<td>NU</td>
-<td>Change ReactState of the creature</td>
-</tr>
-<tr class="even">
-<td>51</td>
-<td>ACTION_T_PAUSE_WAYPOINTS</td>
-<td>DoPause(0)UnPause(1)</td>
-<td>NU</td>
-<td>NU</td>
-<td>Pause waypoints of creature, DoPause 0: unpause waypoint 1</td>
-</tr>
-<tr class="odd">
-<td>52</td>
-<td>ACTION_T_INTERRUPT_SPELL</td>
-<td><a href="creature_ai_scripts#CurrentSpellTypes">CurrentSpellTypes</a></td>
-<td>NU</td>
-<td>NU</td>
-<td>Interrupt spell in given slot for creature</td>
-</tr>
-<tr class="even">
-<td>53</td>
-<td>ACTION_T_START_RELAY_SCRIPT</td>
-<td>RelayIDorTemplate</td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>NU</td>
-<td>Launches dbscripts_on_relay script, either static one, or when (Param1) is &lt; 0 then random one chosen from dbscript_random_templates</td>
-</tr>
-<tr class="odd">
-<td>54</td>
-<td>ACTION_T_TEXT_NEW</td>
-<td>-TextId</td>
-<td>Target</td>
-<td>TemplateId</td>
-<td>Displays text, either static one or when (Param3) != 0, then random one chosen from dbscript_random_templates</td>
-</tr>
-<tr class="even">
-<td>55</td>
-<td>ACTION_T_ATTACK_START</td>
-<td>Target</td>
-<td>NU</td>
-<td>NU</td>
-<td>Starts attacking Target</td>
-</tr>
-<tr class="odd">
-<td>56</td>
-<td>ACTION_T_DESPAWN_GUARDIANS</td>
-<td><a href="creature_template#entry">CreatureEntry</a></td>
-<td>NU</td>
-<td>NU</td>
-<td>Despawns guardian with specified entry, or if 0 despawns all guardians</td>
-</tr>
-<tr class="even">
-<td>57</td>
-<td>ACTION_T_SET_RANGED_MODE</td>
-<td><a href="creature_ai_scripts#RangeModeType">RangeModeType</a></td>
-<td>chaseDistance</td>
-<td>NU</td>
-<td>Enable <a href="creature_ai_scripts#RangeModeType">RangeModeType</a>, distance to chase at, NU</td>
-</tr>
-<tr class="odd">
-<td>58</td>
-<td>ACTION_T_SET_WALK</td>
-<td>WalkSettingType</td>
-<td>NU</td>
-<td>NU</td>
-<td>RUN_DEFAULT (0), WALK_DEFAULT (1), RUN_CHASE (2), WALK_CHASE (3)</td>
-</tr>
-<tr class="even">
-<td>59</td>
-<td>ACTION_T_SET_FACING</td>
-<td><a href="creature_ai_scripts#Target">target</a></td>
-<td>Set (0), Reset (1)</td>
-<td>NU</td>
-<td>Sets facing, i.e. orientation to target, or resets it to last waypoint hit, or to respawn position</td>
-</tr>
-</tbody>
-</table>
+| ID  | Name                                     | Param 1                                                          | Param 2                                                            | Param 3                                    | Description                                                                                                                                                                                                 |
+| --- | ---------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | ACTION_T_NONE                            | NU                                                               | NU                                                                 | NU                                         | Does nothing!                                                                                                                                                                                               |
+| 1   | ACTION_T_TEXT                            | -TextId1                                                         | -TextId2                                                           | -TextId3                                   | deprecated, \[use action 54 for 1 / 4+ [custom\_texts](creature_ai_texts) can be used                                                                                                                       |
+| 2   | ACTION\_T\_SET\_FACTION                  | factionId                                                        | [TemporaryFactionFlags](creature_ai_scripts#TemporaryFactionFlags) | NU                                         | Changes faction for a creature. When (Param1) is zero, creature will revert to it's default faction. Flags will determine when faction is restored to default (evade, respawn etc)                          |
+| 3   | ACTION\_T\_MORPH\_TO\_ENTRY\_OR\_MODEL   | [CreatureEntry](creature_template#entry)                         | [modelId](creature_template#modelId1)                              | NU                                         | [modelId](ccreature_template#modelId1) (param2) (or 0 for both to demorph)                                                                                                                                  |
+| 4   | ACTION\_T\_SOUND                         | SoundId                                                          | NU                                                                 | NU                                         | Creature plays Sound. IDs are contained in the DBC files                                                                                                                                                    |
+| 5   | ACTION\_T\_EMOTE                         | [emoteId](creature_template_addon#emote)                         | NU                                                                 | NU                                         | Creature does visual emote. IDs are contained in the DBC files                                                                                                                                              |
+| 6   | ACTION\_T\_RANDOM\_SAY                   | NU                                                               | NU                                                                 | NU                                         | deprecated                                                                                                                                                                                                  |
+| 7   | ACTION\_T\_RANDOM\_YELL                  | NU                                                               | NU                                                                 | NU                                         | deprecated                                                                                                                                                                                                  |
+| 8   | ACTION\_T\_RANDOM\_TEXTEMOTE             | NU                                                               | NU                                                                 | NU                                         | deprecated                                                                                                                                                                                                  |
+| 9   | ACTION\_T\_RANDOM\_SOUND                 | Sound ID 1                                                       | Sound ID 2                                                         | Sound ID 3                                 | Picks a sound ID at random and plays it; -1 = action skipped if chosen                                                                                                                                      |
+| 10  | ACTION\_T\_RANDOM\_EMOTE                 | Emote ID 1                                                       | Emote ID 2                                                         | Emote ID 3                                 | Picks an emote ID at random and does visual emote; -1 = action skipped if chosen                                                                                                                            |
+| 11  | ACTION\_T\_CAST                          | [spellId](spell_template#Id)                                     | [target](creature_ai_scripts#Target)                               | [castFlags](creature_ai_scripts#castFlags) | Creature cast spell on a target with specified [castFlags](creature_ai_scripts#castFlags)                                                                                                                   |
+| 12  | ACTION\_T\_SPAWN                         | [CreatureEntry](creature_template#entry)                         | [target](creature_ai_scripts#Target)                               | Duration in milliseconds                   | Creature spawns a creature with (Param1) [CreatureEntry](creature_template#entry) at Target for a given duration (infinite if zero)                                                                         |
+| 13  | ACTION\_T\_THREAT\_SINGLE\_PCT           | Threat %                                                         | [target](creature_ai_scripts#Target)                               | NU                                         | Modifies [target](creature_ai_scripts#Target) threat by a percent (-100 to +100)                                                                                                                            |
+| 14  | ACTION\_T\_THREAT\_ALL\_PCT              | Threat %                                                         | NU                                                                 | NU                                         | Modifies everyone's threat by a percent (-100 to +100), will not cause Evade                                                                                                                                |
+| 15  | ACTION\_T\_QUEST\_EVENT                  | Quest ID                                                         | [target](creature_ai_scripts#Target)                               | NU                                         | Satisfies external script objective for a quest for the target (MUST be a player)                                                                                                                           |
+| 16  | ACTION\_T\_CAST\_EVENT                   | [CreatureEntry](creature_template#entry)                         | [spellId](spell_template#Id)                                       | [target](creature_ai_scripts#Target)       | Emulates spell cast on the creature for the target (must be a player) \[hacky\]                                                                                                                             |
+| 17  | ACTION\_T\_SET\_UNIT\_FIELD              | [EUnitFields](creature_ai_scripts#EUnitFields)                   | Value                                                              | [target](creature_ai_scripts#Target)       | Sets unit field at the index to the value given for the target. More information on the field value indeces can be found at [character data](character) data                                                |
+| 18  | ACTION\_T\_SET\_UNIT\_FLAG               | [UnitFlags](creature_template#unitflags)                         | [target](creature_ai_scripts#Target)                               | NU                                         | Sets flag(s) on the target                                                                                                                                                                                  |
+| 19  | ACTION\_T\_REMOVE\_UNIT\_FLAG            | [UnitFlags](creature_template#unitflags)                         | [target](creature_ai_scripts#Target)                               | NU                                         | Removes flag(s) from the target                                                                                                                                                                             |
+| 20  | ACTION\_T\_AUTO\_ATTACK                  | Boolean                                                          | NU                                                                 | NU                                         | If 0 cant melee, else (1) continues/starts it                                                                                                                                                               |
+| 21  | ACTION\_T\_COMBAT\_MOVEMENT              | Boolean                                                          | NU                                                                 | NU                                         | If 0 stops movement, else (1) continues/starts it                                                                                                                                                           |
+| 22  | ACTION\_T\_SET\_PHASE                    | Phase \#                                                         | NU                                                                 | NU                                         | Sets current phase to number given. This number must be an integer between 0 and 31 inclusive                                                                                                               |
+| 23  | ACTION\_T\_INC\_PHASE                    | Number                                                           | NU                                                                 | NU                                         | deprecated, increments (or decrements) the phase by given number                                                                                                                                            |
+| 24  | ACTION\_T\_EVADE                         | NU                                                               | NU                                                                 | NU                                         | Force creature reset. Exit combat + lose threat, true Evade                                                                                                                                                 |
+| 25  | ACTION\_T\_FLEE\_FOR\_ASSIST             | NU                                                               | NU                                                                 | NU                                         | Force creature to flee from combat                                                                                                                                                                          |
+| 26  | ACTION\_T\_QUEST\_EVENT\_ALL             | Quest ID                                                         | NU                                                                 | NU                                         | Satisfies external objective for a quest for all players in threat list similar to ACTION\_T\_QUEST\_EVENT                                                                                                  |
+| 27  | ACTION\_T\_CAST\_EVENT\_ALL              | Quest ID                                                         | [spellId](spell_template#Id)                                       | NU                                         | Emulates spell cast on creature for all players in threat list similar to ACTION\_T\_CAST\_EVENT                                                                                                            |
+| 28  | ACTION\_T\_REMOVEAURASFROMSPELL          | [target](creature_ai_scripts#Target)                             | [spellId](spell_template#Id)                                       | NU                                         | Removes all auras from a [spellId](spell_template#Id) from the target                                                                                                                                       |
+| 29  | ACTION\_T\_RANGED\_MOVEMENT              | Distance                                                         | Angle                                                              | NU                                         | creature sets ranged movement generator keeping the creature at a distance. Note that specifying zero angle and distance will make it just melee instead                                                    |
+| 30  | ACTION\_T\_RANDOM\_PHASE                 | Phase 1                                                          | Phase 2                                                            | Phase 3                                    | Randomly chooses a phase from the list of three phases                                                                                                                                                      |
+| 31  | ACTION\_T\_RANDOM\_PHASE\_RANGE          | Min Phase                                                        | Max Phase + 1                                                      | NU                                         | Chooses a random phase in the range specified. This number must be an integer between 0 and 31 inclusive                                                                                                    |
+| 32  | ACTION\_T\_SUMMON\_ID                    | [CreatureEntry](creature_template#entry)                         | [target](creature_ai_scripts#Target)                               | Summon ID                                  | Summons a creature using the data specified in the separate [creature\_ai\_summons](creature_ai_summons) table                                                                                              |
+| 33  | ACTION\_T\_KILLED\_MONSTER               | [CreatureEntry](creature_template#entry)                         | [target](creature_ai_scripts#Target)                               | NU                                         | Simulates a kill for a [target](creature_template#creature_ai_scripts#Target)                                                                                                                               |
+| 34  | ACTION\_T\_SET\_INST\_DATA               | Field                                                            | 32 bit Value                                                       | NU                                         | Sets data for the instance. Note that this will only work when the creature is inside an instantiable zone that has a valid script (ScriptedInstance) assigned.                                             |
+| 35  | ACTION\_T\_SET\_INST\_DATA64             | Field                                                            | [target](creature_ai_scripts#Target)                               | NU                                         | Stores target's GUID at the field given in the instance script                                                                                                                                              |
+| 36  | ACTION\_T\_UPDATE\_TEMPLATE              | [CreatureEntry](creature_template#entry)                         | Faction                                                            | NU                                         | This function temporarily changes creature entry to new entry, display is changed, loot is changed, but AI is not changed. At respawn creature will be reverted to original entry. Alliance(0) or Horde (1) |
+| 37  | ACTION\_T\_DIE                           | NU                                                               | NU                                                                 | NU                                         | Kills the creature                                                                                                                                                                                          |
+| 38  | ACTION\_T\_ZONE\_COMBAT\_PULSE           | NU                                                               | NU                                                                 | NU                                         | Places all players within the instance into combat with the creature. Only works in combat and only works inside of instances                                                                               |
+| 39  | ACTION\_T\_CALL\_FOR\_HELP               | Radius                                                           | NU                                                                 | NU                                         | Call any friendly creatures (if its not in combat/etc) in radius attack creature target                                                                                                                     |
+| 40  | ACTION\_T\_SET\_SHEATH                   | [SheathState](creature_ai_scripts#SheathState)                   | NU                                                                 | NU                                         | Set SheathState for creature (0-no weapon show (not used mostly by creatures), 1-melee weapon show, 2-ranged weapon show)                                                                                   |
+| 41  | ACTION\_T\_FORCE\_DESPAWN                | msDelay                                                          | NU                                                                 | NU                                         | Despawns the creature, If 0 despawn instant, other despawn after delay (in ms)                                                                                                                              |
+| 42  | ACTION\_T\_SET\_INVINCIBILITY\_HP\_LEVEL | Value                                                            | HP\_Level(0) or HP\_Percent(1)                                     | NU                                         | Set minimum health level for creature that can be set at damage as flat value or percent from max health                                                                                                    |
+| 43  | ACTION\_T\_MOUNT\_TO\_ENTRY\_OR\_MODEL   | [CreatureEntry](creature_template#entry)                         | [modelId](creature_template#modelId1)                              | NU                                         | [modelId](creature_template#creature_template#modelId1) (param2) or 0 for both to dismount                                                                                                                  |
+| 44  | ACTION\_T\_CHANCED\_TEXT                 | Chance                                                           | -TextId1                                                           | -TextId2                                   | deprecated, use 54! Chance to display the text, TextId1, optionally TextId2. If more than just -TextId1 is defined, randomize. Negative values                                                              |
+| 45  | ACTION\_T\_THROW\_AI\_EVENT              | [AIEventType](creature_ai_scripts#AIEventType)                   | Radius                                                             | [target](creature_ai_scripts#Target)       | Throws an [AIEventType](creature_ai_scripts#AIEventType) (Param1) to friendly Npcs in range (Param2), Invoker of event is Target                                                                            |
+| 46  | ACTION\_T\_SET\_THROW\_MASK              | EventTypeMask                                                    | NU                                                                 | NU                                         | Marks for which AIEvents the npc will throw AIEvents on its own.                                                                                                                                            |
+| 47  | ACTION\_T\_SET\_STAND\_STATE             | [UnitStandStateType](creature_template_addon#UnitStandStateType) | NU                                                                 | NU                                         | Set the UnitStandStateType (Param1) of the current creature                                                                                                                                                 |
+| 48  | ACTION\_T\_CHANGE\_MOVEMENT              | [MovementType](creature#MovementType)                            | spawndist/PathId                                                   | NU                                         | Change the creature MovementGeneratorType (Param1). If the movement type is Random Movement (1), the spawndist (Param2) must be provided. If the movement type is Waypoint Movement (2), (Param2) is PathId |
+| 49  | ACTION\_T\_DYNAMIC\_MOVEMENT             | Off(0)On(1)                                                      | NU                                                                 | NU                                         | Disable / Enable dynamic movement behavior                                                                                                                                                                  |
+| 50  | ACTION\_T\_SET\_REACT\_STATE             | [ReactStates](creature_ai_scripts#ReactStates)                   | NU                                                                 | NU                                         | Change ReactState of the creature                                                                                                                                                                           |
+| 51  | ACTION\_T\_PAUSE\_WAYPOINTS              | DoPause(0)UnPause(1)                                             | NU                                                                 | NU                                         | Pause waypoints of creature, DoPause 0: unpause waypoint 1                                                                                                                                                  |
+| 52  | ACTION\_T\_INTERRUPT\_SPELL              | [CurrentSpellTypes](creature_ai_scripts#CurrentSpellTypes)       | NU                                                                 | NU                                         | Interrupt spell in given slot for creature                                                                                                                                                                  |
+| 53  | ACTION\_T\_START\_RELAY\_SCRIPT          | RelayIDorTemplate                                                | [target](creature_ai_scripts#Target)                               | NU                                         | Launches dbscripts\_on\_relay script, either static one, or when (Param1) is &lt; 0 then random one chosen from dbscript\_random\_templates                                                                 |
+| 54  | ACTION\_T\_TEXT\_NEW                     | -TextId                                                          | Target                                                             | TemplateId                                 | Displays text, either static one or when (Param3) != 0, then random one chosen from dbscript\_random\_templates                                                                                             |
+| 55  | ACTION\_T\_ATTACK\_START                 | Target                                                           | NU                                                                 | NU                                         | Starts attacking Target                                                                                                                                                                                     |
+| 56  | ACTION\_T\_DESPAWN\_GUARDIANS            | [CreatureEntry](creature_template#entry)                         | NU                                                                 | NU                                         | Despawns guardian with specified entry, or if 0 despawns all guardians                                                                                                                                      |
+| 57  | ACTION\_T\_SET\_RANGED\_MODE             | [RangeModeType](creature_ai_scripts#RangeModeType)               | chaseDistance                                                      | NU                                         | Enable [RangeModeType](creature_ai_scripts#RangeModeType), distance to chase at, NU                                                                                                                         |
+| 58  | ACTION\_T\_SET\_WALK                     | WalkSettingType                                                  | NU                                                                 | NU                                         | RUN\_DEFAULT (0), WALK\_DEFAULT (1), RUN\_CHASE (2), WALK\_CHASE (3)                                                                                                                                        |
+| 59  | ACTION\_T\_SET\_FACING                   | [target](creature_ai_scripts#Target)                             | Set (0), Reset (1)                                                 | NU                                         | Sets facing, i.e. orientation to target, or resets it to last waypoint hit, or to respawn position                                                                                                          |
 
 #### EventFlags
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="30%" />
-<col width="63%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>EFLAG_REPEATABLE</td>
-<td>Event repeats (Does not repeat if this flag is not set)</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>EFLAG_NORMAL, EFLAG_DIFFICULTY_0</td>
-<td>Event only occurs in Normal instance difficulty + [wotlk: (10-Man Normal)]</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>EFLAG_HEROIC, EFLAG_DIFFICULTY_1</td>
-<td>Event only occurs in Heroic instance difficulty + [wotlk: (25-Man Normal)]</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>EFLAG_DIFFICULTY_2</td>
-<td>Event only occurs in [wotlk: (10-Man Heroic)]</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>EFLAG_DIFFICULTY_3</td>
-<td>Event only occurs in [wotlk (25-Man Heroic)]</td>
-</tr>
-<tr class="even">
-<td>32</td>
-<td>EFLAG_RANDOM_ACTION</td>
-<td>Random use action1, 2, or 3</td>
-</tr>
-<tr class="odd">
-<td>64</td>
-<td>EFLAG_RESERVED_6</td>
-<td>Reserved</td>
-</tr>
-<tr class="even">
-<td>128</td>
-<td>EFLAG_DEBUG_ONLY</td>
-<td>Event only occurs in debug build</td>
-</tr>
-<tr class="odd">
-<td>256</td>
-<td>EFLAG_RANGED_MODE_ONLY</td>
-<td>Event only occurs in ranged mode</td>
-</tr>
-<tr class="even">
-<td>512</td>
-<td>EFLAG_MELEE_MODE_ONLY</td>
-<td>Event only occurs in melee mode</td>
-</tr>
-<tr class="odd">
-<td>1024</td>
-<td>EFLAG_COMBAT_ACTION</td>
-<td>Only one per cycle</td>
-</tr>
-</tbody>
-</table>
+| Bit  | Name                             | Description                                                                |
+| ---- | -------------------------------- | -------------------------------------------------------------------------- |
+| 1    | EFLAG_REPEATABLE                 | Event repeats (Does not repeat if this flag is not set)                    |
+| 2    | EFLAG_NORMAL, EFLAG_DIFFICULTY_0 | Event only occurs in Normal instance difficulty + [wotlk: (10-Man Normal)] |
+| 4    | EFLAG_HEROIC, EFLAG_DIFFICULTY_1 | Event only occurs in Heroic instance difficulty + [wotlk: (25-Man Normal)] |
+| 8    | EFLAG_DIFFICULTY_2               | Event only occurs in [wotlk: (10-Man Heroic)]                              |
+| 16   | EFLAG_DIFFICULTY_3               | Event only occurs in [wotlk (25-Man Heroic)]                               |
+| 32   | EFLAG_RANDOM_ACTION              | Random use action1, 2, or 3                                                |
+| 64   | EFLAG_RESERVED_6                 | Reserved                                                                   |
+| 128  | EFLAG_DEBUG_ONLY                 | Event only occurs in debug build                                           |
+| 256  | EFLAG_RANGED_MODE_ONLY           | Event only occurs in ranged mode                                           |
+| 512  | EFLAG_MELEE_MODE_ONLY            | Event only occurs in melee mode                                            |
+| 1024 | EFLAG_COMBAT_ACTION              | Only one per cycle                                                         |
 
 #### Target
 
-<table>
-<colgroup>
-<col width="2%" />
-<col width="17%" />
-<col width="80%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ID</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>TARGET_T_SELF</td>
-<td>Targets itself</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>TARGET_T_HOSTILE</td>
-<td>Targets the current victim (usually the one with the most threat)</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>TARGET_T_HOSTILE_SECOND_AGGRO</td>
-<td>Targets the unit with the second most threat in the threat list</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>TARGET_T_HOSTILE_LAST_AGGRO</td>
-<td>Targets the unit with the least threat in the threat list</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>TARGET_T_HOSTILE_RANDOM</td>
-<td>Targets a random unit from the threat list</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>TARGET_T_HOSTILE_RANDOM_NOT_TOP</td>
-<td>Targets a random unit from the threat list excluding the one with the most threat</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>TARGET_T_ACTION_INVOKER</td>
-<td>Targets the unit that caused the event; only for certain events only.</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>TARGET_T_ACTION_INVOKER_OWNER</td>
-<td>Targets unit who is responsible for Event to occur (only works for EVENT_T_AGGRO, EVENT_T_KILL, EVENT_T_DEATH, EVENT_T_SPELLHIT, EVENT_T_OOC_LOS, EVENT_T_RECEIVE_EMOTE, EVENT_T_RECEIVE_AI_EVENT)</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>TARGET_T_HOSTILE_RANDOM_PLAYER</td>
-<td>Targets Random Player on The Threat List</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>TARGET_T_HOSTILE_RANDOM_NOT_TOP_PLAYER</td>
-<td>Targets Any Random Player Except Top Threat</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>TARGET_T_EVENT_SENDER</td>
-<td>Creature who sent a received AIEvent - only triggered by EVENT_T_RECEIVE_AI_EVENT</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>TARGET_T_SPAWNER</td>
-<td>Owner of unit if exists</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>TARGET_T_EVENT_SPECIFIC</td>
-<td>Filled by specific event (works for EVENT_T_FRIENDLY_HP, EVENT_T_FRIENDLY_IS_CC, EVENT_T_FRIENDLY_MISSING_BUFF)</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>TARGET_T_PLAYER_INVOKER</td>
-<td>Player who initiated hostile contact with this npc</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>TARGET_T_PLAYER_TAPPED</td>
-<td>Player who currently holds to score the kill credit from the npc</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>TARGET_T_NONE</td>
-<td>Default spell target - sets nullptr which should be most common spell fill</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>TARGET_T_HOSTILE_RANDOM_MANA</td>
-<td>Random target with mana</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>TARGET_T_NEAREST_AOE_TARGET</td>
-<td>Checks for available near aoe targets by EffectRadiusIndex[0] for the spell used</td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>TARGET_T_HOSTILE_FARTHEST_AWAY</td>
-<td>Farthest away target, excluding melee range</td>
-</tr>
-</tbody>
-</table>
+| ID  | Name                                   | Description                                                                                                                                                                                        |
+| --- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | TARGET_T_SELF                          | Targets itself                                                                                                                                                                                     |
+| 1   | TARGET_T_HOSTILE                       | Targets the current victim (usually the one with the most threat)                                                                                                                                  |
+| 2   | TARGET_T_HOSTILE_SECOND_AGGRO          | Targets the unit with the second most threat in the threat list                                                                                                                                    |
+| 3   | TARGET_T_HOSTILE_LAST_AGGRO            | Targets the unit with the least threat in the threat list                                                                                                                                          |
+| 4   | TARGET_T_HOSTILE_RANDOM                | Targets a random unit from the threat list                                                                                                                                                         |
+| 5   | TARGET_T_HOSTILE_RANDOM_NOT_TOP        | Targets a random unit from the threat list excluding the one with the most threat                                                                                                                  |
+| 6   | TARGET_T_ACTION_INVOKER                | Targets the unit that caused the event; only for certain events only.                                                                                                                              |
+| 7   | TARGET_T_ACTION_INVOKER_OWNER          | Targets unit who is responsible for Event to occur (only works for EVENT_T_AGGRO, EVENT_T_KILL, EVENT_T_DEATH, EVENT_T_SPELLHIT, EVENT_T_OOC_LOS, EVENT_T_RECEIVE_EMOTE, EVENT_T_RECEIVE_AI_EVENT) |
+| 8   | TARGET_T_HOSTILE_RANDOM_PLAYER         | Targets Random Player on The Threat List                                                                                                                                                           |
+| 9   | TARGET_T_HOSTILE_RANDOM_NOT_TOP_PLAYER | Targets Any Random Player Except Top Threat                                                                                                                                                        |
+| 10  | TARGET_T_EVENT_SENDER                  | Creature who sent a received AIEvent - only triggered by EVENT_T_RECEIVE_AI_EVENT                                                                                                                  |
+| 11  | TARGET_T_SPAWNER                       | Owner of unit if exists                                                                                                                                                                            |
+| 12  | TARGET_T_EVENT_SPECIFIC                | Filled by specific event (works for EVENT_T_FRIENDLY_HP, EVENT_T_FRIENDLY_IS_CC, EVENT_T_FRIENDLY_MISSING_BUFF)                                                                                    |
+| 13  | TARGET_T_PLAYER_INVOKER                | Player who initiated hostile contact with this npc                                                                                                                                                 |
+| 14  | TARGET_T_PLAYER_TAPPED                 | Player who currently holds to score the kill credit from the npc                                                                                                                                   |
+| 15  | TARGET_T_NONE                          | Default spell target - sets nullptr which should be most common spell fill                                                                                                                         |
+| 16  | TARGET_T_HOSTILE_RANDOM_MANA           | Random target with mana                                                                                                                                                                            |
+| 17  | TARGET_T_NEAREST_AOE_TARGET            | Checks for available near aoe targets by EffectRadiusIndex[0] for the spell used                                                                                                                   |
+| 18  | TARGET_T_HOSTILE_FARTHEST_AWAY         | Farthest away target, excluding melee range                                                                                                                                                        |
 
 #### castFlags
 
-<table>
-<colgroup>
-<col width="4%" />
-<col width="24%" />
-<col width="71%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>CAST_INTERRUPT_PREVIOUS</td>
-<td>Interrupts any previous spell casting.</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>CAST_TRIGGERED</td>
-<td>Forces the cast to be instant and ignores any mana/reagents requirements.</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>CAST_FORCE_CAST</td>
-<td>Forces spell to cast even if the target is possibly out of range or the creature is possibly out of mana</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>CAST_NO_MELEE_IF_OOM</td>
-<td>Prevents creature from entering melee if out of mana or out of range</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>CAST_FORCE_TARGET_SELF</td>
-<td>Forces the target to cast this spell on itself</td>
-</tr>
-<tr class="even">
-<td>32</td>
-<td>CAST_AURA_NOT_PRESENT</td>
-<td>Only casts the spell on the target if the target does not have the aura from that spell on itself already.</td>
-</tr>
-<tr class="odd">
-<td>64</td>
-<td>CAST_IGNORE_UNSELECTABLE_TARGET</td>
-<td>Can target UNIT_FLAG_NOT_SELECTABLE - Needed in some scripts</td>
-</tr>
-<tr class="even">
-<td>128</td>
-<td>CAST_SWITCH_CASTER_TARGET</td>
-<td>Switches target and caster for spell cast</td>
-</tr>
-<tr class="odd">
-<td>256</td>
-<td>CAST_MAIN_SPELL</td>
-<td>Marks main spell for AI Type = Action 57 ACTION_T_SET_RANGED_MODE</td>
-</tr>
-<tr class="even">
-<td>512</td>
-<td>CAST_PLAYER_ONLY</td>
-<td>Selects only player targets - substitution for EAI not having more params</td>
-</tr>
-<tr class="odd">
-<td>1024</td>
-<td>CAST_DISTANCE_YOURSELF</td>
-<td>If spell with this cast flag hits main aggro target, caster distances himself - EAI only</td>
-</tr>
-</tbody>
-</table>
+| Bit  | Name                            | Description                                                                                                |
+| ---- | ------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 1    | CAST_INTERRUPT_PREVIOUS         | Interrupts any previous spell casting.                                                                     |
+| 2    | CAST_TRIGGERED                  | Forces the cast to be instant and ignores any mana/reagents requirements.                                  |
+| 4    | CAST_FORCE_CAST                 | Forces spell to cast even if the target is possibly out of range or the creature is possibly out of mana   |
+| 8    | CAST_NO_MELEE_IF_OOM            | Prevents creature from entering melee if out of mana or out of range                                       |
+| 16   | CAST_FORCE_TARGET_SELF          | Forces the target to cast this spell on itself                                                             |
+| 32   | CAST_AURA_NOT_PRESENT           | Only casts the spell on the target if the target does not have the aura from that spell on itself already. |
+| 64   | CAST_IGNORE_UNSELECTABLE_TARGET | Can target UNIT_FLAG_NOT_SELECTABLE - Needed in some scripts                                               |
+| 128  | CAST_SWITCH_CASTER_TARGET       | Switches target and caster for spell cast                                                                  |
+| 256  | CAST_MAIN_SPELL                 | Marks main spell for AI Type = Action 57 ACTION_T_SET_RANGED_MODE                                          |
+| 512  | CAST_PLAYER_ONLY                | Selects only player targets - substitution for EAI not having more params                                  |
+| 1024 | CAST_DISTANCE_YOURSELF          | If spell with this cast flag hits main aggro target, caster distances himself - EAI only                   |
 
 #### schoolMask
 
 | Value | Type                                      |
-|-------|-------------------------------------------|
+| ----- | ----------------------------------------- |
 | 1     | SPELL\_SCHOOL\_MASK\_NORMAL (Physical)    |
 | 2     | SPELL\_SCHOOL\_MASK\_HOLY                 |
 | 4     | SPELL\_SCHOOL\_MASK\_FIRE                 |
@@ -1251,7 +236,7 @@ Just like event definitions, each action can use up to three different parameter
 #### DispelType
 
 | Value | Type                 |
-|-------|----------------------|
+| ----- | -------------------- |
 | 0     | DISPEL\_NONE         |
 | 1     | DISPEL\_MAGIC        |
 | 2     | DISPEL\_CURSE        |
@@ -1263,176 +248,39 @@ Just like event definitions, each action can use up to three different parameter
 
 #### AIEventType
 
-<table style="width:100%;">
-<colgroup>
-<col width="6%" />
-<col width="26%" />
-<col width="25%" />
-<col width="41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Type</th>
-<th>Sender</th>
-<th>Invoker</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>AI_EVENT_JUST_DIED</td>
-<td>Killed Npc</td>
-<td>Killer</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>AI_EVENT_CRITICAL_HEALTH</td>
-<td>Hurt Npc</td>
-<td>DamageDealer - Expected to be sent by 10% health</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>AI_EVENT_LOST_HEALTH</td>
-<td>Hurt Npc</td>
-<td>DamageDealer - Expected to be sent by 50% health</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>AI_EVENT_LOST_SOME_HEALTH</td>
-<td>Hurt Npc</td>
-<td>DamageDealer - Expected to be sent by 90% health</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>AI_EVENT_GOT_FULL_HEALTH</td>
-<td>Healed Npc</td>
-<td>Healer</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>AI_EVENT_CUSTOM_EVENTAI_A</td>
-<td>Npc that throws custom event</td>
-<td>TARGET_T_ACTION_INVOKER (if exists)</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>AI_EVENT_CUSTOM_EVENTAI_B</td>
-<td>Npc that throws custom event</td>
-<td>TARGET_T_ACTION_INVOKER (if exists)</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>AI_EVENT_GOT_CCED</td>
-<td>CCed Npc</td>
-<td>Caster that CCed</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>AI_EVENT_CUSTOM_EVENTAI_C</td>
-<td>Npc that throws custom event</td>
-<td>TARGET_T_ACTION_INVOKER (if exists)</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>AI_EVENT_CUSTOM_EVENTAI_D</td>
-<td>Npc that throws custom event</td>
-<td>TARGET_T_ACTION_INVOKER (if exists)</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>AI_EVENT_CUSTOM_EVENTAI_E</td>
-<td>Npc that throws custom event</td>
-<td>TARGET_T_ACTION_INVOKER (if exists)</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>AI_EVENT_CUSTOM_EVENTAI_F</td>
-<td>Npc that throws custom event</td>
-<td>TARGET_T_ACTION_INVOKER (if exists)</td>
-</tr>
-</tbody>
-</table>
+| Value | Type                      | Sender                       | Invoker                                          |
+| ----- | ------------------------- | ---------------------------- | ------------------------------------------------ |
+| 0     | AI_EVENT_JUST_DIED        | Killed Npc                   | Killer                                           |
+| 1     | AI_EVENT_CRITICAL_HEALTH  | Hurt Npc                     | DamageDealer - Expected to be sent by 10% health |
+| 2     | AI_EVENT_LOST_HEALTH      | Hurt Npc                     | DamageDealer - Expected to be sent by 50% health |
+| 3     | AI_EVENT_LOST_SOME_HEALTH | Hurt Npc                     | DamageDealer - Expected to be sent by 90% health |
+| 4     | AI_EVENT_GOT_FULL_HEALTH  | Healed Npc                   | Healer                                           |
+| 5     | AI_EVENT_CUSTOM_EVENTAI_A | Npc that throws custom event | TARGET_T_ACTION_INVOKER (if exists)              |
+| 6     | AI_EVENT_CUSTOM_EVENTAI_B | Npc that throws custom event | TARGET_T_ACTION_INVOKER (if exists)              |
+| 7     | AI_EVENT_GOT_CCED         | CCed Npc                     | Caster that CCed                                 |
+| 8     | AI_EVENT_CUSTOM_EVENTAI_C | Npc that throws custom event | TARGET_T_ACTION_INVOKER (if exists)              |
+| 9     | AI_EVENT_CUSTOM_EVENTAI_D | Npc that throws custom event | TARGET_T_ACTION_INVOKER (if exists)              |
+| 10    | AI_EVENT_CUSTOM_EVENTAI_E | Npc that throws custom event | TARGET_T_ACTION_INVOKER (if exists)              |
+| 11    | AI_EVENT_CUSTOM_EVENTAI_F | Npc that throws custom event | TARGET_T_ACTION_INVOKER (if exists)              |
 
 #### TemporaryFactionFlags
 
-<table>
-<colgroup>
-<col width="2%" />
-<col width="3%" />
-<col width="19%" />
-<col width="75%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Hex</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0x00</td>
-<td>TEMPFACTION_NONE</td>
-<td>When no flag is used in temporary faction change, faction will be persistent. It will then require manual change back to default/another faction when changed once</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0x01</td>
-<td>TEMPFACTION_RESTORE_RESPAWN</td>
-<td>Default faction will be restored at respawn</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0x02</td>
-<td>TEMPFACTION_RESTORE_COMBAT_STOP</td>
-<td>at CombatStop() (happens at creature death, at evade or custom scripte among others)</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>0x04</td>
-<td>TEMPFACTION_RESTORE_REACH_HOME</td>
-<td>at reaching home in home movement (evade), if not already done at CombatStop()</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>0x08</td>
-<td>TEMPFACTION_TOGGLE_NON_ATTACKABLE</td>
-<td>Remove UNIT_FLAG_NON_ATTACKABLE(0x02) when faction is changed (reapply when temp-faction is removed)</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>0x10</td>
-<td>TEMPFACTION_TOGGLE_IMMUNE_TO_PLAYER</td>
-<td>Remove UNIT_FLAG_IMMUNE_TO_PLAYER(0x100) when faction is changed (reapply when temp-faction is removed)</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>0x20</td>
-<td>TEMPFACTION_TOGGLE_IMMUNE_TO_NPC</td>
-<td>Remove UNIT_FLAG_PASSIVE(0x200) when faction is changed (reapply when temp-faction is removed)</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>0x40</td>
-<td>TEMPFACTION_TOGGLE_PACIFIED</td>
-<td>Remove UNIT_FLAG_PACIFIED(0x20000) when faction is changed (reapply when temp-faction is removed)</td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>0x80</td>
-<td>TEMPFACTION_TOGGLE_NOT_SELECTABLE</td>
-<td>Remove UNIT_FLAG_NOT_SELECTABLE(0x2000000) when faction is changed (reapply when temp-faction is removed)</td>
-</tr>
-</tbody>
-</table>
+| Bit | Hex  | Type                                | Description                                                                                                                                                        |
+| --- | ---- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0   | 0x00 | TEMPFACTION_NONE                    | When no flag is used in temporary faction change, faction will be persistent. It will then require manual change back to default/another faction when changed once |
+| 1   | 0x01 | TEMPFACTION_RESTORE_RESPAWN         | Default faction will be restored at respawn                                                                                                                        |
+| 2   | 0x02 | TEMPFACTION_RESTORE_COMBAT_STOP     | at CombatStop() (happens at creature death, at evade or custom scripte among others)                                                                               |
+| 4   | 0x04 | TEMPFACTION_RESTORE_REACH_HOME      | at reaching home in home movement (evade), if not already done at CombatStop()                                                                                     |
+| 8   | 0x08 | TEMPFACTION_TOGGLE_NON_ATTACKABLE   | Remove UNIT_FLAG_NON_ATTACKABLE(0x02) when faction is changed (reapply when temp-faction is removed)                                                               |
+| 16  | 0x10 | TEMPFACTION_TOGGLE_IMMUNE_TO_PLAYER | Remove UNIT_FLAG_IMMUNE_TO_PLAYER(0x100) when faction is changed (reapply when temp-faction is removed)                                                            |
+| 32  | 0x20 | TEMPFACTION_TOGGLE_IMMUNE_TO_NPC    | Remove UNIT_FLAG_PASSIVE(0x200) when faction is changed (reapply when temp-faction is removed)                                                                     |
+| 64  | 0x40 | TEMPFACTION_TOGGLE_PACIFIED         | Remove UNIT_FLAG_PACIFIED(0x20000) when faction is changed (reapply when temp-faction is removed)                                                                  |
+| 128 | 0x80 | TEMPFACTION_TOGGLE_NOT_SELECTABLE   | Remove UNIT_FLAG_NOT_SELECTABLE(0x2000000) when faction is changed (reapply when temp-faction is removed)                                                          |
 
 #### EUnitFields
 
 | Value | Type                        | Description      |
-|-------|-----------------------------|------------------|
+| ----- | --------------------------- | ---------------- |
 | 22    | UNIT\_FIELD\_HEALTH         | Health           |
 | 24    | UNIT\_FIELD\_POWER2         | Mana             |
 | 34    | UNIT\_FIELD\_LEVEL          | Level            |
@@ -1444,7 +292,7 @@ Just like event definitions, each action can use up to three different parameter
 #### ReactStates
 
 | Value | Type              | Description                                      |
-|-------|-------------------|--------------------------------------------------|
+| ----- | ----------------- | ------------------------------------------------ |
 | 0     | REACT\_PASSIVE    | Wont attack on its own, maybe due to CallForHelp |
 | 1     | REACT\_DEFENSIVE  | Will attack when attacked                        |
 | 2     | REACT\_AGGRESSIVE | Will attack (default)                            |
@@ -1452,7 +300,7 @@ Just like event definitions, each action can use up to three different parameter
 #### CurrentSpellTypes
 
 | Value | Type                       | Description |
-|-------|----------------------------|-------------|
+| ----- | -------------------------- | ----------- |
 | 0     | CURRENT\_MELEE\_SPELL      |             |
 | 1     | CURRENT\_GENERIC\_SPELL    |             |
 | 2     | CURRENT\_AUTOREPEAT\_SPELL |             |
@@ -1461,7 +309,7 @@ Just like event definitions, each action can use up to three different parameter
 #### Instance\_Data\_Flags
 
 | Value | Type    | Description                                             |
-|-------|---------|---------------------------------------------------------|
+| ----- | ------- | ------------------------------------------------------- |
 | 1     | Aggro   | Creature SetInCombat                                    |
 | 2     | Evade   | Creature remove from Combat                             |
 | 3     | Death   | Creature just die                                       |
@@ -1470,7 +318,7 @@ Just like event definitions, each action can use up to three different parameter
 #### RangeModeType
 
 | Value | Type               | Description                 |
-|-------|--------------------|-----------------------------|
+| ----- | ------------------ | --------------------------- |
 | 0     | TYPE\_NONE         | Melee Mode                  |
 | 1     | TYPE\_FULL\_CASTER | Caster Mode                 |
 | 2     | TYPE\_PROXIMITY    | Hunter Mode(keeps distance) |
@@ -1480,7 +328,7 @@ Just like event definitions, each action can use up to three different parameter
 b2\_0\_sheath
 
 | Bit | Name                   | Comment                     |
-|-----|------------------------|-----------------------------|
+| --- | ---------------------- | --------------------------- |
 | 0   | SHEATH\_STATE\_UNARMED | all weapons sheathed        |
 | 1   | SHEATH\_STATE\_MELEE   | melee weapon(s) unsheathed  |
 | 2   | SHEATH\_STATE\_RANGED  | ranged weapon(s) unsheathed |
@@ -1489,72 +337,18 @@ b2\_0\_sheath
 
 bytes1
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="35%" />
-<col width="59%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>UNIT_STAND_STATE_STAND</td>
-<td>normal behavior</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>UNIT_STAND_STATE_SIT</td>
-<td>sitting on ground</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>UNIT_STAND_STATE_SIT_CHAIR</td>
-<td>sitting on normal chair</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>UNIT_STAND_STATE_SLEEP</td>
-<td>sleeping</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>UNIT_STAND_STATE_SIT_LOW_CHAIR</td>
-<td>sitting on low chair</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>UNIT_STAND_STATE_SIT_MEDIUM_CHAIR</td>
-<td>sitting on medium chair</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>UNIT_STAND_STATE_SIT_HIGH_CHAIR</td>
-<td>sitting on high chair</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>UNIT_STAND_STATE_DEAD</td>
-<td>play dead</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>UNIT_STAND_STATE_KNEEL</td>
-<td>kneel</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>UNIT_STAND_STATE_CUSTOM</td>
-<td>Depends on model animation. Submerge, freeze, hide, hibernate, rest</td>
-</tr>
-</tbody>
-</table>
+| Bit | Name                              | Comment                                                             |
+| --- | --------------------------------- | ------------------------------------------------------------------- |
+| 0   | UNIT_STAND_STATE_STAND            | normal behavior                                                     |
+| 1   | UNIT_STAND_STATE_SIT              | sitting on ground                                                   |
+| 2   | UNIT_STAND_STATE_SIT_CHAIR        | sitting on normal chair                                             |
+| 3   | UNIT_STAND_STATE_SLEEP            | sleeping                                                            |
+| 4   | UNIT_STAND_STATE_SIT_LOW_CHAIR    | sitting on low chair                                                |
+| 5   | UNIT_STAND_STATE_SIT_MEDIUM_CHAIR | sitting on medium chair                                             |
+| 6   | UNIT_STAND_STATE_SIT_HIGH_CHAIR   | sitting on high chair                                               |
+| 7   | UNIT_STAND_STATE_DEAD             | play dead                                                           |
+| 8   | UNIT_STAND_STATE_KNEEL            | kneel                                                               |
+| 9   | UNIT_STAND_STATE_CUSTOM           | Depends on model animation. Submerge, freeze, hide, hibernate, rest |
 
 #### event\_inverse\_phase\_mask
 
