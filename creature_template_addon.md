@@ -40,133 +40,32 @@ The model ID of the mount to be used to make the creature appear mounted. The va
 
 (UNIT\_FIELD\_BYTES\_1,0)
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="35%" />
-<col width="59%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>UNIT_STAND_STATE_STAND</td>
-<td>normal behavior</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>UNIT_STAND_STATE_SIT</td>
-<td>sitting on ground</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>UNIT_STAND_STATE_SIT_CHAIR</td>
-<td>sitting on normal chair</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>UNIT_STAND_STATE_SLEEP</td>
-<td>sleeping</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>UNIT_STAND_STATE_SIT_LOW_CHAIR</td>
-<td>sitting on low chair</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>UNIT_STAND_STATE_SIT_MEDIUM_CHAIR</td>
-<td>sitting on medium chair</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>UNIT_STAND_STATE_SIT_HIGH_CHAIR</td>
-<td>sitting on high chair</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>UNIT_STAND_STATE_DEAD</td>
-<td>play dead</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>UNIT_STAND_STATE_KNEEL</td>
-<td>kneel</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>UNIT_STAND_STATE_CUSTOM</td>
-<td>Depends on model animation. Submerge, freeze, hide, hibernate, rest</td>
-</tr>
-</tbody>
-</table>
-
+| Bit | Name                              | Comment                                                             |
+| --- | --------------------------------- | ------------------------------------------------------------------- |
+| 0   | UNIT_STAND_STATE_STAND            | normal behavior                                                     |
+| 1   | UNIT_STAND_STATE_SIT              | sitting on ground                                                   |
+| 2   | UNIT_STAND_STATE_SIT_CHAIR        | sitting on normal chair                                             |
+| 3   | UNIT_STAND_STATE_SLEEP            | sleeping                                                            |
+| 4   | UNIT_STAND_STATE_SIT_LOW_CHAIR    | sitting on low chair                                                |
+| 5   | UNIT_STAND_STATE_SIT_MEDIUM_CHAIR | sitting on medium chair                                             |
+| 6   | UNIT_STAND_STATE_SIT_HIGH_CHAIR   | sitting on high chair                                               |
+| 7   | UNIT_STAND_STATE_DEAD             | play dead                                                           |
+| 8   | UNIT_STAND_STATE_KNEEL            | kneel                                                               |
+| 9   | UNIT_STAND_STATE_CUSTOM           | Depends on model animation. Submerge, freeze, hide, hibernate, rest |
 #### bytes1\_flags
 
 (UNIT\_FIELD\_BYTES\_1,3) used instead of bytes1 in some cases.
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="18%" />
-<col width="75%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Flag</th>
-<th>Name</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0x01</td>
-<td>UNIT_BYTE1_FLAG_ALWAYS_STAND</td>
-<td>always stand state</td>
-</tr>
-<tr class="even">
-<td>0x02</td>
-<td>UNIT_BYTE1_FLAG_FLY_ANIM</td>
-<td>Creature that can fly and are not on the ground appear to have this flag. If they are on the ground, flag is not present.</td>
-</tr>
-<tr class="odd">
-<td>0x04</td>
-<td>UNIT_BYTE1_FLAG_UNTRACKABLE</td>
-<td>untrackable</td>
-</tr>
-<tr class="even">
-<td>65536</td>
-<td>?</td>
-<td>Linked to Defensive Stance? (not actively added flag?)</td>
-</tr>
-<tr class="odd">
-<td>131072</td>
-<td>?</td>
-<td>no name &amp; health bar visible with plate mode on (name only when targeted) Linked to Stealth? Linked to DeathState? (not actively added flag?)</td>
-</tr>
-<tr class="even">
-<td>1048576</td>
-<td>?</td>
-<td>Linked to Defensive Stance? (not actively added flag?)</td>
-</tr>
-<tr class="odd">
-<td>33554432</td>
-<td>?</td>
-<td>Linked to Stealth? (not actively added flag?)</td>
-</tr>
-<tr class="even">
-<td>0xFF</td>
-<td>UNIT_BYTE1_FLAG_ALL</td>
-<td>all</td>
-</tr>
-</tbody>
-</table>
+| Flag     | Name                         | Comment                                                                                                                                           |
+| -------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x01     | UNIT_BYTE1_FLAG_ALWAYS_STAND | always stand state                                                                                                                                |
+| 0x02     | UNIT_BYTE1_FLAG_FLY_ANIM     | Creature that can fly and are not on the ground appear to have this flag. If they are on the ground, flag is not present.                         |
+| 0x04     | UNIT_BYTE1_FLAG_UNTRACKABLE  | untrackable                                                                                                                                       |
+| 65536    | ?                            | Linked to Defensive Stance? (not actively added flag?)                                                                                            |
+| 131072   | ?                            | no name &amp; health bar visible with plate mode on (name only when targeted) Linked to Stealth? Linked to DeathState? (not actively added flag?) |
+| 1048576  | ?                            | Linked to Defensive Stance? (not actively added flag?)                                                                                            |
+| 33554432 | ?                            | Linked to Stealth? (not actively added flag?)                                                                                                     |
+| 0xFF     | UNIT_BYTE1_FLAG_ALL          | all                                                                                                                                               |
 
 #### b2\_0\_sheath
 
@@ -304,366 +203,78 @@ Flags controlling how the creature will behave animation-wise while moving. <spa
 
 See the proper table under this one</span>
 
-<table>
-<colgroup>
-<col width="9%" />
-<col width="22%" />
-<col width="67%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>MOVEMENTFLAG_NONE</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>MOVEMENTFLAG_FORWARD</td>
-<td>instantly teleport creature, then creature move forward animation but no real movement</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>MOVEMENTFLAG_BACKWARD</td>
-<td>instantly teleport creature, then creature move back animation but no real movement</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>MOVEMENTFLAG_STRAFE_LEFT</td>
-<td>instantly teleport creature, then creature move left animation but no real movement</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>MOVEMENTFLAG_STRAFE_RIGHT</td>
-<td>instantly teleport creature, then creature move right animation but no real movement</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>MOVEMENTFLAG_LEFT</td>
-<td>creature spin left animation</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>MOVEMENTFLAG_RIGHT</td>
-<td>then creature spin right animation</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>MOVEMENTFLAG_PITCH_UP</td>
-<td>no effect on creature</td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>MOVEMENTFLAG_PITCH_DOWN</td>
-<td>no effect on creature</td>
-</tr>
-<tr class="even">
-<td>256</td>
-<td>MOVEMENTFLAG_RUN_MODE</td>
-<td>If flag set then player runs</td>
-</tr>
-<tr class="odd">
-<td>512</td>
-<td>MOVEMENTFLAG_ONTRANSPORT</td>
-<td>causes creatures to fly while moving (not include standing)</td>
-</tr>
-<tr class="even">
-<td>1024</td>
-<td>MOVEMENTFLAG_HOVERING</td>
-<td>hovering animation at stand (not include moving)</td>
-</tr>
-<tr class="odd">
-<td>2048</td>
-<td>MOVEMENTFLAG_FLY_UNK1</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4096</td>
-<td>MOVEMENTFLAG_JUMPING</td>
-<td>Jump animation</td>
-</tr>
-<tr class="odd">
-<td>8192</td>
-<td>MOVEMENTFLAG_UNK1</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>16384</td>
-<td>MOVEMENTFLAG_FALLING</td>
-<td>Falling</td>
-</tr>
-<tr class="odd">
-<td>32768</td>
-<td>MOVEMENTFLAG_UNK2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>65536</td>
-<td>MOVEMENTFLAG_UNK3</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>131072</td>
-<td>MOVEMENTFLAG_UNK4</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>262144</td>
-<td>MOVEMENTFLAG_UNK5</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>524288</td>
-<td>MOVEMENTFLAG_UNK6</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1048576</td>
-<td>MOVEMENTFLAG_UNK7</td>
-<td>Causes creature to instantly appear at new position</td>
-</tr>
-<tr class="odd">
-<td>2097152</td>
-<td>MOVEMENTFLAG_SWIMMING</td>
-<td>appears with fly flag also (causes creatures to fall to ground at stand state)</td>
-</tr>
-<tr class="even">
-<td>4194304</td>
-<td>MOVEMENTFLAG_FLY_UP</td>
-<td>no effect on creature</td>
-</tr>
-<tr class="odd">
-<td>8388608</td>
-<td>MOVEMENTFLAG_CAN_FLY</td>
-<td>no effect on creature</td>
-</tr>
-<tr class="even">
-<td>16777216</td>
-<td>MOVEMENTFLAG_FLYING</td>
-<td>no effect on creature</td>
-</tr>
-<tr class="odd">
-<td>33554432</td>
-<td>MOVEMENTFLAG_UNK8</td>
-<td>Creature flying (not hover at stop moving)</td>
-</tr>
-<tr class="even">
-<td>67108864</td>
-<td>MOVEMENTFLAG_SPLINE</td>
-<td>probably wrong name (no effect on creature)</td>
-</tr>
-<tr class="odd">
-<td>134217728</td>
-<td>MOVEMENTFLAG_SPLINE2</td>
-<td>no effect on creature</td>
-</tr>
-<tr class="even">
-<td>268435456</td>
-<td>MOVEMENTFLAG_WATERWALKING</td>
-<td>also prevent creature from falling under water</td>
-</tr>
-<tr class="odd">
-<td>536870912</td>
-<td>MOVEMENTFLAG_SAFE_FALL</td>
-<td>active rogue safe fall spell (passive) (no effect on creature)</td>
-</tr>
-<tr class="even">
-<td>1073741824</td>
-<td>MOVEMENTFLAG_UNK9</td>
-<td>Causes creature to hover at stand state (not include moving)</td>
-</tr>
-<tr class="odd">
-<td>2147483648</td>
-<td>MOVEMENTFLAG_UNK10</td>
-<td>Causes creature to roll to strange angle</td>
-</tr>
-</tbody>
-</table>
+| Bit        | Name                      | Comment                                                                                |
+| ---------- | ------------------------- | -------------------------------------------------------------------------------------- |
+| 0          | MOVEMENTFLAG_NONE         |                                                                                        |
+| 1          | MOVEMENTFLAG_FORWARD      | instantly teleport creature, then creature move forward animation but no real movement |
+| 2          | MOVEMENTFLAG_BACKWARD     | instantly teleport creature, then creature move back animation but no real movement    |
+| 4          | MOVEMENTFLAG_STRAFE_LEFT  | instantly teleport creature, then creature move left animation but no real movement    |
+| 8          | MOVEMENTFLAG_STRAFE_RIGHT | instantly teleport creature, then creature move right animation but no real movement   |
+| 16         | MOVEMENTFLAG_LEFT         | creature spin left animation                                                           |
+| 32         | MOVEMENTFLAG_RIGHT        | then creature spin right animation                                                     |
+| 64         | MOVEMENTFLAG_PITCH_UP     | no effect on creature                                                                  |
+| 128        | MOVEMENTFLAG_PITCH_DOWN   | no effect on creature                                                                  |
+| 256        | MOVEMENTFLAG_RUN_MODE     | If flag set then player runs                                                           |
+| 512        | MOVEMENTFLAG_ONTRANSPORT  | causes creatures to fly while moving (not include standing)                            |
+| 1024       | MOVEMENTFLAG_HOVERING     | hovering animation at stand (not include moving)                                       |
+| 2048       | MOVEMENTFLAG_FLY_UNK1     |                                                                                        |
+| 4096       | MOVEMENTFLAG_JUMPING      | Jump animation                                                                         |
+| 8192       | MOVEMENTFLAG_UNK1         |                                                                                        |
+| 16384      | MOVEMENTFLAG_FALLING      | Falling                                                                                |
+| 32768      | MOVEMENTFLAG_UNK2         |                                                                                        |
+| 65536      | MOVEMENTFLAG_UNK3         |                                                                                        |
+| 131072     | MOVEMENTFLAG_UNK4         |                                                                                        |
+| 262144     | MOVEMENTFLAG_UNK5         |                                                                                        |
+| 524288     | MOVEMENTFLAG_UNK6         |                                                                                        |
+| 1048576    | MOVEMENTFLAG_UNK7         | Causes creature to instantly appear at new position                                    |
+| 2097152    | MOVEMENTFLAG_SWIMMING     | appears with fly flag also (causes creatures to fall to ground at stand state)         |
+| 4194304    | MOVEMENTFLAG_FLY_UP       | no effect on creature                                                                  |
+| 8388608    | MOVEMENTFLAG_CAN_FLY      | no effect on creature                                                                  |
+| 16777216   | MOVEMENTFLAG_FLYING       | no effect on creature                                                                  |
+| 33554432   | MOVEMENTFLAG_UNK8         | Creature flying (not hover at stop moving)                                             |
+| 67108864   | MOVEMENTFLAG_SPLINE       | probably wrong name (no effect on creature)                                            |
+| 134217728  | MOVEMENTFLAG_SPLINE2      | no effect on creature                                                                  |
+| 268435456  | MOVEMENTFLAG_WATERWALKING | also prevent creature from falling under water                                         |
+| 536870912  | MOVEMENTFLAG_SAFE_FALL    | active rogue safe fall spell (passive) (no effect on creature)                         |
+| 1073741824 | MOVEMENTFLAG_UNK9         | Causes creature to hover at stand state (not include moving)                           |
+| 2147483648 | MOVEMENTFLAG_UNK10        | Causes creature to roll to strange angle                                               |
 
 <span style="color: red">Proper table as of 3.1</span>
 
-<table>
-<colgroup>
-<col width="9%" />
-<col width="23%" />
-<col width="66%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>MONSTER_MOVE_NONE</td>
-<td>InhabitType]] and <a href="creature_template#MovementType">MovementType</a></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>MONSTER_MOVE_FORWARD</td>
-<td>Instantly teleport creature, then creature move forward animation but no real movement</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>MONSTER_MOVE_BACKWARD</td>
-<td>Instantly teleport creature, then creature move back animation but no real movement</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>MONSTER_MOVE_STRAFE_LEFT</td>
-<td>Instantly teleport creature, then creature move left animation but no real movement</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>MONSTER_MOVE_STRAFE_RIGHT</td>
-<td>Instantly teleport creature, then creature move right animation but no real movement</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>MONSTER_MOVE_LEFT</td>
-<td>Creature spin left animation</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>MONSTER_MOVE_RIGHT</td>
-<td>Then creature spin right animation</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>MONSTER_MOVE_PITCH_UP</td>
-<td>Seams to have no effect</td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>MONSTER_MOVE_PITCH_DOWN</td>
-<td>Seams to have no effect</td>
-</tr>
-<tr class="even">
-<td>256</td>
-<td>MONSTER_MOVE_TELEPORT</td>
-<td>Makes creature teleport instead of walking</td>
-</tr>
-<tr class="odd">
-<td>512</td>
-<td>MONSTER_MOVE_TELEPORT2</td>
-<td>Makes creature a better Fly Animation (2.4.3)</td>
-</tr>
-<tr class="even">
-<td>1024</td>
-<td>MONSTER_MOVE_LEVITATING</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2048</td>
-<td>MONSTER_MOVE_UNK1</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4096</td>
-<td>MONSTER_MOVE_WALK</td>
-<td>Makes creature walk</td>
-</tr>
-<tr class="odd">
-<td>8192</td>
-<td>MONSTER_MOVE_SPLINE</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>16384</td>
-<td>No name in core</td>
-<td>Makes creature run</td>
-</tr>
-<tr class="odd">
-<td>32768</td>
-<td>No name in core</td>
-<td>Makes creature run</td>
-</tr>
-<tr class="even">
-<td>65536</td>
-<td>No name in core</td>
-<td>Makes creature run</td>
-</tr>
-<tr class="odd">
-<td>131072</td>
-<td>No name in core</td>
-<td>Makes creature run</td>
-</tr>
-<tr class="even">
-<td>262144</td>
-<td>MONSTER_MOVE_SPLINE2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>524288</td>
-<td>MONSTER_MOVE_UNK2</td>
-<td>Used for flying mobs</td>
-</tr>
-<tr class="even">
-<td>1048576</td>
-<td>MONSTER_MOVE_UNK3</td>
-<td>Used for flying mobs</td>
-</tr>
-<tr class="odd">
-<td>2097152</td>
-<td>MONSTER_MOVE_UNK4</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4194304</td>
-<td>MONSTER_MOVE_UNK5</td>
-<td>Run in place, then teleport to final point</td>
-</tr>
-<tr class="odd">
-<td>8388608</td>
-<td>MONSTER_MOVE_UNK6</td>
-<td>Teleport</td>
-</tr>
-<tr class="even">
-<td>16777216</td>
-<td>MONSTER_MOVE_UNK7</td>
-<td>Run</td>
-</tr>
-<tr class="odd">
-<td>33554432</td>
-<td>MONSTER_MOVE_FLY</td>
-<td>Swimming / Flying</td>
-</tr>
-<tr class="even">
-<td>67108864</td>
-<td>MONSTER_MOVE_UNK9</td>
-<td>Run</td>
-</tr>
-<tr class="odd">
-<td>134217728</td>
-<td>MONSTER_MOVE_UNK10</td>
-<td>Run</td>
-</tr>
-<tr class="even">
-<td>268435456</td>
-<td>MONSTER_MOVE_UNK11</td>
-<td>Run</td>
-</tr>
-<tr class="odd">
-<td>536870912</td>
-<td>MONSTER_MOVE_UNK12</td>
-<td>Run</td>
-</tr>
-<tr class="even">
-<td>1073741824</td>
-<td>MONSTER_MOVE_UNK13</td>
-<td>Levitating</td>
-</tr>
-</tbody>
-</table>
+| Bit        | Name                      | Comment                                                                                |
+| ---------- | ------------------------- | -------------------------------------------------------------------------------------- |
+| 0          | MONSTER_MOVE_NONE         | InhabitType]] and <a href="creature_template#MovementType">MovementType</a>            |
+| 1          | MONSTER_MOVE_FORWARD      | Instantly teleport creature, then creature move forward animation but no real movement |
+| 2          | MONSTER_MOVE_BACKWARD     | Instantly teleport creature, then creature move back animation but no real movement    |
+| 4          | MONSTER_MOVE_STRAFE_LEFT  | Instantly teleport creature, then creature move left animation but no real movement    |
+| 8          | MONSTER_MOVE_STRAFE_RIGHT | Instantly teleport creature, then creature move right animation but no real movement   |
+| 16         | MONSTER_MOVE_LEFT         | Creature spin left animation                                                           |
+| 32         | MONSTER_MOVE_RIGHT        | Then creature spin right animation                                                     |
+| 64         | MONSTER_MOVE_PITCH_UP     | Seams to have no effect                                                                |
+| 128        | MONSTER_MOVE_PITCH_DOWN   | Seams to have no effect                                                                |
+| 256        | MONSTER_MOVE_TELEPORT     | Makes creature teleport instead of walking                                             |
+| 512        | MONSTER_MOVE_TELEPORT2    | Makes creature a better Fly Animation (2.4.3)                                          |
+| 1024       | MONSTER_MOVE_LEVITATING   |                                                                                        |
+| 2048       | MONSTER_MOVE_UNK1         |                                                                                        |
+| 4096       | MONSTER_MOVE_WALK         | Makes creature walk                                                                    |
+| 8192       | MONSTER_MOVE_SPLINE       |                                                                                        |
+| 16384      | No name in core           | Makes creature run                                                                     |
+| 32768      | No name in core           | Makes creature run                                                                     |
+| 65536      | No name in core           | Makes creature run                                                                     |
+| 131072     | No name in core           | Makes creature run                                                                     |
+| 262144     | MONSTER_MOVE_SPLINE2      |                                                                                        |
+| 524288     | MONSTER_MOVE_UNK2         | Used for flying mobs                                                                   |
+| 1048576    | MONSTER_MOVE_UNK3         | Used for flying mobs                                                                   |
+| 2097152    | MONSTER_MOVE_UNK4         |                                                                                        |
+| 4194304    | MONSTER_MOVE_UNK5         | Run in place, then teleport to final point                                             |
+| 8388608    | MONSTER_MOVE_UNK6         | Teleport                                                                               |
+| 16777216   | MONSTER_MOVE_UNK7         | Run                                                                                    |
+| 33554432   | MONSTER_MOVE_FLY          | Swimming / Flying                                                                      |
+| 67108864   | MONSTER_MOVE_UNK9         | Run                                                                                    |
+| 134217728  | MONSTER_MOVE_UNK10        | Run                                                                                    |
+| 268435456  | MONSTER_MOVE_UNK11        | Run                                                                                    |
+| 536870912  | MONSTER_MOVE_UNK12        | Run                                                                                    |
+| 1073741824 | MONSTER_MOVE_UNK13        | Levitating                                                                             |
 
 Note: MONSTER\_MOVE\_SPLINE\_FLY = MONSTER\_MOVE\_WALK + MONSTER\_MOVE\_SPLINE and makes creature fly by points. Note2: Copy from Mangos
 
@@ -676,4 +287,3 @@ List of useful aura entries:
 -   '16380' - Makes the creature invisible.
 -   '18950' - Makes the creature detect other invisible units (players or creatures).
 -   '37613' - Casting teleport forever.
-

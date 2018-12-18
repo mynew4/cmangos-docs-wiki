@@ -6,683 +6,157 @@
 
 (Classic) (TBC) (WotLK) (Cata) - used since or only in a certain version of CMaNGOS-Core
 
-<table>
-<tbody>
-<tr class="odd">
-<td>Table</td>
-<td>Content</td>
-</tr>
-<tr class="even">
-<td>&quot;achievement_criteria_requirement&quot;:achievement_criteria_requirement</td>
-<td>contains what need to be done to complete an achievement criteria.</td>
-</tr>
-<tr class="odd">
-<td>&quot;achievement_reward&quot;:achievement_reward</td>
-<td>contains the rewards for achievements added with Wrath of the Lichking.</td>
-</tr>
-<tr class="even">
-<td><a href="areatrigger_involvedrelation">areatrigger_involvedrelation</a><br />
-(Reloadable)</td>
-<td>Enable a trigger to finish one condition of a quest (explore)</td>
-</tr>
-<tr class="odd">
-<td><a href="areatrigger_tavern">areatrigger_tavern</a><br />
-(Reloadable)</td>
-<td>Enable a trigger when player enters a city or tavern. This causes the player to enter a resting state.</td>
-</tr>
-<tr class="even">
-<td><a href="areatrigger_teleport">areatrigger_teleport</a><br />
-(Reloadable)</td>
-<td>contains all the teleport triggers definition. This table is used to complete .dbc file information.</td>
-</tr>
-<tr class="odd">
-<td>&quot;battleground_events&quot;:battleground_events</td>
-<td>contains the description of battleground events.</td>
-</tr>
-<tr class="even">
-<td>&quot;battleground_template&quot;:battleground_template</td>
-<td>contains information about the different battlegrounds.</td>
-</tr>
-<tr class="odd">
-<td>&quot;battlemaster_entry&quot;:battlemaster_entry</td>
-<td>holds information on which NPC can start what battleground or arena.</td>
-</tr>
-<tr class="even">
-<td><a href="command">command</a><br />
-(Reloadable) (Core)</td>
-<td>holds help and security information for commands.</td>
-</tr>
-<tr class="odd">
-<td>&quot;conditions&quot;:conditions</td>
-<td>With this table and the new conditions it is possible to create tree like and very complicated combined conditions.</td>
-</tr>
-<tr class="even">
-<td>&quot;creature&quot;:creature</td>
-<td>contains individual creature spawn data. Spawn of a creature is an instance of the creature object in the world.</td>
-</tr>
-<tr class="odd">
-<td>&quot;creature_addon&quot;:creature_template_addon</td>
-<td>defines different things that are applied on creature with a certain GUID when it is loaded.</td>
-</tr>
-<tr class="even">
-<td><a href="creature_ai_scripts">creature_ai_scripts</a><br />
-(Reloadable)</td>
-<td>ACID (Artificial Creature Intelligence Database) EventAI</td>
-</tr>
-<tr class="odd">
-<td><a href="creature_ai_summons">creature_ai_summons</a><br />
-(Reloadable)</td>
-<td>is used to provide NPC support for an event using action 32 = ACTION_T_SUMMON as one of its Actions.</td>
-</tr>
-<tr class="even">
-<td><a href="creature_ai_texts">creature_ai_texts</a><br />
-(Reloadable)</td>
-<td>holds all the texts used within the EventAI (ACID) scripts.</td>
-</tr>
-<tr class="odd">
-<td>&quot;creature_battleground&quot;:creature_battleground</td>
-<td>contains the description of creatures spawned on battlegrounds.</td>
-</tr>
-<tr class="even">
-<td>&quot;creature_equip_template&quot;:creature_equip_template</td>
-<td>contains all equipment mobs can wear.</td>
-</tr>
-<tr class="odd">
-<td><a href="creature_involvedrelation">creature_involvedrelation</a><br />
-(Reloadable)</td>
-<td>holds NPC quest ender relations on which NPCs finishes which quests.</td>
-</tr>
-<tr class="even">
-<td>&quot;creature_linking&quot;:creature_linking</td>
-<td>Creature Linking for Aggro/Respawn/Movement/Event by GUID</td>
-</tr>
-<tr class="odd">
-<td>&quot;creature_linking_template&quot;:creature_linking_template</td>
-<td>Creature Linking for Aggro/Respawn/Movement/Event by ENTRY</td>
-</tr>
-<tr class="even">
-<td><a href="creature_loot_template">creature_loot_template</a><br />
-(Reloadable)</td>
-<td>Creature Loot</td>
-</tr>
-<tr class="odd">
-<td>&quot;creature_model_info&quot;:creature_model_info</td>
-<td>contains all models of mobs, their gender and other information that are model related.</td>
-</tr>
-<tr class="even">
-<td>&quot;creature_model_race&quot;:creature_model_race</td>
-<td>contains data to override displayed models based on the race of the player.</td>
-</tr>
-<tr class="odd">
-<td>&quot;creature_movement&quot;:creature_movement_template</td>
-<td>holds all the information on each single GUID creature’s waypoints.</td>
-</tr>
-<tr class="even">
-<td>&quot;creature_movement_template&quot;:creature_movement_template</td>
-<td>holds all the information on each single ENTRY creature’s waypoints.</td>
-</tr>
-<tr class="odd">
-<td>&quot;creature_onkill_reputation&quot;:creature_onkill_reputation</td>
-<td>controls the reputation given by creatures when killed by other players.</td>
-</tr>
-<tr class="even">
-<td><a href="creature_questrelation">creature_questrelation</a><br />
-(Reloadable)</td>
-<td>holds NPC quest giver relations on which NPCs start which quests.</td>
-</tr>
-<tr class="odd">
-<td>&quot;creature_template&quot;:creature_template</td>
-<td>contains the description of creatures.</td>
-</tr>
-<tr class="even">
-<td>&quot;creature_template_addon&quot;:creature_template_addon</td>
-<td>defines different things that are applied on creature with a certain ENTRY when it is loaded.</td>
-</tr>
-<tr class="odd">
-<td>&quot;creature_template_classlevelstats&quot;:creature_template_classlevelstats</td>
-<td>Unit Base Stats</td>
-</tr>
-<tr class="even">
-<td>&quot;creature_template_spells&quot;:creature_template_spells</td>
-<td>holds creature spell data</td>
-</tr>
-<tr class="odd">
-<td>&quot;costum_texts&quot;:costum_texts</td>
-<td>?</td>
-</tr>
-<tr class="even">
-<td>&quot;dbscript_string&quot;:dbscript_string</td>
-<td>holds texts for scripts.</td>
-</tr>
-<tr class="odd">
-<td>&quot;db_version&quot;:db_version</td>
-<td>contains the version of the DB in use.</td>
-</tr>
-<tr class="even">
-<td>&quot;dbscript_random_templates&quot;:dbscript_random_templates</td>
-<td>holds randomize texts and relay scripts</td>
-</tr>
-<tr class="odd">
-<td><a href="DBScripts">dbscripts_on_creature_death</a><br />
-(Reloadable)</td>
-<td>holds scripts activated when a creature dies.</td>
-</tr>
-<tr class="even">
-<td><a href="DBScripts">dbscripts_on_creature_movement</a><br />
-(Reloadable)</td>
-<td>holds scripts activated while a npc is moving.</td>
-</tr>
-<tr class="odd">
-<td><a href="DBScripts">dbscripts_on_event</a><br />
-(Reloadable)</td>
-<td>holds scripts activated whenever an event is activated by spell, gameobject or taxi waypoints.</td>
-</tr>
-<tr class="even">
-<td><a href="DBScripts">dbscripts_on_go_template_use</a><br />
-(Reloadable)</td>
-<td>holds possible scripts activated by gameobjects.</td>
-</tr>
-<tr class="odd">
-<td><a href="DBScripts">dbscripts_on_go_use</a><br />
-(Reloadable)</td>
-<td>holds possible scripts activated by GAMEOBJECT_TYPE_DOOR and GAMEOBJECT_TYPE_BUTTON.</td>
-</tr>
-<tr class="even">
-<td><a href="DBScripts">dbscripts_on_gossip</a><br />
-(Reloadable)</td>
-<td>holds scripts activated on gossip_menu_option or gossip_menu.</td>
-</tr>
-<tr class="odd">
-<td><a href="DBScripts">dbscripts_on_quest_end</a><br />
-(Reloadable)</td>
-<td>holds scripts activated when a player finishes a quest.</td>
-</tr>
-<tr class="even">
-<td><a href="DBScripts">dbscripts_on_quest_start</a><br />
-(Reloadable)</td>
-<td>holds scripts activated when a player accepts a quest.</td>
-</tr>
-<tr class="odd">
-<td><a href="DBScripts">dbscripts_on_relay</a><br />
-(Reloadable)</td>
-<td>holds scripts that are relayed from AI or other dbscripts.</td>
-</tr>
-<tr class="even">
-<td><a href="DBScripts">dbscripts_on_spell</a><br />
-(Reloadable)</td>
-<td>holds scripts that can be activated by spells</td>
-</tr>
-<tr class="odd">
-<td><a href="disenchant_loot_template">disenchant_loot_template</a><br />
-(Reloadable)</td>
-<td>Item disenchant loot</td>
-</tr>
-<tr class="even">
-<td>&quot;exploration_basexp&quot;:exploration_basexp</td>
-<td>controls the XP gained by characters when they explore new zones.</td>
-</tr>
-<tr class="odd">
-<td><a href="fishing_loot_template">fishing_loot_template</a><br />
-(Reloadable)</td>
-<td>Fishing loot</td>
-</tr>
-<tr class="even">
-<td>&quot;game_event&quot;:game_event</td>
-<td>contains definitions for all game events that are activated or deactivated automatically by the Game Event System in the core.</td>
-</tr>
-<tr class="odd">
-<td>&quot;game_event_creature&quot;:game_event_creature</td>
-<td>contains all creature instances that have to be spawned/unspawned during defined game events.</td>
-</tr>
-<tr class="even">
-<td>&quot;game_event_creature_data&quot;:game_event_creature_data</td>
-<td>contains all creature instances that need to change display id and/or equipment during defined game events.</td>
-</tr>
-<tr class="odd">
-<td>&quot;game_event_gameobject&quot;:game_event_gameobject</td>
-<td>contains all gameobjects instances that participate to any game event.</td>
-</tr>
-<tr class="even">
-<td>&quot;game_event_mail&quot;:game_event_mail</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>&quot;game_event_quest&quot;:game_event_quest</td>
-<td>holds quests, which are only active during certain events.</td>
-</tr>
-<tr class="even">
-<td><a href="game_graveyard_zone">game_graveyard_zone</a><br />
-(Reloadable)</td>
-<td>Contains informations about zones connected to world’s graveyards.</td>
-</tr>
-<tr class="odd">
-<td>&quot;game_tele&quot;:game_tele</td>
-<td>contains a list of teleport locations that can be used with the .tele command in-game.</td>
-</tr>
-<tr class="even">
-<td>&quot;game_weather&quot;:game_weather</td>
-<td>holds the percentages for weather changes in various zones.</td>
-</tr>
-<tr class="odd">
-<td>&quot;gameobject&quot;:gameobject</td>
-<td>holds the individual object data on each spawned game object in the world.</td>
-</tr>
-<tr class="even">
-<td><a href="gameobject_addon">gameobject_addon</a> (WotLK)</td>
-<td>path rotation</td>
-</tr>
-<tr class="odd">
-<td>&quot;gameobject_battleground&quot;:gameobject_battleground</td>
-<td>contains the events of gameobjects which are spawned on battlegrounds.</td>
-</tr>
-<tr class="even">
-<td><a href="gameobject_involvedrelation">gameobject_involvedrelation</a> (Reloadable)</td>
-<td>holds game object quest taker relations.</td>
-</tr>
-<tr class="odd">
-<td><a href="gameobject_loot_template">gameobject_loot_template</a> (Reloadable)</td>
-<td>Gameobject loot</td>
-</tr>
-<tr class="even">
-<td><a href="gameobject_questrelation">gameobject_questrelation</a> (Reloadable)</td>
-<td>holds game object quest giver relations.</td>
-</tr>
-<tr class="odd">
-<td>&quot;gameobject_template&quot;:gameobject_template</td>
-<td>contains template off all world’s objects.</td>
-</tr>
-<tr class="even">
-<td><a href="gossip_menu">gossip_menu</a><br />
-(Reloadable)</td>
-<td>contains displayed gossip when a player talks to an NPC.</td>
-</tr>
-<tr class="odd">
-<td><a href="gossip_menu_option">gossip_menu_option</a><br />
-(Reloadable)</td>
-<td>holds infos about menu options a gossip NPC can have.</td>
-</tr>
-<tr class="even">
-<td>&quot;gossip_texts&quot;:gossip_texts</td>
-<td>holds gossip texts used in ScriptDevAI.</td>
-</tr>
-<tr class="odd">
-<td>&quot;instance_dungeon_encounters&quot;:instance_dungeon_encounters</td>
-<td>?</td>
-</tr>
-<tr class="even">
-<td>&quot;instance_encounters&quot;:instance_encounters</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>&quot;instance_template&quot;:instance_template</td>
-<td>contains all the templates for every instance.</td>
-</tr>
-<tr class="even">
-<td>&quot;item_convert&quot;:item_convert</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>&quot;item_enchantment_template&quot;:item_enchantment_template</td>
-<td>holds enchantment chance information for items that should have either a random property or a random suffix attached to them.</td>
-</tr>
-<tr class="even">
-<td><a href="item_expire_convert">item_expire_convert</a><br />
-(Reloadable) (Core)</td>
-<td>contains pairs of times which turn into an other item after a certain amount of time.</td>
-</tr>
-<tr class="odd">
-<td><a href="item_loot_template">item_loot_template</a><br />
-(Reloadable)</td>
-<td>Item loot</td>
-</tr>
-<tr class="even">
-<td><a href="item_required_target">item_required_target</a><br />
-(Reloadable)</td>
-<td>These spell effects require a specific target in either alive or dead state (for creatures).</td>
-</tr>
-<tr class="odd">
-<td>&quot;item_template&quot;:item_template</td>
-<td>holds information on every item that exists in the game.</td>
-</tr>
-<tr class="even">
-<td>&quot;locales_creature&quot;:locales_creature</td>
-<td>is used to provide to localized clients with localized string for creatures.</td>
-</tr>
-<tr class="odd">
-<td>&quot;locales_gameobject&quot;:locales_gameobject</td>
-<td>is used to provide to localized clients with localized string for gameobjects.</td>
-</tr>
-<tr class="even">
-<td>&quot;locales_gossip_menu_option&quot;:locales_gossip_menu_option</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>&quot;locales_item&quot;:locales_item</td>
-<td>is used to provide to localized clients with localized string for items.</td>
-</tr>
-<tr class="even">
-<td>&quot;locales_npc_text&quot;:locales_npc_text</td>
-<td>is used to provide localized clients with localized string for npc_texts.</td>
-</tr>
-<tr class="odd">
-<td>&quot;locales_page_text&quot;:locales_page_text</td>
-<td>is used to provide localized clients with localized string for page_texts.</td>
-</tr>
-<tr class="even">
-<td>&quot;locales_points_of_interest&quot;:locales_points_of_interest</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>&quot;locales_quest&quot;:locales_quest</td>
-<td>is used to provide to localized clients with localized string for quest templates.</td>
-</tr>
-<tr class="even">
-<td><a href="mail_level_reward">mail_level_reward</a><br />
-(Reloadable)</td>
-<td>holds information on sent mails when a character levels up. Can be specified by raceMask.</td>
-</tr>
-<tr class="odd">
-<td><a href="mail_loot_template">mail_loot_template</a><br />
-(Reloadable)</td>
-<td>?</td>
-</tr>
-<tr class="even">
-<td>&quot;mangos_string&quot;:mangos_string</td>
-<td>holds all of the strings used internally by the server.</td>
-</tr>
-<tr class="odd">
-<td>&quot;milling_loot_template&quot;:milling_loot_template</td>
-<td>Milling loot</td>
-</tr>
-<tr class="even">
-<td>&quot;npc_gossip&quot;:npc_gossip</td>
-<td>THIS TABLE IS OUTDATED. DO NOT USE</td>
-</tr>
-<tr class="odd">
-<td><a href="npc_spellclick_spells">npc_spellclick_spells</a><br />
-(Reloadable)</td>
-<td>holds information about spells to be casted upon receiving CMSG_SPELLCLICK.</td>
-</tr>
-<tr class="even">
-<td>&quot;npc_text&quot;:npc_text</td>
-<td>contains the texts that are used for gossip.</td>
-</tr>
-<tr class="odd">
-<td>&quot;npc_trainer&quot;:npc_trainer_template</td>
-<td>holds the spell data for all trainers by ENTRY.</td>
-</tr>
-<tr class="even">
-<td>&quot;npc_trainer_template&quot;:npc_trainer_template</td>
-<td>holds the spell data for all trainers by TrainerTemplateId.</td>
-</tr>
-<tr class="odd">
-<td>&quot;npc_vendor&quot;:npc_vendor_template</td>
-<td>holds the vendor data for all NPCs that sell items by ENTRY.</td>
-</tr>
-<tr class="even">
-<td>&quot;npc_vendor_template&quot;:npc_vendor_template</td>
-<td>holds the vendor data for all NPCs that sell items by VendorTemplateId.</td>
-</tr>
-<tr class="odd">
-<td>&quot;page_text&quot;:page_text</td>
-<td>holds the text for letter items.</td>
-</tr>
-<tr class="even">
-<td>&quot;pet_familystats&quot;:pet_familystats</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>&quot;pet_levelstats&quot;:pet_levelstats</td>
-<td>holds information on individual pet base stats based on level.</td>
-</tr>
-<tr class="even">
-<td>&quot;pet_name_generation&quot;:pet_name_generation</td>
-<td>holds pieces of names (first and last half) that are use for pet name generation.</td>
-</tr>
-<tr class="odd">
-<td>&quot;petcreateinfo_spell&quot;:petcreateinfo_spell</td>
-<td>controls what spells a tameable beast will have once tamed.</td>
-</tr>
-<tr class="even">
-<td><a href="pickpocketing_loot_template">pickpocketing_loot_template</a><br />
-(Reloadable)</td>
-<td>Pickpocketing loot</td>
-</tr>
-<tr class="odd">
-<td><a href="player_classlevelstats">player_classlevelstats</a><br />
-(Core)</td>
-<td>holds information on the base health and mana of characters when they level up. Each class has different level stats.</td>
-</tr>
-<tr class="even">
-<td><a href="player_levelstats">player_levelstats</a><br />
-(Core)</td>
-<td>holds information on the base health and mana of characters when they level up. Each class has different level stats.</td>
-</tr>
-<tr class="odd">
-<td><a href="player_xp_for_level">player_xp_for_level</a><br />
-(Core)</td>
-<td>includes information on how much experience needed for next level. Comes from sniffs.</td>
-</tr>
-<tr class="even">
-<td><a href="playercreateinfo">playercreateinfo</a><br />
-(Core)</td>
-<td>holds the start positions of each class-race combinations for all newly created characters.</td>
-</tr>
-<tr class="odd">
-<td><a href="playercreateinfo_action">playercreateinfo_action</a><br />
-(Core)</td>
-<td>holds information on what default actions a brand new character should start out with.</td>
-</tr>
-<tr class="even">
-<td><a href="playercreateinfo_item">playercreateinfo_item</a><br />
-(Core)</td>
-<td>holds information on what items each race-class combination of a new character starts out with.</td>
-</tr>
-<tr class="odd">
-<td><a href="playercreateinfo_spell">playercreateinfo_spell</a><br />
-(Core)</td>
-<td>holds information on what spells newly created characters should start out with.</td>
-</tr>
-<tr class="even">
-<td><a href="points_of_interest">points_of_interest</a><br />
-(Reloadable)</td>
-<td>comes from sniffs.</td>
-</tr>
-<tr class="odd">
-<td>&quot;pool_creature&quot;:pool_creature</td>
-<td>contains all pooled creatures by GUID that are part of a pool_template.</td>
-</tr>
-<tr class="even">
-<td>&quot;pool_creature_template&quot;:pool_creature_template</td>
-<td>contains all pooled creatures by ENTRY that are part of a pool_template.</td>
-</tr>
-<tr class="odd">
-<td>&quot;pool_gameobject&quot;:pool_gameobject</td>
-<td>contains all pooled gameobjects by GUID that are part of a pool_template.</td>
-</tr>
-<tr class="even">
-<td>&quot;pool_gameobject_template&quot;:pool_gameobject_template</td>
-<td>contains all pooled gameobjects by ENTRY that are part of a pool_template.</td>
-</tr>
-<tr class="odd">
-<td>&quot;pool_pool&quot;:pool_pool</td>
-<td>contains pool of pools. You can create a pool with a chance of a range of pools in that pool being activated.</td>
-</tr>
-<tr class="even">
-<td>&quot;pool_template&quot;:pool_template</td>
-<td>contains all pool instances that participate to any game event.</td>
-</tr>
-<tr class="odd">
-<td><a href="prospecting_loot_template">prospecting_loot_template</a><br />
-(Reloadable)</td>
-<td>Prospecting loot</td>
-</tr>
-<tr class="even">
-<td><a href="quest_poi">quest_poi</a><br />
-(Reloadable)</td>
-<td>comes from sniffs.</td>
-</tr>
-<tr class="odd">
-<td><a href="quest_poi_points">quest_poi_points</a><br />
-(Reloadable)</td>
-<td>comes from sniffs. Visually speaking, this table is used to identify the X and Y coordinates on the map (not the minimap – the main map) where a quest’s question mark should appear.</td>
-</tr>
-<tr class="even">
-<td><a href="quest_template">quest_template</a><br />
-(Reloadable)</td>
-<td>contains all basic definitions of quests available.</td>
-</tr>
-<tr class="odd">
-<td><a href="reference_loot_template">reference_loot_template</a><br />
-(Reloadable)</td>
-<td>reference loot (loot groups)</td>
-</tr>
-<tr class="even">
-<td><a href="reputation_reward_rate">reputation_reward_rate</a><br />
-(Reloadable)</td>
-<td>holds reputation multipliers for specific factions.</td>
-</tr>
-<tr class="odd">
-<td>&quot;reputation_spillover_template&quot;:reputation_spillover_template</td>
-<td>holds information about the <a href="http://wowwiki.wikia.com/wiki/Exalted">Reputation Bleed Over</a> -Effect</td>
-</tr>
-<tr class="even">
-<td><a href="reserved_name">reserved_name</a><br />
-(Reloadable)</td>
-<td>serves as a simple list of names that players (gmlevel == 0) cannot use when naming their characters.</td>
-</tr>
-<tr class="odd">
-<td>&quot;script_texts&quot;:script_texts</td>
-<td>holds all the texts used by core scripted creatures/entities (ScriptDev)</td>
-</tr>
-<tr class="even">
-<td>&quot;script_waypoint&quot;:script_waypoint</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td><a href="scripted_areatrigger">scripted_areatrigger</a><br />
-(Core)</td>
-<td>This table links areatriggers to C<em></em> scripts.</td>
-</tr>
-<tr class="even">
-<td><a href="scripted_event_id">scripted_event_id</a><br />
-(Core)</td>
-<td>This table links event id’s to C<em></em> scripts.</td>
-</tr>
-<tr class="odd">
-<td><a href="skill_discovery_template">skill_discovery_template</a><br />
-(Reloadable)</td>
-<td>controls the so called &quot;discovery&quot; system of learning spells.</td>
-</tr>
-<tr class="even">
-<td>&quot;skill_extra_item_template&quot;:skill_extra_item_template</td>
-<td>holds information about when using certain profession spells, you have the chance of creating more than one copy of the item.</td>
-</tr>
-<tr class="odd">
-<td>&quot;skill_fishing_base_level&quot;:skill_fishing_base_level</td>
-<td>controls the minimum skill level required in fishing to fish in a certain area.</td>
-</tr>
-<tr class="even">
-<td>&quot;skinning_loot_template&quot;:skinning_loot_template</td>
-<td>Skinning loot</td>
-</tr>
-<tr class="odd">
-<td><a href="spell_affect">spell_affect</a><br />
-(Reloadable) (Core)</td>
-<td>holds information on what spells are affected by what spell mods.</td>
-</tr>
-<tr class="even">
-<td><a href="spell_area">spell_area</a><br />
-(Reloadable)</td>
-<td>holds information on what spells are applied to npcs/players in some areas.</td>
-</tr>
-<tr class="odd">
-<td><a href="spell_bonus_data">spell_bonus_data</a><br />
-(Reloadable)</td>
-<td>is used for storing custom damage/healing bonus coefficients.</td>
-</tr>
-<tr class="even">
-<td><a href="spell_chain">spell_chain</a><br />
-(Reloadable)</td>
-<td>defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing.</td>
-</tr>
-<tr class="odd">
-<td>&quot;spell_check&quot;:spell_check</td>
-<td>?</td>
-</tr>
-<tr class="even">
-<td>&quot;spell_cone&quot;:spell_cone</td>
-<td>holds Degrees for Cone spells</td>
-</tr>
-<tr class="odd">
-<td><a href="spell_elixir">spell_elixir</a><br />
-(Reloadable)</td>
-<td>holds elixir information to be used to properly stack the elixirs.</td>
-</tr>
-<tr class="even">
-<td>&quot;spell_facing&quot;:spell_facing</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td><a href="spell_learn_spell">spell_learn_spell</a><br />
-(Reloadable)</td>
-<td>holds information on spells that should be learned at the same time a player learns another spell.</td>
-</tr>
-<tr class="even">
-<td><a href="spell_loot_template">spell_loot_template</a><br />
-(Reloadable)</td>
-<td>Spell loot</td>
-</tr>
-<tr class="odd">
-<td>&quot;spell_pet_auras&quot;:spell_pet_auras</td>
-<td>?</td>
-</tr>
-<tr class="even">
-<td><a href="spell_proc_event">spell_proc_event</a><br />
-(Reloadable)</td>
-<td>holds information on how certain spells activate, which proc other spells.</td>
-</tr>
-<tr class="odd">
-<td><a href="spell_proc_item_enchant">spell_proc_item_enchant</a><br />
-(Reloadable)</td>
-<td>holds information (ppmRate) for item (weapon) enchants</td>
-</tr>
-<tr class="even">
-<td><a href="spell_script_target">spell_script_target</a> (Reloadable)</td>
-<td>holds information on spell effects which require a specific target in either alive or dead state (for creatures).</td>
-</tr>
-<tr class="odd">
-<td><a href="spell_target_position">spell_target_position</a><br />
-(Reloadable)</td>
-<td>holds coordinate information on where the player should be teleported to when a spell with effect SPELL_EFFECT_TELEPORT_UNITS.</td>
-</tr>
-<tr class="even">
-<td><a href="spell_template">spell_template</a> (Core)</td>
-<td>contains the description of spells.</td>
-</tr>
-<tr class="odd">
-<td><a href="spell_threat">spell_threat</a><br />
-(Reloadable)</td>
-<td>holds threat values on all spells that should either give or take away threat.</td>
-</tr>
-<tr class="even">
-<td><a href="taxi_shortcuts">taxi_shortcuts</a><br />
-(Reloadable)</td>
-<td>holds information about shortcuts for each individual taxi flight.</td>
-</tr>
-<tr class="odd">
-<td>&quot;transports&quot;:transports</td>
-<td>contains all type 15 transports (Boats and Zeppelins).</td>
-</tr>
-<tr class="even">
-<td>&quot;vehicle_accessory&quot;:vehicle_accessory</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>&quot;world_template&quot;:world_template</td>
-<td>holds the ScriptNames of the world maps 0, 1, 530, 571</td>
-</tr>
-</tbody>
-</table>
-
-
+| Table                                                                     | Content                                                                                                                                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [achievement_criteria_requirement](achievement_criteria_requirement)      | contains what need to be done to complete an achievement criteria.                                                                                                                    |
+| [achievement_reward](achievement_reward)                                  | contains the rewards for achievements added with Wrath of the Lichking.                                                                                                               |
+| [areatrigger_involvedrelation](areatrigger_involvedrelation) (Reloadable) | Enable a trigger to finish one condition of a quest (explore)                                                                                                                         |
+| [areatrigger_tavern](areatrigger_tavern) (Reloadable)                     | Enable a trigger when player enters a city or tavern. This causes the player to enter a resting state.                                                                                |
+| [areatrigger_teleport](areatrigger_teleport) (Reloadable)                 | contains all the teleport triggers definition. This table is used to complete .dbc file information.                                                                                  |
+| [battleground_events](battleground_events)                                | contains the description of battleground events.                                                                                                                                      |
+| [battleground_template](battleground_template)                            | contains information about the different battlegrounds.                                                                                                                               |
+| [battlemaster_entry](battlemaster_entry)                                  | holds information on which NPC can start what battleground or arena.                                                                                                                  |
+| [command](command) (Reloadable) (Core)                                    | holds help and security information for commands.                                                                                                                                     |
+| [conditions](conditions)                                                  | With this table and the new conditions it is possible to create tree like and very complicated combined conditions.                                                                   |
+| [creature](creature)                                                      | contains individual creature spawn data. Spawn of a creature is an instance of the creature object in the world.                                                                      |
+| [creature_addon](creature_template_addon)                                 | defines different things that are applied on creature with a certain GUID when it is loaded.                                                                                          |
+| [creature_ai_scripts](creature_ai_scripts) (Reloadable)                   | ACID (Artificial Creature Intelligence Database) EventAI                                                                                                                              |
+| [creature_ai_summons](creature_ai_summons) (Reloadable)                   | is used to provide NPC support for an event using action 32 = ACTION_T_SUMMON as one of its Actions.                                                                                  |
+| [creature_ai_texts](creature_ai_texts) (Reloadable)                       | holds all the texts used within the EventAI (ACID) scripts.                                                                                                                           |
+| [creature_battleground](creature_battleground)                            | contains the description of creatures spawned on battlegrounds.                                                                                                                       |
+| [creature_equip_template](creature_equip_template)                        | contains all equipment mobs can wear.                                                                                                                                                 |
+| [creature_involvedrelation](creature_involvedrelation) (Reloadable)       | holds NPC quest ender relations on which NPCs finishes which quests.                                                                                                                  |
+| [creature_linking](creature_linking)                                      | Creature Linking for Aggro/Respawn/Movement/Event by GUID                                                                                                                             |
+| [creature_linking_template](creature_linking_template)                    | Creature Linking for Aggro/Respawn/Movement/Event by ENTRY                                                                                                                            |
+| [creature_loot_template](creature_loot_template) (Reloadable)             | Creature Loot                                                                                                                                                                         |
+| [creature_model_info](creature_model_info)                                | contains all models of mobs, their gender and other information that are model related.                                                                                               |
+| [creature_model_race](creature_model_race)                                | contains data to override displayed models based on the race of the player.                                                                                                           |
+| [creature_movement](creature_movement_template)                           | holds all the information on each single GUID creature’s waypoints.                                                                                                                   |
+| [creature_movement_template](creature_movement_template)                  | holds all the information on each single ENTRY creature’s waypoints.                                                                                                                  |
+| [creature_onkill_reputation](creature_onkill_reputation)                  | controls the reputation given by creatures when killed by other players.                                                                                                              |
+| [creature_questrelation](creature_questrelation) (Reloadable)             | holds NPC quest giver relations on which NPCs start which quests.                                                                                                                     |
+| [creature_template](creature_template)                                    | contains the description of creatures.                                                                                                                                                |
+| [creature_template_addon](creature_template_addon)                        | defines different things that are applied on creature with a certain ENTRY when it is loaded.                                                                                         |
+| [creature_template_classlevelstats](creature_template_classlevelstats)    | Unit Base Stats                                                                                                                                                                       |
+| [creature_template_spells](creature_template_spells)                      | holds creature spell data                                                                                                                                                             |
+| [costum_texts](costum_texts)                                              | ?                                                                                                                                                                                     |
+| [dbscript_string](dbscript_string)                                        | holds texts for scripts.                                                                                                                                                              |
+| [db_version](db_version)                                                  | contains the version of the DB in use.                                                                                                                                                |
+| [dbscript_random_templates](dbscript_random_templates)                    | holds randomize texts and relay scripts                                                                                                                                               |
+| [DBScripts](dbscripts_on_creature_death) (Reloadable)                     | holds scripts activated when a creature dies.                                                                                                                                         |
+| [DBScripts](dbscripts_on_creature_movement) (Reloadable)                  | holds scripts activated while a npc is moving.                                                                                                                                        |
+| [DBScripts](dbscripts_on_event) (Reloadable)                              | holds scripts activated whenever an event is activated by spell, gameobject or taxi waypoints.                                                                                        |
+| [DBScripts](dbscripts_on_go_template_use) (Reloadable)                    | holds possible scripts activated by gameobjects.                                                                                                                                      |
+| [DBScripts](dbscripts_on_go_use) (Reloadable)                             | holds possible scripts activated by GAMEOBJECT_TYPE_DOOR and GAMEOBJECT_TYPE_BUTTON.                                                                                                  |
+| [DBScripts](dbscripts_on_gossip) (Reloadable)                             | holds scripts activated on gossip_menu_option or gossip_menu.                                                                                                                         |
+| [DBScripts](dbscripts_on_quest_end) (Reloadable)                          | holds scripts activated when a player finishes a quest.                                                                                                                               |
+| [DBScripts](dbscripts_on_quest_start) (Reloadable)                        | holds scripts activated when a player accepts a quest.                                                                                                                                |
+| [DBScripts](dbscripts_on_relay) (Reloadable)                              | holds scripts that are relayed from AI or other dbscripts.                                                                                                                            |
+| [DBScripts](dbscripts_on_spell) (Reloadable)                              | holds scripts that can be activated by spells                                                                                                                                         |
+| [disenchant_loot_template](disenchant_loot_template) (Reloadable)         | Item disenchant loot                                                                                                                                                                  |
+| [exploration_basexp](exploration_basexp)                                  | controls the XP gained by characters when they explore new zones.                                                                                                                     |
+| [fishing_loot_template](fishing_loot_template) (Reloadable)               | Fishing loot                                                                                                                                                                          |
+| [game_event](game_event)                                                  | contains definitions for all game events that are activated or deactivated automatically by the Game Event System in the core.                                                        |
+| [game_event_creature](game_event_creature)                                | contains all creature instances that have to be spawned/unspawned during defined game events.                                                                                         |
+| [game_event_creature_data](game_event_creature_data)                      | contains all creature instances that need to change display id and/or equipment during defined game events.                                                                           |
+| [game_event_gameobject](game_event_gameobject)                            | contains all gameobjects instances that participate to any game event.                                                                                                                |
+| [game_event_mail](game_event_mail)                                        | ?                                                                                                                                                                                     |
+| [game_event_quest](game_event_quest)                                      | holds quests, which are only active during certain events.                                                                                                                            |
+| [game_graveyard_zone](game_graveyard_zone) (Reloadable)                   | Contains informations about zones connected to world’s graveyards.                                                                                                                    |
+| [game_tele](game_tele)                                                    | contains a list of teleport locations that can be used with the .tele command in-game.                                                                                                |
+| [game_weather](game_weather)                                              | holds the percentages for weather changes in various zones.                                                                                                                           |
+| [gameobject](gameobject)                                                  | holds the individual object data on each spawned game object in the world.                                                                                                            |
+| [gameobject_addon](gameobject_addon) (WotLK)                              | path rotation                                                                                                                                                                         |
+| [gameobject_battleground](gameobject_battleground)                        | contains the events of gameobjects which are spawned on battlegrounds.                                                                                                                |
+| [gameobject_involvedrelation](gameobject_involvedrelation) (Reloadable)   | holds game object quest taker relations.                                                                                                                                              |
+| [gameobject_loot_template](gameobject_loot_template) (Reloadable)         | Gameobject loot                                                                                                                                                                       |
+| [gameobject_questrelation](gameobject_questrelation) (Reloadable)         | holds game object quest giver relations.                                                                                                                                              |
+| [gameobject_template](gameobject_template)                                | contains template off all world’s objects.                                                                                                                                            |
+| [gossip_menu](gossip_menu) (Reloadable)                                   | contains displayed gossip when a player talks to an NPC.                                                                                                                              |
+| [gossip_menu_option](gossip_menu_option) (Reloadable)                     | holds infos about menu options a gossip NPC can have.                                                                                                                                 |
+| [gossip_texts](gossip_texts)                                              | holds gossip texts used in ScriptDevAI.                                                                                                                                               |
+| [instance_dungeon_encounters](instance_dungeon_encounters)                | ?                                                                                                                                                                                     |
+| [instance_encounters](instance_encounters)                                | ?                                                                                                                                                                                     |
+| [instance_template](instance_template)                                    | contains all the templates for every instance.                                                                                                                                        |
+| [item_convert](item_convert)                                              | ?                                                                                                                                                                                     |
+| [item_enchantment_template](item_enchantment_template)                    | holds enchantment chance information for items that should have either a random property or a random suffix attached to them.                                                         |
+| [item_expire_convert](item_expire_convert) (Reloadable) (Core)            | contains pairs of times which turn into an other item after a certain amount of time.                                                                                                 |
+| [item_loot_template](item_loot_template) (Reloadable)                     | Item loot                                                                                                                                                                             |
+| [item_required_target](item_required_target) (Reloadable)                 | These spell effects require a specific target in either alive or dead state (for creatures).                                                                                          |
+| [item_template](item_template)                                            | holds information on every item that exists in the game.                                                                                                                              |
+| [locales_creature](locales_creature)                                      | is used to provide to localized clients with localized string for creatures.                                                                                                          |
+| [locales_gameobject](locales_gameobject)                                  | is used to provide to localized clients with localized string for gameobjects.                                                                                                        |
+| [locales_gossip_menu_option](locales_gossip_menu_option)                  | ?                                                                                                                                                                                     |
+| [locales_item](locales_item)                                              | is used to provide to localized clients with localized string for items.                                                                                                              |
+| [locales_npc_text](locales_npc_text)                                      | is used to provide localized clients with localized string for npc_texts.                                                                                                             |
+| [locales_page_text](locales_page_text)                                    | is used to provide localized clients with localized string for page_texts.                                                                                                            |
+| [locales_points_of_interest](locales_points_of_interest)                  | ?                                                                                                                                                                                     |
+| [locales_quest](locales_quest)                                            | is used to provide to localized clients with localized string for quest templates.                                                                                                    |
+| [mail_level_reward](mail_level_reward) (Reloadable)                       | holds information on sent mails when a character levels up. Can be specified by raceMask.                                                                                             |
+| [mail_loot_template](mail_loot_template) (Reloadable)                     | ?                                                                                                                                                                                     |
+| [mangos_string](mangos_string)                                            | holds all of the strings used internally by the server.                                                                                                                               |
+| [milling_loot_template](milling_loot_template)                            | Milling loot                                                                                                                                                                          |
+| [npc_gossip](npc_gossip)                                                  | THIS TABLE IS OUTDATED. DO NOT USE                                                                                                                                                    |
+| [npc_spellclick_spells](npc_spellclick_spells) (Reloadable)               | holds information about spells to be casted upon receiving CMSG_SPELLCLICK.                                                                                                           |
+| [npc_text](npc_text)                                                      | contains the texts that are used for gossip.                                                                                                                                          |
+| [npc_trainer](npc_trainer_template)                                       | holds the spell data for all trainers by ENTRY.                                                                                                                                       |
+| [npc_trainer_template](npc_trainer_template)                              | holds the spell data for all trainers by TrainerTemplateId.                                                                                                                           |
+| [npc_vendor](npc_vendor_template)                                         | holds the vendor data for all NPCs that sell items by ENTRY.                                                                                                                          |
+| [npc_vendor_template](npc_vendor_template)                                | holds the vendor data for all NPCs that sell items by VendorTemplateId.                                                                                                               |
+| [page_text](page_text)                                                    | holds the text for letter items.                                                                                                                                                      |
+| [pet_familystats](pet_familystats)                                        | ?                                                                                                                                                                                     |
+| [pet_levelstats](pet_levelstats)                                          | holds information on individual pet base stats based on level.                                                                                                                        |
+| [pet_name_generation](pet_name_generation)                                | holds pieces of names (first and last half) that are use for pet name generation.                                                                                                     |
+| [petcreateinfo_spell](petcreateinfo_spell)                                | controls what spells a tameable beast will have once tamed.                                                                                                                           |
+| [pickpocketing_loot_template](pickpocketing_loot_template) (Reloadable)   | Pickpocketing loot                                                                                                                                                                    |
+| [player_classlevelstats](player_classlevelstats) (Core)                   | holds information on the base health and mana of characters when they level up. Each class has different level stats.                                                                 |
+| [player_levelstats](player_levelstats) (Core)                             | holds information on the base health and mana of characters when they level up. Each class has different level stats.                                                                 |
+| [player_xp_for_level](player_xp_for_level) (Core)                         | includes information on how much experience needed for next level. Comes from sniffs.                                                                                                 |
+| [playercreateinfo](playercreateinfo) (Core)                               | holds the start positions of each class-race combinations for all newly created characters.                                                                                           |
+| [playercreateinfo_action](playercreateinfo_action) (Core)                 | holds information on what default actions a brand new character should start out with.                                                                                                |
+| [playercreateinfo_item](playercreateinfo_item) (Core)                     | holds information on what items each race-class combination of a new character starts out with.                                                                                       |
+| [playercreateinfo_spell](playercreateinfo_spell) (Core)                   | holds information on what spells newly created characters should start out with.                                                                                                      |
+| [points_of_interest](points_of_interest) (Reloadable)                     | comes from sniffs.                                                                                                                                                                    |
+| [pool_creature](pool_creature)                                            | contains all pooled creatures by GUID that are part of a pool_template.                                                                                                               |
+| [pool_creature_template](pool_creature_template)                          | contains all pooled creatures by ENTRY that are part of a pool_template.                                                                                                              |
+| [pool_gameobject](pool_gameobject)                                        | contains all pooled gameobjects by GUID that are part of a pool_template.                                                                                                             |
+| [pool_gameobject_template](pool_gameobject_template)                      | contains all pooled gameobjects by ENTRY that are part of a pool_template.                                                                                                            |
+| [pool_pool](pool_pool)                                                    | contains pool of pools. You can create a pool with a chance of a range of pools in that pool being activated.                                                                         |
+| [pool_template](pool_template)                                            | contains all pool instances that participate to any game event.                                                                                                                       |
+| [prospecting_loot_template](prospecting_loot_template) (Reloadable)       | Prospecting loot                                                                                                                                                                      |
+| [quest_poi](quest_poi) (Reloadable)                                       | comes from sniffs.                                                                                                                                                                    |
+| [quest_poi_points](quest_poi_points) (Reloadable)                         | comes from sniffs. Visually speaking, this table is used to identify the X and Y coordinates on the map (not the minimap – the main map) where a quest’s question mark should appear. |
+| [quest_template](quest_template) (Reloadable)                             | contains all basic definitions of quests available.                                                                                                                                   |
+| [reference_loot_template](reference_loot_template) (Reloadable)           | reference loot (loot groups)                                                                                                                                                          |
+| [reputation_reward_rate](reputation_reward_rate) (Reloadable)             | holds reputation multipliers for specific factions.                                                                                                                                   |
+| [reputation_spillover_template](reputation_spillover_template)            | holds information about the [Reputation Bleed Over](http://wowwiki.wikia.com/wiki/Exalted) -Effect                                                                         |
+| [reserved_name](reserved_name) (Reloadable)                               | serves as a simple list of names that players (gmlevel == 0) cannot use when naming their characters.                                                                                 |
+| [script_texts](script_texts)                                              | holds all the texts used by core scripted creatures/entities (ScriptDev)                                                                                                              |
+| [script_waypoint](script_waypoint)                                        | ?                                                                                                                                                                                     |
+| [scripted_areatrigger](scripted_areatrigger) (Core)                       | This table links areatriggers to C<em></em> scripts.                                                                                                                                  |
+| [scripted_event_id](scripted_event_id) (Core)                             | This table links event id’s to C<em></em> scripts.                                                                                                                                    |
+| [skill_discovery_template](skill_discovery_template) (Reloadable)         | controls the so called &quot;discovery&quot; system of learning spells.                                                                                                               |
+| [skill_extra_item_template](skill_extra_item_template)                    | holds information about when using certain profession spells, you have the chance of creating more than one copy of the item.                                                         |
+| [skill_fishing_base_level](skill_fishing_base_level)                      | controls the minimum skill level required in fishing to fish in a certain area.                                                                                                       |
+| [skinning_loot_template](skinning_loot_template)                          | Skinning loot                                                                                                                                                                         |
+| [spell_affect](spell_affect) (Reloadable) (Core)                          | holds information on what spells are affected by what spell mods.                                                                                                                     |
+| [spell_area](spell_area) (Reloadable)                                     | holds information on what spells are applied to npcs/players in some areas.                                                                                                           |
+| [spell_bonus_data](spell_bonus_data) (Reloadable)                         | is used for storing custom damage/healing bonus coefficients.                                                                                                                         |
+| [spell_chain](spell_chain) (Reloadable)                                   | defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing.                                                                    |
+| [spell_check](spell_check)                                                | ?                                                                                                                                                                                     |
+| [spell_cone](spell_cone)                                                  | holds Degrees for Cone spells                                                                                                                                                         |
+| [spell_elixir](spell_elixir) (Reloadable)                                 | holds elixir information to be used to properly stack the elixirs.                                                                                                                    |
+| [spell_facing](spell_facing)                                              | ?                                                                                                                                                                                     |
+| [spell_learn_spell](spell_learn_spell) (Reloadable)                       | holds information on spells that should be learned at the same time a player learns another spell.                                                                                    |
+| [spell_loot_template](spell_loot_template) (Reloadable)                   | Spell loot                                                                                                                                                                            |
+| [spell_pet_auras](spell_pet_auras)                                        | ?                                                                                                                                                                                     |
+| [spell_proc_event](spell_proc_event) (Reloadable)                         | holds information on how certain spells activate, which proc other spells.                                                                                                            |
+| [spell_proc_item_enchant](spell_proc_item_enchant) (Reloadable)           | holds information (ppmRate) for item (weapon) enchants                                                                                                                                |
+| [spell_script_target](spell_script_target) (Reloadable)                   | holds information on spell effects which require a specific target in either alive or dead state (for creatures).                                                                     |
+| [spell_target_position](spell_target_position) (Reloadable)               | holds coordinate information on where the player should be teleported to when a spell with effect SPELL_EFFECT_TELEPORT_UNITS.                                                        |
+| [spell_template](spell_template) (Core)                                   | contains the description of spells.                                                                                                                                                   |
+| [spell_threat](spell_threat) (Reloadable)                                 | holds threat values on all spells that should either give or take away threat.                                                                                                        |
+| [taxi_shortcuts](taxi_shortcuts) (Reloadable)                             | holds information about shortcuts for each individual taxi flight.                                                                                                                    |
+| [transports](transports)                                                  | contains all type 15 transports (Boats and Zeppelins).                                                                                                                                |
+| [vehicle_accessory](vehicle_accessory)                                    | ?                                                                                                                                                                                     |
+| [world_template](world_template)                                          | holds the ScriptNames of the world maps 0, 1, 530, 571                                                                                                                                |

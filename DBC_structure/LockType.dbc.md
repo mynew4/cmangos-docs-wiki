@@ -8,56 +8,15 @@ This DBC contains data used with [Lock.dbc](Lock.dbc)
 
 ### Structure
 
-<table>
-<colgroup>
-<col width="14%" />
-<col width="15%" />
-<col width="10%" />
-<col width="58%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Field Nb</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Comment</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>ID</td>
-<td>Int</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Name</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>19</td>
-<td>ItemStateName</td>
-<td>String</td>
-<td>The processed item's state (locked, unlocked, fish etc.)</td>
-</tr>
-<tr class="even">
-<td>36</td>
-<td>ProcessName</td>
-<td>String</td>
-<td>Opening processes' name</td>
-</tr>
-<tr class="odd">
-<td>53</td>
-<td>InternalName</td>
-<td>String</td>
-<td>Empty most of the time</td>
-</tr>
-</tbody>
-</table>
+| Field Nb | Name          | Type   | Comment                                                  |
+| -------- | ------------- | ------ | -------------------------------------------------------- |
+| 1        | ID            | Int    |                                                          |
+| 2        | Name          | String |                                                          |
+| 19       | ItemStateName | String | The processed item's state (locked, unlocked, fish etc.) |
+| 36       | ProcessName   | String | Opening processes' name                                  |
+| 53       | InternalName  | String | Empty most of the time                                   |
 
-<hr />
+***
 ### Content
 
 | **ID** | **Name**                   | **ItemStateName**    | **ProcessName** | **InternalName** |
@@ -83,5 +42,3 @@ This DBC contains data used with [Lock.dbc](Lock.dbc)
 | 19     | Fishing (DND)              | Fish                 | Fish            |                  |
 | 20     | Inscription                | Tomes                | Decipher        |                  |
 | 21     | Open From Vehicle          | Unlocked Items       | Open            |                  |
-
-

@@ -13,10 +13,10 @@ M2 files start with a header block which contains an index of number-offset pair
 
 ## Header
 
-<table>
-<tr><th>Position</th><td>0</td></tr>
-<tr><th>Length</th><td>324 bytes</td></tr>
-</table>
+| Position | Length    |
+| -------- | --------- |
+| 0        | 324 bytes |
+
 
 The file format is identified by the magic string "MD20". Pairs of uint32 are given for every data block. nXXX describes the number of elements (not necessarily bytes) in this block while ofsXXX gives the offset to the beginning of the block. If a block does not exists, n and ofs are 0.
 
@@ -93,10 +93,10 @@ The file format is identified by the magic string "MD20". Pairs of uint32 are gi
 
 ## Vertices
 
-<table>
-<tr><th>Position</th><td>header.ofsVertices</td></tr>
-<tr><th>Element size</th><td>48 bytes</td></tr>
-</table>
+| Position           | Element size |
+| ------------------ | ------------ |
+| header.ofsVertices | 48 bytes     |
+
 
 Vertices are global for all submeshes and views.
 
@@ -111,10 +111,10 @@ Vertices are global for all submeshes and views.
 
 ## Views
 
-<table>
-<tr><th>Position</th><td>header.ofsViews</td></tr>
-<tr><th>Element size</th><td>44 bytes</td></tr>
-</table>
+| Position        | Element size |
+| --------------- | ------------ |
+| header.ofsViews | 44 bytes     |
+
 
 It is not clear what Views are for. But there are always 4 of them.
 
@@ -157,13 +157,13 @@ nIndex uint16 values - referencing vertices from the global Vertex list.
     0x0A     uint16          nTriangle - Number of triangle indices
     0x0C     uint16          nBoneLookup - Number of elements in the bone lookup table
     0x0E     uint16          ofsBoneLookup - Starting index in the bone lookup table
-    0x10     uint16          unknown 
+    0x10     uint16          unknown
     0x12     uint16          unsure - maybe root bone?
     0x14     float[3]        Vector (3d) - mass center?
 
 **Mesh part ID**
 
-These IDs are referenced for Geosets and such. For character models, each hairstyle/thick armor/etc is present in the mesh, so to render a character with a specific set of looks, some of the submeshes should be omitted based on this ID.The submeshes are sorted into groups. Groups are like this for character models. They can be different for other models. 
+These IDs are referenced for Geosets and such. For character models, each hairstyle/thick armor/etc is present in the mesh, so to render a character with a specific set of looks, some of the submeshes should be omitted based on this ID.The submeshes are sorted into groups. Groups are like this for character models. They can be different for other models.
 
     00**: Hairstyles
     01**: Facial1
@@ -185,4 +185,4 @@ These IDs are referenced for Geosets and such. For character models, each hairst
     17**: Eyeglows (including the deathknight ones)
     18**: Belt / bellypack
 
-These are referenced in CreatureDisplayInfo.dbc->creatureGeosetData. 
+These are referenced in CreatureDisplayInfo.dbc->creatureGeosetData.

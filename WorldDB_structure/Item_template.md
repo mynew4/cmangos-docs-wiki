@@ -333,76 +333,22 @@ The quality of the item:
 
 Bitmask field that contains flags that the item has on it. As all other such fields, just add the flags together to combine them. Possible flags are listed below.
 
-<table>
-<colgroup>
-<col width="12%" />
-<col width="87%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Flag</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Soulbound</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Conjured</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>Lootable (can be opened by right-click)</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Wrapped</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>Totem</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>Activatable with right-click</td>
-</tr>
-<tr class="odd">
-<td>256</td>
-<td>Wrapper</td>
-</tr>
-<tr class="even">
-<td>1024</td>
-<td>Gifts</td>
-</tr>
-<tr class="odd">
-<td>2048</td>
-<td>Item is party loot and can be looted by all</td>
-</tr>
-<tr class="even">
-<td>8192</td>
-<td>Charter (Arena or Guild)</td>
-</tr>
-<tr class="odd">
-<td>32768</td>
-<td>PvP reward item</td>
-</tr>
-<tr class="even">
-<td>524288</td>
-<td>Unique equipped (player can only have one equipped at the same time)</td>
-</tr>
-<tr class="odd">
-<td>4194304</td>
-<td>Throwable (for tooltip ingame)</td>
-</tr>
-<tr class="even">
-<td>8388608</td>
-<td>Special Use</td>
-</tr>
-</tbody>
-</table>
+| Flag    | Comments                                                             |
+| ------- | -------------------------------------------------------------------- |
+| 1       | Soulbound                                                            |
+| 2       | Conjured                                                             |
+| 4       | Lootable (can be opened by right-click)                              |
+| 8       | Wrapped                                                              |
+| 32      | Totem                                                                |
+| 64      | Activatable with right-click                                         |
+| 256     | Wrapper                                                              |
+| 1024    | Gifts                                                                |
+| 2048    | Item is party loot and can be looted by all                          |
+| 8192    | Charter (Arena or Guild)                                             |
+| 32768   | PvP reward item                                                      |
+| 524288  | Unique equipped (player can only have one equipped at the same time) |
+| 4194304 | Throwable (for tooltip ingame)                                       |
+| 8388608 | Special Use                                                          |
 
 #### BuyCount
 
@@ -854,5 +800,3 @@ The duration of the item in seconds. If positive, it is the duration measured in
 | 0   | None             |
 | 1   | None Consumable  |
 | 2   | Raltime Duration |
-
-

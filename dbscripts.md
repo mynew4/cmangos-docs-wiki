@@ -117,257 +117,55 @@ The type of action performed by the script after [delay](dbscripts#delay) second
 
 The following commands can be used (enum ScriptCommand):
 
-<table style="width:100%;">
-<colgroup>
-<col width="6%" />
-<col width="31%" />
-<col width="61%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>SCRIPT_COMMAND_TALK</td>
-<td>Creature say/whisper/yell/textemote.</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>SCRIPT_COMMAND_EMOTE</td>
-<td>Plays emote on a player/creature.</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>SCRIPT_COMMAND_FIELD_SET</td>
-<td>Change the value at an index for the player.</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>SCRIPT_COMMAND_MOVE_TO</td>
-<td>Relocate creature to a destination</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>SCRIPT_COMMAND_FLAG_SET</td>
-<td>Turns on bits on a flag field at an index for the player.</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>SCRIPT_COMMAND_FLAG_REMOVE</td>
-<td>Turns off bits on a flag field at an index for the player.</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>SCRIPT_COMMAND_TELEPORT_TO</td>
-<td>Teleports the player to a location.</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>SCRIPT_COMMAND_QUEST_EXPLORED</td>
-<td>Satisfies the explore requirement for a quest.</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>SCRIPT_COMMAND_KILL_CREDIT</td>
-<td>Satisfies the kill credit requirement for a quest.</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>SCRIPT_COMMAND_RESPAWN_GAMEOBJECT</td>
-<td>Spawns a despawned gameobject.</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>SCRIPT_COMMAND_TEMP_SPAWN_CREATURE</td>
-<td>Temporarily summon a creature.</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>SCRIPT_COMMAND_OPEN_DOOR</td>
-<td>Opens a door gameobject (type == 0).</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>SCRIPT_COMMAND_CLOSE_DOOR</td>
-<td>Closes a door gameobject (type == 0).</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>SCRIPT_COMMAND_ACTIVATE_OBJECT</td>
-<td>Activate (use) a gameobject.</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>SCRIPT_COMMAND_REMOVE_AURA</td>
-<td>Removes an aura due to a spell.</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>SCRIPT_COMMAND_CAST_SPELL</td>
-<td>Casts a spell.</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>SCRIPT_COMMAND_PLAY_SOUND</td>
-<td>Plays a sound.</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>SCRIPT_COMMAND_CREATE_ITEM</td>
-<td>Creates an item.</td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>SCRIPT_COMMAND_DESPAWN_SELF</td>
-<td>Despawns a creature with some delay.</td>
-</tr>
-<tr class="even">
-<td>19</td>
-<td>SCRIPT_COMMAND_PLAY_MOVIE</td>
-<td>Plays a movie to the target player.</td>
-</tr>
-<tr class="odd">
-<td>20</td>
-<td>SCRIPT_COMMAND_MOVEMENT</td>
-<td>Change the movement type of a creature (idle, random, waypoint).</td>
-</tr>
-<tr class="even">
-<td>21</td>
-<td>SCRIPT_COMMAND_SET_ACTIVEOBJECT</td>
-<td>Set a creature as active object.</td>
-</tr>
-<tr class="odd">
-<td>22</td>
-<td>SCRIPT_COMMAND_SET_FACTION</td>
-<td>Changes the faction of a creature.</td>
-</tr>
-<tr class="even">
-<td>23</td>
-<td>SCRIPT_COMMAND_MORPH_TO_ENTRY_OR_MODEL</td>
-<td>Morphs a creature go a given model.</td>
-</tr>
-<tr class="odd">
-<td>24</td>
-<td>SCRIPT_COMMAND_MOUNT_TO_ENTRY_OR_MODEL</td>
-<td>Mounts or dismounts a creature to mount entry or model.</td>
-</tr>
-<tr class="even">
-<td>25</td>
-<td>SCRIPT_COMMAND_SET_RUN</td>
-<td>Makes a creature start or stop running.</td>
-</tr>
-<tr class="odd">
-<td>26</td>
-<td>SCRIPT_COMMAND_ATTACK_START</td>
-<td>Makes a creature attack things within a radius.</td>
-</tr>
-<tr class="even">
-<td>27</td>
-<td>SCRIPT_COMMAND_GO_LOCK_STATE</td>
-<td>Change the GO lock or interact flags.</td>
-</tr>
-<tr class="odd">
-<td>28</td>
-<td>SCRIPT_COMMAND_STAND_STATE</td>
-<td>Change the stand state of a creature.</td>
-</tr>
-<tr class="even">
-<td>29</td>
-<td>SCRIPT_COMMAND_MODIFY_NPC_FLAGS</td>
-<td>Change NPC flags of a creature.</td>
-</tr>
-<tr class="odd">
-<td>30</td>
-<td>SCRIPT_COMMAND_SEND_TAXI_PATH</td>
-<td>Sends a player on a give taxi path.</td>
-</tr>
-<tr class="even">
-<td>31</td>
-<td>SCRIPT_COMMAND_TERMINATE_SCRIPT</td>
-<td>Stop script execution if a given creature entry meets conditions.</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>SCRIPT_COMMAND_PAUSE_WAYPOINTS</td>
-<td>Pause or unpause waypoint movement.</td>
-</tr>
-<tr class="even">
-<td>33</td>
-<td>SCRIPT_COMMAND_RESERVED_1</td>
-<td>Enable or disable experience gain for a player.</td>
-</tr>
-<tr class="odd">
-<td>34</td>
-<td>SCRIPT_COMMAND_TERMINATE_COND</td>
-<td>Stop script execution when a give condition is met.</td>
-</tr>
-<tr class="even">
-<td>35</td>
-<td>SCRIPT_COMMAND_SEND_AI_EVENT</td>
-<td>Send a give AI event for EventAI around the source with a given radius.</td>
-</tr>
-<tr class="odd">
-<td>36</td>
-<td>SCRIPT_COMMAND_SET_FACING</td>
-<td>Turn resulting source to resulting target.</td>
-</tr>
-<tr class="even">
-<td>37</td>
-<td>SCRIPT_COMMAND_MOVE_DYNAMIC</td>
-<td>Move resulting source to a random point around resulting target or to resulting target.</td>
-</tr>
-<tr class="odd">
-<td>38</td>
-<td>SCRIPT_COMMAND_SEND_MAIL</td>
-<td>Send mail from resulting source to resulting target.</td>
-</tr>
-<tr class="even">
-<td>39</td>
-<td>SCRIPT_COMMAND_SET_FLY</td>
-<td>Makes a creature start or stop flying.</td>
-</tr>
-<tr class="odd">
-<td>40</td>
-<td>SCRIPT_COMMAND_DESPAWN_GO</td>
-<td>Despawns a gameobject.</td>
-</tr>
-<tr class="even">
-<td>41</td>
-<td>SCRIPT_COMMAND_RESPAWN</td>
-<td>Respawns a creature.</td>
-</tr>
-<tr class="odd">
-<td>42</td>
-<td>SCRIPT_COMMAND_SET_EQUIPMENT_SLOTS</td>
-<td>Change equipment slots of the resulting source.</td>
-</tr>
-<tr class="even">
-<td>43</td>
-<td>SCRIPT_COMMAND_RESET_GO</td>
-<td>Reset a gameobject.</td>
-</tr>
-<tr class="odd">
-<td>44</td>
-<td>SCRIPT_COMMAND_UPDATE_TEMPLATE</td>
-<td>Update creature entry.</td>
-</tr>
-<tr class="even">
-<td>45</td>
-<td>SCRIPT_COMMAND_START_RELAY_SCRIPT</td>
-<td>Launch relay script or relay template.</td>
-</tr>
-<tr class="odd">
-<td>46</td>
-<td>SCRIPT_COMMAND_CAST_CUSTOM_SPELL</td>
-<td>resSource = Unit, cast spell at resTarget = Unit</td>
-</tr>
-</tbody>
-</table>
+| Command | Name                                   | Description                                                                             |
+| ------- | -------------------------------------- | --------------------------------------------------------------------------------------- |
+| 0       | SCRIPT_COMMAND_TALK                    | Creature say/whisper/yell/textemote.                                                    |
+| 1       | SCRIPT_COMMAND_EMOTE                   | Plays emote on a player/creature.                                                       |
+| 2       | SCRIPT_COMMAND_FIELD_SET               | Change the value at an index for the player.                                            |
+| 3       | SCRIPT_COMMAND_MOVE_TO                 | Relocate creature to a destination                                                      |
+| 4       | SCRIPT_COMMAND_FLAG_SET                | Turns on bits on a flag field at an index for the player.                               |
+| 5       | SCRIPT_COMMAND_FLAG_REMOVE             | Turns off bits on a flag field at an index for the player.                              |
+| 6       | SCRIPT_COMMAND_TELEPORT_TO             | Teleports the player to a location.                                                     |
+| 7       | SCRIPT_COMMAND_QUEST_EXPLORED          | Satisfies the explore requirement for a quest.                                          |
+| 8       | SCRIPT_COMMAND_KILL_CREDIT             | Satisfies the kill credit requirement for a quest.                                      |
+| 9       | SCRIPT_COMMAND_RESPAWN_GAMEOBJECT      | Spawns a despawned gameobject.                                                          |
+| 10      | SCRIPT_COMMAND_TEMP_SPAWN_CREATURE     | Temporarily summon a creature.                                                          |
+| 11      | SCRIPT_COMMAND_OPEN_DOOR               | Opens a door gameobject (type == 0).                                                    |
+| 12      | SCRIPT_COMMAND_CLOSE_DOOR              | Closes a door gameobject (type == 0).                                                   |
+| 13      | SCRIPT_COMMAND_ACTIVATE_OBJECT         | Activate (use) a gameobject.                                                            |
+| 14      | SCRIPT_COMMAND_REMOVE_AURA             | Removes an aura due to a spell.                                                         |
+| 15      | SCRIPT_COMMAND_CAST_SPELL              | Casts a spell.                                                                          |
+| 16      | SCRIPT_COMMAND_PLAY_SOUND              | Plays a sound.                                                                          |
+| 17      | SCRIPT_COMMAND_CREATE_ITEM             | Creates an item.                                                                        |
+| 18      | SCRIPT_COMMAND_DESPAWN_SELF            | Despawns a creature with some delay.                                                    |
+| 19      | SCRIPT_COMMAND_PLAY_MOVIE              | Plays a movie to the target player.                                                     |
+| 20      | SCRIPT_COMMAND_MOVEMENT                | Change the movement type of a creature (idle, random, waypoint).                        |
+| 21      | SCRIPT_COMMAND_SET_ACTIVEOBJECT        | Set a creature as active object.                                                        |
+| 22      | SCRIPT_COMMAND_SET_FACTION             | Changes the faction of a creature.                                                      |
+| 23      | SCRIPT_COMMAND_MORPH_TO_ENTRY_OR_MODEL | Morphs a creature go a given model.                                                     |
+| 24      | SCRIPT_COMMAND_MOUNT_TO_ENTRY_OR_MODEL | Mounts or dismounts a creature to mount entry or model.                                 |
+| 25      | SCRIPT_COMMAND_SET_RUN                 | Makes a creature start or stop running.                                                 |
+| 26      | SCRIPT_COMMAND_ATTACK_START            | Makes a creature attack things within a radius.                                         |
+| 27      | SCRIPT_COMMAND_GO_LOCK_STATE           | Change the GO lock or interact flags.                                                   |
+| 28      | SCRIPT_COMMAND_STAND_STATE             | Change the stand state of a creature.                                                   |
+| 29      | SCRIPT_COMMAND_MODIFY_NPC_FLAGS        | Change NPC flags of a creature.                                                         |
+| 30      | SCRIPT_COMMAND_SEND_TAXI_PATH          | Sends a player on a give taxi path.                                                     |
+| 31      | SCRIPT_COMMAND_TERMINATE_SCRIPT        | Stop script execution if a given creature entry meets conditions.                       |
+| 32      | SCRIPT_COMMAND_PAUSE_WAYPOINTS         | Pause or unpause waypoint movement.                                                     |
+| 33      | SCRIPT_COMMAND_RESERVED_1              | Enable or disable experience gain for a player.                                         |
+| 34      | SCRIPT_COMMAND_TERMINATE_COND          | Stop script execution when a give condition is met.                                     |
+| 35      | SCRIPT_COMMAND_SEND_AI_EVENT           | Send a give AI event for EventAI around the source with a given radius.                 |
+| 36      | SCRIPT_COMMAND_SET_FACING              | Turn resulting source to resulting target.                                              |
+| 37      | SCRIPT_COMMAND_MOVE_DYNAMIC            | Move resulting source to a random point around resulting target or to resulting target. |
+| 38      | SCRIPT_COMMAND_SEND_MAIL               | Send mail from resulting source to resulting target.                                    |
+| 39      | SCRIPT_COMMAND_SET_FLY                 | Makes a creature start or stop flying.                                                  |
+| 40      | SCRIPT_COMMAND_DESPAWN_GO              | Despawns a gameobject.                                                                  |
+| 41      | SCRIPT_COMMAND_RESPAWN                 | Respawns a creature.                                                                    |
+| 42      | SCRIPT_COMMAND_SET_EQUIPMENT_SLOTS     | Change equipment slots of the resulting source.                                         |
+| 43      | SCRIPT_COMMAND_RESET_GO                | Reset a gameobject.                                                                     |
+| 44      | SCRIPT_COMMAND_UPDATE_TEMPLATE         | Update creature entry.                                                                  |
+| 45      | SCRIPT_COMMAND_START_RELAY_SCRIPT      | Launch relay script or relay template.                                                  |
+| 46      | SCRIPT_COMMAND_CAST_CUSTOM_SPELL       | resSource = Unit, cast spell at resTarget = Unit                                        |
 
 #### buddy\_entry
 
@@ -396,28 +194,10 @@ Where "A -&gt; B" means that the [command](dbscripts#command) is executed from A
 
 Range in which the buddy defined in [buddy\_entry](dbscripts#buddy_entry) will be searched by [creature\_template.entry](creature_template#entry).
 
-<table>
-<colgroup>
-<col width="21%" />
-<col width="78%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>&amp; data_flags</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>&amp; SCRIPT_FLAG_BUDDY_BY_GUID</td>
-<td><a href="creature#guid">creature.guid</a> instead of <a href="creature_template#entry">creature_template.entry</a></td>
-</tr>
-<tr class="even">
-<td>&amp; SCRIPT_FLAG_BUDDY_BY_POOL</td>
-<td><a href="pool_creature#pool_entry">pool_creature.pool_entry</a> instead of <a href="creature_template#entry">creature_template.entry</a></td>
-</tr>
-</tbody>
-</table>
+| &amp; data_flags                | Description                                                                                                                              |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| &amp; SCRIPT_FLAG_BUDDY_BY_GUID | <a href="creature#guid">creature.guid</a> instead of <a href="creature_template#entry">creature_template.entry</a>                       |
+| &amp; SCRIPT_FLAG_BUDDY_BY_POOL | <a href="pool_creature#pool_entry">pool_creature.pool_entry</a> instead of <a href="creature_template#entry">creature_template.entry</a> |
 
 #### data\_flags
 
@@ -471,42 +251,11 @@ Depending on what [command](dbscripts#command) was used, the meaning and use for
     -   datalong: Field index to be set.
     -   datalong2: Flag bit(s) to set.
 
-<table style="width:100%;">
-<colgroup>
-<col width="20%" />
-<col width="15%" />
-<col width="19%" />
-<col width="45%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>FIELD TO MODIFY</th>
-<th>HEX VALUES</th>
-<th>DECIMAL INDEX VALUE</th>
-<th>COMMENTS</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>UNIT_FIELD_FLAGS</td>
-<td>0x0006 + 0x0028</td>
-<td>46-TBC 59-WOTLK</td>
-<td>Modify UnitFlags for NPC (Source Must Be Unit)</td>
-</tr>
-<tr class="even">
-<td>UNIT_DYNAMIC_FLAGS</td>
-<td>0x0006 + 0x009E</td>
-<td>164-TBC 78-WOTLK</td>
-<td>Modify DynamicFlags for NPC (Source Must Be Unit)</td>
-</tr>
-<tr class="odd">
-<td>UNIT_NPC_FLAGS</td>
-<td>0x0006 + 0x00A2</td>
-<td>168-TBC 82-WOTLK</td>
-<td>Modify NPCFlags for NPC (Source Must Be Unit)</td>
-</tr>
-</tbody>
-</table>
+| FIELD TO MODIFY    | HEX VALUES      | DECIMAL INDEX VALUE | COMMENTS                                          |
+| ------------------ | --------------- | ------------------- | ------------------------------------------------- |
+| UNIT_FIELD_FLAGS   | 0x0006 + 0x0028 | 46-TBC 59-WOTLK     | Modify UnitFlags for NPC (Source Must Be Unit)    |
+| UNIT_DYNAMIC_FLAGS | 0x0006 + 0x009E | 164-TBC 78-WOTLK    | Modify DynamicFlags for NPC (Source Must Be Unit) |
+| UNIT_NPC_FLAGS     | 0x0006 + 0x00A2 | 168-TBC 82-WOTLK    | Modify NPCFlags for NPC (Source Must Be Unit)     |
 
 More Examples Can Be Found At: UpdateFields.h In Core
 
@@ -583,72 +332,18 @@ More Examples Can Be Found At: UpdateFields.h In Core
 
 #### TriggerCastFlags
 
-<table>
-<colgroup>
-<col width="4%" />
-<col width="31%" />
-<col width="64%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>TRIGGERED_NONE</td>
-<td>Not Triggered</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>TRIGGERED_OLD_TRIGGERED</td>
-<td>Legacy bool support TODO: Restrict usage as much as possible.</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>TRIGGERED_IGNORE_HIT_CALCULATION</td>
-<td>Will ignore calculating hit in SpellHitResult</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>TRIGGERED_IGNORE_UNSELECTABLE_FLAG</td>
-<td>Ignores UNIT_FLAG_NOT_SELECTABLE in CheckTarget</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>TRIGGERED_INSTANT_CAST</td>
-<td>Will ignore any cast time set in spell entry</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>TRIGGERED_AUTOREPEAT</td>
-<td>Will signal spell system that this is internal autorepeat call</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>TRIGGERED_IGNORE_UNATTACKABLE_FLAG</td>
-<td>Ignores UNIT_FLAG_NOT_ATTACKABLE in CheckTarget</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>TRIGGERED_DO_NOT_PROC</td>
-<td>Spells from scripts should not proc - DBScripts for example</td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>TRIGGERED_PET_CAST</td>
-<td>Spell that should report error through pet opcode</td>
-</tr>
-<tr class="even">
-<td>256</td>
-<td>TRIGGERED_NORMAL_COMBAT_CAST</td>
-<td>AI needs to be notified about change of target TODO: change into TRIGGERED_NONE</td>
-</tr>
-</tbody>
-</table>
+| Bit | Name                               | Description                                                                     |
+| --- | ---------------------------------- | ------------------------------------------------------------------------------- |
+| 0   | TRIGGERED_NONE                     | Not Triggered                                                                   |
+| 1   | TRIGGERED_OLD_TRIGGERED            | Legacy bool support TODO: Restrict usage as much as possible.                   |
+| 2   | TRIGGERED_IGNORE_HIT_CALCULATION   | Will ignore calculating hit in SpellHitResult                                   |
+| 4   | TRIGGERED_IGNORE_UNSELECTABLE_FLAG | Ignores UNIT_FLAG_NOT_SELECTABLE in CheckTarget                                 |
+| 8   | TRIGGERED_INSTANT_CAST             | Will ignore any cast time set in spell entry                                    |
+| 16  | TRIGGERED_AUTOREPEAT               | Will signal spell system that this is internal autorepeat call                  |
+| 32  | TRIGGERED_IGNORE_UNATTACKABLE_FLAG | Ignores UNIT_FLAG_NOT_ATTACKABLE in CheckTarget                                 |
+| 64  | TRIGGERED_DO_NOT_PROC              | Spells from scripts should not proc - DBScripts for example                     |
+| 128 | TRIGGERED_PET_CAST                 | Spell that should report error through pet opcode                               |
+| 256 | TRIGGERED_NORMAL_COMBAT_CAST       | AI needs to be notified about change of target TODO: change into TRIGGERED_NONE |
 
 -   **SCRIPT\_COMMAND\_PLAY\_SOUND = 16**
     -   datalong: [Sound ID](SoundEntries.dbc#Content).
@@ -740,72 +435,18 @@ More Examples Can Be Found At: UpdateFields.h In Core
     -   Resulting source must be a creature.
     -   datalong: stand state (enum UnitStandStateType)
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="35%" />
-<col width="59%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>UNIT_STAND_STATE_STAND</td>
-<td>normal behavior</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>UNIT_STAND_STATE_SIT</td>
-<td>sitting on ground</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>UNIT_STAND_STATE_SIT_CHAIR</td>
-<td>sitting on normal chair</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>UNIT_STAND_STATE_SLEEP</td>
-<td>sleeping</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>UNIT_STAND_STATE_SIT_LOW_CHAIR</td>
-<td>sitting on low chair</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>UNIT_STAND_STATE_SIT_MEDIUM_CHAIR</td>
-<td>sitting on medium chair</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>UNIT_STAND_STATE_SIT_HIGH_CHAIR</td>
-<td>sitting on high chair</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>UNIT_STAND_STATE_DEAD</td>
-<td>play dead</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>UNIT_STAND_STATE_KNEEL</td>
-<td>kneel</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>UNIT_STAND_STATE_CUSTOM</td>
-<td>Depends on model animation. Submerge, freeze, hide, hibernate, rest</td>
-</tr>
-</tbody>
-</table>
+| Bit | Name                              | Comment                                                             |
+| --- | --------------------------------- | ------------------------------------------------------------------- |
+| 0   | UNIT_STAND_STATE_STAND            | normal behavior                                                     |
+| 1   | UNIT_STAND_STATE_SIT              | sitting on ground                                                   |
+| 2   | UNIT_STAND_STATE_SIT_CHAIR        | sitting on normal chair                                             |
+| 3   | UNIT_STAND_STATE_SLEEP            | sleeping                                                            |
+| 4   | UNIT_STAND_STATE_SIT_LOW_CHAIR    | sitting on low chair                                                |
+| 5   | UNIT_STAND_STATE_SIT_MEDIUM_CHAIR | sitting on medium chair                                             |
+| 6   | UNIT_STAND_STATE_SIT_HIGH_CHAIR   | sitting on high chair                                               |
+| 7   | UNIT_STAND_STATE_DEAD             | play dead                                                           |
+| 8   | UNIT_STAND_STATE_KNEEL            | kneel                                                               |
+| 9   | UNIT_STAND_STATE_CUSTOM           | Depends on model animation. Submerge, freeze, hide, hibernate, rest |
 
 -   **SCRIPT\_COMMAND\_MODIFY\_NPC\_FLAGS = 29**
     -   Resulting source must be a creature.
@@ -829,28 +470,10 @@ More Examples Can Be Found At: UpdateFields.h In Core
     -   dataint: Change of [waittime](creature_movement#waittime) (MILLIESECONDS) of a current waypoint movement type. Negative values will decrease time.
     -   [data\_flags](dbscripts#data_flags)
 
-<table>
-<colgroup>
-<col width="43%" />
-<col width="56%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>&amp; data_flags</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>&amp; SCRIPT_FLAG_COMMAND_ADDITIONAL 8 0x08</td>
-<td>If creature is found and alive, terminate script.</td>
-</tr>
-<tr class="even">
-<td>! SCRIPT_FLAG_COMMAND_ADDITIONAL</td>
-<td>If creature is not found or not alive, terminate script.</td>
-</tr>
-</tbody>
-</table>
+| &amp; data_flags                            | Description                                              |
+| ------------------------------------------- | -------------------------------------------------------- |
+| &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL 8 0x08 | If creature is found and alive, terminate script.        |
+| ! SCRIPT_FLAG_COMMAND_ADDITIONAL            | If creature is not found or not alive, terminate script. |
 
 -   **SCRIPT\_COMMAND\_PAUSE\_WAYPOINTS = 32**
     -   datalong: 1 = Pause or 0 = Unpause waypoint movement.
@@ -868,28 +491,10 @@ More Examples Can Be Found At: UpdateFields.h In Core
     -   datalong2: [Quest entry](quest_template#entry) to mark as failed for the player (if provided).
     -   [data\_flags](dbscripts#data_flags)
 
-<table>
-<colgroup>
-<col width="54%" />
-<col width="45%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>&amp; data_flags</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>&amp; SCRIPT_FLAG_COMMAND_ADDITIONAL 8 0x08</td>
-<td>Terminate when condition is false.</td>
-</tr>
-<tr class="even">
-<td>! SCRIPT_FLAG_COMMAND_ADDITIONAL</td>
-<td>Terminate when condition is true.</td>
-</tr>
-</tbody>
-</table>
+| &amp; data_flags                            | Description                        |
+| ------------------------------------------- | ---------------------------------- |
+| &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL 8 0x08 | Terminate when condition is false. |
+| ! SCRIPT_FLAG_COMMAND_ADDITIONAL            | Terminate when condition is true.  |
 
 -   **SCRIPT\_COMMAND\_SEND\_AI\_EVENT = 35**
     -   datalong: AI event id. Only EventAI events are accepted. Supported types see CreatureAI.h enum AIEventType.
@@ -959,4 +564,3 @@ More Examples Can Be Found At: UpdateFields.h In Core
     -   datalong = spellid
     -   datalong2 = castFlags, enum [TriggerCastFlags](dbscripts#TriggerCastFlags)
     -   dataint1-3 define the &bp value for the spell. At least one field is required.
-

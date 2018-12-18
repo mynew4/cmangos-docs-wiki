@@ -8,256 +8,55 @@ This dbc contains the zone and subzone lists. For the purposes of this wiki arti
 
 ### Structure
 
-<table>
-<colgroup>
-<col width="12%" />
-<col width="25%" />
-<col width="9%" />
-<col width="52%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Field Nb</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Notes</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>ID</td>
-<td>Int</td>
-<td>Zone Area</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>MapID]]</td>
-<td>Int</td>
-<td>Map or Continent</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>AreaID]]</td>
-<td>Int</td>
-<td>SubArea of Map</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Explore Flag</td>
-<td>Int</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td><a href="AreaTable.dbc#flags">Flags</a></td>
-<td>Int</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>SoundAmbienceID]]</td>
-<td>Int</td>
-<td>Reference to what Ambiance to use during day and night</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>ZoneMusicID]]</td>
-<td>Int</td>
-<td>Reference to what zone music to play</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>ZoneIntroMusicID]]</td>
-<td>Int</td>
-<td>Reference to what zone intro music to play when entering area</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>Area Level</td>
-<td>Int</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>12-28</td>
-<td>Area Name</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>29</td>
-<td>FactionGroupID]]</td>
-<td>Int</td>
-<td>Faction that owns area</td>
-</tr>
-</tbody>
-</table>
+| Field Nb | Name                                    | Type   | Notes                                                         |
+| -------- | --------------------------------------- | ------ | ------------------------------------------------------------- |
+| 1        | ID                                      | Int    | Zone Area                                                     |
+| 2        | MapID]]                                 | Int    | Map or Continent                                              |
+| 3        | AreaID]]                                | Int    | SubArea of Map                                                |
+| 4        | Explore Flag                            | Int    |                                                               |
+| 5        | <a href="AreaTable.dbc#flags">Flags</a> | Int    |                                                               |
+| 8        | SoundAmbienceID]]                       | Int    | Reference to what Ambiance to use during day and night        |
+| 9        | ZoneMusicID]]                           | Int    | Reference to what zone music to play                          |
+| 10       | ZoneIntroMusicID]]                      | Int    | Reference to what zone intro music to play when entering area |
+| 11       | Area Level                              | Int    |                                                               |
+| 12-28    | Area Name                               | String |                                                               |
+| 29       | FactionGroupID]]                        | Int    | Faction that owns area                                        |
 
 ### Description of the fields
 
 #### Flags
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="14%" />
-<col width="79%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Value</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Notes</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0x00000001</td>
-<td>AREA_FLAG_SNOW</td>
-<td>snow (only Dun Morogh, Naxxramas, Razorfen Downs and Winterspring)</td>
-</tr>
-<tr class="even">
-<td>0x00000002</td>
-<td>AREA_FLAG_UNK1</td>
-<td>may be necropolis?</td>
-</tr>
-<tr class="odd">
-<td>0x00000004</td>
-<td>AREA_FLAG_UNK2</td>
-<td>Only used for areas on map 571 (development before)</td>
-</tr>
-<tr class="even">
-<td>0x00000008</td>
-<td>AREA_FLAG_SLAVE_CAPITAL</td>
-<td>city and city subsones</td>
-</tr>
-<tr class="odd">
-<td>0x00000010</td>
-<td>AREA_FLAG_UNK3</td>
-<td>can't find common meaning</td>
-</tr>
-<tr class="even">
-<td>0x00000020</td>
-<td>AREA_FLAG_SLAVE_CAPITAL2</td>
-<td>slave capital city flag?</td>
-</tr>
-<tr class="odd">
-<td>0x00000040</td>
-<td>AREA_FLAG_UNK4</td>
-<td>many zones have this flag</td>
-</tr>
-<tr class="even">
-<td>0x00000080</td>
-<td>AREA_FLAG_ARENA</td>
-<td>arena, both instanced and world arenas</td>
-</tr>
-<tr class="odd">
-<td>0x00000100</td>
-<td>AREA_FLAG_CAPITAL</td>
-<td>main capital city flag</td>
-</tr>
-<tr class="even">
-<td>0x00000200</td>
-<td>AREA_FLAG_CITY</td>
-<td>only for one zone named &quot;City&quot; (where it located?)</td>
-</tr>
-<tr class="odd">
-<td>0x00000400</td>
-<td>AREA_FLAG_OUTLAND</td>
-<td>expansion zones? (only Eye of the Storm not have this flag, but have 0x00004000 flag)</td>
-</tr>
-<tr class="even">
-<td>0x00000800</td>
-<td>AREA_FLAG_SANCTUARY</td>
-<td>sanctuary area (PvP disabled)</td>
-</tr>
-<tr class="odd">
-<td>0x00001000</td>
-<td>AREA_FLAG_NEED_FLY</td>
-<td>only Netherwing Ledge, Socrethar's Seat, Tempest Keep, The Arcatraz, The Botanica, The Mechanar, Sorrow Wing Point, Dragonspine Ridge, Netherwing Mines, Dragonmaw Base Camp, Dragonmaw Skyway</td>
-</tr>
-<tr class="even">
-<td>0x00002000</td>
-<td>AREA_FLAG_UNUSED1</td>
-<td>not used now (no area/zones with this flag set in 3.0.3)</td>
-</tr>
-<tr class="odd">
-<td>0x00004000</td>
-<td>AREA_FLAG_OUTLAND2</td>
-<td>expansion zones? (only Circle of Blood Arena not have this flag, but have 0x00000400 flag)</td>
-</tr>
-<tr class="even">
-<td>0x00008000</td>
-<td>AREA_FLAG_PVP</td>
-<td>pvp objective area? (Death's Door also has this flag although it's no pvp object area)</td>
-</tr>
-<tr class="odd">
-<td>0x00010000</td>
-<td>AREA_FLAG_ARENA_INSTANCE</td>
-<td>used by instanced arenas only</td>
-</tr>
-<tr class="even">
-<td>0x00020000</td>
-<td>AREA_FLAG_UNUSED2</td>
-<td>not used now (no area/zones with this flag set in 3.0.3)</td>
-</tr>
-<tr class="odd">
-<td>0x00040000</td>
-<td>AREA_FLAG_UNK5</td>
-<td>only used for Amani Pass, Hatchet Hills</td>
-</tr>
-<tr class="even">
-<td>0x00080000</td>
-<td>AREA_FLAG_UNK6</td>
-<td>Valgarde and Acherus: The Ebon Hold</td>
-</tr>
-<tr class="odd">
-<td>0x00100000</td>
-<td>AREA_FLAG_LOWLEVEL</td>
-<td>used for some starting areas with area_level &lt;=15</td>
-</tr>
-<tr class="even">
-<td>0x00200000</td>
-<td>AREA_FLAG_TOWN</td>
-<td>small towns with Inn</td>
-</tr>
-<tr class="odd">
-<td>0x00400000</td>
-<td>AREA_FLAG_UNK7</td>
-<td>Warsong Hold, Acherus: The Ebon Hold, New Agamand Inn, Vengeance Landing Inn</td>
-</tr>
-<tr class="even">
-<td>0x00800000</td>
-<td>AREA_FLAG_UNK8</td>
-<td>Westguard Inn, Acherus: The Ebon Hold, Valgarde</td>
-</tr>
-<tr class="odd">
-<td>0x01000000</td>
-<td>AREA_FLAG_OUTDOOR_PVP</td>
-<td>Wintergrasp and it's subzones</td>
-</tr>
-<tr class="even">
-<td>0x02000000</td>
-<td>AREA_FLAG_UNK9</td>
-<td>unknown</td>
-</tr>
-<tr class="odd">
-<td>0x04000000</td>
-<td>AREA_FLAG_UNK10</td>
-<td>unknown</td>
-</tr>
-<tr class="even">
-<td>0x08000000</td>
-<td>AREA_FLAG_CAN_HEARTH_AND_RES</td>
-<td>Wintergrasp and it's subzones</td>
-</tr>
-<tr class="odd">
-<td>0x20000000</td>
-<td>AREA_FLAG_CANNOT_FLY</td>
-<td>not allowed to fly, only used in Dalaran areas (zone 4395)</td>
-</tr>
-</tbody>
-</table>
+| Value      | Name                         | Notes                                                                                                                                                                                          |
+| ---------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x00000001 | AREA_FLAG_SNOW               | snow (only Dun Morogh, Naxxramas, Razorfen Downs and Winterspring)                                                                                                                             |
+| 0x00000002 | AREA_FLAG_UNK1               | may be necropolis?                                                                                                                                                                             |
+| 0x00000004 | AREA_FLAG_UNK2               | Only used for areas on map 571 (development before)                                                                                                                                            |
+| 0x00000008 | AREA_FLAG_SLAVE_CAPITAL      | city and city subsones                                                                                                                                                                         |
+| 0x00000010 | AREA_FLAG_UNK3               | can't find common meaning                                                                                                                                                                      |
+| 0x00000020 | AREA_FLAG_SLAVE_CAPITAL2     | slave capital city flag?                                                                                                                                                                       |
+| 0x00000040 | AREA_FLAG_UNK4               | many zones have this flag                                                                                                                                                                      |
+| 0x00000080 | AREA_FLAG_ARENA              | arena, both instanced and world arenas                                                                                                                                                         |
+| 0x00000100 | AREA_FLAG_CAPITAL            | main capital city flag                                                                                                                                                                         |
+| 0x00000200 | AREA_FLAG_CITY               | only for one zone named &quot;City&quot; (where it located?)                                                                                                                                   |
+| 0x00000400 | AREA_FLAG_OUTLAND            | expansion zones? (only Eye of the Storm not have this flag, but have 0x00004000 flag)                                                                                                          |
+| 0x00000800 | AREA_FLAG_SANCTUARY          | sanctuary area (PvP disabled)                                                                                                                                                                  |
+| 0x00001000 | AREA_FLAG_NEED_FLY           | only Netherwing Ledge, Socrethar's Seat, Tempest Keep, The Arcatraz, The Botanica, The Mechanar, Sorrow Wing Point, Dragonspine Ridge, Netherwing Mines, Dragonmaw Base Camp, Dragonmaw Skyway |
+| 0x00002000 | AREA_FLAG_UNUSED1            | not used now (no area/zones with this flag set in 3.0.3)                                                                                                                                       |
+| 0x00004000 | AREA_FLAG_OUTLAND2           | expansion zones? (only Circle of Blood Arena not have this flag, but have 0x00000400 flag)                                                                                                     |
+| 0x00008000 | AREA_FLAG_PVP                | pvp objective area? (Death's Door also has this flag although it's no pvp object area)                                                                                                         |
+| 0x00010000 | AREA_FLAG_ARENA_INSTANCE     | used by instanced arenas only                                                                                                                                                                  |
+| 0x00020000 | AREA_FLAG_UNUSED2            | not used now (no area/zones with this flag set in 3.0.3)                                                                                                                                       |
+| 0x00040000 | AREA_FLAG_UNK5               | only used for Amani Pass, Hatchet Hills                                                                                                                                                        |
+| 0x00080000 | AREA_FLAG_UNK6               | Valgarde and Acherus: The Ebon Hold                                                                                                                                                            |
+| 0x00100000 | AREA_FLAG_LOWLEVEL           | used for some starting areas with area_level &lt;=15                                                                                                                                           |
+| 0x00200000 | AREA_FLAG_TOWN               | small towns with Inn                                                                                                                                                                           |
+| 0x00400000 | AREA_FLAG_UNK7               | Warsong Hold, Acherus: The Ebon Hold, New Agamand Inn, Vengeance Landing Inn                                                                                                                   |
+| 0x00800000 | AREA_FLAG_UNK8               | Westguard Inn, Acherus: The Ebon Hold, Valgarde                                                                                                                                                |
+| 0x01000000 | AREA_FLAG_OUTDOOR_PVP        | Wintergrasp and it's subzones                                                                                                                                                                  |
+| 0x02000000 | AREA_FLAG_UNK9               | unknown                                                                                                                                                                                        |
+| 0x04000000 | AREA_FLAG_UNK10              | unknown                                                                                                                                                                                        |
+| 0x08000000 | AREA_FLAG_CAN_HEARTH_AND_RES | Wintergrasp and it's subzones                                                                                                                                                                  |
+| 0x20000000 | AREA_FLAG_CANNOT_FLY         | not allowed to fly, only used in Dalaran areas (zone 4395)                                                                                                                                     |
 
 ### It's complete! 2307 records
 
@@ -2572,5 +2371,3 @@ This dbc contains the zone and subzone lists. For the purposes of this wiki arti
 | 4908         | The Hidden Passage                                   | 668       | 4820       |
 | 4910         | Frostmourne                                          | 631       | 4812       |
 | 4987         | The Ruby Sanctum                                     | 724       | 0          |
-
-

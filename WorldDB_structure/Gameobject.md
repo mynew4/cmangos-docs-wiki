@@ -44,44 +44,14 @@ The map ID where this object is spawned. See [Map.dbc](Map.dbc)
 
 Controls under which difficulties the object is spawned. Combine value to get wished case.
 
-<table style="width:100%;">
-<colgroup>
-<col width="7%" />
-<col width="92%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>Not spawned</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>Spawned only in normal versions of maps (includes maps without additional difficulty modes)</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>Spawned only in difficulty = 1 versions of maps (mostly heroic)</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Spawned only in difficulty = 2 versions of maps</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>Spawned only in difficulty = 3 versions of maps</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>Spawned in all versions of maps</td>
-</tr>
-</tbody>
-</table>
+| Value | Comment                                                                                     |
+| ----- | ------------------------------------------------------------------------------------------- |
+| 0     | Not spawned                                                                                 |
+| 1     | Spawned only in normal versions of maps (includes maps without additional difficulty modes) |
+| 2     | Spawned only in difficulty = 1 versions of maps (mostly heroic)                             |
+| 4     | Spawned only in difficulty = 2 versions of maps                                             |
+| 8     | Spawned only in difficulty = 3 versions of maps                                             |
+| 15    | Spawned in all versions of maps                                                             |
 
 #### phaseMask
 
@@ -135,4 +105,3 @@ Only for chests.
 
 -   1 = closed
 -   0 = open
-

@@ -73,112 +73,26 @@ This is the method the text is displayed.
 
 This is the ingame language of the text. Languages are from [Languages.dbc.](Languages.dbc).
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="15%" />
-<col width="78%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ID</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>UNIVERSAL</td>
-<td>Text in this language is understood by ALL Races.</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>ORCISH</td>
-<td>Text in this language is understood ONLY by Horde Races.</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>DARNASSIAN</td>
-<td>Text in this language is understood ONLY by the Night Elf Race.</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>TAURAHE</td>
-<td>Text in this language is understood ONLY by the Tauren Race.</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>DWARVISH</td>
-<td>Text in this language is understood ONLY by the Dwarf Race.</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>COMMON</td>
-<td>Text in this language is understood ONLY by Alliance Races.</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>DEMONIC</td>
-<td>Text in this language is understood ONLY by the Demon Race (Not Implemented).</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>TITAN</td>
-<td>This language was used by Sargeras to speak with other Titians (Not Implemented).</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>THALASSIAN</td>
-<td>Text in this language is understood ONLY by the Blood Elf Race.</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>DRACONIC</td>
-<td>Text in this language is understood ONLY by the Dragon Race.</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>KALIMAG</td>
-<td>Text will display as Kalimag (not readable by players, language of all elementals)</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>GNOMISH</td>
-<td>Text in this language is understood ONLY by the Gnome Race.</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>TROLL</td>
-<td>Text in this language is understood ONLY by the Troll Race.</td>
-</tr>
-<tr class="even">
-<td>33</td>
-<td>GUTTERSPEAK</td>
-<td>Text in this language is understood ONLY by the Undead Race.</td>
-</tr>
-<tr class="odd">
-<td>35</td>
-<td>DRAENEI</td>
-<td>Text in this language is understood ONLY by the Draenai Race.</td>
-</tr>
-<tr class="even">
-<td>36</td>
-<td>ZOMBIE</td>
-<td>(not currently used?)</td>
-</tr>
-<tr class="odd">
-<td>37</td>
-<td>GNOMISH BINARY</td>
-<td>Binary language used by Alliance when drinking Binary Brew</td>
-</tr>
-<tr class="even">
-<td>38</td>
-<td>GOBLIN BINARY</td>
-<td>Binary language used by Horce when drinking Binary Brew</td>
-</tr>
-</tbody>
-</table>
+| ID  | Name           | Description                                                                        |
+| --- | -------------- | ---------------------------------------------------------------------------------- |
+| 0   | UNIVERSAL      | Text in this language is understood by ALL Races.                                  |
+| 1   | ORCISH         | Text in this language is understood ONLY by Horde Races.                           |
+| 2   | DARNASSIAN     | Text in this language is understood ONLY by the Night Elf Race.                    |
+| 3   | TAURAHE        | Text in this language is understood ONLY by the Tauren Race.                       |
+| 6   | DWARVISH       | Text in this language is understood ONLY by the Dwarf Race.                        |
+| 7   | COMMON         | Text in this language is understood ONLY by Alliance Races.                        |
+| 8   | DEMONIC        | Text in this language is understood ONLY by the Demon Race (Not Implemented).      |
+| 9   | TITAN          | This language was used by Sargeras to speak with other Titians (Not Implemented).  |
+| 10  | THALASSIAN     | Text in this language is understood ONLY by the Blood Elf Race.                    |
+| 11  | DRACONIC       | Text in this language is understood ONLY by the Dragon Race.                       |
+| 12  | KALIMAG        | Text will display as Kalimag (not readable by players, language of all elementals) |
+| 13  | GNOMISH        | Text in this language is understood ONLY by the Gnome Race.                        |
+| 14  | TROLL          | Text in this language is understood ONLY by the Troll Race.                        |
+| 33  | GUTTERSPEAK    | Text in this language is understood ONLY by the Undead Race.                       |
+| 35  | DRAENEI        | Text in this language is understood ONLY by the Draenai Race.                      |
+| 36  | ZOMBIE         | (not currently used?)                                                              |
+| 37  | GNOMISH BINARY | Binary language used by Alliance when drinking Binary Brew                         |
+| 38  | GOBLIN BINARY  | Binary language used by Horce when drinking Binary Brew                            |
 
 #### emote
 

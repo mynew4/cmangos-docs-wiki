@@ -44,237 +44,51 @@ data field one for the condition
 
 This is a description of the values in [type](Conditions#type)
 
-<table style="width:100%;">
-<colgroup>
-<col width="10%" />
-<col width="24%" />
-<col width="65%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Value of type</th>
-<th>Condition</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>-3</td>
-<td>CONDITION_NOT</td>
-<td>NOT combination of another condition_entry *</td>
-</tr>
-<tr class="even">
-<td>-2</td>
-<td>CONDITION_OR</td>
-<td>OR combination of 2 other condition_entry *</td>
-</tr>
-<tr class="odd">
-<td>-1</td>
-<td>CONDITION_AND</td>
-<td>AND combination of 2 other condition_entry *</td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>CONDITION_NONE</td>
-<td>No condition, returns always true</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>CONDITION_AURA</td>
-<td>Player must have an aura active</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>CONDITION_ITEM</td>
-<td>Player must have a number of items in his/her inventory</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>CONDITION_ITEM_EQUIPPED</td>
-<td>Player must have an item equipped</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>CONDITION_AREAID</td>
-<td>Player must be in a certain area/zone</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>CONDITION_REPUTATION_RANK_MIN</td>
-<td>Player must have a certain reputation rank with a certain faction</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>CONDITION_TEAM</td>
-<td>Player must be part of the specified team (Alliance or Horde)</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>CONDITION_SKILL</td>
-<td>Player must have a certain skill value</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>CONDITION_QUESTREWARDED</td>
-<td>Player must have completed a quest first</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>CONDITION_QUESTTAKEN</td>
-<td>Players must have the quest in the quest log and not completed yet</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>CONDITION_AD_COMMISSION_AURA</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>CONDITION_NO_AURA</td>
-<td>Miss some aura.</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>CONDITION_ACTIVE_EVENT</td>
-<td>Event is active.</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>CONDITION_AREA_FLAG</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>CONDITION_RACE_CLASS</td>
-<td>Has special race or class.</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td>CONDITION_LEVEL</td>
-<td>Has special level.</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>CONDITION_NOITEM</td>
-<td>Has not enough items yet.</td>
-</tr>
-<tr class="odd">
-<td>17</td>
-<td>CONDITION_SPELL</td>
-<td>Knows some spell.</td>
-</tr>
-<tr class="even">
-<td>18</td>
-<td>CONDITION_INSTANCE_SCRIPT</td>
-<td>SD2-Based condition</td>
-</tr>
-<tr class="odd">
-<td>19</td>
-<td>CONDITION_QUESTAVAILABLE</td>
-<td>Some quest is available.</td>
-</tr>
-<tr class="even">
-<td>20</td>
-<td>CONDITION_ACHIEVEMENT</td>
-<td>Has or has no special achievement.</td>
-</tr>
-<tr class="odd">
-<td>21</td>
-<td>CONDITION_ACHIEVEMENT_REALM</td>
-<td>Realm-wideversion of 20.</td>
-</tr>
-<tr class="even">
-<td>22</td>
-<td>CONDITION_QUEST_NONE</td>
-<td>Has not taken a quest yet.</td>
-</tr>
-<tr class="odd">
-<td>23</td>
-<td>CONDITION_ITEM_WITH_BANK</td>
-<td>Checks presence of required amount of items in inventory or bank.</td>
-</tr>
-<tr class="even">
-<td>24</td>
-<td>CONDITION_NOITEM_WITH_BANK</td>
-<td>Checks absence of required amount of items in inventory or bank.</td>
-</tr>
-<tr class="odd">
-<td>25</td>
-<td>CONDITION_NOT_ACTIVE_GAME_EVENT</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>26</td>
-<td>CONDITION_ACTIVE_HOLIDAY</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>27</td>
-<td>CONDITION_NOT_ACTIVE_HOLIDAY</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>28</td>
-<td>CONDITION_LEARNABLE_ABILITY</td>
-<td>Checks if the player has high enough skill level and may check if a special item is in the inventory.</td>
-</tr>
-<tr class="odd">
-<td>29</td>
-<td>CONDITION_SKILL_BELOW</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>30</td>
-<td>CONDITION_REPUTATION_RANK_MAX</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>31</td>
-<td>CONDITION_COMPLETED_ENCOUNTER</td>
-<td>Checks if some encounter is completed</td>
-</tr>
-<tr class="even">
-<td>32</td>
-<td>CONDITION_SOURCE_AURA</td>
-<td>Checks if the source of the condition (like looted npc) has an aura</td>
-</tr>
-<tr class="odd">
-<td>33</td>
-<td>CONDITION_LAST_WAYPOINT</td>
-<td>Checks the waypoint-state of the source of the condition</td>
-</tr>
-<tr class="even">
-<td>34</td>
-<td>CONDITION_XP_USER</td>
-<td>Checks if a player has turned XP earning on/off</td>
-</tr>
-<tr class="odd">
-<td>35</td>
-<td>CONDITION_GENDER</td>
-<td>Checks the gender of a player</td>
-</tr>
-<tr class="even">
-<td>36</td>
-<td>CONDITION_DEAD_OR_AWAY</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>37</td>
-<td>CONDITION_CREATURE_IN_RANGE</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>38</td>
-<td>CONDITION_PVP_SCRIPT</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>39</td>
-<td>CONDITION_SPAWN_COUNT</td>
-<td>Returns if specified count of creature entry exists on map</td>
-</tr>
-</tbody>
-</table>
+| Value of type | Condition                       | Comments                                                                                              |
+| ------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| -3            | CONDITION_NOT                   | NOT combination of another condition_entry *                                                          |
+| -2            | CONDITION_OR                    | OR combination of 2 other condition_entry *                                                           |
+| -1            | CONDITION_AND                   | AND combination of 2 other condition_entry *                                                          |
+| 0             | CONDITION_NONE                  | No condition, returns always true                                                                     |
+| 1             | CONDITION_AURA                  | Player must have an aura active                                                                       |
+| 2             | CONDITION_ITEM                  | Player must have a number of items in his/her inventory                                               |
+| 3             | CONDITION_ITEM_EQUIPPED         | Player must have an item equipped                                                                     |
+| 4             | CONDITION_AREAID                | Player must be in a certain area/zone                                                                 |
+| 5             | CONDITION_REPUTATION_RANK_MIN   | Player must have a certain reputation rank with a certain faction                                     |
+| 6             | CONDITION_TEAM                  | Player must be part of the specified team (Alliance or Horde)                                         |
+| 7             | CONDITION_SKILL                 | Player must have a certain skill value                                                                |
+| 8             | CONDITION_QUESTREWARDED         | Player must have completed a quest first                                                              |
+| 9             | CONDITION_QUESTTAKEN            | Players must have the quest in the quest log and not completed yet                                    |
+| 10            | CONDITION_AD_COMMISSION_AURA    |                                                                                                       |
+| 11            | CONDITION_NO_AURA               | Miss some aura.                                                                                       |
+| 12            | CONDITION_ACTIVE_EVENT          | Event is active.                                                                                      |
+| 13            | CONDITION_AREA_FLAG             |                                                                                                       |
+| 14            | CONDITION_RACE_CLASS            | Has special race or class.                                                                            |
+| 15            | CONDITION_LEVEL                 | Has special level.                                                                                    |
+| 16            | CONDITION_NOITEM                | Has not enough items yet.                                                                             |
+| 17            | CONDITION_SPELL                 | Knows some spell.                                                                                     |
+| 18            | CONDITION_INSTANCE_SCRIPT       | SD2-Based condition                                                                                   |
+| 19            | CONDITION_QUESTAVAILABLE        | Some quest is available.                                                                              |
+| 20            | CONDITION_ACHIEVEMENT           | Has or has no special achievement.                                                                    |
+| 21            | CONDITION_ACHIEVEMENT_REALM     | Realm-wideversion of 20.                                                                              |
+| 22            | CONDITION_QUEST_NONE            | Has not taken a quest yet.                                                                            |
+| 23            | CONDITION_ITEM_WITH_BANK        | Checks presence of required amount of items in inventory or bank.                                     |
+| 24            | CONDITION_NOITEM_WITH_BANK      | Checks absence of required amount of items in inventory or bank.                                      |
+| 25            | CONDITION_NOT_ACTIVE_GAME_EVENT |                                                                                                       |
+| 26            | CONDITION_ACTIVE_HOLIDAY        |                                                                                                       |
+| 27            | CONDITION_NOT_ACTIVE_HOLIDAY    |                                                                                                       |
+| 28            | CONDITION_LEARNABLE_ABILITY     | Checks if the player has high enough skill level and may check if a special item is in the inventory. |
+| 29            | CONDITION_SKILL_BELOW           |                                                                                                       |
+| 30            | CONDITION_REPUTATION_RANK_MAX   |                                                                                                       |
+| 31            | CONDITION_COMPLETED_ENCOUNTER   | Checks if some encounter is completed                                                                 |
+| 32            | CONDITION_SOURCE_AURA           | Checks if the source of the condition (like looted npc) has an aura                                   |
+| 33            | CONDITION_LAST_WAYPOINT         | Checks the waypoint-state of the source of the condition                                              |
+| 34            | CONDITION_XP_USER               | Checks if a player has turned XP earning on/off                                                       |
+| 35            | CONDITION_GENDER                | Checks the gender of a player                                                                         |
+| 36            | CONDITION_DEAD_OR_AWAY          |                                                                                                       |
+| 37            | CONDITION_CREATURE_IN_RANGE     |                                                                                                       |
+| 38            | CONDITION_PVP_SCRIPT            |                                                                                                       |
+| 39            | CONDITION_SPAWN_COUNT           | Returns if specified count of creature entry exists on map                                            |
 
 (\*) Meta-Condition types CONDITION\_AND (-1) and CONDITION\_OR (-2) which are used as: value1 (as condition\_entry) AND / OR value2 (as condition\_entry). With these meta-conditions it is possible to create tree like and very complicated combined conditions (like HasAura && (HasItem || HasQuest))
 
@@ -587,4 +401,3 @@ The meaning of the values in [value1](Conditions#value1) / [value2](Conditions#v
     -   value2: Minimum amount of specified creature to exist on map for condition to return true
         Condition returns true if there are more than or equal amounts of creature on map.
         Note: The creature specified in value1 must have ExtraFlags CREATURE\_EXTRA\_FLAG\_COUNT\_SPAWNS!
-

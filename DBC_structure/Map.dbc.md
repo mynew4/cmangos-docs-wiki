@@ -9,132 +9,26 @@ This DBC contains the maps list.
 Structure
 ---------
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="20%" />
-<col width="6%" />
-<col width="67%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Column</th>
-<th>Field</th>
-<th>Type</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>ID</td>
-<td>Integer</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>InternalName</td>
-<td>String</td>
-<td>reference to World\Map\ [...] \</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Flags</td>
-<td>Integer</td>
-<td>0x100 - CAN_CHANGE_PLAYER_DIFFICULTY</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Type</td>
-<td>Integer</td>
-<td>0: none, 1: party, 2: raid, 3: pvp, 4: arena, &gt;=5: none (official from &quot;IsInInstance()&quot;)</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>IsBattleground</td>
-<td>Integer</td>
-<td>Boolean (1 = True, 0 = False)</td>
-</tr>
-<tr class="even">
-<td>6-22</td>
-<td>Name</td>
-<td>String</td>
-<td><a href="Localization">Localization;</a>; displayed on World Map for example</td>
-</tr>
-<tr class="odd">
-<td>23</td>
-<td><a href="AreaTable.dbc" class="uri">AreaTable.dbc</a></td>
-<td>Integer</td>
-<td>Ref-ID;</td>
-</tr>
-<tr class="even">
-<td>24-40</td>
-<td>MapDescriptionA</td>
-<td>String</td>
-<td><a href="Localization" class="uri">Localization</a></td>
-</tr>
-<tr class="odd">
-<td>41-57</td>
-<td>MapDescriptionH</td>
-<td>String</td>
-<td><a href="Localization" class="uri">Localization</a></td>
-</tr>
-<tr class="even">
-<td>58</td>
-<td><a href="LoadingScreen" class="uri">LoadingScreen</a></td>
-<td>Integer</td>
-<td>Ref-ID; The LoadingScreen to Display</td>
-</tr>
-<tr class="odd">
-<td>59</td>
-<td>BGMapIconScale</td>
-<td>Float</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>60</td>
-<td>GhostEntranceMap</td>
-<td>Integer</td>
-<td>Ref-ID; Points to column 1, -1 if none</td>
-</tr>
-<tr class="odd">
-<td>61</td>
-<td>GhostEntranceX</td>
-<td>Float</td>
-<td>The X-Coord of the instance entrance</td>
-</tr>
-<tr class="even">
-<td>62</td>
-<td>GhostEntranceY</td>
-<td>Float</td>
-<td>The Y-Coord of the instance entrance</td>
-</tr>
-<tr class="odd">
-<td>63</td>
-<td>TimeOfDayOverride</td>
-<td>Integer</td>
-<td>Set to -1 for everything but Orgrimmar and Dalaran arena. For those, the time of day will change to this.</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>Expansion</td>
-<td>Integer</td>
-<td>Classic: 0; BC: 1; WotLK: 2</td>
-</tr>
-<tr class="odd">
-<td>65</td>
-<td>RaidOffset</td>
-<td>Integer</td>
-<td>Instance-Reset?</td>
-</tr>
-<tr class="even">
-<td>66</td>
-<td>MaxPlayers</td>
-<td>Integer</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Column | Field                                                 | Type    | Notes                                                                                                     |
+| ------ | ----------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| 1      | ID                                                    | Integer |                                                                                                           |
+| 2      | InternalName                                          | String  | reference to World\Map\ [...] \                                                                           |
+| 3      | Flags                                                 | Integer | 0x100 - CAN_CHANGE_PLAYER_DIFFICULTY                                                                      |
+| 4      | Type                                                  | Integer | 0: none, 1: party, 2: raid, 3: pvp, 4: arena, &gt;=5: none (official from &quot;IsInInstance()&quot;)     |
+| 5      | IsBattleground                                        | Integer | Boolean (1 = True, 0 = False)                                                                             |
+| 6-22   | Name                                                  | String  | <a href="Localization">Localization;</a>; displayed on World Map for example                              |
+| 23     | <a href="AreaTable.dbc" class="uri">AreaTable.dbc</a> | Integer | Ref-ID;                                                                                                   |
+| 24-40  | MapDescriptionA                                       | String  | <a href="Localization" class="uri">Localization</a>                                                       |
+| 41-57  | MapDescriptionH                                       | String  | <a href="Localization" class="uri">Localization</a>                                                       |
+| 58     | <a href="LoadingScreen" class="uri">LoadingScreen</a> | Integer | Ref-ID; The LoadingScreen to Display                                                                      |
+| 59     | BGMapIconScale                                        | Float   |                                                                                                           |
+| 60     | GhostEntranceMap                                      | Integer | Ref-ID; Points to column 1, -1 if none                                                                    |
+| 61     | GhostEntranceX                                        | Float   | The X-Coord of the instance entrance                                                                      |
+| 62     | GhostEntranceY                                        | Float   | The Y-Coord of the instance entrance                                                                      |
+| 63     | TimeOfDayOverride                                     | Integer | Set to -1 for everything but Orgrimmar and Dalaran arena. For those, the time of day will change to this. |
+| 64     | Expansion                                             | Integer | Classic: 0; BC: 1; WotLK: 2                                                                               |
+| 65     | RaidOffset                                            | Integer | Instance-Reset?                                                                                           |
+| 66     | MaxPlayers                                            | Integer |                                                                                                           |
 
 Content
 -------
@@ -276,5 +170,3 @@ Content
 | 718 | 0    | Trasnport: The Mighty Wind (Icecrown Citadel Raid) | 0           | 2         | 0          |
 | 723 | 0    | Stormwind                                          | 0           | 0         | 0          |
 | 724 | 2    | The Ruby Sanctum                                   | 0           | 2         | 0          |
-
-

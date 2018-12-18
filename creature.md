@@ -47,44 +47,14 @@ The Map ID of the position of the creature. See [Map.dbc](Map.dbc)
 
 Controls under which difficulties the creature will be spawned.
 
-<table>
-<colgroup>
-<col width="8%" />
-<col width="91%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>Not spawned</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>Spawned only in 10-man-normal versions of maps (includes maps without a heroic mode)</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>Spawned only in 25-man-normal versions of maps (or heroics pre 3.2)</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Spawned only in 10-man heroic versions of maps</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>Spawned only in 25-man-heroic versions of maps</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>Spawned in all versions of maps</td>
-</tr>
-</tbody>
-</table>
+| Value | Comment                                                                              |
+| ----- | ------------------------------------------------------------------------------------ |
+| 0     | Not spawned                                                                          |
+| 1     | Spawned only in 10-man-normal versions of maps (includes maps without a heroic mode) |
+| 2     | Spawned only in 25-man-normal versions of maps (or heroics pre 3.2)                  |
+| 4     | Spawned only in 10-man heroic versions of maps                                       |
+| 8     | Spawned only in 25-man-heroic versions of maps                                       |
+| 15    | Spawned in all versions of maps                                                      |
 
 #### phaseMask
 

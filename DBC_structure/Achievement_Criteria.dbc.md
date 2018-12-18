@@ -10,276 +10,42 @@ This DBC contains the requirments to aquire an achievement.
 
 ### Structure
 
-<table>
-<colgroup>
-<col width="9%" />
-<col width="30%" />
-<col width="7%" />
-<col width="52%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Field Nb</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Notes</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>ID</td>
-<td>Int</td>
-<td>ID of Criteria</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>AchievementID</td>
-<td>Int</td>
-<td>Achievement criteria is used for See -&gt; <a href="Achievements.dbc" class="uri">Achievements.dbc</a></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td><a href="Achievement_Criteria.dbc#known-types">Type</a></td>
-<td>Int</td>
-<td>Achievement_Criteria_Types]]</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Value1</td>
-<td>Int</td>
-<td>Achievement_Criteria_Types]]</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Value2</td>
-<td>Int</td>
-<td>Achievement_Criteria_Types]]</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Value3</td>
-<td>Int</td>
-<td>Achievement_Criteria_Types]]</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Value4</td>
-<td>Int</td>
-<td>Achievement_Criteria_Types]]</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Value5</td>
-<td>Int</td>
-<td>Achievement_Criteria_Types]]</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Value6</td>
-<td>Int</td>
-<td>Achievement_Criteria_Types]]</td>
-</tr>
-<tr class="even">
-<td>10-26</td>
-<td>Description</td>
-<td>String</td>
-<td>Description of Criteria</td>
-</tr>
-</tbody>
-</table>
+| Field Nb | Name                                                    | Type   | Notes                                                                                                  |
+| -------- | ------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------ |
+| 1        | ID                                                      | Int    | ID of Criteria                                                                                         |
+| 2        | AchievementID                                           | Int    | Achievement criteria is used for See -&gt; <a href="Achievements.dbc" class="uri">Achievements.dbc</a> |
+| 3        | <a href="Achievement_Criteria.dbc#known-types">Type</a> | Int    | Achievement_Criteria_Types]]                                                                           |
+| 4        | Value1                                                  | Int    | Achievement_Criteria_Types]]                                                                           |
+| 5        | Value2                                                  | Int    | Achievement_Criteria_Types]]                                                                           |
+| 6        | Value3                                                  | Int    | Achievement_Criteria_Types]]                                                                           |
+| 7        | Value4                                                  | Int    | Achievement_Criteria_Types]]                                                                           |
+| 8        | Value5                                                  | Int    | Achievement_Criteria_Types]]                                                                           |
+| 9        | Value6                                                  | Int    | Achievement_Criteria_Types]]                                                                           |
+| 10-26    | Description                                             | String | Description of Criteria                                                                                |
 
 Known types
 -----------
 
 This table explains what the 'type' and 'values' do in the [Achievement\_Criteria.dbc](Achievement_Criteria.dbc)
 
-<table>
-<colgroup>
-<col width="8%" />
-<col width="13%" />
-<col width="28%" />
-<col width="10%" />
-<col width="9%" />
-<col width="9%" />
-<col width="9%" />
-<col width="9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Type</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Value1</strong></th>
-<th><strong>Value2</strong></th>
-<th><strong>Value3</strong></th>
-<th><strong>Value4</strong></th>
-<th><strong>Value5</strong></th>
-<th><strong>Value6</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>PvP Wins</td>
-<td>MapID]]</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Level Race</td>
-<td>RaceID]]</td>
-<td>Level</td>
-<td>No Death?</td>
-<td>No Death?</td>
-<td>No Death?</td>
-<td>Unknown</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Level Class</td>
-<td>ClassID]]</td>
-<td>Level</td>
-<td>No Death?</td>
-<td>No Death?</td>
-<td>No Death?</td>
-<td>Unknown</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Level Faction</td>
-<td>FactionID (0 - Alliance, 1 - Horde)</td>
-<td>Level</td>
-<td>No Death?</td>
-<td>No Death?</td>
-<td>No Death?</td>
-<td>Unknown</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Level</td>
-<td>Unknown</td>
-<td>Level</td>
-<td>No Death?</td>
-<td>No Death?</td>
-<td>No Death?</td>
-<td>Unknown</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Collect Pets</td>
-<td>Unknown</td>
-<td>Amount</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Skill</td>
-<td>SkillID</td>
-<td>Skill Level</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Multi-Criteria?</td>
-<td>Criteria Group ID?</td>
-<td>Worth?</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Quests</td>
-<td>Unknown</td>
-<td>Amount</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>Daily Quests</td>
-<td>Unknown</td>
-<td>Days</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>Zone Quests</td>
-<td>AreaID]]</td>
-<td>Amount</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>Exploration</td>
-<td>MapID]]</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>Damage</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td>PvP Played</td>
-<td>MapID]]</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>PvP Deaths</td>
-<td>MapID]]</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-<td>Unknown</td>
-</tr>
-</tbody>
-</table>
+| Type | Name            | Value1                              | Value2      | Value3    | Value4    | Value5    | Value6  |
+| ---- | --------------- | ----------------------------------- | ----------- | --------- | --------- | --------- | ------- |
+| 1    | PvP Wins        | MapID]]                             | Unknown     | Unknown   | Unknown   | Unknown   | Unknown |
+| 2    | Level Race      | RaceID]]                            | Level       | No Death? | No Death? | No Death? | Unknown |
+| 3    | Level Class     | ClassID]]                           | Level       | No Death? | No Death? | No Death? | Unknown |
+| 4    | Level Faction   | FactionID (0 - Alliance, 1 - Horde) | Level       | No Death? | No Death? | No Death? | Unknown |
+| 5    | Level           | Unknown                             | Level       | No Death? | No Death? | No Death? | Unknown |
+| 6    | Collect Pets    | Unknown                             | Amount      | Unknown   | Unknown   | Unknown   | Unknown |
+| 7    | Skill           | SkillID                             | Skill Level | Unknown   | Unknown   | Unknown   | Unknown |
+| 8    | Multi-Criteria? | Criteria Group ID?                  | Worth?      | Unknown   | Unknown   | Unknown   | Unknown |
+| 9    | Quests          | Unknown                             | Amount      | Unknown   | Unknown   | Unknown   | Unknown |
+| 10   | Daily Quests    | Unknown                             | Days        | Unknown   | Unknown   | Unknown   | Unknown |
+| 11   | Zone Quests     | AreaID]]                            | Amount      | Unknown   | Unknown   | Unknown   | Unknown |
+| 12   | Exploration     | MapID]]                             | Unknown     | Unknown   | Unknown   | Unknown   | Unknown |
+| 13   | Damage          | Unknown                             | Unknown     | Unknown   | Unknown   | Unknown   | Unknown |
+| 14   | Unknown         | Unknown                             | Unknown     | Unknown   | Unknown   | Unknown   | Unknown |
+| 15   | PvP Played      | MapID]]                             | Unknown     | Unknown   | Unknown   | Unknown   | Unknown |
+| 16   | PvP Deaths      | MapID]]                             | Unknown     | Unknown   | Unknown   | Unknown   | Unknown |
 
 ### Content
 

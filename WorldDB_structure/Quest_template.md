@@ -259,97 +259,23 @@ This flag field defines more specifically the type of quest it is. Aside from th
 
 At the moment (rev 6055), the core does not actually handle these flags any differently (again, except for the daily flag and the sharable flag).
 
-<table>
-<colgroup>
-<col width="3%" />
-<col width="16%" />
-<col width="80%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Name</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>QUEST_FLAGS_NONE</td>
-<td>No flags, so no groups assigned to this quest.</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>QUEST_FLAGS_STAY_ALIVE</td>
-<td>If the player dies, the quest is failed. (?)</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>QUEST_FLAGS_EVENT</td>
-<td>Escort quests or any other event-driven quests. If player in party, all players that can accept this quest will receive confirmation box to accept quest.</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>QUEST_FLAGS_EXPLORATION</td>
-<td>Involves the activation of an areatrigger.</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>QUEST_FLAGS_SHARABLE</td>
-<td>Allows the quest to be shared with other players.</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>QUEST_FLAGS_NONE2</td>
-<td>Unknown at this time and not used.</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>QUEST_FLAGS_EPIC</td>
-<td>Epic class quests (hunter) (??)</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>QUEST_FLAGS_RAID</td>
-<td>Raid or similiar player group needed for quest.</td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>QUEST_FLAGS_TBC</td>
-<td>Added with or after TBC.</td>
-</tr>
-<tr class="even">
-<td>256</td>
-<td>QUEST_FLAGS_UNK2</td>
-<td>Quest needs extra non-objective items dropped (eg. ReqSourceID fields) (?)</td>
-</tr>
-<tr class="odd">
-<td>512</td>
-<td>QUEST_FLAGS_HIDDEN_REWARDS</td>
-<td>Item and monetary rewards are hidden in the initial quest details page and in the quest log but will appear once ready to be rewarded.</td>
-</tr>
-<tr class="even">
-<td>1024</td>
-<td>QUEST_FLAGS_AUTO_REWARDED</td>
-<td>These quests are automatically rewarded on quest complete.</td>
-</tr>
-<tr class="odd">
-<td>2048</td>
-<td>QUEST_FLAGS_TBC_RACES</td>
-<td>Blood elf/draenei starting zone quests.</td>
-</tr>
-<tr class="even">
-<td>4096</td>
-<td>QUEST_FLAGS_DAILY</td>
-<td>Daily repeatable quests (only flag that the core applies specific behavior for)</td>
-</tr>
-<tr class="odd">
-<td>8192</td>
-<td>QUEST_FLAGS_UNK5</td>
-<td>Grizzly Hills PvP daily? Puts PvP-tag on? No idea.)</td>
-</tr>
-</tbody>
-</table>
+| Bit  | Name                       | Comments                                                                                                                                                  |
+| ---- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0    | QUEST_FLAGS_NONE           | No flags, so no groups assigned to this quest.                                                                                                            |
+| 1    | QUEST_FLAGS_STAY_ALIVE     | If the player dies, the quest is failed. (?)                                                                                                              |
+| 2    | QUEST_FLAGS_EVENT          | Escort quests or any other event-driven quests. If player in party, all players that can accept this quest will receive confirmation box to accept quest. |
+| 4    | QUEST_FLAGS_EXPLORATION    | Involves the activation of an areatrigger.                                                                                                                |
+| 8    | QUEST_FLAGS_SHARABLE       | Allows the quest to be shared with other players.                                                                                                         |
+| 16   | QUEST_FLAGS_NONE2          | Unknown at this time and not used.                                                                                                                        |
+| 32   | QUEST_FLAGS_EPIC           | Epic class quests (hunter) (??)                                                                                                                           |
+| 64   | QUEST_FLAGS_RAID           | Raid or similiar player group needed for quest.                                                                                                           |
+| 128  | QUEST_FLAGS_TBC            | Added with or after TBC.                                                                                                                                  |
+| 256  | QUEST_FLAGS_UNK2           | Quest needs extra non-objective items dropped (eg. ReqSourceID fields) (?)                                                                                |
+| 512  | QUEST_FLAGS_HIDDEN_REWARDS | Item and monetary rewards are hidden in the initial quest details page and in the quest log but will appear once ready to be rewarded.                    |
+| 1024 | QUEST_FLAGS_AUTO_REWARDED  | These quests are automatically rewarded on quest complete.                                                                                                |
+| 2048 | QUEST_FLAGS_TBC_RACES      | Blood elf/draenei starting zone quests.                                                                                                                   |
+| 4096 | QUEST_FLAGS_DAILY          | Daily repeatable quests (only flag that the core applies specific behavior for)                                                                           |
+| 8192 | QUEST_FLAGS_UNK5           | Grizzly Hills PvP daily? Puts PvP-tag on? No idea.)                                                                                                       |
 
 Like all flag based fields, **QuestFlags** can be added for the different types of quest.
 
@@ -676,7 +602,7 @@ Examples
 *Completing A unlocks B and C that can be done at the same time. They both need to be completed before D becomes available. X is needed to obtain item for C and this quest should only be available if C is active*
 
                     *questA*
-                      /    \ 
+                      /    \
               *questB*      *questC* <-> *questX*
                       \    /
                      *questD*

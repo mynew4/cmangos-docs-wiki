@@ -273,174 +273,34 @@ This Field Is a Boolean Flag Indicating That The Creature Is a Racial Leader. Ki
 
 This Field Is a Bitmask That Represents What NPC Flags The Creature Has Assigned To It. Each Bit Controls a Different Flag and to Combine Flags, You Can Add Each Flag That You Require, In Effect Activating The Respective Bits.
 
-<table>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Value</th>
-<th>Flag</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1</td>
-<td>Gossip</td>
-<td>If creature has more gossip options, add this flag to bring up a menu.</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>2</td>
-<td>Quest Giver</td>
-<td>Any creature giving or taking quests needs to have this flag.</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>16</td>
-<td>Trainer</td>
-<td>Allows the creature to have a trainer list to teach spells</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>32</td>
-<td>Trainer_Class</td>
-<td>Allows the creature to have a class trainer list to teach spells.<br />
-(MUST USE WITH FLAG: 16)</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>64</td>
-<td>Trainer_Profession</td>
-<td>Allows the creature to have a profession trainer list to teach spells.<br />
-(MUST USE WITH FLAG: 16)</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>128</td>
-<td>Vendor</td>
-<td>Any creature selling items needs to have this flag.</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>256</td>
-<td>Vendor_Ammo</td>
-<td>Any creature selling ammo items needs to have this flag.<br />
-(MUST USE WITH FLAG: 128)</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>512</td>
-<td>Vendor_Food</td>
-<td>Any creature selling food items needs to have this flag.<br />
-(MUST USE WITH FLAG: 128)</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>1024</td>
-<td>Vendor_Poison</td>
-<td>Any creature selling poison items needs to have this flag.<br />
-(MUST USE WITH FLAG: 128)</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>2048</td>
-<td>Vendor_Reagent</td>
-<td>Any creature selling reagent items needs to have this flag.<br />
-(MUST USE WITH FLAG: 128)</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>4096</td>
-<td>Repairer</td>
-<td>Creatures with this flag can repair items.</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>8192</td>
-<td>Flight Master</td>
-<td>Any creature serving as fly master has this.</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>16384</td>
-<td>Spirit Healer</td>
-<td>Makes the creature invisible to alive characters and has the resurrect function.</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>32768</td>
-<td>Spirit Guide</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>65536</td>
-<td>Innkeeper</td>
-<td>Creatures with this flag can set hearthstone locations.</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>131072</td>
-<td>Banker</td>
-<td>Creatures with this flag can show the bank</td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>262144</td>
-<td>Petitioner</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>19</td>
-<td>524288</td>
-<td>Tabard Designer</td>
-<td>Allows the designing of guild tabards.</td>
-</tr>
-<tr class="odd">
-<td>20</td>
-<td>1048576</td>
-<td>Battlemaster</td>
-<td>Creatures with this flag port players to battlegrounds.</td>
-</tr>
-<tr class="even">
-<td>21</td>
-<td>2097152</td>
-<td>Auctioneer</td>
-<td>Allows creature to display auction list.</td>
-</tr>
-<tr class="odd">
-<td>22</td>
-<td>4194304</td>
-<td>Stable Master</td>
-<td>Has the option to stable pets for hunters.</td>
-</tr>
-<tr class="even">
-<td>23</td>
-<td>8388608</td>
-<td>Guild Banker</td>
-<td>cause client to send 997 opcode</td>
-</tr>
-<tr class="odd">
-<td>24</td>
-<td>16777216</td>
-<td>SpellClick/Instantloot</td>
-<td>cause client to send 1015 opcode (spell click), dynamic, set at loading and don't must be set in DB. (Npc_spellclick_spells)</td>
-</tr>
-<tr class="even">
-<td>25</td>
-<td>33554432</td>
-<td>Player Vehicle</td>
-<td>players with mounts that have vehicle data should have it set</td>
-</tr>
-<tr class="odd">
-<td>26</td>
-<td>268435456</td>
-<td>Guard ?</td>
-<td>Creatures with this flag act as guards in cities.</td>
-</tr>
-</tbody>
-</table>
+| Bit | Value     | Flag                   | Comment                                                                                                                      |
+| --- | --------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 0   | 1         | Gossip                 | If creature has more gossip options, add this flag to bring up a menu.                                                       |
+| 1   | 2         | Quest Giver            | Any creature giving or taking quests needs to have this flag.                                                                |
+| 4   | 16        | Trainer                | Allows the creature to have a trainer list to teach spells                                                                   |
+| 5   | 32        | Trainer_Class          | Allows the creature to have a class trainer list to teach spells.(MUST USE WITH FLAG: 16)                                    |
+| 6   | 64        | Trainer_Profession     | Allows the creature to have a profession trainer list to teach spells.(MUST USE WITH FLAG: 16)                               |
+| 7   | 128       | Vendor                 | Any creature selling items needs to have this flag.                                                                          |
+| 8   | 256       | Vendor_Ammo            | Any creature selling ammo items needs to have this flag.(MUST USE WITH FLAG: 128)                                            |
+| 9   | 512       | Vendor_Food            | Any creature selling food items needs to have this flag.(MUST USE WITH FLAG: 128)                                            |
+| 10  | 1024      | Vendor_Poison          | Any creature selling poison items needs to have this flag.(MUST USE WITH FLAG: 128)                                          |
+| 11  | 2048      | Vendor_Reagent         | Any creature selling reagent items needs to have this flag.(MUST USE WITH FLAG: 128)                                         |
+| 12  | 4096      | Repairer               | Creatures with this flag can repair items.                                                                                   |
+| 13  | 8192      | Flight Master          | Any creature serving as fly master has this.                                                                                 |
+| 14  | 16384     | Spirit Healer          | Makes the creature invisible to alive characters and has the resurrect function.                                             |
+| 15  | 32768     | Spirit Guide           |                                                                                                                              |
+| 16  | 65536     | Innkeeper              | Creatures with this flag can set hearthstone locations.                                                                      |
+| 17  | 131072    | Banker                 | Creatures with this flag can show the bank                                                                                   |
+| 18  | 262144    | Petitioner             |                                                                                                                              |
+| 19  | 524288    | Tabard Designer        | Allows the designing of guild tabards.                                                                                       |
+| 20  | 1048576   | Battlemaster           | Creatures with this flag port players to battlegrounds.                                                                      |
+| 21  | 2097152   | Auctioneer             | Allows creature to display auction list.                                                                                     |
+| 22  | 4194304   | Stable Master          | Has the option to stable pets for hunters.                                                                                   |
+| 23  | 8388608   | Guild Banker           | cause client to send 997 opcode                                                                                              |
+| 24  | 16777216  | SpellClick/Instantloot | cause client to send 1015 opcode (spell click), dynamic, set at loading and don't must be set in DB. (Npc_spellclick_spells) |
+| 25  | 33554432  | Player Vehicle         | players with mounts that have vehicle data should have it set                                                                |
+| 26  | 268435456 | Guard ?                | Creatures with this flag act as guards in cities.                                                                            |
+
 EXAMPLE:
 So If You Want An NPC That Is a Quest Giver, a Vendor And Can Also Repair You Just Add The Specific Flags Together:
 
@@ -453,216 +313,40 @@ This Field Allows The Manual Application Of Unit Flags To NPC. This Is a Bitmask
 
 Some Known Possible Flags Are:
 
-<table>
-<colgroup>
-<col width="3%" />
-<col width="4%" />
-<col width="12%" />
-<col width="80%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Bit</strong></th>
-<th><strong>Flag</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Comments</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1</td>
-<td>UNIT_FLAG_UNK_0</td>
-<td>Movement checks disabled, likely paired with loss of client control packet.</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>2</td>
-<td>UNIT_FLAG_NON_ATTACKABLE</td>
-<td>not attackable</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>4</td>
-<td>UNIT_FLAG_CLIENT_CONTROL_LOST</td>
-<td>Generic unspecified loss of control initiated by server script, movement checks disabled, paired with loss of client control packet.</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>8</td>
-<td>UNIT_FLAG_PLAYER_CONTROLLED</td>
-<td>players, pets, totems, guardians, companions, charms, any units associated with players</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>16</td>
-<td>UNIT_FLAG_RENAME</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>32</td>
-<td>UNIT_FLAG_PREPARATION</td>
-<td>don't take reagents for spells with SPELL_ATTR_EX5_NO_REAGENT_WHILE_PREP</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>64</td>
-<td>UNIT_FLAG_UNK_6</td>
-<td>Related to Movement? often paired with UNIT_FLAG_SWIMMING</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>128</td>
-<td>UNIT_FLAG_NOT_ATTACKABLE_1</td>
-<td>UNIT_FLAG_PVP + UNIT_FLAG_NOT_ATTACKABLE_1 = UNIT_FLAG_NON_PVP_ATTACKABLE - blue color target</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>256</td>
-<td>UNIT_FLAG_IMMUNE_TO_PLAYER</td>
-<td>Target is immune to players</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>512</td>
-<td>UNIT_FLAG_IMMUNE_TO_NPC</td>
-<td>makes you unable to attack everything. Almost identical to our &quot;civilian&quot;-term. Will ignore it's surroundings and not engage in combat unless &quot;called upon&quot; or engaged by another unit.</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>1024</td>
-<td>UNIT_FLAG_LOOTING</td>
-<td>loot animation</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>2048</td>
-<td>UNIT_FLAG_PET_IN_COMBAT</td>
-<td>in combat?, 2.0.8</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>4096</td>
-<td>UNIT_FLAG_PVP</td>
-<td>Allows item spells to be casted upon. changed in 3.0.3</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>8192</td>
-<td>UNIT_FLAG_SILENCED</td>
-<td>silenced, 2.1.1</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>16384</td>
-<td>UNIT_FLAG_PERSUADED</td>
-<td>persuaded, 2.0.8</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>32768</td>
-<td>UNIT_FLAG_SWIMMING</td>
-<td>controls water swimming animation - TODO: confirm whether dynamic or static</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>65536</td>
-<td>UNIT_FLAG_NON_ATTACKABLE_2</td>
-<td>removes attackable icon, if on yourself, cannot assist self but can cast TARGET_SELF spells - added by SPELL_AURA_MOD_UNATTACKABLE</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>131072</td>
-<td>UNIT_FLAG_PACIFIED</td>
-<td>pacified, 3.0.3</td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>262144</td>
-<td>UNIT_FLAG_STUNNED</td>
-<td>stunned, 2.1.1 Unit is a subject to stun, turn and strafe movement disabled</td>
-</tr>
-<tr class="even">
-<td>19</td>
-<td>524288</td>
-<td>UNIT_FLAG_IN_COMBAT</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>20</td>
-<td>1048576</td>
-<td>UNIT_FLAG_TAXI_FLIGHT</td>
-<td>Unit is on taxi, paired with a duplicate loss of client control packet (likely a legacy serverside hack). Disables any spellcasts not allowed in taxi flight client-side.</td>
-</tr>
-<tr class="even">
-<td>21</td>
-<td>2097152</td>
-<td>UNIT_FLAG_DISARMED</td>
-<td>disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.</td>
-</tr>
-<tr class="odd">
-<td>22</td>
-<td>4194304</td>
-<td>UNIT_FLAG_CONFUSED</td>
-<td>Unit is a subject to confused movement, movement checks disabled, paired with loss of client control packet.</td>
-</tr>
-<tr class="even">
-<td>23</td>
-<td>8388608</td>
-<td>UNIT_FLAG_FLEEING</td>
-<td>Unit is a subject to fleeing movement, movement checks disabled, paired with loss of client control packet.</td>
-</tr>
-<tr class="odd">
-<td>24</td>
-<td>16777216</td>
-<td>UNIT_FLAG_POSSESSED</td>
-<td>Unit is under remote control by another unit, movement checks disabled, paired with loss of client control packet. New master is allowed to use melee attack and can't select this unit via mouse in the world (as if it was own character).</td>
-</tr>
-<tr class="even">
-<td>25</td>
-<td>33554432</td>
-<td>UNIT_FLAG_NOT_SELECTABLE</td>
-<td>Can't be selected by mouse</td>
-</tr>
-<tr class="odd">
-<td>26</td>
-<td>67108864</td>
-<td>UNIT_FLAG_SKINNABLE</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>27</td>
-<td>134217728</td>
-<td>UNIT_FLAG_MOUNT</td>
-<td>the client seems to handle it perfectly</td>
-</tr>
-<tr class="odd">
-<td>28</td>
-<td>268435456</td>
-<td>UNIT_FLAG_UNK_28</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>29</td>
-<td>536870912</td>
-<td>UNIT_FLAG_UNK_29</td>
-<td>used in Feing Death spell</td>
-</tr>
-<tr class="odd">
-<td>30</td>
-<td>1073741824</td>
-<td>UNIT_FLAG_SHEATHE</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>31</td>
-<td>2147483648</td>
-<td>UNIT_FLAG_UNK_31</td>
-<td>set skinnable icon and also changes color of portrait)(no affect in 2.4.3)</td>
-</tr>
-</tbody>
-</table>
+| Bit | Flag       | Name                          | Comments                                                                                                                                                                                                                                     |
+| --- | ---------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | 1          | UNIT_FLAG_UNK_0               | Movement checks disabled, likely paired with loss of client control packet.                                                                                                                                                                  |
+| 1   | 2          | UNIT_FLAG_NON_ATTACKABLE      | not attackable                                                                                                                                                                                                                               |
+| 2   | 4          | UNIT_FLAG_CLIENT_CONTROL_LOST | Generic unspecified loss of control initiated by server script, movement checks disabled, paired with loss of client control packet.                                                                                                         |
+| 3   | 8          | UNIT_FLAG_PLAYER_CONTROLLED   | players, pets, totems, guardians, companions, charms, any units associated with players                                                                                                                                                      |
+| 4   | 16         | UNIT_FLAG_RENAME              |                                                                                                                                                                                                                                              |
+| 5   | 32         | UNIT_FLAG_PREPARATION         | don't take reagents for spells with SPELL_ATTR_EX5_NO_REAGENT_WHILE_PREP                                                                                                                                                                     |
+| 6   | 64         | UNIT_FLAG_UNK_6               | Related to Movement? often paired with UNIT_FLAG_SWIMMING                                                                                                                                                                                    |
+| 7   | 128        | UNIT_FLAG_NOT_ATTACKABLE_1    | UNIT_FLAG_PVP + UNIT_FLAG_NOT_ATTACKABLE_1 = UNIT_FLAG_NON_PVP_ATTACKABLE - blue color target                                                                                                                                                |
+| 8   | 256        | UNIT_FLAG_IMMUNE_TO_PLAYER    | Target is immune to players                                                                                                                                                                                                                  |
+| 9   | 512        | UNIT_FLAG_IMMUNE_TO_NPC       | makes you unable to attack everything. Almost identical to our &quot;civilian&quot;-term. Will ignore it's surroundings and not engage in combat unless &quot;called upon&quot; or engaged by another unit.                                  |
+| 10  | 1024       | UNIT_FLAG_LOOTING             | loot animation                                                                                                                                                                                                                               |
+| 11  | 2048       | UNIT_FLAG_PET_IN_COMBAT       | in combat?, 2.0.8                                                                                                                                                                                                                            |
+| 12  | 4096       | UNIT_FLAG_PVP                 | Allows item spells to be casted upon. changed in 3.0.3                                                                                                                                                                                       |
+| 13  | 8192       | UNIT_FLAG_SILENCED            | silenced, 2.1.1                                                                                                                                                                                                                              |
+| 14  | 16384      | UNIT_FLAG_PERSUADED           | persuaded, 2.0.8                                                                                                                                                                                                                             |
+| 15  | 32768      | UNIT_FLAG_SWIMMING            | controls water swimming animation - TODO: confirm whether dynamic or static                                                                                                                                                                  |
+| 16  | 65536      | UNIT_FLAG_NON_ATTACKABLE_2    | removes attackable icon, if on yourself, cannot assist self but can cast TARGET_SELF spells - added by SPELL_AURA_MOD_UNATTACKABLE                                                                                                           |
+| 17  | 131072     | UNIT_FLAG_PACIFIED            | pacified, 3.0.3                                                                                                                                                                                                                              |
+| 18  | 262144     | UNIT_FLAG_STUNNED             | stunned, 2.1.1 Unit is a subject to stun, turn and strafe movement disabled                                                                                                                                                                  |
+| 19  | 524288     | UNIT_FLAG_IN_COMBAT           |                                                                                                                                                                                                                                              |
+| 20  | 1048576    | UNIT_FLAG_TAXI_FLIGHT         | Unit is on taxi, paired with a duplicate loss of client control packet (likely a legacy serverside hack). Disables any spellcasts not allowed in taxi flight client-side.                                                                    |
+| 21  | 2097152    | UNIT_FLAG_DISARMED            | disable melee spells casting..., &quot;Required melee weapon&quot; added to melee spells tooltip.                                                                                                                                            |
+| 22  | 4194304    | UNIT_FLAG_CONFUSED            | Unit is a subject to confused movement, movement checks disabled, paired with loss of client control packet.                                                                                                                                 |
+| 23  | 8388608    | UNIT_FLAG_FLEEING             | Unit is a subject to fleeing movement, movement checks disabled, paired with loss of client control packet.                                                                                                                                  |
+| 24  | 16777216   | UNIT_FLAG_POSSESSED           | Unit is under remote control by another unit, movement checks disabled, paired with loss of client control packet. New master is allowed to use melee attack and can't select this unit via mouse in the world (as if it was own character). |
+| 25  | 33554432   | UNIT_FLAG_NOT_SELECTABLE      | Can't be selected by mouse                                                                                                                                                                                                                   |
+| 26  | 67108864   | UNIT_FLAG_SKINNABLE           |                                                                                                                                                                                                                                              |
+| 27  | 134217728  | UNIT_FLAG_MOUNT               | the client seems to handle it perfectly                                                                                                                                                                                                      |
+| 28  | 268435456  | UNIT_FLAG_UNK_28              |                                                                                                                                                                                                                                              |
+| 29  | 536870912  | UNIT_FLAG_UNK_29              | used in Feing Death spell                                                                                                                                                                                                                    |
+| 30  | 1073741824 | UNIT_FLAG_SHEATHE             |                                                                                                                                                                                                                                              |
+| 31  | 2147483648 | UNIT_FLAG_UNK_31              | set skinnable icon and also changes color of portrait)(no affect in 2.4.3)                                                                                                                                                                   |
 
 #### DynamicFlags
 
@@ -670,228 +354,47 @@ This Field Flags Controls The Visual Appearance Of The Creature. These Flag Valu
 
 Some Known Flag Values Are:
 
-<table>
-<colgroup>
-<col width="7%" />
-<col width="30%" />
-<col width="62%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Flag</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Comments</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>UNIT_DYNFLAG_NONE</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>UNIT_DYNFLAG_LOOTABLE</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>UNIT_DYNFLAG_TRACK_UNIT</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>UNIT_DYNFLAG_TAPPED</td>
-<td>Lua_UnitIsTapped - Makes creatures name appear grey (good for simulating dead creatures) ???</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>UNIT_DYNFLAG_TAPPED_BY_PLAYER</td>
-<td>Lua_UnitIsTappedByPlayer</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>UNIT_DYNFLAG_SPECIALINFO</td>
-<td>Shows creatures basic stats (Health, damage, resistances, tamable).</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>UNIT_DYNFLAG_DEAD</td>
-<td>Makes the creature appear dead (this DOES NOT make the creatures name grey)</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>UNIT_DYNFLAG_REFER_A_FRIEND</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>UNIT_DYNFLAG_TAPPED_BY_ALL_THREAT_LIST</td>
-<td>Lua_UnitIsTappedByAllThreatList</td>
-</tr>
-</tbody>
-</table>
+| Flag | Name                                   | Comments                                                                                     |
+| ---- | -------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 0    | UNIT_DYNFLAG_NONE                      |                                                                                              |
+| 1    | UNIT_DYNFLAG_LOOTABLE                  |                                                                                              |
+| 2    | UNIT_DYNFLAG_TRACK_UNIT                |                                                                                              |
+| 4    | UNIT_DYNFLAG_TAPPED                    | Lua_UnitIsTapped - Makes creatures name appear grey (good for simulating dead creatures) ??? |
+| 8    | UNIT_DYNFLAG_TAPPED_BY_PLAYER          | Lua_UnitIsTappedByPlayer                                                                     |
+| 16   | UNIT_DYNFLAG_SPECIALINFO               | Shows creatures basic stats (Health, damage, resistances, tamable).                          |
+| 32   | UNIT_DYNFLAG_DEAD                      | Makes the creature appear dead (this DOES NOT make the creatures name grey)                  |
+| 64   | UNIT_DYNFLAG_REFER_A_FRIEND            |                                                                                              |
+| 128  | UNIT_DYNFLAG_TAPPED_BY_ALL_THREAT_LIST | Lua_UnitIsTappedByAllThreatList                                                              |
 
 #### ExtraFlags
 
 This Field Controls the Application Of Flags That Controls Certain NPC Specific Attributes.
 
-<table style="width:100%;">
-<colgroup>
-<col width="4%" />
-<col width="6%" />
-<col width="28%" />
-<col width="60%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Hex</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>0x00000001</td>
-<td>CREATURE_EXTRA_FLAG_INSTANCE_BIND</td>
-<td>creature kill bind instance with killer and killer's group</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>0x00000002</td>
-<td>CREATURE_EXTRA_FLAG_NO_AGGRO_ON_SIGHT</td>
-<td>no aggro (ignore faction/reputation hostility)</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>0x00000004</td>
-<td>CREATURE_EXTRA_FLAG_NO_PARRY</td>
-<td>creature can't parry</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>0x00000008</td>
-<td>CREATURE_EXTRA_FLAG_NO_PARRY_HASTEN</td>
-<td>creature can't counter-attack at parry</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>0x00000010</td>
-<td>CREATURE_EXTRA_FLAG_NO_BLOCK</td>
-<td>creature can't block</td>
-</tr>
-<tr class="even">
-<td>32</td>
-<td>0x00000020</td>
-<td>CREATURE_EXTRA_FLAG_NO_CRUSH</td>
-<td>creature can't do crush attacks</td>
-</tr>
-<tr class="odd">
-<td>64</td>
-<td>0x00000040</td>
-<td>CREATURE_EXTRA_FLAG_NO_XP_AT_KILL</td>
-<td>creature kill not provide XP</td>
-</tr>
-<tr class="even">
-<td>128</td>
-<td>0x00000080</td>
-<td>CREATURE_EXTRA_FLAG_INVISIBLE</td>
-<td>creature is always invisible for player (mostly trigger creatures)</td>
-</tr>
-<tr class="odd">
-<td>256</td>
-<td>0x00000100</td>
-<td>CREATURE_EXTRA_FLAG_NOT_TAUNTABLE</td>
-<td>creature is immune to taunt auras and effect attack me</td>
-</tr>
-<tr class="even">
-<td>512</td>
-<td>0x00000200</td>
-<td>CREATURE_EXTRA_FLAG_AGGRO_ZONE</td>
-<td>creature sets itself in combat with zone on aggro</td>
-</tr>
-<tr class="odd">
-<td>1024</td>
-<td>0x00000400</td>
-<td>CREATURE_EXTRA_FLAG_GUARD</td>
-<td>creature is a guard</td>
-</tr>
-<tr class="even">
-<td>2048</td>
-<td>0x00000800</td>
-<td>CREATURE_EXTRA_FLAG_NO_CALL_ASSIST</td>
-<td>creature shouldn't call for assistance on aggro</td>
-</tr>
-<tr class="odd">
-<td>4096</td>
-<td>0x00001000</td>
-<td>CREATURE_EXTRA_FLAG_ACTIVE</td>
-<td>creature is active object. Grid of this creature will be loaded and creature set as active</td>
-</tr>
-<tr class="even">
-<td>8192</td>
-<td>0x00002000</td>
-<td>CREATURE_EXTRA_FLAG_MMAP_FORCE_ENABLE</td>
-<td>creature is forced to use MMaps</td>
-</tr>
-<tr class="odd">
-<td>16384</td>
-<td>0x00004000</td>
-<td>CREATURE_EXTRA_FLAG_MMAP_FORCE_DISABLE</td>
-<td>creature is forced to NOT use MMaps</td>
-</tr>
-<tr class="even">
-<td>32768</td>
-<td>0x00008000</td>
-<td>CREATURE_EXTRA_FLAG_WALK_IN_WATER</td>
-<td>creature is forced to walk in water even it can swim</td>
-</tr>
-<tr class="odd">
-<td>65536</td>
-<td>0x00010000</td>
-<td>CREATURE_EXTRA_FLAG_CIVILIAN</td>
-<td>CreatureInfo-&gt;civilian substitute (for expansions as Civilian Colum was removed)</td>
-</tr>
-<tr class="even">
-<td>131072</td>
-<td>0x00020000</td>
-<td>CREATURE_EXTRA_FLAG_NO_MELEE</td>
-<td>creature can't melee</td>
-</tr>
-<tr class="odd">
-<td>262144</td>
-<td>0x00040000</td>
-<td>NOT_IMPLEMENTED_CREATURE_EXTRA_FLAG_FAR_VIEW</td>
-<td>creature with far view</td>
-</tr>
-<tr class="even">
-<td>524288</td>
-<td>0x00080000</td>
-<td>CREATURE_EXTRA_FLAG_FORCE_ATTACKING_CAPABILITY</td>
-<td>SetForceAttackingCapability(true); for nonattackable, nontargetable creatures that should be able to attack nontheless</td>
-</tr>
-<tr class="odd">
-<td>1048576</td>
-<td>0x00100000</td>
-<td>CREATURE_EXTRA_FLAG_IGNORE_USED_POSITION</td>
-<td>ignore creature when checking used positions around target</td>
-</tr>
-<tr class="even">
-<td>2097152</td>
-<td>0x00200000</td>
-<td>NOT_IMPLEMENTED_CREATURE_EXTRA_FLAG_COUNT_SPAWNS</td>
-<td>count creature spawns in Map*</td>
-</tr>
-<tr class="odd">
-<td>4194304</td>
-<td>0x00400000</td>
-<td>CREATURE_EXTRA_FLAG_HASTE_SPELL_IMMUNITY</td>
-<td>immunity to COT or Mind Numbing Poison - very common in instances</td>
-</tr>
-</tbody>
-</table>
+| Bit     | Hex        | Name                                             | Description                                                                                                            |
+| ------- | ---------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| 1       | 0x00000001 | CREATURE_EXTRA_FLAG_INSTANCE_BIND                | creature kill bind instance with killer and killer's group                                                             |
+| 2       | 0x00000002 | CREATURE_EXTRA_FLAG_NO_AGGRO_ON_SIGHT            | no aggro (ignore faction/reputation hostility)                                                                         |
+| 4       | 0x00000004 | CREATURE_EXTRA_FLAG_NO_PARRY                     | creature can't parry                                                                                                   |
+| 8       | 0x00000008 | CREATURE_EXTRA_FLAG_NO_PARRY_HASTEN              | creature can't counter-attack at parry                                                                                 |
+| 16      | 0x00000010 | CREATURE_EXTRA_FLAG_NO_BLOCK                     | creature can't block                                                                                                   |
+| 32      | 0x00000020 | CREATURE_EXTRA_FLAG_NO_CRUSH                     | creature can't do crush attacks                                                                                        |
+| 64      | 0x00000040 | CREATURE_EXTRA_FLAG_NO_XP_AT_KILL                | creature kill not provide XP                                                                                           |
+| 128     | 0x00000080 | CREATURE_EXTRA_FLAG_INVISIBLE                    | creature is always invisible for player (mostly trigger creatures)                                                     |
+| 256     | 0x00000100 | CREATURE_EXTRA_FLAG_NOT_TAUNTABLE                | creature is immune to taunt auras and effect attack me                                                                 |
+| 512     | 0x00000200 | CREATURE_EXTRA_FLAG_AGGRO_ZONE                   | creature sets itself in combat with zone on aggro                                                                      |
+| 1024    | 0x00000400 | CREATURE_EXTRA_FLAG_GUARD                        | creature is a guard                                                                                                    |
+| 2048    | 0x00000800 | CREATURE_EXTRA_FLAG_NO_CALL_ASSIST               | creature shouldn't call for assistance on aggro                                                                        |
+| 4096    | 0x00001000 | CREATURE_EXTRA_FLAG_ACTIVE                       | creature is active object. Grid of this creature will be loaded and creature set as active                             |
+| 8192    | 0x00002000 | CREATURE_EXTRA_FLAG_MMAP_FORCE_ENABLE            | creature is forced to use MMaps                                                                                        |
+| 16384   | 0x00004000 | CREATURE_EXTRA_FLAG_MMAP_FORCE_DISABLE           | creature is forced to NOT use MMaps                                                                                    |
+| 32768   | 0x00008000 | CREATURE_EXTRA_FLAG_WALK_IN_WATER                | creature is forced to walk in water even it can swim                                                                   |
+| 65536   | 0x00010000 | CREATURE_EXTRA_FLAG_CIVILIAN                     | CreatureInfo-&gt;civilian substitute (for expansions as Civilian Colum was removed)                                    |
+| 131072  | 0x00020000 | CREATURE_EXTRA_FLAG_NO_MELEE                     | creature can't melee                                                                                                   |
+| 262144  | 0x00040000 | NOT_IMPLEMENTED_CREATURE_EXTRA_FLAG_FAR_VIEW     | creature with far view                                                                                                 |
+| 524288  | 0x00080000 | CREATURE_EXTRA_FLAG_FORCE_ATTACKING_CAPABILITY   | SetForceAttackingCapability(true); for nonattackable, nontargetable creatures that should be able to attack nontheless |
+| 1048576 | 0x00100000 | CREATURE_EXTRA_FLAG_IGNORE_USED_POSITION         | ignore creature when checking used positions around target                                                             |
+| 2097152 | 0x00200000 | NOT_IMPLEMENTED_CREATURE_EXTRA_FLAG_COUNT_SPAWNS | count creature spawns in Map*                                                                                          |
+| 4194304 | 0x00400000 | CREATURE_EXTRA_FLAG_HASTE_SPELL_IMMUNITY         | immunity to COT or Mind Numbing Poison - very common in instances                                                      |
 
 #### CreatureTypeFlags
 
@@ -899,107 +402,25 @@ This Field Controls If a Mob Is Mineable or Herbable. If Any Of These Flags Are 
 
 It will be send to the client in SMSG\_CREATURE\_QUERY\_RESPONSE
 
-<table>
-<colgroup>
-<col width="6%" />
-<col width="23%" />
-<col width="70%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Flag</strong></th>
-<th><strong>Name</strong></th>
-<th><strong>Comments</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>CREATURE_TYPEFLAGS_TAMEABLE</td>
-<td>Makes the mob tameable (must also be a beast and have family set)</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>CREATURE_TYPEFLAGS_GHOST_VISIBLE</td>
-<td>Sets Creatures that can ALSO be seen when player is a ghost. Used in CanInteract function by client, can't be attacked</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>CREATURE_TYPEFLAGS_UNK3</td>
-<td>Sets &quot;BOSS&quot; flag for tooltips</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>CREATURE_TYPEFLAGS_UNK4</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>CREATURE_TYPEFLAGS_UNK5</td>
-<td>Controls something in client tooltip related to creature faction</td>
-</tr>
-<tr class="even">
-<td>32</td>
-<td>CREATURE_TYPEFLAGS_UNK6</td>
-<td>Something related to Sound</td>
-</tr>
-<tr class="odd">
-<td>64</td>
-<td>CREATURE_TYPEFLAGS_UNK7</td>
-<td>Related to attackable / not attackable creatures with spells</td>
-</tr>
-<tr class="even">
-<td>128</td>
-<td>CREATURE_TYPEFLAGS_INTERACT_DEAD</td>
-<td>has something to do with unit interaction / quest status requests</td>
-</tr>
-<tr class="odd">
-<td>136</td>
-<td>CREATURE_TYPEFLAGS_NON_PVP_PLAYER</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>256</td>
-<td>CREATURE_TYPEFLAGS_HERBLOOT</td>
-<td>Makes Mob Corpse Herbable - Uses Skinning Loot Field</td>
-</tr>
-<tr class="odd">
-<td>512</td>
-<td>CREATURE_TYPEFLAGS_MININGLOOT</td>
-<td>Makes Mob Corpse Mineable - Uses Skinning Loot Field</td>
-</tr>
-<tr class="even">
-<td>1024</td>
-<td>CREATURE_TYPEFLAGS_ANIMATION_UNK11</td>
-<td>no idea, but it used by client</td>
-</tr>
-<tr class="odd">
-<td>2048</td>
-<td>CREATURE_TYPEFLAGS_ANIMATION_UNK12</td>
-<td>related to possibility to cast spells while mounted</td>
-</tr>
-<tr class="even">
-<td>4096</td>
-<td>CREATURE_TYPEFLAGS_CAN_ASSIST</td>
-<td>Can aid any player or group in combat. Typically seen for escorting NPC's</td>
-</tr>
-<tr class="odd">
-<td>8192</td>
-<td>CREATURE_TYPEFLAGS_UNK14</td>
-<td>checked from calls in Lua_PetHasActionBar</td>
-</tr>
-<tr class="even">
-<td>16384</td>
-<td>CREATURE_TYPEFLAGS_UNK15</td>
-<td>Lua_UnitGUID, client does guid_low &amp;= 0xFF000000 if this flag is set</td>
-</tr>
-<tr class="odd">
-<td>32768</td>
-<td>CREATURE_TYPEFLAGS_ENGINEERLOOT</td>
-<td>Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field</td>
-</tr>
-</tbody>
-</table>
+| Flag  | Name                               | Comments                                                                                                               |
+| ----- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 1     | CREATURE_TYPEFLAGS_TAMEABLE        | Makes the mob tameable (must also be a beast and have family set)                                                      |
+| 2     | CREATURE_TYPEFLAGS_GHOST_VISIBLE   | Sets Creatures that can ALSO be seen when player is a ghost. Used in CanInteract function by client, can't be attacked |
+| 4     | CREATURE_TYPEFLAGS_UNK3            | Sets &quot;BOSS&quot; flag for tooltips                                                                                |
+| 8     | CREATURE_TYPEFLAGS_UNK4            |                                                                                                                        |
+| 16    | CREATURE_TYPEFLAGS_UNK5            | Controls something in client tooltip related to creature faction                                                       |
+| 32    | CREATURE_TYPEFLAGS_UNK6            | Something related to Sound                                                                                             |
+| 64    | CREATURE_TYPEFLAGS_UNK7            | Related to attackable / not attackable creatures with spells                                                           |
+| 128   | CREATURE_TYPEFLAGS_INTERACT_DEAD   | has something to do with unit interaction / quest status requests                                                      |
+| 136   | CREATURE_TYPEFLAGS_NON_PVP_PLAYER  |                                                                                                                        |
+| 256   | CREATURE_TYPEFLAGS_HERBLOOT        | Makes Mob Corpse Herbable - Uses Skinning Loot Field                                                                   |
+| 512   | CREATURE_TYPEFLAGS_MININGLOOT      | Makes Mob Corpse Mineable - Uses Skinning Loot Field                                                                   |
+| 1024  | CREATURE_TYPEFLAGS_ANIMATION_UNK11 | no idea, but it used by client                                                                                         |
+| 2048  | CREATURE_TYPEFLAGS_ANIMATION_UNK12 | related to possibility to cast spells while mounted                                                                    |
+| 4096  | CREATURE_TYPEFLAGS_CAN_ASSIST      | Can aid any player or group in combat. Typically seen for escorting NPC's                                              |
+| 8192  | CREATURE_TYPEFLAGS_UNK14           | checked from calls in Lua_PetHasActionBar                                                                              |
+| 16384 | CREATURE_TYPEFLAGS_UNK15           | Lua_UnitGUID, client does guid_low &amp;= 0xFF000000 if this flag is set                                               |
+| 32768 | CREATURE_TYPEFLAGS_ENGINEERLOOT    | Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field                                                          |
 
 #### SpeedWalk
 
@@ -1072,52 +493,14 @@ Mages: Have Lots of Mana But Have Very Low Health and Damage
 
 This Field Determines The Rank of the NPC - enum CreatureEliteType:
 
-<table>
-<colgroup>
-<col width="7%" />
-<col width="29%" />
-<col width="63%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Rank</th>
-<th>Name</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>CREATURE_ELITE_NORMAL</td>
-<td>Normal</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>CREATURE_ELITE_ELITE</td>
-<td>Elite - Higher damage, more health, better loot.</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>CREATURE_ELITE_RAREELITE</td>
-<td>Rare Elite - A rare mob but with elite damage and health.</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>CREATURE_ELITE_WORLDBOSS</td>
-<td>World Boss - Highest rank, best loot, longest respawn time.</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>CREATURE_ELITE_RARE</td>
-<td>Rare - Somewhat better loot, longer respawn time.</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>CREATURE_UNKNOWN</td>
-<td>unkown - found in 2.2.3 for 2 mobs</td>
-</tr>
-</tbody>
-</table>
+| Rank | Name                     | Comments                                                    |
+| ---- | ------------------------ | ----------------------------------------------------------- |
+| 0    | CREATURE_ELITE_NORMAL    | Normal                                                      |
+| 1    | CREATURE_ELITE_ELITE     | Elite - Higher damage, more health, better loot.            |
+| 2    | CREATURE_ELITE_RAREELITE | Rare Elite - A rare mob but with elite damage and health.   |
+| 3    | CREATURE_ELITE_WORLDBOSS | World Boss - Highest rank, best loot, longest respawn time. |
+| 4    | CREATURE_ELITE_RARE      | Rare - Somewhat better loot, longer respawn time.           |
+| 5    | CREATURE_UNKNOWN         | unkown - found in 2.2.3 for 2 mobs                          |
 
 #### Expansion
 
@@ -1430,32 +813,11 @@ See [skinning\_loot\_template.entry](skinning_loot_template#entry)
 
 CreatureTypeFlags can define the profession required to loot the creature.
 
-<table>
-<colgroup>
-<col width="36%" />
-<col width="64%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Type</strong></th>
-<th><strong>Info</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>CREATURE_TYPEFLAGS_HERBLOOT</td>
-<td>Makes Mob Corpse Herbable - Uses Skinning Loot Field</td>
-</tr>
-<tr class="even">
-<td>CREATURE_TYPEFLAGS_MININGLOOT</td>
-<td>Makes Mob Corpse Mineable - Uses Skinning Loot Field</td>
-</tr>
-<tr class="odd">
-<td>CREATURE_TYPEFLAGS_ENGINEERLOOT</td>
-<td>Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field</td>
-</tr>
-</tbody>
-</table>
+| Type                            | Info                                                          |
+| ------------------------------- | ------------------------------------------------------------- |
+| CREATURE_TYPEFLAGS_HERBLOOT     | Makes Mob Corpse Herbable - Uses Skinning Loot Field          |
+| CREATURE_TYPEFLAGS_MININGLOOT   | Makes Mob Corpse Mineable - Uses Skinning Loot Field          |
+| CREATURE_TYPEFLAGS_ENGINEERLOOT | Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field |
 
 For These Other Types Use Skinning\_Loot\_Template For Loot To Be Generated By These Other Professions Also
 

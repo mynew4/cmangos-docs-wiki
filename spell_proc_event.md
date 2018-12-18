@@ -65,321 +65,59 @@ These fields control what spells' family flags can proc the triggered spell.
 
 A bitmask controlling what events trigger the spell. To combine possible events, add the proc bits together.
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="6%" />
-<col width="27%" />
-<col width="60%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Hex</th>
-<th>ProcFlag Name</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0x00000000</td>
-<td>PROC_FLAG_NONE</td>
-<td>always?</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0x00000001</td>
-<td>PROC_FLAG_KILLED</td>
-<td>Killed by aggressor</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0x00000002</td>
-<td>PROC_FLAG_KILL</td>
-<td>Kill target (in most cases need XP/Honor reward, see Unit::IsTriggeredAtSpellProcEvent for additinoal check)</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>0x00000004</td>
-<td>PROC_FLAG_SUCCESSFUL_MELEE_HIT</td>
-<td>Successful melee auto attack</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>0x00000008</td>
-<td>PROC_FLAG_TAKEN_MELEE_HIT</td>
-<td>Taken damage from melee auto attack hit</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>0x00000010</td>
-<td>PROC_FLAG_SUCCESSFUL_MELEE_SPELL_HIT</td>
-<td>Successful attack by Spell that use melee weapon</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>0x00000020</td>
-<td>PROC_FLAG_TAKEN_MELEE_SPELL_HIT</td>
-<td>Taken damage by Spell that use melee weapon</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>0x00000040</td>
-<td>PROC_FLAG_SUCCESSFUL_RANGED_HIT</td>
-<td>Successful Ranged auto attack</td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>0x00000080</td>
-<td>PROC_FLAG_TAKEN_RANGED_HIT</td>
-<td>Taken damage from ranged auto attack</td>
-</tr>
-<tr class="even">
-<td>256</td>
-<td>0x00000100</td>
-<td>PROC_FLAG_SUCCESSFUL_RANGED_SPELL_HIT</td>
-<td>Successful Ranged attack by Spell that use ranged weapon</td>
-</tr>
-<tr class="odd">
-<td>512</td>
-<td>0x00000200</td>
-<td>PROC_FLAG_TAKEN_RANGED_SPELL_HIT</td>
-<td>Taken damage by Spell that use ranged weapon</td>
-</tr>
-<tr class="even">
-<td>1024</td>
-<td>0x00000400</td>
-<td>PROC_FLAG_DONE_SPELL_NONE_DMG_CLASS_POS</td>
-<td>Done positive spell that has dmg class none</td>
-</tr>
-<tr class="odd">
-<td>2048</td>
-<td>0x00000800</td>
-<td>PROC_FLAG_TAKEN_SPELL_NONE_DMG_CLASS_POS</td>
-<td>Taken positive spell that has dmg class none</td>
-</tr>
-<tr class="even">
-<td>4096</td>
-<td>0x00001000</td>
-<td>PROC_FLAG_DONE_SPELL_NONE_DMG_CLASS_NEG</td>
-<td>Done negative spell that has dmg class none</td>
-</tr>
-<tr class="odd">
-<td>8192</td>
-<td>0x00002000</td>
-<td>PROC_FLAG_TAKEN_SPELL_NONE_DMG_CLASS_NEG</td>
-<td>Taken negative spell that has dmg class none</td>
-</tr>
-<tr class="even">
-<td>16384</td>
-<td>0x00004000</td>
-<td>PROC_FLAG_DONE_SPELL_MAGIC_DMG_CLASS_POS</td>
-<td>Successful cast positive spell (by default only on healing)</td>
-</tr>
-<tr class="odd">
-<td>32768</td>
-<td>0x00008000</td>
-<td>PROC_FLAG_TAKEN_SPELL_MAGIC_DMG_CLASS_POS</td>
-<td>Taken positive spell hit (by default only on healing)</td>
-</tr>
-<tr class="even">
-<td>65536</td>
-<td>0x00010000</td>
-<td>PROC_FLAG_DONE_SPELL_MAGIC_DMG_CLASS_NEG</td>
-<td>Successful negative spell cast (by default only on damage)</td>
-</tr>
-<tr class="odd">
-<td>131072</td>
-<td>0x00020000</td>
-<td>PROC_FLAG_TAKEN_SPELL_MAGIC_DMG_CLASS_NEG</td>
-<td>Taken negative spell (by default only on damage)</td>
-</tr>
-<tr class="even">
-<td>262144</td>
-<td>0x00040000</td>
-<td>PROC_FLAG_ON_DO_PERIODIC</td>
-<td>Successful do periodic (damage / healing, determined by PROC_EX_PERIODIC_POSITIVE or negative if no procEx)</td>
-</tr>
-<tr class="odd">
-<td>524288</td>
-<td>0x00080000</td>
-<td>PROC_FLAG_ON_TAKE_PERIODIC</td>
-<td>Taken spell periodic (damage / healing, determined by PROC_EX_PERIODIC_POSITIVE or negative if no procEx)</td>
-</tr>
-<tr class="even">
-<td>1048576</td>
-<td>0x00100000</td>
-<td>PROC_FLAG_TAKEN_ANY_DAMAGE</td>
-<td>Taken any damage</td>
-</tr>
-<tr class="odd">
-<td>2097152</td>
-<td>0x00200000</td>
-<td>PROC_FLAG_ON_TRAP_ACTIVATION</td>
-<td>On trap activation</td>
-</tr>
-<tr class="even">
-<td>4194304</td>
-<td>0x00400000</td>
-<td>PROC_FLAG_TAKEN_OFFHAND_HIT</td>
-<td>Taken off-hand melee attacks(not used)</td>
-</tr>
-<tr class="odd">
-<td>8388608</td>
-<td>0x00800000</td>
-<td>PROC_FLAG_SUCCESSFUL_OFFHAND_HIT</td>
-<td>Successful off-hand melee attacks</td>
-</tr>
-</tbody>
-</table>
+| Bit     | Hex        | ProcFlag Name                             | Comment                                                                                                      |
+| ------- | ---------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 0       | 0x00000000 | PROC_FLAG_NONE                            | always?                                                                                                      |
+| 1       | 0x00000001 | PROC_FLAG_KILLED                          | Killed by aggressor                                                                                          |
+| 2       | 0x00000002 | PROC_FLAG_KILL                            | Kill target (in most cases need XP/Honor reward, see Unit::IsTriggeredAtSpellProcEvent for additinoal check) |
+| 4       | 0x00000004 | PROC_FLAG_SUCCESSFUL_MELEE_HIT            | Successful melee auto attack                                                                                 |
+| 8       | 0x00000008 | PROC_FLAG_TAKEN_MELEE_HIT                 | Taken damage from melee auto attack hit                                                                      |
+| 16      | 0x00000010 | PROC_FLAG_SUCCESSFUL_MELEE_SPELL_HIT      | Successful attack by Spell that use melee weapon                                                             |
+| 32      | 0x00000020 | PROC_FLAG_TAKEN_MELEE_SPELL_HIT           | Taken damage by Spell that use melee weapon                                                                  |
+| 64      | 0x00000040 | PROC_FLAG_SUCCESSFUL_RANGED_HIT           | Successful Ranged auto attack                                                                                |
+| 128     | 0x00000080 | PROC_FLAG_TAKEN_RANGED_HIT                | Taken damage from ranged auto attack                                                                         |
+| 256     | 0x00000100 | PROC_FLAG_SUCCESSFUL_RANGED_SPELL_HIT     | Successful Ranged attack by Spell that use ranged weapon                                                     |
+| 512     | 0x00000200 | PROC_FLAG_TAKEN_RANGED_SPELL_HIT          | Taken damage by Spell that use ranged weapon                                                                 |
+| 1024    | 0x00000400 | PROC_FLAG_DONE_SPELL_NONE_DMG_CLASS_POS   | Done positive spell that has dmg class none                                                                  |
+| 2048    | 0x00000800 | PROC_FLAG_TAKEN_SPELL_NONE_DMG_CLASS_POS  | Taken positive spell that has dmg class none                                                                 |
+| 4096    | 0x00001000 | PROC_FLAG_DONE_SPELL_NONE_DMG_CLASS_NEG   | Done negative spell that has dmg class none                                                                  |
+| 8192    | 0x00002000 | PROC_FLAG_TAKEN_SPELL_NONE_DMG_CLASS_NEG  | Taken negative spell that has dmg class none                                                                 |
+| 16384   | 0x00004000 | PROC_FLAG_DONE_SPELL_MAGIC_DMG_CLASS_POS  | Successful cast positive spell (by default only on healing)                                                  |
+| 32768   | 0x00008000 | PROC_FLAG_TAKEN_SPELL_MAGIC_DMG_CLASS_POS | Taken positive spell hit (by default only on healing)                                                        |
+| 65536   | 0x00010000 | PROC_FLAG_DONE_SPELL_MAGIC_DMG_CLASS_NEG  | Successful negative spell cast (by default only on damage)                                                   |
+| 131072  | 0x00020000 | PROC_FLAG_TAKEN_SPELL_MAGIC_DMG_CLASS_NEG | Taken negative spell (by default only on damage)                                                             |
+| 262144  | 0x00040000 | PROC_FLAG_ON_DO_PERIODIC                  | Successful do periodic (damage / healing, determined by PROC_EX_PERIODIC_POSITIVE or negative if no procEx)  |
+| 524288  | 0x00080000 | PROC_FLAG_ON_TAKE_PERIODIC                | Taken spell periodic (damage / healing, determined by PROC_EX_PERIODIC_POSITIVE or negative if no procEx)    |
+| 1048576 | 0x00100000 | PROC_FLAG_TAKEN_ANY_DAMAGE                | Taken any damage                                                                                             |
+| 2097152 | 0x00200000 | PROC_FLAG_ON_TRAP_ACTIVATION              | On trap activation                                                                                           |
+| 4194304 | 0x00400000 | PROC_FLAG_TAKEN_OFFHAND_HIT               | Taken off-hand melee attacks(not used)                                                                       |
+| 8388608 | 0x00800000 | PROC_FLAG_SUCCESSFUL_OFFHAND_HIT          | Successful off-hand melee attacks                                                                            |
 
 #### procEx
 
-<table>
-<colgroup>
-<col width="6%" />
-<col width="8%" />
-<col width="24%" />
-<col width="61%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bit</th>
-<th>Hex</th>
-<th>ProcEx Name</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0x0000000</td>
-<td>PROC_EX_NONE</td>
-<td>If none can trigger on Hit/Crit only (passive spells MUST defined by SpellFamily flag)</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0x0000001</td>
-<td>PROC_EX_NORMAL_HIT</td>
-<td>If set only from normal hit (only damage spells)</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0x0000002</td>
-<td>PROC_EX_CRITICAL_HIT</td>
-<td>only on crit</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>0x0000004</td>
-<td>PROC_EX_MISS</td>
-<td>only on miss</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>0x0000008</td>
-<td>PROC_EX_RESIST</td>
-<td>only on resist</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>0x0000010</td>
-<td>PROC_EX_DODGE</td>
-<td>only on dodge</td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>0x0000020</td>
-<td>PROC_EX_PARRY</td>
-<td>only on parry</td>
-</tr>
-<tr class="even">
-<td>64</td>
-<td>0x0000040</td>
-<td>PROC_EX_BLOCK</td>
-<td>only on block</td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>0x0000080</td>
-<td>PROC_EX_EVADE</td>
-<td>only on evade</td>
-</tr>
-<tr class="even">
-<td>256</td>
-<td>0x0000100</td>
-<td>PROC_EX_IMMUNE</td>
-<td>only on immune</td>
-</tr>
-<tr class="odd">
-<td>512</td>
-<td>0x0000200</td>
-<td>PROC_EX_DEFLECT</td>
-<td>only on deflect</td>
-</tr>
-<tr class="even">
-<td>1024</td>
-<td>0x0000400</td>
-<td>PROC_EX_ABSORB</td>
-<td>only on absorb</td>
-</tr>
-<tr class="odd">
-<td>2048</td>
-<td>0x0000800</td>
-<td>PROC_EX_REFLECT</td>
-<td>only on reflect</td>
-</tr>
-<tr class="even">
-<td>4096</td>
-<td>0x0001000</td>
-<td>PROC_EX_INTERRUPT</td>
-<td>Melee hit result can be Interrupt (not used)</td>
-</tr>
-<tr class="odd">
-<td>8192</td>
-<td>0x0002000</td>
-<td>PROC_EX_RESERVED1</td>
-<td>UNUSED</td>
-</tr>
-<tr class="even">
-<td>16384</td>
-<td>0x0004000</td>
-<td>PROC_EX_RESERVED2</td>
-<td>UNUSED</td>
-</tr>
-<tr class="odd">
-<td>32768</td>
-<td>0x0008000</td>
-<td>PROC_EX_RESERVED3</td>
-<td>UNUSED</td>
-</tr>
-<tr class="even">
-<td>65536</td>
-<td>0x0010000</td>
-<td>PROC_EX_EX_TRIGGER_ALWAYS</td>
-<td>If set trigger always ( no matter another flags) used for drop charges</td>
-</tr>
-<tr class="odd">
-<td>131072</td>
-<td>0x0020000</td>
-<td>PROC_EX_EX_ONE_TIME_TRIGGER</td>
-<td>If set trigger always but only one time (not used)</td>
-</tr>
-<tr class="even">
-<td>262144</td>
-<td>0x0040000</td>
-<td>PROC_EX_PERIODIC_POSITIVE</td>
-<td>For periodic heal</td>
-</tr>
-<tr class="odd">
-<td>524288</td>
-<td>0x0080000</td>
-<td>PROC_EX_MAGNET</td>
-<td>For grounding totem hit</td>
-</tr>
-</tbody>
-</table>
+| Bit    | Hex       | ProcEx Name                 | Comment                                                                                |
+| ------ | --------- | --------------------------- | -------------------------------------------------------------------------------------- |
+| 0      | 0x0000000 | PROC_EX_NONE                | If none can trigger on Hit/Crit only (passive spells MUST defined by SpellFamily flag) |
+| 1      | 0x0000001 | PROC_EX_NORMAL_HIT          | If set only from normal hit (only damage spells)                                       |
+| 2      | 0x0000002 | PROC_EX_CRITICAL_HIT        | only on crit                                                                           |
+| 4      | 0x0000004 | PROC_EX_MISS                | only on miss                                                                           |
+| 8      | 0x0000008 | PROC_EX_RESIST              | only on resist                                                                         |
+| 16     | 0x0000010 | PROC_EX_DODGE               | only on dodge                                                                          |
+| 32     | 0x0000020 | PROC_EX_PARRY               | only on parry                                                                          |
+| 64     | 0x0000040 | PROC_EX_BLOCK               | only on block                                                                          |
+| 128    | 0x0000080 | PROC_EX_EVADE               | only on evade                                                                          |
+| 256    | 0x0000100 | PROC_EX_IMMUNE              | only on immune                                                                         |
+| 512    | 0x0000200 | PROC_EX_DEFLECT             | only on deflect                                                                        |
+| 1024   | 0x0000400 | PROC_EX_ABSORB              | only on absorb                                                                         |
+| 2048   | 0x0000800 | PROC_EX_REFLECT             | only on reflect                                                                        |
+| 4096   | 0x0001000 | PROC_EX_INTERRUPT           | Melee hit result can be Interrupt (not used)                                           |
+| 8192   | 0x0002000 | PROC_EX_RESERVED1           | UNUSED                                                                                 |
+| 16384  | 0x0004000 | PROC_EX_RESERVED2           | UNUSED                                                                                 |
+| 32768  | 0x0008000 | PROC_EX_RESERVED3           | UNUSED                                                                                 |
+| 65536  | 0x0010000 | PROC_EX_EX_TRIGGER_ALWAYS   | If set trigger always ( no matter another flags) used for drop charges                 |
+| 131072 | 0x0020000 | PROC_EX_EX_ONE_TIME_TRIGGER | If set trigger always but only one time (not used)                                     |
+| 262144 | 0x0040000 | PROC_EX_PERIODIC_POSITIVE   | For periodic heal                                                                      |
+| 524288 | 0x0080000 | PROC_EX_MAGNET              | For grounding totem hit                                                                |
 
 #### ppmRate
 

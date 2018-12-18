@@ -57,62 +57,16 @@ The translation in another language depending on the locale ID of that language.
 
 #### type
 
-<table>
-<colgroup>
-<col width="10%" />
-<col width="27%" />
-<col width="62%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Type</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>CHAT_TYPE_SAY</td>
-<td>'white' text</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>CHAT_TYPE_YELL</td>
-<td>'red' text</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>CHAT_TYPE_TEXT_EMOTE</td>
-<td>'brown' small emote-text</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>CHAT_TYPE_BOSS_EMOTE</td>
-<td>'big yellow' emote-text displayed in the center of the screen</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>CHAT_TYPE_WHISPER</td>
-<td>whisper, needs a target</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>CHAT_TYPE_BOSS_WHISPER</td>
-<td>whipser, needs a target</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>CHAT_TYPE_ZONE_YELL</td>
-<td>'red' text, displayed to everyone in the zone</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>CHAT_TYPE_ZONE_EMOTE</td>
-<td>'brown' zone-wide text emote</td>
-</tr>
-</tbody>
-</table>
+| Type | Description            | Details                                                       |
+| ---- | ---------------------- | ------------------------------------------------------------- |
+| 0    | CHAT_TYPE_SAY          | 'white' text                                                  |
+| 1    | CHAT_TYPE_YELL         | 'red' text                                                    |
+| 2    | CHAT_TYPE_TEXT_EMOTE   | 'brown' small emote-text                                      |
+| 3    | CHAT_TYPE_BOSS_EMOTE   | 'big yellow' emote-text displayed in the center of the screen |
+| 4    | CHAT_TYPE_WHISPER      | whisper, needs a target                                       |
+| 5    | CHAT_TYPE_BOSS_WHISPER | whipser, needs a target                                       |
+| 6    | CHAT_TYPE_ZONE_YELL    | 'red' text, displayed to everyone in the zone                 |
+| 7    | CHAT_TYPE_ZONE_EMOTE   | 'brown' zone-wide text emote                                  |
 
 #### language
 

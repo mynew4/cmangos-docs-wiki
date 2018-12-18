@@ -17,1019 +17,147 @@ This dbc contains all titles which can be achieved by the player.
 
 **%s is replaced by the characters name**
 
-<table>
-<colgroup>
-<col width="9%" />
-<col width="9%" />
-<col width="34%" />
-<col width="34%" />
-<col width="12%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>TitleID</th>
-<th>UnkRef?</th>
-<th>MaleTitle</th>
-<th>FemaleTitle</th>
-<th>InGameOrder</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>5879</td>
-<td>Private %s</td>
-<td>Private %s</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>5880</td>
-<td>Corporal %s</td>
-<td>Corporal %s</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>5881</td>
-<td>Sergeant %s</td>
-<td>Sergeant %s</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>5882</td>
-<td>Master Sergeant %s</td>
-<td>Master Sergeant %s</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>5883</td>
-<td>Sergeant Major %s</td>
-<td>Sergeant Major %s</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>5884</td>
-<td>Knight %s</td>
-<td>Knight %s</td>
-<td>6</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>5885</td>
-<td>Knight-Lieutenant %s</td>
-<td>Knight-Lieutenant %s</td>
-<td>7</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>5886</td>
-<td>Knight-Captain %s</td>
-<td>Knight-Captain %s</td>
-<td>8</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>5887</td>
-<td>Knight-Champion %s</td>
-<td>Knight-Champion %s</td>
-<td>9</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>5888</td>
-<td>Lieutenant Commander %s</td>
-<td>Lieutenant Commander %s</td>
-<td>10</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>5889</td>
-<td>Commander %s</td>
-<td>Commander %s</td>
-<td>11</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>5890</td>
-<td>Marshal %s</td>
-<td>Marshal %s</td>
-<td>12</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>5891</td>
-<td>Field Marshal %s</td>
-<td>Field Marshal %s</td>
-<td>13</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>5892</td>
-<td>Grand Marshal %s</td>
-<td>Grand Marshal %s</td>
-<td>14</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td>5893</td>
-<td>Scout %s</td>
-<td>Scout %s</td>
-<td>15</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>5894</td>
-<td>Grunt %s</td>
-<td>Grunt %s</td>
-<td>16</td>
-</tr>
-<tr class="odd">
-<td>17</td>
-<td>5895</td>
-<td>Sergeant %s</td>
-<td>Sergeant %s</td>
-<td>17</td>
-</tr>
-<tr class="even">
-<td>18</td>
-<td>5896</td>
-<td>Senior Sergeant %s</td>
-<td>Senior Sergeant %s</td>
-<td>18</td>
-</tr>
-<tr class="odd">
-<td>19</td>
-<td>5897</td>
-<td>First Sergeant %s</td>
-<td>First Sergeant %s</td>
-<td>19</td>
-</tr>
-<tr class="even">
-<td>20</td>
-<td>5898</td>
-<td>Stone Guard %s</td>
-<td>Stone Guard %s</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>21</td>
-<td>5899</td>
-<td>Blood Guard %s</td>
-<td>Blood Guard %s</td>
-<td>21</td>
-</tr>
-<tr class="even">
-<td>22</td>
-<td>5900</td>
-<td>Legionnaire %s</td>
-<td>Legionnaire %s</td>
-<td>22</td>
-</tr>
-<tr class="odd">
-<td>23</td>
-<td>5901</td>
-<td>Centurion %s</td>
-<td>Centurion %s</td>
-<td>23</td>
-</tr>
-<tr class="even">
-<td>24</td>
-<td>5902</td>
-<td>Champion %s</td>
-<td>Champion %s</td>
-<td>24</td>
-</tr>
-<tr class="odd">
-<td>25</td>
-<td>5903</td>
-<td>Lieutenant General %s</td>
-<td>Lieutenant General %s</td>
-<td>25</td>
-</tr>
-<tr class="even">
-<td>26</td>
-<td>5904</td>
-<td>General %s</td>
-<td>General %s</td>
-<td>26</td>
-</tr>
-<tr class="odd">
-<td>27</td>
-<td>5905</td>
-<td>Warlord %s</td>
-<td>Warlord %s</td>
-<td>27</td>
-</tr>
-<tr class="even">
-<td>28</td>
-<td>5906</td>
-<td>High Warlord %s</td>
-<td>High Warlord %s</td>
-<td>28</td>
-</tr>
-<tr class="odd">
-<td>42</td>
-<td>0</td>
-<td>Gladiator %s</td>
-<td>Gladiator %s</td>
-<td>29</td>
-</tr>
-<tr class="even">
-<td>43</td>
-<td>0</td>
-<td>Duelist %s</td>
-<td>Duelist %s</td>
-<td>30</td>
-</tr>
-<tr class="odd">
-<td>44</td>
-<td>0</td>
-<td>Rival %s</td>
-<td>Rival %s</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td>45</td>
-<td>0</td>
-<td>Challenger %s</td>
-<td>Challenger %s</td>
-<td>32</td>
-</tr>
-<tr class="odd">
-<td>46</td>
-<td>6341</td>
-<td>Scarab Lord %s</td>
-<td>Scarab Lord %s</td>
-<td>33</td>
-</tr>
-<tr class="even">
-<td>47</td>
-<td>6407</td>
-<td>Conqueror %s</td>
-<td>Conqueror %s</td>
-<td>34</td>
-</tr>
-<tr class="odd">
-<td>48</td>
-<td>6406</td>
-<td>Justicar %s</td>
-<td>Justicar %s</td>
-<td>35</td>
-</tr>
-<tr class="even">
-<td>53</td>
-<td>6686</td>
-<td> %s, Champion of the Naaru</td>
-<td> %s, Champion of the Naaru</td>
-<td>36</td>
-</tr>
-<tr class="odd">
-<td>62</td>
-<td>0</td>
-<td>Merciless Gladiator %s</td>
-<td>Merciless Gladiator %s</td>
-<td>37</td>
-</tr>
-<tr class="even">
-<td>63</td>
-<td>6806</td>
-<td> %s of the Shattered Sun</td>
-<td> %s of the Shattered Sun</td>
-<td>38</td>
-</tr>
-<tr class="odd">
-<td>64</td>
-<td>6944</td>
-<td> %s, Hand of A'dal</td>
-<td> %s, Hand of A'dal</td>
-<td>39</td>
-</tr>
-<tr class="even">
-<td>71</td>
-<td>0</td>
-<td>Vengeful Gladiator %s</td>
-<td>Vengeful Gladiator %s</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td>72</td>
-<td>7530</td>
-<td>Battlemaster %s</td>
-<td>Battlemaster %s</td>
-<td>41</td>
-</tr>
-<tr class="even">
-<td>74</td>
-<td>7533</td>
-<td>Elder %s</td>
-<td>Elder %s</td>
-<td>43</td>
-</tr>
-<tr class="odd">
-<td>75</td>
-<td>7534</td>
-<td>Flame Warden %s</td>
-<td>Flame Warden %s</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>76</td>
-<td>7535</td>
-<td>Flame Keeper %s</td>
-<td>Flame Keeper %s</td>
-<td>45</td>
-</tr>
-<tr class="odd">
-<td>77</td>
-<td>7565</td>
-<td> %s the Exalted</td>
-<td> %s the Exalted</td>
-<td>46</td>
-</tr>
-<tr class="even">
-<td>78</td>
-<td>7695</td>
-<td> %s the Explorer</td>
-<td> %s the Explorer</td>
-<td>47</td>
-</tr>
-<tr class="odd">
-<td>79</td>
-<td>7748</td>
-<td> %s the Diplomat</td>
-<td> %s the Diplomat</td>
-<td>48</td>
-</tr>
-<tr class="even">
-<td>80</td>
-<td>0</td>
-<td>Brutal Gladiator %s</td>
-<td>Brutal Gladiator %s</td>
-<td>49</td>
-</tr>
-<tr class="odd">
-<td>81</td>
-<td>7759</td>
-<td> %s the Seeker</td>
-<td> %s the Seeker</td>
-<td>42</td>
-</tr>
-<tr class="even">
-<td>82</td>
-<td>7749</td>
-<td>Arena Master %s</td>
-<td>Arena Master %s</td>
-<td>50</td>
-</tr>
-<tr class="odd">
-<td>83</td>
-<td>7750</td>
-<td>Salty %s</td>
-<td>Salty %s</td>
-<td>51</td>
-</tr>
-<tr class="even">
-<td>84</td>
-<td>7754</td>
-<td>Chef %s</td>
-<td>Chef %s</td>
-<td>52</td>
-</tr>
-<tr class="odd">
-<td>85</td>
-<td>0</td>
-<td> %s the Supreme</td>
-<td> %s the Supreme</td>
-<td>53</td>
-</tr>
-<tr class="even">
-<td>86</td>
-<td>0</td>
-<td> %s of the Ten Storms</td>
-<td> %s of the Ten Storms</td>
-<td>54</td>
-</tr>
-<tr class="odd">
-<td>87</td>
-<td>0</td>
-<td> %s of the Emerald Dream</td>
-<td> %s of the Emerald Dream</td>
-<td>55</td>
-</tr>
-<tr class="even">
-<td>89</td>
-<td>0</td>
-<td>Prophet %s</td>
-<td>Prophet %s</td>
-<td>57</td>
-</tr>
-<tr class="odd">
-<td>90</td>
-<td>0</td>
-<td> %s the Malefic</td>
-<td> %s the Malefic</td>
-<td>58</td>
-</tr>
-<tr class="even">
-<td>91</td>
-<td>0</td>
-<td>Stalker %s</td>
-<td>Stalker %s</td>
-<td>59</td>
-</tr>
-<tr class="odd">
-<td>92</td>
-<td>0</td>
-<td> %s of the Ebon Blade</td>
-<td> %s of the Ebon Blade</td>
-<td>60</td>
-</tr>
-<tr class="even">
-<td>93</td>
-<td>0</td>
-<td>Archmage %s</td>
-<td>Archmage %s</td>
-<td>61</td>
-</tr>
-<tr class="odd">
-<td>94</td>
-<td>0</td>
-<td>Warbringer %s</td>
-<td>Warbringer %s</td>
-<td>62</td>
-</tr>
-<tr class="even">
-<td>95</td>
-<td>0</td>
-<td>Assassin %s</td>
-<td>Assassin %s</td>
-<td>63</td>
-</tr>
-<tr class="odd">
-<td>96</td>
-<td>0</td>
-<td>Grand Master Alchemist %s</td>
-<td>Grand Master Alchemist %s</td>
-<td>64</td>
-</tr>
-<tr class="even">
-<td>97</td>
-<td>0</td>
-<td>Grand Master Blacksmith %s</td>
-<td>Grand Master Blacksmith %s</td>
-<td>65</td>
-</tr>
-<tr class="odd">
-<td>98</td>
-<td>0</td>
-<td>Iron Chef %s</td>
-<td>Iron Chef %s</td>
-<td>66</td>
-</tr>
-<tr class="even">
-<td>99</td>
-<td>0</td>
-<td>Grand Master Enchanter %s</td>
-<td>Grand Master Enchanter %s</td>
-<td>67</td>
-</tr>
-<tr class="odd">
-<td>100</td>
-<td>0</td>
-<td>Grand Master Engineer %s</td>
-<td>Grand Master Engineer %s</td>
-<td>68</td>
-</tr>
-<tr class="even">
-<td>101</td>
-<td>0</td>
-<td>Doctor %s</td>
-<td>Doctor %s</td>
-<td>69</td>
-</tr>
-<tr class="odd">
-<td>102</td>
-<td>0</td>
-<td>Grand Master Angler %s</td>
-<td>Grand Master Angler %s</td>
-<td>70</td>
-</tr>
-<tr class="even">
-<td>103</td>
-<td>0</td>
-<td>Grand Master Herbalist %s</td>
-<td>Grand Master Herbalist %s</td>
-<td>71</td>
-</tr>
-<tr class="odd">
-<td>104</td>
-<td>0</td>
-<td>Grand Master Scribe %s</td>
-<td>Grand Master Scribe %s</td>
-<td>72</td>
-</tr>
-<tr class="even">
-<td>105</td>
-<td>0</td>
-<td>Grand Master Jewelcrafter %s</td>
-<td>Grand Master Jewelcrafter %s</td>
-<td>73</td>
-</tr>
-<tr class="odd">
-<td>106</td>
-<td>0</td>
-<td>Grand Master Leatherworker %s</td>
-<td>Grand Master Leatherworker %s</td>
-<td>74</td>
-</tr>
-<tr class="even">
-<td>107</td>
-<td>0</td>
-<td>Grand Master Miner %s</td>
-<td>Grand Master Miner %s</td>
-<td>75</td>
-</tr>
-<tr class="odd">
-<td>108</td>
-<td>0</td>
-<td>Grand Master Skinner %s</td>
-<td>Grand Master Skinner %s</td>
-<td>76</td>
-</tr>
-<tr class="even">
-<td>109</td>
-<td>0</td>
-<td>Grand Master Tailor %s</td>
-<td>Grand Master Tailor %s</td>
-<td>77</td>
-</tr>
-<tr class="odd">
-<td>110</td>
-<td>0</td>
-<td> %s of Quel'Thalas</td>
-<td> %s of Quel'Thalas</td>
-<td>78</td>
-</tr>
-<tr class="even">
-<td>111</td>
-<td>0</td>
-<td> %s of Argus</td>
-<td> %s of Argus</td>
-<td>79</td>
-</tr>
-<tr class="odd">
-<td>112</td>
-<td>0</td>
-<td> %s of Khaz Modan</td>
-<td> %s of Khaz Modan</td>
-<td>80</td>
-</tr>
-<tr class="even">
-<td>113</td>
-<td>8236</td>
-<td> %s of Gnomeregan</td>
-<td> %s of Gnomeregan</td>
-<td>81</td>
-</tr>
-<tr class="odd">
-<td>114</td>
-<td>0</td>
-<td> %s the Lion Hearted</td>
-<td> %s the Lion Hearted</td>
-<td>82</td>
-</tr>
-<tr class="even">
-<td>115</td>
-<td>0</td>
-<td> %s, Champion of Elune</td>
-<td> %s, Champion of Elune</td>
-<td>83</td>
-</tr>
-<tr class="odd">
-<td>116</td>
-<td>0</td>
-<td> %s, Hero of Orgrimmar</td>
-<td> %s, Hero of Orgrimmar</td>
-<td>84</td>
-</tr>
-<tr class="even">
-<td>117</td>
-<td>0</td>
-<td>Plainsrunner %s</td>
-<td>Plainsrunner %s</td>
-<td>85</td>
-</tr>
-<tr class="odd">
-<td>118</td>
-<td>0</td>
-<td> %s of the Darkspear</td>
-<td> %s of the Darkspear</td>
-<td>86</td>
-</tr>
-<tr class="even">
-<td>119</td>
-<td>0</td>
-<td> %s the Forsaken</td>
-<td> %s the Forsaken</td>
-<td>87</td>
-</tr>
-<tr class="odd">
-<td>120</td>
-<td>7812</td>
-<td> %s the Magic Seeker</td>
-<td> %s the Magic Seeker</td>
-<td>88</td>
-</tr>
-<tr class="even">
-<td>121</td>
-<td>7813</td>
-<td>Twilight Vanquisher %s</td>
-<td>Twilight Vanquisher %s</td>
-<td>89</td>
-</tr>
-<tr class="odd">
-<td>122</td>
-<td>7814</td>
-<td> %s, Conqueror of Naxxramas</td>
-<td> %s, Conqueror of Naxxramas</td>
-<td>90</td>
-</tr>
-<tr class="even">
-<td>123</td>
-<td>7815</td>
-<td> %s, Hero of Northrend</td>
-<td> %s, Hero of Northrend</td>
-<td>91</td>
-</tr>
-<tr class="odd">
-<td>124</td>
-<td>7820</td>
-<td> %s the Hallowed</td>
-<td> %s the Hallowed</td>
-<td>92</td>
-</tr>
-<tr class="even">
-<td>125</td>
-<td>7849</td>
-<td>Loremaster %s</td>
-<td>Loremaster %s</td>
-<td>93</td>
-</tr>
-<tr class="odd">
-<td>126</td>
-<td>7853</td>
-<td> %s of the Alliance</td>
-<td> %s of the Alliance</td>
-<td>94</td>
-</tr>
-<tr class="even">
-<td>127</td>
-<td>7854</td>
-<td> %s of the Horde</td>
-<td> %s of the Horde</td>
-<td>95</td>
-</tr>
-<tr class="odd">
-<td>128</td>
-<td>7856</td>
-<td> %s the Flawless Victor</td>
-<td> %s the Flawless Victor</td>
-<td>96</td>
-</tr>
-<tr class="even">
-<td>129</td>
-<td>7857</td>
-<td> %s, Champion of the Frozen Wastes</td>
-<td> %s, Champion of the Frozen Wastes</td>
-<td>97</td>
-</tr>
-<tr class="odd">
-<td>130</td>
-<td>7858</td>
-<td>Ambassador %s</td>
-<td>Ambassador %s</td>
-<td>98</td>
-</tr>
-<tr class="even">
-<td>131</td>
-<td>7859</td>
-<td> %s the Argent Champion</td>
-<td> %s the Argent Champion</td>
-<td>99</td>
-</tr>
-<tr class="odd">
-<td>132</td>
-<td>7860</td>
-<td> %s, Guardian of Cenarius</td>
-<td> %s, Guardian of Cenarius</td>
-<td>100</td>
-</tr>
-<tr class="even">
-<td>133</td>
-<td>7861</td>
-<td>Brewmaster %s</td>
-<td>Brewmaster %s</td>
-<td>101</td>
-</tr>
-<tr class="odd">
-<td>134</td>
-<td>7864</td>
-<td>Merrymaker %s</td>
-<td>Merrymaker %s</td>
-<td>102</td>
-</tr>
-<tr class="even">
-<td>135</td>
-<td>7875</td>
-<td> %s the Love Fool</td>
-<td> %s the Love Fool</td>
-<td>103</td>
-</tr>
-<tr class="odd">
-<td>137</td>
-<td>7893</td>
-<td>Matron %s</td>
-<td>Matron %s</td>
-<td>104</td>
-</tr>
-<tr class="even">
-<td>138</td>
-<td>7894</td>
-<td>Patron %s</td>
-<td>Patron %s</td>
-<td>105</td>
-</tr>
-<tr class="odd">
-<td>139</td>
-<td>7964</td>
-<td>Obsidian Slayer %s</td>
-<td>Obsidian Slayer %s</td>
-<td>106</td>
-</tr>
-<tr class="even">
-<td>140</td>
-<td>7965</td>
-<td> %s of the Nightfall</td>
-<td> %s of the Nightfall</td>
-<td>107</td>
-</tr>
-<tr class="odd">
-<td>141</td>
-<td>7990</td>
-<td> %s the Immortal</td>
-<td> %s the Immortal</td>
-<td>108</td>
-</tr>
-<tr class="even">
-<td>142</td>
-<td>7991</td>
-<td> %s the Undying</td>
-<td> %s the Undying</td>
-<td>109</td>
-</tr>
-<tr class="odd">
-<td>143</td>
-<td>7997</td>
-<td> %s Jenkins</td>
-<td> %s Jenkins</td>
-<td>110</td>
-</tr>
-<tr class="even">
-<td>144</td>
-<td>8045</td>
-<td>Bloodsail Admiral %s</td>
-<td>Bloodsail Admiral %s</td>
-<td>111</td>
-</tr>
-<tr class="odd">
-<td>145</td>
-<td>8121</td>
-<td> %s the Insane</td>
-<td> %s the Insane</td>
-<td>112</td>
-</tr>
-<tr class="even">
-<td>146</td>
-<td>8237</td>
-<td> %s of the Exodar</td>
-<td> %s of the Exodar</td>
-<td>113</td>
-</tr>
-<tr class="odd">
-<td>147</td>
-<td>8238</td>
-<td> %s of Darnassus</td>
-<td> %s of Darnassus</td>
-<td>114</td>
-</tr>
-<tr class="even">
-<td>148</td>
-<td>8239</td>
-<td> %s of Ironforge</td>
-<td> %s of Ironforge</td>
-<td>115</td>
-</tr>
-<tr class="odd">
-<td>149</td>
-<td>8240</td>
-<td> %s of Stormwind</td>
-<td> %s of Stormwind</td>
-<td>116</td>
-</tr>
-<tr class="even">
-<td>150</td>
-<td>8241</td>
-<td> %s of Orgrimmar</td>
-<td> %s of Orgrimmar</td>
-<td>117</td>
-</tr>
-<tr class="odd">
-<td>151</td>
-<td>8242</td>
-<td> %s of Sen'jin</td>
-<td> %s of Sen'jin</td>
-<td>118</td>
-</tr>
-<tr class="even">
-<td>152</td>
-<td>8243</td>
-<td> %s of Silvermoon</td>
-<td> %s of Silvermoon</td>
-<td>119</td>
-</tr>
-<tr class="odd">
-<td>153</td>
-<td>8244</td>
-<td> %s of Thunder Bluff</td>
-<td> %s of Thunder Bluff</td>
-<td>120</td>
-</tr>
-<tr class="even">
-<td>154</td>
-<td>8245</td>
-<td> %s of the Undercity</td>
-<td> %s of the Undercity</td>
-<td>121</td>
-</tr>
-<tr class="odd">
-<td>155</td>
-<td>8303</td>
-<td> %s the Noble</td>
-<td> %s the Noble</td>
-<td>122</td>
-</tr>
-<tr class="even">
-<td>156</td>
-<td>8332</td>
-<td>Crusader %s</td>
-<td>Crusader %s</td>
-<td>123</td>
-</tr>
-<tr class="odd">
-<td>157</td>
-<td>0</td>
-<td>Deadly Gladiator %s</td>
-<td>Deadly Gladiator %s</td>
-<td>56</td>
-</tr>
-<tr class="even">
-<td>158</td>
-<td>8450</td>
-<td> %s, Death's Demise</td>
-<td> %s, Death's Demise</td>
-<td>124</td>
-</tr>
-<tr class="odd">
-<td>159</td>
-<td>8451</td>
-<td> %s the Celestial Defender</td>
-<td> %s the Celestial Defender</td>
-<td>125</td>
-</tr>
-<tr class="even">
-<td>160</td>
-<td>8453</td>
-<td> %s, Conqueror of Ulduar</td>
-<td> %s, Conqueror of Ulduar</td>
-<td>126</td>
-</tr>
-<tr class="odd">
-<td>161</td>
-<td>8452</td>
-<td> %s, Champion of Ulduar</td>
-<td> %s, Champion of Ulduar</td>
-<td>127</td>
-</tr>
-<tr class="even">
-<td>163</td>
-<td>0</td>
-<td>Vanquisher %s</td>
-<td>Vanquisher %s</td>
-<td>128</td>
-</tr>
-<tr class="odd">
-<td>164</td>
-<td>8467</td>
-<td>Starcaller %s</td>
-<td>Starcaller %s</td>
-<td>129</td>
-</tr>
-<tr class="even">
-<td>165</td>
-<td>8468</td>
-<td> %s the Astral Walker</td>
-<td> %s the Astral Walker</td>
-<td>130</td>
-</tr>
-<tr class="odd">
-<td>166</td>
-<td>8469</td>
-<td> %s, Herald of the Titans</td>
-<td> %s, Herald of the Titans</td>
-<td>131</td>
-</tr>
-<tr class="even">
-<td>167</td>
-<td>0</td>
-<td>Furious Gladiator %s</td>
-<td>Furious Gladiator %s</td>
-<td>132</td>
-</tr>
-<tr class="odd">
-<td>168</td>
-<td>8596</td>
-<td> %s the Pilgrim</td>
-<td> %s the Pilgrim</td>
-<td>133</td>
-</tr>
-<tr class="even">
-<td>169</td>
-<td>0</td>
-<td>Relentless Gladiator %s</td>
-<td>Relentless Gladiator %s</td>
-<td>134</td>
-</tr>
-<tr class="odd">
-<td>170</td>
-<td>8777</td>
-<td>Grand Crusader %s</td>
-<td>Grand Crusader %s</td>
-<td>135</td>
-</tr>
-<tr class="even">
-<td>171</td>
-<td>8778</td>
-<td> %s the Argent Defender</td>
-<td> %s the Argent Defender</td>
-<td>136</td>
-</tr>
-<tr class="odd">
-<td>172</td>
-<td>8977</td>
-<td> %s the Patient</td>
-<td> %s the Patient</td>
-<td>137</td>
-</tr>
-<tr class="even">
-<td>173</td>
-<td>9043</td>
-<td> %s the Light of Dawn</td>
-<td> %s the Light of Dawn</td>
-<td>138</td>
-</tr>
-<tr class="odd">
-<td>174</td>
-<td>9045</td>
-<td> %s, Bane of the Fallen King</td>
-<td> %s, Bane of the Fallen King</td>
-<td>139</td>
-</tr>
-<tr class="even">
-<td>175</td>
-<td>9046</td>
-<td> %s the Kingslayer</td>
-<td> %s the Kingslayer</td>
-<td>140</td>
-</tr>
-<tr class="odd">
-<td>176</td>
-<td>9138</td>
-<td> %s of the Ashen Verdict</td>
-<td> %s of the Ashen Verdict</td>
-<td>141</td>
-</tr>
-<tr class="even">
-<td>177</td>
-<td>0</td>
-<td>Wrathful Gladiator %s</td>
-<td>Wrathful Gladiator %s</td>
-<td>142</td>
-</tr>
-</tbody>
-</table>
-
-
+| TitleID | UnkRef? | MaleTitle                         | FemaleTitle                       | InGameOrder |
+| ------- | ------- | --------------------------------- | --------------------------------- | ----------- |
+| 1       | 5879    | Private %s                        | Private %s                        | 1           |
+| 2       | 5880    | Corporal %s                       | Corporal %s                       | 2           |
+| 3       | 5881    | Sergeant %s                       | Sergeant %s                       | 3           |
+| 4       | 5882    | Master Sergeant %s                | Master Sergeant %s                | 4           |
+| 5       | 5883    | Sergeant Major %s                 | Sergeant Major %s                 | 5           |
+| 6       | 5884    | Knight %s                         | Knight %s                         | 6           |
+| 7       | 5885    | Knight-Lieutenant %s              | Knight-Lieutenant %s              | 7           |
+| 8       | 5886    | Knight-Captain %s                 | Knight-Captain %s                 | 8           |
+| 9       | 5887    | Knight-Champion %s                | Knight-Champion %s                | 9           |
+| 10      | 5888    | Lieutenant Commander %s           | Lieutenant Commander %s           | 10          |
+| 11      | 5889    | Commander %s                      | Commander %s                      | 11          |
+| 12      | 5890    | Marshal %s                        | Marshal %s                        | 12          |
+| 13      | 5891    | Field Marshal %s                  | Field Marshal %s                  | 13          |
+| 14      | 5892    | Grand Marshal %s                  | Grand Marshal %s                  | 14          |
+| 15      | 5893    | Scout %s                          | Scout %s                          | 15          |
+| 16      | 5894    | Grunt %s                          | Grunt %s                          | 16          |
+| 17      | 5895    | Sergeant %s                       | Sergeant %s                       | 17          |
+| 18      | 5896    | Senior Sergeant %s                | Senior Sergeant %s                | 18          |
+| 19      | 5897    | First Sergeant %s                 | First Sergeant %s                 | 19          |
+| 20      | 5898    | Stone Guard %s                    | Stone Guard %s                    | 20          |
+| 21      | 5899    | Blood Guard %s                    | Blood Guard %s                    | 21          |
+| 22      | 5900    | Legionnaire %s                    | Legionnaire %s                    | 22          |
+| 23      | 5901    | Centurion %s                      | Centurion %s                      | 23          |
+| 24      | 5902    | Champion %s                       | Champion %s                       | 24          |
+| 25      | 5903    | Lieutenant General %s             | Lieutenant General %s             | 25          |
+| 26      | 5904    | General %s                        | General %s                        | 26          |
+| 27      | 5905    | Warlord %s                        | Warlord %s                        | 27          |
+| 28      | 5906    | High Warlord %s                   | High Warlord %s                   | 28          |
+| 42      | 0       | Gladiator %s                      | Gladiator %s                      | 29          |
+| 43      | 0       | Duelist %s                        | Duelist %s                        | 30          |
+| 44      | 0       | Rival %s                          | Rival %s                          | 31          |
+| 45      | 0       | Challenger %s                     | Challenger %s                     | 32          |
+| 46      | 6341    | Scarab Lord %s                    | Scarab Lord %s                    | 33          |
+| 47      | 6407    | Conqueror %s                      | Conqueror %s                      | 34          |
+| 48      | 6406    | Justicar %s                       | Justicar %s                       | 35          |
+| 53      | 6686    | %s, Champion of the Naaru         | %s, Champion of the Naaru         | 36          |
+| 62      | 0       | Merciless Gladiator %s            | Merciless Gladiator %s            | 37          |
+| 63      | 6806    | %s of the Shattered Sun           | %s of the Shattered Sun           | 38          |
+| 64      | 6944    | %s, Hand of A'dal                 | %s, Hand of A'dal                 | 39          |
+| 71      | 0       | Vengeful Gladiator %s             | Vengeful Gladiator %s             | 40          |
+| 72      | 7530    | Battlemaster %s                   | Battlemaster %s                   | 41          |
+| 74      | 7533    | Elder %s                          | Elder %s                          | 43          |
+| 75      | 7534    | Flame Warden %s                   | Flame Warden %s                   | 44          |
+| 76      | 7535    | Flame Keeper %s                   | Flame Keeper %s                   | 45          |
+| 77      | 7565    | %s the Exalted                    | %s the Exalted                    | 46          |
+| 78      | 7695    | %s the Explorer                   | %s the Explorer                   | 47          |
+| 79      | 7748    | %s the Diplomat                   | %s the Diplomat                   | 48          |
+| 80      | 0       | Brutal Gladiator %s               | Brutal Gladiator %s               | 49          |
+| 81      | 7759    | %s the Seeker                     | %s the Seeker                     | 42          |
+| 82      | 7749    | Arena Master %s                   | Arena Master %s                   | 50          |
+| 83      | 7750    | Salty %s                          | Salty %s                          | 51          |
+| 84      | 7754    | Chef %s                           | Chef %s                           | 52          |
+| 85      | 0       | %s the Supreme                    | %s the Supreme                    | 53          |
+| 86      | 0       | %s of the Ten Storms              | %s of the Ten Storms              | 54          |
+| 87      | 0       | %s of the Emerald Dream           | %s of the Emerald Dream           | 55          |
+| 89      | 0       | Prophet %s                        | Prophet %s                        | 57          |
+| 90      | 0       | %s the Malefic                    | %s the Malefic                    | 58          |
+| 91      | 0       | Stalker %s                        | Stalker %s                        | 59          |
+| 92      | 0       | %s of the Ebon Blade              | %s of the Ebon Blade              | 60          |
+| 93      | 0       | Archmage %s                       | Archmage %s                       | 61          |
+| 94      | 0       | Warbringer %s                     | Warbringer %s                     | 62          |
+| 95      | 0       | Assassin %s                       | Assassin %s                       | 63          |
+| 96      | 0       | Grand Master Alchemist %s         | Grand Master Alchemist %s         | 64          |
+| 97      | 0       | Grand Master Blacksmith %s        | Grand Master Blacksmith %s        | 65          |
+| 98      | 0       | Iron Chef %s                      | Iron Chef %s                      | 66          |
+| 99      | 0       | Grand Master Enchanter %s         | Grand Master Enchanter %s         | 67          |
+| 100     | 0       | Grand Master Engineer %s          | Grand Master Engineer %s          | 68          |
+| 101     | 0       | Doctor %s                         | Doctor %s                         | 69          |
+| 102     | 0       | Grand Master Angler %s            | Grand Master Angler %s            | 70          |
+| 103     | 0       | Grand Master Herbalist %s         | Grand Master Herbalist %s         | 71          |
+| 104     | 0       | Grand Master Scribe %s            | Grand Master Scribe %s            | 72          |
+| 105     | 0       | Grand Master Jewelcrafter %s      | Grand Master Jewelcrafter %s      | 73          |
+| 106     | 0       | Grand Master Leatherworker %s     | Grand Master Leatherworker %s     | 74          |
+| 107     | 0       | Grand Master Miner %s             | Grand Master Miner %s             | 75          |
+| 108     | 0       | Grand Master Skinner %s           | Grand Master Skinner %s           | 76          |
+| 109     | 0       | Grand Master Tailor %s            | Grand Master Tailor %s            | 77          |
+| 110     | 0       | %s of Quel'Thalas                 | %s of Quel'Thalas                 | 78          |
+| 111     | 0       | %s of Argus                       | %s of Argus                       | 79          |
+| 112     | 0       | %s of Khaz Modan                  | %s of Khaz Modan                  | 80          |
+| 113     | 8236    | %s of Gnomeregan                  | %s of Gnomeregan                  | 81          |
+| 114     | 0       | %s the Lion Hearted               | %s the Lion Hearted               | 82          |
+| 115     | 0       | %s, Champion of Elune             | %s, Champion of Elune             | 83          |
+| 116     | 0       | %s, Hero of Orgrimmar             | %s, Hero of Orgrimmar             | 84          |
+| 117     | 0       | Plainsrunner %s                   | Plainsrunner %s                   | 85          |
+| 118     | 0       | %s of the Darkspear               | %s of the Darkspear               | 86          |
+| 119     | 0       | %s the Forsaken                   | %s the Forsaken                   | 87          |
+| 120     | 7812    | %s the Magic Seeker               | %s the Magic Seeker               | 88          |
+| 121     | 7813    | Twilight Vanquisher %s            | Twilight Vanquisher %s            | 89          |
+| 122     | 7814    | %s, Conqueror of Naxxramas        | %s, Conqueror of Naxxramas        | 90          |
+| 123     | 7815    | %s, Hero of Northrend             | %s, Hero of Northrend             | 91          |
+| 124     | 7820    | %s the Hallowed                   | %s the Hallowed                   | 92          |
+| 125     | 7849    | Loremaster %s                     | Loremaster %s                     | 93          |
+| 126     | 7853    | %s of the Alliance                | %s of the Alliance                | 94          |
+| 127     | 7854    | %s of the Horde                   | %s of the Horde                   | 95          |
+| 128     | 7856    | %s the Flawless Victor            | %s the Flawless Victor            | 96          |
+| 129     | 7857    | %s, Champion of the Frozen Wastes | %s, Champion of the Frozen Wastes | 97          |
+| 130     | 7858    | Ambassador %s                     | Ambassador %s                     | 98          |
+| 131     | 7859    | %s the Argent Champion            | %s the Argent Champion            | 99          |
+| 132     | 7860    | %s, Guardian of Cenarius          | %s, Guardian of Cenarius          | 100         |
+| 133     | 7861    | Brewmaster %s                     | Brewmaster %s                     | 101         |
+| 134     | 7864    | Merrymaker %s                     | Merrymaker %s                     | 102         |
+| 135     | 7875    | %s the Love Fool                  | %s the Love Fool                  | 103         |
+| 137     | 7893    | Matron %s                         | Matron %s                         | 104         |
+| 138     | 7894    | Patron %s                         | Patron %s                         | 105         |
+| 139     | 7964    | Obsidian Slayer %s                | Obsidian Slayer %s                | 106         |
+| 140     | 7965    | %s of the Nightfall               | %s of the Nightfall               | 107         |
+| 141     | 7990    | %s the Immortal                   | %s the Immortal                   | 108         |
+| 142     | 7991    | %s the Undying                    | %s the Undying                    | 109         |
+| 143     | 7997    | %s Jenkins                        | %s Jenkins                        | 110         |
+| 144     | 8045    | Bloodsail Admiral %s              | Bloodsail Admiral %s              | 111         |
+| 145     | 8121    | %s the Insane                     | %s the Insane                     | 112         |
+| 146     | 8237    | %s of the Exodar                  | %s of the Exodar                  | 113         |
+| 147     | 8238    | %s of Darnassus                   | %s of Darnassus                   | 114         |
+| 148     | 8239    | %s of Ironforge                   | %s of Ironforge                   | 115         |
+| 149     | 8240    | %s of Stormwind                   | %s of Stormwind                   | 116         |
+| 150     | 8241    | %s of Orgrimmar                   | %s of Orgrimmar                   | 117         |
+| 151     | 8242    | %s of Sen'jin                     | %s of Sen'jin                     | 118         |
+| 152     | 8243    | %s of Silvermoon                  | %s of Silvermoon                  | 119         |
+| 153     | 8244    | %s of Thunder Bluff               | %s of Thunder Bluff               | 120         |
+| 154     | 8245    | %s of the Undercity               | %s of the Undercity               | 121         |
+| 155     | 8303    | %s the Noble                      | %s the Noble                      | 122         |
+| 156     | 8332    | Crusader %s                       | Crusader %s                       | 123         |
+| 157     | 0       | Deadly Gladiator %s               | Deadly Gladiator %s               | 56          |
+| 158     | 8450    | %s, Death's Demise                | %s, Death's Demise                | 124         |
+| 159     | 8451    | %s the Celestial Defender         | %s the Celestial Defender         | 125         |
+| 160     | 8453    | %s, Conqueror of Ulduar           | %s, Conqueror of Ulduar           | 126         |
+| 161     | 8452    | %s, Champion of Ulduar            | %s, Champion of Ulduar            | 127         |
+| 163     | 0       | Vanquisher %s                     | Vanquisher %s                     | 128         |
+| 164     | 8467    | Starcaller %s                     | Starcaller %s                     | 129         |
+| 165     | 8468    | %s the Astral Walker              | %s the Astral Walker              | 130         |
+| 166     | 8469    | %s, Herald of the Titans          | %s, Herald of the Titans          | 131         |
+| 167     | 0       | Furious Gladiator %s              | Furious Gladiator %s              | 132         |
+| 168     | 8596    | %s the Pilgrim                    | %s the Pilgrim                    | 133         |
+| 169     | 0       | Relentless Gladiator %s           | Relentless Gladiator %s           | 134         |
+| 170     | 8777    | Grand Crusader %s                 | Grand Crusader %s                 | 135         |
+| 171     | 8778    | %s the Argent Defender            | %s the Argent Defender            | 136         |
+| 172     | 8977    | %s the Patient                    | %s the Patient                    | 137         |
+| 173     | 9043    | %s the Light of Dawn              | %s the Light of Dawn              | 138         |
+| 174     | 9045    | %s, Bane of the Fallen King       | %s, Bane of the Fallen King       | 139         |
+| 175     | 9046    | %s the Kingslayer                 | %s the Kingslayer                 | 140         |
+| 176     | 9138    | %s of the Ashen Verdict           | %s of the Ashen Verdict           | 141         |
+| 177     | 0       | Wrathful Gladiator %s             | Wrathful Gladiator %s             | 142         |

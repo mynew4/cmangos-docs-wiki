@@ -30,124 +30,20 @@ Relations
 
 The 11 tables have different relations with other DB tables.
 
-<table>
-<colgroup>
-<col width="8%" />
-<col width="8%" />
-<col width="20%" />
-<col width="12%" />
-<col width="14%" />
-<col width="36%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Loot table</th>
-<th>Field</th>
-<th>Relation</th>
-<th>Related table</th>
-<th>Field</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>fishing_loot_template</td>
-<td>no relation</td>
-<td><a href="Loot_template#entry">entry</a> is linked with ID of the fishing zone or area</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>spell_loot_template</td>
-<td>no relation</td>
-<td><a href="Loot_template#entry">entry</a> is linked with ID of the Spell.</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>creature_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- many</td>
-<td><a href="Creature_template">creature_template</a></td>
-<td><a href="Creature_template#lootid">lootid</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>gameobject_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- many</td>
-<td><a href="Gameobject_template">gameobject_template</a></td>
-<td><a href="Gameobject_template#data0-23">data1</a></td>
-<td>Only GAMEOBJECT_TYPE_CHEST (3) or GAMEOBJECT_TYPE_FISHINGHOLE (25) use data1 as loot ID, for other types data1 is used in other ways</td>
-</tr>
-<tr class="odd">
-<td>item_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- one</td>
-<td><a href="Item_template">item_template</a></td>
-<td><a href="Item_template#entry">entry</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>disenchant_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- many</td>
-<td><a href="Item_template">item_template</a></td>
-<td><a href="Item_template#disenchantid">disenchantid</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>prospecting_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- one</td>
-<td><a href="Item_template">item_template</a></td>
-<td><a href="Item_template#entry">entry</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>milling_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- one</td>
-<td><a href="Item_template">item_template</a></td>
-<td><a href="Item_template#entry">entry</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>pickpocketing_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- many</td>
-<td><a href="Creature_template">creature_template</a></td>
-<td><a href="Creature_template#pickpocketloot">pickpocketloot</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>skinning_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- many</td>
-<td><a href="Creature_template">creature_template</a></td>
-<td><a href="Creature_template#skinloot">skinloot</a></td>
-<td>Can also store minable/herbable items gathered from creatures</td>
-</tr>
-<tr class="odd">
-<td>quest_mail_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td></td>
-<td><a href="Quest_template">quest_template</a></td>
-<td><a href="Quest_template#rewmailtemplateid">RewMailTemplateId</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>reference_loot_template</td>
-<td><a href="Loot_template#entry">entry</a></td>
-<td>many &lt;- many</td>
-<td>* _loot_template</td>
-<td><a href="Loot_template#mincountorref">-mincountOrRef</a></td>
-<td>In case of negative mincountOrRef</td>
-</tr>
-</tbody>
-</table>
+| Loot table                  | Field                        | Relation                                                                   | Related table                              | Field                                                 | Comment                                                                                                                              |
+| --------------------------- | ---------------------------- | -------------------------------------------------------------------------- | ------------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| fishing_loot_template       | no relation                  | [entry](Loot_template#entry) is linked with ID of the fishing zone or area |                                            |                                                       |                                                                                                                                      |
+| spell_loot_template         | no relation                  | [entry](Loot_template#entry) is linked with ID of the Spell.               |                                            |                                                       |                                                                                                                                      |
+| creature_loot_template      | [entry](Loot_template#entry) | many <- many                                                               | [creature_template](Creature_template)     | [lootid](Creature_template#lootid)                    |                                                                                                                                      |
+| gameobject_loot_template    | [entry](Loot_template#entry) | many <- many                                                               | [gameobject_template](Gameobject_template) | [data1](Gameobject_template#data0-23)                 | Only GAMEOBJECT_TYPE_CHEST (3) or GAMEOBJECT_TYPE_FISHINGHOLE (25) use data1 as loot ID, for other types data1 is used in other ways |
+| item_loot_template          | [entry](Loot_template#entry) | many <- one                                                                | [item_template](Item_template)             | [entry](Item_template#entry)                          |                                                                                                                                      |
+| disenchant_loot_template    | [entry](Loot_template#entry) | many <- many                                                               | [item_template](Item_template)             | [disenchantid](Item_template#disenchantid)            |                                                                                                                                      |
+| prospecting_loot_template   | [entry](Loot_template#entry) | many <- one                                                                | [item_template](Item_template)             | [entry](Item_template#entry)                          |                                                                                                                                      |
+| milling_loot_template       | [entry](Loot_template#entry) | many <- one                                                                | [item_template](Item_template)             | [entry](Item_template#entry)                          |                                                                                                                                      |
+| pickpocketing_loot_template | [entry](Loot_template#entry) | many <- many                                                               | [creature_template](Creature_template)     | [pickpocketloot](Creature_template#pickpocketloot)    |                                                                                                                                      |
+| skinning_loot_template      | [entry](Loot_template#entry) | many <- many                                                               | [creature_template](Creature_template)     | [skinloot](Creature_template#skinloot)                | Can also store minable/herbable items gathered from creatures                                                                        |
+| quest_mail_loot_template    | [entry](Loot_template#entry) |                                                                            | [quest_template](Quest_template)           | [RewMailTemplateId](Quest_template#rewmailtemplateid) |                                                                                                                                      |
+| reference_loot_template     | [entry](Loot_template#entry) | many <- many                                                               | * _loot_template                           | [-mincountOrRef](Loot_template#mincountorref)         | In case of negative mincountOrRef                                                                                                    |
 
 Description of the fields
 -------------------------
@@ -175,19 +71,19 @@ Meaning of that field is a bit different depending on its sign and the sign of [
 
 #### Plain entry
 
-**ChanceOrQuestChance** &gt; 0, [mincountOrRef](#mincountOrRef) &gt; 0
+**ChanceOrQuestChance** > 0, [mincountOrRef](#mincountOrRef) > 0
 
 Absolute value of **ChanceOrQuestChance** (actuallu just the value as it's positive in this case) signifies the percent chance that the item has to drop. Any floating point number is allowed but indeed any value larger that 100 will make the same result as 100.
 
 #### Quest drop
 
-**ChanceOrQuestChance** &lt; 0, [mincountOrRef](#mincountOrRef) &gt; 0
+**ChanceOrQuestChance** < 0, [mincountOrRef](#mincountOrRef) > 0
 
 Just as for [plain entries](#Plain_entry) absolute value of **ChanceOrQuestChance** signifies the percent chance that the item has to drop. But in addition negative **ChanceOrQuestChance** informs the core that the item should be shown only to characters having appropriate quest. This means that even if item is dropped, in order to see it in the loot the player must have at least one [quest](quest_template) that has the [item ID](#item) in its [ReqItemIdN](quest_template#ReqItemId) fields or in its [ReqSourceIdN](quest_template#ReqSourceId) fields. The player must also have less copies of the item than [ReqItemCountN](quest_template#ReqItemCount) or [ReqSourceCountN](quest_template#ReqSourceCount).
 
 #### Chanced references
 
-[mincountOrRef](#mincountOrRef) &lt; 0
+[mincountOrRef](#mincountOrRef) < 0
 
 For negative [mincountOrRef](#mincountOrRef) (*reference entries*) **ChanceOrQuestChance** signifies the percent chance that the reference has to be used. So it is very similar to [plain entries](#Plain_entry) meaning, just note that entire reference is skipped if the chance is missed.
 
@@ -201,7 +97,7 @@ Zero value of **ChanceOrQuestChance** is allowed for [grouped entries](#groupid)
 
 ### groupid
 
-A group is a set of loot definitions processed in such a way that at any given looting event the loot generated can receive only 1 (or none) [item](#item) from the items declared in the loot definitions of the group. Groups are formed by loot definitions having the same values of [entry](#entry) and **groupid** fields AND have **MinCountOrRef &gt; 0**.
+A group is a set of loot definitions processed in such a way that at any given looting event the loot generated can receive only 1 (or none) [item](#item) from the items declared in the loot definitions of the group. Groups are formed by loot definitions having the same values of [entry](#entry) and **groupid** fields AND have **MinCountOrRef > 0**.
 
 A group may consists of **explicitly-chanced** (having non-zero [ChanceOrQuestChance](#ChanceOrQuestChance)) and **equal-chanced** ([ChanceOrQuestChance](#ChanceOrQuestChance) = 0) entries. Every *equal-chanced* entry of a group is considered having such a chance that:
 
@@ -238,13 +134,13 @@ If you understand the process you can understand the results:
 -   Not more than one item from a group may drop at any given time.
 -   If **group chance** is at least 100 then one item will be dropped for sure.
 -   If *group chance* does not exceed 100 then every item defined in group entries has *exactly* that chance to drop as set in [ChanceOrQuestChance](#ChanceOrQuestChance).
--   If *group chance* is greater than 100 then some entries will lost a part of their chance (or even not be checked at all - that will be the case for all equal-chanced entries) whatever value takes the roll **R**. So for some items chance to drop will be less than their [ChanceOrQuestChance](#ChanceOrQuestChance). That is *very* bad and that is why having *group chance* &gt; 100 is strictly prohibited.
+-   If *group chance* is greater than 100 then some entries will lost a part of their chance (or even not be checked at all - that will be the case for all equal-chanced entries) whatever value takes the roll **R**. So for some items chance to drop will be less than their [ChanceOrQuestChance](#ChanceOrQuestChance). That is *very* bad and that is why having *group chance* > 100 is strictly prohibited.
 -   Processing of *equal-chanced* part takes much less time then of *explicitly-chanced* one. So usage of equal-chanced groups is recommended when possible.
 
 So now basic applications of the groups are clear:
 
 -   Groups with *group chance* of 100% generate **exactly one** [item](#item) every time. This is needed quite often, for example such behavior is needed to define a loot template for tier item drop from a boss.
--   Groups with *group chance* &lt; 100 generate **one or zero** [items](#item) every time keeping [chances](#ChanceOrRef) of every item unchanged. Such behavior is useful to limit maximum number of items in the loot.
+-   Groups with *group chance* < 100 generate **one or zero** [items](#item) every time keeping [chances](#ChanceOrRef) of every item unchanged. Such behavior is useful to limit maximum number of items in the loot.
 -   A single group may be defined for a set of items common for several loot sources. This could be very useful for decreasing DB size without any loss of data. See [References](#Group_reference) for more details.
 
 There is no way to have a [reference](#mincountOrRef) as a part of a group.
@@ -268,7 +164,7 @@ Meaning of positive values is quite clear and requires no additional comments. *
 
 #### Template reference
 
-[mincountOrRef](#mincountOrRef) &lt; 0, [group](#groupid) = 0
+[mincountOrRef](#mincountOrRef) < 0, [group](#groupid) = 0
 
 Template reference asks core to process another loot template (having [entry](#entry) equal to "-mincountOrRef") and to include all items dropped for that template into current loot. Simple idea.
 
@@ -282,7 +178,7 @@ then the core will crash due to stack overflow at first attempt of loot 21215 pr
 
 #### Filtered references
 
-[mincountOrRef](#mincountOrRef) &lt; 0, [group](#groupid) &gt; 0
+[mincountOrRef](#mincountOrRef) < 0, [group](#groupid) > 0
 
 Group reference asks core to process another loot template (having [entry](#entry) equal to "~~mincountOrRef") only in the part of one [group](#groupid)~~ with id equal to value of \`groupid\` field of the reference entry. So this reference may add only none or 1 item into the loot (provided [maxcount](#maxcount) is equal to 1).
 
@@ -464,108 +360,14 @@ Note that ChanceOrRef can not be skipped as it has default value of 100.
 
     SELECT * FROM `pickpocketing_loot_template` WHERE `entry` = '20424';
 
-<table style="width:100%;">
-<colgroup>
-<col width="5%" />
-<col width="5%" />
-<col width="9%" />
-<col width="14%" />
-<col width="7%" />
-<col width="7%" />
-<col width="9%" />
-<col width="11%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>entry</th>
-<th>item</th>
-<th>ChanceOrRef</th>
-<th>QuestChanceOrGroup</th>
-<th>mincount</th>
-<th>maxcount</th>
-<th>freeforall</th>
-<th>lootcondition</th>
-<th>condition_value1</th>
-<th>condition_value2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>20424</td>
-<td>422</td>
-<td>0.1</td>
-<td>100</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>20424</td>
-<td>929</td>
-<td>0.1</td>
-<td>100</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>20424</td>
-<td>4538</td>
-<td>0.1</td>
-<td>100</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>20424</td>
-<td>4542</td>
-<td>0.1</td>
-<td>100</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>20424</td>
-<td>5374</td>
-<td>0.1</td>
-<td>100</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>20424</td>
-<td>16882</td>
-<td>22.2222</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
+| entry | item  | ChanceOrRef | QuestChanceOrGroup | mincount | maxcount | freeforall | lootcondition | condition_value1 | condition_value2 |
+| ----- | ----- | ----------- | ------------------ | -------- | -------- | ---------- | ------------- | ---------------- | ---------------- |
+| 20424 | 422   | 0.1         | 100                | 1        | 1        | 0          | 0             | 0                | 0                |
+| 20424 | 929   | 0.1         | 100                | 1        | 1        | 0          | 0             | 0                | 0                |
+| 20424 | 4538  | 0.1         | 100                | 1        | 1        | 0          | 0             | 0                | 0                |
+| 20424 | 4542  | 0.1         | 100                | 1        | 1        | 0          | 0             | 0                | 0                |
+| 20424 | 5374  | 0.1         | 100                | 1        | 1        | 0          | 0             | 0                | 0                |
+| 20424 | 16882 | 22.2222     | 0                  | 1        | 1        | 0          | 0             | 0                | 0                |
 
 First 5 rows in the result are incorrect, ChanceOrRef and QuestChanceOrGroup should not be positive simultanously. See [allowed combinations](#ChanceOrRef). The core does not crash encounering that, but non-quest chances are ignored.
 
@@ -577,60 +379,10 @@ First 5 rows in the result are incorrect, ChanceOrRef and QuestChanceOrGroup sho
 
 gives
 
-<table style="width:100%;">
-<colgroup>
-<col width="6%" />
-<col width="4%" />
-<col width="9%" />
-<col width="14%" />
-<col width="7%" />
-<col width="7%" />
-<col width="9%" />
-<col width="11%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>entry</th>
-<th>item</th>
-<th>ChanceOrRef</th>
-<th>QuestChanceOrGroup</th>
-<th>mincount</th>
-<th>maxcount</th>
-<th>freeforall</th>
-<th>lootcondition</th>
-<th>condition_value1</th>
-<th>condition_value2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>100003</td>
-<td>8170</td>
-<td>80</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>100003</td>
-<td>8171</td>
-<td>20</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
+| entry  | item | ChanceOrRef | QuestChanceOrGroup | mincount | maxcount | freeforall | lootcondition | condition_value1 | condition_value2 |
+| ------ | ---- | ----------- | ------------------ | -------- | -------- | ---------- | ------------- | ---------------- | ---------------- |
+| 100003 | 8170 | 80          | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 100003 | 8171 | 20          | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
 
 Quite correct. Used quite widely:
 
@@ -650,96 +402,13 @@ gives
 
 gives
 
-<table style="width:100%;">
-<colgroup>
-<col width="5%" />
-<col width="4%" />
-<col width="9%" />
-<col width="14%" />
-<col width="7%" />
-<col width="7%" />
-<col width="9%" />
-<col width="11%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>entry</th>
-<th>item</th>
-<th>ChanceOrRef</th>
-<th>QuestChanceOrGroup</th>
-<th>mincount</th>
-<th>maxcount</th>
-<th>freeforall</th>
-<th>lootcondition</th>
-<th>condition_value1</th>
-<th>condition_value2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>5292</td>
-<td>4304</td>
-<td>49.655</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>5292</td>
-<td>4234</td>
-<td>43.1624</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>5292</td>
-<td>8169</td>
-<td>4.0984</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>5292</td>
-<td>4235</td>
-<td>3.0676</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>5292</td>
-<td>8973</td>
-<td>0</td>
-<td>80</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
+| entry | item | ChanceOrRef | QuestChanceOrGroup | mincount | maxcount | freeforall | lootcondition | condition_value1 | condition_value2 |
+| ----- | ---- | ----------- | ------------------ | -------- | -------- | ---------- | ------------- | ---------------- | ---------------- |
+| 5292  | 4304 | 49.655      | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 5292  | 4234 | 43.1624     | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 5292  | 8169 | 4.0984      | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 5292  | 4235 | 3.0676      | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 5292  | 8973 | 0           | 80                 | 1        | 1        | 0          | 0             | 0                | 0                |
 
 Quest entry and a group. Would be good if [group chance](#groupid) was 100, but it is only 99.9834. So on average at 166 skinning attempts over 1000 000 player will get an empty loot window (withuot considering quest skins which are very rare).
 
@@ -751,108 +420,14 @@ Used for creadure with entry=5292 only.
 
 gives
 
-<table style="width:100%;">
-<colgroup>
-<col width="5%" />
-<col width="4%" />
-<col width="9%" />
-<col width="14%" />
-<col width="7%" />
-<col width="7%" />
-<col width="9%" />
-<col width="11%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>entry</th>
-<th>item</th>
-<th>ChanceOrRef</th>
-<th>QuestChanceOrGroup</th>
-<th>mincount</th>
-<th>maxcount</th>
-<th>freeforall</th>
-<th>lootcondition</th>
-<th>condition_value1</th>
-<th>condition_value2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>10151</td>
-<td>8154</td>
-<td>60</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>10151</td>
-<td>8170</td>
-<td>48</td>
-<td>-1</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>10151</td>
-<td>4304</td>
-<td>40</td>
-<td>-1</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>10151</td>
-<td>8368</td>
-<td>5</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>10151</td>
-<td>8171</td>
-<td>4</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>10151</td>
-<td>8169</td>
-<td>3</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
+| entry | item | ChanceOrRef | QuestChanceOrGroup | mincount | maxcount | freeforall | lootcondition | condition_value1 | condition_value2 |
+| ----- | ---- | ----------- | ------------------ | -------- | -------- | ---------- | ------------- | ---------------- | ---------------- |
+| 10151 | 8154 | 60          | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 10151 | 8170 | 48          | -1                 | 1        | 2        | 0          | 0             | 0                | 0                |
+| 10151 | 4304 | 40          | -1                 | 1        | 2        | 0          | 0             | 0                | 0                |
+| 10151 | 8368 | 5           | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 10151 | 8171 | 4           | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 10151 | 8169 | 3           | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
 
     SELECT entry, name FROM `creature_template` WHERE `skinloot` = '10151';
 
@@ -864,59 +439,9 @@ gives
 
 First problem the [group chance](#groupid) is 160 that is much higher than 100. If by a case order of records in core (actually it is unknown) is such that chances of 60 and 40 are in the beginning then the rest of the group will never be processed. The result will be exacly the same is if the loot template was
 
-<table style="width:100%;">
-<colgroup>
-<col width="5%" />
-<col width="4%" />
-<col width="9%" />
-<col width="14%" />
-<col width="7%" />
-<col width="7%" />
-<col width="9%" />
-<col width="11%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>entry</th>
-<th>item</th>
-<th>ChanceOrRef</th>
-<th>QuestChanceOrGroup</th>
-<th>mincount</th>
-<th>maxcount</th>
-<th>freeforall</th>
-<th>lootcondition</th>
-<th>condition_value1</th>
-<th>condition_value2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>10151</td>
-<td>8154</td>
-<td>60</td>
-<td>-1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>10151</td>
-<td>4304</td>
-<td>40</td>
-<td>-1</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
+| entry | item | ChanceOrRef | QuestChanceOrGroup | mincount | maxcount | freeforall | lootcondition | condition_value1 | condition_value2 |
+| ----- | ---- | ----------- | ------------------ | -------- | -------- | ---------- | ------------- | ---------------- | ---------------- |
+| 10151 | 8154 | 60          | -1                 | 1        | 1        | 0          | 0             | 0                | 0                |
+| 10151 | 4304 | 40          | -1                 | 1        | 2        | 0          | 0             | 0                | 0                |
 
 Moreover, skinloot in not equal to creature\_template.entry and this is NOT a reference to the same loot - 10151 is used ONLY by creature 11614. And the last problem - wowhead has no data about this skinning loot of this pet at all...
