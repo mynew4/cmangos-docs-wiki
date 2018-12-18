@@ -196,8 +196,8 @@ Range in which the buddy defined in [buddy\_entry](dbscripts#buddy_entry) will b
 
 | &amp; data_flags                | Description                                                                                                                              |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| &amp; SCRIPT_FLAG_BUDDY_BY_GUID | <a href="creature#guid">creature.guid</a> instead of <a href="creature_template#entry">creature_template.entry</a>                       |
-| &amp; SCRIPT_FLAG_BUDDY_BY_POOL | <a href="pool_creature#pool_entry">pool_creature.pool_entry</a> instead of <a href="creature_template#entry">creature_template.entry</a> |
+| &amp; SCRIPT_FLAG_BUDDY_BY_GUID | [creature.guid](creature#guid) instead of [creature_template.entry](creature_template#entry)                                             |
+| &amp; SCRIPT_FLAG_BUDDY_BY_POOL | [pool_creature.pool_entry](pool_creature#pool_entry) instead of [creature_template.entry](creature_template#entry)                       |
 
 #### data\_flags
 

@@ -16,11 +16,11 @@ Structure
 | 3      | Flags                                                 | Integer | 0x100 - CAN_CHANGE_PLAYER_DIFFICULTY                                                                      |
 | 4      | Type                                                  | Integer | 0: none, 1: party, 2: raid, 3: pvp, 4: arena, &gt;=5: none (official from `IsInInstance()`)               |
 | 5      | IsBattleground                                        | Integer | Boolean (1 = True, 0 = False)                                                                             |
-| 6-22   | Name                                                  | String  | <a href="Localization">Localization;</a>; displayed on World Map for example                              |
-| 23     | <a href="AreaTable.dbc" class="uri">AreaTable.dbc</a> | Integer | Ref-ID;                                                                                                   |
-| 24-40  | MapDescriptionA                                       | String  | <a href="Localization" class="uri">Localization</a>                                                       |
-| 41-57  | MapDescriptionH                                       | String  | <a href="Localization" class="uri">Localization</a>                                                       |
-| 58     | <a href="LoadingScreen" class="uri">LoadingScreen</a> | Integer | Ref-ID; The LoadingScreen to Display                                                                      |
+| 6-22   | Name                                                  | String  | [Localization;](Localization); displayed on World Map for example                                         |
+| 23     | [AreaTable.dbc](AreaTable.dbc)                        | Integer | Ref-ID;                                                                                                   |
+| 24-40  | MapDescriptionA                                       | String  | [Localization](Localization)                                                                              |
+| 41-57  | MapDescriptionH                                       | String  | [Localization](Localization)                                                                              |
+| 58     | [LoadingScreen](LoadingScreen)                        | Integer | Ref-ID; The LoadingScreen to Display                                                                      |
 | 59     | BGMapIconScale                                        | Float   |                                                                                                           |
 | 60     | GhostEntranceMap                                      | Integer | Ref-ID; Points to column 1, -1 if none                                                                    |
 | 61     | GhostEntranceX                                        | Float   | The X-Coord of the instance entrance                                                                      |

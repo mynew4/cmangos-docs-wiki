@@ -243,7 +243,7 @@ See the proper table under this one</span>
 
 | Bit        | Name                      | Comment                                                                                |
 | ---------- | ------------------------- | -------------------------------------------------------------------------------------- |
-| 0          | MONSTER_MOVE_NONE         | InhabitType]] and <a href="creature_template#MovementType">MovementType</a>            |
+| 0          | MONSTER_MOVE_NONE         | InhabitType]] and [MovementType](creature_template#MovementType)                       |
 | 1          | MONSTER_MOVE_FORWARD      | Instantly teleport creature, then creature move forward animation but no real movement |
 | 2          | MONSTER_MOVE_BACKWARD     | Instantly teleport creature, then creature move back animation but no real movement    |
 | 4          | MONSTER_MOVE_STRAFE_LEFT  | Instantly teleport creature, then creature move left animation but no real movement    |

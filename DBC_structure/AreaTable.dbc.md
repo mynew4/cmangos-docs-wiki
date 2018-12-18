@@ -14,7 +14,7 @@ This dbc contains the zone and subzone lists. For the purposes of this wiki arti
 | 2        | MapID]]                                 | Int    | Map or Continent                                              |
 | 3        | AreaID]]                                | Int    | SubArea of Map                                                |
 | 4        | Explore Flag                            | Int    |                                                               |
-| 5        | <a href="AreaTable.dbc#flags">Flags</a> | Int    |                                                               |
+| 5        | [Flags](AreaTable.dbc#flags)            | Int    |                                                               |
 | 8        | SoundAmbienceID]]                       | Int    | Reference to what Ambiance to use during day and night        |
 | 9        | ZoneMusicID]]                           | Int    | Reference to what zone music to play                          |
 | 10       | ZoneIntroMusicID]]                      | Int    | Reference to what zone intro music to play when entering area |

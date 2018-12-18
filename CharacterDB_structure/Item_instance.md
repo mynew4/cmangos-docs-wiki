@@ -37,11 +37,11 @@ Much like the data field in the character table, this field has many number fiel
 | 6     | ITEM_FIELD_OWNER                | owner_guid                                                                      |
 | 8     | ITEM_FIELD_CONTAINED            | If the item is in a bag, the GUID of the bag item; otherwise owner GUID.        |
 | 10    | ITEM_FIELD_CREATOR              | GUID of character who created the item.                                         |
-| 12    | ITEM_FIELD_GIFTCREATOR          | GUID of character who created the <a href="character_gifts#item_guid.">item</a> |
+| 12    | ITEM_FIELD_GIFTCREATOR          | GUID of character who created the [item](character_gifts#item_guid)             |
 | 14    | ITEM_FIELD_STACK_COUNT          | Current number of item copies in the stack.                                     |
 | 15    | ITEM_FIELD_DURATION             | Current duration (in milliseconds)                                              |
 | 16    | ITEM_FIELD_SPELL_CHARGES        |                                                                                 |
-| 21    | ITEM_FIELD_FLAGS                | Flags (from <a href="Item_template#flags">item_template</a>)                    |
+| 21    | ITEM_FIELD_FLAGS                | Flags (from [item_template](Item_template#flags))                               |
 | 22    | ITEM_FIELD_ENCHANTMENT          |                                                                                 |
 | 55    | ITEM_FIELD_PROPERTY_SEED        | Also called ITEM_FIELD_SUFFIX_FACTOR                                            |
 | 56    | ITEM_FIELD_RANDOM_PROPERTIES_ID |                                                                                 |
