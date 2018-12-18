@@ -4,15 +4,15 @@ This table holds information about changes in guilds membership.
 
 ### **Structure**
 
-| <strong>**Field**</strong>               | <strong>**Type**</strong> | <strong>**Null**</strong> | <strong>**Key**</strong> | <strong>**Default**</strong> | <strong>**Extra**</strong> |
-|------------------------------------------|---------------------------|---------------------------|--------------------------|------------------------------|----------------------------|
-| [guildid](Guild_eventlog#guildid)        | int(11) unsigned          | NO                        | PRI                      | 0                            |                            |
-| [LogGuid](Guild_eventlog#logguid)        | int(11) unsigned          | NO                        | PRI                      | 0                            |                            |
-| [EventType](Guild_eventlog#eventtype)    | tinyint(1) unsigned       | NO                        |                          | 0                            |                            |
-| [PlayerGuid1](Guild_eventlog#playerguid) | int(11) unsigned          | NO                        |                          | 0                            |                            |
-| [PlayerGuid2](Guild_eventlog#playerguid) | int(11) unsigned          | NO                        |                          | 0                            |                            |
-| [NewRank](Guild_eventlog#newrank)        | tinyint(2) unsigned       | NO                        |                          | 0                            |                            |
-| [TimeStamp](Guild_eventlog#timestamp)    | bigint(20) unsigned       | NO                        |                          | 0                            |                            |
+| Field                                    | Type                | Null | Key | Default | Extra |
+| ---------------------------------------- | ------------------- | ---- | --- | ------- | ----- |
+| [guildid](Guild_eventlog#guildid)        | int(11) unsigned    | NO   | PRI | 0       |       |
+| [LogGuid](Guild_eventlog#logguid)        | int(11) unsigned    | NO   | PRI | 0       |       |
+| [EventType](Guild_eventlog#eventtype)    | tinyint(1) unsigned | NO   |     | 0       |       |
+| [PlayerGuid1](Guild_eventlog#playerguid) | int(11) unsigned    | NO   |     | 0       |       |
+| [PlayerGuid2](Guild_eventlog#playerguid) | int(11) unsigned    | NO   |     | 0       |       |
+| [NewRank](Guild_eventlog#newrank)        | tinyint(2) unsigned | NO   |     | 0       |       |
+| [TimeStamp](Guild_eventlog#timestamp)    | bigint(20) unsigned | NO   |     | 0       |       |
 
 ### **Description of the fields**
 
