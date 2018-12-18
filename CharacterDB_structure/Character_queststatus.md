@@ -38,100 +38,14 @@ The quest ID. See [quest\_template.entry](quest_template#entry)
 
 The current quest status.
 
-<table>
-<caption>
-Possible values
+| Value | Status                   | Comments                                    |
+| ----- | ------------------------ | ------------------------------------------- |
+| 0     | QUEST_STATUS_NONE        | Quest isn't shown in quest list; default    |
+| 1     | QUEST_STATUS_COMPLETE    | Quest has been completed                    |
+| 2     | QUEST_STATUS_UNAVAILABLE | Quest is unavailable to the character       |
+| 3     | QUEST_STATUS_INCOMPLETE  | Quest is active in quest log but incomplete |
+| 4     | QUEST_STATUS_AVAILABLE   | Quest is available to be taken by character |
 
-</caption>
-<thead>
-<tr class="header">
-<th align="left">
-Value
-
-</th>
-<th align="left">
-Status
-
-</th>
-<th align="left">
-Comments
-
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">
-0
-
-</td>
-<td align="left">
-QUEST_STATUS_NONE
-
-</td>
-<td align="left">
-Quest isn't shown in quest list; default
-
-</td>
-</tr>
-<tr class="even">
-<td align="left">
-1
-
-</td>
-<td align="left">
-QUEST_STATUS_COMPLETE
-
-</td>
-<td align="left">
-Quest has been completed
-
-</td>
-</tr>
-<tr class="odd">
-<td align="left">
-2
-
-</td>
-<td align="left">
-QUEST_STATUS_UNAVAILABLE
-
-</td>
-<td align="left">
-Quest is unavailable to the character
-
-</td>
-</tr>
-<tr class="even">
-<td align="left">
-3
-
-</td>
-<td align="left">
-QUEST_STATUS_INCOMPLETE
-
-</td>
-<td align="left">
-Quest is active in quest log but incomplete
-
-</td>
-</tr>
-<tr class="odd">
-<td align="left">
-4
-
-</td>
-<td align="left">
-QUEST_STATUS_AVAILABLE
-
-</td>
-<td align="left">
-Quest is available to be taken by character
-
-</td>
-</tr>
-</tbody>
-</table>
 #### rewarded
 
 Boolean 1 or 0 representing whether the quest has been rewarded or not.
