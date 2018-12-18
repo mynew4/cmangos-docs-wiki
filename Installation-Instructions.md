@@ -268,7 +268,7 @@ For instructions on how to compile boost from source code or general information
 | VS 2017 | boost_x_xx_x-msvc-14.1-32.exe | boost_x_xx_x-msvc-14.1-64.exe |
 
 -   Install the downloaded binaries.
--   Go to the **PC Properties** (press **&lt;Win&gt;+&lt;Pause&gt;**)
+-   Go to the **PC Properties** (press `<Win>+<Pause>`)
 -   Click on **Advanced System Settings**
 -   Click on **Environment Variables**
 -   At the bottom under **System variables** click **New**

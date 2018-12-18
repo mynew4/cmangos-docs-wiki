@@ -124,7 +124,7 @@ Base Name of the Creature.
 
 #### SubName
 
-The SubName of the Creature That Appears in &lt;&gt; Below the Creature's Name.
+The SubName of the Creature That Appears in `<>` Below the Creature's Name.
 
 #### IconName
 
@@ -388,7 +388,7 @@ This Field Controls the Application Of Flags That Controls Certain NPC Specific 
 | 8192    | 0x00002000 | CREATURE_EXTRA_FLAG_MMAP_FORCE_ENABLE            | creature is forced to use MMaps                                                                                        |
 | 16384   | 0x00004000 | CREATURE_EXTRA_FLAG_MMAP_FORCE_DISABLE           | creature is forced to NOT use MMaps                                                                                    |
 | 32768   | 0x00008000 | CREATURE_EXTRA_FLAG_WALK_IN_WATER                | creature is forced to walk in water even it can swim                                                                   |
-| 65536   | 0x00010000 | CREATURE_EXTRA_FLAG_CIVILIAN                     | CreatureInfo-&gt;civilian substitute (for expansions as Civilian Colum was removed)                                    |
+| 65536   | 0x00010000 | CREATURE_EXTRA_FLAG_CIVILIAN                     | CreatureInfo->civilian substitute (for expansions as Civilian Colum was removed)                                       |
 | 131072  | 0x00020000 | CREATURE_EXTRA_FLAG_NO_MELEE                     | creature can't melee                                                                                                   |
 | 262144  | 0x00040000 | NOT_IMPLEMENTED_CREATURE_EXTRA_FLAG_FAR_VIEW     | creature with far view                                                                                                 |
 | 524288  | 0x00080000 | CREATURE_EXTRA_FLAG_FORCE_ATTACKING_CAPABILITY   | SetForceAttackingCapability(true); for nonattackable, nontargetable creatures that should be able to attack nontheless |
@@ -635,7 +635,7 @@ Very Slight Rounding Errors of 1 or 2 Damage Might Occur... This was due to Roun
 
 Damage Variance is a Co-Efficient used in Damage Calculations To Limit the Min/Max Damage Range.
 
-Default Value is 1 (Normal) ===&gt; See [DamageMultiplier](#DamageMultiplier) for More Information
+Default Value is 1 (Normal) ===> See [DamageMultiplier](#DamageMultiplier) for More Information
 
 #### ArmorMultiplier
 

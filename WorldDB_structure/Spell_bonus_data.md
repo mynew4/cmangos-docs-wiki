@@ -25,41 +25,41 @@ Spell ID. See [Spell.dbc.](Spell.dbc).
 #### direct\_bonus
 
 Direct spell power damage.
-If &lt; 0
+If < 0
 Calculate default spell power coefficient.
 If = 0
 Don't apply any spell power coefficient. (Don't scale damage with spellpower)
-If &gt; 0
+If > 0
 Use this as new spell power coefficient.
 
 #### dot\_bonus
 
 Spell damage over time.
-If &lt; 0
+If < 0
 Calculate default spell power coefficient.
 If = 0
 Don't apply any spell power coefficient. (Don't scale damage with spellpower)
-If &gt; 0
+If > 0
 Use this as new spell power coefficient.
 
 #### ap\_bonus
 
 Direct Melee/Ranged damage.
-If &lt; 0
+If < 0
 Calculate default attack power coefficient.
 If = 0
 Don't apply any attack power coefficient. (Don't scale damage with attack power)
-If &gt; 0
+If > 0
 Use this as new attack power coefficient.
 
 #### ap\_dot\_bonus
 
 Melee/Ranged damage over time.
-If &lt; 0
+If < 0
 Calculate default attack power coefficient.
 If = 0
 Don't apply any attack power coefficient. (Don't scale damage with attack power)
-If &gt; 0
+If > 0
 Use this as new attack power coefficient.
 
 #### comments

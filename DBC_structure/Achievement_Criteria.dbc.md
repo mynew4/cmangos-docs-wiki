@@ -13,7 +13,7 @@ This DBC contains the requirments to aquire an achievement.
 | Field Nb | Name                                                    | Type   | Notes                                                                                                  |
 | -------- | ------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------ |
 | 1        | ID                                                      | Int    | ID of Criteria                                                                                         |
-| 2        | AchievementID                                           | Int    | Achievement criteria is used for See -&gt; [Achievements.dbc](Achievements.dbc)                        |
+| 2        | AchievementID                                           | Int    | Achievement criteria is used for See -> [Achievements.dbc](Achievements.dbc)                           |
 | 3        | [Type](Achievement_Criteria.dbc#known-types)            | Int    | Achievement_Criteria_Types]]                                                                           |
 | 4        | Value1                                                  | Int    | Achievement_Criteria_Types]]                                                                           |
 | 5        | Value2                                                  | Int    | Achievement_Criteria_Types]]                                                                           |

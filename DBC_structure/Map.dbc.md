@@ -14,7 +14,7 @@ Structure
 | 1      | ID                                                    | Integer |                                                                                                           |
 | 2      | InternalName                                          | String  | reference to World\Map\ [...] \                                                                           |
 | 3      | Flags                                                 | Integer | 0x100 - CAN_CHANGE_PLAYER_DIFFICULTY                                                                      |
-| 4      | Type                                                  | Integer | 0: none, 1: party, 2: raid, 3: pvp, 4: arena, &gt;=5: none (official from `IsInInstance()`)               |
+| 4      | Type                                                  | Integer | 0: none, 1: party, 2: raid, 3: pvp, 4: arena, >=5: none (official from `IsInInstance()`)                  |
 | 5      | IsBattleground                                        | Integer | Boolean (1 = True, 0 = False)                                                                             |
 | 6-22   | Name                                                  | String  | [Localization;](Localization); displayed on World Map for example                                         |
 | 23     | [AreaTable.dbc](AreaTable.dbc)                        | Integer | Ref-ID;                                                                                                   |

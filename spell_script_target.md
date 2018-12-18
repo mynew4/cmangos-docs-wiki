@@ -47,7 +47,7 @@ This specified entry will be automatically targeted if it is near the unit casti
 
 A mask value defining if the target is only applicable for specifiq effect indexes by the spell.
 This is an inverseMask, so you need to filter effects for which you don't want the target to be valid.
-The mask is 1 &lt;&lt; EffectIndex (EffectIndex going from 0 to 2)
+The mask is 1 << EffectIndex (EffectIndex going from 0 to 2)
 
 Example:
 (Spell, 1, NpcA, 2^0), -- NpcA will NOT be chosen for spell-effect 0, so it will be chosen for effects 1 or 2
@@ -64,5 +64,3 @@ So with this we can define targets for a spell (assuming that the targets for th
 | 4   | effects 0 and 1 |
 | 5   | effect 1        |
 | 6   | effect 0        |
-
-

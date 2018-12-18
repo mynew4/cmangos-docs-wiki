@@ -177,18 +177,18 @@ Which one on the three (originalSource, originalTarget, buddy) will be used in t
 
 Possible combinations of the [data\_flags](dbscripts#data_flags) |SCRIPT\_FLAG\_BUDDY\_AS\_TARGET 0x01|SCRIPT\_FLAG\_REVERSE\_DIRECTION 0x02|SCRIPT\_FLAG\_SOURCE\_TARGETS\_SELF 0x04| are:
 
-Where "A -&gt; B" means that the [command](dbscripts#command) is executed from A with B as target.
+Where "A -> B" means that the [command](dbscripts#command) is executed from A with B as target.
 
-| Hex  | A -&gt; B                                                               |
+| Hex  | A -> B                                                               |
 |------|-------------------------------------------------------------------------|
-| 0x00 | originalSource / buddyIfProvided -&gt; originalTarget                   |
-| 0x01 | originalSource -&gt; buddy                                              |
-| 0x02 | originalTarget -&gt; originalSource / buddyIfProvided                   |
-| 0x03 | buddy -&gt; originalSource                                              |
-| 0x04 | originalSource / buddyIfProvided -&gt; originalSource / buddyIfProvided |
-| 0x05 | originalSource -&gt; originalSource                                     |
-| 0x06 | originalTarget -&gt; originalTarget                                     |
-| 0x07 | buddy -&gt; buddy                                                       |
+| 0x00 | originalSource / buddyIfProvided -> originalTarget                   |
+| 0x01 | originalSource -> buddy                                              |
+| 0x02 | originalTarget -> originalSource / buddyIfProvided                   |
+| 0x03 | buddy -> originalSource                                              |
+| 0x04 | originalSource / buddyIfProvided -> originalSource / buddyIfProvided |
+| 0x05 | originalSource -> originalSource                                     |
+| 0x06 | originalTarget -> originalTarget                                     |
+| 0x07 | buddy -> buddy                                                       |
 
 #### search\_radius
 
@@ -287,7 +287,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
 <!-- -->
 -   **SCRIPT\_COMMAND\_RESPAWN\_GAMEOBJECT = 9**
     -   datalong: Guid of the gameobject to respawn. See [gameobject.guid](gameobject#guid). Can be skipped for buddy.
-    -   datalong2: Despawn time in seconds. If the value is &lt; 5 seconds then 5 seconds is used instead.
+    -   datalong2: Despawn time in seconds. If the value is < 5 seconds then 5 seconds is used instead.
 
 <!-- -->
 -   **SCRIPT\_COMMAND\_TEMP\_SPAWN\_CREATURE = 10**
@@ -306,12 +306,12 @@ More Examples Can Be Found At: UpdateFields.h In Core
 <!-- -->
 -   **SCRIPT\_COMMAND\_OPEN\_DOOR = 11**
     -   datalong: Guid of the activated door. It's a [gameobject.guid](gameobject#guid). Can be skipped for buddy.
-    -   datalong2: Delay before closing again the door. If the value is &lt; 15 seconds then 15 seconds is used instead.
+    -   datalong2: Delay before closing again the door. If the value is < 15 seconds then 15 seconds is used instead.
 
 <!-- -->
 -   **SCRIPT\_COMMAND\_CLOSE\_DOOR = 12**
     -   datalong: Guid of the activated door. It's a [gameobject.guid](gameobject#guid). Can be skipped for buddy.
-    -   datalong2: Delay before opening again the door. If the value is &lt; 15 seconds then 15 is used instead.
+    -   datalong2: Delay before opening again the door. If the value is < 15 seconds then 15 is used instead.
 
 <!-- -->
 -   **SCRIPT\_COMMAND\_ACTIVATE\_OBJECT = 13**
@@ -512,7 +512,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
     -   datalong = 0: Move resulting source towards resulting target
     -   datalong != 0: Move resulting source to a random point between datalong2..datalong around resulting target.
     -   orientation != 0: Obtain a random point around resulting target in direction of orientation
-    -   [data\_flags](dbscripts#data_flags) & SCRIPT\_FLAG\_COMMAND\_ADDITIONAL Obtain a point in direction of resulting target-&gt;GetOrientation + orientation
+    -   [data\_flags](dbscripts#data_flags) & SCRIPT\_FLAG\_COMMAND\_ADDITIONAL Obtain a point in direction of resulting target -> GetOrientation + orientation
     -   for resulting target resulting source and orientation 0 this will mean resulting source moving forward
 
 <!-- -->
@@ -520,7 +520,7 @@ More Examples Can Be Found At: UpdateFields.h In Core
     -   Resulting source should be a Creature OR NULL. Resulting target must be Player
     -   datalong = mailTemplateId
     -   datalong2: AlternativeSenderEntry. Use as sender-Entry of the sent mail
-    -   dataint1: Delay (&gt;= 0) in Seconds
+    -   dataint1: Delay (>= 0) in Seconds
 
 <!-- -->
 -   **SCRIPT\_COMMAND\_SET\_FLY = 39**

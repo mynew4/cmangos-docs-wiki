@@ -28,7 +28,7 @@ The [ID](pool_template#entry) of the [pool\_template](pool_template) that define
 
 The explicit percentage chance that this child pool will be spawned.
 
-If the mother pool spawns just one child pool ([max\_limit](pool_template#max_limit) = 1 in the respective mother pool's [pool\_template](pool_template)), the core selects the child pool to be spawned in a two-step process: First, only the explicitly-chanced (chance &gt; 0) child pools of the mother pool are rolled. If this roll does not produce any child pool, all the child pools without explicit chance (chance = 0) are rolled with equal chance. If the mother pool spawns more than one child pool, the chance is ignored and all the child pools in the mother pool are rolled in one step with equal chance.
+If the mother pool spawns just one child pool ([max\_limit](pool_template#max_limit) = 1 in the respective mother pool's [pool\_template](pool_template)), the core selects the child pool to be spawned in a two-step process: First, only the explicitly-chanced (chance > 0) child pools of the mother pool are rolled. If this roll does not produce any child pool, all the child pools without explicit chance (chance = 0) are rolled with equal chance. If the mother pool spawns more than one child pool, the chance is ignored and all the child pools in the mother pool are rolled in one step with equal chance.
 
 In case the mother pool spawns just one child pool and all the child pools have a nonzero chance, the sum of the chances for all the child pools must equal to 100, otherwise the mother pool won't function correctly.
 

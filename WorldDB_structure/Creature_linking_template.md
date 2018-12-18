@@ -53,6 +53,6 @@ flag - describing what should happen when
 
 #### search\_range
 
-IF given != 0 only mobs with spawn-dist &lt;= search\_range around the master\_entry will be linked to the master. Use this to model group behaviour.
+IF given != 0 only mobs with spawn-dist <= search\_range around the master\_entry will be linked to the master. Use this to model group behaviour.
 
 IF = 0 all mobs on the map are linked to the master.

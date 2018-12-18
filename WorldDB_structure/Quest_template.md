@@ -153,15 +153,15 @@ Accepted values: 0, 1 or 2. If **value = 0** then Quest is autocompleted (skip o
 
 This field defines under what category the quest falls in the quest log.
 
-If **value &gt; 0** then value is Zone IDs taken from [AreaTable.dbc.](AreaTable.dbc).
+If **value > 0** then value is Zone IDs taken from [AreaTable.dbc.](AreaTable.dbc).
 
-if **value &lt; 0** then (**-value**) is quest sort id: (in general profession or class quests. Also see [RequiredSkillValue](quest_template#RequiredSkillValue)) Value is ID from QuestSort.dbc. [QuestSort.dbc](QuestSort.dbc)
+if **value < 0** then (**-value**) is quest sort id: (in general profession or class quests. Also see [RequiredSkillValue](quest_template#RequiredSkillValue)) Value is ID from QuestSort.dbc. [QuestSort.dbc](QuestSort.dbc)
 
 #### RequiredSkill
 
 This field defines any specific skill requirements for the quest to be available for a character.
 
-If **value &gt; 0** then value is a skill ID (see SkillLine.dbc)
+If **value > 0** then value is a skill ID (see SkillLine.dbc)
 
 #### MinLevel
 
@@ -217,7 +217,7 @@ NOTE: For Cataclysm Client Goblin=256 and Worgen=2097152
 
 #### RequiredSkillValue
 
-Player skill value requirement for skill if in [ZoneOrSort](quest_template#ZoneOrSort) field &lt; 0 and have some from skill related values.
+Player skill value requirement for skill if in [ZoneOrSort](quest_template#ZoneOrSort) field < 0 and have some from skill related values.
 
 #### RequiredCondition
 
@@ -299,27 +299,27 @@ The title the character will receive upon completion of the quest. See CharTitle
 
 #### PrevQuestId
 
-**if value &gt; 0:** Contains the previous quest id, that must be completed before this quest can be started.
+**If value > 0:** Contains the previous quest id, that must be completed before this quest can be started.
 
-**If value &lt; 0:** Contains the parent quest id, that must be active before this quest can be started.
+**If value < 0:** Contains the parent quest id, that must be active before this quest can be started.
 
 See the [examples section](#Examples) for examples.
 
 #### NextQuestId
 
-**If value &gt; 0:** Contains the next quest id, if PrevQuestId of that quest is not sufficient.
+**If value > 0:** Contains the next quest id, if PrevQuestId of that quest is not sufficient.
 
-**If value &lt; 0:** Contains the sub quest id, if PrevQuestId of that quest is not sufficient. If quest have many alternative next quests (class specific quests lead from single not class specific quest) field PrevQuestId in next quests can used for setting this dependence.
+**If value < 0:** Contains the sub quest id, if PrevQuestId of that quest is not sufficient. If quest have many alternative next quests (class specific quests lead from single not class specific quest) field PrevQuestId in next quests can used for setting this dependence.
 
 See the [examples section](#Examples) for examples.
 
 #### ExclusiveGroup
 
-**if ExclusiveGroup &gt; 0**
+**If ExclusiveGroup > 0**
 
 Allows to define a group of quests of which only one may be chosen and completed. E.g. if from quests 1200, 1201 and 1202 only one should be allowed to be chosen, insert 1200 into ExclusiveGroup of all 3 quests.
 
-**if ExclusiveGroup &lt; 0**
+**If ExclusiveGroup < 0**
 
 Allows to define a group of quests of which all must be completed and rewarded to start next quest. E.g. if quest 1000 dependent from one of quests 1200, 1201 and 1202 and all this quests have same negative exclusive group then all this quest must be completed and rewarded before quest 1000 can be started.
 
@@ -396,9 +396,9 @@ Setting this value to 0 means the item stack size will be the maximum amount tha
 
 #### ReqCreatureOrGOId
 
-**Value &gt; 0:** required creature\_template ID the player needs to kill/cast on in order to complete the quest.
+**Value > 0:** required creature\_template ID the player needs to kill/cast on in order to complete the quest.
 
-**Value &lt; 0:** required gameobject\_template ID the player needs to cast on in order to complete the quest.
+**Value < 0:** required gameobject\_template ID the player needs to cast on in order to complete the quest.
 
 If **ReqSpellCast** is != 0, the objective is to cast on target, else kill.
 
@@ -442,19 +442,19 @@ Example: An example value is 15 for quest 8388: At level 70 an honorable kill is
 
 #### RewOrReqMoney
 
-Money earned by completing the quest (if value &gt; 0). Money quest requirement (if value &lt; 0).
+Money earned by completing the quest (if value > 0). Money quest requirement (if value < 0).
 
 #### RewMoneyMaxLevel
 
 The money a character at level 80 would get when they complete this quest. This field also controls the XP given as the XP is calculated from the value in this field by the following formula. If the quest is repeatable, XP will be given only once. The total XP that a character will receive is also affected by the level difference between the character's level and the quest's level.
 
 The formula for calculating XP from the value in this field:
-**QuestLevel &gt;= 65:** XP = RewMoneyMaxLevel / 6.0
-**QuestLevel 64:\* XP = RewMoneyMaxLevel / 4.8
-\*QuestLevel 63:** XP = RewMoneyMaxLevel / 3.6
-**QuestLevel 62:\* XP = RewMoneyMaxLevel / 2.4
-\*QuestLevel 61:** XP = RewMoneyMaxLevel / 1.2
-**QuestLevel &lt;= 60:** XP = RewMoneyMaxLevel / 0.6
+**QuestLevel >= 65:** XP = RewMoneyMaxLevel / 6.0
+**QuestLevel == 64:** XP = RewMoneyMaxLevel / 4.8
+**QuestLevel == 63:** XP = RewMoneyMaxLevel / 3.6
+**QuestLevel == 62:** XP = RewMoneyMaxLevel / 2.4
+**QuestLevel == 61:** XP = RewMoneyMaxLevel / 1.2
+**QuestLevel <= 60:** XP = RewMoneyMaxLevel / 0.6
 
 #### RewSpell
 

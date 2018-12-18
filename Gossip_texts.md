@@ -25,7 +25,7 @@ This table stores gossip texts used in ScriptDevAI, for normal gossip implementa
 
 #### entry
 
-ID of the text. This has the be negative and in the range ~~3000000~~&gt; -3999999.
+ID of the text. This has the be negative and in the `range(-3000000, -3999999)`.
 
 #### content\_default
 

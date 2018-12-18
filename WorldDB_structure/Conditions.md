@@ -146,7 +146,7 @@ The meaning of the values in [value1](Conditions#value1) / [value2](Conditions#v
 -   CONDITION\_REPUTATION\_RANK\_MIN (5)
     -   value1: Faction ID
     -   value2: Minimum rank
-        Returns if a player has at least (&gt;=) minimum rank at the given faction
+        Returns if a player has at least (>=) minimum rank at the given faction
 
 | ID  | Rank       |
 |-----|------------|
@@ -329,14 +329,14 @@ The meaning of the values in [value1](Conditions#value1) / [value2](Conditions#v
 -   CONDITION\_SKILL\_BELOW (29)
     -   value1: skill\_id
     -   value2: skill\_value
-        Returns if player has skill skill\_id and skill less than (and not equal) skill\_value (for skill\_value &gt; 1)
+        Returns if player has skill skill\_id and skill less than (and not equal) skill\_value (for skill\_value > 1)
         If skill\_value == 1, then true if player has not skill skill\_id
 
 <!-- -->
 -   CONDITION\_REPUTATION\_RANK\_MAX (30)
     value1: faction\_id
     value2: max\_rank
-    Returns if a player has at most (&lt;=) max\_rank with a faction
+    Returns if a player has at most (<=) max\_rank with a faction
 
 | ID  | Rank       |
 |-----|------------|
@@ -363,7 +363,7 @@ The meaning of the values in [value1](Conditions#value1) / [value2](Conditions#v
 <!-- -->
 -   CONDITION\_LAST\_WAYPOINT (33)
     -   value1: waypointId
-    -   value2: 0 = exact, 1: wp &lt;= waypointId, 2: wp &gt; waypointId
+    -   value2: 0 = exact, 1: wp <= waypointId, 2: wp > waypointId
         Returns if the source of the condition is on/ has reached/ has passed a waypoint
 
 <!-- -->

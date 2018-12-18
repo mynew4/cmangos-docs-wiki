@@ -10,8 +10,8 @@ If you want to use direct SQL to extract a single value from this rather large b
 SELECT CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(`data`, ' ', <index + 1>), ' ', -1) AS UNSIGNED) AS `fieldName` FROM `characters`;
 ```
 
-Just replace <index + 1> with the index in this table and add one to it.
-The reason why you are adding one is because of how the nested SUBSTRING\_INDEX syntax works. Let's analyze the function calls. Working from the inside out, the first function called is `` SUBSTRING_INDEX(`data`, ' ', <index + 1>) ``. The SUBSTRING\_INDEX function creates a substring from the big data blob after <index + 1> spaces. Notice that if we used just <index>, the substring would be everything up to the value we want **but not including it**. The second function call is `SUBSTRING_INDEX(<substring from inner function>, ' ', -1)`. This function call uses -1 as the count, meaning that it will substring from the end to the front. Since it is a count of one, it will create a substring that is exactly the value we want because the value we want is sandwiched between the end of the string and a space. The final function call `CAST(<substring> AS UNSIGNED)` casts the final string into an unsigned integer. This is because the data blob contains only numbers and if we cast the string into an integer, we can use integer operations on it (say if we use it in a WHERE clause to compare to another integer).
+Just replace `<index + 1>` with the index in this table and add one to it.
+The reason why you are adding one is because of how the nested SUBSTRING\_INDEX syntax works. Let's analyze the function calls. Working from the inside out, the first function called is `` SUBSTRING_INDEX(`data`, ' ', <index + 1>) ``. The SUBSTRING\_INDEX function creates a substring from the big data blob after `<index + 1>` spaces. Notice that if we used just <index>, the substring would be everything up to the value we want **but not including it**. The second function call is `SUBSTRING_INDEX(<substring from inner function>, ' ', -1)`. This function call uses -1 as the count, meaning that it will substring from the end to the front. Since it is a count of one, it will create a substring that is exactly the value we want because the value we want is sandwiched between the end of the string and a space. The final function call `CAST(<substring> AS UNSIGNED)` casts the final string into an unsigned integer. This is because the data blob contains only numbers and if we cast the string into an integer, we can use integer operations on it (say if we use it in a WHERE clause to compare to another integer).
 
 An example of the syntax in use is the following query where we are making a list of characters and their levels who have more than 1000 gold.
 
@@ -27,7 +27,7 @@ UPDATE `characters` SET `data`=CONCAT(CAST(SUBSTRING_INDEX(`data`, ' ', <index>)
     CAST(SUBSTRING_INDEX(`data`, ' ', <-(max index - index) - 1>)AS CHAR)) [WHERE ...]
 ```
 
-Replace "<index>" with the index that you want to change (look at table below), "&lt;~~(max index~~ index) -1&gt;" with the negative of the subtraction of the last index (look at table) minus the index that you want to change and finally minus one. Finally replace "<value>" with the new value you want to put.
+Replace `<index>` with the index that you want to change (look at table below), `<-(max_index - index) - 1>` with the negative of the subtraction of the last index (look at table) minus the index that you want to change and finally minus one. Finally replace `<value>` with the new value you want to put.
 
 For example, to reset gold to zero for all characters with level higher than 70, you can use the following query:
 
