@@ -18,7 +18,7 @@ This DBC contains data used with [Lock.dbc](LockType.dbc) and [gameobject\_templ
 
 Example for reference: Object 181248 has LockId 38. It has Type 2, so there is a reference (LockProperties is the reference number) to [LockType.dbc.](LockType.dbc). Go and find LockType number 3 - It's mining!
 
-<hr />
+***
 ### Content
 
 | **ID** | **Type** | **LockProperties** | **RequiredSkill** | **Action** |
@@ -411,5 +411,3 @@ Example for reference: Object 181248 has LockId 38. It has Type 2, so there is a
 | 1840   | 1        | 46895              | 0                 | 0          |
 | 1845   | 0        | 0                  | 0                 | 0          |
 | 1860   | 2        | 3                  | 25                | 0          |
-
-

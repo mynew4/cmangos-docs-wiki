@@ -18,7 +18,7 @@ This DBC contains all skills.
 | 39           | AltVerb                                | String   |
 | 56           | CanLink                                | Bool     |
 
-<hr />
+***
 ### Content
 
 | **ID** | CategoryId\]\]''' | **SkillCostId** | **Name**                     | **SpellIcon** | **AltVerb** | **CanLink** |
@@ -174,7 +174,7 @@ This DBC contains all skills.
 | 787    | 7                 | 0               | Pet - Exotic Core Hound      | 0             |             | 0           |
 | 788    | 5                 | 0               | Pet - Exotic Spirit Beast    | 0             |             | 0           |
 
-<hr />
+***
 ### CategoryId
 
 This field is from SkillLineCategory.dbc
@@ -191,5 +191,3 @@ This in the content of this small dbc
 | 10              | Languages           |
 | 11              | Professions         |
 | 12              | Not Displayed       |
-
-

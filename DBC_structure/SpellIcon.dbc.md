@@ -13,7 +13,7 @@ This DBC stores spell icon image locations used in various DBC tables.
 | 1          | ID        | Integer       |
 | 2          | SpellIcon | File location |
 
-<hr />
+***
 #### ID
 
 ID used for each Spell Icon, used as a reference point for other DBC files.

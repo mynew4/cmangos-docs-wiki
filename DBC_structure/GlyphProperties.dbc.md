@@ -15,7 +15,7 @@ This DBC stores Glyph IDs used in [Character\_glyphs](Character) glyphs table.
 | 3            | Glyph Type            | Integer  |
 | 4            | GlyphIconId           | iRefID   |
 
-<hr />
+***
 ### **Content**
 
 | **Entry** | **Spell ID** | **Glyph Type** | **GlyphIconId** |

@@ -12,7 +12,7 @@ New DBC file from WotLK, handles glyph slot IDs.
 | 2          | TypeFlags | Integer |
 | 3          | Order     | Integer |
 
-<hr />
+***
 ### **Content**
 
 | ID  | TypeFlags | Order |

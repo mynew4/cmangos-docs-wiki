@@ -19,7 +19,7 @@ This DBC stores IDs used in [AreaGroupId](Spell.dbc#spelldbc) in Spell.dbc and [
 | 7          | Entry6   | iRefID   |
 | 8          | Entry7   | iRefID   |
 
-<hr />
+***
 #### ID
 
 [AreaId](spell_template#areaid) in Spell\_template uses this Id for specify the allowed areas for a successful cast.

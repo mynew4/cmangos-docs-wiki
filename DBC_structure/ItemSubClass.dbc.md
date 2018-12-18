@@ -16,7 +16,7 @@ This DBC contains all items possible classes/subclasses combinations.
 | 11           | Name        | String   |
 | 28           | Plural Name | String   |
 
-<hr />
+***
 ### Content
 
 | Class ID | Subclass ID | Hand number | Name               | Plural name        |
@@ -139,5 +139,3 @@ This DBC contains all items possible classes/subclasses combinations.
 | 16       | 8           | 0           | Mage               | Mage               |
 | 16       | 9           | 0           | Warlock            | Warlock            |
 | 16       | 11          | 0           | Druid              | Druid              |
-
-

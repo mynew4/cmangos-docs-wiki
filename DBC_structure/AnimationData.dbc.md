@@ -15,7 +15,7 @@ This DBC contains all Animation Data.
 | 3            | WeaponState         | Int      |
 | 6            | PreviousAnimationID | Int      |
 
-<hr />
+***
 ### **Content**
 
 | **AnimationID** | **ActionName**               | **WeaponState** | **PreviousAnimationID** |
