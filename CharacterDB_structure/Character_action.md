@@ -26,118 +26,19 @@ The GUID of the character. See [character.guid](character#guid)
 The ID of the button on the action bar where the action icon will be placed.
 Special bars are used for stances, auras, pets, stealth, and other similar special modes.
 
-<table>
-<caption>
-Possible values
+| Button IDs | Set (key)                       |
+| ---------- | ------------------------------- |
+| 1-11       | 1 (SHIFT + 1)                   |
+| 12-23      | 2 (SHIFT + 2)                   |
+| 24-35      | 3 (SHIFT + 3) == Right Side Bar |
+| 36-47      | 4 (SHIFT + 4)  Right Side Bar 2 |
+| 48-59      | 5 (SHIFT + 5)  Bottom Right Bar |
+| 60-71      | 6 (SHIFT + 6)  Bottom Left Bar  |
+| 72-83      | 1 SpecialA                      |
+| 84-95      | 1 SpecialB                      |
+| 96-107     | 1 SpecialC                      |
+| 108-119    | 1 SpecialD                      |
 
-</caption>
-<thead>
-<tr class="header">
-<th align="left">
-Button IDs
-
-</th>
-<th align="left">
-Set (key)
-
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">
-1-11
-
-</td>
-<td align="left">
-1 (SHIFT + 1)
-
-</td>
-</tr>
-<tr class="even">
-<td align="left">
-12-23
-
-</td>
-<td align="left">
-2 (SHIFT + 2)
-
-</td>
-</tr>
-<tr class="odd">
-<td align="left">
-24-35
-
-</td>
-<td align="left">
-3 (SHIFT + 3)  Right Side Bar
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class="even"&gt;
-&lt;td align="left"&gt;36-47
-&lt;/td&gt;
-&lt;td align="left"&gt;4 (SHIFT + 4)  Right Side Bar 2
-
-</td>
-</tr>
-<tr class="odd">
-<td align="left">
-48-59
-
-</td>
-<td align="left">
-5 (SHIFT + 5)  Bottom Right Bar
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class="even"&gt;
-&lt;td align="left"&gt;60-71
-&lt;/td&gt;
-&lt;td align="left"&gt;6 (SHIFT + 6)  Bottom Left Bar
-
-</td>
-</tr>
-<tr class="odd">
-<td align="left">
-72-83
-
-</td>
-<td align="left">
-1 SpecialA
-
-</td>
-</tr>
-<tr class="even">
-<td align="left">
-84-95
-
-</td>
-<td align="left">
-1 SpecialB
-
-</td>
-</tr>
-<tr class="odd">
-<td align="left">
-96-107
-
-</td>
-<td align="left">
-1 SpecialC
-
-</td>
-</tr>
-<tr class="even">
-<td align="left">
-108-119
-
-</td>
-<td align="left">
-1 SpecialD
-
-</td>
-</tr>
-</tbody>
-</table>
 #### action
 
 Depending on the type value, this could be either the spell ID (Spell.dbc), the [item ID](item_template#entry) or macro ID.
@@ -146,44 +47,12 @@ Depending on the type value, this could be either the spell ID (Spell.dbc), the 
 
 The type of action:
 
-<table>
-<caption>
-Possible types
+| Value | Type  |
+| ----- | ----- |
+| 0     | Spell |
+| 64    | Macro |
+| 128   | Item  |
 
-</caption>
-<tbody>
-<tr class="odd">
-<td align="left">
-0
-
-</td>
-<td align="left">
-Spell
-
-</td>
-</tr>
-<tr class="even">
-<td align="left">
-64
-
-</td>
-<td align="left">
-Macro
-
-</td>
-</tr>
-<tr class="odd">
-<td align="left">
-128
-
-</td>
-<td align="left">
-Item
-
-</td>
-</tr>
-</tbody>
-</table>
 #### misc
 
 More info needed here.
