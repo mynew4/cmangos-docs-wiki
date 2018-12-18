@@ -28,7 +28,7 @@ flag - describing what should happen when
 
 | Flag | Name                          | Comment                                                                           |
 | ---- | ----------------------------- | --------------------------------------------------------------------------------- |
-| 1    | FLAG_AGGRO_ON_AGGRO           | the &quot;slave&quot; aggroes when the &quot;master&quot; aggroes                 |
+| 1    | FLAG_AGGRO_ON_AGGRO           | the "slave" aggroes when the "master" aggroes                                     |
 | 2    | FLAG_TO_AGGRO_ON_AGGRO        | the master aggroes when the slave aggroes                                         |
 | 4    | FLAG_RESPAWN_ON_EVADE         | the slave respawns when the master evades                                         |
 | 8    | FLAG_TO_RESPAWN_ON_EVADE      | the master respawns when the slave evades                                         |

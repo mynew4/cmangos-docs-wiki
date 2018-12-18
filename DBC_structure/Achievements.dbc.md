@@ -768,7 +768,7 @@ This dbc contains all achievements.
 | 1161   | High Five: 2200                                                                |
 | 1162   | Hotter Streak                                                                  |
 | 1164   | Everything Counts                                                              |
-| 1165   | My Sack is &quot;Gigantique&quot;                                              |
+| 1165   | My Sack is "Gigantique"                                                        |
 | 1166   | To the Looter Go the Spoils                                                    |
 | 1167   | Master of Alterac Valley                                                       |
 | 1168   | Master of Alterac Valley                                                       |
@@ -1534,7 +1534,7 @@ This dbc contains all achievements.
 | 3576   | Now We're Cookin'                                                              |
 | 3577   | Now We're Cookin'                                                              |
 | 3578   | The Turkinator                                                                 |
-| 3579   | &quot;FOOD FIGHT!&quot;                                                        |
+| 3579   | "FOOD FIGHT!"                                                                  |
 | 3580   | Pilgrim's Peril                                                                |
 | 3581   | Pilgrim's Peril                                                                |
 | 3582   | Terokkar Turkey Time                                                           |
