@@ -24,7 +24,7 @@
 
 <!-- -->
 
--   [pagetextcache‎](pagetextcache‎)
+-   [pagetextcache](pagetextcache)
 
 <!-- -->
 
