@@ -119,6 +119,7 @@ h3. This is the list of tables in the regular 'mangos' database
 |"locales_page_text":https://github.com/cmangos/issues/wiki/locales_page_text|is used to provide localized clients with localized string for page_texts.|
 |"locales_points_of_interest":https://github.com/cmangos/issues/wiki/locales_points_of_interest|?|
 |"locales_quest":https://github.com/cmangos/issues/wiki/locales_quest|is used to provide to localized clients with localized string for quest templates.|
+|"locales_questgiver_greeting":https://github.com/cmangos/issues/wiki/locales_questgiver_greeting|is used to provide to localized clients with localized string for questgiver_greetings.|
 |"mail_level_reward":https://github.com/cmangos/issues/wiki/mail_level_reward
 (Reloadable)|holds information on sent mails when a character levels up. Can be specified by raceMask.|
 |"mail_loot_template":https://github.com/cmangos/issues/wiki/mail_loot_template
@@ -170,6 +171,8 @@ h3. This is the list of tables in the regular 'mangos' database
 (Reloadable)|comes from sniffs. Visually speaking, this table is used to identify the X and Y coordinates on the map (not the minimap – the main map) where a quest’s question mark should appear.|
 |"quest_template":https://github.com/cmangos/issues/wiki/quest_template
 (Reloadable)|contains all basic definitions of quests available.|
+|"questgiver_greeting":https://github.com/cmangos/issues/wiki/questgiver_greeting
+(Reloadable)|contains texts sent by certain quest creatures/objects.|
 |"reference_loot_template":https://github.com/cmangos/issues/wiki/reference_loot_template
 (Reloadable)|reference loot (loot groups)|
 |"reputation_reward_rate":https://github.com/cmangos/issues/wiki/reputation_reward_rate
