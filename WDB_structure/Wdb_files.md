@@ -4,7 +4,7 @@
 
 <!-- -->
 
--   [gameobjectcache‎](gameobjectcache‎)
+-   [gameobjectcache](gameobjectcache)
 
 <!-- -->
 
@@ -16,7 +16,7 @@
 
 <!-- -->
 
--   [itemtextcache‎](itemtextcache‎)
+-   [itemtextcache](itemtextcache)
 
 <!-- -->
 
@@ -29,4 +29,3 @@
 <!-- -->
 
 -   [questcache](questcache)
-
