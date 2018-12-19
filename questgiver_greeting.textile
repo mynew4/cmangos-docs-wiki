@@ -4,7 +4,7 @@ h2. The `questgiver_greeting` table
 
 Contains special text displayed by some creatures/objects which have NpcFlag 2 (questgiver), but not NpcFlag 1 (gossip).
 Unlike normal gossip texts, these texts cannot be found in tables such as "npc_text":Npc_text or broadcast_text.
-This data is found within the SMSG_QUESTGIVER_QUEST_LIST packet in sniffs.
+This data is sourced from the SMSG_QUESTGIVER_QUEST_LIST packet in sniffs.
 
 h3. Structure
 
