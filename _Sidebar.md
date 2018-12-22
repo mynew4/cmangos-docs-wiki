@@ -1,10 +1,15 @@
-[Main Page](Home)
+General Links:
+- [Main Page](Home)
+- [Frequently Asked Questions](FAQ-Frequently-Asked-Questions)
+- [Installation Guide](Installation-Instructions)
+- [Issue Tracker](../issues/)
 
-[Frequently Asked Questions](FAQ-Frequently-Asked-Questions)
-[Installation Guide](Installation-Instructions)
+Core Repositories:
+- [CMaNGOS-Classic](https://github.com/cmangos/mangos-classic)
+- [CMaNGOS-TBC](https://github.com/cmangos/mangos-tbc)
+- [CMaNGOS-WotLK](https://github.com/cmangos/mangos-wotlk)
 
-[Issue Tracker](../../issues/)
-
-[CMaNGOS-Classic](https://github.com/cmangos/mangos-classic)
-[CMaNGOS-TBC](https://github.com/cmangos/mangos-tbc)
-[CMaNGOS-WotLK](https://github.com/cmangos/mangos-wotlk)
+DB Repositories:
+- [Classic-DB](https://github.com/cmangos/classic-db)
+- [TBC-DB](https://github.com/cmangos/tbc-db)
+- [WotLK-DB](https://github.com/cmangos/wotlk-db)
