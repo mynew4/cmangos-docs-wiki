@@ -13,7 +13,7 @@ holds the ScriptNames of the world maps 0, 1, 530, 571.
 
 #### map
 
-id from Map.dbc the ScriptName is applied to.
+id from [Map.dbc](Map.dbc) the ScriptName is applied to.
 
 #### ScriptName
 

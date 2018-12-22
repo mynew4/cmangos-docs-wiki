@@ -14,7 +14,7 @@ If you run into issues during installation or need help understanding one of the
 
 These Installation Instructions are expected to be current, so please read through every step again to ensure that you didn’t skip or misunderstand something before going to the forums.
 
-If you are an absolute beginner to programming and compiling then you may want to go through the Beginners-Guide-Home\[Beginner’s Guide\] first.
+If you are an absolute beginner to programming and compiling then you may want to go through the [Beginner’s Guide](Beginners-Guide-Home) first.
 
 # Addresses
 
@@ -243,7 +243,7 @@ The CMaNGOS cmake scripts should automatically detect the location of your boost
 
 On most \*nix you just have to install boost development libraries from your distribution package repositories.
 
-On Debian and Ubuntu you can simply install the `libboost-all-dev` meta-package. On Fedora there should be a package named `boost-devel` (untested). If you followed the Installation-Instructions\#software-requirements-nix\[Software requirements (\*nix)\] step above you should have the respective package installed already.
+On Debian and Ubuntu you can simply install the `libboost-all-dev` meta-package. On Fedora there should be a package named `boost-devel` (untested). If you followed the [Software requirements (\*nix)](Installation-Instructions#software-requirements-nix) step above you should have the respective package installed already.
 
 For instructions on how to compile boost from source code or general information, see the boost [Getting Started](http://www.boost.org/more/getting_started/index.html) guide.
 
