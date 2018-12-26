@@ -18,7 +18,7 @@ Contains data about characters' friends/ignored list.
 
 #### guid
 
-The GUID of the character. See [character.guid](character#guid)
+The GUID of the character. See [characters.guid](characters#guid)
 
 #### name
 
@@ -26,7 +26,7 @@ The name of the friend/ignored. See [character.name](character#name)
 
 #### friend
 
-The GUID of the friend/ignored. See [character.guid](character#guid)
+The GUID of the friend/ignored. See [characters.guid](characters#guid)
 
 #### flags
 

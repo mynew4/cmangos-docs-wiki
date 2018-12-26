@@ -43,7 +43,7 @@ The entry of the item up for auction. See [item\_template.entry](item_template#e
 
 #### itemowner
 
-The GUID of the owner of the item up for auction. See [character.guid](character#guid)
+The GUID of the owner of the item up for auction. See [characters.guid](characters#guid)
 
 #### buyoutprice
 
@@ -55,7 +55,7 @@ The time when the auction will end, measured in [Unix time](http://en.wikipedia.
 
 #### buyguid
 
-The GUID of the highest bidder. See [character.guid](character#guid)
+The GUID of the highest bidder. See [characters.guid](characters#guid)
 
 #### lastbid
 

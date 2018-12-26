@@ -15,7 +15,7 @@ Holds information on the daily quest status of every player. The quest must have
 
 #### guid
 
-The character GUID. See [character.guid](character#guid)
+The character GUID. See [characters.guid](characters#guid)
 
 #### quest
 

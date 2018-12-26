@@ -18,7 +18,7 @@ Holds information for each character's spells.
 
 #### guid
 
-The GUID of the character. See [character.guid](character#guid)
+The GUID of the character. See [characters.guid](characters#guid)
 
 #### spell
 

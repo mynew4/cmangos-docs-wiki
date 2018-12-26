@@ -37,7 +37,7 @@ The ID of the guild that the member is a part of. See [guild.guildid](guild#guil
 
 #### guid
 
-The GUID of the player. See [character.guid](character#guid)
+The GUID of the player. See [characters.guid](characters#guid)
 
 #### rank
 

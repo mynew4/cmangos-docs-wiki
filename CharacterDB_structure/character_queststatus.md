@@ -28,7 +28,7 @@ Holds information on the quest status of each character.
 
 #### guid
 
-The GUID of the character. See [character.guid](character#guid)
+The GUID of the character. See [characters.guid](characters#guid)
 
 #### quest
 

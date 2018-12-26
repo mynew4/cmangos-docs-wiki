@@ -19,7 +19,7 @@ This table holds information on all the signatures of a petition for either a gu
 
 #### ownerguid
 
-The GUID of the owner that is trying to make the guild/arena team. See [character.guid](character#guid)
+The GUID of the owner that is trying to make the guild/arena team. See [characters.guid](characters#guid)
 
 #### petitionguid
 
@@ -27,7 +27,7 @@ The GUID of the charter item. See [item\_template.guid](item_template#guid)
 
 #### playerguid
 
-The GUID of the player that has signed the charter. See [character.guid](character#guid)
+The GUID of the player that has signed the charter. See [characters.guid](characters#guid)
 
 #### player\_account
 

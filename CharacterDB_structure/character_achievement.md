@@ -15,7 +15,7 @@ This table holds information for each character and its achievement.
 
 #### guid
 
-The GUID of the character. See [character.guid](character#guid)
+The GUID of the character. See [characters.guid](characters#guid)
 
 #### achievement
 

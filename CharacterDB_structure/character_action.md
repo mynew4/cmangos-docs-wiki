@@ -19,7 +19,7 @@ Contains all the individual button data for each character. A button is any of t
 
 #### guid
 
-The GUID of the character. See [character.guid](character#guid)
+The GUID of the character. See [characters.guid](characters#guid)
 
 #### button
 

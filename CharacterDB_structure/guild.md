@@ -34,7 +34,7 @@ The guild name.
 
 #### leaderguid
 
-The GUID of the character who created the guild. See [character.guid](character#guid)
+The GUID of the character who created the guild. See [characters.guid](characters#guid)
 
 #### EmblemStyle
 

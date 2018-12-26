@@ -21,7 +21,7 @@ The GUID of the item. This number is unique for each item instance.
 
 #### owner\_guid
 
-The GUID of the character who has ownership of this item. See [character.guid](character#guid)
+The GUID of the character who has ownership of this item. See [characters.guid](characters#guid)
 
 #### data
 

@@ -22,11 +22,11 @@ Contains aura information that is loaded when a character is loaded, so the aura
 
 #### guid
 
-The GUID of the target affected by the aura. See [character.guid](character#guid)
+The GUID of the target affected by the aura. See [characters.guid](characters#guid)
 
 #### caster\_guid
 
-The GUID of the player who casted the aura. See [character.guid](character#guid)
+The GUID of the player who casted the aura. See [characters.guid](characters#guid)
 
 #### spell
 

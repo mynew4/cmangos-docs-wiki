@@ -35,11 +35,11 @@ A unique identifier given to each log entry to distinguish one entry from anothe
 
 #### PlayerGuid1
 
-Guid of character who made the change. See [character.guid](character#guid)
+Guid of character who made the change. See [characters.guid](characters#guid)
 
 #### PlayerGuid2
 
-Guid of character who was "changed". See [character.guid](character#guid)
+Guid of character who was "changed". See [characters.guid](characters#guid)
 
 #### NewRank
 

@@ -23,7 +23,7 @@ This table is used to store the tutorial state of all the characters.
 
 #### guid
 
-Guid of the player. See [character.guid](character#guid).
+Guid of the player. See [characters.guid](characters#guid).
 
 #### tut0-7
 

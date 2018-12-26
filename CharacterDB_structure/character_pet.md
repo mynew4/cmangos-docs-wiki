@@ -43,7 +43,7 @@ The creature entry of this pet. See [creature\_template.entry](creature_template
 
 #### owner
 
-The GUID of the pet's owner. See [character.guid](character#guid)
+The GUID of the pet's owner. See [characters.guid](characters#guid)
 
 #### modelid
 

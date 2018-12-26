@@ -18,7 +18,7 @@ This table holds the reputation information for each character.
 
 #### guid
 
-The GUID of the character. See [character.guid](character#guid)
+The GUID of the character. See [characters.guid](characters#guid)
 
 #### faction
 

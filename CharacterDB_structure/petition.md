@@ -18,7 +18,7 @@ This table holds information on all ongoing petitions for a guild or for an aren
 
 #### ownerguid
 
-The petition's owner's GUID. See [character.guid](character#guid)
+The petition's owner's GUID. See [characters.guid](characters#guid)
 
 #### petitionguid
 

@@ -23,7 +23,7 @@ A unique ticket ID.
 
 #### guid
 
-The GUID of the character sending the ticket. See [character.guid](character#guid)
+The GUID of the character sending the ticket. See [characters.guid](characters#guid)
 
 #### ticket\_text
 

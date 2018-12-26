@@ -22,11 +22,11 @@ Contains aura information that is loaded when a pet is loaded, so the auras that
 
 #### guid
 
-The GUID of the target affected by the aura. See [character.guid](character#guid)
+The GUID of the target affected by the aura. See [characters.guid](characters#guid)
 
 #### caster\_guid
 
-The GUID of the player or creature who casted the aura. See [character.guid](character#guid)
+The GUID of the player or creature who casted the aura. See [characters.guid](characters#guid)
 
 #### spell
 

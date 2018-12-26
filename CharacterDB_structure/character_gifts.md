@@ -18,7 +18,7 @@ This table holds data about wrapped/gift items.
 
 #### guid
 
-The GUID of the character. See [character.guid](character#guid)
+The GUID of the character. See [characters.guid](characters#guid)
 
 #### item\_guid
 
