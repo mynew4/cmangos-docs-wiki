@@ -180,7 +180,7 @@ then the core will crash due to stack overflow at first attempt of loot 21215 pr
 
 [mincountOrRef](#mincountOrRef) < 0, [group](#groupid) > 0
 
-Group reference asks core to process another loot template (having [entry](#entry) equal to "~~mincountOrRef") only in the part of one [group](#groupid)~~ with id equal to value of \`groupid\` field of the reference entry. So this reference may add only none or 1 item into the loot (provided [maxcount](#maxcount) is equal to 1).
+Group reference asks core to process another loot template (having [entry](#entry) equal to "-mincountOrRef") only in the part of one [group](#groupid) - with id equal to value of \`groupid\` field of the reference entry. So this reference may add only none or 1 item into the loot (provided [maxcount](#maxcount) is equal to 1).
 
 Meaning of [maxcount](#maxcount) field value is the same as described in [Template reference](#Template_reference).
 
