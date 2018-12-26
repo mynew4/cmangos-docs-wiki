@@ -470,7 +470,7 @@ NOTE: This field comes straight from the WDB and should not be changed.
 
 #### RewMailTemplateId
 
-If the quest gives as a reward an item from a possible list of items, the ID here corresponds to the proper loot template in [quest\_mail\_loot\_template.](quest_mail_loot_template). According to the rules in that loot template, items "looted" will be sent by mail at the completion of the quest.
+If the quest gives as a reward an item from a possible list of items, the ID here corresponds to the proper loot template in [mail\_loot\_template.](mail_loot_template). According to the rules in that loot template, items "looted" will be sent by mail at the completion of the quest.
 
 #### RewMailDelaySecs
 
