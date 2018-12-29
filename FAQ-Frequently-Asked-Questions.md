@@ -71,6 +71,7 @@ If your server is running and you just can't connect to it then there are severa
 ### MaNGOSd or/and Realmd instantly closes when I start them
 * Run mangos in command line, terminal, or git bash instead; then you will see the on-screen error output and be able to continue from there.
 * Make sure there are no other processes using the required ports (default 8085 & 3724).
+* Also check realmlist table column timezone, this kind of "instantly closes" could write a 0 in this field and realm never will be accesible, change to 2 (EEUU MaNGOS default setup) or 1 (development) or 5 (tournament) or 26(PRT) try the various options until 59, but avoid a timezone 0 because u cant log on to a realm disable. 
 
 ### I play TBC or WotLK and cannot access the Blood Elves, Draenei, Worgen or Goblins
 * You need to set the expansion of your account to 1/2/3 (for TBC/WotLK/Cata). See [[Installation Instructions]].
