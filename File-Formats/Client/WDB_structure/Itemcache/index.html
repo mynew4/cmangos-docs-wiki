@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Itemcache - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Itemcache";
+    var mkdocs_page_input_path = "File-Formats/Client/WDB_structure/Itemcache.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Itemcache</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="wdb_files">wdb files</a> list.</p>
+<h3 id="96itemcache96-wdb">`itemcache` wdb</h3>
+<p>This wdb contains some information of seen items.</p>
+<p><strong>Version is : 3.3.5a</strong></p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>entry</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>class</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>subclass</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>unk0</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>displayid</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Flags</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Flags2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>BuyPrice</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SellPrice</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>InventoryType</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>AllowableClass</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>AllowableRace</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>ItemLevel</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RequiredLevel</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RequiredSkill</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RequiredSkillRank</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RequiredSpell</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RequiredHonorRank</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RequiredCityRank</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RequiredReputationFaction</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RequiredReputationRank</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>MaxCount</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Stackable</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ContainerSlots</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>StatsCount</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_type1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value4</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value5</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type6</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value6</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type7</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value7</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type8</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value8</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type9</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value9</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>stat_type10</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>stat_value10</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>ScalingStatDistribution</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ScalingStatValue</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>DmgMin1</td>
+<td>float</td>
+</tr>
+<tr>
+<td>DmgMax1</td>
+<td>float</td>
+</tr>
+<tr>
+<td>DmgType1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>DmgMin2</td>
+<td>float</td>
+</tr>
+<tr>
+<td>DmgMax2</td>
+<td>float</td>
+</tr>
+<tr>
+<td>DmgType2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Armor</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>HolyRes</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>FireRes</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>NatureRes</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>FrostRes</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ShadowRes</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ArcaneRes</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Delay</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>AmmoType</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RangedModRange</td>
+<td>float</td>
+</tr>
+<tr>
+<td>SpellId_1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellTrigger_1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCharges_1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCooldown_1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCategory_1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCategoryCooldown_1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellId_2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellTrigger_2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCharges_2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCooldown_2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCategory_2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCategorycooldown_2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellId_3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellTrigger_3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCharges_3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCooldown_3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCategory_3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCategoryCooldown_3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellId_4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellTrigger_4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCharges_4</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCooldown_4</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCategory_4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCategoryCooldown_4</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellId_5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellTrigger_5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCharges_5</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCooldown_5</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SpellCategory_5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SpellCategoryCooldown_5</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>Bonding</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>String</td>
+</tr>
+<tr>
+<td>PageText</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>LanguageID</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>PageMaterial</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Startquest</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>LockId</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Material</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>Sheath</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RandomProperty</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RandomSuffix</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Block</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ItemSet</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>MaxDurability</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Area</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>BagFamily</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>TotemCategory</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SocketColor_1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SocketContent_1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SocketColor_2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SocketContent_2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SocketColor_3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SocketContent_3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SocketBonus</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>GemProperties</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RequiredDisenchantSkill</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>ArmorDamageModifier</td>
+<td>float</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>ItemLimitCategory</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>HolidayID</td>
+<td>UInteger</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

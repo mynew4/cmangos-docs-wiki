@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Creature template tbc - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Creature template tbc";
+    var mkdocs_page_input_path = "DB-Structure/Core/creature_template_tbc.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Creature template tbc</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<p><strong>This table is for <a href="https://github.com/cmangos/mangos-tbc">cmangos-tbc</a> (2.4.3)</strong></p>
+<p><strong>See also <a href="creature_template_classic">creature_template_classic</a> (1.12.x)</strong>
+<strong>See also <a href="creature_template">creature_template</a> (3.3.5a)</strong></p>
+<h2 id="the-96creature95template95tbc96-table">The `creature_template_tbc` table</h2>
+<p>This table contains the description of creatures. Each spawned <a href="creature">creature</a> is an instance of a creature_template present in this table.</p>
+<p>This means every <a href="creature">creature</a> MUST be defined in this table.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="creature_template_tbc#entry">Entry</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#name">Name</a></td>
+<td>char(100)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#subname">SubName</a></td>
+<td>char(100)</td>
+<td>YES</td>
+<td></td>
+<td>Null</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#iconname">IconName</a></td>
+<td>char(100)</td>
+<td>YES</td>
+<td></td>
+<td>Null</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#minlevel">MinLevel</a></td>
+<td>tinyint(3) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#maxlevel">MaxLevel</a></td>
+<td>tinyint(3) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#heroicentry">HeroicEntry</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#modelid1">ModelId1</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#modelid2">ModelId2</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#modelid3">ModelId3</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#modelid4">ModelId4</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#factionalliance">FactionAlliance</a></td>
+<td>smallint(5) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#factionhorde">FactionHorde</a></td>
+<td>smallint(5) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#scale">Scale</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#family">Family</a></td>
+<td>tinyint(4)</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#creaturetype">CreatureType</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#inhabittype">InhabitType</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#regeneratestats">RegenerateStats</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#racialleader">RacialLeader</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#npcflags">NpcFlags</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#unitflags">UnitFlags</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#dynamicflags">DynamicFlags</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#extraflags">ExtraFlags</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#creaturetypeflags">CreatureTypeFlags</a></td>
+<td>int(10) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#speedwalk">SpeedWalk</a></td>
+<td>float</td>
+<td>YES</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#speedrun">SpeedRun</a></td>
+<td>float</td>
+<td>YES</td>
+<td></td>
+<td>1.14286</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#detection">Detection</a></td>
+<td>int</td>
+<td>NO</td>
+<td></td>
+<td>20</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#callforhelp">CallForHelp</a></td>
+<td>int</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#pursuit">Pursuit</a></td>
+<td>int</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#leash">Leash</a></td>
+<td>int</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#timeout">Timeout</a></td>
+<td>int</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#unitclass">UnitClass</a></td>
+<td>int unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#rank">Rank</a></td>
+<td>tinyint(3) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#expansion">Expansion</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#healthmultiplier">HealthMultiplier</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>1.0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#manamultiplier">PowerMultiplier</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>1.0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#damagemultiplier">DamageMultiplier</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#damagevariance">DamageVariance</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#armormultiplier">ArmorMultiplier</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#experiencemultiplier">ExperienceMultiplier</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#minlevelhealth">MinLevelHealth</a></td>
+<td>int(10) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#maxlevelhealth">MaxLevelHealth</a></td>
+<td>int(10) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#minlevelmana">MinLevelMana</a></td>
+<td>int(10) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#maxlevelmana">MaxLevelMana</a></td>
+<td>int(10) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#minmeleedmg">MinMeleeDmg</a></td>
+<td>float</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#maxmeleedmg">MaxMeleeDmg</a></td>
+<td>float</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#minrangeddmg">MinRangedDmg</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#maxrangeddmg">MaxRangedDmg</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#armor">Armor</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#meleeattackpower">MeleeAttackPower</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#rangedattackpower">RangedAttackPower</a></td>
+<td>smallint(5) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#meleebaseattacktime">MeleeBaseAttackTime</a></td>
+<td>int(10) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#rangedbaseattacktime">RangedBaseAttackTime</a></td>
+<td>int(10) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#damageschool">DamageSchool</a></td>
+<td>tinyint(4)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#minlootgold">MinLootGold</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#maxlootgold">MaxLootGold</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#lootid">LootId</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#pickpocketlootid">PickpocketLootId</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#skinninglootid">SkinningLootId</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#killcredit1">KillCredit1</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#killcredit2">KillCredit2</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#mechanicimmunemask">MechanicImmuneMask</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Creature_template_tbc#schoolimmunemask">SchoolImmuneMask</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#resistanceholy">ResistanceHoly</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#resistancefire">ResistanceFire</a></td>
+<td>smallint(5)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#resistancenature">ResistanceNature</a></td>
+<td>smallint(5)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#resistancefrost">ResistanceFrost</a></td>
+<td>smallint(5)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#resistanceshadow">ResistanceShadow</a></td>
+<td>smallint(5)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#resistancearcane">ResistanceArcane</a></td>
+<td>smallint(5)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#petspelldataid">PetSpellDataId</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#movementtype">MovementType</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#trainertype">TrainerType</a></td>
+<td>tinyint(4)</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#trainerspell">TrainerSpell</a></td>
+<td>mediumint(8) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#trainerclass">TrainerClass</a></td>
+<td>tinyint(3) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#trainerrace">TrainerRace</a></td>
+<td>tinyint(3) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#trainertemplateid">TrainerTemplateId</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#vendortemplateid">VendorTemplateId</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#equipmenttemplateid">EquipmentTemplateId</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#gossipmenuid">GossipMenuId</a></td>
+<td>mediumint(8) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#ainame">AIName</a></td>
+<td>char(64)</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_tbc#scriptname">ScriptName</a></td>
+<td>char(64)</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="entry">Entry</h4>
+<p>This is the Primary NPC Entry Number and is Also the Dungeon Normal Mode / Raid 10-Man Normal Mode Entry.</p>
+<table>
+<thead>
+<tr>
+<th>DUNGEON_DIFFICULTY_NORMAL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAID_DIFFICULTY_10MAN_NORMAL</td>
+</tr>
+<tr>
+<td>RAID_DIFFICULTY_25MAN_NORMAL</td>
+</tr>
+</tbody>
+</table>
+<h4 id="name">Name</h4>
+<p>Base Name of the Creature.</p>
+<h4 id="subname">SubName</h4>
+<p>The SubName of the Creature That Appears in <code>&lt;&gt;</code> Below the Creature's Name.</p>
+<h4 id="iconname">IconName</h4>
+<p>Script Icon Used by Guards With Directions Menu.</p>
+<h4 id="minlevel">MinLevel</h4>
+<p>The Minimum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.</p>
+<h4 id="maxlevel">MaxLevel</h4>
+<p>The Maximum Level of the Creature if the Creature Has a Level Range. For Creature That Are Single Level MinLevel=MaxLevel.</p>
+<h4 id="heroicentry">HeroicEntry</h4>
+<p>If This Value is NOT Zero Then This Field Refers to a Creature_Template Entry. This Field is to be Used for a Specific Versions of an NPC in Heroic Dungeons.</p>
+<h4 id="modelid1">ModelId1</h4>
+<p>Primary Graphical Model That The Client Applies On This Creature. This is a <a href="Creature_Model_Info#Entry">Creature_Model_Info.Entry</a></p>
+<h4 id="modelid2">ModelId2</h4>
+<p>Optional Extra Graphical Model That The Client Applies On This Creature. This is a <a href="Creature_Model_Info#Entry">Creature_Model_Info.Entry</a></p>
+<h4 id="modelid3">ModelId3</h4>
+<p>Optional Extra Graphical Model That The Client Applies On This Creature. This is a <a href="Creature_Model_Info#Entry">Creature_Model_Info.Entry</a></p>
+<h4 id="modelid4">ModelId4</h4>
+<p>Optional Extra Graphical Model That The Client Applies On This Creature. This is a <a href="Creature_Model_Info#Entry">Creature_Model_Info.Entry</a></p>
+<h4 id="factionalliance">FactionAlliance</h4>
+<p>The Faction If The Creature Is On The Alliance Side. See <a href="FactionTemplate.dbc">FactionTemplate.dbc.</a>. Just Because More Than One Faction Has The Same Name, The Inter-Faction Relationships Can Be Different.</p>
+<p>Note: This Field Also Controls The Creature Family Assistance Mechanic. Only Creatures With The Same Faction Will Assist Each Other.</p>
+<h4 id="factionhorde">FactionHorde</h4>
+<p>The Faction If The Creature Is On The Horde Side. See <a href="FactionTemplate.dbc">FactionTemplate.dbc.</a>. Just Because More Than One Faction Has The Same Name, The Inter-Faction Relationships Can Be Different.</p>
+<p>Note: This Field Also Controls The Creature Family Assistance Mechanic. Only Creatures With The Same Faction Will Assist Each Other.</p>
+<h4 id="scale">Scale</h4>
+<p>If This Is A Non-Zero Value, This Field Defines a Manual Over-Ride For The Size Of The Model That The Creature Appears In The Game. If Zero, The Creature Will Use The Default Model Size Taken From The DBC.</p>
+<h4 id="family">Family</h4>
+<p>This Defines The Family That This Creature Belongs To. This Is Only Used If <a href="#CreatureType">CreatureType</a> Is 1 (Beast).</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Family</th>
+<th>ID</th>
+<th>Family</th>
+<th>ID</th>
+<th>Family</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Wolf</td>
+<td>15</td>
+<td>Doomguard</td>
+<td>29</td>
+<td>Nether Ray</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Cat</td>
+<td>16</td>
+<td>Scorpid</td>
+<td>30</td>
+<td>Serpent</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Spider</td>
+<td>17</td>
+<td>Turtle</td>
+<td>31</td>
+<td>Moth</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bear</td>
+<td>18</td>
+<td>Imp</td>
+<td>32</td>
+<td>Chimaera</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Boar</td>
+<td>19</td>
+<td>Bat</td>
+<td>33</td>
+<td>Devilsaur</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Crocolisk</td>
+<td>20</td>
+<td>Hyena</td>
+<td>34</td>
+<td>Ghoul</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Carrion Bird</td>
+<td>21</td>
+<td>Bird of Prey</td>
+<td>35</td>
+<td>Silithid</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Crab</td>
+<td>22</td>
+<td>Wind Serpent</td>
+<td>36</td>
+<td>Worm</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Gorilla</td>
+<td>23</td>
+<td>Remote Control</td>
+<td>37</td>
+<td>Rhino</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Raptor</td>
+<td>24</td>
+<td>Felguard</td>
+<td>38</td>
+<td>Wasp</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Tallstrider</td>
+<td>25</td>
+<td>Dragonhawk</td>
+<td>39</td>
+<td>Core Hound</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Felhunter</td>
+<td>26</td>
+<td>Ravager</td>
+<td>40</td>
+<td>Spirit Beast</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Voidwalker</td>
+<td>27</td>
+<td>Warp Stalker</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Succubus</td>
+<td>28</td>
+<td>Sporebat</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="creaturetype">CreatureType</h4>
+<p>This Field Defines The Type Of Creature This NPC Is.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Beast</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dragonkin</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Demon</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Elemental</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Giant</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Undead</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Humanoid</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Critter</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Mechanical</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Not specified</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Totem</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Non-combat Pet</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Gas Cloud</td>
+</tr>
+</tbody>
+</table>
+<h4 id="inhabittype">InhabitType</h4>
+<p>This Field Controls Where The Creature Can Move Into, Chase And Attack.
+The NPC Is Limited To ONLY Movement On This:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ground Movement Only</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Water Movement Only</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Both Ground And Water Movement</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Always Flying</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Over Ground Always Flying</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Over Water Always Flying</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Always Flying Over Anything (But can also walk and swim)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="regeneratestats">RegenerateStats</h4>
+<p>This Field Controls If The Creature Should Regenerate It's Health/Stats When Out of Combat (Data Flag)</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>NPC Does NOT Regenerate Stats When Out Of Combat</td>
+</tr>
+<tr>
+<td>1</td>
+<td>NPC DOES Regenerate Health When Out Of Combat</td>
+</tr>
+<tr>
+<td>2</td>
+<td>NPC DOES Regenerate Power (Mana) When Out Of Combat</td>
+</tr>
+<tr>
+<td>3</td>
+<td>NPC DOES Regenerate Health AND Power (Mana) When Out Of Combat</td>
+</tr>
+</tbody>
+</table>
+<h4 id="racialleader">RacialLeader</h4>
+<p>This Field Is a Boolean Flag Indicating That The Creature Is a Racial Leader. Killing Racial Leaders Grants 100 Honor Points.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>NPC Is NOT a Racial Leader</td>
+</tr>
+<tr>
+<td>1</td>
+<td>NPC IS a Racial Leader</td>
+</tr>
+</tbody>
+</table>
+<h4 id="npcflags">NpcFlags</h4>
+<p>This Field Is a Bitmask That Represents What NPC Flags The Creature Has Assigned To It. Each Bit Controls a Different Flag and to Combine Flags, You Can Add Each Flag That You Require, In Effect Activating The Respective Bits.</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Value</th>
+<th>Flag</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>Gossip</td>
+<td>If creature has more gossip options, add this flag to bring up a menu.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>Quest Giver</td>
+<td>Any creature giving or taking quests needs to have this flag.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>16</td>
+<td>Trainer</td>
+<td>Allows the creature to have a trainer list to teach spells</td>
+</tr>
+<tr>
+<td>5</td>
+<td>32</td>
+<td>Trainer_Class</td>
+<td>Allows the creature to have a class trainer list to teach spells. (MUST USE WITH FLAG: 16)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>64</td>
+<td>Trainer_Profession</td>
+<td>Allows the creature to have a profession trainer list to teach spells. (MUST USE WITH FLAG: 16)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>128</td>
+<td>Vendor</td>
+<td>Any creature selling items needs to have this flag.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>256</td>
+<td>Vendor_Ammo</td>
+<td>Any creature selling ammo items needs to have this flag. (MUST USE WITH FLAG: 128)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>512</td>
+<td>Vendor_Food</td>
+<td>Any creature selling food items needs to have this flag. (MUST USE WITH FLAG: 128)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1024</td>
+<td>Vendor_Poison</td>
+<td>Any creature selling poison items needs to have this flag. (MUST USE WITH FLAG: 128)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>2048</td>
+<td>Vendor_Reagent</td>
+<td>Any creature selling reagent items needs to have this flag.(MUST USE WITH FLAG: 128)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4096</td>
+<td>Repairer</td>
+<td>Creatures with this flag can repair items.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>8192</td>
+<td>Flight Master</td>
+<td>Any creature serving as fly master has this.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>16384</td>
+<td>Spirit Healer</td>
+<td>Makes the creature invisible to alive characters and has the resurrect function.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>32768</td>
+<td>Spirit Guide</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>65536</td>
+<td>Innkeeper</td>
+<td>Creatures with this flag can set hearthstone locations.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>131072</td>
+<td>Banker</td>
+<td>Creatures with this flag can show the bank</td>
+</tr>
+<tr>
+<td>18</td>
+<td>262144</td>
+<td>Petitioner</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>524288</td>
+<td>Tabard Designer</td>
+<td>Allows the designing of guild tabards.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>1048576</td>
+<td>Battlemaster</td>
+<td>Creatures with this flag port players to battlegrounds.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>2097152</td>
+<td>Auctioneer</td>
+<td>Allows creature to display auction list.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>4194304</td>
+<td>Stable Master</td>
+<td>Has the option to stable pets for hunters.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>8388608</td>
+<td>Guild Banker</td>
+<td>cause client to send 997 opcode</td>
+</tr>
+<tr>
+<td>24</td>
+<td>16777216</td>
+<td>SpellClick/Instantloot</td>
+<td>cause client to send 1015 opcode (spell click), dynamic, set at loading and don't must be set in DB. (Npc_spellclick_spells)</td>
+</tr>
+<tr>
+<td>25</td>
+<td>33554432</td>
+<td>Player Vehicle</td>
+<td>players with mounts that have vehicle data should have it set</td>
+</tr>
+<tr>
+<td>26</td>
+<td>268435456</td>
+<td>Guard ?</td>
+<td>Creatures with this flag act as guards in cities.</td>
+</tr>
+</tbody>
+</table>
+<p>EXAMPLE:
+So If You Want An NPC That Is a Quest Giver, a Vendor And Can Also Repair You Just Add The Specific Flags Together:</p>
+<p>1 + 2 + 128 + 4096 = 4227.
+NpcFlags = 4227</p>
+<h4 id="unitflags">UnitFlags</h4>
+<p>This Field Allows The Manual Application Of Unit Flags To NPC. This Is a Bitmask Field And To Apply More Then One Flag, Just Add The Different Flags Together.</p>
+<p>Some Known Possible Flags Are:</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Flag</th>
+<th>Name</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>UNIT_FLAG_UNK_0</td>
+<td>Movement checks disabled, likely paired with loss of client control packet.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>UNIT_FLAG_NON_ATTACKABLE</td>
+<td>not attackable</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>UNIT_FLAG_CLIENT_CONTROL_LOST</td>
+<td>Generic unspecified loss of control initiated by server script, movement checks disabled, paired with loss of client control packet.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8</td>
+<td>UNIT_FLAG_PLAYER_CONTROLLED</td>
+<td>players, pets, totems, guardians, companions, charms, any units associated with players</td>
+</tr>
+<tr>
+<td>4</td>
+<td>16</td>
+<td>UNIT_FLAG_RENAME</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>32</td>
+<td>UNIT_FLAG_PREPARATION</td>
+<td>don't take reagents for spells with SPELL_ATTR_EX5_NO_REAGENT_WHILE_PREP</td>
+</tr>
+<tr>
+<td>6</td>
+<td>64</td>
+<td>UNIT_FLAG_UNK_6</td>
+<td>Related to Movement? often paired with UNIT_FLAG_SWIMMING</td>
+</tr>
+<tr>
+<td>7</td>
+<td>128</td>
+<td>UNIT_FLAG_NOT_ATTACKABLE_1</td>
+<td>UNIT_FLAG_PVP + UNIT_FLAG_NOT_ATTACKABLE_1 = UNIT_FLAG_NON_PVP_ATTACKABLE - blue color target</td>
+</tr>
+<tr>
+<td>8</td>
+<td>256</td>
+<td>UNIT_FLAG_IMMUNE_TO_PLAYER</td>
+<td>Target is immune to players</td>
+</tr>
+<tr>
+<td>9</td>
+<td>512</td>
+<td>UNIT_FLAG_IMMUNE_TO_NPC</td>
+<td>makes you unable to attack everything. Almost identical to our "civilian"-term. Will ignore it's surroundings and not engage in combat unless "called upon" or engaged by another unit.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1024</td>
+<td>UNIT_FLAG_LOOTING</td>
+<td>loot animation</td>
+</tr>
+<tr>
+<td>11</td>
+<td>2048</td>
+<td>UNIT_FLAG_PET_IN_COMBAT</td>
+<td>in combat?, 2.0.8</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4096</td>
+<td>UNIT_FLAG_PVP</td>
+<td>Allows item spells to be casted upon. changed in 3.0.3</td>
+</tr>
+<tr>
+<td>13</td>
+<td>8192</td>
+<td>UNIT_FLAG_SILENCED</td>
+<td>silenced, 2.1.1</td>
+</tr>
+<tr>
+<td>14</td>
+<td>16384</td>
+<td>UNIT_FLAG_PERSUADED</td>
+<td>persuaded, 2.0.8</td>
+</tr>
+<tr>
+<td>15</td>
+<td>32768</td>
+<td>UNIT_FLAG_SWIMMING</td>
+<td>controls water swimming animation - TODO: confirm whether dynamic or static</td>
+</tr>
+<tr>
+<td>16</td>
+<td>65536</td>
+<td>UNIT_FLAG_NON_ATTACKABLE_2</td>
+<td>removes attackable icon, if on yourself, cannot assist self but can cast TARGET_SELF spells - added by SPELL_AURA_MOD_UNATTACKABLE</td>
+</tr>
+<tr>
+<td>17</td>
+<td>131072</td>
+<td>UNIT_FLAG_PACIFIED</td>
+<td>pacified, 3.0.3</td>
+</tr>
+<tr>
+<td>18</td>
+<td>262144</td>
+<td>UNIT_FLAG_STUNNED</td>
+<td>stunned, 2.1.1 Unit is a subject to stun, turn and strafe movement disabled</td>
+</tr>
+<tr>
+<td>19</td>
+<td>524288</td>
+<td>UNIT_FLAG_IN_COMBAT</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>1048576</td>
+<td>UNIT_FLAG_TAXI_FLIGHT</td>
+<td>Unit is on taxi, paired with a duplicate loss of client control packet (likely a legacy serverside hack). Disables any spellcasts not allowed in taxi flight client-side.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>2097152</td>
+<td>UNIT_FLAG_DISARMED</td>
+<td>disable melee spells casting..., "Required melee weapon" added to melee spells tooltip.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>4194304</td>
+<td>UNIT_FLAG_CONFUSED</td>
+<td>Unit is a subject to confused movement, movement checks disabled, paired with loss of client control packet.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>8388608</td>
+<td>UNIT_FLAG_FLEEING</td>
+<td>Unit is a subject to fleeing movement, movement checks disabled, paired with loss of client control packet.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>16777216</td>
+<td>UNIT_FLAG_POSSESSED</td>
+<td>Unit is under remote control by another unit, movement checks disabled, paired with loss of client control packet. New master is allowed to use melee attack and can't select this unit via mouse in the world (as if it was own character).</td>
+</tr>
+<tr>
+<td>25</td>
+<td>33554432</td>
+<td>UNIT_FLAG_NOT_SELECTABLE</td>
+<td>Can't be selected by mouse</td>
+</tr>
+<tr>
+<td>26</td>
+<td>67108864</td>
+<td>UNIT_FLAG_SKINNABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td>134217728</td>
+<td>UNIT_FLAG_MOUNT</td>
+<td>the client seems to handle it perfectly</td>
+</tr>
+<tr>
+<td>28</td>
+<td>268435456</td>
+<td>UNIT_FLAG_UNK_28</td>
+<td></td>
+</tr>
+<tr>
+<td>29</td>
+<td>536870912</td>
+<td>UNIT_FLAG_UNK_29</td>
+<td>used in Feing Death spell</td>
+</tr>
+<tr>
+<td>30</td>
+<td>1073741824</td>
+<td>UNIT_FLAG_SHEATHE</td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td>2147483648</td>
+<td>UNIT_FLAG_UNK_31</td>
+<td>set skinnable icon and also changes color of portrait)(no affect in 2.4.3)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dynamicflags">DynamicFlags</h4>
+<p>This Field Flags Controls The Visual Appearance Of The Creature. These Flag Values Can Be Added Together For Any Desired Combination.</p>
+<p>Some Known Flag Values Are:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Name</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>UNIT_DYNFLAG_NONE</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>UNIT_DYNFLAG_LOOTABLE</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>UNIT_DYNFLAG_TRACK_UNIT</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>UNIT_DYNFLAG_TAPPED</td>
+<td>Lua_UnitIsTapped - Makes creatures name appear grey (good for simulating dead creatures) ???</td>
+</tr>
+<tr>
+<td>8</td>
+<td>UNIT_DYNFLAG_TAPPED_BY_PLAYER</td>
+<td>Lua_UnitIsTappedByPlayer</td>
+</tr>
+<tr>
+<td>16</td>
+<td>UNIT_DYNFLAG_SPECIALINFO</td>
+<td>Shows creatures basic stats (Health, damage, resistances, tamable).</td>
+</tr>
+<tr>
+<td>32</td>
+<td>UNIT_DYNFLAG_DEAD</td>
+<td>Makes the creature appear dead (this DOES NOT make the creatures name grey)</td>
+</tr>
+<tr>
+<td>64</td>
+<td>UNIT_DYNFLAG_REFER_A_FRIEND</td>
+<td></td>
+</tr>
+<tr>
+<td>128</td>
+<td>UNIT_DYNFLAG_TAPPED_BY_ALL_THREAT_LIST</td>
+<td>Lua_UnitIsTappedByAllThreatList</td>
+</tr>
+</tbody>
+</table>
+<h4 id="extraflags">ExtraFlags</h4>
+<p>This Field Controls the Application Of Flags That Controls Certain NPC Specific Attributes.</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Hex</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0x00000001</td>
+<td>CREATURE_EXTRA_FLAG_INSTANCE_BIND</td>
+<td>creature kill bind instance with killer and killer's group</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x00000002</td>
+<td>CREATURE_EXTRA_FLAG_NO_AGGRO_ON_SIGHT</td>
+<td>no aggro (ignore faction/reputation hostility)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x00000004</td>
+<td>CREATURE_EXTRA_FLAG_NO_PARRY</td>
+<td>creature can't parry</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x00000008</td>
+<td>CREATURE_EXTRA_FLAG_NO_PARRY_HASTEN</td>
+<td>creature can't counter-attack at parry</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x00000010</td>
+<td>CREATURE_EXTRA_FLAG_NO_BLOCK</td>
+<td>creature can't block</td>
+</tr>
+<tr>
+<td>32</td>
+<td>0x00000020</td>
+<td>CREATURE_EXTRA_FLAG_NO_CRUSH</td>
+<td>creature can't do crush attacks</td>
+</tr>
+<tr>
+<td>64</td>
+<td>0x00000040</td>
+<td>CREATURE_EXTRA_FLAG_NO_XP_AT_KILL</td>
+<td>creature kill not provide XP</td>
+</tr>
+<tr>
+<td>128</td>
+<td>0x00000080</td>
+<td>CREATURE_EXTRA_FLAG_INVISIBLE</td>
+<td>creature is always invisible for player (mostly trigger creatures)</td>
+</tr>
+<tr>
+<td>256</td>
+<td>0x00000100</td>
+<td>CREATURE_EXTRA_FLAG_NOT_TAUNTABLE</td>
+<td>creature is immune to taunt auras and effect attack me</td>
+</tr>
+<tr>
+<td>512</td>
+<td>0x00000200</td>
+<td>CREATURE_EXTRA_FLAG_AGGRO_ZONE</td>
+<td>creature sets itself in combat with zone on aggro</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>0x00000400</td>
+<td>CREATURE_EXTRA_FLAG_GUARD</td>
+<td>creature is a guard</td>
+</tr>
+<tr>
+<td>2048</td>
+<td>0x00000800</td>
+<td>CREATURE_EXTRA_FLAG_NO_CALL_ASSIST</td>
+<td>creature shouldn't call for assistance on aggro</td>
+</tr>
+<tr>
+<td>4096</td>
+<td>0x00001000</td>
+<td>CREATURE_EXTRA_FLAG_ACTIVE</td>
+<td>creature is active object. Grid of this creature will be loaded and creature set as active</td>
+</tr>
+<tr>
+<td>8192</td>
+<td>0x00002000</td>
+<td>CREATURE_EXTRA_FLAG_MMAP_FORCE_ENABLE</td>
+<td>creature is forced to use MMaps</td>
+</tr>
+<tr>
+<td>16384</td>
+<td>0x00004000</td>
+<td>CREATURE_EXTRA_FLAG_MMAP_FORCE_DISABLE</td>
+<td>creature is forced to NOT use MMaps</td>
+</tr>
+<tr>
+<td>32768</td>
+<td>0x00008000</td>
+<td>CREATURE_EXTRA_FLAG_WALK_IN_WATER</td>
+<td>creature is forced to walk in water even it can swim</td>
+</tr>
+<tr>
+<td>65536</td>
+<td>0x00010000</td>
+<td>CREATURE_EXTRA_FLAG_CIVILIAN</td>
+<td>CreatureInfo-&gt;civilian substitute (for expansions as Civilian Colum was removed)</td>
+</tr>
+<tr>
+<td>131072</td>
+<td>0x00020000</td>
+<td>CREATURE_EXTRA_FLAG_NO_MELEE</td>
+<td>creature can't melee</td>
+</tr>
+<tr>
+<td>262144</td>
+<td>0x00040000</td>
+<td>CREATURE_EXTRA_FLAG_FAR_VIEW</td>
+<td>creature with far view</td>
+</tr>
+<tr>
+<td>524288</td>
+<td>0x00080000</td>
+<td>CREATURE_EXTRA_FLAG_FORCE_ATTACKING_CAPABILITY</td>
+<td>SetForceAttackingCapability(true); for nonattackable, nontargetable creatures that should be able to attack nontheless</td>
+</tr>
+<tr>
+<td>1048576</td>
+<td>0x00100000</td>
+<td>CREATURE_EXTRA_FLAG_IGNORE_USED_POSITION</td>
+<td>ignore creature when checking used positions around target</td>
+</tr>
+<tr>
+<td>2097152</td>
+<td>0x00200000</td>
+<td>CREATURE_EXTRA_FLAG_COUNT_SPAWNS</td>
+<td>count creature spawns in Map*</td>
+</tr>
+<tr>
+<td>4194304</td>
+<td>0x00400000</td>
+<td>CREATURE_EXTRA_FLAG_HASTE_SPELL_IMMUNITY</td>
+<td>immunity to COT or Mind Numbing Poison - very common in instances</td>
+</tr>
+</tbody>
+</table>
+<h4 id="creaturetypeflags">CreatureTypeFlags</h4>
+<p>This Field Controls If a Mob Is Mineable or Herbable. If Any Of These Flags Are Used Then The Loot Given When It Is Herb Picked / Mined Will Be Stored In The <a href="Skinning_Loot_Template">Skinning_Loot_Template</a> Table. Aside From These Two Flags, This Field Has No Special Meaning Server-Side.</p>
+<p>It will be send to the client in SMSG_CREATURE_QUERY_RESPONSE</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Name</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>CREATURE_TYPEFLAGS_TAMEABLE</td>
+<td>Makes the mob tameable (must also be a beast and have family set)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>CREATURE_TYPEFLAGS_GHOST_VISIBLE</td>
+<td>Sets Creatures that can ALSO be seen when player is a ghost. Used in CanInteract function by client, can't be attacked</td>
+</tr>
+<tr>
+<td>4</td>
+<td>CREATURE_TYPEFLAGS_UNK3</td>
+<td>Sets "BOSS" flag for tooltips</td>
+</tr>
+<tr>
+<td>8</td>
+<td>CREATURE_TYPEFLAGS_UNK4</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>CREATURE_TYPEFLAGS_UNK5</td>
+<td>Controls something in client tooltip related to creature faction</td>
+</tr>
+<tr>
+<td>32</td>
+<td>CREATURE_TYPEFLAGS_UNK6</td>
+<td>Something related to Sound</td>
+</tr>
+<tr>
+<td>64</td>
+<td>CREATURE_TYPEFLAGS_UNK7</td>
+<td>Related to attackable / not attackable creatures with spells</td>
+</tr>
+<tr>
+<td>128</td>
+<td>CREATURE_TYPEFLAGS_INTERACT_DEAD</td>
+<td>has something to do with unit interaction / quest status requests</td>
+</tr>
+<tr>
+<td>136</td>
+<td>CREATURE_TYPEFLAGS_NON_PVP_PLAYER</td>
+<td></td>
+</tr>
+<tr>
+<td>256</td>
+<td>CREATURE_TYPEFLAGS_HERBLOOT</td>
+<td>Makes Mob Corpse Herbable - Uses Skinning Loot Field</td>
+</tr>
+<tr>
+<td>512</td>
+<td>CREATURE_TYPEFLAGS_MININGLOOT</td>
+<td>Makes Mob Corpse Mineable - Uses Skinning Loot Field</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>CREATURE_TYPEFLAGS_ANIMATION_UNK11</td>
+<td>no idea, but it used by client</td>
+</tr>
+<tr>
+<td>2048</td>
+<td>CREATURE_TYPEFLAGS_ANIMATION_UNK12</td>
+<td>related to possibility to cast spells while mounted</td>
+</tr>
+<tr>
+<td>4096</td>
+<td>CREATURE_TYPEFLAGS_CAN_ASSIST</td>
+<td>Can aid any player or group in combat. Typically seen for escorting NPC's</td>
+</tr>
+<tr>
+<td>8192</td>
+<td>CREATURE_TYPEFLAGS_UNK14</td>
+<td>checked from calls in Lua_PetHasActionBar</td>
+</tr>
+<tr>
+<td>16384</td>
+<td>CREATURE_TYPEFLAGS_UNK15</td>
+<td>Lua_UnitGUID, client does guid_low &amp;= 0xFF000000 if this flag is set</td>
+</tr>
+<tr>
+<td>32768</td>
+<td>CREATURE_TYPEFLAGS_ENGINEERLOOT</td>
+<td>Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field</td>
+</tr>
+</tbody>
+</table>
+<h4 id="speedwalk">SpeedWalk</h4>
+<p>This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Packet Data.
+Note: This field should only be used as an override if the model's default SpeedWalk is not correct for the creature_template.entry. ( <a href="creature_model_info#SpeedWalk">creature_model_info.SpeedWalk</a> )</p>
+<p>`SpeedWalk` = (sniffed value / 2.5)</p>
+<p>(Default Value Is: 1)</p>
+<h4 id="speedrun">SpeedRun</h4>
+<p>This Field Controls How Fast An NPC Moves When Running. This Value Comes From Sniff Packet Data.
+Note: This field should only be used as an override if the model's default SpeedRun is not correct for the creature_template.entry. ( <a href="creature_model_info#SpeedRun">creature_model_info.SpeedRun</a> )</p>
+<p>`SpeedRun` = (sniffed value / 7)</p>
+<p>(Default Value Is: 1.14286)</p>
+<h4 id="detection">Detection</h4>
+<p>Aggro Range, more info to come</p>
+<p>(Default Value Is: 20)</p>
+<h4 id="callforhelp">CallForHelp</h4>
+<p>more info to come</p>
+<h4 id="pursuit">Pursuit</h4>
+<p>more info to come</p>
+<h4 id="leash">Leash</h4>
+<p>more info to come</p>
+<h4 id="unitclass">UnitClass</h4>
+<p>The NPC Unit Class. This Field is a Critical Value That Dictates An NPC's Base Stats System.</p>
+<p>An NPC's Unit Class Is A Corner Stone Value Used In <a href="Creature_Template_Classlevelstats">Creature_Template_Classlevelstats</a> To Determine An NPC's Stats.</p>
+<p>NPC Stats Refers To: (Health/Mana/Damage/Armor).</p>
+<p>In WOTLK and CATA There Are 4 Possible NPC Classes Available For Creatures:
+(Class: 1,2,4,8)</p>
+<p>In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures:
+(Class: 1,2,8)</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLASS_WARRIOR</td>
+<td>1</td>
+</tr>
+<tr>
+<td>CLASS_PALADIN</td>
+<td>2</td>
+</tr>
+<tr>
+<td>CLASS_ROGUE</td>
+<td>4</td>
+</tr>
+<tr>
+<td>CLASS_MAGE</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>This Value is Contained in Sniff Data: UNIT_FIELD_BYTES_0 located in SMSG_UPDATE_OBJECT
+It is a Critical Field in Determining Class Level Stats For the NPC.</p>
+<p>NOTE: Typically ONLY Vehicles Are Class=4</p>
+<p>Warriors: Do Not Have Mana and Maximum Health and Damage
+Paladins: Have a Small Amount Of Mana and Slightly Less Health and Damage From a Warrior
+Rogues: (Little is Known Currently But They All Seem To Be Vehicles)
+Mages: Have Lots of Mana But Have Very Low Health and Damage</p>
+<h4 id="rank">Rank</h4>
+<p>This Field Determines The Rank of the NPC:</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Normal</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Elite</td>
+<td>Higher damage, more health, better loot.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Rare Elite</td>
+<td>A rare mob but with elite damage and health.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>World Boss</td>
+<td>Highest rank, best loot, longest respawn time.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rare</td>
+<td>Somewhat better loot, longer respawn time.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="expansion">Expansion</h4>
+<p>This Field Determines The Expansion Value of the NPC:</p>
+<p>This Value Is a Critical Value in Determining an NPC's Stats From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a> And Directly Affects An NPC's Health and Damage.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Expansion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Classic</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Burning Crusades</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Wrath of the Lich King</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cataclysm</td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: Now Everyone Has Trouble Understanding This Concept. An NPC's Expansion Value Has NOTHING To Do With What Expansion An NPC Is From. This Value Determines How Difficult An NPC Is In Regards To An NPC At The Same Level From A Different Expansion. As An Example a Classic Level 60 NPC Will Have Less Base Health and Less Base Damage Then A Level 60 TBC NPC.</p>
+<p>Each Expansion Value Has a Different Base Health and Base Damage (Each Expansion Having Higher Values Then The Previous). ONLY Health And Damage Scale With Expansion Values. Mana / Armor / Attack Power Are Static Values For All Expansions For A Particular Level and Unit Class combination.</p>
+<p>An NPC's Health and Damage Is Calculated From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a> Based On <a href="#HealthMultiplier">HealthMultiplier</a> And <a href="#DamageMultiplier">DamageMultiplier</a> Multiplied By BaseHealthExp? and BaseDamageExp? From Creature_Template_ClassLevelStats Where ? = Expansion Value.</p>
+<p>Note: See <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a> For Better Understanding.</p>
+<h4 id="healthmultiplier">HealthMultiplier</h4>
+<p>This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Health Value. NPC Have Various HealthMultipliers But Typically They Are Fairly Rounded Values</p>
+<p>(Note: Dungeon/Raid/World Bosses Normally Have Large Very Rounded Values Normally)</p>
+<p>This Is The Multiplier Used Against The BaseHealthExp? Value From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a> To Calculate An NPC's Final Health Values.</p>
+<p>? = <a href="#Expansion">Expansion</a> Value.</p>
+<p>Formula:
+MinLevelHealth = ROUND (BaseHealthExp? * HealthMultiplier)
+MaxLevelHealth = ROUND (BaseHealthExp? * HealthMultiplier)</p>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#Entry">Entry</a></td>
+<td>871</td>
+<td>Saltscale Warrior</td>
+</tr>
+<tr>
+<td><a href="#MinLevel">MinLevel</a></td>
+<td>35</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#MaxLevel">MaxLevel</a></td>
+<td>36</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#MinLevelHealth">MinLevelHealth</a></td>
+<td>1403</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#MaxLevelHealth">MaxLevelHealth</a></td>
+<td>1469</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#UnitClass">UnitClass</a></td>
+<td>1</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#Expansion">Expansion</a></td>
+<td>0</td>
+<td>Determined From Calculations / Sniff Data / MoP DBC</td>
+</tr>
+<tr>
+<td><a href="#HealthMultiplier">HealthMultiplier</a></td>
+<td>1.15</td>
+<td>(Sniff Data)</td>
+</tr>
+</tbody>
+</table>
+<p>Level 35 BaseHealthExp0: 1220
+(From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a> - BaseHealth Values Calculated From Sniff Data And Extensive Research)</p>
+<p>Level 36 BaseHealthExp0: 1277
+(From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a> - BaseHealth Values Calculated From Sniff Data And Extensive Research)</p>
+<p>MinLevelHealth = ROUND (1220*1.15) = 1403 (1403)
+MaxLevelHealth = ROUND (1277*1.15) = 1468.55 (1469)</p>
+<h4 id="powermultiplier">PowerMultiplier</h4>
+<p>This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calculates An NPC's Specific Mana Value. All NPC Have Nice Rounded Values For PowerMultipliers.</p>
+<p>This Is The Multiplier Used Against The BaseMana Value From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a> To Calculate An NPC's Final Mana Values.</p>
+<p>Note: BaseMana Values Do NOT Scale With Expansion Values Unlike Health And Damage.
+Note: For NPC that use Other Power then Mana it will reflect that power instead.</p>
+<p>Formula:
+MinLevelMana = ROUND (BaseMana * ManaMultiplier)
+MaxLevelMana = ROUND (BaseMana * ManaMultiplier)</p>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#Entry">Entry</a></td>
+<td>7335</td>
+<td>Death's Head Geomancer</td>
+</tr>
+<tr>
+<td><a href="#MinLevel">MinLevel</a></td>
+<td>35</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#MaxLevel">MaxLevel</a></td>
+<td>35</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#MinLevelMana">MinLevelMana</a></td>
+<td>5360</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#MaxLevelMana">MaxLevelMana</a></td>
+<td>5360</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#UnitClass">UnitClass</a></td>
+<td>8</td>
+<td>(Sniff Data)</td>
+</tr>
+<tr>
+<td><a href="#Expansion">Expansion</a></td>
+<td>0</td>
+<td>Determined From Calculations / Sniff Data / MoP DBC</td>
+</tr>
+<tr>
+<td><a href="#ManaMultiplier">PowerMultiplier</a></td>
+<td>2</td>
+<td>(Sniff Data)</td>
+</tr>
+</tbody>
+</table>
+<p>Level 35 BaseMana: 2680
+(From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a> - BaseMana Values Calculated From Sniff Data And Extensive Research)</p>
+<p>MinLevelMana = ROUND (2680*2) = 5360 (5360)
+MaxLevelMana = ROUND (2680*2) = 5360 (5360)</p>
+<h4 id="damagemultiplier">DamageMultiplier</h4>
+<p>This field is the PRIMARY Field for adjusting and setting the Min/Max Damage Values for an NPC.</p>
+<p>Damage Calculation Formulas</p>
+<p>MIN MELEE DAMAGE = (((Creature_Template_Classlevelstats.BaseDamageExp? * Creature_Template.DamageVariance) + (Creature_Template_Classlevelstats.BaseMeleeAttackPower / 14)) * (Creature_Template.BaseMeleeAttackTime / 1000)) * Creature_Template.Dmg_Multiplier</p>
+<p>MAX MELEE DAMAGE = ((((Creature_Template_Classlevelstats.BaseDamageExp? * Creature_Template.DamageVariance) * 1.5) + (Creature_Template_Classlevelstats.BaseMeleeAttackPower / 14)) * (Creature_Template.BaseMeleeAttackTime / 1000)) * Creature_Template.Dmg_Multiplier</p>
+<p>Note: ? = Expansion Value of The NPC</p>
+<p>Some NPC Have Damage Multipliers Applied To Increase Their Damage Above That Of a Normal NPC Of The Same Level.</p>
+<p>I am sure people are asking... WHY is there more then just a simple Damage Multiplier Involved To Boost NPC Damage? Here is the only logical answer. With some NPC (Like Bosses) Who have Multipliers in the range of 20 - 75 Min and Max Damage values can fluctuate into VERY Large Ranges. So What Blizz has done is create a Co-Efficient System of 2 Values to help Reign in Max Damage Values so if you require a Set Min/Max Damage For an NPC it can scale the BaseDamage so after being put though the Formula The Min and Max Damage values will be within the Required Range. Damage Variance is used to reduce the Max Damage Value. For NPC Who Do NOT Have an altered Damage Variance the Default Value used is 1 (Normal Variance = 1).</p>
+<hr />
+<h2 id="here-is-an-example-of-an-npc-melee-damage-calculation">Here is an Example of an NPC Melee Damage Calculation</h2>
+<p>Nexus-Prince Shaffar = Unit Class 2 (BOSS)
+Level 66: BaseDamage = 78.472 / Melee AttackPower = 266 / Base Melee Attack Time = 2000
+Bestiary Min Dmg: 1136
+Bestiary Max Dmg: 1593
+Damage Variance: 1.0 (No Variance)
+Damage Multiplier: 5.83 (Calculated Value)</p>
+<p>CalculatedMinMeleeDmg=ROUND(((BaseDamage * Damage Variance) + (Base Melee Attackpower / 14)) * (Base Attack Time/1000)) * Damage Multiplier
+= ((((78.472 * 1.0) + (266/14)) * (2000/1000)) * 5.83
+= (((78.472) + 19) * 2) = 194.944 * 5.83 = 1136.52352</p>
+<p>CalculatedMaxMeleeDmg=ROUND((((BaseDamage * Damage Variance) * 1.5) + (Base Melee Attack Power / 14)) * (Base Attack Time/1000)) * Damage Multiplier
+= ((((78.472 * 1.0) * 1.5) + (266/14)) * (2000/1000)) * 5.83
+= (((117.708) + 19) * 2) = 273.416 * 5.83 = 1594.01528</p>
+<p>NOTE:</p>
+<p>Very Slight Rounding Errors of 1 or 2 Damage Might Occur... This was due to Rounding When Generating BaseDamage Values in Calculations.</p>
+<h4 id="damagevariance">DamageVariance</h4>
+<p>Damage Variance is a Co-Efficient used in Damage Calculations To Limit the Min/Max Damage Range.</p>
+<p>Default Value is 1 (Normal) ===&gt; See <a href="#DamageMultiplier">DamageMultiplier</a> for More Information</p>
+<h4 id="armormultiplier">ArmorMultiplier</h4>
+<p>This Value Is The Multiplier Value Used To Multiply Against BaseArmor Value in Creature_Template_Classlevelstats</p>
+<p>Most Normal NPC are = 1</p>
+<h4 id="experiencemultiplier">ExperienceMultiplier</h4>
+<p>NOTE: This Field Is Currently Not Used By The Core (Future Implementation)</p>
+<h4 id="minlevelhealth">MinLevelHealth</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+(Nice Field To Have Still)</p>
+<p>Minimum Level Health Is Now Calculated Using <a href="#HealthMultiplier">HealthMultiplier</a></p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="maxlevelhealth">MaxLevelHealth</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+(Nice Field To Have Still)</p>
+<p>Maximum Level Health Is Now Calculated Using <a href="#HealthMultiplier">HealthMultiplier</a></p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="minlevelmana">MinLevelMana</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+(Nice Field To Have Still)</p>
+<p>Minimum Level Mana Is Now Calculated Using <a href="#PowerMultiplier">PowerMultiplier</a></p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="maxlevelmana">MaxLevelMana</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+(Nice Field To Have Still)</p>
+<p>Maximum Level Mana Is Now Calculated Using <a href="#PowerMultiplier">PowerMultiplier</a></p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="minmeleedmg">MinMeleeDmg</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+(Nice Field To Have Still)</p>
+<p>Minimum Melee Damage Is Now Calculated Using <a href="#DamageMultiplier">DamageMultiplier</a></p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="maxmeleedmg">MaxMeleeDmg</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+(Nice Field To Have Still)</p>
+<p>Maximum Melee Damage Is Now Calculated Using <a href="#DamageMultiplier">DamageMultiplier</a></p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="minrangeddmg">MinRangedDmg</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+(Nice Field To Have Still)</p>
+<p>Minimum Ranged Damage Is Now Calculated Using <a href="#DamageMultiplier">DamageMultiplier</a></p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="maxrangeddmg">MaxRangedDmg</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+(Nice Field To Have Still)</p>
+<p>Maximum Ranged Damage Is Now Calculated Using <a href="#DamageMultiplier">DamageMultiplier</a></p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="armor">Armor</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+DB Devs: Suggested Apply Armor Value For MaxLevel For This Field For FYI Purposes</p>
+<p>(Old System Did Not Properly Calculate Armor Values for different NPC Levels)</p>
+<p>Core Now Automatically Calculates This Value On The Fly</p>
+<h4 id="meleeattackpower">MeleeAttackPower</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes</p>
+<p>Core Now Gets Value From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a></p>
+<p>(Old System Did Not Properly Calculate Values for Damage Calculations)</p>
+<h4 id="rangedattackpower">RangedAttackPower</h4>
+<p>NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes</p>
+<p>Core Now Gets Value From <a href="Creature_Template_ClassLevelStats">Creature_Template_ClassLevelStats</a></p>
+<p>(Old System Did Not Properly Calculate Values for Damage Calculations)</p>
+<h4 id="meleebaseattacktime">MeleeBaseAttackTime</h4>
+<p>An NPC's melee attack time in milliseconds. This Field is populated by Sniff Data.</p>
+<p>This field is used as part of Min/Max Melee Damage Formula Calculations.</p>
+<h4 id="rangedbaseattacktime">RangedBaseAttackTime</h4>
+<p>An NPC's ranged attack time in milliseconds. This Field is populated by Sniff Data.</p>
+<p>This field is used as part of Min/Max Ranged Damage Formula Calculations.</p>
+<h4 id="damageschool">DamageSchool</h4>
+<p>NPC's Melee Damage School. All Melee Damage Will Be Done As This Spell School Damage Set Here.</p>
+<p>NOTE: 0 (Normal) = Physical Damage</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>SPELL_SCHOOL_NORMAL</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SPELL_SCHOOL_HOLY</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SPELL_SCHOOL_FIRE</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SPELL_SCHOOL_NATURE</td>
+</tr>
+<tr>
+<td>4</td>
+<td>SPELL_SCHOOL_FROST</td>
+</tr>
+<tr>
+<td>5</td>
+<td>SPELL_SCHOOL_SHADOW</td>
+</tr>
+<tr>
+<td>6</td>
+<td>SPELL_SCHOOL_ARCANE</td>
+</tr>
+</tbody>
+</table>
+<h4 id="minlootgold">MinLootGold</h4>
+<p>Minimum possible money that the NPC drops when killed, in copper.</p>
+<p>An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.</p>
+<p>NOTE:
+1 = 1 Copper
+100 = 1 Silver
+10000 = 1 Gold</p>
+<h4 id="maxlootgold">MaxLootGold</h4>
+<p>Maximum possible money that the NPC drops when killed, in copper.</p>
+<p>An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.</p>
+<p>NOTE:
+1 = 1 Copper
+100 = 1 Silver
+10000 = 1 Gold</p>
+<h4 id="lootid">LootId</h4>
+<p>The ID of the Loot Template that this NPC uses to generate loot from.
+See <a href="creature_loot_template#entry">creature_loot_template.entry</a></p>
+<h4 id="pickpocketlootid">PickpocketLootId</h4>
+<p>The ID of the Pickpocketing Loot Template that this NPC should use to generate pickpocketing loot from.
+See <a href="pickpocketing_loot_template#entry">pickpocketing_loot_template.entry</a></p>
+<h4 id="skinninglootid">SkinningLootId</h4>
+<p>The ID of the Skinning Loot Template that this NPC should use to generate skinning loot from.
+See <a href="skinning_loot_template#entry">skinning_loot_template.entry</a></p>
+<p>CreatureTypeFlags can define the profession required to loot the creature.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CREATURE_TYPEFLAGS_HERBLOOT</td>
+<td>Makes Mob Corpse Herbable - Uses Skinning Loot Field</td>
+</tr>
+<tr>
+<td>CREATURE_TYPEFLAGS_MININGLOOT</td>
+<td>Makes Mob Corpse Mineable - Uses Skinning Loot Field</td>
+</tr>
+<tr>
+<td>CREATURE_TYPEFLAGS_ENGINEERLOOT</td>
+<td>Makes Mob Corpse Engineer Lootable - Uses Skinning Loot Field</td>
+</tr>
+</tbody>
+</table>
+<p>For These Other Types Use Skinning_Loot_Template For Loot To Be Generated By These Other Professions Also</p>
+<h4 id="killcredit1">KillCredit1</h4>
+<p>Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.
+Note: Some Quests Require Additional Quest Kill Credit</p>
+<h4 id="killcredit2">KillCredit2</h4>
+<p>Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.
+Note: Some Quests Require Additional Quest Kill Credit</p>
+<h4 id="mechanicimmunemask">MechanicImmuneMask</h4>
+<p>This makes the NPC immune to specific spell natures. See Spell.dbc at row effect_X_mechanic_id.</p>
+<p>Uses references from SpellMechanic.dbc.</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Type</th>
+<th>Bit</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>MECHANIC_CHARM</td>
+<td>32768</td>
+<td>MECHANIC_BANDAGE</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MECHANIC_CONFUSED</td>
+<td>65536</td>
+<td>MECHANIC_POLYMORPH</td>
+</tr>
+<tr>
+<td>4</td>
+<td>MECHANIC_DISARM</td>
+<td>131072</td>
+<td>MECHANIC_BANISH</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MECHANIC_DISTRACT</td>
+<td>262144</td>
+<td>MECHANIC_SHIELD</td>
+</tr>
+<tr>
+<td>16</td>
+<td>MECHANIC_FEAR</td>
+<td>524288</td>
+<td>MECHANIC_SHACKLE</td>
+</tr>
+<tr>
+<td>32</td>
+<td>MECHANIC_FUMBLE</td>
+<td>1048576</td>
+<td>MECHANIC_MOUNT</td>
+</tr>
+<tr>
+<td>64</td>
+<td>MECHANIC_ROOT</td>
+<td>2097152</td>
+<td>MECHANIC_PERSUADE</td>
+</tr>
+<tr>
+<td>128</td>
+<td>MECHANIC_PACIFY</td>
+<td>4194304</td>
+<td>MECHANIC_TURN</td>
+</tr>
+<tr>
+<td>256</td>
+<td>MECHANIC_SILENCE</td>
+<td>8388608</td>
+<td>MECHANIC_HORROR</td>
+</tr>
+<tr>
+<td>512</td>
+<td>MECHANIC_SLEEP</td>
+<td>16777216</td>
+<td>MECHANIC_INVULNERABILITY</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>MECHANIC_SNARE</td>
+<td>33554432</td>
+<td>MECHANIC_INTERRUPT</td>
+</tr>
+<tr>
+<td>2048</td>
+<td>MECHANIC_STUN</td>
+<td>67108864</td>
+<td>MECHANIC_DAZE</td>
+</tr>
+<tr>
+<td>4096</td>
+<td>MECHANIC_FREEZE</td>
+<td>134217728</td>
+<td>MECHANIC_DISCOVERY</td>
+</tr>
+<tr>
+<td>8192</td>
+<td>MECHANIC_KNOCKOUT</td>
+<td>268435456</td>
+<td>MECHANIC_IMMUNE_SHIELD</td>
+</tr>
+<tr>
+<td>16384</td>
+<td>MECHANIC_BLEED</td>
+<td>536870912</td>
+<td>MECHANIC_SAPPED</td>
+</tr>
+</tbody>
+</table>
+<p>To combine immunities just add values. Immune to everything corresponds to the value 1073741823.</p>
+<h4 id="schoolimmunemask">SchoolImmuneMask</h4>
+<p>This makes the NPC immune to specific spell schools.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Bitmask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPELL_SCHOOL_NORMAL</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SPELL_SCHOOL_HOLY</td>
+<td>2</td>
+</tr>
+<tr>
+<td>SPELL_SCHOOL_FIRE</td>
+<td>4</td>
+</tr>
+<tr>
+<td>SPELL_SCHOOL_NATURE</td>
+<td>8</td>
+</tr>
+<tr>
+<td>SPELL_SCHOOL_FROST</td>
+<td>16</td>
+</tr>
+<tr>
+<td>SPELL_SCHOOL_SHADOW</td>
+<td>32</td>
+</tr>
+<tr>
+<td>SPELL_SCHOOL_ARCANE</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+<p>To combine spell school immunities just add values. Immune to everything corresponds to the value 127.</p>
+<h4 id="resistanceholy">ResistanceHoly</h4>
+<p>An NPC's Additional Holy Spell Resistance Value.</p>
+<h4 id="resistancefire">ResistanceFire</h4>
+<p>An NPC's Additional Fire Spell Resistance Value.</p>
+<h4 id="resistancenature">ResistanceNature</h4>
+<p>An NPC's Additional Nature Spell Resistance Value.</p>
+<h4 id="resistancefrost">ResistanceFrost</h4>
+<p>An NPC's Additional Frost Spell Resistance Value.</p>
+<h4 id="resistanceshadow">ResistanceShadow</h4>
+<p>An NPC's Additional Shadow Spell Resistance Value.</p>
+<h4 id="resistancearcane">ResistanceArcane</h4>
+<p>An NPC's Additional Arcane Spell Resistance Value.</p>
+<h4 id="petspelldataid">PetSpellDataId</h4>
+<p>ID that displays what spells the pet has in the client.</p>
+<p>Note: This Value Comes From DBC (Not Confirmed)</p>
+<h4 id="movementtype">MovementType</h4>
+<p>The NPC's default Movement Type.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Idle - Stand Still (Stationary)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Random Movement - Random Move Inside SpawnDist Radius</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Waypoint Movement - Move Along Waypoint Path Defined</td>
+</tr>
+</tbody>
+</table>
+<h4 id="trainertype">TrainerType</h4>
+<p>If the NPC is a Trainer (Has Trainer NPCFlag Set), then this field controls what kind of Trainer the NPC is.</p>
+<p>NOTE: Both this field and the related field must be filled in for a trainer to work correctly.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Related Field</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>TRAINER_TYPE_CLASS</td>
+<td>trainer_class</td>
+<td>Trains Class Spells</td>
+</tr>
+<tr>
+<td>1</td>
+<td>TRAINER_TYPE_MOUNTS</td>
+<td>trainer_race</td>
+<td>Trains Riding Skill</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TRAINER_TYPE_TRADESKILLS</td>
+<td>trainer_spell</td>
+<td>Trains Professions</td>
+</tr>
+<tr>
+<td>3</td>
+<td>TRAINER_TYPE_PETS</td>
+<td>trainer_class</td>
+<td>Trains Pet Skills</td>
+</tr>
+</tbody>
+</table>
+<h4 id="trainerspell">TrainerSpell</h4>
+<p>If the NPC is a trainer that teaches professions (<a href="creature_template#trainer_type">trainer_type</a> == 2), then the player must already know the spell ID specified here to be able to talk to this NPC.</p>
+<h4 id="trainerclass">TrainerClass</h4>
+<p>If the NPC is a class trainer or a pet trainer (<a href="creature_template#trainer_type">trainer_type</a> == 0 or 3), then the player's class must be the same as the value specified here to talk to this trainer. For pet trainers, this value must be 3 (hunter). See <a href="character#class">character.class</a></p>
+<h4 id="trainerrace">TrainerRace</h4>
+<p>If the NPC is a mount trainer (<a href="creature_template#trainer_type">trainer_type</a> == 1), then the player's race must be the same as the value specified here to talk to this trainer. See <a href="character#race">character.race</a></p>
+<h4 id="trainertemplateid">TrainerTemplateId</h4>
+<p>The id refers to the <a href="npc_trainer_template">npc_trainer_template.</a>.</p>
+<h4 id="vendortemplateid">VendorTemplateId</h4>
+<p>The id refers to the <a href="npc_vendor_template">npc_vendor_template.</a>.</p>
+<h4 id="equipmenttemplateid">EquipmentTemplateId</h4>
+<p>The default ID of the equipment that this creature should display. See <a href="creature_equip_template#entry">creature_equip_template.entry</a></p>
+<h4 id="gossipmenuid">GossipMenuId</h4>
+<p>Reference to a <a href="gossip_menu">gossip_menu_id</a>.</p>
+<h4 id="ainame">AIName</h4>
+<p>Overrides AI used for the creature.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NullAI</td>
+<td>Empty AI, creature does nothing.</td>
+</tr>
+<tr>
+<td>AggressorAI</td>
+<td>Creature attacks as soon as something is in aggro range.</td>
+</tr>
+<tr>
+<td>ReactorAI</td>
+<td>Creature attacks only if aggroed by attack, spell etc.</td>
+</tr>
+<tr>
+<td>GuardAI</td>
+<td></td>
+</tr>
+<tr>
+<td>PetAI</td>
+<td>Creature is a pet.</td>
+</tr>
+<tr>
+<td>TotemAI</td>
+<td>Creature casts spell from field spell1, otherwise like NullAI.</td>
+</tr>
+<tr>
+<td>EventAI</td>
+<td>Creature uses Event Based AI (Creature AI).</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="scriptname">ScriptName</h4>
+<p>The SD2 Script Name that this creature uses, if any. This ties a script from a scripting engine to this creature.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Item instance - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Item instance";
+    var mkdocs_page_input_path = "DB-Structure/Characters/item_instance.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Item instance</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="charactersdb_struct">characters database</a> list of tables.</p>
+<h2 id="the-96item95instance96-table">The `item_instance` table</h2>
+<p>This table holds individual item instance information for all items currently equipped or in some kind of character bag or bank.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Item_instance#guid">guid</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Item_instance#owner_guid">owner_guid</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td>MUL</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Item_instance#data">data</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="guid">guid</h4>
+<p>The GUID of the item. This number is unique for each item instance.</p>
+<h4 id="owner95guid">owner_guid</h4>
+<p>The GUID of the character who has ownership of this item. See <a href="characters#guid">characters.guid</a></p>
+<h4 id="data">data</h4>
+<p>Much like the data field in the character table, this field has many number fields all separated by a space which contain specific individual item information like any enchantments applied to the item, etc.</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Value Name</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>OBJECT_FIELD_GUID</td>
+<td>Item GUID</td>
+</tr>
+<tr>
+<td>2</td>
+<td>OBJECT_FIELD_TYPE</td>
+<td>Should be 3 (TYPE_OBJECT + TYPE_ITEM)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>OBJECT_FIELD_ENTRY</td>
+<td>entry</td>
+</tr>
+<tr>
+<td>4</td>
+<td>OBJECT_FIELD_SCALE_X</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>OBJECT_FIELD_PADDING</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>ITEM_FIELD_OWNER</td>
+<td>owner_guid</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ITEM_FIELD_CONTAINED</td>
+<td>If the item is in a bag, the GUID of the bag item; otherwise owner GUID.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>ITEM_FIELD_CREATOR</td>
+<td>GUID of character who created the item.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>ITEM_FIELD_GIFTCREATOR</td>
+<td>GUID of character who created the <a href="character_gifts#item_guid">item</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>ITEM_FIELD_STACK_COUNT</td>
+<td>Current number of item copies in the stack.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>ITEM_FIELD_DURATION</td>
+<td>Current duration (in milliseconds)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>ITEM_FIELD_SPELL_CHARGES</td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>ITEM_FIELD_FLAGS</td>
+<td>Flags (from <a href="Item_template#flags">item_template</a>)</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ITEM_FIELD_ENCHANTMENT</td>
+<td></td>
+</tr>
+<tr>
+<td>55</td>
+<td>ITEM_FIELD_PROPERTY_SEED</td>
+<td>Also called ITEM_FIELD_SUFFIX_FACTOR</td>
+</tr>
+<tr>
+<td>56</td>
+<td>ITEM_FIELD_RANDOM_PROPERTIES_ID</td>
+<td></td>
+</tr>
+<tr>
+<td>57</td>
+<td>ITEM_FIELD_ITEM_TEXT_ID</td>
+<td>Text id used and shown by the item.</td>
+</tr>
+<tr>
+<td>58</td>
+<td>ITEM_FIELD_DURABILITY</td>
+<td>Current item durability.</td>
+</tr>
+<tr>
+<td>59</td>
+<td>ITEM_FIELD_MAXDURABILITY</td>
+<td>Maximum item durability.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

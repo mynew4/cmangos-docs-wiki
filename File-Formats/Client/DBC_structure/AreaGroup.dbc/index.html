@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>AreaGroup.dbc - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "AreaGroup.dbc";
+    var mkdocs_page_input_path = "File-Formats/Client/DBC_structure/AreaGroup.dbc.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>AreaGroup.dbc</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="dbc_files">dbc files</a> list.</p>
+<h3 id="areagroupdbc">AreaGroup.dbc</h3>
+<p>This DBC stores IDs used in <a href="Spell.dbc#spelldbc">AreaGroupId</a> in Spell.dbc and <a href="spell_template#areaid">AreaId</a> in Spell_template.</p>
+<p><strong>Version is : 3.3.5a</strong></p>
+<h3 id="structure"><strong>Structure</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Column</strong></th>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ID</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Entry1</td>
+<td>iRefID</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Entry2</td>
+<td>iRefID</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Entry3</td>
+<td>iRefID</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Entry4</td>
+<td>iRefID</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Entry5</td>
+<td>iRefID</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Entry6</td>
+<td>iRefID</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Entry7</td>
+<td>iRefID</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="id">ID</h4>
+<p><a href="spell_template#areaid">AreaId</a> in Spell_template uses this Id for specify the allowed areas for a successful cast.</p>
+<h4 id="entry1-7">Entry1-7</h4>
+<p>Entry ID's taken from <a href="AreaTable.dbc#content">AreaTable.dbc</a>
+Groups several small areas into one larger area or category.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

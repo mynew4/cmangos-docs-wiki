@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Script texts - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Script texts";
+    var mkdocs_page_input_path = "DB-Structure/Core/script_texts.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Script texts</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-script_texts-table">The <code>script_texts</code> table</h2>
+<p>holds all the texts used by core scripted creatures (ScriptDev). This table handles the actual text, display type (say/yell/emote) and corresponding sounds or emote (if any).</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Attributes</th>
+<th>Null</th>
+<th>Default</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="script_texts#entry">entry</a></td>
+<td>int(11)</td>
+<td>signed</td>
+<td>NO</td>
+<td>0</td>
+<td>Text Entry</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_default">content_default</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Default Locale Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_loc">content_loc1</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Locale 1 Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_loc">content_loc2</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Locale 2 Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_loc">content_loc3</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Locale 3 Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_loc">content_loc4</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Locale 4 Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_loc">content_loc5</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Locale 5 Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_loc">content_loc6</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Locale 6 Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_loc">content_loc7</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Locale 7 Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#content_loc">content_loc8</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Locale 8 Text</td>
+</tr>
+<tr>
+<td><a href="script_texts#sound">sound</a></td>
+<td>int(11)</td>
+<td>unsigned</td>
+<td>NO</td>
+<td>0</td>
+<td>Sound Id</td>
+</tr>
+<tr>
+<td><a href="script_texts#type">type</a></td>
+<td>int(11)</td>
+<td>unsigned</td>
+<td>NO</td>
+<td>0</td>
+<td>Text Type</td>
+</tr>
+<tr>
+<td><a href="script_texts#language">language</a></td>
+<td>int(11)</td>
+<td>unsigned</td>
+<td>NO</td>
+<td>0</td>
+<td>Text Language</td>
+</tr>
+<tr>
+<td><a href="script_texts#emote">emote</a></td>
+<td>int(11)</td>
+<td>unsigned</td>
+<td>NO</td>
+<td>0</td>
+<td>Emote Id</td>
+</tr>
+<tr>
+<td><a href="script_texts#comment">comment</a></td>
+<td>text</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+<td>Comment</td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="entry">entry</h4>
+<p>This is the entry of the text. It corresponds to a cpp script using DoScriptText(); to display the text. This number is always negative.</p>
+<h4 id="content_default">content_default</h4>
+<p>This is the actual text presented in the default language (English).</p>
+<h4 id="content_loc">content_loc</h4>
+<p>This is the actual text presented in the Localization #(1-8) Clients</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Localization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Korean</td>
+</tr>
+<tr>
+<td>2</td>
+<td>French</td>
+</tr>
+<tr>
+<td>3</td>
+<td>German</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chinese</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Taiwanese</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Spanish</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Spanish Mexico</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Russian</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sound">sound</h4>
+<p>This is the sound Id that will play with along with the corresponding text. All sounds are from <a href="SoundEntries.dbc">SoundEntries.dbc</a>.</p>
+<h4 id="type">type</h4>
+<p>This is the method the text is displayed.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Say</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Yell</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Text Emote</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Boss Emote</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Whisper</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Boss Whisper</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Zone Yell</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Zone Text Emote</td>
+</tr>
+</tbody>
+</table>
+<h4 id="language">language</h4>
+<p>This is the ingame language of the text. Languages are from <a href="Languages.dbc">Languages.dbc</a>.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>UNIVERSAL</td>
+<td>Text in this language is understood by ALL Races.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ORCISH</td>
+<td>Text in this language is understood ONLY by Horde Races.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>DARNASSIAN</td>
+<td>Text in this language is understood ONLY by the Night Elf Race.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>TAURAHE</td>
+<td>Text in this language is understood ONLY by the Tauren Race.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>DWARVISH</td>
+<td>Text in this language is understood ONLY by the Dwarf Race.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>COMMON</td>
+<td>Text in this language is understood ONLY by Alliance Races.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>DEMONIC</td>
+<td>Text in this language is understood ONLY by the Demon Race (Not Implemented).</td>
+</tr>
+<tr>
+<td>9</td>
+<td>TITAN</td>
+<td>This language was used by Sargeras to speak with other Titians (Not Implemented).</td>
+</tr>
+<tr>
+<td>10</td>
+<td>THALASSIAN</td>
+<td>Text in this language is understood ONLY by the Blood Elf Race.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>DRACONIC</td>
+<td>Text in this language is understood ONLY by the Dragon Race.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>KALIMAG</td>
+<td>Text will display as Kalimag (not readable by players, language of all elementals)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>GNOMISH</td>
+<td>Text in this language is understood ONLY by the Gnome Race.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>TROLL</td>
+<td>Text in this language is understood ONLY by the Troll Race.</td>
+</tr>
+<tr>
+<td>33</td>
+<td>GUTTERSPEAK</td>
+<td>Text in this language is understood ONLY by the Undead Race.</td>
+</tr>
+<tr>
+<td>35</td>
+<td>DRAENEI</td>
+<td>Text in this language is understood ONLY by the Draenai Race.</td>
+</tr>
+<tr>
+<td>36</td>
+<td>ZOMBIE</td>
+<td>(not currently used?)</td>
+</tr>
+<tr>
+<td>37</td>
+<td>GNOMISH BINARY</td>
+<td>Binary language used by Alliance when drinking Binary Brew</td>
+</tr>
+<tr>
+<td>38</td>
+<td>GOBLIN BINARY</td>
+<td>Binary language used by Horce when drinking Binary Brew</td>
+</tr>
+</tbody>
+</table>
+<h4 id="emote">emote</h4>
+<p>This is the emote that the creature performs along with the corresponding text.</p>
+<h4 id="comment">comment</h4>
+<p>This field allows you to label a text entry.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

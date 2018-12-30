@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Account - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Account";
+    var mkdocs_page_input_path = "DB-Structure/Realm/account.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Account</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="realmdb_struct">realm database</a> list of tables.</p>
+<h2 id="the-96account96-table">The `account` table</h2>
+<p>This table holds information on all available accounts.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Account#id">id</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td></td>
+<td>auto_increment</td>
+</tr>
+<tr>
+<td><a href="Account#username">username</a></td>
+<td>varchar(32)</td>
+<td>NO</td>
+<td>UNI</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#sha_pass_hash">sha_pass_hash</a></td>
+<td>varchar(40)</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#gmlevel">gmlevel</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td>MUL</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#sessionkey">sessionkey</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#v">v</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#s">s</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#email">email</a></td>
+<td>varchar(255)</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#joindate">joindate</a></td>
+<td>timestamp</td>
+<td>NO</td>
+<td></td>
+<td>CURRENT_TIMESTAMP</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#last_ip">last_ip</a></td>
+<td>varchar(30)</td>
+<td>NO</td>
+<td></td>
+<td>127.0.0.1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#failed_logins">failed_logins</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#locked">locked</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#last_login">last_login</a></td>
+<td>timestamp</td>
+<td>NO</td>
+<td></td>
+<td>0000-00-00 00:00:00</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#online">online</a></td>
+<td>tinyint(4)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#expansion">expansion</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#mutetime">mutetime</a></td>
+<td>bigint(40) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Account#locale">locale</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="id">id</h4>
+<p>The unique account ID.</p>
+<h4 id="username">username</h4>
+<p>The account user name.</p>
+<h4 id="sha95pass95hash">sha_pass_hash</h4>
+<p>This field contains the encrypted password. The encryption is SHA1 and is in the following format: username:password. The SQL to create the password (or to compare with the current hash) is:</p>
+<pre><code>SELECT SHA1(CONCAT(UPPER(`username`), ':', UPPER(&lt;pass&gt;)));
+</code></pre>
+<h4 id="gmlevel">gmlevel</h4>
+<p>The account security level. Different levels have access to different commands. The individual level required for a command is defined in the <a href="command">command</a> table.</p>
+<h4 id="sessionkey">sessionkey</h4>
+<h4 id="v">v</h4>
+<h4 id="s">s</h4>
+<h4 id="email">email</h4>
+<p>The e-mail address associated with this account.</p>
+<h4 id="joindate">joindate</h4>
+<p>The date when the account was created.</p>
+<h4 id="last95ip">last_ip</h4>
+<p>The last IP used by the person who logged in the account.</p>
+<h4 id="failed95logins">failed_logins</h4>
+<p>The number of failed logins attempted on the account.</p>
+<h4 id="locked">locked</h4>
+<p>Boolean 0 or 1 controlling if the account has been locked or not.</p>
+<h4 id="last95login">last_login</h4>
+<p>The date when the account was last logged into.</p>
+<h4 id="online">online</h4>
+<p>Boolean 0 or 1 controlling if the account is currently logged in and online.</p>
+<h4 id="expansion">expansion</h4>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Expansion</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>WoW Classic</td>
+</tr>
+<tr>
+<td>1</td>
+<td>WoW Burning Crusade</td>
+</tr>
+<tr>
+<td>2</td>
+<td>WoW Wrath of the Lich King</td>
+</tr>
+</tbody>
+</table>
+<p>The world server will block access to accounts with 0 in this field in the TBC and WotLK areas in-game.</p>
+<p>The world server will block access to accounts with 1 in this field in the WotLK areas in-game.</p>
+<h4 id="mutetime">mutetime</h4>
+<p>The time, in Unix time, when the account will be unmuted.</p>
+<h4 id="locale">locale</h4>
+<p>The locale used by the client logged into this account. If multiple locale data has been configured and added to the world servers, the world servers will return the proper locale strings to the client. See <a href="localization_lang">localization IDs</a></p>
+<p><a href="Category">Category: Realm database tables</a>: Realm database tables</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

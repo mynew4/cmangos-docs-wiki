@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Dbscript string - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Dbscript string";
+    var mkdocs_page_input_path = "DB-Structure/Core/dbscript_string.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Dbscript string</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96dbscript95string96-table">The `dbscript_string` table</h2>
+<p>Holds texts for scripts.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Dbscript_string#entry">entry</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_default">content_default</a></td>
+<td>text</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_loc">content_loc1</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_loc">content_loc2</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_loc">content_loc3</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_loc">content_loc4</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_loc">content_loc5</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_loc">content_loc6</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_loc">content_loc7</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#content_loc">content_loc8</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#sound">sound</a></td>
+<td>mediumint</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#type">type</a></td>
+<td>tinyint</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#language">language</a></td>
+<td>tinyint</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#emote">emote</a></td>
+<td>smallint</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Dbscript_string#comment">comment</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="entry">entry</h4>
+<p>The ID to identify the text. Referenced by <a href="event_scripts#dataint">event_scripts</a>, <a href="gameobject_scripts#dataint">gameobject_scripts</a>, <a href="quest_start_scripts#dataint">quest_start_scripts</a>, <a href="quest_end_scripts#dataint">quest_end_scripts</a>, <a href="spell_scripts#dataint">spell_scripts</a> and <a href="creature_movement#text">creature_movement</a>.</p>
+<p>Entries must be between 2000000000 and 2000010000.</p>
+<h4 id="content95default">content_default</h4>
+<p>The text for default language. UDB provides english, see e.g. GMDB<a href="http://sourceforge.net/projects/gm-db/%7CGMDB">1</a> for german support.</p>
+<h4 id="content95loc">content_loc</h4>
+<p>The translation in another language depending on the locale ID of that language.</p>
+<table>
+<thead>
+<tr>
+<th><strong>locale ID</strong></th>
+<th><strong>language</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Korean (koKR)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>French (frFR)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>German (deDE)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chinese (zhCN)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Taiwan (zhTW)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Spanish (esES) / Mexico (esMX)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Russian (ruRU)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sound">sound</h4>
+<p><a href="SoundEntries.dbc#Content">Sound ID</a>.</p>
+<h4 id="type">type</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>CHAT_TYPE_SAY</td>
+<td>'white' text</td>
+</tr>
+<tr>
+<td>1</td>
+<td>CHAT_TYPE_YELL</td>
+<td>'red' text</td>
+</tr>
+<tr>
+<td>2</td>
+<td>CHAT_TYPE_TEXT_EMOTE</td>
+<td>'brown' small emote-text</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CHAT_TYPE_BOSS_EMOTE</td>
+<td>'big yellow' emote-text displayed in the center of the screen</td>
+</tr>
+<tr>
+<td>4</td>
+<td>CHAT_TYPE_WHISPER</td>
+<td>whisper, needs a target</td>
+</tr>
+<tr>
+<td>5</td>
+<td>CHAT_TYPE_BOSS_WHISPER</td>
+<td>whipser, needs a target</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CHAT_TYPE_ZONE_YELL</td>
+<td>'red' text, displayed to everyone in the zone</td>
+</tr>
+<tr>
+<td>7</td>
+<td>CHAT_TYPE_ZONE_EMOTE</td>
+<td>'brown' zone-wide text emote</td>
+</tr>
+</tbody>
+</table>
+<h4 id="language">language</h4>
+<p><a href="Languages.dbc#Content">Language ID</a>.</p>
+<h4 id="emote">emote</h4>
+<p>Emote ID to play.</p>
+<h4 id="comment">comment</h4>
+<p>Description.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

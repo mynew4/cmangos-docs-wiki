@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Game event - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Game event";
+    var mkdocs_page_input_path = "DB-Structure/Core/game_event.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Game event</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96game95event96-table">The `game_event` table</h2>
+<p>This table is contains definitions for all game events that are activated or deactivated automatically by the Game Event System in the core.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Game_event#entry">entry</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Game_event#start_time">start_time</a></td>
+<td>timestamp</td>
+<td>NO</td>
+<td></td>
+<td>0000-00-00 00:00:00</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Game_event#end_time">end_time</a></td>
+<td>timestamp</td>
+<td>NO</td>
+<td></td>
+<td>0000-00-00 00:00:00</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Game_event#occurence">occurence</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>5184000</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Game_event#holiday">holiday</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Game_event#linkedTo">linkedTo</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Game_event#EventGroup">EventGroup</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Game_event#description">description</a></td>
+<td>varchar(255)</td>
+<td>YES</td>
+<td></td>
+<td>None</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="entry">entry</h4>
+<p>Entry of the event. Keep it as low as possible and prevent making holes in the list. Higher the max id is, the more memory will be used to store the event data.</p>
+<h4 id="start95time">start_time</h4>
+<p>Absolute start date of the event. The event will start occurring only if the local time at the server is after the one set here.</p>
+<h4 id="end95time">end_time</h4>
+<p>Absolute end date of the event. The event will stop occurring if the local time at the server is after the one set here.</p>
+<h4 id="occurence">occurence</h4>
+<p>Number of minutes between 2 occurrences of the event. (2880 = 2 days, 1440 = 1 day, etc)</p>
+<h4 id="length">length</h4>
+<p>Number of minutes the event will last after the start of the occurrence. (2880 = 2 days, 1440 = 1 day, etc) This value must be lower than occurrence one or the event will never stop.</p>
+<h4 id="holiday">holiday</h4>
+<p>Holiday ID from enum HolidayIds in SharedDefines.h</p>
+<h4 id="linkedto">linkedTo</h4>
+<p>Linked event which must be active for this event to be able to be activated.</p>
+<h4 id="eventgroup">EventGroup</h4>
+<p>Group of events, which are launched automatically daily(length=1440) or weekly(length=10080).</p>
+<h4 id="description">description</h4>
+<p>String containing the name of the event displayed in console each time it starts or stops.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

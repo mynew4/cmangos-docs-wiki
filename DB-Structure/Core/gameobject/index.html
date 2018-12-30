@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Gameobject - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Gameobject";
+    var mkdocs_page_input_path = "DB-Structure/Core/gameobject.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Gameobject</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96gameobject96-table">The `gameobject` table</h2>
+<p>This table holds the individual object data on each spawned game object in the world. This data along with the object's template data is read and used to instantiate the objects in the world.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Gameobject#guid">guid</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>None</td>
+<td>auto_increment</td>
+</tr>
+<tr>
+<td><a href="Gameobject#id">id</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#map">map</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#spawnmask">spawnMask</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#phasemask">phaseMask</a></td>
+<td>smallint(5) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#position_x">position_x</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#position_y">position_y</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#position_z">position_z</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#orientation">orientation</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#rotation0">rotation0</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#rotation1">rotation1</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#rotation2">rotation2</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#rotation3">rotation3</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#spawntimesecs">spawntimesecs</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#animprogress">animprogress</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Gameobject#state">state</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="guid">guid</h4>
+<p>The global unique identifier for the game object. This field must be unique among all game objects.</p>
+<h4 id="id">id</h4>
+<p>The template ID of the gameobject. See <a href="gameobject_template#entry">gameobject_template.entry</a></p>
+<h4 id="map">map</h4>
+<p>The map ID where this object is spawned. See <a href="Map.dbc">Map.dbc</a></p>
+<h4 id="spawnmask">spawnMask</h4>
+<p>Controls under which difficulties the object is spawned. Combine value to get wished case.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Not spawned</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Spawned only in normal versions of maps (includes maps without additional difficulty modes)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Spawned only in difficulty = 1 versions of maps (mostly heroic)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Spawned only in difficulty = 2 versions of maps</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Spawned only in difficulty = 3 versions of maps</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Spawned in all versions of maps</td>
+</tr>
+</tbody>
+</table>
+<h4 id="phasemask">phaseMask</h4>
+<p>Controls what phase gameobject is at. 1=default phase. Phase masks are got from Aura 261 effect ( (Aura #261) (4) ) = phasemask = 4.</p>
+<h4 id="position95x">position_x</h4>
+<p>The X position.</p>
+<h4 id="position95y">position_y</h4>
+<p>The Y position.</p>
+<h4 id="position95z">position_z</h4>
+<p>The Z position.</p>
+<h4 id="orientation">orientation</h4>
+<p>The orientation. (North = 0, South = 3.14159)</p>
+<h4 id="rotation0">rotation0</h4>
+<p>GameObject Rotation: X:</p>
+<h4 id="rotation1">rotation1</h4>
+<p>GameObject Rotation: Y:</p>
+<h4 id="rotation2">rotation2</h4>
+<p>GameObject Rotation: Z:</p>
+<h4 id="rotation3">rotation3</h4>
+<p>GameObject Rotation: W:</p>
+<h4 id="spawntimesecs">spawntimesecs</h4>
+<p>Time in seconds for this object to respawn.</p>
+<p>Using a negative value will result in the object starting out by being "despawned" until a script will spawn it. It will then despawn after the amount of time specified here has passed.</p>
+<h4 id="animprogress">animprogress</h4>
+<p>Not really known what this is used for at this time. However, always set it to 100 for chests.</p>
+<h4 id="state">state</h4>
+<p>Only for chests.</p>
+<ul>
+<li>1 = closed</li>
+<li>0 = open</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

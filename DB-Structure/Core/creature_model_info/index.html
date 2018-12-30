@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Creature model info - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Creature model info";
+    var mkdocs_page_input_path = "DB-Structure/Core/creature_model_info.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Creature model info</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96creature95model95info96-table">The `creature_model_info` table</h2>
+<p>This table contains all models of mobs, their gender and other information that are model related. This means that when a creature uses another model, this information will change as well.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Creature_model_info#modelid">modelid</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Creature_model_info#bounding_radius">bounding_radius</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Creature_model_info#combat_reach">combat_reach</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Creature_model_info#SpeedWalk">SpeedWalk</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Creature_model_info#SpeedRun">SpeedRun</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>1.14286</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Creature_model_info#gender">gender</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Creature_model_info#modelid_other_gender">modelid_other_gender</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Creature_model_info#modelid_alternative">modelid_alternative</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="modelid">modelid</h4>
+<p>Display ID from CreatureDisplayInfo.dbc</p>
+<h4 id="bounding95radius">bounding_radius</h4>
+<p>A field scaled with size.
+Might or might not have any relation to some radius of a bowl enclosing the creature.
+Currently badly used in the above suggested way in some cases, which is false in general.</p>
+<h4 id="combat95reach">combat_reach</h4>
+<p>This is an additional distance that is added to range of attacks (both melee and spells) to check if an attack can reach the enemy.</p>
+<h4 id="speedwalk">SpeedWalk</h4>
+<p>This Field Controls How Fast An NPC Moves When Walking. This speed can be overridden by setting another value in <a href="creature_template#SpeedWalk">creature_template.SpeedWalk</a>.</p>
+<p>This Value Comes From Sniff Packet Data.</p>
+<p>Divide sniffed value with 2.5.
+Example: Sniffed WalkSpeed for a specific creature is 5. Divide it by 2.5 to get our DB value.
+5/2.5=2</p>
+<p>(Default Value Is: 1)</p>
+<h4 id="speedrun">SpeedRun</h4>
+<p>This Field Controls How Fast An NPC Moves When Running. This speed can be overridden by setting another value in <a href="creature_template#SpeedRun">creature_template.SpeedRun</a>.</p>
+<p>This Value Comes From Sniff Packet Data.</p>
+<p>Divide sniffed value with 7.
+Example: Sniffed RunSpeed for a specific creature is 10. Divide it by 7 to get our DB value.
+10/7=1,42857</p>
+<p>(Default Value Is: 1.14286)</p>
+<h4 id="gender">gender</h4>
+<p>Gender of the creature</p>
+<ul>
+<li>0: Male</li>
+<li>1: Female</li>
+<li>2: None</li>
+</ul>
+<h4 id="modelid95other95gender">modelid_other_gender</h4>
+<p>Point to <a href="Creature_model_info#modelid">Creature_model_info.modelid</a>. When the entry is gender male (0) or female (1), this value can point to the display id of the other gender.</p>
+<h3 id="modelid95alternative">modelid_alternative</h3>
+<p>Alternative to the current model.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

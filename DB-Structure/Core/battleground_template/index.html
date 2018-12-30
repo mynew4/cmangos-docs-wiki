@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Battleground template - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Battleground template";
+    var mkdocs_page_input_path = "DB-Structure/Core/battleground_template.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Battleground template</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96battleground95template96-table">The `battleground_template` table</h2>
+<p>Contains information about the different battlegrounds, like how many players are needed to start, how many can be inside the same one, and the locations where each side starts.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Battleground_template#id">id</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Battleground_template#minplayersperteam">MinPlayersPerTeam</a></td>
+<td>smallint(5) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Battleground_template#maxplayersperteam">MaxPlayersPerTeam</a></td>
+<td>smallint(5) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Battleground_template#alliancestartloc">AllianceStartLoc</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Battleground_template#alliancestarto">AllianceStartO</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Battleground_template#hordestartloc">HordeStartLoc</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Battleground_template#hordestarto">HordeStartO</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="id">id</h4>
+<p>The battleground ID. See BattlemasterList.dbc</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alterac Valley</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Warsong Gulch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Arathi Basin</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Nagrand Arena</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Blade's Edge Arena</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Nagrand Arena</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Eye of the Storm</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Ruins of Lordaeron</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Strand of the Ancients</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Dalaran Sewers</td>
+</tr>
+<tr>
+<td>11</td>
+<td>The Ring of Valor</td>
+</tr>
+</tbody>
+</table>
+<h4 id="minplayersperteam">MinPlayersPerTeam</h4>
+<p>Controls the minimum number of players that need to join the battleground on each faction side for the battleground to start. For the battleground to start, all characters (between min and max player values) must be in the same tier. Tiers are set up in ranges of 10 levels except for level 70. So the first tier is 10-19, the next are 20-29, 30-39, 40-49, 50-59, 60-69, and finally 70. If characters of different tiers all join the queue, they will join their respective tier's queue and wait for more players of their tier to join the queue. Characters in different tiers can never join the same battleground.</p>
+<h4 id="maxplayersperteam">MaxPlayersPerTeam</h4>
+<p>Controls how many players from each team can join the battleground.
+NOTE2: If left to be 0, mangos will use the default DBC value.</p>
+<h4 id="minlvl">MinLvl</h4>
+<p>The minimum level that players need to be in order to join the battleground.
+NOTE: If left to be 0, mangos will use the default DBC value.</p>
+<h4 id="maxlvl">MaxLvl</h4>
+<p>The maximum level that players can be to enter the battleground.
+NOTE: If left to be 0, mangos will use the default DBC value.</p>
+<h4 id="alliancestartloc">AllianceStartLoc</h4>
+<p>The location where the alliance players get teleported to when the battleground first starts. See <a href="WorldSafeLocs.dbc">WorldSafeLocs.dbc</a></p>
+<h4 id="alliancestarto">AllianceStartO</h4>
+<p>The orientation of the alliance players upon teleport into the battleground. North is 0, south is Pi (3.14159).</p>
+<h4 id="hordestartloc">HordeStartLoc</h4>
+<p>The location where the horde players get teleported to when the battleground first starts. See <a href="WorldSafeLocs.dbc">WorldSafeLocs.dbc</a></p>
+<h4 id="hordestarto">HordeStartO</h4>
+<p>The orientation of the horde players upon teleport into the battleground. North is 0, south is Pi (3.14159).</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

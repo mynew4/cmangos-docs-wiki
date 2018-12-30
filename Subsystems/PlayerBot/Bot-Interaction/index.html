@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Bot Interaction - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Bot Interaction";
+    var mkdocs_page_input_path = "Subsystems/PlayerBot/Bot-Interaction.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Bot Interaction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="bot-interaction">Bot Interaction</h1>
+<p>Your bots will interact with pretty much anything you do!</p>
+<h3 id="merchants">Merchants</h3>
+<p>If you talk to a vendor, your bots will sell trash items, and tell you anything else they can sell.
+They will also buy what you tell them to buy.</p>
+<h3 id="quest-givers">Quest Givers</h3>
+<p>If you talk to a questgiver, your bots know it, and watch to see if you take a quest.. if so they do too!</p>
+<h3 id="combat">Combat</h3>
+<p>If you fight they fight, if you take a taxi ... guess what?  They do too!
+Of course they better have the cash and know the location your going to!</p>
+<h3 id="pets">Pets</h3>
+<p>Hunters will automatically feed their pets and keep them happy.</p>
+<h3 id="socialize">Socialize</h3>
+<p>Bots will respond to you in tells, and other chat, as you interact with them.</p>
+<h1 id="gameobject-interaction-with-bots">Gameobject interaction with bots:</h1>
+<p>The bot(s) can interact with gameobjects. This is particularly useful, in order to complete 'gather' type
+  quests (e.g Milly's harvest in Northshire). The bot(s) can also harvest 'ore deposits' and 'herbs'</p>
+<p>Four commands have been introduced 'collect', 'survey, 'find' &amp; 'get', to facilitate this feature.</p>
+<p>The 'collect' command provides a way to have a bot automatically get loot or objects in the world.
+  The command by itself gives you a display of what settings the bots have. Defaults are stored in
+  the playerbot.conf. The subcommands do the actual work:
+    combat - bot will loot after combat for the options that are set
+    loot - bot will grab all loot available from corpse
+    quest - bot will grab all quest items on corpse
+    profession - bot will grab any profession related item that the bot has from corpse
+    skin - if you have skinning, and corpse has been looted, bot will skin corpse. Most of
+        the time you may want this option and the loot option enabled, but if you are grabbing
+        the stuff as you are going around, the bot will skin afterwards.
+    objects - bot will collect things that are specified by the survey and get <shift-click> commands
+    distance:<value> - bot will loot objects in the specified distance value
+    none - removes any collect options that have been set</p>
+<p>The 'survey' command provides the means for bot(s) to detect gameobjects in the world. It can be used to detect
+  available gameobjects local to a single bot, or more effectively (wider area) those for a party of bots.</p>
+<p>Suggestion: setup the 'survey' command as an assigned macro button, on the client (e.g /p survey). You can
+  then quickly refresh the gameobject list.</p>
+<p>Gameobject list [GAMEOBJECT LINK] (Currently bots can only interact with ore, herb and needed quest items)</p>
+<hr />
+<p>[Copper Vein][Silverleaf][Earthroot][Milly's Harvest][Battered Chest][Food Crate]</p>
+<p>Then, use the 'find' or 'get' commands to interect with the gameobject.</p>
+<p>Using the gameobject list information, it is possible to locate and/or fetch each of the gameobjects. To select
+  a [GAMEOBJECT LINK], hold down the shift key and click on the relevant link with your mouse.</p>
+<h1 id="creature-interaction-with-bots">Creature interaction with bots:</h1>
+<p>The bot(s) can now interact directly with creatures. This will enable bot(s) to independently contact NPCs, without
+  the need for player's selection. This opens up new possiblities for bot/NPC commerce.</p>
+<p>Each bot will maintain it's own item list (m_itemIds - This is a list of paired data). The first component (UNIT_NPC_FLAG)
+  dictates what is to done with the second component (itemid).</p>
+<p>Each bot will also maintain it's own active auction list (m_auctions - This is a list of paired data). The first component
+  (ActionFlags) dictates the action to be performed on the second component (auctionid).</p>
+<p>While(m_itemIds not empty)
+  {
+      bot will scan for surrounding creatures (findNearbyCreature()) who can service m_itemIds
+      if(found)
+          Search is carried out for all itemids that can be processed by this creature.
+          if(processed successfully)
+              This instance of the data pair (npcflag,itemid) will be removed from m_itemIds
+              While(m_auctions not empty)
+                  process contained auctionids according to ActionFlag &amp; then update m_auctions
+  }</p>
+<p>Please note that bot(s) m_itemIds &amp; m_auctions will be emptied, when bot(s) are dismissed.</p>
+<h1 id="repair-with-bots">Repair with bots:</h1>
+<p>Bot can now repair <all or selected> items - equipped or in bags. If the bot is
+  a member of a guild, then the guild fund is used for repairs. If not, the bots own
+  gold supply is used. If the bot cannot pay for the repair, they remain damaged.</p>
+<p>The new 'stats' command provides useful information to help in the repair decision.</p>
+<p>First: Money available to bot(s)
+  Second: Free inventory slots for bot(s)
+  Third: Estimated (excludes NPC reputation discount) item damage cost for bot(s).</p>
+<h1 id="trading-with-bots">Trading with bots:</h1>
+<p>To trade items/money with your bot simply initiate a trade and the bot will tell you how much money and items are available. To request an item simple whisper the bot and shift click the link of the item you would like. You can link multiple items on the same line. You can also request money in the following manner when the trade window is open:
+/w BOTNAME 10g &lt;-- request that the bot give you 10 gold
+/w BOTNAME 6g500s25c &lt;-- request 6 gold, 500 silver, and 25 copper</p>
+<p>A bot is also able to show an item in its 'Will not be traded' slot. The item can be either
+in its bags or be equipped and even be soulbound. Using this you can cast spells/enchantments
+on soulbound items ('nt' stands for 'not trading').
+/w BOTNAME nt [Enchantable Soulbound Item]</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

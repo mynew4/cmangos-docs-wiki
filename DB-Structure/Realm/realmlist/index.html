@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Realmlist - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Realmlist";
+    var mkdocs_page_input_path = "DB-Structure/Realm/realmlist.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Realmlist</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="realmdb_struct">realm database</a> list of tables.</p>
+<h2 id="the-96realmlist96-table">The `realmlist` table</h2>
+<p>This table sets up information on all available realms. Each row controls a different realm.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Realmlist#id">id</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td></td>
+<td>auto_increment</td>
+</tr>
+<tr>
+<td><a href="Realmlist#name">name</a></td>
+<td>varchar(32)</td>
+<td>NO</td>
+<td>UNI</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Realmlist#address">address</a></td>
+<td>varchar(32)</td>
+<td>NO</td>
+<td></td>
+<td>127.0.0.1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Realmlist#port">port</a></td>
+<td>int(11)</td>
+<td>NO</td>
+<td></td>
+<td>8085</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Realmlist#icon">icon</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Realmlist#color">color</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Realmlist#timezone">timezone</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Realmlist#allowedsecuritylevel">allowedSecurityLevel</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Realmlist#population">population</a></td>
+<td>float unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="id">id</h4>
+<p>The realm ID. This number is unique for every realm and it MUST correlate with the RealmID configuration value in mangosd.conf.</p>
+<h4 id="name">name</h4>
+<p>The name of the realm. This will appear in the realm selection list as well as in the character selection screen.</p>
+<h4 id="address">address</h4>
+<p>The public IP address of the world server. DO NOT use localhost or 127.0.0.1 in this field as this will cause a loop.</p>
+<h4 id="port">port</h4>
+<p>The port that the world server is running on. If all world servers are on the same machine, they will all need to use a different port.</p>
+<h4 id="icon">icon</h4>
+<p>The icon of the realm.</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>1</td>
+<td>PvP</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>6</td>
+<td>RP</td>
+</tr>
+<tr>
+<td>8</td>
+<td>RP PvP</td>
+</tr>
+</tbody>
+</table>
+<h4 id="color">color</h4>
+<p>The color denoting how "full" you want the realm to be displayed as.</p>
+<h4 id="timezone">timezone</h4>
+<p>The realm timezone, it will be displayed in the tabs of the realmlist</p>
+<table>
+<thead>
+<tr>
+<th>timezone</th>
+<th>displayed name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Development</td>
+</tr>
+<tr>
+<td>2</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Oceanic</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Latin America</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Tournament</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Korea</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Tournament</td>
+</tr>
+<tr>
+<td>8</td>
+<td>English</td>
+</tr>
+<tr>
+<td>9</td>
+<td>German</td>
+</tr>
+<tr>
+<td>10</td>
+<td>French</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Spanish</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Russian</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Tournament</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Taiwan</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Tournament</td>
+</tr>
+<tr>
+<td>16</td>
+<td>China</td>
+</tr>
+<tr>
+<td>17</td>
+<td>CN1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>CN2</td>
+</tr>
+<tr>
+<td>19</td>
+<td>CN3</td>
+</tr>
+<tr>
+<td>20</td>
+<td>CN4</td>
+</tr>
+<tr>
+<td>21</td>
+<td>CN5</td>
+</tr>
+<tr>
+<td>22</td>
+<td>CN6</td>
+</tr>
+<tr>
+<td>23</td>
+<td>CN7</td>
+</tr>
+<tr>
+<td>24</td>
+<td>CN8</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Tournament</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Test Server</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Tournament</td>
+</tr>
+<tr>
+<td>28</td>
+<td>QA Server</td>
+</tr>
+<tr>
+<td>29</td>
+<td>CN9</td>
+</tr>
+</tbody>
+</table>
+<h4 id="allowedsecuritylevel">allowedSecurityLevel</h4>
+<p>The minimum account <a href="account#gmlevel">gmlevel</a> required for accounts to log in to this realm.</p>
+<h4 id="population">population</h4>
+<p>This field is automatically updated at regular intervals and will have the current population. The formula to calculate the value in this field is: playerCount / maxPlayerCount * 2. In the realm list in-game, the thresholds for low, medium, and high population are 0.5, 1.0, and 2.0 respectively.</p>
+<p><a href="Category">Category: Realm database tables</a>: Realm database tables</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

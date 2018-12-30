@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Questcache - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Questcache";
+    var mkdocs_page_input_path = "File-Formats/Client/WDB_structure/Questcache.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Questcache</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="wdb_files">wdb files</a> list.</p>
+<h3 id="96questcache96-wdb">`questcache` wdb</h3>
+<p>This wdb contains some information of seen quests.</p>
+<p><strong>Version is : 3.3.5a</strong></p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entry</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>QuestLevel</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>MinLevel</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ZoneOrSort</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>SuggestedPlayers</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RepObjectiveFaction1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RepObjectiveValue1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RepObjectiveFaction2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RepObjectiveValue2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>NextQuestInChain</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>Unk1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RewOrReqMoney</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RewMoneyMaxLevel</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewSpell</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewSpellCast</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewHonorAddition</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewHonorMultiplier</td>
+<td>float</td>
+</tr>
+<tr>
+<td>SrcItemId</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>QuestFlags</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>CharTitleId</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>PlayersSlain</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>BonusTalents</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>BonusArenaPoints</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>Unk2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RewItemId1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewItemCount1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewItemId2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewItemCount2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewItemId3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewItemCount3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewItemId4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewItemCount4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemId1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemCount1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemId2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemCount2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemId3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemCount3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemId4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemCount4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemId5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemCount5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemId6</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RewChoiceItemCount6</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepFaction1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepFaction2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepFaction3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepFaction4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepFaction5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepFactionValId1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RawRepFactionVal2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RawRepFactionVal3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RawRepFactionVal4</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RawRepFactionVal5</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>RawRepValue1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepValue2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepValue3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepValue4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>RawRepValue5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>PointMapId</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>PointX</td>
+<td>float</td>
+</tr>
+<tr>
+<td>PointY</td>
+<td>float</td>
+</tr>
+<tr>
+<td>Unk3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Objectives</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Details</td>
+<td>String</td>
+</tr>
+<tr>
+<td>ToDoText</td>
+<td>String</td>
+</tr>
+<tr>
+<td>EndText</td>
+<td>String</td>
+</tr>
+<tr>
+<td>ReqCreatureOrGOId1</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>ReqCreatureOrGOCount1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqSourceId1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqSourceIdMaxCount1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqCreatureOrGOId2</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>ReqCreatureOrGOCount2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqSourceId2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqSourceIdMaxCount2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqCreatureOrGOId3</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>ReqCreatureOrGOCount3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqSourceId3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqSourceIdMaxCount3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqCreatureOrGOId4</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>ReqCreatureOrGOCount4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqSourceId4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqSourceIdMaxCount4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemId1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemCount1</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemId2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemCount2</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemId3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemCount3</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemId4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemCount4</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemId5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemCount5</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemId6</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ReqItemCount6</td>
+<td>UInteger</td>
+</tr>
+<tr>
+<td>ObjectiveText1</td>
+<td>String</td>
+</tr>
+<tr>
+<td>ObjectiveText2</td>
+<td>String</td>
+</tr>
+<tr>
+<td>ObjectiveText3</td>
+<td>String</td>
+</tr>
+<tr>
+<td>ObjectiveText4</td>
+<td>String</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

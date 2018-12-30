@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Spell proc event - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Spell proc event";
+    var mkdocs_page_input_path = "DB-Structure/Core/spell_proc_event.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Spell proc event</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96spell95proc95event96-table">The `spell_proc_event` table</h2>
+<p>holds information on how certain spells activate, which proc other spells.</p>
+<p>All spells in this table must have <strong>Aura Id 42 (SPELL_AURA_PROC_TRIGGER_SPELL)</strong> as one of its <strong>Effects</strong>.</p>
+<p>Any entries in this table will overwrite the existing proc settings for this <a href="spell_template">spell_template#id</a>.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="spell_proc_event#entry">entry</a></td>
+<td>smallint(6) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="spell_proc_event#schoolmask">SchoolMask</a></td>
+<td>tinyint(4)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="spell_proc_event#spellfamilyname">SpellFamilyName</a></td>
+<td>smallint(6) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="spell_proc_event#spellfamilymask">SpellFamilyMask</a></td>
+<td>bigint(40) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td>Different Setup through Expansions</td>
+</tr>
+<tr>
+<td><a href="spell_proc_event#procflags">procFlags</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="spell_proc_event#procex">procEx</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="spell_proc_event#ppmrate">ppmRate</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="spell_proc_event#customchance">CustomChance</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="spell_proc_event#cooldown">Cooldown</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="entry">entry</h4>
+<p>The spell ID that is capable to proc on an event.</p>
+<h4 id="schoolmask">SchoolMask</h4>
+<p>This field contains a bitmask that controls on what types of spell damages the proc can be triggered. For example if an aura procs only when the unit it is casted upon is hit by shadow spells (spell 34914). To combine spell schools, just add the bit values.</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Hex</th>
+<th>School Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0x01</td>
+<td>SPELL_SCHOOL_NORMAL</td>
+<td>Physical Damage</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x02</td>
+<td>SPELL_SCHOOL_HOLY</td>
+<td>Holy Damage</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x04</td>
+<td>SPELL_SCHOOL_FIRE</td>
+<td>Fire Damage</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x08</td>
+<td>SPELL_SCHOOL_NATURE</td>
+<td>Nature Damage</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x10</td>
+<td>SPELL_SCHOOL_FROST</td>
+<td>Frost Damage</td>
+</tr>
+<tr>
+<td>32</td>
+<td>0x20</td>
+<td>SPELL_SCHOOL_SHADOW</td>
+<td>Shadow Damage</td>
+</tr>
+<tr>
+<td>64</td>
+<td>0x40</td>
+<td>SPELL_SCHOOL_ARCANE</td>
+<td>Arcane Damage</td>
+</tr>
+</tbody>
+</table>
+<h4 id="spellfamilyname">SpellFamilyName</h4>
+<p>This field controls what family name spells can proc the triggered spell.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Family Name</th>
+<th>ID</th>
+<th>Family Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Generic</td>
+<td>9</td>
+<td>Hunter</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Mage</td>
+<td>10</td>
+<td>Paladin</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Warrior</td>
+<td>11</td>
+<td>Shaman</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Warlock</td>
+<td>13</td>
+<td>Potion</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Priest</td>
+<td>15</td>
+<td>Death Knight</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Druid</td>
+<td>53</td>
+<td>Monk</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Rogue</td>
+<td>107</td>
+<td>Demon Hunter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="spellfamilymask">SpellFamilyMask</h4>
+<p>These fields control what spells' family flags can proc the triggered spell.</p>
+<h4 id="procflags">procFlags</h4>
+<p>A bitmask controlling what events trigger the spell. To combine possible events, add the proc bits together.</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Hex</th>
+<th>ProcFlag Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0x00000000</td>
+<td>PROC_FLAG_NONE</td>
+<td>always?</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0x00000001</td>
+<td>PROC_FLAG_KILLED</td>
+<td>Killed by aggressor</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x00000002</td>
+<td>PROC_FLAG_KILL</td>
+<td>Kill target (in most cases need XP/Honor reward, see Unit::IsTriggeredAtSpellProcEvent for additinoal check)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x00000004</td>
+<td>PROC_FLAG_SUCCESSFUL_MELEE_HIT</td>
+<td>Successful melee auto attack</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x00000008</td>
+<td>PROC_FLAG_TAKEN_MELEE_HIT</td>
+<td>Taken damage from melee auto attack hit</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x00000010</td>
+<td>PROC_FLAG_SUCCESSFUL_MELEE_SPELL_HIT</td>
+<td>Successful attack by Spell that use melee weapon</td>
+</tr>
+<tr>
+<td>32</td>
+<td>0x00000020</td>
+<td>PROC_FLAG_TAKEN_MELEE_SPELL_HIT</td>
+<td>Taken damage by Spell that use melee weapon</td>
+</tr>
+<tr>
+<td>64</td>
+<td>0x00000040</td>
+<td>PROC_FLAG_SUCCESSFUL_RANGED_HIT</td>
+<td>Successful Ranged auto attack</td>
+</tr>
+<tr>
+<td>128</td>
+<td>0x00000080</td>
+<td>PROC_FLAG_TAKEN_RANGED_HIT</td>
+<td>Taken damage from ranged auto attack</td>
+</tr>
+<tr>
+<td>256</td>
+<td>0x00000100</td>
+<td>PROC_FLAG_SUCCESSFUL_RANGED_SPELL_HIT</td>
+<td>Successful Ranged attack by Spell that use ranged weapon</td>
+</tr>
+<tr>
+<td>512</td>
+<td>0x00000200</td>
+<td>PROC_FLAG_TAKEN_RANGED_SPELL_HIT</td>
+<td>Taken damage by Spell that use ranged weapon</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>0x00000400</td>
+<td>PROC_FLAG_DONE_SPELL_NONE_DMG_CLASS_POS</td>
+<td>Done positive spell that has dmg class none</td>
+</tr>
+<tr>
+<td>2048</td>
+<td>0x00000800</td>
+<td>PROC_FLAG_TAKEN_SPELL_NONE_DMG_CLASS_POS</td>
+<td>Taken positive spell that has dmg class none</td>
+</tr>
+<tr>
+<td>4096</td>
+<td>0x00001000</td>
+<td>PROC_FLAG_DONE_SPELL_NONE_DMG_CLASS_NEG</td>
+<td>Done negative spell that has dmg class none</td>
+</tr>
+<tr>
+<td>8192</td>
+<td>0x00002000</td>
+<td>PROC_FLAG_TAKEN_SPELL_NONE_DMG_CLASS_NEG</td>
+<td>Taken negative spell that has dmg class none</td>
+</tr>
+<tr>
+<td>16384</td>
+<td>0x00004000</td>
+<td>PROC_FLAG_DONE_SPELL_MAGIC_DMG_CLASS_POS</td>
+<td>Successful cast positive spell (by default only on healing)</td>
+</tr>
+<tr>
+<td>32768</td>
+<td>0x00008000</td>
+<td>PROC_FLAG_TAKEN_SPELL_MAGIC_DMG_CLASS_POS</td>
+<td>Taken positive spell hit (by default only on healing)</td>
+</tr>
+<tr>
+<td>65536</td>
+<td>0x00010000</td>
+<td>PROC_FLAG_DONE_SPELL_MAGIC_DMG_CLASS_NEG</td>
+<td>Successful negative spell cast (by default only on damage)</td>
+</tr>
+<tr>
+<td>131072</td>
+<td>0x00020000</td>
+<td>PROC_FLAG_TAKEN_SPELL_MAGIC_DMG_CLASS_NEG</td>
+<td>Taken negative spell (by default only on damage)</td>
+</tr>
+<tr>
+<td>262144</td>
+<td>0x00040000</td>
+<td>PROC_FLAG_ON_DO_PERIODIC</td>
+<td>Successful do periodic (damage / healing, determined by PROC_EX_PERIODIC_POSITIVE or negative if no procEx)</td>
+</tr>
+<tr>
+<td>524288</td>
+<td>0x00080000</td>
+<td>PROC_FLAG_ON_TAKE_PERIODIC</td>
+<td>Taken spell periodic (damage / healing, determined by PROC_EX_PERIODIC_POSITIVE or negative if no procEx)</td>
+</tr>
+<tr>
+<td>1048576</td>
+<td>0x00100000</td>
+<td>PROC_FLAG_TAKEN_ANY_DAMAGE</td>
+<td>Taken any damage</td>
+</tr>
+<tr>
+<td>2097152</td>
+<td>0x00200000</td>
+<td>PROC_FLAG_ON_TRAP_ACTIVATION</td>
+<td>On trap activation</td>
+</tr>
+<tr>
+<td>4194304</td>
+<td>0x00400000</td>
+<td>PROC_FLAG_TAKEN_OFFHAND_HIT</td>
+<td>Taken off-hand melee attacks(not used)</td>
+</tr>
+<tr>
+<td>8388608</td>
+<td>0x00800000</td>
+<td>PROC_FLAG_SUCCESSFUL_OFFHAND_HIT</td>
+<td>Successful off-hand melee attacks</td>
+</tr>
+</tbody>
+</table>
+<h4 id="procex">procEx</h4>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Hex</th>
+<th>ProcEx Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0x0000000</td>
+<td>PROC_EX_NONE</td>
+<td>If none can trigger on Hit/Crit only (passive spells MUST defined by SpellFamily flag)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0x0000001</td>
+<td>PROC_EX_NORMAL_HIT</td>
+<td>If set only from normal hit (only damage spells)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x0000002</td>
+<td>PROC_EX_CRITICAL_HIT</td>
+<td>only on crit</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x0000004</td>
+<td>PROC_EX_MISS</td>
+<td>only on miss</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x0000008</td>
+<td>PROC_EX_RESIST</td>
+<td>only on resist</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x0000010</td>
+<td>PROC_EX_DODGE</td>
+<td>only on dodge</td>
+</tr>
+<tr>
+<td>32</td>
+<td>0x0000020</td>
+<td>PROC_EX_PARRY</td>
+<td>only on parry</td>
+</tr>
+<tr>
+<td>64</td>
+<td>0x0000040</td>
+<td>PROC_EX_BLOCK</td>
+<td>only on block</td>
+</tr>
+<tr>
+<td>128</td>
+<td>0x0000080</td>
+<td>PROC_EX_EVADE</td>
+<td>only on evade</td>
+</tr>
+<tr>
+<td>256</td>
+<td>0x0000100</td>
+<td>PROC_EX_IMMUNE</td>
+<td>only on immune</td>
+</tr>
+<tr>
+<td>512</td>
+<td>0x0000200</td>
+<td>PROC_EX_DEFLECT</td>
+<td>only on deflect</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>0x0000400</td>
+<td>PROC_EX_ABSORB</td>
+<td>only on absorb</td>
+</tr>
+<tr>
+<td>2048</td>
+<td>0x0000800</td>
+<td>PROC_EX_REFLECT</td>
+<td>only on reflect</td>
+</tr>
+<tr>
+<td>4096</td>
+<td>0x0001000</td>
+<td>PROC_EX_INTERRUPT</td>
+<td>Melee hit result can be Interrupt (not used)</td>
+</tr>
+<tr>
+<td>8192</td>
+<td>0x0002000</td>
+<td>PROC_EX_RESERVED1</td>
+<td>UNUSED</td>
+</tr>
+<tr>
+<td>16384</td>
+<td>0x0004000</td>
+<td>PROC_EX_RESERVED2</td>
+<td>UNUSED</td>
+</tr>
+<tr>
+<td>32768</td>
+<td>0x0008000</td>
+<td>PROC_EX_RESERVED3</td>
+<td>UNUSED</td>
+</tr>
+<tr>
+<td>65536</td>
+<td>0x0010000</td>
+<td>PROC_EX_EX_TRIGGER_ALWAYS</td>
+<td>If set trigger always ( no matter another flags) used for drop charges</td>
+</tr>
+<tr>
+<td>131072</td>
+<td>0x0020000</td>
+<td>PROC_EX_EX_ONE_TIME_TRIGGER</td>
+<td>If set trigger always but only one time (not used)</td>
+</tr>
+<tr>
+<td>262144</td>
+<td>0x0040000</td>
+<td>PROC_EX_PERIODIC_POSITIVE</td>
+<td>For periodic heal</td>
+</tr>
+<tr>
+<td>524288</td>
+<td>0x0080000</td>
+<td>PROC_EX_MAGNET</td>
+<td>For grounding totem hit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ppmrate">ppmRate</h4>
+<p>This field controls the times per minute that the spell should proc. If zero, then the value is taken from the DBC entry.</p>
+<h4 id="customchance">CustomChance</h4>
+<p>Changed Proc Chance from spell_template information</p>
+<h4 id="cooldown">Cooldown</h4>
+<p>Internal Cooldown</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

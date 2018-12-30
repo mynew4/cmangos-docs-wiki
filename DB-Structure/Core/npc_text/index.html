@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Npc text - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Npc text";
+    var mkdocs_page_input_path = "DB-Structure/Core/npc_text.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Npc text</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96npc95text96-table">The `npc_text` table</h2>
+<p>This table contains the texts that are used for gossip. More research needs to be done on this table.
+Text is showed in start of talk window.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Npc_text#id">ID</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text0_0">text0_0</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text0_1">text0_1</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#lang0">lang0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#prob0">prob0</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em0_0">em0_0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em0_1">em0_1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em0_2">em0_2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em0_3">em0_3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em0_4">em0_4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em0_5">em0_5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text1_0">text1_0</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text1_1">text1_1</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#lang1">lang1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#prob1">prob1</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em1_0">em1_0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em1_1">em1_1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em1_2">em1_2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em1_3">em1_3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em1_4">em1_4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em1_5">em1_5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text2_0">text2_0</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text2_1">text2_1</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#lang2">lang2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#prob2">prob2</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em2_0">em2_0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em2_1">em2_1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em2_2">em2_2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em2_3">em2_3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em2_4">em2_4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em2_5">em2_5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text3_0">text3_0</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text3_1">text3_1</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#lang3">lang3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#prob3">prob3</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em3_0">em3_0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em3_1">em3_1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em3_2">em3_2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em3_3">em3_3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em3_4">em3_4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em3_5">em3_5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text4_0">text4_0</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text4_1">text4_1</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#lang4">lang4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#prob4">prob4</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em4_0">em4_0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em4_1">em4_1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em4_2">em4_2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em4_3">em4_3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em4_4">em4_4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em4_5">em4_5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text5_0">text5_0</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text5_1">text5_1</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#lang5">lang5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#prob5">prob5</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em5_0">em5_0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em5_1">em5_1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em5_2">em5_2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em5_3">em5_3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em5_4">em5_4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em5_5">em5_5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text6_0">text6_0</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text6_1">text6_1</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#lang6">lang6</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#prob6">prob6</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em6_0">em6_0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em6_1">em6_1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em6_2">em6_2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em6_3">em6_3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em6_4">em6_4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em6_5">em6_5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text7_0">text7_0</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#text7_1">text7_1</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#lang7">lang7</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#prob7">prob7</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em7_0">em7_0</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em7_1">em7_1</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em7_2">em7_2</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em7_3">em7_3</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em7_4">em7_4</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Npc_text#em7_5">em7_5</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="id">ID</h4>
+<p>This is the ID of the text entry. This ID comes from WDB cache. (First initialized to database from Blizzard WDB cache)</p>
+<h4 id="text0950">text0_0</h4>
+<p>This is the locale text that is displayed if the NPC is a male.</p>
+<h4 id="text0951">text0_1</h4>
+<p>This is the locale text that is displayed if the NPC is a female.</p>
+<h4 id="lang0">lang0</h4>
+<p>The language of the text in game (post list of possible values)</p>
+<h4 id="prob0">prob0</h4>
+<p>This is the probability that the NPC will say this text</p>
+<ul>
+<li>1 means always.</li>
+</ul>
+<h4 id="em0950">em0_0</h4>
+<p>emX_[0,2,6] - Delay for emote 1,2,3
+emX_[1,3,5] - EmoteID 1,2,3</p>
+<h4 id="em0951">em0_1</h4>
+<p>Emote on ?</p>
+<h4 id="em0952">em0_2</h4>
+<p>Emote on ?</p>
+<h4 id="em0953">em0_3</h4>
+<p>Emote on ?</p>
+<h4 id="em0954">em0_4</h4>
+<p>Emote on ?</p>
+<h4 id="em0955">em0_5</h4>
+<p>Emote on ?</p>
+<h4 id="text1950">text1_0</h4>
+<h4 id="text1951">text1_1</h4>
+<h4 id="lang1">lang1</h4>
+<h4 id="prob1">prob1</h4>
+<h4 id="em1950">em1_0</h4>
+<h4 id="em1951">em1_1</h4>
+<h4 id="em1952">em1_2</h4>
+<h4 id="em1953">em1_3</h4>
+<h4 id="em1954">em1_4</h4>
+<h4 id="em1955">em1_5</h4>
+<h4 id="text2950">text2_0</h4>
+<h4 id="text2951">text2_1</h4>
+<h4 id="lang2">lang2</h4>
+<h4 id="prob2">prob2</h4>
+<h4 id="em2950">em2_0</h4>
+<h4 id="em2951">em2_1</h4>
+<h4 id="em2952">em2_2</h4>
+<h4 id="em2953">em2_3</h4>
+<h4 id="em2954">em2_4</h4>
+<h4 id="em2955">em2_5</h4>
+<h4 id="text3950">text3_0</h4>
+<h4 id="text3951">text3_1</h4>
+<h4 id="lang3">lang3</h4>
+<h4 id="prob3">prob3</h4>
+<h4 id="em3950">em3_0</h4>
+<h4 id="em3951">em3_1</h4>
+<h4 id="em3952">em3_2</h4>
+<h4 id="em3953">em3_3</h4>
+<h4 id="em3954">em3_4</h4>
+<h4 id="em3955">em3_5</h4>
+<h4 id="text4950">text4_0</h4>
+<h4 id="text4951">text4_1</h4>
+<h4 id="lang4">lang4</h4>
+<h4 id="prob4">prob4</h4>
+<h4 id="em4950">em4_0</h4>
+<h4 id="em4951">em4_1</h4>
+<h4 id="em4952">em4_2</h4>
+<h4 id="em4953">em4_3</h4>
+<h4 id="em4954">em4_4</h4>
+<h4 id="em4955">em4_5</h4>
+<h4 id="text5950">text5_0</h4>
+<h4 id="text5951">text5_1</h4>
+<h4 id="lang5">lang5</h4>
+<h4 id="prob5">prob5</h4>
+<h4 id="em5950">em5_0</h4>
+<h4 id="em5951">em5_1</h4>
+<h4 id="em5952">em5_2</h4>
+<h4 id="em5953">em5_3</h4>
+<h4 id="em5954">em5_4</h4>
+<h4 id="em5955">em5_5</h4>
+<h4 id="text6950">text6_0</h4>
+<h4 id="text6951">text6_1</h4>
+<h4 id="lang6">lang6</h4>
+<h4 id="prob6">prob6</h4>
+<h4 id="em6950">em6_0</h4>
+<h4 id="em6951">em6_1</h4>
+<h4 id="em6952">em6_2</h4>
+<h4 id="em6953">em6_3</h4>
+<h4 id="em6954">em6_4</h4>
+<h4 id="em6955">em6_5</h4>
+<h4 id="text7950">text7_0</h4>
+<h4 id="text7951">text7_1</h4>
+<h4 id="lang7">lang7</h4>
+<h4 id="prob7">prob7</h4>
+<h4 id="em7950">em7_0</h4>
+<h4 id="em7951">em7_1</h4>
+<h4 id="em7952">em7_2</h4>
+<h4 id="em7953">em7_3</h4>
+<h4 id="em7954">em7_4</h4>
+<h4 id="em7955">em7_5</h4>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

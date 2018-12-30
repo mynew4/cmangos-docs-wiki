@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>MPQ File Format - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "MPQ File Format";
+    var mkdocs_page_input_path = "File-Formats/Client/Classic/MPQ-files.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>MPQ File Format</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mpq-file-format">MPQ File Format</h1>
+<h2 id="introduction">Introduction</h2>
+<p>All of the game data for WoW are stored in MPQ Archives. The format's capabilities include compression, encryption, file segmentation, extensible file metadata, cryptographic signature and the ability to store multiple versions of the same file for internationalization and platform-specific differences. MPQ archives can use a variety of compression algorithms which may also be combined.</p>
+<p>The definitive source for information on MPQ Files is <a href="http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format">http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format</a>.</p>
+<p>The following summary only includes facts relevant for 1.12.X Client versions</p>
+<h2 id="technical-overview">Technical overview</h2>
+<p>All numbers in the MPQ format are in little endian byte order; signed numbers use the two's complement system. Data types are listed either as int (integer, the number of bits specified), byte (8 bits), or char (bytes which contain ASCII characters). All sizes and offsets are in bytes, unless specified otherwise. Structure members are listed in the following general form: </p>
+<pre><code>offset from the beginning of the structure: data type(array size) member name : member description
+</code></pre>
+<h3 id="general-archive-layout">General Archive Layout</h3>
+<p>The physical layout of the files looks like this</p>
+<ul>
+<li>Archive Header</li>
+<li>File Data</li>
+<li>Hash Table</li>
+<li>Block Table</li>
+</ul>
+<p>In the following the components are discussed in the logical order of processing required to read and extract files from MPQ Archives</p>
+<h2 id="archive-header">Archive Header</h2>
+<p>Header size is 32 bytes, maximum archive size is 4 GB.</p>
+<pre><code>00h: char(4) Magic             Indicates that the file is a MPQ archive. Must be ASCII "MPQ" 1Ah.
+04h: int32 HeaderSize          Size of the archive header.
+08h: int32 ArchiveSize         Size of the whole archive, including the header. 
+0Ch: int16 FormatVersion       MPQ format version. 0000h for Classic WoW.
+0Eh: int8 SectorSizeShift      Power of two exponent specifying the number of 512-byte disk sectors in each logical sector 
+                               in the archive. The size of each logical sector in the archive is 512 * 2^SectorSizeShift. 
+                               Bugs in the Storm library dictate that this should always be 3 (4096 byte sectors).
+10h: int32 HashTableOffset     Offset to the beginning of the hash table, relative to the beginning of the archive.
+14h: int32 BlockTableOffset    Offset to the beginning of the block table, relative to the beginning of the archive.
+18h: int32 HashTableEntries    Number of entries in the hash table. Must be a power of two, and must be less than 2^16 
+1Ch: int32 BlockTableEntries   Number of entries in the block table.
+</code></pre>
+<h2 id="hash-table">Hash Table</h2>
+<p>The Hash Table serves as a quick means of filename lookup without having to go through string comparisons. For each file in the archive, the full path is hashed using a proprietary algorithm (for source see <a href="http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code">http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code</a>) resulting in three 32bit integers. The first of those hashes serves as primary lookup key for the Hash Table, the others are used for verification in case of a hash collision. In the case that two files have the same lookup key (hash collision), the first file is stored under that hash, and the second file is stored under the next free hash. So during lookup, if the second and third hash don't match, the algorithm goes down the list until it either finds a match of an empty entry.
+Each entry in the Hash Table looks like this:</p>
+<pre><code>00h: int32 FilePathHashA    The hash of the file path, using method A.
+04h: int32 FilePathHashB    The hash of the file path, using method B.
+08h: int16 Language         The language of the file. This is a Windows LANGID data type, and uses the same values. 
+                            0 indicates the default language (American English), or that the file is language-neutral.
+0Ah: int8 Platform          The platform the file is used for. 0 indicates the default platform. No other values 
+                            have been observed.
+0Ch: int32 FileBlockIndex   If the hash table entry is valid, this is the index into the block table of the file. 
+                            Otherwise, one of the following two values:
+    FFFFFFFFh               Hash table entry is empty, and has always been empty. Terminates searches for a given file.
+    FFFFFFFEh               Hash table entry is empty, but was valid at some point (in other words, the file was deleted). 
+                            Does not terminate searches for a given file
+</code></pre>
+<p>The Hash Table is encrypted using a proprietary encryption algorithm using "(hash table)" as key. The encryption algorithm is also documented at <a href="http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code">http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code</a></p>
+<h2 id="block-table">Block Table</h2>
+<p>The Block Table contains offsets into the File Data block for each File in the Archive. It also stores file attributes like compression or encryption. Hash Table FileBlockIndex points to entries in the Block Table. Like the Hash Table it is encrypted, using "(block table)" as key.
+Each Block Table entry looks like this:</p>
+<pre><code>00h: int32 BlockOffset   Offset of the beginning of the block, relative to the beginning of the archive.
+04h: int32 BlockSize     Size of the block in the archive.
+08h: int32 FileSize      Size of the file data stored in the block. If the file is compressed, this is the size of the uncompressed file data.
+0Ch: int32 Flags         Bit mask of the flags for the block.
+</code></pre>
+<p>Known flags are:</p>
+<pre><code>Flag name               Value       Meaning
+MPQ_FILE_IMPLODE        0x00000100  File is compressed using PKWARE Data compression library
+MPQ_FILE_COMPRESS       0x00000200  File is compressed using combination of compression methods
+MPQ_FILE_ENCRYPTED      0x00010000  The file is encrypted
+MPQ_FILE_FIX_KEY        0x00020000  The decryption key for the file is altered according to the position of the file in the archive
+MPQ_FILE_PATCH_FILE     0x00100000  The file contains incremental patch for an existing file in base MPQ
+MPQ_FILE_SINGLE_UNIT    0x01000000  Instead of being divided to 0x1000-bytes blocks, the file is stored as single unit
+MPQ_FILE_DELETE_MARKER  0x02000000  File is a deletion marker, indicating that the file no longer exists. This is used to allow patch archives to delete files present in lower-priority archives in the search chain. The file usually has length of 0 or 1 byte and its name is a hash
+MPQ_FILE_SECTOR_CRC     0x04000000  File has checksums for each sector (explained in the File Data section). Ignored if file is not compressed or imploded.
+MPQ_FILE_EXISTS         0x80000000  Set if file exists, reset when the file was deleted
+</code></pre>
+<h2 id="file-data">File Data</h2>
+<p>Block Table BlockOffset points to the beginning of a file data block. Each file data block has a header of nSectors+1 int32 values, indicating offsets to each sector start (relative to the beginning of the file data block). The final value of this list is the total (compressed) file size, including the header. The size of each block can easily be calculated from the difference between two offsets. If the block is compressed, the first byte of every sector indicates the compression method used</p>
+<h2 id="extracting-a-file">Extracting a file</h2>
+<p>This is a step-by-step instruction.</p>
+<ol>
+<li>Read the File Header, find the offsets to the Hash Table and Block Table</li>
+<li>Read and Decrypt Hash Table and Block Table</li>
+<li>Compute Hashes for the file (Full Path, all Slashes converted to Backslashes) =&gt; <strong>Hash0, Hash1, Hash2</strong></li>
+<li><strong>HashTableOffset</strong> = <strong>Hash0</strong> &amp; (<strong>Header.HashTableEntries</strong> -1)</li>
+<li>Starting from <strong>HashTableOffset</strong>, go through the Hash Table and compare <strong>Hash1</strong> and <strong>Hash2</strong> to <strong>HashTable.FilePathHashA</strong> and <strong>HashTable.FilePathHashB</strong> respectively until either a match or an empty entry is found. In the latter case the file you are looking for does not exist.</li>
+<li>Find the Block Table entry which corresponds to <strong>HashTable.FileBlockIndex</strong></li>
+<li>Go to the file offset specified in <strong>BlockTable.BlockOffset</strong></li>
+<li>Read int32 values until you reach a value that is equal to <strong>BlockTable.BlockSize</strong> =&gt; <strong>SectorOffset[0] ... SectorOffset[n]</strong></li>
+<li>For every entry of <strong>SectorOffset[0]...SectorOffset[n-1]</strong>, seek to <strong>BlockTable.BlockOffset+SectorOffset[x]</strong></li>
+<li>Read <strong>SectorOffset[x+1]-SectorOffset[x]</strong> bytes of data.</li>
+<li>If <strong>BlockTable.Flags</strong> has a compressed flag set, the first byte of each sector indicates the compression method applied.</li>
+<li>Decrypt and or decompress each sector as necessary, stitch them together, et voila, there is your file</li>
+</ol>
+<h2 id="the-listfile">The Listfile</h2>
+<p>Each MPQ in WoW 1.12.X contains a "(listfile)". This file lists the full archive contents, one file path per line, in clear text. Hashing the file paths provides lookup keys into Hash Table. The file is provided for convenience, as it seems. It is not used by the client.</p>
+<p>Back to [[Client File Formats]]</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

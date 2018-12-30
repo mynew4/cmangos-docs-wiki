@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>TBC Backporting TODO WOTLK Commits - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "TBC Backporting TODO WOTLK Commits";
+    var mkdocs_page_input_path = "Contributing/Backporting/TBC-Backporting-TODO-WOTLK-Commits.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>TBC Backporting TODO WOTLK Commits</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Commits left over in backporting run from 1.09.2015</p>
+<ul>
+<li><a href="http://github.com/cmangos/mangos-wotlk/commit/808cc1b">wotlk</a>: 808cc1b * xfurry (committer xfurry)</li>
+</ul>
+<pre><code>[12906] Implement spell effect 153 - Create Tamed Pet for Hunters
+</code></pre>
+
+<ul>
+<li><a href="http://github.com/cmangos/mangos-wotlk/commit/8a6be23">wotlk</a>: 8a6be23 * Dehravor (committer stfx)</li>
+</ul>
+<pre><code>[12927] Fix showing trade cancelled message twice as client checks it as well
+</code></pre>
+
+<blockquote>
+<p>Easily tested on client by checking if message is shown twice without this change</p>
+</blockquote>
+<ul>
+<li><a href="http://github.com/cmangos/mangos-wotlk/commit/55813a4">wotlk</a>: 55813a4 * Shauren (committer stfx)</li>
+</ul>
+<pre><code>[12934] Second part of recent SendNotification trade packet improvement
+</code></pre>
+
+<blockquote>
+<p>Depends on not yet backported code which needs to be checked if its needed</p>
+</blockquote>
+<hr />
+<p>Backports which require additional testing and fixing:</p>
+<p><a href="http://github.com/cmangos/mangos-tbc/commit/d94054abab9541586bf1fbecb6c8a3edb2a464e7">d94054</a></p>
+<p><a href="http://github.com/cmangos/mangos-tbc/commit/28c09bce045722ccaab0a8c3765d8c22c4f0e792">28c09b</a></p>
+<hr />
+<p>Commits which require research before backporting:</p>
+<ul>
+<li><a href="http://github.com/cmangos/mangos-wotlk/commit/8953e34">wotlk</a>: 8953e34 * Schmoozerd (committer Schmoozerd)</li>
+</ul>
+<pre><code>[12483] Improvements for NPC summoning code
+</code></pre>
+
+<blockquote>
+<p>SpellAttributes...</p>
+</blockquote>
+<hr />
+<p>Commits left over in recent backport run:</p>
+<ul>
+<li><a href="http://github.com/cmangos/mangos-wotlk/commit/771342e">wotlk</a>: 771342e * Schmoozerd (committer Schmoozerd)</li>
+</ul>
+<pre><code>[12483] Improvements for NPC summoning code
+</code></pre>
+
+<blockquote>
+<p>WTF has happened here - the summoning changes are not properly backported..</p>
+</blockquote>
+<ul>
+<li><a href="http://github.com/cmangos/mangos-wotlk/commit/4ece3ed">wotlk</a>: 4ece3ed * Shauren (committer stfx)</li>
+</ul>
+<pre><code>[12487] Improve alcohol handling
+</code></pre>
+
+<blockquote>
+<p>Also for TBC this change? Depends on not backported code
+If it still works correctly after changes then yes since its better code</p>
+</blockquote>
+<ul>
+<li><a href="http://github.com/cmangos/mangos-wotlk/commit/659f65e">wotlk</a>: 659f65e * Schmoozerd (committer Schmoozerd)</li>
+</ul>
+<pre><code>[12505] Add and implement server-side spell 23770
+</code></pre>
+
+<hr />
+<p>Possible forgotten stuff:</p>
+<ul>
+<li>TBC spells are present but i'm not sure about adding Starfall <a href="https://github.com/cmangos/mangos-wotlk/commit/aa65a175298693499202429368514814d2a45d17">commit</a></li>
+</ul>
+<p>Laise's spell changes:</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/e7da1b0c9b065fb3e28d8792839b882c97799ea1</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/76f8a24fa18600364479354b2c15b5f051ff9666</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/dbcf0f3fc2932b4bf9d5df33987befef753c679b</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/0cd64d0bae6272ea65e61b3662b1ceb986feb82c</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/7027f52c35dba53075493adc84fcea4f415a0843</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/f683e3cb007a678cb537b3d3d09d29ab32321e99</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/0ca23d519518a328555b828150c3b6637b2fd995</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/bf7744be754ea49e90dd8cd767c933f89b2f8014</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/ad46ddcf239a2dd92d52c56275f7cabd94cd7f53</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/a725f83946c7833e1e33015324a5c9e69b2f6bf1</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/218a7d7d6ae180f6a6b1256e482061973ef3d188</p>
+<p>https://github.com/cmangos/mangos-wotlk/commit/8496f6dadf947dfcae9571a25c41844745c0ab1b</p>
+<blockquote>
+<p>The first commit is actually the most problematic because it causes a conflict with https://github.com/cmangos/mangos-tbc/commit/a15c62a9b63e19b8b4a066034f2864c99fe8a5c9 - after that it should be easy though</p>
+</blockquote>
+<p>TOM_RUS's SMSG_CAST_FAILED updates:
+https://github.com/cmangos/mangos-wotlk/commit/8125239fcd643525f0997090c73ee4ef6067af3d</p>
+<p>Older stuff noted by Vladimir:</p>
+<pre><code>!+2f3c20ec14d386f1b784ef26fe6e76ba8ea03ac5 [8776] proper arena rating calculation
+!+ca88fc52a7e17148a91532cbbfd9ea55b41bc5a6 [8780] fixed typos with arenarating
+
+Need before for normal way move moveinfo to Unit, so manually recreate muster way work with movement info for creatures
+!+5eec80f67ff310aa9b8004da175b6bdb05d2f0cd [8880] Some adjustments/additions for updateflag_living and flying creatures
+!+60b1c604a656a322aaf702c61c8f180b219c5a3a [9210] Fix visual bug making npc run-in-same-position in client.
+* addd8b5ea59a544e0b672a01c0119cc388930581 Movement packets fix.
+* 5b0f7a88c180776cb58c76f9a78db0b1e6e11ffd Movement packets cleanup.
+* 986e5b76ae8758d8c895edce483c8cb84801c57d Get rid of monster movement flags, since it's really spline flags. Thanks to Ralek for research.
+!+404c8534283493c1dc9824343d9d91d1c3572808 [9335] Clarify error log message after rewrite of monster_* to spline_* flags
+* 33596e718b20b1302452901408f7de7b9e17e44d How this happened?
+* 93b2f8ff3966d7faa9f69cc1a75a58c9790f507c [10620] Fixed MSG_MOVE_HEARTBEAT structure. (need remove creature case)
+*+14c9042dedce2f19e73aa7e9f4ab4a694157b513 [10759] Correctly reset mob orientation upon reaching spawn point. Should also improve visualisation of mob orientation on clients
+*+17ffb949bfa3cd5dfcef2f77d9ffb3af1de7e31f [11149]*[unit moveinfo] Correct MSG_MOVE_SET_*_SPEED packet structures -&gt; [11156] (need remove creature case)
+*+e49699eb025c5a791f322cf5278641cb9e4ca36c [11210]*[unit moveflags] Set moveflags from CMSG_MOVE_SET_CAN_FLY_ACK to proper mover.
+*+4c82c86e20c5abba0cdaed187f8951c15dde4f5b [11385] Add support for static vehicle spawns (movebuild part) -&gt;[11386]
+*+003c56143cc39b5142cc5fcc27afdf6c56e5e006 [11386] Revert small unexpected change -_-
+*+1149a1034ab8c6fe86b2748a707c6dbe410eb2ba [11388] Don't add MOVEFLAG_ROOT in case creature has no moving state
+
+
+Need per spell check
+!+c646ed13fe95da0b0a37a158967a8909c6c0805b [9019] Add/update some hidden threat values for warrior/druid spells.
+!+90c01bdcba252f66d73d66d751134a15f9159404 [11036] Update some data in spell_threat, making use of the new parameters
+
+Unclear what do: 0.12 enum different from 3.x version but used numeric values fit to 3.x enums...
+!+1265a13f63ff20fa48a90fbf715754b124b3c28a [10031] Replace hard coded quest dialog status value with enum value
+
+Unclear how this must be in 2.x, all my expremeents fail
+!+b640a6de05b0c8ca6390b4e36a956ba2eb4f3eb6 [10955] Fixed MSG_PVP_LOG_DATA data prepering.
+
+Unclear how this must be in 2.x, have same structure without real usages
++ f9530a5de076a0b9647e5102658df5c022e83f39 [11554] Add some "tail" data for SMSG_CAST_FAILED and SMSG_PET_CAST_FAILED
+
+! - need additional research
+* - backported (need recheck for possible reapply need)
+*+- need reapply in future after some not backported commit
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

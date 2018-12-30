@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Spell template - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Spell template";
+    var mkdocs_page_input_path = "DB-Structure/Core/spell_template.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Spell template</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96spell95template96-table">The `spell_template` table</h2>
+<p>holds data about every spell used.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><a href="spell_template#id">Id</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#category">Category</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#dispel">Dispel</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#mechanic">Mechanic</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#attributes">Attributes</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#attributesex">AttributesEx</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#attributesex2">AttributesEx2</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#attributesex3">AttributesEx3</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#attributesex4">AttributesEx4</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#attributesex5">AttributesEx5</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#attributesex6">AttributesEx6</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#stances">Stances</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#stancesnot">StancesNot</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#targets">Targets</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#targetcreaturetype">TargetCreatureType</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#requiresspellfocus">RequiresSpellFocus</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#facingcasterflags">FacingCasterFlags</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#casteraurastate">CasterAuraState</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#targetaurastate">TargetAuraState</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#casteraurastatenot">CasterAuraStateNot</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#targetaurastatenot">TargetAuraStateNot</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#castingtimeindex">CastingTimeIndex</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#recoverytime">RecoveryTime</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#categoryrecoverytime">CategoryRecoveryTime</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#interruptflags">InterruptFlags</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#aurainterruptflags">AuraInterruptFlags</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#channelinterruptflags">ChannelInterruptFlags</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#procflags">procFlags</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#procchance">procChance</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#proccharges">procCharges</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#maxlevel">maxLevel</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#baselevel">baseLevel</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#spelllevel">spellLevel</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#durationindex">DurationIndex</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#powertype">powerType</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#manacost">manaCost</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#manacostperlevel">manaCostPerlevel</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#manapersecond">manaPerSecond</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#manapersecondperlevel">manaPerSecondPerLevel</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#rangeindex">rangeIndex</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#speed">speed</a></td>
+<td>FLOAT</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#stackamount">StackAmount</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#totem1">Totem1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#totem2">Totem2</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#reagent1">Reagent1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#reagentcount1">ReagentCount1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#equippeditemclass">EquippedItemClass</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>-1</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#equippeditemsubclassmask">EquippedItemSubClassMask</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#equippediteminventorytypemask">EquippedItemInventoryTypeMask</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effect1">Effect1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectdiesides1">EffectDieSides1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectbasedice1">EffectBaseDice1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectdiceperlevel1">EffectDicePerLevel1</a></td>
+<td>FLOAT</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectrealpointsperlevel1">EffectRealPointsPerLevel1</a></td>
+<td>FLOAT</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectbasepoints1">EffectBasePoints1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectmechanic1">EffectMechanic1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectimplicittargeta1">EffectImplicitTargetA1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectimplicittargetb1">EffectImplicitTargetB1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectradiusindex1">EffectRadiusIndex1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectapplyauraname1">EffectApplyAuraName1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectamplitude1">EffectAmplitude1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectmultiplevalue1">EffectMultipleValue1</a></td>
+<td>FLOAT</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectchaintarget1">EffectChainTarget1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectitemtype1">EffectItemType1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectmiscvalue1">EffectMiscValue1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectmiscvalueb1">EffectMiscValueB1</a></td>
+<td>INT (11)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effecttriggerspell1">EffectTriggerSpell1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#effectpointspercombopoint1">EffectPointsPerComboPoint1</a></td>
+<td>FLOAT</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#spellvisual">SpellVisual</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#spelliconid">SpellIconID</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#activeiconid">activeIconID</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#spellpriority">spellPriority</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#spellname">SpellName</a></td>
+<td>TEXT</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#rank">Rank</a></td>
+<td>TEXT</td>
+<td>NULL</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#manacostpercentage">ManaCostPercentage</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#startrecoverycategory">StartRecoveryCategory</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#startrecoverytime">StartRecoveryTime</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#maxtargetlevel">MaxTargetLevel</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#spellfamilyname">SpellFamilyName</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#spellfamilyflags">SpellFamilyFlags</a></td>
+<td>BIGINT (20) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#maxaffectedtargets">MaxAffectedTargets</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#dmgclass">DmgClass</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#preventiontype">PreventionType</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#dmgmultiplier1">DmgMultiplier1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#totemcategory1">TotemCategory1</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#totemcategory2">TotemCategory2</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#areaid">AreaId</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#schoolmask">SchoolMask</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#isserverside">IsServerSide</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="spell_template#attributesserverside">AttributesServerside</a></td>
+<td>INT (11) UNSIGNED</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="id">Id</h4>
+<p>The spell ID.</p>
+<h4 id="category">Category</h4>
+<p>Category ID based on which cooldown is determined. Spells with same category go into cooldown if one of them goes into cooldown.</p>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Summon guards</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Entry</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Entry</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dispel">Dispel</h4>
+<p>Dispel type of a spell. Some spells can only dispel specific types of spells, for example poisons.</p>
+<h4 id="mechanic">Mechanic</h4>
+<p>Spells effects utilize a mechanics. For example bleed, root, silence.</p>
+<h4 id="attributes">Attributes</h4>
+<p>Special rules for spells. There are several columns for attributes. These rules can do anything, and some can be name only.</p>
+<h4 id="attributesex">AttributesEx</h4>
+<h4 id="attributesex2">AttributesEx2</h4>
+<h4 id="attributesex3">AttributesEx3</h4>
+<h4 id="attributesex4">AttributesEx4</h4>
+<h4 id="attributesex5">AttributesEx5</h4>
+<h4 id="attributesex6">AttributesEx6</h4>
+<h4 id="stances">Stances</h4>
+<p>Determines specific stances in which caster must be for spell to be successfully cast.</p>
+<h4 id="stancesnot">StancesNot</h4>
+<p>Determines specific stances in which caster cannot be for spell to be successfully cast.</p>
+<h4 id="targets">Targets</h4>
+<p>Determines the default targets for some effects. Seems to be connected to TARGET_NONE.</p>
+<h4 id="targetcreaturetype">TargetCreatureType</h4>
+<p>Specifies what creature types the spell can target, for example Humanoid or Beast.</p>
+<h4 id="requiresspellfocus">RequiresSpellFocus</h4>
+<p>Specifies the spell focus GO, around which the caster has to be for a successful cast.</p>
+<p>Indicates that this spell needs a GO near (e.g. forges). Required object has the type <a href="Gameobject_template#type">GAMEOBJECT_TYPE_SPELLFOCUS</a> and <a href="Gameobject_template#data0-23">data0</a> matches the RequiresSpellFocus value.</p>
+<h4 id="facingcasterflags">FacingCasterFlags</h4>
+<p>Specifies how the caster has to face the target so that the spell is successful. enum SpellFacingFlags in Unit.h</p>
+<h4 id="casteraurastate">CasterAuraState</h4>
+<p>Specifies the caster AuraState required for the cast to be successful.</p>
+<h4 id="targetaurastate">TargetAuraState</h4>
+<p>Specifies the target AuraState required for the cast to be successful.</p>
+<h4 id="casteraurastatenot">CasterAuraStateNot</h4>
+<p>Specifies which AuraState the caster must not have for the cast to be successful.</p>
+<h4 id="targetaurastatenot">TargetAuraStateNot</h4>
+<p>Specifies which AuraState the target must not have for the cast to be successful.</p>
+<h4 id="castingtimeindex">CastingTimeIndex</h4>
+<p>CastingTime (Id) that defines how long it takes for the spell to cast in milliseconds.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>CastTime</th>
+<th>CastTimePerLevel</th>
+<th>MinCastTime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>250</td>
+<td>0</td>
+<td>250</td>
+</tr>
+<tr>
+<td>3</td>
+<td>500</td>
+<td>0</td>
+<td>500</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1000</td>
+<td>0</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>7</td>
+<td>10000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>8</td>
+<td>20000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>9</td>
+<td>30000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1000</td>
+<td>-100</td>
+<td>500</td>
+</tr>
+<tr>
+<td>11</td>
+<td>2000</td>
+<td>-100</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>12</td>
+<td>5000</td>
+<td>-100</td>
+<td>2500</td>
+</tr>
+<tr>
+<td>13</td>
+<td>30000</td>
+<td>-1000</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>14</td>
+<td>3000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>15</td>
+<td>4000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1500</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>17</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>18</td>
+<td>-1000000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>19</td>
+<td>2500</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>20</td>
+<td>2500</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>21</td>
+<td>2600</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>22</td>
+<td>3500</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>23</td>
+<td>1800</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>24</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>25</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>26</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>27</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>28</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>29</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>30</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>31</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>32</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>33</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>34</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>35</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>36</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>37</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>38</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>39</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>50</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>70</td>
+<td>300000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>90</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>91</td>
+<td>XXX</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>170</td>
+<td>8000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>170</td>
+<td>6000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>192</td>
+<td>15000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr>
+<td>193</td>
+<td>12000</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+</tbody>
+</table>
+<h4 id="recoverytime">RecoveryTime</h4>
+<h4 id="categoryrecoverytime">CategoryRecoveryTime</h4>
+<h4 id="interruptflags">InterruptFlags</h4>
+<h4 id="aurainterruptflags">AuraInterruptFlags</h4>
+<h4 id="channelinterruptflags">ChannelInterruptFlags</h4>
+<h4 id="procflags">procFlags</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Bit</strong></th>
+<th><strong>Flag</strong></th>
+<th><strong>Comment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Killed</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Kill</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Successful Melee Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Taken Melee Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Successful Melee Spell Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Taken Melee Spell Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Successful Ranged Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Taken Ranged Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Successful Ranged Spell Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Taken Ranged Spell Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Successful Positive Aoe Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Taken Positive Aoe</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Successful Aoe Spell Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Taken Aoe Spell Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Successful Positive Spell</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Taken Positive Spell</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Successful Negative Spell Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Taken Negative Spell Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>On Do Periodic</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>On Take Periodic</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Taken Any Damage</td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>On Trap Activation</td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Successful Mainhand Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Successful Offhand Hit</td>
+<td></td>
+</tr>
+<tr>
+<td>24</td>
+<td>Death</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="procchance">procChance</h4>
+<h4 id="proccharges">procCharges</h4>
+<h4 id="maxlevel">maxLevel</h4>
+<h4 id="baselevel">baseLevel</h4>
+<h4 id="spelllevel">spellLevel</h4>
+<h4 id="durationindex">DurationIndex</h4>
+<h4 id="powertype">powerType</h4>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Mana</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Rage</td>
+</tr>
+<tr>
+<td>2</td>
+<td>?</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Energy</td>
+</tr>
+</tbody>
+</table>
+<h4 id="manacost">manaCost</h4>
+<h4 id="manacostperlevel">manaCostPerlevel</h4>
+<h4 id="manapersecond">manaPerSecond</h4>
+<h4 id="manapersecondperlevel">manaPerSecondPerLevel</h4>
+<h4 id="rangeindex">rangeIndex</h4>
+<h4 id="speed">speed</h4>
+<h4 id="stackamount">StackAmount</h4>
+<h4 id="totem1">Totem1</h4>
+<h4 id="totem2">Totem2</h4>
+<h4 id="reagent1">Reagent1</h4>
+<h4 id="reagentcount1">ReagentCount1</h4>
+<h4 id="equippeditemclass">EquippedItemClass</h4>
+<h4 id="equippeditemsubclassmask">EquippedItemSubClassMask</h4>
+<h4 id="equippediteminventorytypemask">EquippedItemInventoryTypeMask</h4>
+<h4 id="effect1">Effect1</h4>
+<h4 id="effectdiesides1">EffectDieSides1</h4>
+<p>Random Value of the Die that is rolled for the SPELL_EFFECT
+Max(EffectDieSides1) + (EffectBaseDice1 + EffectBasePoints1) = MaxValue for SPELL_EFFECT</p>
+<h4 id="effectbasedice1">EffectBaseDice1</h4>
+<p>Base Value for the SPELL_EFFECT, mostly 1
+EffectBaseDice1 + EffectBasePoints1 = MinValue for SPELL_EFFECT</p>
+<h4 id="effectdiceperlevel1">EffectDicePerLevel1</h4>
+<h4 id="effectrealpointsperlevel1">EffectRealPointsPerLevel1</h4>
+<h4 id="effectbasepoints1">EffectBasePoints1</h4>
+<p>Value added to EffectBaseDice1</p>
+<h4 id="effectmechanic1">EffectMechanic1</h4>
+<h4 id="effectimplicittargeta1">EffectImplicitTargetA1</h4>
+<h4 id="effectimplicittargetb1">EffectImplicitTargetB1</h4>
+<h4 id="effectradiusindex1">EffectRadiusIndex1</h4>
+<h4 id="effectapplyauraname1">EffectApplyAuraName1</h4>
+<h4 id="effectamplitude1">EffectAmplitude1</h4>
+<h4 id="effectmultiplevalue1">EffectMultipleValue1</h4>
+<h4 id="effectchaintarget1">EffectChainTarget1</h4>
+<h4 id="effectitemtype1">EffectItemType1</h4>
+<h4 id="effectmiscvalue1">EffectMiscValue1</h4>
+<h4 id="effectmiscvalueb1">EffectMiscValueB1</h4>
+<h4 id="effecttriggerspell1">EffectTriggerSpell1</h4>
+<h4 id="effectpointspercombopoint1">EffectPointsPerComboPoint1</h4>
+<h4 id="spellvisual">SpellVisual</h4>
+<h4 id="spelliconid">SpellIconID</h4>
+<h4 id="activeiconid">activeIconID</h4>
+<h4 id="spellpriority">spellPriority</h4>
+<h4 id="spellname">SpellName</h4>
+<h4 id="rank">Rank</h4>
+<h4 id="manacostpercentage">ManaCostPercentage</h4>
+<h4 id="startrecoverycategory">StartRecoveryCategory</h4>
+<h4 id="startrecoverytime">StartRecoveryTime</h4>
+<h4 id="maxtargetlevel">MaxTargetLevel</h4>
+<h4 id="spellfamilyname">SpellFamilyName</h4>
+<h4 id="spellfamilyflags">SpellFamilyFlags</h4>
+<h4 id="maxaffectedtargets">MaxAffectedTargets</h4>
+<h4 id="dmgclass">DmgClass</h4>
+<h4 id="preventiontype">PreventionType</h4>
+<h4 id="dmgmultiplier1">DmgMultiplier1</h4>
+<h4 id="totemcategory1">TotemCategory1</h4>
+<h4 id="totemcategory2">TotemCategory2</h4>
+<h4 id="areaid">AreaId</h4>
+<p>Specifies the Allowed areas for a successful cast.
+IDs taken from <a href="AreaGroup.dbc">AreaGroup.dbc</a></p>
+<h4 id="schoolmask">SchoolMask</h4>
+<h4 id="isserverside">IsServerSide</h4>
+<h4 id="attributesserverside">AttributesServerside</h4>
+<hr />
+<p>TODO: Describe rest of columns
+|24|casterAuraSpell|uint|
+|25|targetAuraSpell|uint|
+|26|excludeCasterAuraSpell|uint|
+|27|excludeTargetAuraSpell|uint|
+|28|CastingTimeIndex|uint|
+|29|RecoveryTime|uint|
+|30|CategoryRecoveryTime|uint|
+|31|InterruptFlags|uint|
+|32|AuraInterruptFlags|uint|
+|33|ChannelInterruptFlags|uint|
+|34|procFlags|uint|
+|35|procChance|uint|
+|36|procCharges|uint|
+|37|maxLevel|uint|
+|38|baseLevel|uint|
+|39|spellLevel|uint|
+|40|DurationIndex|uint|
+|42|manaCost|uint|
+|43|manaCostPerlevel|uint|
+|44|manaPerSecond|uint|
+|45|manaPerSecondPerLevel|uint|
+|46|rangeIndex|uint|
+|47|speed|float|
+|48|modalNextSpell|uint|
+|49|StackAmount|uint|
+|50|Totem1|uint|
+|51|Totem2|uint|
+|52|Reagent1|int|
+|53|Reagent2|int|
+|54|Reagent3|int|
+|55|Reagent4|int|
+|56|Reagent5|int|
+|57|Reagent6|int|
+|58|Reagent7|int|
+|59|Reagent8|int|
+|60|ReagentCount1|uint|
+|61|ReagentCount2|uint|
+|62|ReagentCount3|uint|
+|63|ReagentCount4|uint|
+|64|ReagentCount5|uint|
+|65|ReagentCount6|uint|
+|66|ReagentCount7|uint|
+|67|ReagentCount8|uint|
+|68|EquippedItemClass|int|
+|69|EquippedItemSubClassMask|int|
+|70|EquippedItemInventoryTypeMask|int|
+|71|Effect1|uint|
+|72|Effect2|uint|
+|73|Effect3|uint|
+|75|EffectDieSides2|int|
+|76|EffectDieSides3|int|
+|77|EffectRealPointsPerLevel1|float|
+|78|EffectRealPointsPerLevel2|float|
+|79|EffectRealPointsPerLevel3|float|
+|81|EffectBasePoints2|int|
+|82|EffectBasePoints3|int|
+|83|EffectMechanic1|uint|
+|84|EffectMechanic2|uint|
+|85|EffectMechanic3|uint|
+|86|EffectImplicitTargetA1|uint|
+|87|EffectImplicitTargetA2|uint|
+|88|EffectImplicitTargetA3|uint|
+|89|EffectImplicitTargetB1|uint|
+|90|EffectImplicitTargetB2|uint|
+|91|EffectImplicitTargetB3|uint|
+|92|EffectRadiusIndex1|uint|
+|93|EffectRadiusIndex2|uint|
+|94|EffectRadiusIndex3|uint|
+|95|EffectApplyAuraName1|uint|
+|96|EffectApplyAuraName2|uint|
+|97|EffectApplyAuraName3|uint|
+|98|EffectAmplitude1|uint|
+|99|EffectAmplitude2|uint|
+|100|EffectAmplitude3|uint|
+|101|EffectValueMultiplier1|float|
+|102|EffectValueMultiplier2|float|
+|103|EffectValueMultiplier3|float|
+|104|EffectChainTarget1|uint|
+|105|EffectChainTarget2|uint|
+|106|EffectChainTarget3|uint|
+|107|EffectItemType1|uint|
+|108|EffectItemType2|uint|
+|109|EffectItemType3|uint|
+|110|EffectMiscValue1|int|
+|111|EffectMiscValue2|int|
+|112|EffectMiscValue3|int|
+|113|EffectMiscValueB1|int|
+|114|EffectMiscValueB2|int|
+|115|EffectMiscValueB3|int|
+|116|EffectTriggerSpell1|uint|
+|117|EffectTriggerSpell2|uint|
+|118|EffectTriggerSpell3|uint|
+|119|EffectPointsPerComboPoint1|float|
+|120|EffectPointsPerComboPoint2|float|
+|121|EffectPointsPerComboPoint3|float|
+|122|EffectSpellClassMask1|flag96|
+|123|EffectSpellClassMask2|flag96|
+|124|EffectSpellClassMask3|flag96|
+|125|EffectSpellClassMask4|flag96|
+|126|EffectSpellClassMask5|flag96|
+|127|EffectSpellClassMask6|flag96|
+|128|EffectSpellClassMask7|flag96|
+|129|EffectSpellClassMask8|flag96|
+|130|EffectSpellClassMask9|flag96|
+|131|SpellVisual1|uint|
+|132|SpellVisual2|uint|
+|133|SpellIconID|uint|
+|134|activeIconID|uint|
+|135|spellPriority|uint|
+|136|SpellName_0|string|
+|137|SpellName_1|string|
+|138|SpellName_2|string|
+|139|SpellName_3|string|
+|140|SpellName_4|string|
+|141|SpellName_5|string|
+|142|SpellName_6|string|
+|143|SpellName_7|string|
+|144|SpellName_8|string|
+|145|SpellName_9|string|
+|146|SpellName_10|string|
+|147|SpellName_11|string|
+|148|SpellName_12|string|
+|149|SpellName_13|string|
+|150|SpellName_14|string|
+|151|SpellName_15|string|
+|152|SpellNameFlag|uint|
+|153|Rank_0|string|
+|154|Rank_1|string|
+|155|Rank_2|string|
+|156|Rank_3|string|
+|157|Rank_4|string|
+|158|Rank_5|string|
+|159|Rank_6|string|
+|160|Rank_7|string|
+|161|Rank_8|string|
+|162|Rank_9|string|
+|163|Rank_10|string|
+|164|Rank_11|string|
+|165|Rank_12|string|
+|166|Rank_13|string|
+|167|Rank_14|string|
+|168|Rank_15|string|
+|169|RankFlags|uint|
+|170|Description_0|string|
+|171|Description_1|string|
+|172|Description_2|string|
+|173|Description_3|string|
+|174|Description_4|string|
+|175|Description_5|string|
+|176|Description_6|string|
+|177|Description_7|string|
+|178|Description_8|string|
+|179|Description_9|string|
+|180|Description_10|string|
+|181|Description_11|string|
+|182|Description_12|string|
+|183|Description_13|string|
+|184|Description_14|string|
+|185|Description_15|string|
+|186|DescriptionFlags|uint|
+|187|ToolTip_0|string|
+|188|ToolTip_1|string|
+|189|ToolTip_2|string|
+|190|ToolTip_3|string|
+|191|ToolTip_4|string|
+|192|ToolTip_5|string|
+|193|ToolTip_6|string|
+|194|ToolTip_7|string|
+|195|ToolTip_8|string|
+|196|ToolTip_9|string|
+|197|ToolTip_10|string|
+|198|ToolTip_11|string|
+|199|ToolTip_12|string|
+|200|ToolTip_13|string|
+|201|ToolTip_14|string|
+|202|ToolTip_15|string|
+|203|ToolTipFlags|uint|
+|204|ManaCostPercentage|uint|
+|205|StartRecoveryCategory|uint|
+|206|StartRecoveryTime|uint|
+|207|MaxTargetLevel|uint|
+|208|SpellFamilyName|uint|
+|209|SpellFamilyFlagsLow|flag96|
+|210|SpellFamilyFlagsHigh|flag96|
+|211|SpellFamilyFlags2|flag96|
+|212|MaxAffectedTargets|uint|
+|213|DmgClass|uint|
+|214|PreventionType|uint|
+|215|StanceBarOrder|uint|
+|216|EffectDamageMultiplier1|float|
+|217|EffectDamageMultiplier2|float|
+|218|EffectDamageMultiplier3|float|
+|219|MinFactionId|uint|
+|220|MinReputation|uint|
+|221|RequiredAuraVision|uint|
+|222|TotemCategory1|uint|
+|223|TotemCategory2|uint|
+|225|SchoolMask|uint|
+|226|runeCostID|uint|
+|227|spellMissileID|uint|
+|228|PowerDisplayId|uint|
+|229|EffectBonusMultiplier1|float|
+|230|EffectBonusMultiplier2|float|
+|231|EffectBonusMultiplier3|float|
+|232|spellDescriptionVariableID|uint|
+|233|SpellDifficultyId|uint|</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

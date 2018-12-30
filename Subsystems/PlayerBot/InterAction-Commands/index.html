@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>InterAction Commands - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "InterAction Commands";
+    var mkdocs_page_input_path = "Subsystems/PlayerBot/InterAction-Commands.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>InterAction Commands</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="interaction-commands">InterAction Commands</h1>
+<p>More commands... Great!</p>
+<p>But they are useful! And with good macro skills, you can have most of your commands right at the click of a button.</p>
+<p>Shortcuts:</p>
+<p>c = cast</p>
+<p>e = equip</p>
+<p>u = use</p>
+<h3 id="commands">Commands</h3>
+<h3 id="itemobject-manipulation">Item/Object Manipulation</h3>
+<p>/t BOTNAME use [ITEM LINK] (use item on self. If item hold quest, it will be accepted. If inventory item is lootable, it 
+will be looted)</p>
+<p>/t BOTNAME use [ITEM LINK] TARGET (use item on selected unit)</p>
+<p>/t BOTNAME use [ITEM LINK][EQUIPPED ITEM LINK] (use item on equipped item)</p>
+<p>/t BOTNAME use [ITEM LINK][GAMEOBJECT LINK] (use item on gameobject )</p>
+<p>/t BOTNAME equip [ITEM LINK]</p>
+<p>/t BOTNAME get [GAMEOBJECT LINK] (bot will fetch the selected gameobject and then return to the player)</p>
+<h3 id="quest-commands">Quest Commands</h3>
+<p>/t BOTNAME quest (Shows bot's current quests)</p>
+<p>/t BOTNAME quest &lt; add | a &gt; [QUESTLINK] (Adds a quest)</p>
+<p>/t BOTNAME quest &lt; drop | d &gt; [QUESTLINK] (Drop a quest)</p>
+<p>/t BOTNAME quest &lt; end | e &gt; (Turns in a completed quest)</p>
+<p>/t BOTNAME quest &lt; end | e &gt; (Turns in a completed quest)</p>
+<p>/t BOTNAME quest &lt; report | r &gt; (bot reports all items, creatures or gameobjects needed to finish quests)</p>
+<h3 id="info-commands">Info Commands</h3>
+<p>/t BOTNAME stats (bot shows available money, free inventory space and estimated item repair costs)</p>
+<p>/t BOTNAME survey (bot shows all available gameobjects, within a local perimeter around the bot)</p>
+<p>/t BOTNAME find [GAMEOBJECT LINK] (bot will travel to the gameobject location and then wait)</p>
+<h3 id="vendorauctioncollection-commands">Vendor/Auction/Collection Commands</h3>
+<p>/t BOTNAME collect (shows collect subcommand options and current collect status)</p>
+<p>/t BOTNAME sell [ITEM LINK] (bot will sell item(s) with nearest vendor)</p>
+<p>/t BOTNAME buy [ITEM LINK] (bot buy item(s) from selected vendor)</p>
+<p>/t BOTNAME drop [ITEM LINK] (bot will drop item immediately, permanently destroying it)</p>
+<p>/t BOTNAME auction (bot will display all it's active owned auctions. Auction info will include an [AUCTION LINK] )</p>
+<p>/t BOTNAME auction add [ITEM LINK] (bot will add item to it's m_itemIds, for later auction)</p>
+<p>/t BOTNAME auction remove [AUCTION LINK] (bot will add auctionid to it's m_auctions, for later auction cancellation)</p>
+<h3 id="you-have-mail">You have MAIL !</h3>
+<p>/t BOTANME mail inbox [MAILBOX] (Lists all bot mail from selected [MAILBOX])</p>
+<p>/t BOTNAME mail getcash [MAIL ID].. (gets all cash from selected [MAIL ID])</p>
+<p>/t BOTNAME mail getitem [MAIL ID].. (gets all items from selected [MAIL ID])</p>
+<p>/t BOTNAME mail delete [MAIL ID].. (delete all bot mail selected [MAIL ID])</p>
+<h3 id="repair-commands">Repair Commands</h3>
+<p>/t BOTNAME repair [ITEM LINK] (bot will seek out armourer and repair selected items specified by [ITEM LINK] )</p>
+<p>/t BOTNAME repair all (bot(s) will seek out armourer and repair all damaged items equipped, or in bags )</p>
+<h3 id="youve-got-talent">You've got TaLENT !</h3>
+<p>/t BOTNAME talent (Lists bot(s) active talents [TALENT LINK] &amp; glyphs [GLYPH LINK], unspent talent points &amp; cost to reset all talents)</p>
+<p>/t BOTNAME talent learn [TALENT LINK} .. (Learn selected talent from bot client 'inspect' dialog -&gt; 'talent' tab or from talent command (shift click icon or link))</p>
+<p>/t BOTNAME talent reset (Resets all talents)</p>
+<p>/t BOTNAME talent spec (Lists talent specs available to this bot's class, with #, to use below)</p>
+<p>/t BOTNAME talent spec # (If valid, uses this # talent spec for this bot (see # from talent spec above))</p>
+<h3 id="money-in-the-bank">Money in the Bank!</h3>
+<p>/t BOTNAME bank (Lists bot(s) bank balance)</p>
+<p>/t BOTNAME bank deposit [Item Link][Item Link] .. (Deposit item(s) in bank)</p>
+<p>/t BOTNAME bank withdraw [Item Link][Item Link] .. (Withdraw item(s) from bank. ([Item Link] from bank))</p>
+<h3 id="skill-commands">Skill Commands</h3>
+<p>/t BOTNAME skill (lists all [PROFESSION LINK] bot Primary profession skills)</p>
+<p>/t BOTNAME skill learn (lists [TRAINING LINK] available class, weapon &amp; profession (Primary or Secondary) skills &amp; spells, from selected trainer)</p>
+<p>/t BOTNAME skill learn [TRAINING LINK] (learn selected skill or spell, from selected trainer)</p>
+<p>/t BOTNAME skill unlearn [PROFESSION LINK] (unlearn selected primary profession skill &amp; all associated spells)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

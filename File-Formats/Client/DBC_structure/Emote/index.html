@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Emote - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Emote";
+    var mkdocs_page_input_path = "File-Formats/Client/DBC_structure/Emote.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Emote</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Emote</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>ONESHOT_NONE</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ONESHOT_TALK (DNR)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ONESHOT_BOW</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ONESHOT_WAVE (DNR)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ONESHOT_CHEER (DNR)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ONESHOT_EXCLAMATION (DNR)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ONESHOT_QUESTION</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ONESHOT_EAT</td>
+</tr>
+<tr>
+<td>10</td>
+<td>STATE_DANCE</td>
+</tr>
+<tr>
+<td>11</td>
+<td>ONESHOT_LAUGH</td>
+</tr>
+<tr>
+<td>12</td>
+<td>STATE_SLEEP</td>
+</tr>
+<tr>
+<td>13</td>
+<td>STATE_SIT</td>
+</tr>
+<tr>
+<td>14</td>
+<td>ONESHOT_RUDE (DNR)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>ONESHOT_ROAR (DNR)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>ONESHOT_KNEEL</td>
+</tr>
+<tr>
+<td>17</td>
+<td>ONESHOT_KISS</td>
+</tr>
+<tr>
+<td>18</td>
+<td>ONESHOT_CRY</td>
+</tr>
+<tr>
+<td>19</td>
+<td>ONESHOT_CHICKEN</td>
+</tr>
+<tr>
+<td>20</td>
+<td>ONESHOT_BEG</td>
+</tr>
+<tr>
+<td>21</td>
+<td>ONESHOT_APPLAUD</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ONESHOT_SHOUT (DNR)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>ONESHOT_FLEX</td>
+</tr>
+<tr>
+<td>24</td>
+<td>ONESHOT_SHY (DNR)</td>
+</tr>
+<tr>
+<td>25</td>
+<td>ONESHOT_POINT (DNR)</td>
+</tr>
+<tr>
+<td>26</td>
+<td>STATE_STAND</td>
+</tr>
+<tr>
+<td>27</td>
+<td>STATE_READYUNARMED</td>
+</tr>
+<tr>
+<td>28</td>
+<td>STATE_WORK_SHEATHED</td>
+</tr>
+<tr>
+<td>29</td>
+<td>STATE_POINT (DNR)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>STATE_NONE</td>
+</tr>
+<tr>
+<td>33</td>
+<td>ONESHOT_WOUND</td>
+</tr>
+<tr>
+<td>34</td>
+<td>ONESHOT_WOUNDCRITICAL</td>
+</tr>
+<tr>
+<td>35</td>
+<td>ONESHOT_ATTACKUNARMED</td>
+</tr>
+<tr>
+<td>36</td>
+<td>ONESHOT_ATTACK1H</td>
+</tr>
+<tr>
+<td>37</td>
+<td>ONESHOT_ATTACK2HTIGHT</td>
+</tr>
+<tr>
+<td>38</td>
+<td>ONESHOT_ATTACK2H_LOOSE</td>
+</tr>
+<tr>
+<td>39</td>
+<td>ONESHOT_PARRYUNARMED</td>
+</tr>
+<tr>
+<td>43</td>
+<td>ONESHOT_PARRYSHIELD</td>
+</tr>
+<tr>
+<td>44</td>
+<td>ONESHOT_READYUNARMED</td>
+</tr>
+<tr>
+<td>45</td>
+<td>ONESHOT_READY1H</td>
+</tr>
+<tr>
+<td>48</td>
+<td>ONESHOT_READYBOW</td>
+</tr>
+<tr>
+<td>50</td>
+<td>ONESHOT_SPELLPRECAST</td>
+</tr>
+<tr>
+<td>51</td>
+<td>ONESHOT_SPELLCAST</td>
+</tr>
+<tr>
+<td>53</td>
+<td>ONESHOT_BATTLEROAR</td>
+</tr>
+<tr>
+<td>54</td>
+<td>ONESHOT_SPECIALATTACK1H</td>
+</tr>
+<tr>
+<td>60</td>
+<td>ONESHOT_KICK</td>
+</tr>
+<tr>
+<td>61</td>
+<td>ONESHOT_ATTACKTHROWN</td>
+</tr>
+<tr>
+<td>64</td>
+<td>STATE_STUN</td>
+</tr>
+<tr>
+<td>65</td>
+<td>STATE_DEAD</td>
+</tr>
+<tr>
+<td>66</td>
+<td>ONESHOT_SALUTE</td>
+</tr>
+<tr>
+<td>68</td>
+<td>STATE_KNEEL</td>
+</tr>
+<tr>
+<td>69</td>
+<td>STATE_USESTANDING</td>
+</tr>
+<tr>
+<td>70</td>
+<td>ONESHOT_WAVE_NOSHEATHE</td>
+</tr>
+<tr>
+<td>71</td>
+<td>ONESHOT_CHEER_NOSHEATHE</td>
+</tr>
+<tr>
+<td>92</td>
+<td>ONESHOT_EAT_NOSHEATHE</td>
+</tr>
+<tr>
+<td>93</td>
+<td>STATE_STUN_NOSHEATHE</td>
+</tr>
+<tr>
+<td>94</td>
+<td>ONESHOT_DANCE</td>
+</tr>
+<tr>
+<td>113</td>
+<td>ONESHOT_SALUTE_NOSHEATH</td>
+</tr>
+<tr>
+<td>133</td>
+<td>STATE_USESTANDING_NOSHEATHE</td>
+</tr>
+<tr>
+<td>153</td>
+<td>ONESHOT_LAUGH_NOSHEATHE</td>
+</tr>
+<tr>
+<td>173</td>
+<td>STATE_WORK</td>
+</tr>
+<tr>
+<td>193</td>
+<td>STATE_SPELLPRECAST</td>
+</tr>
+<tr>
+<td>213</td>
+<td>ONESHOT_READYRIFLE</td>
+</tr>
+<tr>
+<td>214</td>
+<td>STATE_READYRIFLE</td>
+</tr>
+<tr>
+<td>233</td>
+<td>STATE_WORK_MINING</td>
+</tr>
+<tr>
+<td>234</td>
+<td>STATE_WORK_CHOPWOOD</td>
+</tr>
+<tr>
+<td>253</td>
+<td>STATE_APPLAUD</td>
+</tr>
+<tr>
+<td>254</td>
+<td>ONESHOT_LIFTOFF</td>
+</tr>
+<tr>
+<td>273</td>
+<td>ONESHOT_YES (DNR)</td>
+</tr>
+<tr>
+<td>274</td>
+<td>ONESHOT_NO (DNR)</td>
+</tr>
+<tr>
+<td>275</td>
+<td>ONESHOT_TRAIN (DNR)</td>
+</tr>
+<tr>
+<td>293</td>
+<td>ONESHOT_LAND</td>
+</tr>
+<tr>
+<td>313</td>
+<td>STATE_AT_EASE</td>
+</tr>
+<tr>
+<td>333</td>
+<td>STATE_READY1H</td>
+</tr>
+<tr>
+<td>353</td>
+<td>STATE_SPELLKNEELSTART</td>
+</tr>
+<tr>
+<td>373</td>
+<td>STAND_STATE_SUBMERGED</td>
+</tr>
+<tr>
+<td>374</td>
+<td>ONESHOT_SUBMERGE</td>
+</tr>
+<tr>
+<td>375</td>
+<td>STATE_READY2H</td>
+</tr>
+<tr>
+<td>376</td>
+<td>STATE_READYBOW</td>
+</tr>
+<tr>
+<td>377</td>
+<td>ONESHOT_MOUNTSPECIAL</td>
+</tr>
+<tr>
+<td>378</td>
+<td>STATE_TALK</td>
+</tr>
+<tr>
+<td>379</td>
+<td>STATE_FISHING</td>
+</tr>
+<tr>
+<td>380</td>
+<td>ONESHOT_FISHING</td>
+</tr>
+<tr>
+<td>381</td>
+<td>ONESHOT_LOOT</td>
+</tr>
+<tr>
+<td>382</td>
+<td>STATE_WHIRLWIND</td>
+</tr>
+<tr>
+<td>383</td>
+<td>STATE_DROWNED</td>
+</tr>
+<tr>
+<td>384</td>
+<td>STATE_HOLD_BOW</td>
+</tr>
+<tr>
+<td>385</td>
+<td>STATE_HOLD_RIFLE</td>
+</tr>
+<tr>
+<td>386</td>
+<td>STATE_HOLD_THROWN</td>
+</tr>
+<tr>
+<td>387</td>
+<td>ONESHOT_DROWN</td>
+</tr>
+<tr>
+<td>388</td>
+<td>ONESHOT_STOMP</td>
+</tr>
+<tr>
+<td>389</td>
+<td>ONESHOT_ATTACKOFF</td>
+</tr>
+<tr>
+<td>390</td>
+<td>ONESHOT_ATTACKOFFPIERCE</td>
+</tr>
+<tr>
+<td>391</td>
+<td>STATE_ROAR</td>
+</tr>
+<tr>
+<td>392</td>
+<td>STATE_LAUGH</td>
+</tr>
+<tr>
+<td>393</td>
+<td>ONESHOT_CREATURE_SPECIAL</td>
+</tr>
+<tr>
+<td>394</td>
+<td>ONESHOT_JUMPLANDRUN</td>
+</tr>
+<tr>
+<td>395</td>
+<td>ONESHOT_JUMPEND</td>
+</tr>
+<tr>
+<td>396</td>
+<td>ONESHOT_TALK_NOSHEATHE</td>
+</tr>
+<tr>
+<td>397</td>
+<td>ONESHOT_POINT_NOSHEATHE</td>
+</tr>
+<tr>
+<td>398</td>
+<td>STATE_CANNIBALIZE</td>
+</tr>
+<tr>
+<td>399</td>
+<td>ONESHOT_JUMPSTART</td>
+</tr>
+<tr>
+<td>400</td>
+<td>STATE_DANCESPECIAL</td>
+</tr>
+<tr>
+<td>401</td>
+<td>ONESHOT_DANCESPECIAL</td>
+</tr>
+<tr>
+<td>402</td>
+<td>ONESHOT_CUSTOMSPELL01</td>
+</tr>
+<tr>
+<td>403</td>
+<td>ONESHOT_CUSTOMSPELL02</td>
+</tr>
+<tr>
+<td>404</td>
+<td>ONESHOT_CUSTOMSPELL03</td>
+</tr>
+<tr>
+<td>405</td>
+<td>ONESHOT_CUSTOMSPELL04</td>
+</tr>
+<tr>
+<td>406</td>
+<td>ONESHOT_CUSTOMSPELL05</td>
+</tr>
+<tr>
+<td>407</td>
+<td>ONESHOT_CUSTOMSPELL06</td>
+</tr>
+<tr>
+<td>408</td>
+<td>ONESHOT_CUSTOMSPELL07</td>
+</tr>
+<tr>
+<td>409</td>
+<td>ONESHOT_CUSTOMSPELL08</td>
+</tr>
+<tr>
+<td>410</td>
+<td>ONESHOT_CUSTOMSPELL09</td>
+</tr>
+<tr>
+<td>411</td>
+<td>ONESHOT_CUSTOMSPELL10</td>
+</tr>
+<tr>
+<td>412</td>
+<td>STATE_EXCLAIM</td>
+</tr>
+<tr>
+<td>413</td>
+<td>STATE_DANCE_CUSTOM</td>
+</tr>
+<tr>
+<td>415</td>
+<td>STATE_SIT_CHAIR_MED</td>
+</tr>
+<tr>
+<td>416</td>
+<td>STATE_CUSTOM_SPELL_01</td>
+</tr>
+<tr>
+<td>417</td>
+<td>STATE_CUSTOM_SPELL_02</td>
+</tr>
+<tr>
+<td>418</td>
+<td>STATE_EAT</td>
+</tr>
+<tr>
+<td>419</td>
+<td>STATE_CUSTOM_SPELL_04</td>
+</tr>
+<tr>
+<td>420</td>
+<td>STATE_CUSTOM_SPELL_03</td>
+</tr>
+<tr>
+<td>421</td>
+<td>STATE_CUSTOM_SPELL_05</td>
+</tr>
+<tr>
+<td>422</td>
+<td>STATE_SPELLEFFECT_HOLD</td>
+</tr>
+<tr>
+<td>423</td>
+<td>STATE_EAT_NO_SHEATHE</td>
+</tr>
+<tr>
+<td>424</td>
+<td>STATE_MOUNT</td>
+</tr>
+<tr>
+<td>425</td>
+<td>STATE_READY2HL</td>
+</tr>
+<tr>
+<td>426</td>
+<td>STATE_SIT_CHAIR_HIGH</td>
+</tr>
+<tr>
+<td>427</td>
+<td>STATE_FALL</td>
+</tr>
+<tr>
+<td>428</td>
+<td>STATE_LOOT</td>
+</tr>
+<tr>
+<td>429</td>
+<td>STATE_SUBMERGED</td>
+</tr>
+<tr>
+<td>430</td>
+<td>ONESHOT_COWER (DNR)</td>
+</tr>
+<tr>
+<td>431</td>
+<td>STATE_COWER</td>
+</tr>
+<tr>
+<td>432</td>
+<td>ONESHOT_USESTANDING</td>
+</tr>
+<tr>
+<td>433</td>
+<td>STATE_STEALTH_STAND</td>
+</tr>
+<tr>
+<td>434</td>
+<td>ONESHOT_OMNICAST_GHOUL (W/SOUND</td>
+</tr>
+<tr>
+<td>435</td>
+<td>ONESHOT_ATTACKBOW</td>
+</tr>
+<tr>
+<td>436</td>
+<td>ONESHOT_ATTACKRIFLE</td>
+</tr>
+<tr>
+<td>437</td>
+<td>STATE_SWIM_IDLE</td>
+</tr>
+<tr>
+<td>438</td>
+<td>STATE_ATTACK_UNARMED</td>
+</tr>
+<tr>
+<td>439</td>
+<td>ONESHOT_SPELLCAST (W/SOUND)</td>
+</tr>
+<tr>
+<td>440</td>
+<td>ONESHOT_DODGE</td>
+</tr>
+<tr>
+<td>441</td>
+<td>ONESHOT_PARRY1H</td>
+</tr>
+<tr>
+<td>442</td>
+<td>ONESHOT_PARRY2H</td>
+</tr>
+<tr>
+<td>443</td>
+<td>ONESHOT_PARRY2HL</td>
+</tr>
+<tr>
+<td>444</td>
+<td>STATE_FLYFALL</td>
+</tr>
+<tr>
+<td>445</td>
+<td>ONESHOT_FLYDEATH</td>
+</tr>
+<tr>
+<td>446</td>
+<td>STATE_FLY_FALL</td>
+</tr>
+<tr>
+<td>447</td>
+<td>ONESHOT_FLY_SIT_GROUND_DOWN</td>
+</tr>
+<tr>
+<td>448</td>
+<td>ONESHOT_FLY_SIT_GROUND_UP</td>
+</tr>
+<tr>
+<td>449</td>
+<td>ONESHOT_EMERGE</td>
+</tr>
+<tr>
+<td>450</td>
+<td>ONESHOT_DRAGONSPIT</td>
+</tr>
+<tr>
+<td>451</td>
+<td>STATE_SPECIALUNARMED</td>
+</tr>
+<tr>
+<td>452</td>
+<td>ONESHOT_FLYGRAB</td>
+</tr>
+<tr>
+<td>453</td>
+<td>STATE_FLYGRABCLOSED</td>
+</tr>
+<tr>
+<td>454</td>
+<td>ONESHOT_FLYGRABTHROWN</td>
+</tr>
+<tr>
+<td>455</td>
+<td>STATE_FLY_SIT_GROUND</td>
+</tr>
+<tr>
+<td>456</td>
+<td>STATE_WALKBACKWARDS</td>
+</tr>
+<tr>
+<td>457</td>
+<td>ONESHOT_FLYTALK</td>
+</tr>
+<tr>
+<td>458</td>
+<td>ONESHOT_FLYATTACK1H</td>
+</tr>
+<tr>
+<td>459</td>
+<td>STATE_CUSTOMSPELL08</td>
+</tr>
+<tr>
+<td>460</td>
+<td>ONESHOT_FLY_DRAGONSPIT</td>
+</tr>
+<tr>
+<td>461</td>
+<td>STATE_SIT_CHAIR_LOW</td>
+</tr>
+<tr>
+<td>462</td>
+<td>ONE_SHOT_STUN</td>
+</tr>
+<tr>
+<td>463</td>
+<td>ONESHOT_SPELLCAST_OMNI</td>
+</tr>
+<tr>
+<td>465</td>
+<td>STATE_READYTHROWN</td>
+</tr>
+<tr>
+<td>466</td>
+<td>ONESHOT_WORK_CHOPWOOD</td>
+</tr>
+<tr>
+<td>467</td>
+<td>ONESHOT_WORK_MINING</td>
+</tr>
+<tr>
+<td>468</td>
+<td>STATE_SPELL_CHANNEL_OMNI</td>
+</tr>
+<tr>
+<td>469</td>
+<td>STATE_SPELL_CHANNEL_DIRECTED</td>
+</tr>
+<tr>
+<td>470</td>
+<td>STAND_STATE_NONE</td>
+</tr>
+<tr>
+<td>471</td>
+<td>STATE_READYJOUST</td>
+</tr>
+<tr>
+<td>473</td>
+<td>STATE_STRANGULATE</td>
+</tr>
+<tr>
+<td>474</td>
+<td>STATE_READYSPELLOMNI</td>
+</tr>
+<tr>
+<td>475</td>
+<td>STATE_HOLD_JOUST</td>
+</tr>
+<tr>
+<td>476</td>
+<td>ONESHOT_CRY (JAINA PROUDMOORE ONLY)</td>
+</tr>
+</tbody>
+</table>
+<p>Taken from Emotes.dbc - patch 3.3.5a</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

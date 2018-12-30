@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Build CMaNGOS for Mac OS X - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Build CMaNGOS for Mac OS X";
+    var mkdocs_page_input_path = "Build-CMaNGOS-for-Mac-OS-X.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Build CMaNGOS for Mac OS X</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>These instructions are specific to Mac OS X. They were only tested with Mac OS X 10.6.8 but should also work with 10.7. These steps won't work on higher versions without further tweaks.</p>
+<h2 id="1-getting-everything-you-need">1: Getting everything you need</h2>
+<p><strong>Privileges</strong></p>
+<p>You must have access to an administrator account on your computer.</p>
+<p><strong>Software tools</strong></p>
+<p>In order to download, compile and install CMaNGOS and its tools, you will need the following software. All of them are free, though some may require you to register on the company website before downloading. All come with a standard Mac OS X installer which will greatly ease their installation and setting.</p>
+<p><strong>Developers Tools (Xcode)</strong></p>
+<p>You'll need them to compile the source files. They are provided to developers by Apple You can grab Xcode here: https://developer.apple.com/technologies/mac/#xcode <br />
+Don't forget to install the command line tools (Preferences&gt;Download for the last version of Xcode)</p>
+<p><strong>A C++11 compliant compiler</strong></p>
+<p>See <a href="Getting-a-C--11-compiler-on-Mac-OS-X">this guide</a> on our wiki.</p>
+<p><strong>Boost lib</strong></p>
+<p>The network part of CMaNGOS rely on boost library. You need to get it and install/compile it from http://www.boost.org/users/download/. We will then assume that Boost in installed under <code>/usr/local/boost/</code>. You will need to let your OS know where Boost lib directory is by running:</p>
+<pre><code>$ DYLD_LIBRARY_PATH=/usr/local/boost/lib:DYLD_LIBRARY_PATH
+$ export DYLD_LIBRARY_PATH
+</code></pre>
+
+<p><strong>MySQL Community Database Server</strong></p>
+<p>Where a great part of the data about the game server side will be stored.<br />
+Link: http://dev.mysql.com/downloads/mysql/?rz=gdl#downloads<br />
+Of course, if you have a 64-bit Mac, install the 64-bit MySQL package</p>
+<p><strong>Git</strong></p>
+<p>Git comes with Xcode so you don't have to install it separately. If you want a newer version you can download it from http://git-scm.com/</p>
+<p><strong>CMake</strong></p>
+<p>To configure compilation. Get it from here: http://www.cmake.org/cmake/resources/software.html<br />
+Of course, if you have a 64-bit Mac, install the 64-bit CMake package.</p>
+<p>Once all these softwares are downloaded and installed on your Mac, you can move to the next step.</p>
+<h2 id="2-building-cmangos-creating-the-world-engine">2. Building CMaNGOS - creating the world engine</h2>
+<p>From now, we will assume that:
+<em> all the building will be done in a directory named mangos into your home directory
+</em> you will download CMaNGOS sources into a subdirectory of this mangos folder (which we will also name mangos)
+<em> you will install your server also into subdirectory of this mangos directory (which will be named run)
+</em> your game client is located in /Applications/World of Warcraft/</p>
+<p>First, we will download all sources for CMaNGOS and scripts.
+Open Terminal and enter:</p>
+<pre><code>$mkdir mangos &amp;&amp; cd mangos
+$git clone git://github.com/cmangos/mangos-wotlk.git mangos
+</code></pre>
+
+<p>or for TBC:</p>
+<p><code>$git clone git://github.com/cmangos/mangos-tbc.git mangos</code></p>
+<p>Or for classic:</p>
+<p><code>$git clone git://github.com/cmangos/mangos-classic.git mangos</code></p>
+<p>Once the download is finished, we create the directory where the CMaNGOS server will be installed:</p>
+<p><code>$mkdir run</code></p>
+<p>Now, we will prepare to build the server</p>
+<p><code>$cd mangos</code></p>
+<p>Download the source files for the scripts (allows NPC to cast more spells and do complex things, not mandatory but you definitely want them):</p>
+<p><code>$git clone git://github.com/scriptdev2/scriptdev2.git src/bindings/ScriptDev2</code></p>
+<p>For TBC use instead:</p>
+<p><code>$git clone git://github.com/scriptdev2/scriptdev2-tbc.git src/bindings/ScriptDev2</code></p>
+<p>For Classic use instead:</p>
+<p><code>$git clone git://github.com/scriptdev2/scriptdev2-classic.git src/bindings/ScriptDev2</code></p>
+<p>We will now configure the compilation to tell cmake we want to install CMaNGOS server into the server directory we created earlier:</p>
+<pre><code>$mkdir build &amp;&amp; cd build
+$cmake .. -DCMAKE_INSTALL_PREFIX=~/mangos/run -DCMAKE_C_COMPILER=~/toolchains/gcc-4.8.5/bin/gcc -DCMAKE_CXX_COMPILER=~/toolchains/gcc-4.8.5/bin/g++ -DBOOST_INCLUDEDIR=/usr/local/boost/include
+</code></pre>
+
+<p>If everything is OK, we can compile:</p>
+<p><code>$make</code></p>
+<p><em>Note: If your computer's CPU is multicore, you can instead type <code>$make -jN</code> where N is your number of cores. For instance, compiling on a 4 cores CPU: <code>$make -j4</code>
+You can use the same command option everytime you will see <code>$make</code> in this tutorial.</em></p>
+<p>If everything went OK, we can install the compiled files:</p>
+<p><code>$make install</code></p>
+<p>Finally, we will create the config files from their template files.</p>
+<pre><code>$cd ~/mangos/run/etc/
+$cp realmd.conf.dist realmd.conf
+$cp mangosd.conf.dist mangosd.conf
+$cp scriptdev2.conf.dist scriptdev2.conf
+</code></pre>
+
+<h2 id="3-extracting-maps-and-dbc-adding-a-world-around-the-engine">3. Extracting Maps and DBC - adding a world around the engine</h2>
+<p>Now the server is built and installed, we will extract all the maps, objects, spells and others data from the game files. The CMaNGOS server will need them to shape the world around your characters. The extractor utility is provided with the CMaNGOS source files and we will build it:</p>
+<pre><code>$cd ~/mangos/mangos
+$cd ./contrib/extractor
+$cmake -G &quot;Unix Makefiles&quot; -DCMAKE_OSX_ARCHITECTURES=i386
+$make
+</code></pre>
+
+<p>There now should be an new file named <code>ad</code>. This is the Map/DBC Extractor. We will extract the maps and the DBC files from the game data and put the extracted files where the freshly compiled server was installed.</p>
+<pre><code>$cp ad /Applications/World\ of\ Warcraft/
+$cd  /Applications/World\ of\ Warcraft/
+$chmod +x ad
+$./ad -f 0 -i /Applications/World\ of\ Warcraft/ -o .
+</code></pre>
+
+<p>You can either remplace <code>f 0</code> by <code>f 1</code>, depending of the accuracy you want for the maps (but at the cost of larger file size). You should now have two new directories: dbc and maps inside your WoW client folder. By default, they need to be put where the server binaires are. If you want to use mmaps (for pathfinding and smoother creatures movements), you can go to step 4. If you don't want to use mmaps, you can move the dbc and maps to the server directory:</p>
+<p><code>$mv dbc maps ~/mangos/run/bin/</code></p>
+<h2 id="4-installing-the-vmaps-optional-but-highly-recommended">4. Installing the vmaps (optional, but highly recommended)</h2>
+<p>Vmaps are used by the server to determine if NPC can see/attack your characters, through walls for instance. This is also called LoS calculation (Line of Sight).
+We will extract the vmaps from the game data and then assemble them. CMaNGOS does not yet provide binaries for Mac but it does provide the source files, thus we will build our own binaries. First, we need to download and apply a patch written by evil-at-wow and myself:</p>
+<p><code>$cd ~/mangos/mangos</code></p>
+<p>(copy paste the command line below into Terminal)</p>
+<pre><code>$curl https://gist.githubusercontent.com/cala/5784873/raw/0b06591d9aac800a2ede4b8ba4b15e586d5d789e/Fix%20extractors%20build%20for%20Mac%20OS%20X -o fix_extractors_for_os_x.patch
+$git apply fix_extractors_for_os_x.patch
+</code></pre>
+
+<p>If everything went OK, you should not have any feedback and we need to commit (aka save the changes).</p>
+<p><code>$git commit -am "Fix extractors build for Mac OS X"</code></p>
+<p>Now the patch is applied, we can build the library allowing to extract from the game files:</p>
+<pre><code>$cd dep/libmpq/
+$./autogen.sh
+</code></pre>
+
+<p>Some text will be displayed and should ends by <code>Now you are ready to run ./configure</code>. Let's do that:</p>
+<pre><code>$./configure CC=&quot;gcc -arch x86_64&quot; CXX=&quot;g++ -arch x86_64&quot; CFLAGS='-D_FILE_OFFSET_BITS=64 -D_LARGE_FILES=1 -D_LARGEFILE_SOURCE=1'
+$make
+</code></pre>
+
+<p>The compilation should take a few minutes, then  we need to link the built library to the standard Mac OS X directory for third party libraries:</p>
+<pre><code>$ln -s /usr/local/lib/libmpq.4.0.2.dylib /Users/yourusername/mangos/mangos/dep/libmpq/libmpq/.libs/libmpq.4.0.2.dylib
+$ln -s /usr/local/lib/libmpq.la /Users/yourusername/mangos/mangos/dep/libmpq/libmpq/libmpq.la
+</code></pre>
+
+<p>We are now ready to build the vmaps extractor/assembler:</p>
+<pre><code>$cd ../../contrib/vmapextractor/
+$cmake -G &quot;Unix Makefiles&quot; -DCMAKE_OSX_ARCHITECTURES=x86_64
+$make
+</code></pre>
+
+<p>When the compile process is done, a new file named vmapextractor should be in vmapextractor directory
+We copy to our game client directory for later use:</p>
+<p><code>$cp vmapextractor/vmapextractor /Applications/World\ of\ Warcraft</code></p>
+<p>Now, let's build the vmap assembler:</p>
+<pre><code>$cd ../vmap_assembler/
+$cmake -G &quot;Unix Makefiles&quot; -DCMAKE_OSX_ARCHITECTURES=x86_64
+$make
+</code></pre>
+
+<p>When the compile process is done, a new file named vmap_assembler should be in the current directory. We need to copy it too to our game client directory:</p>
+<p><code>$cp vmap_assembler /Applications/World\ of\ Warcraft</code></p>
+<p>We can finally extract and assemble vmaps</p>
+<pre><code>$cd  /Applications/World\ of\ Warcraft
+$chown +x vmap_assembler vmapextractor
+</code></pre>
+
+<p>Now, we create the directory where the vmaps will be extracted and we do the extraction:</p>
+<pre><code>$mkdir buildings
+$./vmapsExtractor -d Data
+</code></pre>
+
+<p>This should take a few (dozen of) minutes. Once all the vmaps are extracted, we need to assemble them:</p>
+<pre><code>$mkdir vmaps
+$./vmaps_assembler buildings vmaps
+</code></pre>
+
+<p>This will also take a few (dozen of) minutes. Once finished, we move the vmaps to the server repository and we clean the extracted data that we no longer need:</p>
+<pre><code>$mv vmaps ~/mangos/run/bin/
+$rm -R buildings
+</code></pre>
+
+<h2 id="5-installing-the-mmaps-optional">5. Installing the mmaps (optional)</h2>
+<p>MovementMaps (mmaps) are used by the server to determine where a NPC can go (or not) with a fine precision: slopes, tree trunks, thin walls... It also enable the nice pathfinding with much better movement for creatures.<br />
+We will extract the mmaps from the game data and previously extracted maps. CMaNGOS does not yet provide binary for Mac but it does provide the source files, thus we will build our own binary:</p>
+<pre><code>$cd ~/mangos/mangos/contrib/mmaps/
+$cmake -G &quot;Unix Makefiles&quot; -DCMAKE_OSX_ARCHITECTURES=x86_64
+$make
+</code></pre>
+
+<p>When the compile process is done, a new file named MoveMapGen should be in the current directory. We need to copy it too to our game client directory:</p>
+<p><code>$cp MoveMapGen MoveMapGen.sh /Applications/World\ of\ Warcraft</code></p>
+<p>We can finally extract the mmaps</p>
+<pre><code>$cd  /Applications/World\ of\ Warcraft
+$chmod +x MoveMapGen*
+</code></pre>
+
+<p>Now, we create the directory where the mmaps will be generated:</p>
+<p><code>$mkdir mmaps</code></p>
+<p>And finally, we generated the mmaps (be aware that it will take hours, litteraly):</p>
+<p><code>$./MoveMapGen.sh N</code></p>
+<p>Where N is the number of core you want to use to extract the mmaps ranging from 1 to 4. 
+Several hours later, when the mmaps are generated, we move them to the server binay folder, along with the maps and DBC:</p>
+<p><code>$mv dbc maps mmaps ~/mangos/run/bin/</code></p>
+<p>You have now complete all the steps that are specific to Mac OS X. For all the remaining steps (mainly configuration, database management and server startup), you can refer to the CMaNGOS Installation guide: Installation-Instructions</p>
+<p><em>Note: for MySQL, we advice using the very nice and free front end client: Sequel Pro http://www.sequelpro.com/</em></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Achievement criteria requirement - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Achievement criteria requirement";
+    var mkdocs_page_input_path = "DB-Structure/Core/achievement_criteria_requirement.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Achievement criteria requirement</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96achievement95criteria95requirement96-table">The `achievement_criteria_requirement` table</h2>
+<p>This table contains what need to be done to complete an achievement criteria.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Attributes</th>
+<th>Can be null</th>
+<th>Default</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Achievement_criteria_requirement#criteria_id">criteria_id</a></td>
+<td>mediumint(8)</td>
+<td>signed</td>
+<td>NO</td>
+<td>None</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Achievement_criteria_requirement#type">type</a></td>
+<td>tintint(3)</td>
+<td>unsigned</td>
+<td>NO</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Achievement_criteria_requirement#otherfields">value1</a></td>
+<td>mediumint(8)</td>
+<td>unsigned</td>
+<td>NO</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Achievement_criteria_requirement#otherfields">value2</a></td>
+<td>mediumint(8)</td>
+<td>unsigned</td>
+<td>NO</td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="criteria95id">criteria_id</h4>
+<p>Column 0 (ID) of achievement_criteria.dbc This DBC contains the achievement_id on 2nd column and will be later extracted to show relations.</p>
+<h4 id="type">type</h4>
+<p>Describes how to use value1 and value2.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>TYPE_NONE</td>
+</tr>
+<tr>
+<td>1</td>
+<td>TYPE_T_CREATURE</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TYPE_T_PLAYER_CLASS_RACE</td>
+</tr>
+<tr>
+<td>3</td>
+<td>TYPE_T_PLAYER_LESS_HEALTH</td>
+</tr>
+<tr>
+<td>4</td>
+<td>TYPE_T_PLAYER_DEAD</td>
+</tr>
+<tr>
+<td>5</td>
+<td>TYPE_S_AURA</td>
+</tr>
+<tr>
+<td>6</td>
+<td>TYPE_S_AREA</td>
+</tr>
+<tr>
+<td>7</td>
+<td>TYPE_T_AURA</td>
+</tr>
+<tr>
+<td>8</td>
+<td>TYPE_VALUE</td>
+</tr>
+<tr>
+<td>9</td>
+<td>TYPE_T_LEVEL</td>
+</tr>
+<tr>
+<td>10</td>
+<td>TYPE_T_GENDER</td>
+</tr>
+<tr>
+<td>11</td>
+<td>TYPE_DISABLED</td>
+</tr>
+<tr>
+<td>12</td>
+<td>TYPE_MAP_DIFFICULTY</td>
+</tr>
+<tr>
+<td>13</td>
+<td>TYPE_MAP_PLAYER_COUNT</td>
+</tr>
+<tr>
+<td>14</td>
+<td>TYPE_T_TEAM</td>
+</tr>
+<tr>
+<td>15</td>
+<td>TYPE_S_DRUNK</td>
+</tr>
+<tr>
+<td>16</td>
+<td>TYPE_HOLIDAY</td>
+</tr>
+<tr>
+<td>17</td>
+<td>TYPE_BG_LOSS_TEAM_SCORE</td>
+</tr>
+<tr>
+<td>18</td>
+<td>TYPE_INSTANCE_SCRIPT</td>
+</tr>
+<tr>
+<td>19</td>
+<td>TYPE_S_EQUIPED_ITEM_LVL</td>
+</tr>
+<tr>
+<td>20</td>
+<td>TYPE_REQUIRE_NTH_BIRTHDAY</td>
+</tr>
+<tr>
+<td>21</td>
+<td>TYPE_REQUIRE_KNOWN_TITLE</td>
+</tr>
+</tbody>
+</table>
+<h4 id="otherfields">OtherFields</h4>
+<p>Depending on what Type was set, the meaning and use for the following fields varies. TYPE_T are for targets and TYPE_S are for sources</p>
+<ul>
+<li><strong>TYPE_T_CREATURE = 1</strong><ul>
+<li>value1: Target creature_template.<a href="creature_template#entry">entry</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_T_PLAYER_CLASS_RACE = 2 '''<ul>
+<li>value1: Target Player class</li>
+<li>value2: Target Player race</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_T_PLAYER_LESS_HEALTH = 3 '''<ul>
+<li>value1: Target Health percentage</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_T_PLAYER_DEAD = 4 '''<ul>
+<li>value1: Team value the source player and target dead player must both meet</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_S_AURA = 5 '''<ul>
+<li>value1: Spell ID</li>
+<li>value2: Effect index</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_S_AREA = 6 '''<ul>
+<li>value1: Area ID from <a href="AreaTable.dbc">AreaTable.dbc</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_T_AURA = 7 '''<ul>
+<li>value1: Spell ID</li>
+<li>value2: Effect index</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>TYPE_VALUE = 8</strong><ul>
+<li>value1: Min Value. Value provided with achievement update must be not less that limit</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>TYPE_T_LEVEL = 9</strong><ul>
+<li>value1: Target Min Level</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>TYPE_T_GENDER = 10</strong><ul>
+<li>value1: Gender: 0=Male, 1=Female</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>TYPE_DISABLED = 11</strong></li>
+</ul>
+<p>Used to prevent achievement criteria to complete if not all requirements are implemented and listed in this table</p>
+<ul>
+<li><strong>TYPE_MAP_DIFFICULTY = 12</strong><ul>
+<li>value1: Map difficulty:</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DUNGEON_DIFFICULTY_NORMAL</td>
+<td>0</td>
+</tr>
+<tr>
+<td>DUNGEON_DIFFICULTY_HEROIC</td>
+<td>1</td>
+</tr>
+<tr>
+<td>RAID_DIFFICULTY_10MAN_NORMAL</td>
+<td>0</td>
+</tr>
+<tr>
+<td>RAID_DIFFICULTY_25MAN_NORMAL</td>
+<td>1</td>
+</tr>
+<tr>
+<td>RAID_DIFFICULTY_10MAN_HEROIC</td>
+<td>2</td>
+</tr>
+<tr>
+<td>RAID_DIFFICULTY_25MAN_HEROIC</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>TYPE_MAP_PLAYER_COUNT = 13</strong><ul>
+<li>value1: Count. For criteria "with less than %u people in the zone"</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>TYPE_T_TEAM = 14</strong><ul>
+<li>value1: Team: HORDE = 67, ALLIANCE = 469</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>TYPE_S_DRUNK = 15</strong><ul>
+<li>value1: Druken State. DRUNKEN_SOBER = 0, DRUNKEN_TIPSY = 1, DRUNKEN_DRUNK = 2, DRUNKEN_SMASHED = 3</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>TYPE_HOLIDAY = 16</strong><ul>
+<li>value1: Holiday ID which must be active from Holiday.dbc and <a href="Game_event#holiday">game_event</a></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_BG_LOSS_TEAM_SCORE = 17 '''<ul>
+<li>value1: min_score</li>
+<li>value2: max_score</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_INSTANCE_SCRIPT = 18 '''</li>
+</ul>
+<p>Make instance script call for check current criteria requirements fit</p>
+<ul>
+<li>'''TYPE_S_EQUIPED_ITEM_LVL = 19 '''<ul>
+<li>value1: item_level</li>
+<li>value2: item_quality</li>
+</ul>
+</li>
+</ul>
+<p>For equipped item in slot `misc1` to item level and quality</p>
+<ul>
+<li>'''TYPE_REQUIRE_NTH_BIRTHDAY = 20 '''<ul>
+<li>value1: nth-birthday</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li>'''TYPE_CRITERIA_REQUIRE_KNOWN_TITLE = 21 '''<ul>
+<li>value1: <a href="CharTitles.dbc">title_id</a></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

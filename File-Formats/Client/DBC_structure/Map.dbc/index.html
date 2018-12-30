@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Map.dbc - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Map.dbc";
+    var mkdocs_page_input_path = "File-Formats/Client/DBC_structure/Map.dbc.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Map.dbc</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="dbc_files">dbc files</a> list.</p>
+<h3 id="mapdbc">Map.dbc</h3>
+<p>This DBC contains the maps list.</p>
+<p><strong>Version is : 3.3.5a</strong></p>
+<h2 id="structure">Structure</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Field</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ID</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>InternalName</td>
+<td>String</td>
+<td>reference to World\Map\ [...] \</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Flags</td>
+<td>Integer</td>
+<td>0x100 - CAN_CHANGE_PLAYER_DIFFICULTY</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Type</td>
+<td>Integer</td>
+<td>0: none, 1: party, 2: raid, 3: pvp, 4: arena, &gt;=5: none (official from <code>IsInInstance()</code>)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>IsBattleground</td>
+<td>Integer</td>
+<td>Boolean (1 = True, 0 = False)</td>
+</tr>
+<tr>
+<td>6-22</td>
+<td>Name</td>
+<td>String</td>
+<td><a href="Localization">Localization;</a>; displayed on World Map for example</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="AreaTable.dbc">AreaTable.dbc</a></td>
+<td>Integer</td>
+<td>Ref-ID;</td>
+</tr>
+<tr>
+<td>24-40</td>
+<td>MapDescriptionA</td>
+<td>String</td>
+<td><a href="Localization">Localization</a></td>
+</tr>
+<tr>
+<td>41-57</td>
+<td>MapDescriptionH</td>
+<td>String</td>
+<td><a href="Localization">Localization</a></td>
+</tr>
+<tr>
+<td>58</td>
+<td><a href="LoadingScreen">LoadingScreen</a></td>
+<td>Integer</td>
+<td>Ref-ID; The LoadingScreen to Display</td>
+</tr>
+<tr>
+<td>59</td>
+<td>BGMapIconScale</td>
+<td>Float</td>
+<td></td>
+</tr>
+<tr>
+<td>60</td>
+<td>GhostEntranceMap</td>
+<td>Integer</td>
+<td>Ref-ID; Points to column 1, -1 if none</td>
+</tr>
+<tr>
+<td>61</td>
+<td>GhostEntranceX</td>
+<td>Float</td>
+<td>The X-Coord of the instance entrance</td>
+</tr>
+<tr>
+<td>62</td>
+<td>GhostEntranceY</td>
+<td>Float</td>
+<td>The Y-Coord of the instance entrance</td>
+</tr>
+<tr>
+<td>63</td>
+<td>TimeOfDayOverride</td>
+<td>Integer</td>
+<td>Set to -1 for everything but Orgrimmar and Dalaran arena. For those, the time of day will change to this.</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Expansion</td>
+<td>Integer</td>
+<td>Classic: 0; BC: 1; WotLK: 2</td>
+</tr>
+<tr>
+<td>65</td>
+<td>RaidOffset</td>
+<td>Integer</td>
+<td>Instance-Reset?</td>
+</tr>
+<tr>
+<td>66</td>
+<td>MaxPlayers</td>
+<td>Integer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="content">Content</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Name</th>
+<th>AreaTableID</th>
+<th>Expansion</th>
+<th>MaxPlayers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>Eastern Kingdoms</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>Kalimdor</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0</td>
+<td>Testing</td>
+<td>3817</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>25</td>
+<td>0</td>
+<td>Scott Test</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>30</td>
+<td>3</td>
+<td>Alterac Valley</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>33</td>
+<td>1</td>
+<td>Shadowfang Keep</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>34</td>
+<td>1</td>
+<td>Stormwind Stockade</td>
+<td>717</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>35</td>
+<td>0</td>
+<td><unused>StormwindPrison</td>
+<td>717</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>36</td>
+<td>1</td>
+<td>Deadmines</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>37</td>
+<td>0</td>
+<td>Azshara Crater</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>42</td>
+<td>0</td>
+<td>Collin's Test</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>43</td>
+<td>1</td>
+<td>Wailing Caverns</td>
+<td>718</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>44</td>
+<td>1</td>
+<td><unused> Monastery</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>47</td>
+<td>1</td>
+<td>Razorfen Kraul</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>48</td>
+<td>1</td>
+<td>Blackfathom Deeps</td>
+<td>719</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>70</td>
+<td>1</td>
+<td>Uldaman</td>
+<td>1337</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>90</td>
+<td>1</td>
+<td>Gnomeregan</td>
+<td>721</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>109</td>
+<td>1</td>
+<td>Sunken Temple</td>
+<td>1477</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>129</td>
+<td>1</td>
+<td>Razorfen Downs</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>169</td>
+<td>2</td>
+<td>Emerald Dream</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+</tr>
+<tr>
+<td>189</td>
+<td>1</td>
+<td>Scarlet Monastery</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>209</td>
+<td>1</td>
+<td>Zul'Farrak</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>229</td>
+<td>1</td>
+<td>Blackrock Spire</td>
+<td>1583</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>230</td>
+<td>1</td>
+<td>Blackrock Depths</td>
+<td>1584</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>249</td>
+<td>2</td>
+<td>Onyxia's Lair</td>
+<td>2159</td>
+<td>0</td>
+<td>40</td>
+</tr>
+<tr>
+<td>269</td>
+<td>1</td>
+<td>Opening of the Dark Portal</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>289</td>
+<td>1</td>
+<td>Scholomance</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>309</td>
+<td>2</td>
+<td>Zul'Gurub</td>
+<td>1977</td>
+<td>0</td>
+<td>20</td>
+</tr>
+<tr>
+<td>329</td>
+<td>1</td>
+<td>Stratholme</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>349</td>
+<td>1</td>
+<td>Maraudon</td>
+<td>2100</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>369</td>
+<td>0</td>
+<td>Deeprun Tram</td>
+<td>2257</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>389</td>
+<td>1</td>
+<td>Ragefire Chasm</td>
+<td>2437</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>409</td>
+<td>2</td>
+<td>Molten Core</td>
+<td>2717</td>
+<td>0</td>
+<td>40</td>
+</tr>
+<tr>
+<td>429</td>
+<td>1</td>
+<td>Dire Maul</td>
+<td>2557</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>449</td>
+<td>0</td>
+<td>Alliance PVP Barracks</td>
+<td>2918</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>450</td>
+<td>0</td>
+<td>Horde PVP Barracks</td>
+<td>2917</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>451</td>
+<td>0</td>
+<td>Development Land</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>469</td>
+<td>2</td>
+<td>Blackwing Lair</td>
+<td>2677</td>
+<td>0</td>
+<td>40</td>
+</tr>
+<tr>
+<td>489</td>
+<td>3</td>
+<td>Warsong Gulch</td>
+<td>3277</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>509</td>
+<td>2</td>
+<td>Ruins of Ahn'Qiraj</td>
+<td>3429</td>
+<td>0</td>
+<td>20</td>
+</tr>
+<tr>
+<td>529</td>
+<td>3</td>
+<td>Arathi Basin</td>
+<td>3358</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>530</td>
+<td>0</td>
+<td>Outland</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>531</td>
+<td>2</td>
+<td>Ahn'Qiraj Temple</td>
+<td>3428</td>
+<td>0</td>
+<td>40</td>
+</tr>
+<tr>
+<td>532</td>
+<td>2</td>
+<td>Karazhan</td>
+<td>3457</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>533</td>
+<td>2</td>
+<td>Naxxramas</td>
+<td>3456</td>
+<td>2</td>
+<td>25</td>
+</tr>
+<tr>
+<td>534</td>
+<td>2</td>
+<td>The Battle for Mount Hyjal</td>
+<td>616</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>540</td>
+<td>1</td>
+<td>Hellfire Citadel: The Shattered Halls</td>
+<td>3714</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>542</td>
+<td>1</td>
+<td>Hellfire Citadel: The Blood Furnace</td>
+<td>3713</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>543</td>
+<td>1</td>
+<td>Hellfire Citadel: Ramparts</td>
+<td>3562</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>544</td>
+<td>2</td>
+<td>Magtheridon's Lair</td>
+<td>3836</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>545</td>
+<td>1</td>
+<td>Coilfang: The Steamvault</td>
+<td>3715</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>546</td>
+<td>1</td>
+<td>Coilfang: The Underbog</td>
+<td>3716</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>547</td>
+<td>1</td>
+<td>Coilfang: The Slave Pens</td>
+<td>3717</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>548</td>
+<td>2</td>
+<td>Coilfang: Serpentshrine Cavern</td>
+<td>3607</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>550</td>
+<td>2</td>
+<td>Tempest Keep</td>
+<td>3845</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>552</td>
+<td>1</td>
+<td>Tempest Keep: The Arcatraz</td>
+<td>3848</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>553</td>
+<td>1</td>
+<td>Tempest Keep: The Botanica</td>
+<td>3847</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>554</td>
+<td>1</td>
+<td>Tempest Keep: The Mechanar</td>
+<td>3849</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>555</td>
+<td>1</td>
+<td>Auchindoun: Shadow Labyrinth</td>
+<td>3789</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>556</td>
+<td>1</td>
+<td>Auchindoun: Sethekk Halls</td>
+<td>3791</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>557</td>
+<td>1</td>
+<td>Auchindoun: Mana-Tombs</td>
+<td>3792</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>558</td>
+<td>1</td>
+<td>Auchindoun: Auchenai Crypts</td>
+<td>3790</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>559</td>
+<td>4</td>
+<td>Nagrand Arena</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>560</td>
+<td>1</td>
+<td>The Escape From Durnholde</td>
+<td>267</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>562</td>
+<td>4</td>
+<td>Blade's Edge Arena</td>
+<td>3702</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>564</td>
+<td>2</td>
+<td>Black Temple</td>
+<td>0</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>565</td>
+<td>2</td>
+<td>Gruul's Lair</td>
+<td>3923</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>566</td>
+<td>3</td>
+<td>Eye of the Storm</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>568</td>
+<td>2</td>
+<td>Zul'Aman</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>571</td>
+<td>0</td>
+<td>Northrend</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>572</td>
+<td>4</td>
+<td>Ruins of Lordaeron</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>573</td>
+<td>0</td>
+<td>ExteriorTest</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>574</td>
+<td>1</td>
+<td>Utgarde Keep</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>575</td>
+<td>1</td>
+<td>Utgarde Pinnacle</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>576</td>
+<td>1</td>
+<td>The Nexus</td>
+<td>4265</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>578</td>
+<td>1</td>
+<td>The Oculus</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>580</td>
+<td>2</td>
+<td>The Sunwell</td>
+<td>0</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>582</td>
+<td>0</td>
+<td>Transport: Rut'theran to Auberdine</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>584</td>
+<td>0</td>
+<td>Transport: Menethil to Theramore</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>585</td>
+<td>1</td>
+<td>Magister's Terrace</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>586</td>
+<td>0</td>
+<td>Transport: Exodar to Auberdine</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>587</td>
+<td>0</td>
+<td>Transport: Feathermoon Ferry</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>588</td>
+<td>0</td>
+<td>Transport: Menethil to Auberdine</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>589</td>
+<td>0</td>
+<td>Transport: Orgrimmar to Grom'Gol</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>590</td>
+<td>0</td>
+<td>Transport: Grom'Gol to Undercity</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>591</td>
+<td>0</td>
+<td>Transport: Undercity to Orgrimmar</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>592</td>
+<td>0</td>
+<td>Transport: Borean Tundra Test</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>593</td>
+<td>0</td>
+<td>Transport: Booty Bay to Ratchet</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>594</td>
+<td>0</td>
+<td>Transport: Howling Fjord Sister Mercy (Quest)</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>595</td>
+<td>1</td>
+<td>The Culling of Stratholme</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>596</td>
+<td>0</td>
+<td>Transport: Naglfar</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>597</td>
+<td>0</td>
+<td>Craig Test</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>598</td>
+<td>1</td>
+<td>Sunwell Fix (Unused)</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>599</td>
+<td>1</td>
+<td>Halls of Stone</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>600</td>
+<td>1</td>
+<td>Drak'Tharon Keep</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>601</td>
+<td>1</td>
+<td>Azjol-Nerub</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>602</td>
+<td>1</td>
+<td>Halls of Lightning</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>603</td>
+<td>2</td>
+<td>Ulduar</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>604</td>
+<td>1</td>
+<td>Gundrak</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>605</td>
+<td>0</td>
+<td>Development Land (non-weighted textures)</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>606</td>
+<td>0</td>
+<td>QA and DVD</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>607</td>
+<td>3</td>
+<td>Strand of the Ancients</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>608</td>
+<td>1</td>
+<td>Violet Hold</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>609</td>
+<td>0</td>
+<td>Ebon Hold</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>610</td>
+<td>0</td>
+<td>Transport: Tirisfal to Vengeance Landing</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>612</td>
+<td>0</td>
+<td>Transport: Menethil to Valgarde</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>613</td>
+<td>0</td>
+<td>Transport: Orgrimmar to Warsong Hold</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>614</td>
+<td>0</td>
+<td>Transport: Stormwind to Valiance Keep</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>615</td>
+<td>2</td>
+<td>The Obsidian Sanctum</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>616</td>
+<td>2</td>
+<td>The Eye of Eternity</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>617</td>
+<td>4</td>
+<td>Dalaran Sewers</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>618</td>
+<td>4</td>
+<td>The Ring of Valor</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>619</td>
+<td>1</td>
+<td>Ahn'kahet: The Old Kingdom</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>620</td>
+<td>0</td>
+<td>Transport: Moa'ki to Unu'pe</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>621</td>
+<td>0</td>
+<td>Transport: Moa'ki to Kamagua</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>622</td>
+<td>0</td>
+<td>Transport: Orgrim's Hammer</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>623</td>
+<td>0</td>
+<td>Transport: The Skybreaker</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>624</td>
+<td>2</td>
+<td>Vault of Archavon</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>628</td>
+<td>3</td>
+<td>Isle of Conquest</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>631</td>
+<td>2</td>
+<td>Icecrown Citadel</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>632</td>
+<td>1</td>
+<td>The Forge of Souls</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>641</td>
+<td>0</td>
+<td>Transport: Alliance Airship BG</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>642</td>
+<td>0</td>
+<td>Transport: HordeAirshipBG</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>647</td>
+<td>0</td>
+<td>Transport: Orgrimmar to Thunder Bluff</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>649</td>
+<td>2</td>
+<td>Trial of the Crusader</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>650</td>
+<td>1</td>
+<td>Trial of the Champion</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>658</td>
+<td>1</td>
+<td>Pit of Saron</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>668</td>
+<td>1</td>
+<td>Halls of Reflection</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>672</td>
+<td>0</td>
+<td>Transport: The Skybreaker (Icecrown Citadel Raid)</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>673</td>
+<td>0</td>
+<td>Transport: Orgrim's Hammer (Icecrown Citadel Raid)</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>712</td>
+<td>0</td>
+<td>Transport: The Skybreaker (IC Dungeon)</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>713</td>
+<td>0</td>
+<td>Transport: Orgrim's Hammer (IC Dungeon)</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>718</td>
+<td>0</td>
+<td>Trasnport: The Mighty Wind (Icecrown Citadel Raid)</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>723</td>
+<td>0</td>
+<td>Stormwind</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>724</td>
+<td>2</td>
+<td>The Ruby Sanctum</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

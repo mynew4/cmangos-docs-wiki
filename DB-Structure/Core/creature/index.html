@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Creature - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Creature";
+    var mkdocs_page_input_path = "DB-Structure/Core/creature.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Creature</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96creature96-table">The `creature` table</h2>
+<p>contains individual creature spawn data. Spawn of a creature is an instance of the creature object in the world.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="creature#guid">guid</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>None</td>
+<td>auto_increment</td>
+</tr>
+<tr>
+<td><a href="creature#id">id</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td>MUL</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#map">map</a></td>
+<td>smallint(5) unsigned</td>
+<td>NO</td>
+<td>MUL</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#spawnmask">spawnMask</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#phasemask">phaseMask</a></td>
+<td>smallint(5) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td>(WotLK)</td>
+</tr>
+<tr>
+<td><a href="creature#modelid">modelid</a></td>
+<td>mediumint(8) unsigned</td>
+<td>YES</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#equipment_id">equipment_id</a></td>
+<td>mediumint(9)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#position_x">position_x</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#position_y">position_y</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#position_z">position_z</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#orientation">orientation</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#spawntimesecsmin">spawntimesecsmin</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>120</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#spawntimesecsmax">spawntimesecsmax</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>120</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#spawndist">spawndist</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#currentwaypoint">currentwaypoint</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#curhealth">curhealth</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#curmana">curmana</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#deathstate">DeathState</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature#movementtype">MovementType</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="guid">guid</h4>
+<p>A unique identifier given to each creature to distinguish one creature from another. Two creatures can NOT have same GUID.</p>
+<h4 id="id">id</h4>
+<p>The id of the template that is used when instantiating this creature. See <a href="creature_template#entry">creature_template.entry</a></p>
+<h4 id="map">map</h4>
+<p>The Map ID of the position of the creature. See <a href="Map.dbc">Map.dbc</a></p>
+<h4 id="spawnmask">spawnMask</h4>
+<p>Controls under which difficulties the creature will be spawned.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Not spawned</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Spawned only in 10-man-normal versions of maps (includes maps without a heroic mode)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Spawned only in 25-man-normal versions of maps (or heroics pre 3.2)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Spawned only in 10-man heroic versions of maps</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Spawned only in 25-man-heroic versions of maps</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Spawned in all versions of maps</td>
+</tr>
+</tbody>
+</table>
+<h4 id="phasemask">phaseMask</h4>
+<p>Defines which phase the creature belongs. 1 is default phase, rest are from spell's aura 261, (Aura #261) (4) = phasemask = 4.</p>
+<h4 id="modelid">modelid</h4>
+<p>The model ID associated with this creature. Note that two creatures that use the same template can have different models. See <a href="creature_model_info">creature_model_info</a> for more information on model-specific characteristics.</p>
+<h4 id="equipment95id">equipment_id</h4>
+<p>The ID of the equipment that the creature is using. See <a href="creature_equip_template#entry">creature_equip_template.entry</a></p>
+<h4 id="position95x">position_x</h4>
+<p>The X position of the creature.</p>
+<h4 id="position95y">position_y</h4>
+<p>The Y position of the creature.</p>
+<h4 id="position95z">position_z</h4>
+<p>The Z position of the creature.</p>
+<h4 id="orientation">orientation</h4>
+<p>The orientation of the creature. (North = 0.0; South = pi (3.14159))</p>
+<h4 id="spawntimesecsmin">spawntimesecsmin</h4>
+<p>The minimum respawn time of the creature in seconds.</p>
+<h4 id="spawntimesecsmax">spawntimesecsmax</h4>
+<p>The maximum respawn time of the creature in seconds.</p>
+<h4 id="spawndist">spawndist</h4>
+<p>The maximum distance that the creature should spawn from its spawn point. Also controls how far away the creature can walk from its spawn point if its <a href="creature#MovementType">MovementType</a> = 1.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Orientation change only</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Lowest random movement value</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Default random movement value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="currentwaypoint">currentwaypoint</h4>
+<p>The current waypoint number that the creature is on, if any. See <a href="creature_movement#point">creature_movement.point</a></p>
+<h4 id="curhealth">curhealth</h4>
+<p>The current health that the creature has.</p>
+<h4 id="curmana">curmana</h4>
+<p>The current mana that the creature has.</p>
+<h4 id="deathstate">DeathState</h4>
+<p>The creature's death state.
+A boolean, 0 = Alive, 1 = Corpse lying dead around (no gossip possible when dead, if you need corpse-gossip use dynamicflags|32)</p>
+<h4 id="movementtype">MovementType</h4>
+<p>See <a href="creature_template#MovementType">creature_template.MovementType</a> for possible values.</p>
+<p>creature_movement and creature_movement_template need to have MovementType set to 2 for a guid.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

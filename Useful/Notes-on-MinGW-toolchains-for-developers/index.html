@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Notes on MinGW toolchains for developers - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Notes on MinGW toolchains for developers";
+    var mkdocs_page_input_path = "Useful/Notes-on-MinGW-toolchains-for-developers.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Notes on MinGW toolchains for developers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>This section covers some frequently asked questions about MinGW toolchains.</p>
+<p>Keep in mind, that MinGW toolchains have enthusiast and DIY meaning to them, many distributions are highly customized, so its nearly impossible to answer every possible question or solve every possible issue you may have with a particular distribution. This page is intended to only provide a kickstart for your own journey.</p>
+<h1 id="reasons-to-consider-using-mingw-instead-of-msvc">Reasons to consider using MinGW instead of MSVC++</h1>
+<p>MinGW toolchains are ports of GCC for Windows. GCC can offer a number of advantages over MSVC++ even on Windows, which include, but not limited to:</p>
+<ul>
+<li>Open source and licensing policy. More details at <a href="http://mingw.org/license">http://mingw.org/license</a></li>
+<li>GCC tends to implement newer C++ standards and drafts much faster than MSVC++.
+    It was brought to light in the early 2010s, with Visual C++ often lagging years behind with C++11 features, MinGW gained a large following as a result of that.</li>
+<li>It offers a much higher customizability in terms of build options than MSVC++.
+    An expert with a fresh GCC version can try to take advantages of new architectures like AMD's Zen by rebuilding the program and it's dependencies with new instruction sets.</li>
+</ul>
+<h1 id="choosing-a-mingw-toolchain-variant-for-your-needs">Choosing a MinGW toolchain variant for your needs</h1>
+<h2 id="threading-model">Threading model</h2>
+<p>The first and foremost quality of a MinGW toolchain distribution.</p>
+<h3 id="posix-threading-model">POSIX threading model</h3>
+<p>Implements C++11 threads by default through a dependency POSIX compatibility layer (such as WinPthread). A fail-safe variant for cross-platfrom development. However, most pre-built POSIX distributions include only dynamic Libwinpthreads library (a DLL), so if you aim for a fully static self-contained build, this may not fit your needs, as you have to carry at least one or two DLLs (Libwinpthreads and Libgcc) from the distribution alongside resulting binaries.</p>
+<h3 id="win32-threading-model">WIN32 threading model</h3>
+<p>In the recent past, these variants did not include C++11 threads by default, therefore were unfit for cross-platform development. Newer versions from some toolchain builders started to include C++11 threads support through alternative implementations, such as a win32 port of pthreads or mingw-std-threads. You should carefully study contents of such distributions to make sure its equipped with std::thread support.</p>
+<h2 id="exception-handling">Exception Handling</h2>
+<p>Second most important quality, deciding whether its fit for development and debugging or release builds.</p>
+<h3 id="dwarf-debugging-with-attributed-record-formats">DWARF (Debugging With Attributed Record Formats)</h3>
+<ul>
+<li>Architecture: 32bit target toolchains only.</li>
+<li>Speed: Fastest for 32 bit, nearly zero overhead, directly competes with MSVC++.</li>
+<li>Compatibility: Worst among all listed. Compatible only with other DWARF binaries. May introduce errors with linking and debugging, therefore generally unfit for development.</li>
+<li>Origin: Unix ELF binaries standard, an alien species to Windows ecosystem.</li>
+<li>Usage recommendation: Release builds distribution only, unfit for debugging and development due to compatibility issues.</li>
+</ul>
+<h3 id="sjlj-setjmp-longjmp">SJLJ (SetJmp / LongJmp)</h3>
+<ul>
+<li>Architecture: 32bit and 64bit target toolchains.</li>
+<li>Speed: Slowest among all listed, introduces constant fixed penalty to produced binaries.</li>
+<li>Compatibility: Best compatibility among all listed. Safely binds together DLLs, allows handling exceptions outside of code built with MinGW all the way up to system libraries.</li>
+<li>Origin: Cross-platform standards.</li>
+<li>Usage recommendation: Best option for development and debugging for 32bit builds. A fail safe option for 64bit development and debugging due to compatibility. Not recommended for any release builds due to speed penalty.</li>
+</ul>
+<h3 id="seh-structured-exception-handling">SEH (Structured Exception Handling)</h3>
+<ul>
+<li>Architecture: 64bit target toolchains only.</li>
+<li>Speed: Fastest for 64bit, directly competes with MSVC++.</li>
+<li>Compatibility: Very good, compatible with MSVC++ symbol mangling.</li>
+<li>Origin: A variety of standards. 32bit SEH option for MinGW is not available due to patent issues.</li>
+<li>Usage recommendation: Best option overall for 64bit for all purposes due to balance of speed and compatibility.</li>
+</ul>
+<h2 id="mingw-distribution">MinGW Distribution</h2>
+<p>Once you've decided which is the variant you want, all thats left to do is pick your MinGW distribution.</p>
+<p>At the time of the writing, the most frequently updated distribution project is MinGW-w64, which seems to be recognized as the distribution of choice for many major projects (such as popular Linux distributions and Qt). Distributions from MinGW team and TDM-GCC are less frequently updated.</p>
+<p>If you are cross-compiling on Linux, you should probably stick to versions found in your package manager, so you can ask maintainers for support if any issue arises.</p>
+<h1 id="some-popular-ide-software-with-c-and-mingw-support">Some popular IDE software with C++ and MinGW support</h1>
+<ul>
+<li>Code::Blocks (cross-platform, open source)</li>
+<li>QtCreator (cross-platform, open source)</li>
+<li>Eclipse (cross-platform, open source)</li>
+<li>CLion (cross-platform, commercial)</li>
+</ul>
+<h1 id="quickstart-building-boost-library-for-use-with-your-mingw-toolchain-on-windows">Quickstart: Building Boost library for use with your MinGW toolchain on Windows</h1>
+<p>In this example we will use Boost 1.64.0.</p>
+<ol>
+<li>Unzip downloaded Windows boost sources (“boost_1_64_0.zip” in our case) to a folder of choice.</li>
+<li>Open Command Line (cmd.exe), navigate to the root folder of the extracted boost source (it must have file “bootstrap.bat” in it).</li>
+<li>Add the “bin” folder of your MinGW toolchain to your PATH environment, example:
+    set PATH=%PATH%;C:\Path\To\Your\MinGW\bin</li>
+<li>Configure boost for GCC with the following command:
+    start /b /wait bootstrap.bat gcc</li>
+<li>Once configuration is complete, let's build a static Boost library into a fresh clean folder, let's say “C:\Boost”:
+    start /b /wait b2 install --prefix=“C:\Boost” --build-type=complete toolset=gcc variant=release link=static threading=multi runtime-link=static</li>
+<li>After build is successfully done, you need to add it to your MinGW:
+    Move “boost” directory from “C:\Boost\include\boost-1_64” into “include” subdirectory of your MinGW toolchain;
+    Move all library files (*.a) from “C:\Boost\lib” into “lib” subdirectory of your MinGW toolchain.</li>
+<li>Done. Your MinGW toolchain now contains a ready-to-use Boost library. You can now safely remove the now empty folder we used to built into (“C:\Boost”).</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

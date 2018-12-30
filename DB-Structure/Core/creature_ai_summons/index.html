@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Creature ai summons - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Creature ai summons";
+    var mkdocs_page_input_path = "DB-Structure/Core/creature_ai_summons.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Creature ai summons</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="event-ai-tables">Event AI Tables</h3>
+<p><a href="creature_ai_scripts">creature_ai_scripts</a></p>
+<p><a href="creature_ai_summons">creature_ai_summons</a></p>
+<p><a href="creature_ai_texts">creature_ai_texts</a></p>
+<h2 id="summoning-table-introduction">Summoning Table Introduction</h2>
+<p>This table is used to provide NPC support for an event using action <strong><em>32 = ACTION_T_SUMMON</em></strong> as one of its Actions. <em>To quote from the <a href="Event_AI"><em>Event_AI</em></a> page:</em></p>
+<ul>
+<li><strong>32 = ACTION_T_SUMMON</strong>: Summons a creature using the data specified in the separate summons table.<ul>
+<li>Parameter 1: The creature template ID to be summoned. The value here needs to be a valid creature template ID.</li>
+<li>Parameter 2: The target type defining who the summoned creature will attack. The value in this field needs to be a valid target type as specified in the reference tables below. NOTE: Using target type 0 will cause the summoned creature to not attack anyone.</li>
+<li>Parameter 3: The summon ID from the eventai_summons table controlling the position (and spawntime) where the summoned mob should be spawned at.</li>
+</ul>
+</li>
+</ul>
+<p>As we see from Parameter 3, this table will be controlling the arrival point of the NPC. If you wish for the NPC to spawn at the same point as the NPC spawning it, use <strong>Action 12</strong> instead of 32.</p>
+<h3 id="explaining-the-fields-of-the-table">Explaining the Fields of the Table</h3>
+<h4 id="id">id</h4>
+<p>This arbitrary value will be matched by the third parameter in the <strong>32 = ACTION_T_SUMMON</strong> Event Type. It does not need to be in solid descending order.</p>
+<p>Tip: Be sure to start your first custom input at least 1,000 digits ahead of the latest entry when you first start editing this table. I.e. in a newly installed database that you plan on working with for the long term, if the last id value here is 9, start at 5000, not at 10. If your database gets an update, if you had started at 10, those values could be overwritten.</p>
+<h4 id="position95x">position_x</h4>
+<p>The <strong><em>X</em></strong> position of the NPC to be spawned. (Note that this will obviously take place on the same map that you and the NPC are on, so no Map number will be necessary here.)</p>
+<h4 id="position95y">position_y</h4>
+<p>The <strong><em>Y</em></strong> position of the NPC to be spawned.</p>
+<h4 id="position95z">position_z</h4>
+<p>The <strong><em>Y</em></strong> (height) position of the NPC to be spawned.</p>
+<h4 id="orientation">orientation</h4>
+<p>The orientation of the NPC when it appears. It can be any value, (experiment as necessary) but here are some values already known:</p>
+<p>This value is measured in <a href="http://en.wikipedia.org/wiki/Radian">radians</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>North</td>
+</tr>
+<tr>
+<td>1.57</td>
+<td>East</td>
+</tr>
+<tr>
+<td>3.14</td>
+<td>South</td>
+</tr>
+<tr>
+<td>-1.57</td>
+<td>West</td>
+</tr>
+</tbody>
+</table>
+<h4 id="spawntimesecs">spawntimesecs</h4>
+<p>(Requires an elaboration and confirmation) - Most likely the time for the NPC to disappear once it has been summoned, in MILIseconds.</p>
+<h4 id="comment">comment</h4>
+<p>The arbitrary string of text that you deposit into the table to describe the actions of this particular record in the table. The comment has no bearing on the table's effects other than your own ability to recognize what each record is doing.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

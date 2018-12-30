@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Characters - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Characters";
+    var mkdocs_page_input_path = "DB-Structure/Characters/characters.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Characters</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to the <a href="charactersdb_struct">characters database</a> list of tables.</p>
+<h2 id="the-96character96-table">The `character` table</h2>
+<p>This table holds vital static information for each character. This information loaded and used to create the player objects in-game.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Characters#guid">guid</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#account">account</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td>MUL</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#data">data</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td>None</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#name">name</a></td>
+<td>varchar(12)</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#race">race</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#class">class</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#position_x">position_x</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#position_y">position_y</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#position_z">position_z</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#map">map</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#dungeon_difficulty">dungeon_difficulty</a></td>
+<td>tinyint(1) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#orientation">orientation</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#taximask">taximask</a></td>
+<td>longtext</td>
+<td>YES</td>
+<td></td>
+<td>None</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#online">online</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td>MUL</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#cinematic">cinematic</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#totaltime">totaltime</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#leveltime">leveltime</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#logout_time">logout_time</a></td>
+<td>int(11)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#is_logout_resting">is_logout_resting</a></td>
+<td>tinyint(3)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#rest_bonus">rest_bonus</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#resettalents_cost">resettalents_cost</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#resettalents_time">resettalents_time</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#trans_x">trans_x</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#trans_y">trans_y</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#trans_z">trans_z</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#trans_o">trans_o</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#transguid">transguid</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#extra_flags">extra_flags</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#stable_slots">stable_slots</a></td>
+<td>tinyint(1) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#at_login">at_login</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#zone">zone</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#death_expire_time">death_expire_time</a></td>
+<td>bigint(20) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#taxi_path">taxi_path</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#arena_pending_points">arena_pending_points</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#bgid">bgid</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#bgteam">bgteam</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#bgmap">bgmap</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#bgx">bgx</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#bgy">bgy</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#bgz">bgz</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Characters#bgo">bgo</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="guid">guid</h4>
+<p>The character global unique identifier. This number must be unique and is the best way to identify separate characters.</p>
+<h4 id="account">account</h4>
+<p>The account ID in which this character resides. See account.id in the realm database.</p>
+<h4 id="data">data</h4>
+<p>Big text field holding many different numbers all separated by a space that can be separated into an array with an explode function on the space. Table on what values are stored at what index can be found at <a href="character_data">character_data</a></p>
+<h4 id="name">name</h4>
+<p>The name of the character.</p>
+<h4 id="race">race</h4>
+<p>The race of the character.</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th align="right">Decimal</th>
+<th>Race</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td align="right">1</td>
+<td>Human</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="right">2</td>
+<td>Orc</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="right">4</td>
+<td>Dwarf</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="right">8</td>
+<td>Night Elf</td>
+</tr>
+<tr>
+<td>5</td>
+<td align="right">16</td>
+<td>Undead</td>
+</tr>
+<tr>
+<td>6</td>
+<td align="right">32</td>
+<td>Tauren</td>
+</tr>
+<tr>
+<td>7</td>
+<td align="right">64</td>
+<td>Gnome</td>
+</tr>
+<tr>
+<td>8</td>
+<td align="right">128</td>
+<td>Troll</td>
+</tr>
+<tr>
+<td>10</td>
+<td align="right">512</td>
+<td>Blood Elf</td>
+</tr>
+<tr>
+<td>11</td>
+<td align="right">1024</td>
+<td>Draenei</td>
+</tr>
+</tbody>
+</table>
+<h4 id="class">class</h4>
+<p>The class of the character:</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Warrior</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Paladin</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hunter</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rogue</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Priest</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Shaman</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Mage</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Warlock</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Druid</td>
+</tr>
+</tbody>
+</table>
+<h4 id="position95x">position_x</h4>
+<p>The x position of the character's location.</p>
+<h4 id="position95y">position_y</h4>
+<p>The y position of the character's location.</p>
+<h4 id="position95z">position_z</h4>
+<p>The z position of the character's location.</p>
+<h4 id="map">map</h4>
+<p>The map ID the character is in.</p>
+<h4 id="dungeon95difficulty">dungeon_difficulty</h4>
+<p>The current difficulty that the player is in.</p>
+<h4 id="orientation">orientation</h4>
+<p>The orientation the character is facing. (North = 0.0, South = 3.14159)</p>
+<h4 id="taximask">taximask</h4>
+<h4 id="online">online</h4>
+<p>Records whether the character is online (1) or offline (0).</p>
+<h4 id="cinematic">cinematic</h4>
+<p>Boolean 1 or 0 controlling whether the start cinematic has been shown or not.</p>
+<h4 id="totaltime">totaltime</h4>
+<p>The total time that the character has been active in the world, measured in seconds.</p>
+<h4 id="leveltime">leveltime</h4>
+<p>The total time the character has spent in the world at the current level, measured in seconds.</p>
+<h4 id="logout95time">logout_time</h4>
+<p>The time when the character last logged out, measured in Unix time.</p>
+<h4 id="is95logout95resting">is_logout_resting</h4>
+<p>Boolean 1 or 0 controlling if the character is currently in a resting zone or not.</p>
+<h4 id="rest95bonus">rest_bonus</h4>
+<h4 id="resettalents95cost">resettalents_cost</h4>
+<p>The cost for the character to reset its talents, measured in copper.</p>
+<h4 id="resettalents95time">resettalents_time</h4>
+<h4 id="trans95x">trans_x</h4>
+<h4 id="trans95y">trans_y</h4>
+<h4 id="trans95z">trans_z</h4>
+<h4 id="trans95o">trans_o</h4>
+<h4 id="transguid">transguid</h4>
+<h4 id="extra95flags">extra_flags</h4>
+<p>These flags control certain player specific attributes, mostly GM features</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>PLAYER_EXTRA_GM_ON</td>
+<td>Defines GM state</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PLAYER_EXTRA_GM_ACCEPT_TICKETS</td>
+<td>Defines if tickets are accepted</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PLAYER_EXTRA_ACCEPT_WHISPERS</td>
+<td>Defines if whispers are accepted</td>
+</tr>
+<tr>
+<td>8</td>
+<td>PLAYER_EXTRA_TAXICHEAT</td>
+<td>Sets taxicheat</td>
+</tr>
+<tr>
+<td>16</td>
+<td>PLAYER_EXTRA_GM_INVISIBLE</td>
+<td>Control's GM's invisibly</td>
+</tr>
+<tr>
+<td>32</td>
+<td>PLAYER_EXTRA_GM_CHAT</td>
+<td>Show GM badge in chat messages</td>
+</tr>
+<tr>
+<td>64</td>
+<td>PLAYER_EXTRA_PVP_DEATH</td>
+<td>Store PvP death status until corpse creating</td>
+</tr>
+</tbody>
+</table>
+<h4 id="stable95slots">stable_slots</h4>
+<p>The number of stable slots the player has available. Maximum is 2.</p>
+<h4 id="at95login">at_login</h4>
+<p>This field is a bitmask controlling different actions taken once a player logs in with the character.</p>
+<ul>
+<li>1 = Force character to change name</li>
+<li>2 = Reset spells (professions as well)</li>
+<li>4 = Reset talents</li>
+<li>8 = Character Customization enabled</li>
+</ul>
+<p>For multiple actions, add values together.</p>
+<h4 id="zone">zone</h4>
+<p>The zone ID the character is in.</p>
+<h4 id="death95expire95time">death_expire_time</h4>
+<p>Time when a character can be resurrected in case of a server crash or client exit while in ghost form.</p>
+<h4 id="taxi95path">taxi_path</h4>
+<p>Stores the players current taxi path (TaxiPath.dbc) if logged off while on one.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

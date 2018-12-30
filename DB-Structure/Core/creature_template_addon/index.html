@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Creature template addon - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Creature template addon";
+    var mkdocs_page_input_path = "DB-Structure/Core/creature_template_addon.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Creature template addon</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96creature95template95addon96-tables">The `creature_(template_)addon` tables</h2>
+<p>define different things that are applied on creatures when they are loaded, either by <a href="Creature#guid">`creature`.`guid`</a> or <a href="Creature_template#entry">`creature_template`.`entry`</a>.
+So two creatures using the same creature_template_addon can look different, if one is additionally defined in creature_addon.</p>
+<p>Through the use of the fields in this table, many things can be changed about the outward visual appearance of the creature. Potential usage examples are: to have the creature be mounted, to have it emote something, to have it display an aura effect, etc.</p>
+<p>NOTE:</p>
+<ul>
+<li>A creature_addon record will override a creature_template_addon record should they overlap on the same creature.</li>
+<li>The data for this table is largely incomplete and is mostly just a regurgitation of what the client receives from the server. This article is a WIP as to what all the possible values are.</li>
+</ul>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="creature_template_addon#entry/guid">entry/guid</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_addon#mount">mount</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_addon#bytes1">bytes1</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_addon#b2_0_sheath">b2_0_sheath</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_addon#b2_1_flags">b2_1_flags</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_addon#emote">emote</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_addon#moveflags">moveflags</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="creature_template_addon#auras">auras</a></td>
+<td>text</td>
+<td>YES</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="entryguid">entry/guid</h4>
+<p>For creature_template_addon, this field signifies the creature template ID. It will affect all spawned creatures using that template ID. For creature_addon, this field signifies a unique creature guid. It will affect just that creature whose GUID matches the one specified here.</p>
+<h4 id="mount">mount</h4>
+<p>The model ID of the mount to be used to make the creature appear mounted. The value here overrides the value for the creature's unit field UNIT_FIELD_MOUNTDISPLAYID. List of known values and what their visual effects on the creature</p>
+<h4 id="bytes1">bytes1</h4>
+<p>(UNIT_FIELD_BYTES_1,0)</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>UNIT_STAND_STATE_STAND</td>
+<td>normal behavior</td>
+</tr>
+<tr>
+<td>1</td>
+<td>UNIT_STAND_STATE_SIT</td>
+<td>sitting on ground</td>
+</tr>
+<tr>
+<td>2</td>
+<td>UNIT_STAND_STATE_SIT_CHAIR</td>
+<td>sitting on normal chair</td>
+</tr>
+<tr>
+<td>3</td>
+<td>UNIT_STAND_STATE_SLEEP</td>
+<td>sleeping</td>
+</tr>
+<tr>
+<td>4</td>
+<td>UNIT_STAND_STATE_SIT_LOW_CHAIR</td>
+<td>sitting on low chair</td>
+</tr>
+<tr>
+<td>5</td>
+<td>UNIT_STAND_STATE_SIT_MEDIUM_CHAIR</td>
+<td>sitting on medium chair</td>
+</tr>
+<tr>
+<td>6</td>
+<td>UNIT_STAND_STATE_SIT_HIGH_CHAIR</td>
+<td>sitting on high chair</td>
+</tr>
+<tr>
+<td>7</td>
+<td>UNIT_STAND_STATE_DEAD</td>
+<td>play dead</td>
+</tr>
+<tr>
+<td>8</td>
+<td>UNIT_STAND_STATE_KNEEL</td>
+<td>kneel</td>
+</tr>
+<tr>
+<td>9</td>
+<td>UNIT_STAND_STATE_CUSTOM</td>
+<td>Depends on model animation. Submerge, freeze, hide, hibernate, rest</td>
+</tr>
+<tr>
+<td>#### bytes1_flags</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>(UNIT_FIELD_BYTES_1,3) used instead of bytes1 in some cases.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x01</td>
+<td>UNIT_BYTE1_FLAG_ALWAYS_STAND</td>
+<td>always stand state</td>
+</tr>
+<tr>
+<td>0x02</td>
+<td>UNIT_BYTE1_FLAG_FLY_ANIM</td>
+<td>Creature that can fly and are not on the ground appear to have this flag. If they are on the ground, flag is not present.</td>
+</tr>
+<tr>
+<td>0x04</td>
+<td>UNIT_BYTE1_FLAG_UNTRACKABLE</td>
+<td>untrackable</td>
+</tr>
+<tr>
+<td>65536</td>
+<td>?</td>
+<td>Linked to Defensive Stance? (not actively added flag?)</td>
+</tr>
+<tr>
+<td>131072</td>
+<td>?</td>
+<td>no name &amp; health bar visible with plate mode on (name only when targeted) Linked to Stealth? Linked to DeathState? (not actively added flag?)</td>
+</tr>
+<tr>
+<td>1048576</td>
+<td>?</td>
+<td>Linked to Defensive Stance? (not actively added flag?)</td>
+</tr>
+<tr>
+<td>33554432</td>
+<td>?</td>
+<td>Linked to Stealth? (not actively added flag?)</td>
+</tr>
+<tr>
+<td>0xFF</td>
+<td>UNIT_BYTE1_FLAG_ALL</td>
+<td>all</td>
+</tr>
+</tbody>
+</table>
+<h4 id="b295095sheath">b2_0_sheath</h4>
+<p>(UNIT_FIELD_BYTES_2,0)</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>SHEATH_STATE_UNARMED</td>
+<td>all weapons sheathed</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SHEATH_STATE_MELEE</td>
+<td>melee weapon(s) unsheathed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SHEATH_STATE_RANGED</td>
+<td>ranged weapon(s) unsheathed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="b295195flags">b2_1_flags</h4>
+<p>(UNIT_FIELD_BYTES_2,1)</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td>UNIT_BYTE2_CREATURE_DEBUFF_LIMIT</td>
+<td>?</td>
+</tr>
+<tr>
+<td>40</td>
+<td>UNIT_BYTE2_PLAYER_CONTROLLED_DEBUFF_LIMIT</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<h4 id="emote">emote</h4>
+<p>Emote ID that the creature should continually perform.</p>
+<p>COMPLETE LIST OF EMOTES CAN BE FOUND IN: Emotes.dbc
+(They Are Different Between Client Versions)</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Bit</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>EMOTE_ONESHOT_NONE</td>
+<td>400</td>
+<td>EMOTE_STATE_DANCESPECIAL</td>
+</tr>
+<tr>
+<td>1</td>
+<td>EMOTE_ONESHOT_TALK</td>
+<td>401</td>
+<td>EMOTE_ONESHOT_DANCESPECIAL</td>
+</tr>
+<tr>
+<td>2</td>
+<td>EMOTE_ONESHOT_BOW</td>
+<td>402</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL01</td>
+</tr>
+<tr>
+<td>3</td>
+<td>EMOTE_ONESHOT_WAVE</td>
+<td>403</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL02</td>
+</tr>
+<tr>
+<td>4</td>
+<td>EMOTE_ONESHOT_CHEER</td>
+<td>404</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL03</td>
+</tr>
+<tr>
+<td>5</td>
+<td>EMOTE_ONESHOT_EXCLAMATION</td>
+<td>405</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL04</td>
+</tr>
+<tr>
+<td>6</td>
+<td>EMOTE_ONESHOT_QUESTION</td>
+<td>406</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL05</td>
+</tr>
+<tr>
+<td>7</td>
+<td>EMOTE_ONESHOT_EAT</td>
+<td>407</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL06</td>
+</tr>
+<tr>
+<td>10</td>
+<td>EMOTE_STATE_DANCE</td>
+<td>408</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL07</td>
+</tr>
+<tr>
+<td>11</td>
+<td>EMOTE_ONESHOT_LAUGH</td>
+<td>409</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL08</td>
+</tr>
+<tr>
+<td>12</td>
+<td>EMOTE_STATE_SLEEP</td>
+<td>410</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL09</td>
+</tr>
+<tr>
+<td>13</td>
+<td>EMOTE_STATE_SIT</td>
+<td>411</td>
+<td>EMOTE_ONESHOT_CUSTOMSPELL10</td>
+</tr>
+<tr>
+<td>14</td>
+<td>EMOTE_ONESHOT_RUDE</td>
+<td>412</td>
+<td>EMOTE_STATE_EXCLAIM</td>
+</tr>
+<tr>
+<td>15</td>
+<td>EMOTE_ONESHOT_ROAR</td>
+<td>415</td>
+<td>EMOTE_STATE_SIT_CHAIR_MED</td>
+</tr>
+<tr>
+<td>16</td>
+<td>EMOTE_ONESHOT_KNEEL</td>
+<td>422</td>
+<td>EMOTE_STATE_SPELLEFFECT_HOLD</td>
+</tr>
+<tr>
+<td>17</td>
+<td>EMOTE_ONESHOT_KISS</td>
+<td>423</td>
+<td>EMOTE_STATE_EAT_NO_SHEATHE</td>
+</tr>
+<tr>
+<td>18</td>
+<td>EMOTE_ONESHOT_CRY</td>
+<td>424</td>
+<td>EMOTE_STATE_MOUNT</td>
+</tr>
+<tr>
+<td>19</td>
+<td>EMOTE_ONESHOT_CHICKEN</td>
+<td>425</td>
+<td>EMOTE_STATE_READY2HL</td>
+</tr>
+<tr>
+<td>20</td>
+<td>EMOTE_ONESHOT_BEG</td>
+<td>426</td>
+<td>EMOTE_STATE_SIT_CHAIR_HIGH</td>
+</tr>
+<tr>
+<td>21</td>
+<td>EMOTE_ONESHOT_APPLAUD</td>
+<td>427</td>
+<td>EMOTE_STATE_FALL</td>
+</tr>
+<tr>
+<td>22</td>
+<td>EMOTE_ONESHOT_SHOUT</td>
+<td>428</td>
+<td>EMOTE_STATE_LOOT</td>
+</tr>
+<tr>
+<td>23</td>
+<td>EMOTE_ONESHOT_FLEX</td>
+<td>429</td>
+<td>EMOTE_STATE_SUBMERGED_NEW</td>
+</tr>
+<tr>
+<td>24</td>
+<td>EMOTE_ONESHOT_SHY</td>
+<td>430</td>
+<td>EMOTE_ONESHOT_COWER</td>
+</tr>
+<tr>
+<td>25</td>
+<td>EMOTE_ONESHOT_POINT</td>
+<td>431</td>
+<td>EMOTE_STATE_COWER</td>
+</tr>
+<tr>
+<td>26</td>
+<td>EMOTE_STATE_STAND</td>
+<td>432</td>
+<td>EMOTE_ONESHOT_USESTANDING</td>
+</tr>
+<tr>
+<td>27</td>
+<td>EMOTE_STATE_READYUNARMED</td>
+<td>433</td>
+<td>EMOTE_STATE_STEALTH_STAND</td>
+</tr>
+<tr>
+<td>28</td>
+<td>EMOTE_STATE_WORK</td>
+<td>434</td>
+<td>EMOTE_ONESHOT_OMNICAST_GHOUL</td>
+</tr>
+<tr>
+<td>29</td>
+<td>EMOTE_STATE_POINT</td>
+<td>435</td>
+<td>EMOTE_ONESHOT_ATTACKBOW</td>
+</tr>
+<tr>
+<td>30</td>
+<td>EMOTE_STATE_NONE</td>
+<td>436</td>
+<td>EMOTE_ONESHOT_ATTACKRIFLE</td>
+</tr>
+<tr>
+<td>33</td>
+<td>EMOTE_ONESHOT_WOUND</td>
+<td>437</td>
+<td>EMOTE_STATE_SWIM_IDLE</td>
+</tr>
+<tr>
+<td>34</td>
+<td>EMOTE_ONESHOT_WOUNDCRITICAL</td>
+<td>438</td>
+<td>EMOTE_STATE_ATTACK_UNARMED</td>
+</tr>
+<tr>
+<td>35</td>
+<td>EMOTE_ONESHOT_ATTACKUNARMED</td>
+<td>439</td>
+<td>EMOTE_ONESHOT_SPELLCAST_W_SOUND</td>
+</tr>
+<tr>
+<td>36</td>
+<td>EMOTE_ONESHOT_ATTACK1H</td>
+<td>440</td>
+<td>EMOTE_ONESHOT_DODGE</td>
+</tr>
+<tr>
+<td>37</td>
+<td>EMOTE_ONESHOT_ATTACK2HTIGHT</td>
+<td>441</td>
+<td>EMOTE_ONESHOT_PARRY1H</td>
+</tr>
+<tr>
+<td>38</td>
+<td>EMOTE_ONESHOT_ATTACK2HLOOSE</td>
+<td>442</td>
+<td>EMOTE_ONESHOT_PARRY2H</td>
+</tr>
+<tr>
+<td>39</td>
+<td>EMOTE_ONESHOT_PARRYUNARMED</td>
+<td>443</td>
+<td>EMOTE_ONESHOT_PARRY2HL</td>
+</tr>
+<tr>
+<td>43</td>
+<td>EMOTE_ONESHOT_PARRYSHIELD</td>
+<td>444</td>
+<td>EMOTE_STATE_FLYFALL</td>
+</tr>
+<tr>
+<td>44</td>
+<td>EMOTE_ONESHOT_READYUNARMED</td>
+<td>445</td>
+<td>EMOTE_ONESHOT_FLYDEATH</td>
+</tr>
+<tr>
+<td>45</td>
+<td>EMOTE_ONESHOT_READY1H</td>
+<td>446</td>
+<td>EMOTE_STATE_FLY_FALL</td>
+</tr>
+<tr>
+<td>48</td>
+<td>EMOTE_ONESHOT_READYBOW</td>
+<td>447</td>
+<td>EMOTE_ONESHOT_FLY_SIT_GROUND_DOWN</td>
+</tr>
+<tr>
+<td>50</td>
+<td>EMOTE_ONESHOT_SPELLPRECAST</td>
+<td>448</td>
+<td>EMOTE_ONESHOT_FLY_SIT_GROUND_UP</td>
+</tr>
+<tr>
+<td>51</td>
+<td>EMOTE_ONESHOT_SPELLCAST</td>
+<td>449</td>
+<td>EMOTE_ONESHOT_EMERGE</td>
+</tr>
+<tr>
+<td>53</td>
+<td>EMOTE_ONESHOT_BATTLEROAR</td>
+<td>450</td>
+<td>EMOTE_ONESHOT_DRAGONSPIT</td>
+</tr>
+<tr>
+<td>54</td>
+<td>EMOTE_ONESHOT_SPECIALATTACK1H</td>
+<td>451</td>
+<td>EMOTE_STATE_SPECIALUNARMED</td>
+</tr>
+<tr>
+<td>60</td>
+<td>EMOTE_ONESHOT_KICK</td>
+<td>452</td>
+<td>EMOTE_ONESHOT_FLYGRAB</td>
+</tr>
+<tr>
+<td>61</td>
+<td>EMOTE_ONESHOT_ATTACKTHROWN</td>
+<td>453</td>
+<td>EMOTE_STATE_FLYGRABCLOSED</td>
+</tr>
+<tr>
+<td>64</td>
+<td>EMOTE_STATE_STUN</td>
+<td>454</td>
+<td>EMOTE_ONESHOT_FLYGRABTHROWN</td>
+</tr>
+<tr>
+<td>65</td>
+<td>EMOTE_STATE_DEAD</td>
+<td>455</td>
+<td>EMOTE_STATE_FLY_SIT_GROUND</td>
+</tr>
+<tr>
+<td>66</td>
+<td>EMOTE_ONESHOT_SALUTE</td>
+<td>456</td>
+<td>EMOTE_STATE_WALKBACKWARDS</td>
+</tr>
+<tr>
+<td>68</td>
+<td>EMOTE_STATE_KNEEL</td>
+<td>457</td>
+<td>EMOTE_ONESHOT_FLYTALK</td>
+</tr>
+<tr>
+<td>69</td>
+<td>EMOTE_STATE_USESTANDING</td>
+<td>458</td>
+<td>EMOTE_ONESHOT_FLYATTACK1H</td>
+</tr>
+<tr>
+<td>70</td>
+<td>EMOTE_ONESHOT_WAVE_NOSHEATHE</td>
+<td>459</td>
+<td>EMOTE_STATE_CUSTOMSPELL08</td>
+</tr>
+<tr>
+<td>71</td>
+<td>EMOTE_ONESHOT_CHEER_NOSHEATHE</td>
+<td>460</td>
+<td>EMOTE_ONESHOT_FLY_DRAGONSPIT</td>
+</tr>
+<tr>
+<td>92</td>
+<td>EMOTE_ONESHOT_EAT_NOSHEATHE</td>
+<td>461</td>
+<td>EMOTE_STATE_SIT_CHAIR_LOW</td>
+</tr>
+<tr>
+<td>93</td>
+<td>EMOTE_STATE_STUN_NOSHEATHE</td>
+<td>462</td>
+<td>EMOTE_ONE_SHOT_STUN</td>
+</tr>
+<tr>
+<td>94</td>
+<td>EMOTE_ONESHOT_DANCE</td>
+<td>463</td>
+<td>EMOTE_ONESHOT_SPELLCAST_OMNI</td>
+</tr>
+<tr>
+<td>113</td>
+<td>EMOTE_ONESHOT_SALUTE_NOSHEATH</td>
+<td>465</td>
+<td>EMOTE_STATE_READYTHROWN</td>
+</tr>
+<tr>
+<td>133</td>
+<td>EMOTE_STATE_USESTANDING_NOSHEATHE</td>
+<td>466</td>
+<td>EMOTE_ONESHOT_WORK_CHOPWOOD</td>
+</tr>
+<tr>
+<td>153</td>
+<td>EMOTE_ONESHOT_LAUGH_NOSHEATHE</td>
+<td>467</td>
+<td>EMOTE_ONESHOT_WORK_MINING</td>
+</tr>
+<tr>
+<td>173</td>
+<td>EMOTE_STATE_WORK_NOSHEATHE</td>
+<td>468</td>
+<td>EMOTE_STATE_SPELL_CHANNEL_OMNI</td>
+</tr>
+<tr>
+<td>193</td>
+<td>EMOTE_STATE_SPELLPRECAST</td>
+<td>469</td>
+<td>EMOTE_STATE_SPELL_CHANNEL_DIRECTED</td>
+</tr>
+<tr>
+<td>213</td>
+<td>EMOTE_ONESHOT_READYRIFLE</td>
+<td>470</td>
+<td>EMOTE_STAND_STATE_NONE</td>
+</tr>
+<tr>
+<td>214</td>
+<td>EMOTE_STATE_READYRIFLE</td>
+<td>471</td>
+<td>EMOTE_STATE_READYJOUST</td>
+</tr>
+<tr>
+<td>233</td>
+<td>EMOTE_STATE_WORK_NOSHEATHE_MINING</td>
+<td>473</td>
+<td>EMOTE_STATE_STRANGULATE</td>
+</tr>
+<tr>
+<td>234</td>
+<td>EMOTE_STATE_WORK_NOSHEATHE_CHOPWOOD</td>
+<td>474</td>
+<td>EMOTE_STATE_READYSPELLOMNI</td>
+</tr>
+<tr>
+<td>253</td>
+<td>EMOTE_zzOLDONESHOT_LIFTOFF</td>
+<td>475</td>
+<td>EMOTE_STATE_HOLD_JOUST</td>
+</tr>
+<tr>
+<td>254</td>
+<td>EMOTE_ONESHOT_LIFTOFF</td>
+<td>476</td>
+<td>EMOTE_ONESHOT_CRY_JAINA</td>
+</tr>
+<tr>
+<td>273</td>
+<td>EMOTE_ONESHOT_YES</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>274</td>
+<td>EMOTE_ONESHOT_NO</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>275</td>
+<td>EMOTE_ONESHOT_TRAIN</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>293</td>
+<td>EMOTE_ONESHOT_LAND</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>313</td>
+<td>EMOTE_STATE_AT_EASE</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>333</td>
+<td>EMOTE_STATE_READY1H</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>353</td>
+<td>EMOTE_STATE_SPELLKNEELSTART</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>373</td>
+<td>EMOTE_STATE_SUBMERGED</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>374</td>
+<td>EMOTE_ONESHOT_SUBMERGE</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>375</td>
+<td>EMOTE_STATE_READY2H</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>376</td>
+<td>EMOTE_STATE_READYBOW</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>377</td>
+<td>EMOTE_ONESHOT_MOUNTSPECIAL</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>378</td>
+<td>EMOTE_STATE_TALK</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>379</td>
+<td>EMOTE_STATE_FISHING</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>380</td>
+<td>EMOTE_ONESHOT_FISHING</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>381</td>
+<td>EMOTE_ONESHOT_LOOT</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>382</td>
+<td>EMOTE_STATE_WHIRLWIND</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>383</td>
+<td>EMOTE_STATE_DROWNED</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>384</td>
+<td>EMOTE_STATE_HOLD_BOW</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>385</td>
+<td>EMOTE_STATE_HOLD_RIFLE</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>386</td>
+<td>EMOTE_STATE_HOLD_THROWN</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>387</td>
+<td>EMOTE_ONESHOT_DROWN</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>388</td>
+<td>EMOTE_ONESHOT_STOMP</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>389</td>
+<td>EMOTE_ONESHOT_ATTACKOFF</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>390</td>
+<td>EMOTE_ONESHOT_ATTACKOFFPIERCE</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>391</td>
+<td>EMOTE_STATE_ROAR</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>392</td>
+<td>EMOTE_STATE_LAUGH</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>393</td>
+<td>EMOTE_ONESHOT_CREATURE_SPECIAL</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>394</td>
+<td>EMOTE_ONESHOT_JUMPLANDRUN</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>395</td>
+<td>EMOTE_ONESHOT_JUMPEND</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>396</td>
+<td>EMOTE_ONESHOT_TALK_NOSHEATHE</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>397</td>
+<td>EMOTE_ONESHOT_POINT_NOSHEATHE</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>398</td>
+<td>EMOTE_STATE_CANNIBALIZE</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>399</td>
+<td>EMOTE_ONESHOT_JUMPSTART</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="moveflags">moveflags</h4>
+<p>Flags controlling how the creature will behave animation-wise while moving. <span style="color: red">This table is 100% wrong as of 3.1. It is still here for a period of time for reference and to convert values in DB.</p>
+<p>See the proper table under this one</span></p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>MOVEMENTFLAG_NONE</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>MOVEMENTFLAG_FORWARD</td>
+<td>instantly teleport creature, then creature move forward animation but no real movement</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MOVEMENTFLAG_BACKWARD</td>
+<td>instantly teleport creature, then creature move back animation but no real movement</td>
+</tr>
+<tr>
+<td>4</td>
+<td>MOVEMENTFLAG_STRAFE_LEFT</td>
+<td>instantly teleport creature, then creature move left animation but no real movement</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MOVEMENTFLAG_STRAFE_RIGHT</td>
+<td>instantly teleport creature, then creature move right animation but no real movement</td>
+</tr>
+<tr>
+<td>16</td>
+<td>MOVEMENTFLAG_LEFT</td>
+<td>creature spin left animation</td>
+</tr>
+<tr>
+<td>32</td>
+<td>MOVEMENTFLAG_RIGHT</td>
+<td>then creature spin right animation</td>
+</tr>
+<tr>
+<td>64</td>
+<td>MOVEMENTFLAG_PITCH_UP</td>
+<td>no effect on creature</td>
+</tr>
+<tr>
+<td>128</td>
+<td>MOVEMENTFLAG_PITCH_DOWN</td>
+<td>no effect on creature</td>
+</tr>
+<tr>
+<td>256</td>
+<td>MOVEMENTFLAG_RUN_MODE</td>
+<td>If flag set then player runs</td>
+</tr>
+<tr>
+<td>512</td>
+<td>MOVEMENTFLAG_ONTRANSPORT</td>
+<td>causes creatures to fly while moving (not include standing)</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>MOVEMENTFLAG_HOVERING</td>
+<td>hovering animation at stand (not include moving)</td>
+</tr>
+<tr>
+<td>2048</td>
+<td>MOVEMENTFLAG_FLY_UNK1</td>
+<td></td>
+</tr>
+<tr>
+<td>4096</td>
+<td>MOVEMENTFLAG_JUMPING</td>
+<td>Jump animation</td>
+</tr>
+<tr>
+<td>8192</td>
+<td>MOVEMENTFLAG_UNK1</td>
+<td></td>
+</tr>
+<tr>
+<td>16384</td>
+<td>MOVEMENTFLAG_FALLING</td>
+<td>Falling</td>
+</tr>
+<tr>
+<td>32768</td>
+<td>MOVEMENTFLAG_UNK2</td>
+<td></td>
+</tr>
+<tr>
+<td>65536</td>
+<td>MOVEMENTFLAG_UNK3</td>
+<td></td>
+</tr>
+<tr>
+<td>131072</td>
+<td>MOVEMENTFLAG_UNK4</td>
+<td></td>
+</tr>
+<tr>
+<td>262144</td>
+<td>MOVEMENTFLAG_UNK5</td>
+<td></td>
+</tr>
+<tr>
+<td>524288</td>
+<td>MOVEMENTFLAG_UNK6</td>
+<td></td>
+</tr>
+<tr>
+<td>1048576</td>
+<td>MOVEMENTFLAG_UNK7</td>
+<td>Causes creature to instantly appear at new position</td>
+</tr>
+<tr>
+<td>2097152</td>
+<td>MOVEMENTFLAG_SWIMMING</td>
+<td>appears with fly flag also (causes creatures to fall to ground at stand state)</td>
+</tr>
+<tr>
+<td>4194304</td>
+<td>MOVEMENTFLAG_FLY_UP</td>
+<td>no effect on creature</td>
+</tr>
+<tr>
+<td>8388608</td>
+<td>MOVEMENTFLAG_CAN_FLY</td>
+<td>no effect on creature</td>
+</tr>
+<tr>
+<td>16777216</td>
+<td>MOVEMENTFLAG_FLYING</td>
+<td>no effect on creature</td>
+</tr>
+<tr>
+<td>33554432</td>
+<td>MOVEMENTFLAG_UNK8</td>
+<td>Creature flying (not hover at stop moving)</td>
+</tr>
+<tr>
+<td>67108864</td>
+<td>MOVEMENTFLAG_SPLINE</td>
+<td>probably wrong name (no effect on creature)</td>
+</tr>
+<tr>
+<td>134217728</td>
+<td>MOVEMENTFLAG_SPLINE2</td>
+<td>no effect on creature</td>
+</tr>
+<tr>
+<td>268435456</td>
+<td>MOVEMENTFLAG_WATERWALKING</td>
+<td>also prevent creature from falling under water</td>
+</tr>
+<tr>
+<td>536870912</td>
+<td>MOVEMENTFLAG_SAFE_FALL</td>
+<td>active rogue safe fall spell (passive) (no effect on creature)</td>
+</tr>
+<tr>
+<td>1073741824</td>
+<td>MOVEMENTFLAG_UNK9</td>
+<td>Causes creature to hover at stand state (not include moving)</td>
+</tr>
+<tr>
+<td>2147483648</td>
+<td>MOVEMENTFLAG_UNK10</td>
+<td>Causes creature to roll to strange angle</td>
+</tr>
+</tbody>
+</table>
+<p><span style="color: red">Proper table as of 3.1</span></p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>MONSTER_MOVE_NONE</td>
+<td>InhabitType]] and <a href="creature_template#MovementType">MovementType</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>MONSTER_MOVE_FORWARD</td>
+<td>Instantly teleport creature, then creature move forward animation but no real movement</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MONSTER_MOVE_BACKWARD</td>
+<td>Instantly teleport creature, then creature move back animation but no real movement</td>
+</tr>
+<tr>
+<td>4</td>
+<td>MONSTER_MOVE_STRAFE_LEFT</td>
+<td>Instantly teleport creature, then creature move left animation but no real movement</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MONSTER_MOVE_STRAFE_RIGHT</td>
+<td>Instantly teleport creature, then creature move right animation but no real movement</td>
+</tr>
+<tr>
+<td>16</td>
+<td>MONSTER_MOVE_LEFT</td>
+<td>Creature spin left animation</td>
+</tr>
+<tr>
+<td>32</td>
+<td>MONSTER_MOVE_RIGHT</td>
+<td>Then creature spin right animation</td>
+</tr>
+<tr>
+<td>64</td>
+<td>MONSTER_MOVE_PITCH_UP</td>
+<td>Seams to have no effect</td>
+</tr>
+<tr>
+<td>128</td>
+<td>MONSTER_MOVE_PITCH_DOWN</td>
+<td>Seams to have no effect</td>
+</tr>
+<tr>
+<td>256</td>
+<td>MONSTER_MOVE_TELEPORT</td>
+<td>Makes creature teleport instead of walking</td>
+</tr>
+<tr>
+<td>512</td>
+<td>MONSTER_MOVE_TELEPORT2</td>
+<td>Makes creature a better Fly Animation (2.4.3)</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>MONSTER_MOVE_LEVITATING</td>
+<td></td>
+</tr>
+<tr>
+<td>2048</td>
+<td>MONSTER_MOVE_UNK1</td>
+<td></td>
+</tr>
+<tr>
+<td>4096</td>
+<td>MONSTER_MOVE_WALK</td>
+<td>Makes creature walk</td>
+</tr>
+<tr>
+<td>8192</td>
+<td>MONSTER_MOVE_SPLINE</td>
+<td></td>
+</tr>
+<tr>
+<td>16384</td>
+<td>No name in core</td>
+<td>Makes creature run</td>
+</tr>
+<tr>
+<td>32768</td>
+<td>No name in core</td>
+<td>Makes creature run</td>
+</tr>
+<tr>
+<td>65536</td>
+<td>No name in core</td>
+<td>Makes creature run</td>
+</tr>
+<tr>
+<td>131072</td>
+<td>No name in core</td>
+<td>Makes creature run</td>
+</tr>
+<tr>
+<td>262144</td>
+<td>MONSTER_MOVE_SPLINE2</td>
+<td></td>
+</tr>
+<tr>
+<td>524288</td>
+<td>MONSTER_MOVE_UNK2</td>
+<td>Used for flying mobs</td>
+</tr>
+<tr>
+<td>1048576</td>
+<td>MONSTER_MOVE_UNK3</td>
+<td>Used for flying mobs</td>
+</tr>
+<tr>
+<td>2097152</td>
+<td>MONSTER_MOVE_UNK4</td>
+<td></td>
+</tr>
+<tr>
+<td>4194304</td>
+<td>MONSTER_MOVE_UNK5</td>
+<td>Run in place, then teleport to final point</td>
+</tr>
+<tr>
+<td>8388608</td>
+<td>MONSTER_MOVE_UNK6</td>
+<td>Teleport</td>
+</tr>
+<tr>
+<td>16777216</td>
+<td>MONSTER_MOVE_UNK7</td>
+<td>Run</td>
+</tr>
+<tr>
+<td>33554432</td>
+<td>MONSTER_MOVE_FLY</td>
+<td>Swimming / Flying</td>
+</tr>
+<tr>
+<td>67108864</td>
+<td>MONSTER_MOVE_UNK9</td>
+<td>Run</td>
+</tr>
+<tr>
+<td>134217728</td>
+<td>MONSTER_MOVE_UNK10</td>
+<td>Run</td>
+</tr>
+<tr>
+<td>268435456</td>
+<td>MONSTER_MOVE_UNK11</td>
+<td>Run</td>
+</tr>
+<tr>
+<td>536870912</td>
+<td>MONSTER_MOVE_UNK12</td>
+<td>Run</td>
+</tr>
+<tr>
+<td>1073741824</td>
+<td>MONSTER_MOVE_UNK13</td>
+<td>Levitating</td>
+</tr>
+</tbody>
+</table>
+<p>Note: MONSTER_MOVE_SPLINE_FLY = MONSTER_MOVE_WALK + MONSTER_MOVE_SPLINE and makes creature fly by points. Note2: Copy from Mangos</p>
+<h4 id="auras">auras</h4>
+<p>This field controls any auras to be applied on the creature (both in effect and visually). To apply multiple auras, you can add more aura entries, separating each entry by a space.</p>
+<p>List of useful aura entries:</p>
+<ul>
+<li>'16380' - Makes the creature invisible.</li>
+<li>'18950' - Makes the creature detect other invisible units (players or creatures).</li>
+<li>'37613' - Casting teleport forever.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

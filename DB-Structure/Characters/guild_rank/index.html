@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Guild rank - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Guild rank";
+    var mkdocs_page_input_path = "DB-Structure/Characters/guild_rank.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Guild rank</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to the <a href="charactersdb_struct">characters database</a> list of tables.</p>
+<h2 id="the-96guild95rank96-table">The `guild_rank` table</h2>
+<p>This table holds the information on all of the ranks available in a guild along with their names and what rights a person with that rank has.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Guild_rank#guildid">guildid</a></td>
+<td>int(6) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Guild_rank#rid">rid</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td>PRI</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Guild_rank#rname">rname</a></td>
+<td>varchar(255)</td>
+<td>NO</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Guild_rank#rights">rights</a></td>
+<td>int(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Guild_rank#bankmoneyperday">BankMoneyPerDay</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="guildid">guildid</h4>
+<p>The guild ID that the rank is part of. See <a href="guild#guildid">guild.guildid</a></p>
+<h4 id="rid">rid</h4>
+<p>The particular rank ID. This number must be unique to each rank in a guild.</p>
+<h4 id="rname">rname</h4>
+<p>The name of the rank that is displayed in-game.</p>
+<h4 id="rights">rights</h4>
+<p>The rights a player with this rank has in the guild. The calculation of multiple rights is a bit different in this case as the rights do not all have 2^n values. To combine ranks, you must do the OR operation (|) on the two flags.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Name</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>64</td>
+<td>GR_RIGHT_EMPTY</td>
+<td>Having just this flag by itself is equivalent to having no rights at all.</td>
+</tr>
+<tr>
+<td>65</td>
+<td>GR_RIGHT_GCHATLISTEN</td>
+<td>Player can read messages in the guild general chat channel.</td>
+</tr>
+<tr>
+<td>66</td>
+<td>GR_RIGHT_GCHATSPEAK</td>
+<td>Player can type messages in the guild general chat channel.</td>
+</tr>
+<tr>
+<td>68</td>
+<td>GR_RIGHT_OFFCHATLISTEN</td>
+<td>Player can read messages in the guild officers channel.</td>
+</tr>
+<tr>
+<td>72</td>
+<td>GR_RIGHT_OFFCHATSPEAK</td>
+<td>Player can type messages in the guild officers channel.</td>
+</tr>
+<tr>
+<td>80</td>
+<td>GR_RIGHT_INVITE</td>
+<td>Can invite other players to guild.</td>
+</tr>
+<tr>
+<td>96</td>
+<td>GR_RIGHT_REMOVE</td>
+<td>Can kick other players out of guild.</td>
+</tr>
+<tr>
+<td>192</td>
+<td>GR_RIGHT_PROMOTE</td>
+<td>Can promote other players.</td>
+</tr>
+<tr>
+<td>320</td>
+<td>GR_RIGHT_DEMOTE</td>
+<td>Can demote other players.</td>
+</tr>
+<tr>
+<td>4160</td>
+<td>GR_RIGHT_SETMOTD</td>
+<td>Can change the guild message of the day.</td>
+</tr>
+<tr>
+<td>8256</td>
+<td>GR_RIGHT_EPNOTE</td>
+<td>Can edit other players' personal notes.</td>
+</tr>
+<tr>
+<td>16448</td>
+<td>GR_RIGHT_VIEWOFFNOTE</td>
+<td>Can view the officer notes of other players.</td>
+</tr>
+<tr>
+<td>32832</td>
+<td>GR_RIGHT_EOFFNOTE</td>
+<td>Can edit officer notes of other players.</td>
+</tr>
+<tr>
+<td>61951</td>
+<td>GR_RIGHT_ALL</td>
+<td>Has all of the rights.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bankmoneyperday">BankMoneyPerDay</h4>
+<p>The total money per day, in copper, that a person with this rank can take out. Use the maximum value of an unsigned int (4294967295) to specify unlimited amount.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

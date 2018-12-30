@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Frequently Asked Questions - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Frequently Asked Questions";
+    var mkdocs_page_input_path = "FAQ-Frequently-Asked-Questions.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Frequently Asked Questions</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#what-should-i-do-when-i-encounter-a-problem">What should I do when I encounter a problem?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#im-a-beginner-and-want-to-understand-how-cmangos-works-where-should-i-get-started">I'm a beginner and want to understand how CMaNGOS works, where should I get started?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#how-do-i-install-cmangos">How do I install CMaNGOS?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#error-mysql-is-not-recognized-as-an-internal-or-external-command">Error: "MySQL is not recognized as an internal or external command"</a></li>
+    
+
+    <li class="toctree-l2"><a href="#my-server-has-errors-when-i-try-to-start-it">My server has errors when I try to start it</a></li>
+    
+
+    <li class="toctree-l2"><a href="#error-in-mangosd-application">Error in mangosd application:</a></li>
+    
+
+    <li class="toctree-l2"><a href="#i-cannot-login-to-my-server">I cannot login to my server</a></li>
+    
+
+    <li class="toctree-l2"><a href="#my-client-still-connects-to-a-different-hostaddress">My client still connects to a different host/address</a></li>
+    
+
+    <li class="toctree-l2"><a href="#mangosd-orand-realmd-instantly-closes-when-i-start-them">MaNGOSd or/and Realmd instantly closes when I start them</a></li>
+    
+
+    <li class="toctree-l2"><a href="#i-play-tbc-or-wotlk-and-cannot-access-the-blood-elves-draenei-worgen-or-goblins">I play TBC or WotLK and cannot access the Blood Elves, Draenei, Worgen or Goblins</a></li>
+    
+
+    <li class="toctree-l2"><a href="#i-play-wotlkcata-and-cannot-access-the-death-knight">I play WotLK/Cata and cannot access the Death Knight</a></li>
+    
+
+    <li class="toctree-l2"><a href="#how-can-i-use-gm-commands">How can I use GM commands?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#npcs-directly-evade-when-i-try-to-attack">Npcs directly evade when I try to attack</a></li>
+    
+
+    <li class="toctree-l2"><a href="#all-npcs-are-friendly-or-neutral">All Npcs are friendly or neutral</a></li>
+    
+
+    <li class="toctree-l2"><a href="#all-gameobjects-around-me-sparkle">All Gameobjects around me sparkle</a></li>
+    
+
+    <li class="toctree-l2"><a href="#how-do-i-make-custom-items">How do I make custom items?</a></li>
+    
+
+    <li class="toctree-l2"><a href="#the-gm-fly-command-doesnt-work">The ".gm fly" command doesn't work</a></li>
+    
+
+    <li class="toctree-l2"><a href="#how-do-i-update">How do I update?</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#updating-the-source-code">Updating the source code</a></li>
+        
+            <li><a class="toctree-l3" href="#compiling-and-installing-the-update">Compiling and installing the update</a></li>
+        
+            <li><a class="toctree-l3" href="#fetching-new-content-from-the-database-provider">Fetching new content from the database provider</a></li>
+        
+            <li><a class="toctree-l3" href="#updating-the-database">Updating the database</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Frequently Asked Questions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="what-should-i-do-when-i-encounter-a-problem">What should I do when I encounter a problem?</h3>
+<ul>
+<li>In general, read the log file and see if you can work out the problem from there on your own; if you can't, seek out help on:</li>
+<li>Discord: https://discord.gg/Dgzerzb</li>
+<li>IRC (<a href="irc://irc.rizon.net/#cmangos">#cmangos</a>)</li>
+<li>the <a href="https://forum.cmangos.net/">cmangos.net forums</a></li>
+<li>Every application generates a log file somewhere that can be opened and reviewed.</li>
+<li>For compile problems: Look into the log, on *nix you can create a log with <code>make &gt; compile.log 2&gt;&amp;1</code></li>
+<li>For problems with the server: Look for the file, <em>Server.log</em>, in your server's home directory.</li>
+</ul>
+<h3 id="im-a-beginner-and-want-to-understand-how-cmangos-works-where-should-i-get-started">I'm a beginner and want to understand how CMaNGOS works, where should I get started?</h3>
+<ul>
+<li>See the <a href="Beginners-Guide-Home">Beginner's Guide</a>.</li>
+</ul>
+<h3 id="how-do-i-install-cmangos">How do I install CMaNGOS?</h3>
+<ul>
+<li>See the <a href="Installation-Instructions">Installation Instructions</a>.</li>
+</ul>
+<h3 id="error-mysql-is-not-recognized-as-an-internal-or-external-command">Error: "MySQL is not recognized as an internal or external command"</h3>
+<ul>
+<li>You need to add MySQL to your path environment so that windows recognizes the command by default. See <a href="http://dev.mysql.com/doc/mysql-windows-excerpt/5.1/en/mysql-installation-windows-path.html">here</a> for a walk through from MySQL.</li>
+</ul>
+<h3 id="my-server-has-errors-when-i-try-to-start-it">My server has errors when I try to start it</h3>
+<ul>
+<li>First you should review the <a href="Installation-Instructions">Installation Instructions</a> again to be sure you didn't miss any steps and that every step was done according to the instructions.  </li>
+<li>Second, search the forums or Discord for a solution (most errors have been encountered before and so there is usually a thread someone on the forums discussing it).</li>
+<li>Third, if you can't find any answers, use one of the methods mentioned <a href="#what-should-i-do-when-i-encounter-a-problem">above</a> to ask the developers for help.</li>
+</ul>
+<h3 id="error-in-mangosd-application">Error in mangosd application:</h3>
+<pre><code>ERROR:  [A] You have: --&gt; _version_  
+ERROR:  
+ERROR:  [B] You need: --&gt; _version_
+</code></pre>
+
+<ul>
+<li>You need to update your database to the correct version to match the core.</li>
+<li>See the <a href="Installation-Instructions#basic-concept-of-database-filling">here</a> in the Installation Instructions for details.</li>
+</ul>
+<h3 id="i-cannot-login-to-my-server">I cannot login to my server</h3>
+<p>If your server is running and you just can't connect to it then there are several possible issues:
+<em> Ensure that the realmd application is running; if not, start it up and check for errors if it doesn't stay open.<br />
+</em> Ensure that the mangosd application is running; if not, start it up and check for errors if it doesn't stay open.
+* Make sure that the following fields from the <code>realmlist</code> table (realmd database) match up to their corresponding values in your <em>mangosd.conf</em> configuration file:  </p>
+<table>
+<thead>
+<tr>
+<th align="center">realmlist</th>
+<th align="center">mangosd.conf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">RealmID</td>
+</tr>
+<tr>
+<td align="center">port</td>
+<td align="center">WorldServerPort</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Make sure that your <em>realmlist.wtf</em> file in your game client folder is set to the address of your server. The content of the file should only have three phrases:<br />
+    &gt;set realmlist <em>address</em>  </p>
+</li>
+<li>
+<p>If the server is on the same computer as the client then you can just use "127.0.0.1" as the address:  </p>
+<blockquote>
+<p>set realmlist 127.0.0.1  </p>
+</blockquote>
+</li>
+<li>
+<p>Otherwise the address should be the same as the "address" field from the <code>realmlist</code> table (realmd database).  </p>
+</li>
+<li>
+<p>If your server is hosted on a remote machine and/or you're using an IP address other than 127.0.0.1, then you probably have to update your realm address field in the database</p>
+</li>
+<li>Open the mysql client on your machine (mysql -p)</li>
+<li>Run the following command (don't forget to replace the placeholder text with your values): <code>UPDATE realmlist SET address='your.ip.address.here' WHERE id='id_of_the_realm_you_want_to_edit';</code></li>
+<li>
+<p>You can get a list of all your realms with the following: <code>SELECT * FROM realmlist;</code></p>
+</li>
+<li>
+<p>Ensure that the user account you are trying to log in with is created:</p>
+</li>
+<li>See the <a href="Installation-Instructions">Installation Instructions</a>.</li>
+<li>
+<p>To add an account, type the below line directly into the server command prompt (mangosd) replacing $accountName with the name of the account and $accountPassword with the password to be used:<br />
+<code>account create $accountName $accountPassword</code></p>
+</li>
+<li>
+<p>Don't use an email address as a username.  </p>
+</li>
+<li>
+<p>Delete or rename wow.mfil and wow.tfil files.  </p>
+</li>
+<li>
+<p>ONLY use wow.exe to start up the client, NEVER use launcher.exe (client versions 4.x and up require wow.exe to be patched prior as well).</p>
+</li>
+</ul>
+<h3 id="my-client-still-connects-to-a-different-hostaddress">My client still connects to a different host/address</h3>
+<ul>
+<li>Add in your <em>/WTF/config.wtf</em> file: (SET realmlist "127.0.0.1") before (SET accountName "youraccount")</li>
+</ul>
+<h3 id="mangosd-orand-realmd-instantly-closes-when-i-start-them">MaNGOSd or/and Realmd instantly closes when I start them</h3>
+<ul>
+<li>Run mangos in command line, terminal, or git bash instead; then you will see the on-screen error output and be able to continue from there.</li>
+<li>Make sure there are no other processes using the required ports (default 8085 &amp; 3724).</li>
+</ul>
+<h3 id="i-play-tbc-or-wotlk-and-cannot-access-the-blood-elves-draenei-worgen-or-goblins">I play TBC or WotLK and cannot access the Blood Elves, Draenei, Worgen or Goblins</h3>
+<ul>
+<li>You need to set the expansion of your account to 1/2/3 (for TBC/WotLK/Cata). See [[Installation Instructions]].</li>
+</ul>
+<h3 id="i-play-wotlkcata-and-cannot-access-the-death-knight">I play WotLK/Cata and cannot access the Death Knight</h3>
+<ul>
+<li>You need to set the expansion of your account to 2 or 3 (2 for TBC, 3 for Cata)</li>
+<li>You need to level a character to level 55 OR</li>
+<li>Change the config option "MinLevelForHeroicCharacterCreating" in your mangosd.conf OR</li>
+<li>Set your account to be a GM Account (see next question)</li>
+</ul>
+<h3 id="how-can-i-use-gm-commands">How can I use GM commands?</h3>
+<ul>
+<li>You need to set your GM-Level. See [[Installation Instructions]].</li>
+</ul>
+<h3 id="npcs-directly-evade-when-i-try-to-attack">Npcs directly evade when I try to attack</h3>
+<h3 id="all-npcs-are-friendly-or-neutral">All Npcs are friendly or neutral</h3>
+<h3 id="all-gameobjects-around-me-sparkle">All Gameobjects around me sparkle</h3>
+<ul>
+<li>You need to turn GM mode off: <code>.gm off</code></li>
+<li>Maybe you still have invisibility on, try <code>.gm visi on</code>  </li>
+</ul>
+<h3 id="how-do-i-make-custom-items">How do I make custom items?</h3>
+<ul>
+<li>CMaNGOS developers do not actively support custom items as we are focused on true emulation. That being said, you can always ask for help on the forums or lookup some guides around the internet. If you are up to the task, check out the <a href="Item_template">item_template</a> wiki entry to get started from the ground up.</li>
+</ul>
+<h3 id="the-gm-fly-command-doesnt-work">The ".gm fly" command doesn't work</h3>
+<ul>
+<li>This command does not work for classic core. If you are on another core, check your syntax and make sure you installed everything correctly.  </li>
+</ul>
+<h2 id="how-do-i-update">How do I update?</h2>
+<h3 id="updating-the-source-code">Updating the source code</h3>
+<ul>
+<li>Open a Git Bash (see [[Installation Instructions]]) in your C:\Mangos or ~/mangos (your base directory)</li>
+<li><code>cd mangos</code> (This assumes you followed the Installation Instructions, and the directory where your sources are located in C:\Mangos\mangos or ~/Mangos/mangos</li>
+<li>Invoke <code>git pull</code> to update</li>
+<li><code>cd src/bindings/ScriptDev2</code> (This step and the next only if you also want to update SD2 and you had it installed)</li>
+<li>Invoke <code>git pull</code></li>
+</ul>
+<h3 id="compiling-and-installing-the-update">Compiling and installing the update</h3>
+<ul>
+<li>You need to compile core and SD2 just like you did before in your first setup (See [[Installation Instructions]] ).</li>
+</ul>
+<h3 id="fetching-new-content-from-the-database-provider">Fetching new content from the database provider</h3>
+<ul>
+<li>This depends on your database provider, you might want to update your SVN or Git clone of the database.</li>
+</ul>
+<h3 id="updating-the-database">Updating the database</h3>
+<ul>
+<li>Even if your Database provider did not ship new updates, you still might have to update your database content due to core changes.</li>
+<li>In this case the easiest process is to rerun the installer script from your DB-provider.</li>
+<li>If you don't want to reset the database to a clean state (for example because you added some custom things), then you <em>might</em> need to update manually.</li>
+<li>To check if you need a manual update, just start the mangosd and check if a database error on start is printed.</li>
+<li>If it is, read the error message carefully (you can read it more easily from the file Server.log).</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Installation-Instructions/" class="btn btn-neutral float-right" title="Installation Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Main Page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Installation-Instructions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

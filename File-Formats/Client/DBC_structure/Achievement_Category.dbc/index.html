@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Achievement Category.dbc - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Achievement Category.dbc";
+    var mkdocs_page_input_path = "File-Formats/Client/DBC_structure/Achievement_Category.dbc.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Achievement Category.dbc</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="dbc_files">dbc files</a> list.</p>
+<h3 id="achievement95categorydbc">Achievement_Category.dbc</h3>
+<p>This DBC contains all achievement category's.</p>
+<p><strong>Version is : 3.3.5a</strong></p>
+<p><strong>ParentCategoryID</strong> is the <strong>CategoryID</strong> of the Parent. IE: 155 is the Category for World Events. 162 is the CategoryID for Brewfest and has a parent CategoryID of 155 indicating that it is also a "World Event."</p>
+<h3 id="content"><strong>Content</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>CategoryID</strong></th>
+<th><strong>ParentCategoryID</strong></th>
+<th><strong>Name</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4294967295 (None?)</td>
+<td>Statistics</td>
+</tr>
+<tr>
+<td>21</td>
+<td>1</td>
+<td>Player vs. Player</td>
+</tr>
+<tr>
+<td>81</td>
+<td>4294967295 (None?)</td>
+<td>Feats of Strength</td>
+</tr>
+<tr>
+<td>92</td>
+<td>4294967295 (None?)</td>
+<td>General</td>
+</tr>
+<tr>
+<td>95</td>
+<td>4294967295 (None?)</td>
+<td>Player vs. Player</td>
+</tr>
+<tr>
+<td>96</td>
+<td>4294967295 (None?)</td>
+<td>Quests</td>
+</tr>
+<tr>
+<td>97</td>
+<td>4294967295 (None?)</td>
+<td>Exploration</td>
+</tr>
+<tr>
+<td>122</td>
+<td>1 (Statistics)</td>
+<td>Deaths</td>
+</tr>
+<tr>
+<td>123</td>
+<td>122 (Deaths)</td>
+<td>Arenas</td>
+</tr>
+<tr>
+<td>124</td>
+<td>122 (Deaths)</td>
+<td>Battlegrounds</td>
+</tr>
+<tr>
+<td>125</td>
+<td>122 (Deaths)</td>
+<td>Dungeons</td>
+</tr>
+<tr>
+<td>126</td>
+<td>122 (Deaths)</td>
+<td>World</td>
+</tr>
+<tr>
+<td>127</td>
+<td>122 (Deaths)</td>
+<td>Resurrection</td>
+</tr>
+<tr>
+<td>128</td>
+<td>1 (Statistics)</td>
+<td>Kills</td>
+</tr>
+<tr>
+<td>130</td>
+<td>1 (Statistics)</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>131</td>
+<td>1 (Statistics)</td>
+<td>Social</td>
+</tr>
+<tr>
+<td>132</td>
+<td>1 (Statistics)</td>
+<td>Skills</td>
+</tr>
+<tr>
+<td>133</td>
+<td>1 (Statistics)</td>
+<td>Quests</td>
+</tr>
+<tr>
+<td>134</td>
+<td>1 (Statistics)</td>
+<td>Travel</td>
+</tr>
+<tr>
+<td>135</td>
+<td>128 (Kills)</td>
+<td>Creatures</td>
+</tr>
+<tr>
+<td>136</td>
+<td>128 (Kills)</td>
+<td>Honorable Kills</td>
+</tr>
+<tr>
+<td>137</td>
+<td>128 (Kills)</td>
+<td>Killing Blows</td>
+</tr>
+<tr>
+<td>140</td>
+<td>130 (Character)</td>
+<td>Wealth</td>
+</tr>
+<tr>
+<td>141</td>
+<td>1 (Statistics)</td>
+<td>Combat</td>
+</tr>
+<tr>
+<td>145</td>
+<td>130 (Character)</td>
+<td>Consumables</td>
+</tr>
+<tr>
+<td>147</td>
+<td>130 (Character)</td>
+<td>Reputation</td>
+</tr>
+<tr>
+<td>148</td>
+<td>131 (Social)</td>
+<td>Friends</td>
+</tr>
+<tr>
+<td>149</td>
+<td>131 (Social)</td>
+<td>Groups</td>
+</tr>
+<tr>
+<td>151</td>
+<td>131 (Social)</td>
+<td>Communication</td>
+</tr>
+<tr>
+<td>152</td>
+<td>21 (PvP)</td>
+<td>Rated Arenas</td>
+</tr>
+<tr>
+<td>153</td>
+<td>21 (PvP)</td>
+<td>Battlegrounds</td>
+</tr>
+<tr>
+<td>154</td>
+<td>21 (PvP)</td>
+<td>World</td>
+</tr>
+<tr>
+<td>155</td>
+<td>4294967295 (None?)</td>
+<td>World Events</td>
+</tr>
+<tr>
+<td>156</td>
+<td>155 (World Events)</td>
+<td>Winter Veil</td>
+</tr>
+<tr>
+<td>157</td>
+<td>155 (World Events)</td>
+<td>Darkmoon Faire</td>
+</tr>
+<tr>
+<td>158</td>
+<td>155 (World Events)</td>
+<td>Hallow's End</td>
+</tr>
+<tr>
+<td>159</td>
+<td>155 (World Events)</td>
+<td>Novlegarden</td>
+</tr>
+<tr>
+<td>160</td>
+<td>155 (World Events)</td>
+<td>Lunar Festival</td>
+</tr>
+<tr>
+<td>161</td>
+<td>155 (World Events)</td>
+<td>Midsummer</td>
+</tr>
+<tr>
+<td>162</td>
+<td>155 (World Events)</td>
+<td>Brewfest</td>
+</tr>
+<tr>
+<td>163</td>
+<td>155 (World Events)</td>
+<td>Children's Week</td>
+</tr>
+<tr>
+<td>165</td>
+<td>95 (PvP)</td>
+<td>Arena</td>
+</tr>
+<tr>
+<td>168</td>
+<td>4294967295 (None?)</td>
+<td>Dungeons &amp; Raids</td>
+</tr>
+<tr>
+<td>169</td>
+<td>4294967295 (None?)</td>
+<td>Professions</td>
+</tr>
+<tr>
+<td>170</td>
+<td>169 (Professions)</td>
+<td>Cooking</td>
+</tr>
+<tr>
+<td>171</td>
+<td>169 (Professions)</td>
+<td>Fishing</td>
+</tr>
+<tr>
+<td>172</td>
+<td>169 (Professions)</td>
+<td>First Aid</td>
+</tr>
+<tr>
+<td>173</td>
+<td>132 (Skills)</td>
+<td>Professions</td>
+</tr>
+<tr>
+<td>178</td>
+<td>132 (Skills)</td>
+<td>Secondary Skills</td>
+</tr>
+<tr>
+<td>187</td>
+<td>155 (World Events)</td>
+<td>Love is in the Air</td>
+</tr>
+<tr>
+<td>191</td>
+<td>130 (Character)</td>
+<td>Gear</td>
+</tr>
+<tr>
+<td>201</td>
+<td>4294967295 (None?)</td>
+<td>Reputation</td>
+</tr>
+<tr>
+<td>14777</td>
+<td>97 (Exploration)</td>
+<td>Eastern Kingdoms</td>
+</tr>
+<tr>
+<td>14778</td>
+<td>97 (Exploration)</td>
+<td>Kalimdor</td>
+</tr>
+<tr>
+<td>14779</td>
+<td>97 (Exploration)</td>
+<td>Outland</td>
+</tr>
+<tr>
+<td>14780</td>
+<td>97 (Exploration)</td>
+<td>Northrend</td>
+</tr>
+<tr>
+<td>14801</td>
+<td>95 (PvP)</td>
+<td>Alterac Valley</td>
+</tr>
+<tr>
+<td>14802</td>
+<td>95 (PvP)</td>
+<td>Arathi Basin</td>
+</tr>
+<tr>
+<td>14803</td>
+<td>95 (PvP)</td>
+<td>Eye of the Storm</td>
+</tr>
+<tr>
+<td>14804</td>
+<td>95 (PvP)</td>
+<td>Warsong Gulch</td>
+</tr>
+<tr>
+<td>14805</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>The Burning Crusade</td>
+</tr>
+<tr>
+<td>14806</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Lich King Dungeon</td>
+</tr>
+<tr>
+<td>14807</td>
+<td>1 (Statistics)</td>
+<td>Dungeons &amp; Raids</td>
+</tr>
+<tr>
+<td>14808</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Classic</td>
+</tr>
+<tr>
+<td>14821</td>
+<td>14807 (Dungeons &amp; Raids)</td>
+<td>Classic</td>
+</tr>
+<tr>
+<td>14822</td>
+<td>14807 (Dungeons &amp; Raids)</td>
+<td>The Burning Crusade</td>
+</tr>
+<tr>
+<td>14823</td>
+<td>14807 (Dungeons &amp; Raids)</td>
+<td>Wrath of the Lich King</td>
+</tr>
+<tr>
+<td>14861</td>
+<td>96 (Quests)</td>
+<td>Classic</td>
+</tr>
+<tr>
+<td>14862</td>
+<td>96 (Quests)</td>
+<td>The Burning Crusade</td>
+</tr>
+<tr>
+<td>14863</td>
+<td>96 (Quests)</td>
+<td>Wrath of the Lich King</td>
+</tr>
+<tr>
+<td>14864</td>
+<td>201 (Reputation)</td>
+<td>Classic</td>
+</tr>
+<tr>
+<td>14865</td>
+<td>201 (Reputation)</td>
+<td>The Burning Crusade</td>
+</tr>
+<tr>
+<td>14866</td>
+<td>201 (Reputation)</td>
+<td>Wrath of the Lich King</td>
+</tr>
+<tr>
+<td>14881</td>
+<td>95 (PvP)</td>
+<td>Strand of the Ancients</td>
+</tr>
+<tr>
+<td>14901</td>
+<td>95 (PvP)</td>
+<td>Wintergrasp</td>
+</tr>
+<tr>
+<td>14921</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Lich King Heroic</td>
+</tr>
+<tr>
+<td>14922</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Lich King Raid</td>
+</tr>
+<tr>
+<td>14923</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Lich King Heroic Raid</td>
+</tr>
+<tr>
+<td>14941</td>
+<td>155 (World Events)</td>
+<td>Argent Tournament</td>
+</tr>
+<tr>
+<td>14961</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Secrets of Ulduar Raid</td>
+</tr>
+<tr>
+<td>14962</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Secrets of Ulduar Heroic Raid</td>
+</tr>
+<tr>
+<td>14963</td>
+<td>14807 (Dungeons &amp; Raids)</td>
+<td>Secrets of Ulduar</td>
+</tr>
+<tr>
+<td>14981</td>
+<td>155 (World Events)</td>
+<td>Pilgrim's Bounty</td>
+</tr>
+<tr>
+<td>15001</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Call of the Crusade 10-Player Raid</td>
+</tr>
+<tr>
+<td>15002</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Call of the Crusade 25-Player Raid</td>
+</tr>
+<tr>
+<td>15003</td>
+<td>95 (PvP)</td>
+<td>Isle of Conquest</td>
+</tr>
+<tr>
+<td>15021</td>
+<td>14807 (Dungeons &amp; Raids)</td>
+<td>Call of the Crusade</td>
+</tr>
+<tr>
+<td>15041</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Fall of the Lich King 10-Player Raid</td>
+</tr>
+<tr>
+<td>15042</td>
+<td>168 (Dungeons &amp; Raids)</td>
+<td>Fall of the Lich King 25-Player Raid</td>
+</tr>
+<tr>
+<td>15062</td>
+<td>14807 (Dungeons &amp; Raids)</td>
+<td>Fall of the Lich King</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

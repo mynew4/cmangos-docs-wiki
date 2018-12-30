@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Tutorial - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Tutorial";
+    var mkdocs_page_input_path = "Contributing/Backporting/Tutorial.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Tutorial</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>This tutorial was written by stfx for developers to correctly backport commits and shows an example on backporting from mangos-wotlk to mangos-tbc.</p>
+<h2 id="1-set-up-the-directory">1. Set up the directory</h2>
+<ul>
+<li>Clone mangos-tbc repo</li>
+<li>Add mangos-wotlk remote: <code>git remote add wotlk _url_</code></li>
+</ul>
+<h2 id="2-backport-commits">2. Backport commits</h2>
+<ul>
+<li>Fetch from mangos-wotlk every time something changes there: <code>git fetch wotlk</code></li>
+<li>Use backport tool with hash of commit to backport: <code>contrib/backporting/mangos-backport.sh _commit_hash_</code></li>
+<li>Check and resolve conflicts if any exist</li>
+<li>If you had to resolve conflicts you still have to amend the commit: <code>git commit -s --amend</code></li>
+</ul>
+<h4 id="21-backport-commits-with-sql-changes">2.1. Backport commits with sql changes</h4>
+<ul>
+<li>Build git_id tool in release mode if you did not already (located in contrib\git_id)</li>
+<li>Push every outstanding commit because git_id checks last version from remote</li>
+<li><em>Fetch from mangos-wotlk (like before)</em></li>
+<li><em>Use backport tool (like before)</em></li>
+<li><em>Check and resolve conflicts (like before)</em></li>
+<li>Rename the sql updates in sql/updates/* directory by adding the client version's prefix character at the start of the filename like so: <code>11754_01_mangos_mangos_string.sql -&gt; s11754_01_mangos_mangos_string.sql</code></li>
+<li><em>Amend commit (like before)</em></li>
+<li>Use git_id in git bash: <code>contrib/git_id/Release/git_id.exe</code><ul>
+<li>This automatically writes all db_version changes to sql/base/*.sql and sql/updates/*/*.sql files</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-push-the-commits">3. Push the commits</h2>
+<ul>
+<li>Check correct authorship</li>
+<li>Check commit number for commits with sql changes</li>
+<li>Push to the mangos-tbc remote: <code>git push origin master</code> (assuming you named the mangos-tbc remote 'origin' which is the default after cloning)</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

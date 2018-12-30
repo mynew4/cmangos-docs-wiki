@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>SkillLine.dbc - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SkillLine.dbc";
+    var mkdocs_page_input_path = "File-Formats/Client/DBC_structure/SkillLine.dbc.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>SkillLine.dbc</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="dbc_files">dbc files</a> list.</p>
+<h3 id="skilllinedbc">SkillLine.dbc</h3>
+<p>This DBC contains all skills.</p>
+<p><strong>Version is : 3.3.5a</strong></p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field Nb</strong></th>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ID</td>
+<td>Int</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="SkillLine.dbc#categoryid">CategoryId</a></td>
+<td>Int</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SkillCostId</td>
+<td>Int</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>38</td>
+<td>SpellIcon</td>
+<td>Int</td>
+</tr>
+<tr>
+<td>39</td>
+<td>AltVerb</td>
+<td>String</td>
+</tr>
+<tr>
+<td>56</td>
+<td>CanLink</td>
+<td>Bool</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="content">Content</h3>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th>CategoryId]]'''</th>
+<th><strong>SkillCostId</strong></th>
+<th><strong>Name</strong></th>
+<th><strong>SpellIcon</strong></th>
+<th><strong>AltVerb</strong></th>
+<th><strong>CanLink</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>7</td>
+<td>0</td>
+<td>Frost</td>
+<td>188</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>7</td>
+<td>0</td>
+<td>Fire</td>
+<td>183</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>26</td>
+<td>7</td>
+<td>0</td>
+<td>Arms</td>
+<td>514</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>38</td>
+<td>7</td>
+<td>0</td>
+<td>Combat</td>
+<td>243</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>39</td>
+<td>7</td>
+<td>0</td>
+<td>Subtlety</td>
+<td>250</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>43</td>
+<td>6</td>
+<td>0</td>
+<td>Swords</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>44</td>
+<td>6</td>
+<td>0</td>
+<td>Axes</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>45</td>
+<td>6</td>
+<td>0</td>
+<td>Bows</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>46</td>
+<td>6</td>
+<td>0</td>
+<td>Guns</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>50</td>
+<td>7</td>
+<td>0</td>
+<td>Beast Mastery</td>
+<td>255</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>51</td>
+<td>7</td>
+<td>0</td>
+<td>Survival</td>
+<td>257</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>54</td>
+<td>6</td>
+<td>0</td>
+<td>Maces</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>55</td>
+<td>6</td>
+<td>0</td>
+<td>Two-Handed Swords</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>56</td>
+<td>7</td>
+<td>0</td>
+<td>Holy</td>
+<td>70</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>78</td>
+<td>7</td>
+<td>0</td>
+<td>Shadow Magic</td>
+<td>234</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>95</td>
+<td>6</td>
+<td>0</td>
+<td>Defense</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>98</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Common</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>101</td>
+<td>9</td>
+<td>0</td>
+<td>Dwarven Racial</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>109</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Orcish</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>111</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Dwarven</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>113</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Darnassian</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>115</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Taurahe</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>118</td>
+<td>6</td>
+<td>0</td>
+<td>Dual Wield</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>124</td>
+<td>9</td>
+<td>0</td>
+<td>Tauren Racial</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>125</td>
+<td>9</td>
+<td>0</td>
+<td>Orc Racial</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>126</td>
+<td>9</td>
+<td>0</td>
+<td>Night Elf Racial</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>129</td>
+<td>9</td>
+<td>0</td>
+<td>First Aid</td>
+<td>504</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>134</td>
+<td>7</td>
+<td>0</td>
+<td>Feral Combat</td>
+<td>107</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>136</td>
+<td>6</td>
+<td>0</td>
+<td>Staves</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>137</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Thalassian</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>138</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Draconic</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>139</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Demon Tongue</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>140</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Titan</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>141</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Old Tongue</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>142</td>
+<td>9</td>
+<td>0</td>
+<td>Survival</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>148</td>
+<td>9</td>
+<td>0</td>
+<td>Horse Riding</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>149</td>
+<td>9</td>
+<td>0</td>
+<td>Wolf Riding</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>150</td>
+<td>9</td>
+<td>0</td>
+<td>Tiger Riding</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>152</td>
+<td>9</td>
+<td>0</td>
+<td>Ram Riding</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>155</td>
+<td>9</td>
+<td>0</td>
+<td>Swimming</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>160</td>
+<td>6</td>
+<td>0</td>
+<td>Two-Handed Maces</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>162</td>
+<td>6</td>
+<td>0</td>
+<td>Unarmed</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>163</td>
+<td>7</td>
+<td>0</td>
+<td>Marksmanship</td>
+<td>126</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>164</td>
+<td>11</td>
+<td>0</td>
+<td>Blacksmithing</td>
+<td>335</td>
+<td>Modify</td>
+<td>1</td>
+</tr>
+<tr>
+<td>165</td>
+<td>11</td>
+<td>0</td>
+<td>Leatherworking</td>
+<td>346</td>
+<td>Emboss</td>
+<td>1</td>
+</tr>
+<tr>
+<td>171</td>
+<td>11</td>
+<td>0</td>
+<td>Alchemy</td>
+<td>339</td>
+<td>Refill</td>
+<td>1</td>
+</tr>
+<tr>
+<td>172</td>
+<td>6</td>
+<td>0</td>
+<td>Two-Handed Axes</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>173</td>
+<td>6</td>
+<td>0</td>
+<td>Daggers</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>176</td>
+<td>6</td>
+<td>0</td>
+<td>Thrown</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>182</td>
+<td>11</td>
+<td>0</td>
+<td>Herbalism</td>
+<td>345</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>183</td>
+<td>12</td>
+<td>0</td>
+<td>GENERIC (DND)</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>184</td>
+<td>7</td>
+<td>0</td>
+<td>Retribution</td>
+<td>555</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>185</td>
+<td>9</td>
+<td>0</td>
+<td>Cooking</td>
+<td>1467</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>186</td>
+<td>11</td>
+<td>0</td>
+<td>Mining</td>
+<td>2418</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>188</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Imp</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>189</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Felhunter</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>197</td>
+<td>11</td>
+<td>0</td>
+<td>Tailoring</td>
+<td>341</td>
+<td>Embroider</td>
+<td>1</td>
+</tr>
+<tr>
+<td>202</td>
+<td>11</td>
+<td>0</td>
+<td>Engineering</td>
+<td>333</td>
+<td>Tinker</td>
+<td>1</td>
+</tr>
+<tr>
+<td>203</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Spider</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>204</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Voidwalker</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>205</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Succubus</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>206</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Infernal</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>207</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Doomguard</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>208</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Wolf</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>209</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Cat</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>210</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Bear</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>211</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Boar</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>212</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Crocolisk</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>213</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Carrion Bird</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>214</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Crab</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>215</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Gorilla</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>217</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Raptor</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>218</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Tallstrider</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>220</td>
+<td>9</td>
+<td>0</td>
+<td>Racial - Undead</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>226</td>
+<td>6</td>
+<td>0</td>
+<td>Crossbows</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>228</td>
+<td>6</td>
+<td>0</td>
+<td>Wands</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>229</td>
+<td>6</td>
+<td>0</td>
+<td>Polearms</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>236</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Scorpid</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>237</td>
+<td>7</td>
+<td>0</td>
+<td>Arcane</td>
+<td>125</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>251</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Turtle</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>253</td>
+<td>7</td>
+<td>0</td>
+<td>Assassination</td>
+<td>514</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>256</td>
+<td>7</td>
+<td>0</td>
+<td>Fury</td>
+<td>561</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>257</td>
+<td>7</td>
+<td>0</td>
+<td>Protection</td>
+<td>276</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>267</td>
+<td>7</td>
+<td>0</td>
+<td>Protection</td>
+<td>291</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>270</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Generic Hunter</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>293</td>
+<td>8</td>
+<td>0</td>
+<td>Plate Mail</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>313</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Gnomish</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>315</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Troll</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>333</td>
+<td>11</td>
+<td>0</td>
+<td>Enchanting</td>
+<td>578</td>
+<td>Enchant</td>
+<td>1</td>
+</tr>
+<tr>
+<td>354</td>
+<td>7</td>
+<td>0</td>
+<td>Demonology</td>
+<td>90</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>355</td>
+<td>7</td>
+<td>0</td>
+<td>Affliction</td>
+<td>88</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>356</td>
+<td>9</td>
+<td>0</td>
+<td>Fishing</td>
+<td>580</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>373</td>
+<td>7</td>
+<td>0</td>
+<td>Enhancement</td>
+<td>19</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>374</td>
+<td>7</td>
+<td>0</td>
+<td>Restoration</td>
+<td>13</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>375</td>
+<td>7</td>
+<td>0</td>
+<td>Elemental Combat</td>
+<td>62</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>393</td>
+<td>11</td>
+<td>0</td>
+<td>Skinning</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>413</td>
+<td>8</td>
+<td>0</td>
+<td>Mail</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>414</td>
+<td>8</td>
+<td>0</td>
+<td>Leather</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>415</td>
+<td>8</td>
+<td>0</td>
+<td>Cloth</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>433</td>
+<td>8</td>
+<td>0</td>
+<td>Shield</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>473</td>
+<td>6</td>
+<td>0</td>
+<td>Fist Weapons</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>533</td>
+<td>9</td>
+<td>0</td>
+<td>Raptor Riding</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>553</td>
+<td>9</td>
+<td>0</td>
+<td>Mechanostrider Piloting</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>554</td>
+<td>9</td>
+<td>0</td>
+<td>Undead Horsemanship</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>573</td>
+<td>7</td>
+<td>0</td>
+<td>Restoration</td>
+<td>962</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>574</td>
+<td>7</td>
+<td>0</td>
+<td>Balance</td>
+<td>225</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>593</td>
+<td>7</td>
+<td>0</td>
+<td>Destruction</td>
+<td>547</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>594</td>
+<td>7</td>
+<td>0</td>
+<td>Holy</td>
+<td>70</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>613</td>
+<td>7</td>
+<td>0</td>
+<td>Discipline</td>
+<td>685</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>633</td>
+<td>7</td>
+<td>0</td>
+<td>Lockpicking</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>653</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Bat</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>654</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Hyena</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>655</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Bird of Prey</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>656</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Wind Serpent</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>673</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Gutterspeak</td>
+<td>1</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>713</td>
+<td>9</td>
+<td>0</td>
+<td>Kodo Riding</td>
+<td>317</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>733</td>
+<td>9</td>
+<td>0</td>
+<td>Racial - Troll</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>753</td>
+<td>9</td>
+<td>0</td>
+<td>Racial - Gnome</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>754</td>
+<td>9</td>
+<td>0</td>
+<td>Racial - Human</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>755</td>
+<td>11</td>
+<td>0</td>
+<td>Jewelcrafting</td>
+<td>1768</td>
+<td>Modify</td>
+<td>1</td>
+</tr>
+<tr>
+<td>756</td>
+<td>9</td>
+<td>0</td>
+<td>Blood Elf Racial</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>758</td>
+<td>-1</td>
+<td>0</td>
+<td>Pet - Event - Remote Control</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>759</td>
+<td>10</td>
+<td>0</td>
+<td>Language: Draenei</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>760</td>
+<td>9</td>
+<td>0</td>
+<td>Draenei Racial</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>761</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Felguard</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>762</td>
+<td>9</td>
+<td>0</td>
+<td>Riding</td>
+<td>255</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>763</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Dragonhawk</td>
+<td>1530</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>764</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Nether Ray</td>
+<td>1577</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>765</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Sporebat</td>
+<td>2033</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>766</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Warp Stalker</td>
+<td>1952</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>767</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Ravager</td>
+<td>1585</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>768</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Serpent</td>
+<td>2167</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>769</td>
+<td>7</td>
+<td>22</td>
+<td>Internal</td>
+<td>1775</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>770</td>
+<td>7</td>
+<td>0</td>
+<td>Blood</td>
+<td>2636</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>771</td>
+<td>7</td>
+<td>0</td>
+<td>Frost</td>
+<td>2632</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>772</td>
+<td>7</td>
+<td>0</td>
+<td>Unholy</td>
+<td>2633</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>773</td>
+<td>11</td>
+<td>0</td>
+<td>Inscription</td>
+<td>3267</td>
+<td>Inscribe</td>
+<td>1</td>
+</tr>
+<tr>
+<td>775</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Moth</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>776</td>
+<td>7</td>
+<td>0</td>
+<td>Runeforging</td>
+<td>2727</td>
+<td>Engrave</td>
+<td>0</td>
+</tr>
+<tr>
+<td>777</td>
+<td>7</td>
+<td>0</td>
+<td>Mounts</td>
+<td>2224</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>778</td>
+<td>7</td>
+<td>0</td>
+<td>Companions</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>780</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Exotic Chimaera</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>781</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Exotic Devlisaur</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>782</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Ghoul</td>
+<td>221</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>783</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Exotic Silithid</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>784</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Exotic Worm</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>785</td>
+<td>7</td>
+<td>0</td>
+<td>Pet- Wasp</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>786</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Exotic Rhino</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>787</td>
+<td>7</td>
+<td>0</td>
+<td>Pet - Exotic Core Hound</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>788</td>
+<td>5</td>
+<td>0</td>
+<td>Pet - Exotic Spirit Beast</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="categoryid">CategoryId</h3>
+<p>This field is from SkillLineCategory.dbc</p>
+<p>This in the content of this small dbc</p>
+<table>
+<thead>
+<tr>
+<th><strong>Category Id</strong></th>
+<th><strong>Name</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>Attributes</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Weapon Skills</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Class Skills</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Armor Proficiencies</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Secondary Skills</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Languages</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Professions</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Not Displayed</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

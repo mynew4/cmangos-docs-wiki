@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Dbscripts - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Dbscripts";
+    var mkdocs_page_input_path = "DB-Structure/Core/dbscripts.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Dbscripts</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96dbscripts95on954296-tables">The `dbscripts_on_*` tables</h2>
+<p>The manual reference for these tables is located in the <a href="https://github.com/cmangos/mangos-wotlk/blob/master/doc/script_commands.txt">doc/script_commands.txt</a> file.</p>
+<p><strong>The information below may be outdated, use with caution!</strong></p>
+<p>This table format is used for different tables to control possible scripts activated by different actions:</p>
+<ul>
+<li>**`dbscripts_on_go_[template]_use:** Holds possible scripts activated by gameobjects.
+    Source: object user (unit); Target: gameobject.
+    **** dbscripts_on_go_template_use can be used for any type of gameobject.
+    **** dbscripts_on_go_use can be used only for GAMEOBJECT_TYPE_DOOR (0) and GAMEOBJECT_TYPE_BUTTON (1)</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>`dbscripts_on_spell:</strong> Holds scripts that can be activated by spells with the following spell effects:
+    **** SPELL_EFFECT_DUMMY (3)
+    **** SPELL_EFFECT_TRIGGER_SPELL (64) - only for missing triggered spells
+    **** SPELL_EFFECT_SCRIPT_EFFECT (77)
+    Source: caster; Target: target.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>`dbscripts_on_relay:</strong> Holds scripts that can be activated by AI or other dbscripts. The usage of IDs is as following:
+    **** Classic - 1-9999
+    **** TBC - 10000-19999
+    **** WotLK - 20000+
+    Source and Target are defined by the mechanism that launched it.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>`dbscripts_on_quest_start:</strong> Holds scripts activated when a player accepts a quest.
+    Source: quest giver (creature); Target: player; Script execution unique by source.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>`dbscripts_on_quest_end:</strong> Holds scripts activated when a player finishes a quest.
+    Source: quest taker (creature); Target: player; Script execution unique by source.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>`dbscripts_on_creature_movement:</strong> Holds scripts activated while a npc is moving.
+    Source: moving creature; Target moving creature.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>`dbscripts_on_creature_death:</strong> Holds scripts activated when a creature dies.
+    Source: killed creature; Target: responsible killer (unit or player).</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>`dbscripts_on_event:</strong> Holds scripts activated whenever an event is activated by spell, gameobject or taxi waypoints. The following spell effects and gameobjecs can activate an event:
+    **** SPELL_EFFECT_SEND_EVENT (61)
+    **** GAMEOBJECT_TYPE_CHEST (3)
+    **** GAMEOBJECT_TYPE_GOOBER (10)
+    **** GAMEOBJECT_TYPE_TRANSPORT (11) [not supported yet]
+    **** GAMEOBJECT_TYPE_CAMERA (13)
+    **** GAMEOBJECT_TYPE_MO_TRANSPORT (15) [partially supported]
+    **** GAMEOBJECT_TYPE_FLAGDROP (26) [not supported yet]
+    **** GAMEOBJECT_TYPE_CAPTURE_POINT (29)
+    **** GAMEOBJECT_TYPE_DESTRUCTIBLE_BUILDING (33)
+    Source, Target and Script execution can be different based on the event activation source.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>`dbscripts_on_gossip:</strong> Holds scripts activated on gossip_menu_option or gossip_menu.
+    **** For gossip_menu - Source: player; Target: gossip holder (creature or gameobject); Script execution unique by target.
+    **** For gossip_menu_option when gossip holder is creature - Source: gossip holder (creature); Target: player; Script execution unique by source.
+    **** For gossip_menu_option when gossip holder is gameobject - Source: player; Target: gossip holder (gameobject); Script execution unique by target.</li>
+</ul>
+<p>NOTE: An entry in this table may have more than one row as a script may do more than just one action. Also each action the script may make can have a separate <a href="dbscripts#delay">delay</a> attached to it. In that case, the core will activate the appropriate action after the correct <a href="dbscripts#delay">delay</a>.</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Extra</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="dbscripts#id">id</a></td>
+<td>int(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#delay">delay</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#command">command</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">datalong</a></td>
+<td>mediumint(8) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">datalong2</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">datalong3</a></td>
+<td>int(11) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#buddy_entry">buddy_entry</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#search_radius">search_radius</a></td>
+<td>int(10) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#data_flags">data_flags</a></td>
+<td>tinyint(3) unsigned</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">dataint</a></td>
+<td>int(11)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">dataint2</a></td>
+<td>int(11)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">dataint3</a></td>
+<td>int(11)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">dataint4</a></td>
+<td>int(11)</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">x</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">y</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">z</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">o</a></td>
+<td>float</td>
+<td>NO</td>
+<td></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dbscripts#otherfields">comments</a></td>
+<td>VARCHAR (255)</td>
+<td>NO</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="id">id</h4>
+<p>For <strong>dbscripts_on_creature_death</strong>, it is the entry of the creature. See <a href="creature_template#entry">creature_template.entry</a>.
+For <strong>dbscripts_on_creature_movement</strong>, it is the <a href="Creature_movement#script_id">script id</a> of the waypoint. The PROPER formatting for the ID field is as follows: Creature_entry + 2-Digit Script ID (Starting at 01). Example: c.2386 has few movement_scripts, so 2386+01 = 238601 ... 23602 ..etc
+For <strong>dbscripts_on_event</strong>, it is the event ID. There doesn't exist currently a full list of events. In any case, the event IDs are taken directly from gameobject WDB data or spell effect data. If both a gameobject and a spell activate the same event, the IDs will match.
+For <strong>dbscripts_on_go_template_use</strong>, it is the entry of the button/lever. See <a href="gameobject_template#entry">gameobject_template.entry</a>.
+For <strong>dbscripts_on_go_use</strong>, it is the guid of the button/lever. See <a href="gameobject#guid">gameobject.guid</a>.
+For <strong>dbscripts_on_gossip</strong>, it is the <a href="Gossip_menu_option#action_script_id">action script id</a> of the gossip option.
+For <strong>dbscripts_on_promo_code_use</strong>, it is the ?
+For <strong>dbscripts_on_quest_end</strong>, it is the ID that is used in <a href="quest_template#CompleteScript">CompleteScript</a> in the quest template definition.
+For <strong>dbscripts_on_quest_start</strong>, it is the ID that is used in <a href="quest_template#StartScript">StartScript</a> in the quest template definition.
+For <strong>dbsccripts_on_relay</strong>, it is the entry of the creature. See <a href="creature_template#entry">creature_template.entry</a> + 2-Digit Script ID (Starting at 01). Example: c.21218 has few relay scripts, so 21218+01 = 2121801 ... 2121802 ..etc
+For <strong>dbscripts_on_spell</strong>, it is the Spell ID. See <a href="spell_template#Id">spell_template.Id</a></p>
+<h4 id="delay">delay</h4>
+<p>Delay in seconds before this current step of the script activates. 0 = instant.</p>
+<p>NOTE: Delay is Cumulative From Script to Script with same ID.
+Example: Script 1 Has 5 seconds delay and then if you want script 2 to trigger 3 seconds later you would use delay value 8 (5+3) for script 2 in the sequence.</p>
+<h4 id="command">command</h4>
+<p>The type of action performed by the script after <a href="dbscripts#delay">delay</a> seconds have passed. The value of this field affects what other fields also need to be set.</p>
+<p>The following commands can be used (enum ScriptCommand):</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>SCRIPT_COMMAND_TALK</td>
+<td>Creature say/whisper/yell/textemote.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SCRIPT_COMMAND_EMOTE</td>
+<td>Plays emote on a player/creature.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SCRIPT_COMMAND_FIELD_SET</td>
+<td>Change the value at an index for the player.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SCRIPT_COMMAND_MOVE_TO</td>
+<td>Relocate creature to a destination</td>
+</tr>
+<tr>
+<td>4</td>
+<td>SCRIPT_COMMAND_FLAG_SET</td>
+<td>Turns on bits on a flag field at an index for the player.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>SCRIPT_COMMAND_FLAG_REMOVE</td>
+<td>Turns off bits on a flag field at an index for the player.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>SCRIPT_COMMAND_TELEPORT_TO</td>
+<td>Teleports the player to a location.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SCRIPT_COMMAND_QUEST_EXPLORED</td>
+<td>Satisfies the explore requirement for a quest.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>SCRIPT_COMMAND_KILL_CREDIT</td>
+<td>Satisfies the kill credit requirement for a quest.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>SCRIPT_COMMAND_RESPAWN_GAMEOBJECT</td>
+<td>Spawns a despawned gameobject.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>SCRIPT_COMMAND_TEMP_SPAWN_CREATURE</td>
+<td>Temporarily summon a creature.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>SCRIPT_COMMAND_OPEN_DOOR</td>
+<td>Opens a door gameobject (type == 0).</td>
+</tr>
+<tr>
+<td>12</td>
+<td>SCRIPT_COMMAND_CLOSE_DOOR</td>
+<td>Closes a door gameobject (type == 0).</td>
+</tr>
+<tr>
+<td>13</td>
+<td>SCRIPT_COMMAND_ACTIVATE_OBJECT</td>
+<td>Activate (use) a gameobject.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>SCRIPT_COMMAND_REMOVE_AURA</td>
+<td>Removes an aura due to a spell.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>SCRIPT_COMMAND_CAST_SPELL</td>
+<td>Casts a spell.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>SCRIPT_COMMAND_PLAY_SOUND</td>
+<td>Plays a sound.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>SCRIPT_COMMAND_CREATE_ITEM</td>
+<td>Creates an item.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>SCRIPT_COMMAND_DESPAWN_SELF</td>
+<td>Despawns a creature with some delay.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>SCRIPT_COMMAND_PLAY_MOVIE</td>
+<td>Plays a movie to the target player.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>SCRIPT_COMMAND_MOVEMENT</td>
+<td>Change the movement type of a creature (idle, random, waypoint).</td>
+</tr>
+<tr>
+<td>21</td>
+<td>SCRIPT_COMMAND_SET_ACTIVEOBJECT</td>
+<td>Set a creature as active object.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>SCRIPT_COMMAND_SET_FACTION</td>
+<td>Changes the faction of a creature.</td>
+</tr>
+<tr>
+<td>23</td>
+<td>SCRIPT_COMMAND_MORPH_TO_ENTRY_OR_MODEL</td>
+<td>Morphs a creature go a given model.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>SCRIPT_COMMAND_MOUNT_TO_ENTRY_OR_MODEL</td>
+<td>Mounts or dismounts a creature to mount entry or model.</td>
+</tr>
+<tr>
+<td>25</td>
+<td>SCRIPT_COMMAND_SET_RUN</td>
+<td>Makes a creature start or stop running.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>SCRIPT_COMMAND_ATTACK_START</td>
+<td>Makes a creature attack things within a radius.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>SCRIPT_COMMAND_GO_LOCK_STATE</td>
+<td>Change the GO lock or interact flags.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>SCRIPT_COMMAND_STAND_STATE</td>
+<td>Change the stand state of a creature.</td>
+</tr>
+<tr>
+<td>29</td>
+<td>SCRIPT_COMMAND_MODIFY_NPC_FLAGS</td>
+<td>Change NPC flags of a creature.</td>
+</tr>
+<tr>
+<td>30</td>
+<td>SCRIPT_COMMAND_SEND_TAXI_PATH</td>
+<td>Sends a player on a give taxi path.</td>
+</tr>
+<tr>
+<td>31</td>
+<td>SCRIPT_COMMAND_TERMINATE_SCRIPT</td>
+<td>Stop script execution if a given creature entry meets conditions.</td>
+</tr>
+<tr>
+<td>32</td>
+<td>SCRIPT_COMMAND_PAUSE_WAYPOINTS</td>
+<td>Pause or unpause waypoint movement.</td>
+</tr>
+<tr>
+<td>33</td>
+<td>SCRIPT_COMMAND_RESERVED_1</td>
+<td>Enable or disable experience gain for a player.</td>
+</tr>
+<tr>
+<td>34</td>
+<td>SCRIPT_COMMAND_TERMINATE_COND</td>
+<td>Stop script execution when a give condition is met.</td>
+</tr>
+<tr>
+<td>35</td>
+<td>SCRIPT_COMMAND_SEND_AI_EVENT</td>
+<td>Send a give AI event for EventAI around the source with a given radius.</td>
+</tr>
+<tr>
+<td>36</td>
+<td>SCRIPT_COMMAND_SET_FACING</td>
+<td>Turn resulting source to resulting target.</td>
+</tr>
+<tr>
+<td>37</td>
+<td>SCRIPT_COMMAND_MOVE_DYNAMIC</td>
+<td>Move resulting source to a random point around resulting target or to resulting target.</td>
+</tr>
+<tr>
+<td>38</td>
+<td>SCRIPT_COMMAND_SEND_MAIL</td>
+<td>Send mail from resulting source to resulting target.</td>
+</tr>
+<tr>
+<td>39</td>
+<td>SCRIPT_COMMAND_SET_FLY</td>
+<td>Makes a creature start or stop flying.</td>
+</tr>
+<tr>
+<td>40</td>
+<td>SCRIPT_COMMAND_DESPAWN_GO</td>
+<td>Despawns a gameobject.</td>
+</tr>
+<tr>
+<td>41</td>
+<td>SCRIPT_COMMAND_RESPAWN</td>
+<td>Respawns a creature.</td>
+</tr>
+<tr>
+<td>42</td>
+<td>SCRIPT_COMMAND_SET_EQUIPMENT_SLOTS</td>
+<td>Change equipment slots of the resulting source.</td>
+</tr>
+<tr>
+<td>43</td>
+<td>SCRIPT_COMMAND_RESET_GO</td>
+<td>Reset a gameobject.</td>
+</tr>
+<tr>
+<td>44</td>
+<td>SCRIPT_COMMAND_UPDATE_TEMPLATE</td>
+<td>Update creature entry.</td>
+</tr>
+<tr>
+<td>45</td>
+<td>SCRIPT_COMMAND_START_RELAY_SCRIPT</td>
+<td>Launch relay script or relay template.</td>
+</tr>
+<tr>
+<td>46</td>
+<td>SCRIPT_COMMAND_CAST_CUSTOM_SPELL</td>
+<td>resSource = Unit, cast spell at resTarget = Unit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="buddy95entry">buddy_entry</h4>
+<p>Commands except the ones requiring a player (like KILL_CREDIT) have support for the buddy concept.</p>
+<p>This means that if an entry for buddy_entry is provided, aside from source and target as listed above also a "buddy" is available.</p>
+<p>Which one on the three (originalSource, originalTarget, buddy) will be used in the <a href="dbscripts#command">command</a>, depends on the <a href="dbscripts#data_flags">data_flags</a> (enum ScriptInfoDataFlags) Note that some commands (like EMOTE) use only the resulting source for an action.</p>
+<p>Possible combinations of the <a href="dbscripts#data_flags">data_flags</a> |SCRIPT_FLAG_BUDDY_AS_TARGET 0x01|SCRIPT_FLAG_REVERSE_DIRECTION 0x02|SCRIPT_FLAG_SOURCE_TARGETS_SELF 0x04| are:</p>
+<p>Where "A -&gt; B" means that the <a href="dbscripts#command">command</a> is executed from A with B as target.</p>
+<table>
+<thead>
+<tr>
+<th>Hex</th>
+<th>A -&gt; B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00</td>
+<td>originalSource / buddyIfProvided -&gt; originalTarget</td>
+</tr>
+<tr>
+<td>0x01</td>
+<td>originalSource -&gt; buddy</td>
+</tr>
+<tr>
+<td>0x02</td>
+<td>originalTarget -&gt; originalSource / buddyIfProvided</td>
+</tr>
+<tr>
+<td>0x03</td>
+<td>buddy -&gt; originalSource</td>
+</tr>
+<tr>
+<td>0x04</td>
+<td>originalSource / buddyIfProvided -&gt; originalSource / buddyIfProvided</td>
+</tr>
+<tr>
+<td>0x05</td>
+<td>originalSource -&gt; originalSource</td>
+</tr>
+<tr>
+<td>0x06</td>
+<td>originalTarget -&gt; originalTarget</td>
+</tr>
+<tr>
+<td>0x07</td>
+<td>buddy -&gt; buddy</td>
+</tr>
+</tbody>
+</table>
+<h4 id="search95radius">search_radius</h4>
+<p>Range in which the buddy defined in <a href="dbscripts#buddy_entry">buddy_entry</a> will be searched by <a href="creature_template#entry">creature_template.entry</a>.</p>
+<table>
+<thead>
+<tr>
+<th>&amp; data_flags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp; SCRIPT_FLAG_BUDDY_BY_GUID</td>
+<td><a href="creature#guid">creature.guid</a> instead of <a href="creature_template#entry">creature_template.entry</a></td>
+</tr>
+<tr>
+<td>&amp; SCRIPT_FLAG_BUDDY_BY_POOL</td>
+<td><a href="pool_creature#pool_entry">pool_creature.pool_entry</a> instead of <a href="creature_template#entry">creature_template.entry</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="data95flags">data_flags</h4>
+<p>Defined in "enum ScriptInfoDataFlags"</p>
+<table>
+<thead>
+<tr>
+<th>Hex</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0x00</td>
+<td>DEFAULT</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0x01</td>
+<td>SCRIPT_FLAG_BUDDY_AS_TARGET</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x02</td>
+<td>SCRIPT_FLAG_REVERSE_DIRECTION</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x04</td>
+<td>SCRIPT_FLAG_SOURCE_TARGETS_SELF</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x08</td>
+<td>SCRIPT_FLAG_COMMAND_ADDITIONAL</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x10</td>
+<td>SCRIPT_FLAG_BUDDY_BY_GUID</td>
+</tr>
+<tr>
+<td>32</td>
+<td>0x20</td>
+<td>SCRIPT_FLAG_BUDDY_IS_PET</td>
+</tr>
+<tr>
+<td>64</td>
+<td>0x40</td>
+<td>SCRIPT_FLAG_BUDDY_IS_DESPAWNED</td>
+</tr>
+<tr>
+<td>128</td>
+<td>0x80</td>
+<td>SCRIPT_FLAG_BUDDY_BY_POOL</td>
+</tr>
+</tbody>
+</table>
+<h4 id="otherfields">OtherFields</h4>
+<p>Depending on what <a href="dbscripts#command">command</a> was used, the meaning and use for the following fields varies.</p>
+<ul>
+<li><strong>SCRIPT_COMMAND_TALK = 0</strong><ul>
+<li>All information of the text (type, language, associated sound, emote) is stored in the <a href="dbscript_string">dbscript_string.</a> table</li>
+<li>datalong: <a href="dbscript_random_templates#id">dbscript_random_templates.id</a> - will randomize between all dbscript_strings in given template.</li>
+<li>dataint - 4: The text ID that the creature will say. See <a href="dbscript_string">dbscript_string.</a>. ID must be between 2000000000 and 2000010000. In case more then only dataint field is filled the texts will be used randomly.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_EMOTE = 1</strong><ul>
+<li>datalong: The <a href="Emote">emote ID</a> to play.</li>
+<li>dataint1-dataint4 optionally, for random selection of emote</li>
+<li>Resulting source must be a unit.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_FIELD_SET = 2</strong><ul>
+<li>datalong: Index of the field.</li>
+<li>datalong2: Value to place at the index.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_MOVE_TO = 3</strong><ul>
+<li>datalong2: Length of the motion. This calculates as travel_speed*100. Use 0 for creature default movement.</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL will teleport the creature to the given location.</li>
+<li>x: X position to move to.</li>
+<li>y: Y position to move to.</li>
+<li>z: Z position to move to.</li>
+<li>o: Orientation to face.</li>
+<li>Resulting source must be a creature.
+    <em>Side note: If position is very near to current position, or x=y=z=0, then only orientation is changed.</em></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_FLAG_SET = 4</strong><ul>
+<li>datalong: Field index to be set.</li>
+<li>datalong2: Flag bit(s) to set.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>FIELD TO MODIFY</th>
+<th>HEX VALUES</th>
+<th>DECIMAL INDEX VALUE</th>
+<th>COMMENTS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNIT_FIELD_FLAGS</td>
+<td>0x0006 + 0x0028</td>
+<td>46-TBC 59-WOTLK</td>
+<td>Modify UnitFlags for NPC (Source Must Be Unit)</td>
+</tr>
+<tr>
+<td>UNIT_DYNAMIC_FLAGS</td>
+<td>0x0006 + 0x009E</td>
+<td>164-TBC 78-WOTLK</td>
+<td>Modify DynamicFlags for NPC (Source Must Be Unit)</td>
+</tr>
+<tr>
+<td>UNIT_NPC_FLAGS</td>
+<td>0x0006 + 0x00A2</td>
+<td>168-TBC 82-WOTLK</td>
+<td>Modify NPCFlags for NPC (Source Must Be Unit)</td>
+</tr>
+</tbody>
+</table>
+<p>More Examples Can Be Found At: UpdateFields.h In Core</p>
+<ul>
+<li><strong>SCRIPT_COMMAND_FLAG_REMOVE = 5</strong><ul>
+<li>datalong: Field index to be unset.</li>
+<li>datalong2: Flag bit(s) to unset.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_TELEPORT_TO = 6</strong><ul>
+<li>datalong: Target Map ID. See <a href="Map.dbc">Map.dbc</a>.</li>
+<li>x: Teleport target x coordinate.</li>
+<li>y: Teleport target y coordinate.</li>
+<li>z: Teleport target z coordinate.</li>
+<li>o: Teleport target orientation.</li>
+<li>The source or target must be a player.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_QUEST_EXPLORED = 7</strong><ul>
+<li>datalong: <a href="quest_template#entry">Quest ID</a> whose external status should be satisfied.</li>
+<li>datalong2: Distance away from the NPC/object that the player can be and have the script still take effect.</li>
+<li>The source or target must be a player.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_KILL_CREDIT = 8</strong><ul>
+<li>datalong: Kill credit entry for quest (entry in quest_template.ReqCreatureOrGOId). If set to 0 then the creature source or target will be used.</li>
+<li>datalong2: Can be 0 = personal credit or 1 = group credit.</li>
+<li>The source or target must be a player.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_RESPAWN_GAMEOBJECT = 9</strong><ul>
+<li>datalong: Guid of the gameobject to respawn. See <a href="gameobject#guid">gameobject.guid</a>. Can be skipped for buddy.</li>
+<li>datalong2: Despawn time in seconds. If the value is &lt; 5 seconds then 5 seconds is used instead.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_TEMP_SPAWN_CREATURE = 10</strong><ul>
+<li>datalong: Entry of the summoned creature from <a href="creature_template#entry">creature_template.entry</a>.</li>
+<li>datalong2: Despawn time (MILLIESECONDS). If set to 0 then the creature will be despawned only when killed.</li>
+<li>datalong3: The <a href="creature_movement_template#pathId">pathId</a> you want the creature to immediately start moving on (if MovementType=2)</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL will summon the creature as active object.</li>
+<li>dataint: SetRun (bool). 0 = off (default), 1 = on</li>
+<li>dataint2 = factionId - if 0 is set, faction is from DB entry</li>
+<li>dataint3 = modelId - if 0 is set, model is from DB entry</li>
+<li>x: Summon target x coordinate.</li>
+<li>y: Summon target y coordinate.</li>
+<li>z: Summon target z coordinate.</li>
+<li>o: Summon target orientation.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_OPEN_DOOR = 11</strong><ul>
+<li>datalong: Guid of the activated door. It's a <a href="gameobject#guid">gameobject.guid</a>. Can be skipped for buddy.</li>
+<li>datalong2: Delay before closing again the door. If the value is &lt; 15 seconds then 15 seconds is used instead.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_CLOSE_DOOR = 12</strong><ul>
+<li>datalong: Guid of the activated door. It's a <a href="gameobject#guid">gameobject.guid</a>. Can be skipped for buddy.</li>
+<li>datalong2: Delay before opening again the door. If the value is &lt; 15 seconds then 15 is used instead.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_ACTIVATE_OBJECT = 13</strong><ul>
+<li>The source must be a unit and the target a gameobject.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_REMOVE_AURA = 14</strong><ul>
+<li>datalong: <a href="spell_template#Id">Spell ID</a>.</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL will remove aura from the source only for the target unit.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_CAST_SPELL = 15</strong><ul>
+<li>datalong: <a href="spell_template#Id">Spell ID</a>.</li>
+<li>datalong2: <a href="dbscripts#TriggerCastFlags">TriggerCastFlags</a></li>
+<li>buddy_entry: <a href="creature_template#entry">entry</a> of the target</li>
+<li>search_radius: radius to search for <a href="dbscripts#buddy_entry">buddy_entry</a> or <a href="creature#guid">guid</a> of the specific guid if <a href="dbscripts#data_flags%7C16">data_flags</a> is set</li>
+<li>dataint1-dataint4 optional. If some of these are set to a spell id, a random spell out of datalong, datint1, ..,dataintX is cast.</li>
+</ul>
+</li>
+</ul>
+<h4 id="triggercastflags">TriggerCastFlags</h4>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>TRIGGERED_NONE</td>
+<td>Not Triggered</td>
+</tr>
+<tr>
+<td>1</td>
+<td>TRIGGERED_OLD_TRIGGERED</td>
+<td>Legacy bool support TODO: Restrict usage as much as possible.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TRIGGERED_IGNORE_HIT_CALCULATION</td>
+<td>Will ignore calculating hit in SpellHitResult</td>
+</tr>
+<tr>
+<td>4</td>
+<td>TRIGGERED_IGNORE_UNSELECTABLE_FLAG</td>
+<td>Ignores UNIT_FLAG_NOT_SELECTABLE in CheckTarget</td>
+</tr>
+<tr>
+<td>8</td>
+<td>TRIGGERED_INSTANT_CAST</td>
+<td>Will ignore any cast time set in spell entry</td>
+</tr>
+<tr>
+<td>16</td>
+<td>TRIGGERED_AUTOREPEAT</td>
+<td>Will signal spell system that this is internal autorepeat call</td>
+</tr>
+<tr>
+<td>32</td>
+<td>TRIGGERED_IGNORE_UNATTACKABLE_FLAG</td>
+<td>Ignores UNIT_FLAG_NOT_ATTACKABLE in CheckTarget</td>
+</tr>
+<tr>
+<td>64</td>
+<td>TRIGGERED_DO_NOT_PROC</td>
+<td>Spells from scripts should not proc - DBScripts for example</td>
+</tr>
+<tr>
+<td>128</td>
+<td>TRIGGERED_PET_CAST</td>
+<td>Spell that should report error through pet opcode</td>
+</tr>
+<tr>
+<td>256</td>
+<td>TRIGGERED_NORMAL_COMBAT_CAST</td>
+<td>AI needs to be notified about change of target TODO: change into TRIGGERED_NONE</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>SCRIPT_COMMAND_PLAY_SOUND = 16</strong><ul>
+<li>datalong: <a href="SoundEntries.dbc#Content">Sound ID</a>.</li>
+<li>datalong2: bitmask: 0/1=anyone/target, 0/2=with distance dependent, 0/4=map wide, 0/8=zone wide; 1|2 = 3 is target with distance dependent.</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL: play music instead of sound</li>
+<li>Source may be any object. Target may be any player.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_CREATE_ITEM = 17</strong><ul>
+<li>datalong: <a href="item_template#Content">Item entry</a>.</li>
+<li>datalong2: Amount.</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL: remove the item from player by the given amount</li>
+<li>Source or target must be a player.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_DESPAWN_SELF = 18</strong><ul>
+<li>datalong: Despawn delay (MILLIESECONDS).</li>
+<li>Resulting source must be a creature.</li>
+<li>Despawns the target.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_PLAY_MOVIE = 19</strong><ul>
+<li>datalong: Plays a <a href="Movie.dbc#Content">movie_id</a> to the target player.</li>
+<li>Target must be a player.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_MOVEMENT = 20</strong><ul>
+<li>datalong: Change the <a href="creature_template#MovementType">MovementType</a> of a creature. Possible values: 0 = Idle, 1 = Random Movement, 2 = Waypoint Movement.</li>
+<li>datalong2: Wander distance (for random movement), <a href="creature_movement_template#pathId">creature_movement_template.pathId</a> (for waypoint movement).</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL will set random movement around the current position.</li>
+<li>Resulting source must be a creature.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_SET_ACTIVEOBJECT = 21</strong><ul>
+<li>datalong: Can be defined as 1 = On or 0 = Off. Set a creature as active object, depending on the datalong value.</li>
+<li>Resulting source must be creature.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_SET_FACTION = 22</strong><ul>
+<li>datalong: <a href="FactionTemplate.dbc">Faction Id</a>. If set to 0 will restore original faction from creature_template.</li>
+<li>Resulting source must be a creature.</li>
+<li>datalong2: Temporary faction flags</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Hex</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0x00</td>
+<td>TEMPFACTION_NONE</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0x01</td>
+<td>TEMPFACTION_RESTORE_RESPAWN</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x02</td>
+<td>TEMPFACTION_RESTORE_COMBAT_STOP</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x04</td>
+<td>TEMPFACTION_RESTORE_REACH_HOME</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x08</td>
+<td>TEMPFACTION_TOGGLE_NON_ATTACKABLE</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x10</td>
+<td>TEMPFACTION_TOGGLE_IMMUNE_TO_PLAYER</td>
+</tr>
+<tr>
+<td>32</td>
+<td>0x20</td>
+<td>TEMPFACTION_TOGGLE_IMMUNE_TO_NPC</td>
+</tr>
+<tr>
+<td>64</td>
+<td>0x40</td>
+<td>TEMPFACTION_TOGGLE_PACIFIED</td>
+</tr>
+<tr>
+<td>128</td>
+<td>0x80</td>
+<td>TEMPFACTION_TOGGLE_NOT_SELECTABLE</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>SCRIPT_COMMAND_MORPH_TO_ENTRY_OR_MODEL = 23</strong><ul>
+<li>datalong: Creature <a href="creature_template#entry">entry</a> or <a href="creature_template#modelid">model_id</a> (depending on <a href="dbscripts#data_flags">data_flags</a>). If set to 0 then the creature will demorph.</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL to use datalong value as model_id explicit.</li>
+<li>Resulting source must be a creature.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_MOUNT_TO_ENTRY_OR_MODEL = 24</strong><ul>
+<li>datalong: Creature <a href="creature_template#entry">entry</a> or <a href="creature_template#modelid">model_id</a> (depending on <a href="dbscripts#data_flags">data_flags</a>). If set to 0 then the creature will dismount.</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL to use datalong value as model_id explicit.</li>
+<li>Resulting source must be creature.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_SET_RUN = 25</strong><ul>
+<li>datalong: Set run to 1 = On or 0 = Off</li>
+<li>Resulting source must be a creature.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_ATTACK_START = 26</strong><ul>
+<li>Resulting source must be a creature and resulting target must be a unit.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_GO_LOCK_STATE = 27</strong><ul>
+<li>Resulting source must be gameobject.</li>
+<li>datalong:</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Hex</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0x01</td>
+<td>flag_go_lock</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x02</td>
+<td>flag_go_unlock</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x04</td>
+<td>flag_go_nonInteract</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x08</td>
+<td>flag_go_interact</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>SCRIPT_COMMAND_STAND_STATE = 28</strong><ul>
+<li>Resulting source must be a creature.</li>
+<li>datalong: stand state (enum UnitStandStateType)</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>UNIT_STAND_STATE_STAND</td>
+<td>normal behavior</td>
+</tr>
+<tr>
+<td>1</td>
+<td>UNIT_STAND_STATE_SIT</td>
+<td>sitting on ground</td>
+</tr>
+<tr>
+<td>2</td>
+<td>UNIT_STAND_STATE_SIT_CHAIR</td>
+<td>sitting on normal chair</td>
+</tr>
+<tr>
+<td>3</td>
+<td>UNIT_STAND_STATE_SLEEP</td>
+<td>sleeping</td>
+</tr>
+<tr>
+<td>4</td>
+<td>UNIT_STAND_STATE_SIT_LOW_CHAIR</td>
+<td>sitting on low chair</td>
+</tr>
+<tr>
+<td>5</td>
+<td>UNIT_STAND_STATE_SIT_MEDIUM_CHAIR</td>
+<td>sitting on medium chair</td>
+</tr>
+<tr>
+<td>6</td>
+<td>UNIT_STAND_STATE_SIT_HIGH_CHAIR</td>
+<td>sitting on high chair</td>
+</tr>
+<tr>
+<td>7</td>
+<td>UNIT_STAND_STATE_DEAD</td>
+<td>play dead</td>
+</tr>
+<tr>
+<td>8</td>
+<td>UNIT_STAND_STATE_KNEEL</td>
+<td>kneel</td>
+</tr>
+<tr>
+<td>9</td>
+<td>UNIT_STAND_STATE_CUSTOM</td>
+<td>Depends on model animation. Submerge, freeze, hide, hibernate, rest</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>SCRIPT_COMMAND_MODIFY_NPC_FLAGS = 29</strong><ul>
+<li>Resulting source must be a creature.</li>
+<li>datalong: NPC Flags</li>
+<li>datalong2:</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Hex</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00</td>
+<td>Toggle</td>
+</tr>
+<tr>
+<td>0x01</td>
+<td>Add</td>
+</tr>
+<tr>
+<td>0x02</td>
+<td>Remove</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>SCRIPT_COMMAND_SEND_TAXY_PATH = 30</strong><ul>
+<li>datalong: <a href="TaxiPath.dbc#Content">Taxi path id</a>.</li>
+<li>Source or target must be a player.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_TERMINATE_SCRIPT = 31</strong><ul>
+<li>datalong: <a href="creature_template#entry">Creature entry</a> if provided. (Or pool ID if SCRIPT_FLAG_BUDDY_BY_POOL)</li>
+<li>datalong2: Search distance.</li>
+<li>dataint: Change of <a href="creature_movement#waittime">waittime</a> (MILLIESECONDS) of a current waypoint movement type. Negative values will decrease time.</li>
+<li><a href="dbscripts#data_flags">data_flags</a></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&amp; data_flags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp; SCRIPT_FLAG_COMMAND_ADDITIONAL 8 0x08</td>
+<td>If creature is found and alive, terminate script.</td>
+</tr>
+<tr>
+<td>! SCRIPT_FLAG_COMMAND_ADDITIONAL</td>
+<td>If creature is not found or not alive, terminate script.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>SCRIPT_COMMAND_PAUSE_WAYPOINTS = 32</strong><ul>
+<li>datalong: 1 = Pause or 0 = Unpause waypoint movement.</li>
+<li>Resulting source or target must be a creature.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_XP_USER = 33</strong><ul>
+<li>datalong: Set experience gain to 1 = On or 0 = Off</li>
+<li>Source or target must be a player.
+    <em>Side note: Only available on wotlk version.</em></li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_TERMINATE_CONDITION = 34</strong><ul>
+<li>datalong: <a href="conditions#condition_entry">Condition entry</a> to check.</li>
+<li>datalong2: <a href="quest_template#entry">Quest entry</a> to mark as failed for the player (if provided).</li>
+<li><a href="dbscripts#data_flags">data_flags</a></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&amp; data_flags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp; SCRIPT_FLAG_COMMAND_ADDITIONAL 8 0x08</td>
+<td>Terminate when condition is false.</td>
+</tr>
+<tr>
+<td>! SCRIPT_FLAG_COMMAND_ADDITIONAL</td>
+<td>Terminate when condition is true.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>SCRIPT_COMMAND_SEND_AI_EVENT = 35</strong><ul>
+<li>datalong: AI event id. Only EventAI events are accepted. Supported types see CreatureAI.h enum AIEventType.</li>
+<li>datalong2: Radius. If radius isn't provided and the target is a creature, then send AIEvent to target.</li>
+<li>Source and target must be a creature.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_SET_FACING = 36</strong><ul>
+<li>Resulting source must be a creature; Resulting target must be a Worldobject.</li>
+<li>datalong != 0 Reset orientation</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_MOVE_DYNAMIC = 37</strong><ul>
+<li>Resulting source must be a creature; Resulting target must be a Worldobject.</li>
+<li>datalong = 0: Move resulting source towards resulting target</li>
+<li>datalong != 0: Move resulting source to a random point between datalong2..datalong around resulting target.</li>
+<li>orientation != 0: Obtain a random point around resulting target in direction of orientation</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL Obtain a point in direction of resulting target -&gt; GetOrientation + orientation</li>
+<li>for resulting target resulting source and orientation 0 this will mean resulting source moving forward</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_SEND_MAIL = 38</strong><ul>
+<li>Resulting source should be a Creature OR NULL. Resulting target must be Player</li>
+<li>datalong = mailTemplateId</li>
+<li>datalong2: AlternativeSenderEntry. Use as sender-Entry of the sent mail</li>
+<li>dataint1: Delay (&gt;= 0) in Seconds</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_SET_FLY = 39</strong><ul>
+<li>Resulting source must be a creature.</li>
+<li>datalong = bool 0=off, 1=on</li>
+<li><a href="dbscripts#data_flags">data_flags</a> &amp; SCRIPT_FLAG_COMMAND_ADDITIONAL set/unset byte flag UNIT_BYTE1_FLAG_FLY_ANIM</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_DESPAWN_GO = 40</strong><ul>
+<li>Resulting target must be a Gameobject. Please note that not all gameobject types support this command.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_RESPAWN = 41</strong><ul>
+<li>resultingSource = Creature. Requires SCRIPT_FLAG_BUDDY_IS_DESPAWNED to find dead or despawned targets</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_SET_EQUIPMENT_SLOTS = 42</strong><ul>
+<li>Resulting source must be a creature.</li>
+<li>datalong = resetDefault: bool 0=false, 1=true</li>
+<li>dataint = main hand slot; dataint2 = off hand slot; dataint3 = ranged slot</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_RESET_GO = 43</strong><ul>
+<li>Resulting target must be a Gameobject. Only works for Gameobject which are doors or buttons (GO type 0 and 1)</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_UPDATE_TEMPLATE = 44</strong><ul>
+<li>Resulting source must be a Creature.</li>
+<li>datalong = new creature entry. Must be different than the current one</li>
+<li>datalong2 = faction for which the entry is updated. 0 = Alliance, 1 = Horde. No other values are allowed</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_START_RELAY_SCRIPT= 45</strong><ul>
+<li>Resulting source must be a Unit. Target is not mandatory.</li>
+<li>datalong = dbscripts_on_relay Id which should be launched</li>
+<li>datalong2 = dbscript_random_template relay Id which should be launched. Takes precedence over relay Id.</li>
+</ul>
+</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>SCRIPT_COMMAND_CAST_CUSTOM_SPELL= 46</strong><ul>
+<li>Resulting source must be a Unit. Target is Unit.</li>
+<li>datalong = spellid</li>
+<li>datalong2 = castFlags, enum <a href="dbscripts#TriggerCastFlags">TriggerCastFlags</a></li>
+<li>dataint1-3 define the &amp;bp value for the spell. At least one field is required.</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

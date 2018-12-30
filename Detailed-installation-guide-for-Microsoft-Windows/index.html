@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Welcome - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Welcome";
+    var mkdocs_page_input_path = "Detailed-installation-guide-for-Microsoft-Windows.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Welcome</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="welcome">Welcome</h1>
+<p>Welcome to the <strong>C</strong>ontinued <strong>Ma</strong>ssive <strong>N</strong>etwork <strong>G</strong>ame <strong>O</strong>bject <strong>S</strong>erver! :tada:</p>
+<p>This step-by-step guide is intended to help people to install a CMaNGOS World of Warcraft server on their Windows computer. If you need installation instructions for MacOS or Linux, see the <a href="#more-information">More Information</a> section. Information about updating an already installed server is provided in the <a href="#updating">Updating</a> section of this file.</p>
+<h1 id="table-of-contents">Table Of Contents</h1>
+<p><a href="#welcome">Welcome</a></p>
+<p><a href="#table-of-contents">Table Of Contents</a></p>
+<p><a href="#what-should-i-know-before-i-get-started">What Should I Know Before I Get Started?</a>
+<em> <a href="#versions">Versions</a>
+</em> <a href="#releases">Releases</a>
+<em> <a href="#more-information">More Information</a>
+</em> <a href="#32-or-64-bit">32 or 64 Bit?</a></p>
+<p><a href="#toolchain">Toolchain</a>
+ * <a href="#boost">Boost</a>
+ * <a href="#cmake">CMake</a>
+ * <a href="#git">Git</a>
+ * <a href="#mysql">MySQL</a>
+ * <a href="#notepad">Notepad++</a> (Optional)
+ * <a href="#visual-studio">Visual Studio</a></p>
+<p><a href="#cloning-the-repositories">Cloning the repositories</a>
+<em> <a href="#location">Location</a>
+</em> <a href="#core">Core</a>
+* <a href="#database">Database</a></p>
+<p><a href="#compilation">Compilation</a>
+<em> <a href="#configure-cmake">Configure CMake</a>
+</em> <a href="#compile-with-vs2017">Compile with VS2017</a></p>
+<p><a href="#database-setup">Database Setup</a>
+<em> <a href="#creation">Creation</a>
+</em> <a href="#initialisation">Initialisation</a>
+* <a href="#filling">Filling</a></p>
+<p><a href="#map-extraction">Map Extraction</a></p>
+<p><a href="#finishing-touches">Finishing touches</a>
+<em> <a href="#configuration">Configuration</a>
+</em> <a href="#running">Running</a>
+<em> <a href="#account-creation">Account Creation</a>
+</em> <a href="#ingame-commands">Ingame commands</a>
+* <a href="#shutdown">Shutdown</a></p>
+<p><a href="#updating">Updating</a>
+<em> <a href="#released-binaries">Released binaries</a>
+</em> <a href="#self-compiled-binaries">Self compiled binaries</a>
+* <a href="#database-update">Database Update</a></p>
+<h1 id="what-should-i-know-before-i-get-started">What Should I Know Before I Get Started?</h1>
+<h3 id="versions">Versions</h3>
+<p>There are three versions of CMaNGOS: <strong>Classic</strong>, <strong>The Burning Crusade</strong>, and <strong>Wrath of the Lich King</strong>. The fourth version, <strong>Cataclysm</strong> is currently not maintained. Each version consists of one core git repository and one database git repository (found under https://github.com/cmangos):</p>
+<table>
+<thead>
+<tr>
+<th>Repo\Version</th>
+<th>Classic</th>
+<th>TBC</th>
+<th>WotLK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core</strong></td>
+<td>mangos-classic</td>
+<td>mangos-tbc</td>
+<td>mangos-wotlk</td>
+</tr>
+<tr>
+<td><strong>DB</strong></td>
+<td>classic-db</td>
+<td>tbc-db</td>
+<td>wotlk-db</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> When following this guide, you will sometimes have to pick the command/path appropriate to the version you would like to install. You will have to replace the <code>VERSION</code> part of them with <code>classic</code>, <code>tbc</code> or <code>wotlk</code>, i.e. if you are asked to got to <code>C:\mangos\mangos-VERSION</code> and you are installing WotLK, you have to go to <code>C:\mangos\mangos-wotlk</code>. The screenshots will show the pathes for Classic version.</p>
+<h3 id="releases">Releases</h3>
+<p>Compilation of the server core and extractor tool binaries is optional. If you do not plan on changing the code yourself, you can download the precompiled binaries from the release pages of the core repositories on Github. Here are the links to the download pages:</p>
+<ul>
+<li>https://github.com/cmangos/mangos-classic/releases</li>
+<li>https://github.com/cmangos/mangos-tbc/releases</li>
+<li>https://github.com/cmangos/mangos-wotlk/releases</li>
+</ul>
+<p>We will provide more information about how to setup a server with released files when it will be possible.</p>
+<h3 id="more-information">More Information</h3>
+<p>This guide is intended only for Windows and provides one of many ways to setup a CMaNGOS server. You can find a <a href="Installation-Instructions">more detailed installation guide</a> (including alternative programs, Linux/Mac setup, etc.) in the <a href="https://github.com/cmangos/issues/wiki">Wiki</a>. If you get stuck you can find us here:
+- http://cmangos.net (forum)
+- Discord: https://discord.gg/nSaXpCn
+- <strong>#cmangos</strong> channel on <strong>irc.rizon.net</strong>
+- you can create an new issue in our <a href="https://github.com/cmangos/issues/issues">Github bug tracker</a></p>
+<h3 id="32-or-64-bit">32 or 64 Bit?</h3>
+<p>This section will most likely not be of any concern to most people, as it is highly unlikely they have 32-bit hardware/OS. If your system is very old and you want to make sure you run a 64-bit version of Windows, press <strong>WinKey+Pause</strong> (or navigate to the <strong>System</strong> settings in the Control Panel). You should see a row named <strong>System type</strong> in the list there, which should read <strong>64-bit Operating System</strong>. If that is the case, you can ignore the rest of this section and follow the guide to the letter.</p>
+<p><img alt="architecture" src="https://user-images.githubusercontent.com/8838573/27604263-1cd25e72-5b79-11e7-9561-de8e6a0499a1.PNG" /></p>
+<p>32-bit/64-bit refers to the instruction set architecture (ISA) of your computers central processing unit (CPU). Generaly speaking, 64-bit processors can run instructions sets (parts of a program) that are twice as big and the program therefore runs faster. They are however able to run 32-bit programs as well, while 32-bit processors are unable to run 64-bit programs. The same goes for operating systems. If you have a 64-bit processor but a 32-bit Windows version, you will not be able to run 64 bit programs.</p>
+<p>In the context of this guide, that means if you have either a 32-bit processor or Windows version, you will have to adjust the instructions given here to that fact. You will have to download/install 32-bit programs and set it as target architecture during compilation. You can usually recognise the correct link/file by a part of its name that will read something like <strong>32</strong>, <strong>32bit</strong>, <strong>x86</strong>, etc. If you run into problems while compiling or running a 32-bit version of CMaNGOS, you can find information about how to contact the team in the <a href="#more-information">above section</a>.</p>
+<p><strong>Note:</strong> While <strong>x86</strong> refers to the 32-bit architecture, <strong>x86_64</strong> or <strong>x86-64</strong> refers to the 64-bit architecture (read "I can only process 32-bit" vs. "I can process both 32-bit and 64-bit").</p>
+<h1 id="toolchain">Toolchain</h1>
+<p>These are programs you will need to setup the database and compile the core. This section will explain where to download and how to install them. <strong>If not otherwise noted in the programs installation instructions, the default settings apply.</strong> After downloading them all into a separate folder, it should look something like this:</p>
+<p><img alt="installers" src="https://user-images.githubusercontent.com/8838573/27418828-e5ebb048-571d-11e7-900f-bda30e015fe4.PNG" /></p>
+<h2 id="boost">Boost</h2>
+<ul>
+<li>Go to: http://sourceforge.net/projects/boost/files/boost-binaries/</li>
+<li>Select a version number not ending in <code>_bX</code> (those are beta versions), e.g. click <code>1.64.0</code>. (Confirmed working as of 2017-12-30. <strong>There have been problems reported with version 1.66.</strong>)</li>
+<li>Download the executable file containing <code>msvc-14.1-64</code>, e.g. <code>boost_1_64_0-msvc-14.1-64.exe</code>. (MSVC-14.1 is the Visual Studio 2017 C++ compiler, 64 stands for the 64 bit architecture)</li>
+<li>Execute the downloaded file. During the installation you will be asked to set the installation path, if you change it, remember it. It is needed in the next step.</li>
+<li>Add the <code>BOOST_ROOT</code> environment variable (<strong>Note:</strong> You might have to relog/restart afterwards, so every program can see this variable):</li>
+<li>Press <strong>WinKey+Pause</strong> (or navigate to the <strong>System</strong> settings in the Control Panel).</li>
+<li>Click on <strong>Advanced system settings</strong>.</li>
+<li>Click on <strong>Environment Variables</strong>.</li>
+<li>Click on the bottom <strong>New</strong> button (Note: there are two, we need the one under <strong>System variables</strong>).</li>
+<li>As <strong>Variable name</strong> enter <code>BOOST_ROOT</code>, as <strong>Variable value</strong> enter the path you installed boost to
+    (<code>C:\local\boost_X_XX_X</code> by default, depending on which version you downloaded).</li>
+</ul>
+<p><img alt="boost_root" src="https://user-images.githubusercontent.com/8838573/27419813-198fba5c-5723-11e7-8908-883eb827e415.png" /></p>
+<h2 id="cmake">CMake</h2>
+<ul>
+<li>Go to: https://cmake.org/download/#latest</li>
+<li>Download the <strong>Windows win64-x64 Installer</strong> (currently <code>cmake-3.8.2-win64-x64.msi</code>) and install it.</li>
+</ul>
+<h2 id="git">Git</h2>
+<ul>
+<li>Go to: https://git-scm.com/download/win</li>
+<li>Confirm the download if it is the architecture you want (32 or 64 bit). Otherwise abort and select the correct version.</li>
+<li>During installation make sure the following options are checked:</li>
+<li>Git Bash Here:</li>
+</ul>
+<p><img alt="git1" src="https://user-images.githubusercontent.com/8838573/27420240-3f87c61c-5725-11e7-9458-5bab126aa6b0.PNG" /></p>
+<ul>
+<li>Use Git from the Windows Command Prompt:</li>
+</ul>
+<p><img alt="git2" src="https://user-images.githubusercontent.com/8838573/36945424-2f6b30d2-1fae-11e8-9989-a77740cf7d44.PNG" /></p>
+<ul>
+<li>Use MinTTY:</li>
+</ul>
+<p><img alt="git5" src="https://user-images.githubusercontent.com/8838573/27420244-448c01aa-5725-11e7-9827-1b4efaf3c9b9.PNG" /></p>
+<h2 id="mysql">MySQL</h2>
+<ul>
+<li>Go to: https://dev.mysql.com/downloads/installer/</li>
+<li>Download the web installer. If you have no internet during setup you can download the full 400 MB installer instead.</li>
+</ul>
+<p><img alt="mysql1 1" src="https://user-images.githubusercontent.com/8838573/27420380-fef2b930-5725-11e7-8db9-0db57591ed49.PNG" /></p>
+<ul>
+<li>Start the installer and select Setup Type <strong>Custom</strong>:</li>
+</ul>
+<p><img alt="mysql3" src="https://user-images.githubusercontent.com/8838573/27420541-a0090e78-5726-11e7-92e3-053d58e29517.PNG" /></p>
+<ul>
+<li>Add <strong>MySQL Server</strong> and <strong>MySQL Workbench</strong>:</li>
+</ul>
+<p><img alt="mysql4" src="https://user-images.githubusercontent.com/8838573/27420571-c8ba87ca-5726-11e7-93ee-351109b9ede3.PNG" /></p>
+<ul>
+<li>If there are missing requirements reported on the next page, select them and click <strong>Execute</strong> if possible:</li>
+</ul>
+<p><img alt="mysql5_req" src="https://user-images.githubusercontent.com/8838573/27420697-66dcb1f8-5727-11e7-9bc9-b534c5054a1e.PNG" /></p>
+<ul>
+<li>You will have to define the <strong>MySQL Root Password</strong>. This will be the admin password to your MySQL server so make sure to remember it! The root user will have access to all databases. We will create another user later in the process which will only have access to CMaNGOS databases.</li>
+</ul>
+<p><img alt="mysql7" src="https://user-images.githubusercontent.com/8838573/27420887-3554e1ae-5728-11e7-9037-bb64b886ef4d.PNG" /></p>
+<ul>
+<li>After the installation has finished, start the <strong>MySQL Workbench</strong> program and click on the <strong>Local instance</strong> button. In the popup that opens, set the checkbox and enter your root password.</li>
+</ul>
+<p><img alt="mysqlx" src="https://user-images.githubusercontent.com/8838573/27421017-c6639bcc-5728-11e7-9741-54086ce87963.PNG" /></p>
+<ul>
+<li>Add the MySQL servers path to the <code>Path</code> environment variable:  (<strong>Note:</strong> You might have to relog/restart afterwards, so every program can see the updates to the variable)</li>
+<li>Press <strong>WinKey+Pause</strong> (or navigate to the <strong>System</strong> settings in the Control Panel).</li>
+<li>Click on <strong>Advanced system setting</strong>.</li>
+<li>Click on <strong>Environment Variables</strong>.</li>
+<li>In the bottom part of the new window (under <strong>System variables</strong>) look for the variable called <strong>Path</strong>, select it, and click on <strong>Edit</strong>.</li>
+<li><strong>Note: This field is a list of values, separated by <code>;</code>. Do not delete the entries that were already there, or some programs might stop working!</strong></li>
+<li>Select the <strong>Variable value</strong> field and make sure the cursor is at the end of the field and no text is selected (press <strong>EndKey</strong> or <strong>ArrowRightKey</strong>).</li>
+<li>Add the path where your MySQL server was installed, prefixed by a semi-colon (by default <code>;C:\Program Files\MySQL\MySQL Server 5.7\bin</code>) and save the changes by clicking <strong>OK</strong>.</li>
+</ul>
+<p><img alt="mysql_path" src="https://user-images.githubusercontent.com/8838573/27421847-62bd1d24-572c-11e7-9260-bd2069af5ad4.PNG" /></p>
+<h2 id="notepad">Notepad++</h2>
+<ul>
+<li><strong>Notepad++ is completely optional.</strong> It is an improved version of the text editor that comes with Windows. You will have to edit a few files during installation, which you can do with the standard editor, but it is recommended doing it with Notepad++, as it has some handy features:</li>
+<li>
+<p>Open files from the context (right-click) menu:</p>
+<p><img alt="npp_context" src="https://user-images.githubusercontent.com/8838573/27422058-252ea206-572d-11e7-8409-284dc2b1c3cd.PNG" /></p>
+</li>
+<li>
+<p>Recognises Linux style line endings. (Windows apparently thinks it is a typewriter and uses two symbols, CR and LF - <strong>c</strong>arriage <strong>r</strong>eturn and <strong>l</strong>ine <strong>f</strong>eed - for new lines instead of just LF like Linux does. This is why some files mysteriously appear to be written in one line.)</p>
+</li>
+<li>Line numbers.</li>
+<li>Open multiple files at once.</li>
+<li>Remembers opened files and unsaved changes between sessions.</li>
+<li>Go to: https://notepad-plus-plus.org/download/</li>
+<li>Download (32bit recommended since it has more plugins available) and install it.</li>
+<li>Make sure <strong>Context Menu Entry</strong> option is enabled:</li>
+</ul>
+<p><img alt="npp" src="https://user-images.githubusercontent.com/8838573/27422282-d328dc28-572d-11e7-9d14-6043643daa6d.PNG" /></p>
+<h2 id="visual-studio">Visual Studio</h2>
+<ul>
+<li>Go to: https://www.visualstudio.com/downloads/</li>
+<li>Under <strong>Visual Studio Community 2017</strong> click on <strong>Free Download</strong>.</li>
+<li>Open the installer. When asked to select Workloads, check <strong>Desktop development with C++</strong> and then click <strong>Install</strong>:</li>
+</ul>
+<p><img alt="vs1" src="https://user-images.githubusercontent.com/8838573/27422646-444323ea-572f-11e7-9c0c-d92930ccc4d8.png" /></p>
+<ul>
+<li>Start <strong>Visual Studio 2017</strong>. You will be asked if you want to sign in, but it is not needed:</li>
+</ul>
+<p><img alt="vs2" src="https://user-images.githubusercontent.com/8838573/27422852-f8f5c3ec-572f-11e7-9430-c95d9c56b22b.PNG" /></p>
+<ul>
+<li>In the next window, leave the Development Settings as they are (General), but feel free to select another theme:</li>
+</ul>
+<p><img alt="vs3" src="https://user-images.githubusercontent.com/8838573/27422919-2f51bc48-5730-11e7-9066-b5011e59ed82.PNG" /></p>
+<ul>
+<li>Close Visual Studio for now.</li>
+</ul>
+<h1 id="cloning-the-repositories">Cloning the repositories</h1>
+<p>A git repository is basically just a normal directory which contains some hidden files, that the git program (or some other program) can use to manage different versions of that directory. In this step we will "clone" the repositories from Github, which means creating an exact copy of them on your hard drive.</p>
+<h3 id="location">Location</h3>
+<p>You can basically follow this guide from any location on your hard drive. However, we will assume you have created an empty directory called <strong>mangos</strong> on your C drive: <code>C:\mangos</code>. If you want to work in another location, you will have to adjust some of the provided commands/locations. We also assume you have installed the <a href="#git">Git Bash Here</a> and <a href="#notepad">Edit with Notepad++</a> commands to the Windows context menu.</p>
+<p>Navigate to <code>C:\mangos</code> in the Windows Explorer, <strong>Right-Click</strong> into the empty area and select <strong>Git Bash Here</strong>:</p>
+<p><img alt="git_bash1" src="https://user-images.githubusercontent.com/8838573/27423501-0edc2bae-5732-11e7-8763-f54e2b63427b.PNG" /></p>
+<p>A new window should open with two lines of text:</p>
+<ol>
+<li><code>user@device MINGW64 /c/mangos</code></li>
+<li>This line shows the active user and the working directory. You can ignore the MINGW64.</li>
+<li><code>$</code> </li>
+<li>This line is the command prompt. It waits for you to write a command and press <strong>Enter</strong>.</li>
+</ol>
+<p><strong>FYI:</strong> Git Bash uses Linux style pathes, which means:
+- Pathes use <code>/</code> (forward slash) instead of <code>\</code> (backwards slash).
+- Your base directories are not the hard drive partitions, but the single "root directory" <code>/</code>, which contains all the hard drives (and some other stuff). So <code>/c/</code> points to your <code>C:\</code> and <code>/d/</code> points to <code>D:\</code>.
+- There is a shortcut to the users "home" directory, which is <code>~</code>. The Windows path hidden behind that is <code>C:\Users\YourUserName</code>. So if Git Bash says you are in <code>~/Desktop</code> you are actually in <code>C:\Users\YourUserName\Desktop</code>.
+- There are absolute pathes (starting with <code>/</code> or <code>~</code>), and relative pathes (not starting with <code>/</code> or <code>~</code>). Relative pathes point to a location relative to the working directory. Every directory contains a directory <code>..</code> which points to its parent (the directory one step closer to the root directory), and a directory <code>.</code> which points to itself (executing binaries is prefixed with <code>./</code>).
+- Use <code>cd /absolute/path/to/something</code> or <code>cd relative/path/to/something</code>to change your working directory. You can use <code>cd ..</code> to go one directory back, <code>cd ../..</code> to go two directories back, etc.
+- When you are entering long path names, you can use the <strong>Tab</strong> key to auto-complete them. E.g. if you have already entered <code>cd /c/man</code> and then press <strong>Tab</strong>, the command prompt will autocomplete it to <code>cd /c/mangos</code> (as long as there are no other directories in <code>/c/</code> that start with <code>man</code>).
+- For more information see https://en.wikipedia.org/wiki/Path_(computing)</p>
+<h3 id="core">Core</h3>
+<p><strong>Note:</strong> You need these files even if you use the precompiled binaries, since some of the database creation scripts are contained in this repository. This command creates a copy of the Github repository on your hard drive.</p>
+<ul>
+<li>Copy the command (<strong>Ctrl+C</strong>):</li>
+</ul>
+<pre><code>git clone https://github.com/cmangos/mangos-classic.git
+git clone https://github.com/cmangos/mangos-tbc.git
+git clone https://github.com/cmangos/mangos-wotlk.git
+</code></pre>
+
+<ul>
+<li>In the Git Bash window, <strong>Right-Click</strong> and select <strong>Paste</strong>, or press <strong>Shift+Insert</strong> (for historic reason the usual copy/paste keyboard shortcuts do not work in most command line interfaces).</li>
+</ul>
+<p><img alt="git_bash2 1" src="https://user-images.githubusercontent.com/8838573/27424959-1d8d9bd8-5737-11e7-96e6-51e2fd082c5a.PNG" /></p>
+<ul>
+<li>Press <strong>Enter</strong> to confirm the command.</li>
+<li>Wait for download to finish.</li>
+</ul>
+<h3 id="database">Database</h3>
+<ul>
+<li>Copy the command:</li>
+</ul>
+<pre><code>git clone https://github.com/cmangos/classic-db.git
+git clone https://github.com/cmangos/tbc-db.git
+git clone https://github.com/cmangos/wotlk-db.git
+</code></pre>
+
+<ul>
+<li>Paste it in Git Bash and press <strong>Enter</strong> to confirm the command.</li>
+<li>Wait for download to finish.</li>
+</ul>
+<p><img alt="git_bash3" src="https://user-images.githubusercontent.com/8838573/27425094-8f2e828e-5737-11e7-9b5d-6152d8462069.PNG" /></p>
+<h1 id="compilation">Compilation</h1>
+<h3 id="configure-cmake">Configure CMake</h3>
+<ul>
+<li>Start CMake.</li>
+<li>Set source directory to <code>C:\mangos\mangos-VERSION</code> and build directory to <code>C:\mangos\mangos-VERSION\bin\BuildDir</code> (see screenshot). You will have to create the <code>bin</code> and <code>BuildDir</code> directories, if they do not exist. The <code>bin</code> directory is listed in the repositories <code>.gitignore</code> file, which means you can change its content without git noticing it. If you choose another location inside the repository for building, you will break the update process (see <a href="#updating">Updating</a>).</li>
+<li>Click <strong>Configure</strong></li>
+</ul>
+<p><img alt="cmake1 1" src="https://user-images.githubusercontent.com/8838573/27503014-cdfc8ffa-5878-11e7-9c54-cb5aa7fb1714.PNG" /></p>
+<ul>
+<li>In the popup window select the compiler version. If you followed this guide you have <strong>Visual Studio 15 2017 Win64</strong></li>
+</ul>
+<p><img alt="cmake2" src="https://user-images.githubusercontent.com/8838573/27503270-fcf143da-587a-11e7-9f11-a6f8e5fe4e81.PNG" /></p>
+<ul>
+<li>Make sure the <strong>BUILD_EXTRACTORS</strong> option is checked. Then click <strong>Generate</strong>. <em>FYI: You can also activate the <code>BUILD_PLAYERBOT</code> option. Playerbot allows you to add other characters in your account as AI controlled bots that follow you around.</em></li>
+</ul>
+<p><img alt="cmake3 x" src="https://user-images.githubusercontent.com/8838573/27503421-24a974f0-587c-11e7-93bb-91fe2d98aaa5.PNG" /></p>
+<ul>
+<li>Once the console at the bottom says <code>Generating done</code>, press <strong>Open Project</strong>, which should open Visual Studio.</li>
+</ul>
+<p><img alt="cmake3 y" src="https://user-images.githubusercontent.com/8838573/27503456-751a2808-587c-11e7-8e87-ad93a4aab59a.PNG" /></p>
+<h3 id="compile-with-vs2017">Compile with VS2017</h3>
+<ol>
+<li>Wait until the loading has finished (see bottom of the window).</li>
+<li>Choose <strong>Release</strong> and <strong>x64</strong> at the dropdown menus on top.</li>
+<li>Press <strong>Ctrl+Shift+B</strong>, or <strong>Right-Click</strong> the topmost solution and select <strong>Build Solution</strong>.</li>
+<li>Wait until the output log shows the <strong>Build succeeded</strong> message.</li>
+</ol>
+<p><img alt="vsx" src="https://user-images.githubusercontent.com/8838573/27503885-593bd7f8-5881-11e7-996f-5b53d1abd297.png" /></p>
+<ul>
+<li>Assuming everything went well the binary-, library-, and configuration-files should now be in <code>C:\mangos\mangos-VERSION\bin\x64_Release</code>.</li>
+</ul>
+<h1 id="database-setup">Database Setup</h1>
+<h3 id="creation">Creation</h3>
+<ul>
+<li>Open <strong>MySQL Workbench</strong> and under <strong>MySQL Connections</strong> click on <strong>Local instance MySQL57</strong> to establish a connection to the MySQL server.</li>
+<li>In the new tab that opens, click the <strong>Open SQL script file</strong> button:</li>
+</ul>
+<p><img alt="db_create1 1" src="https://user-images.githubusercontent.com/8838573/27504640-4b545c3e-588e-11e7-847c-4767db8b4e36.png" /></p>
+<ul>
+<li>Navigate to <code>C:\mangos\mangos-VERSION\sql\create\</code> and open the <code>db_create_mysql.sql</code> file.</li>
+</ul>
+<p><img alt="db_create1" src="https://user-images.githubusercontent.com/8838573/27504694-65694296-588f-11e7-96f0-e3ba46924dc7.PNG" /></p>
+<ul>
+<li>By running this script, a new user and three new databases will be created. Make sure you have no text selected in the editor, then click the left dash symbol. See the output at the bottom of the window to make sure there were no errors.</li>
+<li><strong>Note:</strong> The new user is created in case people use their MySQL server for other stuff, as well as for security reasons. If you want to expose your server to the internet, <strong>it is highly recommended to change the password</strong> of this user in line 7 of the script (the string behind <code>IDENTIFIED BY</code>). <strong>When closing the file, do not save the changes, or you will break the <a href="#updating">update</a> process.</strong></li>
+<li><strong>FYI:</strong> If you want to run different versions of CMaNGOS at the same time (Classic/TBC/WotLK), you will have to rename the <code>mangos</code> DB (lines 1 and 9), the <code>characters</code> DB (lines 3 and 11) and the <code>realmd</code> DB (lines 5 and 13). The user creation (line 7) will need to be deactivated when creating a second or third server. Note that the middle dash button in Workbench executes only that part of the code, which has been selected in the editor, which might be helpful here.</li>
+<li><strong>FYI:</strong> If you change neither password nor database names, and you do not wish to change the standard server configuration, you can skip the <a href="#configuration">Configuration</a> step later on.</li>
+</ul>
+<p><img alt="mysql13" src="https://user-images.githubusercontent.com/8838573/27504383-d7c121d0-5888-11e7-964c-ecfb38957176.PNG" /></p>
+<ul>
+<li>You should now see the new databases (referred to as <strong>Schemas</strong> in Workbench) on the left. If not, click the refresh button.</li>
+</ul>
+<p><img alt="mysql14" src="https://user-images.githubusercontent.com/8838573/27504433-7c2372be-5889-11e7-82c1-066decf94b79.PNG" /></p>
+<h3 id="initialisation">Initialisation</h3>
+<ul>
+<li><strong>Double-Click</strong> the <code>mangos</code> database in the Schemas overview, so that its name is written bold. This marks the database as active, which means that table specific SQL commands will be run on this database. If the database name is not written in bold text after double-clicking it, restart Workbench and <strong>double-click</strong> again.</li>
+<li>Click the <strong>Open script file</strong> button above the editor:</li>
+</ul>
+<p><img alt="mysql12 1" src="https://user-images.githubusercontent.com/8838573/27504191-c818d0f0-5885-11e7-9205-091aeb828ed7.png" /></p>
+<ul>
+<li>Execute the <code>mangos.sql</code> file found in <code>C:\mangos\mangos-VERSION\sql\base\</code>. (See output at bottom of window to know when it is finished.)</li>
+<li>Execute all scripts in the <code>C:\mangos\mangos-VERSION\sql\base\dbc\original_data</code> directory (currently <code>DungeonEncounter.sql</code> and <code>Spell.sql</code>).</li>
+<li><strong>Double-Click</strong> the <code>characters</code> database in the Schemas overview and execute the <code>characters.sql</code> file found in <code>C:\mangos\mangos-VERSION\sql\base\</code>.</li>
+<li><strong>Double-Click</strong> the <code>realmd</code> database in the Schemas overview and execute the <code>realmd.sql</code> file found in <code>C:\mangos\mangos-VERSION\sql\base\</code>.</li>
+<li>You can now close Workbench.</li>
+</ul>
+<h3 id="filling">Filling</h3>
+<ul>
+<li>Navigate to the <code>C:\mangos\VERSION-db</code> directory in the Windows Explorer, <strong>Right-Click</strong> into the empty area and select <strong>Git Bash Here</strong>.</li>
+</ul>
+<p><img alt="db_install" src="https://user-images.githubusercontent.com/8838573/27504730-11175d3a-5890-11e7-8a24-0595b3a152a5.png" /></p>
+<ul>
+<li>Enter <code>./InstallFullDB.sh</code> and press <strong>Enter</strong>.</li>
+</ul>
+<p><img alt="db_install1" src="https://user-images.githubusercontent.com/8838573/27504742-387882b4-5890-11e7-88b0-2059fc203625.PNG" /></p>
+<ul>
+<li>In the Windows Explorer, <strong>Right-Click</strong> the newly created file <code>InstallFullDB.config</code> and select <strong>Edit with Notepad++</strong>.</li>
+</ul>
+<p><img alt="db_install2" src="https://user-images.githubusercontent.com/8838573/27504761-c5bfa24c-5890-11e7-8ab5-5a867200da5b.png" /></p>
+<ul>
+<li>Change the <code>CORE_PATH</code> variable to <code>../mangos-VERSION</code> and save the file. </li>
+<li><strong>FYI</strong>: The double dots mean we are going back one step in the directory tree, so it is assumed that the core repository has been cloned to the parent directory of the database repository. If you diverged from the guides steps adjust the relative path accordingly or use an absolute path (see <a href="#location">Location section</a>).</li>
+<li><strong>Note:</strong> If you changed the MySQL user name and/or password during the <a href="#creation">database creation</a> step, you will have to change the <code>USERNAME</code> and/or <code>PASSWORD</code> variable here as well.</li>
+<li><strong>Note:</strong> If you changed the database name <code>mangos</code> during the <a href="#creation">database creation</a> step, you will have to change the <code>DATABASE</code>variable here as well.</li>
+</ul>
+<p><img alt="db_install3" src="https://user-images.githubusercontent.com/8838573/27504838-61f4f4b8-5892-11e7-80f4-6d44cd1fc48e.png" /></p>
+<ul>
+<li>In Git Bash, enter the <code>./InstallFullDB.sh</code> again, by pressing <strong>ArrowUp</strong> and <strong>Enter</strong> (it will now do something different, since the <code>config</code> file is present).</li>
+</ul>
+<p><img alt="db_install4" src="https://user-images.githubusercontent.com/8838573/27504858-c044d6dc-5892-11e7-8bed-14c54d9e684a.PNG" /></p>
+<ul>
+<li>Once the script finished you should see a message like this:</li>
+</ul>
+<p><img alt="db_install5" src="https://user-images.githubusercontent.com/8838573/27504869-dcf6d168-5892-11e7-8138-e142b861147e.PNG" /></p>
+<h1 id="map-extraction">Map Extraction</h1>
+<ul>
+<li><strong>FYI:</strong> This step deals with extracting terrain information from the client. This is used by the AI to generate correct movement. Four different data types are extracted. One of them, mmaps, is optional, because its <strong>extraction takes a long time (depending on your CPU, 30 minutes to several hours)</strong>. Mmaps are required for correct NPC movement though, so it is <strong>not</strong> advised to skip mmap extraction. This step is sometimes also needed when updating, but only if the extraction process has been changed (it is always needed when first installing). If the files need to be updated, the server will crash on startup and write information about this to the log file.</li>
+<li>Acquire a clean copy of the correct WoW client version (1.12.1/2.4.3/3.3.5). <em>Note: It is recommended to do this step in a copy of the client directory, not the actual one you use for gaming, since some temporary files are created. If you use a copy you can just delete it after you are done.</em> Your directory should look something like this (example from classic):</li>
+</ul>
+<p><img alt="extract1" src="https://user-images.githubusercontent.com/8838573/27504988-43cacbae-5895-11e7-851a-20938df59583.PNG" /></p>
+<ul>
+<li>Go to <code>C:\mangos\mangos-VERSION\bin\x64_Release\Extractors</code> (or the <code>Extractors</code> directory inside the directory you extracted the precompiled binaries to) and copy all the files to the client directory:</li>
+</ul>
+<p><img alt="extract2" src="https://user-images.githubusercontent.com/8838573/27505052-81d047fc-5896-11e7-8c2e-e11ca14f6839.PNG" /></p>
+<ul>
+<li><strong>Right-Click</strong> into the empty area and select <strong>Git Bash Here</strong>. Enter the command <code>./ExtractResources.sh</code> and press <strong>Enter</strong>.</li>
+<li>The script will ask for settings, the recommended inputs are: </li>
+<li>y</li>
+<li>
+<p>Number of your CPUs cores/threads. If you are unsure how many cores/threads your CPU has, <strong>Right-Click</strong> the Windows Taskbar, select <strong>Start Task Manager</strong> and switch to the <strong>Performance</strong> tab:</p>
+<ul>
+<li>
+<p>On Windows 7 the number of graph windows you see under <strong>CPU Usage History</strong> corresponds with the number of cores/threads your CPU has. Example picture with 4 cores/threads:</p>
+<p><img alt="cores4" src="https://user-images.githubusercontent.com/8838573/27505757-0f2c74e8-58a8-11e7-8c81-a243dff798f1.png" /></p>
+</li>
+<li>
+<p>On Windows 10,  look for the line saying <strong>Logical Processors</strong>:</p>
+<p><img alt="cores8" src="https://user-images.githubusercontent.com/8838573/36945527-d655ed5a-1faf-11e8-865d-652c912ce73c.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>nothing (leave line blank and press <strong>Enter</strong>)</p>
+</li>
+</ul>
+<p><img alt="extract3" src="https://user-images.githubusercontent.com/8838573/27505090-98987422-5897-11e7-939d-9bc9f9bcdbee.PNG" /></p>
+<ul>
+<li>You will be prompted to confirm your settings. Press <strong>Enter</strong> to do so and go do something else. <strong>Like mentioned before, extraction takes a long time (depending on your CPU, 30 minutes to several hours). Wait until you see the command prompt again (<code>$</code>).</strong></li>
+</ul>
+<p><img alt="extract4" src="https://user-images.githubusercontent.com/8838573/27505793-e9992ae0-58a8-11e7-8140-472ec56625e7.png" /></p>
+<ul>
+<li>After extraction is finished, copy the <code>dbc</code>, <code>maps</code>, <code>mmaps</code> and <code>vmaps</code> directories to <code>C:\mangos\mangos-VERSION\bin\x64_Release</code> (or the directory you extracted the precompiled binaries to).</li>
+</ul>
+<p><img alt="extract5" src="https://user-images.githubusercontent.com/8838573/27505326-58fea9e8-589d-11e7-9ce4-c71fd5ec8a63.PNG" /></p>
+<h1 id="finishing-touches">Finishing touches</h1>
+<h3 id="configuration">Configuration</h3>
+<h4 id="note-if-you-have-not-changed-the-user-password-and-database-names-during-the-database-creation-step-above-and-you-do-not-plan-on-changing-the-standard-configuration-then-you-can-skip-to-running">Note: If you have not changed the user password and database names during the <a href="#creation">database creation</a> step above, and you do not plan on changing the standard configuration, then you can skip to <a href="#running">running</a>.</h4>
+<ul>
+<li><strong>FYI:</strong> You will have to start two binaries (<code>.exe</code> files) to launch the server, the <code>mangosd.exe</code> and the <code>realmd.exe</code> (*the <strong>d</strong> stands for <strong>daemon</strong> (<strong>d</strong>isk <strong>a</strong>nd <strong>e</strong>xecution <strong>mon</strong>itor). Both of the binaries read settings from a file which is passed to them by the <code>-c &lt;config-file&gt;</code> argument when starting them (see <a href="#running">below</a>).</li>
+<li>The standard names for the configuration files are <code>mangosd.conf.dist</code> and <code>realmd.conf.dist</code>. They are copied to <code>C:\mangos\mangos-VERSION\bin\x64_Release</code> when compiling (or contained in the zip file of the precompiled binaries). <strong>If you change the configuration, it is advised you rename the files to <code>mangosd.conf</code> and <code>realmd.conf</code>, so they will not be overwritten when <a href="#updating">updating</a>.</strong> To do so, select the file and press <strong>F2</strong> or <strong>Right-Click</strong> it and select <strong>Rename</strong> from the context menu. Then remove the <code>.dist</code> at the end, and press <strong>Enter</strong>. If you do not see the <code>.dist</code> ending when trying to rename, see the note below.</li>
+</ul>
+<p><img alt="folder1 3" src="https://user-images.githubusercontent.com/8838573/27506163-f5d975ee-58b2-11e7-867e-3a94e08c809f.png" /></p>
+<ul>
+<li><strong>Note:</strong> By default, Windows hides the part of the file name behind the last dot (<code>.</code>) in it (the file type extension). If you try to rename the files and do not see the <code>.dist</code> ending:</li>
+<li>
+<p>Click on <strong>Organize</strong> in the top left and select <strong>Folder and search options</strong>.</p>
+<p><img alt="folder2" src="https://user-images.githubusercontent.com/8838573/27505964-f74c4dd4-58ad-11e7-9cec-9caff4ec99b5.png" /></p>
+</li>
+<li>
+<p>Uncheck the <strong>Hide extensions for known file types</strong> option and click <strong>OK</strong> or <strong>Apply</strong>.</p>
+<p><img alt="folder3" src="https://user-images.githubusercontent.com/8838573/27505979-66cc1b94-58ae-11e7-8146-cb39693f1db6.png" /></p>
+</li>
+<li>
+<p>Try renaming again.</p>
+</li>
+<li>
+<p>After changing the file names, <strong>Right-Click</strong> the <code>mangosd.conf</code> and select <strong>Edit with Notepad++</strong>. Change the values of <code>LoginDatabaseInfo</code>, <code>WorldDatabaseInfo</code>, and <code>CharacterDatabaseInfo</code> variables according to the changes you made (if you made any) during the <a href="#creation">database creation</a> step and save the file with <strong>Ctrl+S</strong>.</p>
+</li>
+</ul>
+<p><img alt="mangosd" src="https://user-images.githubusercontent.com/8838573/27506326-0b3f46ae-58b6-11e7-84a7-171d6c71b75a.png" /></p>
+<ul>
+<li><strong>Right-Click</strong> the <code>realmd.conf</code> and select <strong>Edit with Notepad++</strong>. Change the values of <code>LoginDatabaseInfo</code> variable according to the changes you made (if you made any) during the <a href="#creation">database creation</a> step and save the file with <strong>Ctrl+S</strong>.</li>
+</ul>
+<p><img alt="realmd" src="https://user-images.githubusercontent.com/8838573/27506893-9e0f70aa-58c3-11e7-9205-60110984124f.png" /></p>
+<h3 id="running">Running</h3>
+<ul>
+<li>
+<p>In the Windows Explorer, navigate to <code>C:\mangos\mangos-VERSION\bin\x64_Release</code> (or the directory you extracted the precompiled binaries to). You have two options of doing the start up:</p>
+</li>
+<li>
+<p><strong>Manual:</strong> Run from Git Bash</p>
+<ul>
+<li><strong>Right-Click</strong> into the empty area and select <strong>Git Bash Here</strong>.</li>
+<li>Enter <code>./realmd.exe -c realmd.conf</code> (or <code>realmd.conf.dist</code> if you skipped the <a href="#configuration">Configuration</a> step) and press <strong>Enter</strong>.</li>
+<li><strong>Right-Click</strong> into the empty area and select <strong>Git Bash Here</strong> again.</li>
+<li>Enter <code>./mangosd.exe -c mangosd.conf</code> (or <code>mangosd.conf.dist</code> if you skipped the <a href="#configuration">Configuration</a> step) and press <strong>Enter</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Automatic:</strong> Create shortcuts containing the arguments</p>
+<ul>
+<li><strong>Right-Click</strong> the <code>mangosd.exe</code>, chose either <strong>Send to-&gt;Desktop (create shortcut)</strong> or <strong>Create shortcut</strong> to create it in the same directory as the binaries.</li>
+</ul>
+<p><img alt="shortcuts1" src="https://user-images.githubusercontent.com/8838573/27507105-a6794b26-58c8-11e7-9650-1125e15af9fd.png" /></p>
+<ul>
+<li><strong>Right-Click</strong> the newly created shortcut and select <strong>Properties</strong>.</li>
+</ul>
+<p><img alt="shortcuts2" src="https://user-images.githubusercontent.com/8838573/27507112-d0b96dd0-58c8-11e7-89ad-68e8b42e2b5c.png" /></p>
+<ul>
+<li>At the end of the <strong>Target</strong> field, add <code>-c mangosd.conf</code> (or <code>-c mangosd.conf.dist</code> if you skipped the <a href="#configuration">Configuration</a> step).</li>
+</ul>
+<p><img alt="shortcuts3" src="https://user-images.githubusercontent.com/8838573/27507121-123c05ec-58c9-11e7-91c6-b1a072cce79a.png" /></p>
+<ul>
+<li>Repeat this for the <code>realmd.exe</code>, but add <code>-c realmd.conf</code> (or <code>-c realmd.conf.dist</code> if you skipped the <a href="#configuration">Configuration</a> step) at the end of the <strong>Target</strong> field instead.</li>
+</ul>
+</li>
+<li>
+<p>Start the the <code>realmd.exe</code> first, then the <code>mangosd.exe</code>. The latter will take some time to start, watch for the <code>CMANGOS: World initialized</code> line. (Depending on your configuration, it will be visible only for a split second. See <a href="#account-creation">next</a> step on how to change that.)</p>
+</li>
+</ul>
+<p><img alt="start_server" src="https://user-images.githubusercontent.com/8838573/27507216-b69ba52e-58ca-11e7-88b7-87912ace65cd.png" /></p>
+<ul>
+<li>When first starting the server, the Windows Firewall might ask for permissions. If you want players to connect over the local network or the internet, enable both check boxes and click <strong>Allow access</strong> (for both <code>realmd</code> and <code>mangosd</code> binaries).</li>
+</ul>
+<p><img alt="start1" src="https://user-images.githubusercontent.com/8838573/27507252-98908788-58cb-11e7-8609-0b7357655255.PNG" /></p>
+<h3 id="account-creation">Account Creation</h3>
+<ul>
+<li>The <code>mangosd.exe</code> window will wait for commands. You can ignore the text scrolling through the window, it does not influence text input or deletion.</li>
+<li><strong>FYI:</strong> If the scrolling text is bothering you, open the <code>mangosd.conf</code> file and change the value of the <code>LogLevel</code> variable to 0 (Mind the notes in the <a href="#configuration">Configuration</a> section about the config being overwritten during updates).</li>
+</ul>
+<p><img alt="log" src="https://user-images.githubusercontent.com/8838573/27507342-5b1c9c00-58cd-11e7-8040-c13a1a76fac7.PNG" /></p>
+<ul>
+<li>Creating a new account: <code>account create MyNewAccount MyPassword</code></li>
+<li>Setting the expansion the account is allowed to access: <code>account set addon MyNewAccount 2</code></li>
+<li>0: Classic (default value, this command is not needed when installing classic)</li>
+<li>1: TBC</li>
+<li>2: WotLK</li>
+<li>3: Cata</li>
+<li>Setting the access level to ingame commands: <code>account set gmlevel MyNewAccount 3</code></li>
+<li>0: Player (default value)</li>
+<li>1: Moderator</li>
+<li>2: Game Master</li>
+<li>3: Administrator</li>
+<li>
+<p>After successfully entering these commands you are ready to start the client and log in to the server. Make sure the <code>realmlist.wtf</code> file in the client directory only contains <code>set realmlist 127.0.0.1</code> before starting. If you want to save addresses of other servers, you can prefix their lines with <code>//</code>, like:</p>
+<p><code>set realmlist 127.0.0.1
+//set realmlist someRealmd.somewhere</code></p>
+<h3 id="ingame-commands">Ingame commands</h3>
+</li>
+<li>
+<p>There are many useful ingame commands. When ingame, open the chat prompt by pressing <strong>Enter</strong>, write <code>.help</code> and confirm by pressing <strong>Enter</strong> again. This will show a list of commands available to your account in the chat window. Many commands show further ingame documentation when called without arguments (e.g. <code>.modify</code>).</p>
+</li>
+<li>CMaNGOS has no dedicated documentation of these commands, if you want a list look through the source files, the database, or search the web for something like "mangos gm commands" (most commands are the same across open source servers).</li>
+</ul>
+<h3 id="shutdown">Shutdown</h3>
+<ul>
+<li>In the <code>mangosd.exe</code> window, write <code>server shutdown 1</code> (the number represents delay in seconds) and press <strong>Enter</strong>.</li>
+<li>In the <code>realmd.exe</code> window, press <strong>Ctrl+C</strong>.</li>
+</ul>
+<h1 id="updating">Updating</h1>
+<ul>
+<li><strong>Note:</strong> The <code>git pull</code> command used below might not work if you changed files inside the repositories (except for the <code>bin</code> directory inside the core repository and the <code>InstallFullDB.config</code> file in the database repository, because they are listed in the <code>.gitignore</code> file). If you have changed some files and the pull does not work, you can use the command <code>git reset --hard</code> to reset all the changes you made inside the repository (again excepting locations in the <code>.gitignore</code> file) and then <code>git pull</code> again.</li>
+<li><strong>FYI:</strong> The default configuration files <code>mangosd.conf.dist</code> and <code>realmd.conf.dist</code> will be overwritten during the update. If you changed them, make sure you changed their name or file type too (see <a href="#configuration">configuration</a> section for more information).</li>
+</ul>
+<h3 id="released-binaries">Released binaries</h3>
+<p>To update the precompiled binaries, go to the <a href="#releases">release page on Github</a> and download a fresh copy of the zip file (the release is automatically updated when there are new commits). Extract the content of the zip file into your current server directory, overwriting existing files. Now you need to update your database. Occasionally database updates get delivered through the core repository instead of the DB repository. The script used later to do the database update will search the core repository for updates, if its path is provided in the <code>InstallFullDB.config</code> file (see <a href="#filling">database filling</a> section).</p>
+<h3 id="self-compiled-binaries">Self compiled binaries</h3>
+<ul>
+<li>In the Windows Explorer, navigate to <code>C:\mangos\mangos-VERSION\</code>.</li>
+<li><strong>Right-Click</strong> and select <strong>Git Bash Here</strong>.</li>
+<li>Enter the <code>git fetch</code> command and wait until it is finished. It will look for updates in the repository on Github.</li>
+</ul>
+<p><img alt="update1" src="https://user-images.githubusercontent.com/8838573/27507706-d0d321ba-58d4-11e7-8771-8472ba7c6ba6.PNG" /></p>
+<ul>
+<li>If there are updates on <code>origin/master</code>, enter the <code>git pull</code> command to download them.</li>
+</ul>
+<p><img alt="update2" src="https://user-images.githubusercontent.com/8838573/27507708-d901f672-58d4-11e7-8d8f-2ee7b31297c2.PNG" /></p>
+<ul>
+<li>Redo the steps of the <a href="#compilation">Compilation</a> section above.</li>
+</ul>
+<h3 id="database-update">Database Update</h3>
+<ul>
+<li>In the Windows Explorer, navigate to <code>C:\mangos\VERSION-db\</code>.</li>
+<li><strong>Right-Click</strong> and select <strong>Git Bash Here</strong>.</li>
+<li>Enter the <code>git fetch</code> command and wait until it is finished. It will look for updates in the repository on Github.</li>
+</ul>
+<p><img alt="update3" src="https://user-images.githubusercontent.com/8838573/27507736-89811f1e-58d5-11e7-9f2c-8fe7bd6885b4.PNG" /></p>
+<ul>
+<li>If there are updates on <code>origin/master</code>, enter the <code>git pull</code> command to download them.</li>
+</ul>
+<p><img alt="update4" src="https://user-images.githubusercontent.com/8838573/27507737-9234a464-58d5-11e7-8a20-accb73e47b9c.PNG" /></p>
+<ul>
+<li>Enter the <code>./InstallFullDB.sh</code> command and wait until it is finished. The necessary <code>InstallFullDB.config</code> file should still be present and correctly set from installing.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

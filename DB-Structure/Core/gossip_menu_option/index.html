@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Gossip menu option - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Gossip menu option";
+    var mkdocs_page_input_path = "DB-Structure/Core/gossip_menu_option.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Gossip menu option</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Back to <a href="mangosdb_struct">world database</a> list of tables.</p>
+<h2 id="the-96gossip95menu95option96-table">The `gossip_menu_option` table</h2>
+<p>This table holds infos about menu options a gossip NPC can have. Examples of options : "Train me!", "I want to unlearn my talents", ...</p>
+<h3 id="structure">Structure</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Attributes</strong></th>
+<th><strong>Key</strong></th>
+<th><strong>Null</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Gossip_menu_option#menu_id">menu_id</a></td>
+<td>smallint(6)</td>
+<td>unsigned</td>
+<td>PRI</td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#id">id</a></td>
+<td>smallint(6)</td>
+<td>unsigned</td>
+<td>PRI</td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#option_icon">option_icon</a></td>
+<td>smallint(6)</td>
+<td>unsigned</td>
+<td>PRI</td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#option_text">option_text</a></td>
+<td>text</td>
+<td>signed</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#option_id">option_id</a></td>
+<td>tinyint(3)</td>
+<td>unsigned</td>
+<td></td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#npc_option_npcflag">npc_option_npcflag</a></td>
+<td>int(10)</td>
+<td>unsigned</td>
+<td></td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#action_menu_id">action_menu_id</a></td>
+<td>mediumint(8)</td>
+<td>unsigned</td>
+<td></td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#action_poi_id">action_poi_id</a></td>
+<td>mediumint(8)</td>
+<td>unsigned</td>
+<td></td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#action_script_id">action_script_id</a></td>
+<td>mediumint(8)</td>
+<td>unsigned</td>
+<td></td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#box_coded">box_coded</a></td>
+<td>tinyint(3)</td>
+<td>unsigned</td>
+<td></td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#box_money">box_money</a></td>
+<td>int(11)</td>
+<td>unsigned</td>
+<td></td>
+<td>NO</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#box_text">box_text</a></td>
+<td>text</td>
+<td>signed</td>
+<td></td>
+<td>YES</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td><a href="Gossip_menu_option#condition_id">condition_id</a></td>
+<td>mediumint(8)</td>
+<td>unsigned</td>
+<td></td>
+<td>NO</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="description-of-the-fields">Description of the fields</h3>
+<h4 id="menu95id">menu_id</h4>
+<p>Gossip entry from <a href="Gossip_menu#entry">Gossip_menu.entry</a> this option is associated with.</p>
+<h4 id="id">id</h4>
+<p>The id associated with this gossip_menu_option. Must be unique for a given menu_id</p>
+<h4 id="option95icon">option_icon</h4>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>ICON Name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>GOSSIP_ICON_CHAT</td>
+<td>white chat bubble</td>
+</tr>
+<tr>
+<td>1</td>
+<td>GOSSIP_ICON_VENDOR</td>
+<td>brown bag</td>
+</tr>
+<tr>
+<td>2</td>
+<td>GOSSIP_ICON_TAXI</td>
+<td>flight</td>
+</tr>
+<tr>
+<td>3</td>
+<td>GOSSIP_ICON_TRAINER</td>
+<td>book</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GOSSIP_ICON_INTERACT_1</td>
+<td>interaction wheel</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GOSSIP_ICON_INTERACT_2</td>
+<td>interaction wheel</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GOSSIP_ICON_MONEY_BAG</td>
+<td>brown bag with yellow dot</td>
+</tr>
+<tr>
+<td>7</td>
+<td>GOSSIP_ICON_TALK</td>
+<td>white chat bubble with black dots</td>
+</tr>
+<tr>
+<td>8</td>
+<td>GOSSIP_ICON_TABARD</td>
+<td>tabard</td>
+</tr>
+<tr>
+<td>9</td>
+<td>GOSSIP_ICON_BATTLE</td>
+<td>two swords</td>
+</tr>
+<tr>
+<td>10</td>
+<td>GOSSIP_ICON_DOT</td>
+<td>yellow dot</td>
+</tr>
+</tbody>
+</table>
+<h4 id="option95text">option_text</h4>
+<p>This is is the text that you want displayed for this option. Examples would be "Train Me!" "Get off my lawn", "Learn Dual Spec".</p>
+<h4 id="option95id">option_id</h4>
+<table>
+<thead>
+<tr>
+<th>option_id</th>
+<th>Option name</th>
+<th>npc_option_npcflag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>GOSSIP_OPTION_NONE</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>GOSSIP_OPTION_GOSSIP</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>GOSSIP_OPTION_QUESTGIVER</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>GOSSIP_OPTION_VENDOR</td>
+<td>128</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GOSSIP_OPTION_TAXIVENDOR</td>
+<td>8192</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GOSSIP_OPTION_TRAINER</td>
+<td>16</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GOSSIP_OPTION_SPIRITHEALER</td>
+<td>16384</td>
+</tr>
+<tr>
+<td>7</td>
+<td>GOSSIP_OPTION_SPIRITGUIDE</td>
+<td>32768</td>
+</tr>
+<tr>
+<td>8</td>
+<td>GOSSIP_OPTION_INNKEEPER</td>
+<td>65536</td>
+</tr>
+<tr>
+<td>9</td>
+<td>GOSSIP_OPTION_BANKER</td>
+<td>131072</td>
+</tr>
+<tr>
+<td>10</td>
+<td>GOSSIP_OPTION_PETITIONER</td>
+<td>262144</td>
+</tr>
+<tr>
+<td>11</td>
+<td>GOSSIP_OPTION_TABARDDESIGNER</td>
+<td>524288</td>
+</tr>
+<tr>
+<td>12</td>
+<td>GOSSIP_OPTION_BATTLEFIELD</td>
+<td>1048576</td>
+</tr>
+<tr>
+<td>13</td>
+<td>GOSSIP_OPTION_AUCTIONEER</td>
+<td>2097152</td>
+</tr>
+<tr>
+<td>14</td>
+<td>GOSSIP_OPTION_STABLEPET</td>
+<td>4194304</td>
+</tr>
+<tr>
+<td>15</td>
+<td>GOSSIP_OPTION_ARMORER</td>
+<td>4096</td>
+</tr>
+<tr>
+<td>16</td>
+<td>GOSSIP_OPTION_UNLEARNTALENTS</td>
+<td>16*</td>
+</tr>
+<tr>
+<td>17</td>
+<td>GOSSIP_OPTION_UNLEARNPETTALENTS</td>
+<td>16*</td>
+</tr>
+<tr>
+<td>18</td>
+<td>GOSSIP_OPTION_LEARNDUALSPEC</td>
+<td>16*</td>
+</tr>
+</tbody>
+</table>
+<p><code>*   bonus option for GOSSIP_OPTION_TRAINER</code> <code>NOTE: For NPC you must be combinate option_id and npc_option_npcflag, you also need the npc_flag in creature_template</code></p>
+<h4 id="npc95option95npcflag">npc_option_npcflag</h4>
+<p>This is the npcflag that the NPC must have to have this option display. See <a href="#option_id">option_id</a></p>
+<h4 id="action95menu95id">action_menu_id</h4>
+<p>If you want to create a sub-menu, this is the ID to link to create that sub-menu.
+This sub-menu will be displayed when you click on the current menu.</p>
+<p>NOTE: If you want gossip window to close when selecting this gossip option use -1 for this value.</p>
+<h4 id="action95poi95id">action_poi_id</h4>
+<p>If you want a POI (point of interest) to display on the minimap, this is the `entry` from `points_of_interest`</p>
+<h4 id="action95script95id">action_script_id</h4>
+<p>The ID from the `dbscripts_on_gossip` table if this gossip option has a script.</p>
+<h4 id="box95coded">box_coded</h4>
+<p>If you want a box to display where you have to enter a code, this is the field you use. I have no clue how it works, will have to look at the code...</p>
+<h4 id="box95money">box_money</h4>
+<p>Money asked (in copper).</p>
+<h4 id="box95text">box_text</h4>
+<p>Confirmation text before activating the gossip.</p>
+<h4 id="condition95id">condition_id</h4>
+<p>If set the option will only be displayed if the condition linked to <a href="conditions">condition_id</a> fits</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

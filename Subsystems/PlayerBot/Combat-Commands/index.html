@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Combat Commands - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Combat Commands";
+    var mkdocs_page_input_path = "Subsystems/PlayerBot/Combat-Commands.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Combat Commands</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="combat-commands">Combat Commands</h1>
+<p>The following commands are for combat related situations.</p>
+<p>/t BOTNAME attack (bot will attack selected target, similar to the way a pet can attack)</p>
+<p>/t BOTNAME assist (you'll need to be attacking something and the bot only does melee atm)</p>
+<p>/t BOTNAME cast <SPELLID | (part of) SPELLNAME | [SPELLLINK]></p>
+<p>/t BOTNAME pet spells (Shows spells known to bot's pet. Autocast spells will be shown in green)</p>
+<p>/t BOTNAME pet cast <SPELLID | (part of) SPELLNAME | [SPELLLINK]></p>
+<p>/t BOTNAME pet toggle <SPELLID | (part of) SPELLNAME | [SPELLLINK]> (Toggle autocast for a given spell)</p>
+<p>/t BOTNAME pet react &lt;(a)ggressive | (d)efensive | (p)assive&gt; (Set bot's pet reaction mode)</p>
+<h3 id="combat-orders-explained">Combat Orders explained:</h3>
+<p>========================</p>
+<p>There are primary and secondary commands which can be combined. In this way it is</p>
+<p>possible to define a bot to assist the main tank and also protect the healer, making
+  combat management much easier.</p>
+<p>The commands assist and protect require a target parameter or a friendly player
+  selected by bots master.</p>
+<p>###  Available Combat Orders:</p>
+<ul>
+<li>
+<p>tank pri try to bind all targets involved in combat by gaining highest threat</p>
+</li>
+<li>
+<p>assist pri do damage on selected targets attacker without getting highest threat</p>
+</li>
+<li>
+<p>heal  pri concentrate on healing - no offensive spells, try to keep threat low</p>
+</li>
+<li>
+<p>protect  sec if target of protect get's directly attacked gain higher threat on attacker</p>
+</li>
+<li>
+<p>reset clear out assist and protect targets and set combat order to nothing</p>
+</li>
+</ul>
+<p>### Examples:</p>
+<pre><code>/t TheTank orders combat tank
+
+/t MyHealer orders combat heal
+
+/t TheBrutal orders combat assist TheTank
+
+/t TheBrutal orders combat protect MyHealer
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

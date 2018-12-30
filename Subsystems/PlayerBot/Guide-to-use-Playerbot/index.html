@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Guide to use Playerbot - CMaNGOS Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Guide to use Playerbot";
+    var mkdocs_page_input_path = "Subsystems/PlayerBot/Guide-to-use-Playerbot.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> CMaNGOS Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Main Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../FAQ-Frequently-Asked-Questions/">Frequently Asked Questions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../Installation-Instructions/">Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://github.com/cmangos/issues/issues">Bug Reports & Issues</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">CMaNGOS Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Guide to use Playerbot</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <hr />
+<table>
+<thead>
+<tr>
+<th>IDENTIFIER</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BOTNAME</strong></td>
+<td>name of bot character</td>
+</tr>
+<tr>
+<td><strong>FRIEND</strong></td>
+<td>name bot or player character</td>
+</tr>
+<tr>
+<td><strong>TARGET</strong></td>
+<td>select target player, corpse or npc (non-player character)</td>
+</tr>
+<tr>
+<td><strong>&#124;</strong></td>
+<td>logical <strong>OR</strong></td>
+</tr>
+<tr>
+<td><strong>&amp;</strong></td>
+<td>logical <strong>AND</strong></td>
+</tr>
+<tr>
+<td><strong>..</strong></td>
+<td>multiple instances</td>
+</tr>
+<tr>
+<td><strong>/command</strong></td>
+<td>MACRO commands</td>
+</tr>
+<tr>
+<td><strong>/s</strong></td>
+<td>chat: SAY</td>
+</tr>
+<tr>
+<td><strong>/p</strong></td>
+<td>chat: PARTY</td>
+</tr>
+<tr>
+<td><strong>/t</strong> <strong><em>BOTNAME</em></strong></td>
+<td>chat: TELL <strong><em>BOTNAME</em></strong></td>
+</tr>
+<tr>
+<td><strong>/w</strong> <strong><em>BOTNAME</em></strong></td>
+<td>chat: TELL <strong><em>BOTNAME</em></strong></td>
+</tr>
+<tr>
+<td><strong>[</strong> <em>name</em> <strong>LINK]</strong></td>
+<td><em>name</em> = &lt;Spell &#124; Item &#124; Quest &#124; Training &#124; Profession &#124; Gameobject &#124; Auction &#124; Recipe &#124; Mailbox&gt;</td>
+</tr>
+<tr>
+<td><strong>(shortcut)</strong></td>
+<td>assign <strong>shortcut</strong> to command or sub-command</td>
+</tr>
+</tbody>
+</table>
+<h3 id="available-bot-commands-playerbot-support-for-mangos-cmangos-mangosr2">Available Bot Commands: Playerbot support for MaNGOS, Cmangos &amp; mangosR2</h3>
+<p><strong>SAY</strong> commands:</p>
+<table>
+<thead>
+<tr>
+<th>SYNTAX</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>.bot add</strong> <strong><em>BOTNAME</em></strong></td>
+<td>add character to world</td>
+</tr>
+<tr>
+<td><strong>.bot remove</strong> <strong><em>BOTNAME</em></strong></td>
+<td>remove character from world</td>
+</tr>
+</tbody>
+</table>
+<h4 id="currrently-only-used-with-the-follow-playerbot-code-portalzero-portalclassic">Currrently only used with the follow playerbot code: portalzero &amp; portalclassic</h4>
+<p>(All other code uses the new revised 'orders combat' command, to set bot roles)</p>
+<table>
+<thead>
+<tr>
+<th>SYNTAX</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>.bot &lt; co &#124; combatorder &gt;</strong> <strong><em>BOTNAME</em></strong> &lt;TANK &#124; HEAL &#124; ASSIST <strong><em>FRIEND</em></strong> &#124; PROTECT <strong><em>FRIEND</em></strong>&gt;</td>
+<td>assign bot role</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MACRO</strong> commands:</p>
+<table>
+<thead>
+<tr>
+<th>SYNTAX</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>/invite</strong> <strong><em>BOTNAME</em></strong></td>
+<td>bot will auto accept party invite</td>
+</tr>
+<tr>
+<td><strong>/uninvite</strong> <strong><em>BOTNAME</em></strong></td>
+<td>bot will auto accept party uninvite</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TELL/PARTY</strong> commands:
+(Please refer to playerbot online help. Some commands may not be available for certain cores)</p>
+<table>
+<thead>
+<tr>
+<th>SYNTAX</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>assist  *TARGET</strong>*</td>
+<td>bots(s) assist the character(s) listed, attacking as they attack.</td>
+</tr>
+<tr>
+<td><strong>attack  *TARGET</strong>*</td>
+<td>Order bot(s) to attack selected target, similar to the way a pet can attack</td>
+</tr>
+<tr>
+<td><strong>auction</strong></td>
+<td>Order bot(s) to seek out auctioneer closeby and display bot's active <strong><sup>1</sup>[ Auction LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>auction (a)dd <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Order bot to seek out auctioneer closeby and add <strong><sup>1</sup>[ Item LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>auction (r)emove <sup>1</sup>[ Auction LINK ]..</strong></td>
+<td>Order bot to seek out auctioneer closeby and remove <strong><sup>1</sup>[ Auction LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>bank</strong></td>
+<td>Order bot(s) to seek out banker closeby and list bot's bank balance</td>
+</tr>
+<tr>
+<td><strong>bank (d)eposit <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Order bot to seek out banker closeby and deposit <strong><sup>1</sup>[ Item LINK ]..</strong> in bank</td>
+</tr>
+<tr>
+<td><strong>bank (w)ithdraw <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Order bot to seek out banker closeby and withdraw <strong><sup>1</sup>[ Item LINK ]..</strong> from bank</td>
+</tr>
+<tr>
+<td><strong>(b)uy <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Order bot to seek out vendor closeby and buy <strong><sup>1</sup>[ Item LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>(c)ast SPELL</strong></td>
+<td><strong>SPELL = &lt;SPELLID &#124; SPELLNAME &#124; <sup>1</sup>[ Spell LINK ] &gt;</strong></td>
+</tr>
+<tr>
+<td><strong>collect</strong></td>
+<td>Shows collect <strong>OBJECT</strong> options and current collect status</td>
+</tr>
+<tr>
+<td><strong>collect OBJECT</strong></td>
+<td>Sets collect status, <strong>OBJECT = [ all &#124; none &#124; combat &#124; loot &#124; objects &#124; profession &#124; quest ]</strong></td>
+</tr>
+<tr>
+<td><strong>craft  <sup>1</sup>[ Recipe LINK ]..</strong></td>
+<td>Creates all listed recipes, if known by bot</td>
+</tr>
+<tr>
+<td><strong>craft  <sup>1</sup>[ Recipe LINK ] all</strong></td>
+<td>Creates multiple instances of a recipe, if known by bot</td>
+</tr>
+<tr>
+<td><strong>craft (a)lchemy</strong></td>
+<td>Shows all alchemy recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>craft (b)lacksmithing</strong></td>
+<td>Shows all blacksmithing recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>craft (c)ooking</strong></td>
+<td>Shows all cooking recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>craft (e)ngineering</strong></td>
+<td>Shows all engineering recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learn by bot</td>
+</tr>
+<tr>
+<td><strong>craft (f)irstaid</strong></td>
+<td>Shows all first-aid recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>craft (i)nscription</strong></td>
+<td>Shows all inscription recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learn by bot</td>
+</tr>
+<tr>
+<td><strong>craft (j)ewelcrafting</strong></td>
+<td>Shows all jewelcrafting recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>craft (l)eatherworking</strong></td>
+<td>Shows all leatherworking recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>craft (m)agic</strong></td>
+<td>Shows all craftable enchantment (e.g wands etc..) recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>craft (s)melting</strong></td>
+<td>Shows all ore smelting recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>craft (t)ailoring</strong></td>
+<td>Shows all tailoring recipes <strong><sup>1</sup>[ Recipe LINK ]</strong>, if learnt by bot</td>
+</tr>
+<tr>
+<td><strong>drop <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Order bot to drop and destroy specified items <strong><sup>1</sup>[ Item LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>drop all</strong></td>
+<td>When bot(s) inventory becomes full, drop all low level <strong>[GREY]</strong> items.</td>
+</tr>
+<tr>
+<td><strong>enchant </strong></td>
+<td>Lists all enchantments <strong><sup>1</sup>[ Spell LINK ]</strong>, learnt by the bot</td>
+</tr>
+<tr>
+<td><strong>enchant  <sup>1</sup>[ Spell LINK ]..</strong></td>
+<td>Enchants selected tradable <strong><sup>1</sup>[ Item LINK ]</strong> either equipped or in bag</td>
+</tr>
+<tr>
+<td><strong>(e)quip <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Equip bot with containers, weapons, armour and trinkets from it's inventory</td>
+</tr>
+<tr>
+<td><strong>(e)quip auto on</strong></td>
+<td>Turns auto equip ON, also does an immediate check</td>
+</tr>
+<tr>
+<td><strong>(e)quip auto off</strong></td>
+<td>Turns auto equip OFF.</td>
+</tr>
+<tr>
+<td><strong>(e)quip auto once</strong></td>
+<td>Runs auto equip once, then turns it off.</td>
+</tr>
+<tr>
+<td><strong>(e)quip info</strong></td>
+<td>Shows equip auto toggle status (ON/OFF).</td>
+</tr>
+<tr>
+<td><strong>(f)ind <sup>1</sup>[ Gameobject LINK ]</strong></td>
+<td>Order bot(s) to locate <strong><sup>1</sup>[ Gameobject LINK ]</strong> and then wait. Useful in quest objectives</td>
+</tr>
+<tr>
+<td><strong>follow</strong></td>
+<td>Order bot(s) to follow player; will also revive bot if dead or teleport bot if far away</td>
+</tr>
+<tr>
+<td><strong>follow auto</strong></td>
+<td>Toggles Automatic Follow Distance (ON/OFF)</td>
+</tr>
+<tr>
+<td><strong>follow info</strong></td>
+<td>Shows bot(s) current Automatic Follow Distance, toggle status (ON/OFF)</td>
+</tr>
+<tr>
+<td><strong>follow far</strong></td>
+<td>bot(s) follow, farther from master.</td>
+</tr>
+<tr>
+<td><strong>follow near</strong></td>
+<td>bot(s) follow, closer to master</td>
+</tr>
+<tr>
+<td><strong>follow reset</strong></td>
+<td>bot(s) follow distance reset to original default</td>
+</tr>
+<tr>
+<td><strong>(g)et <sup>1</sup>[ Gameobject LINK ]..</strong></td>
+<td>Fetch the selected <strong><sup>1</sup>[ Gameobject LINK ]..</strong> and then return to the player</td>
+</tr>
+<tr>
+<td><strong>orders</strong></td>
+<td>Shows bot's combat orders</td>
+</tr>
+<tr>
+<td><strong>orders delay &lt;0-10&gt; </strong></td>
+<td>Activates a delay before bot(s) start fighting.</td>
+</tr>
+<tr>
+<td><strong>orders combat ASSIST *FRIEND</strong>*</td>
+<td>Assist the linked friendly target, focusing our killing power.</td>
+</tr>
+<tr>
+<td><strong>orders combat HEAL </strong></td>
+<td>Order bot to heal. Best used on shamans, priests, druids or paladins.</td>
+</tr>
+<tr>
+<td><strong>orders combat PROTECT *FRIEND</strong>*</td>
+<td>Protect the listed friendly target, attempting to keep aggro away from the target.</td>
+</tr>
+<tr>
+<td><strong>orders combat TANK </strong></td>
+<td>Order bot to tank. Best used on paladins, warriors, druids or death knights.</td>
+</tr>
+<tr>
+<td><strong>orders combat RESET </strong></td>
+<td>Resets bot combat orders, as if they'd never been given at all.</td>
+</tr>
+<tr>
+<td><strong>orders resume</strong></td>
+<td>Resume combat orders to what they were before logout.</td>
+</tr>
+<tr>
+<td><strong>mail inbox <sup>1</sup>[ Mailbox LINK ]</strong></td>
+<td>Lists all bot mail from selected <strong><sup>1</sup>[ Mailbox LINK]</strong>. Mail is indexed by <strong><sup>1</sup>[ Mail ID ]..</strong></td>
+</tr>
+<tr>
+<td><strong>mail getcash <sup>1</sup>[ Mail ID ]..</strong></td>
+<td>Gets money from all selected <strong><sup>1</sup>[ Mail ID ]..</strong></td>
+</tr>
+<tr>
+<td><strong>mail getitem <sup>1</sup>[ Mail ID ]..</strong></td>
+<td>Gets items from all selected <strong><sup>1</sup>[ Mail ID ]..</strong></td>
+</tr>
+<tr>
+<td><strong>mail delete <sup>1</sup>[ Mail ID ]..</strong></td>
+<td>Deletes all selected <strong><sup>1</sup>[ Mail ID ]..</strong></td>
+</tr>
+<tr>
+<td><strong>pet abandon</strong></td>
+<td>Abandons active hunter pet.</td>
+</tr>
+<tr>
+<td><strong>pet tame  *TARGET</strong>*</td>
+<td>Tame selected creature, if bot has 'tame beast' spell in spellbook</td>
+</tr>
+<tr>
+<td><strong>pet spells</strong></td>
+<td>Shows spells known to bot's pet. Autocast spells will be shown in green</td>
+</tr>
+<tr>
+<td><strong>pet cast SPELL</strong></td>
+<td><strong>SPELL = &lt;SPELLID &#124; SPELLNAME &#124; <sup>1</sup>[ Spell LINK ]&gt;</strong></td>
+</tr>
+<tr>
+<td><strong>pet toggle SPELL</strong></td>
+<td><strong>SPELL = &lt;SPELLID &#124; SPELLNAME &#124; <sup>1</sup>[ Spell LINK ]&gt;</strong> toggles autocast for a given spell</td>
+</tr>
+<tr>
+<td><strong>pet state</strong></td>
+<td>Shows current react <strong>MODE</strong> of bot's pet</td>
+</tr>
+<tr>
+<td><strong>pet react MODE</strong></td>
+<td><strong>MODE = &lt;(a)ggresive &#124; (d)efensive &#124; (p)assive&gt;</strong></td>
+</tr>
+<tr>
+<td><strong>process (d)isenchant <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Disenchants a green coloured <strong><sup>1</sup>[ Item LINK ]</strong> or better</td>
+</tr>
+<tr>
+<td><strong>process (m)ill <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Grinds 5 herbs <strong><sup>1</sup>[ Item LINK ]</strong> to produce pigments</td>
+</tr>
+<tr>
+<td><strong>process (p)rospect <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Searches 5 metal ore <strong><sup>1</sup>[ Item LINK ]</strong> for precious gems</td>
+</tr>
+<tr>
+<td><strong>pull  *TARGET</strong>*</td>
+<td>Pulls the target in a coordinated party/raid manner.</td>
+</tr>
+<tr>
+<td><strong>pull test</strong></td>
+<td>bot(s) tell you if they can pull at all (can be used anywhere).</td>
+</tr>
+<tr>
+<td><strong>pull ready</strong></td>
+<td>bot(s) tell you if they're ready to pull <strong>right now</strong> (to be used on location with valid target).</td>
+</tr>
+<tr>
+<td><strong>quest</strong></td>
+<td>List bot's current quests</td>
+</tr>
+<tr>
+<td><strong>quest (a)dd <sup>1</sup>[ Quest LINK ]..</strong></td>
+<td>Order bot(s) to seek out questgiver closeby and add <strong><sup>1</sup>[ Quest LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>quest (d)rop <sup>1</sup>[ Quest LINK ]</strong></td>
+<td>Order bot(s) to abandon <strong><sup>1</sup>[ Quest LINK ]</strong></td>
+</tr>
+<tr>
+<td><strong>quest (e)nd</strong></td>
+<td>Order bot(s) to seek out questgiver closeby and turn in all relevant completed quests</td>
+</tr>
+<tr>
+<td><strong>quest (r)eport</strong></td>
+<td>Reports all items, creatures or gameobjects the bot(s)need to finish quests</td>
+</tr>
+<tr>
+<td><strong>quest (l)ist</strong></td>
+<td>Orders bot(s) to seek out questgiver and show new available <strong><sup>1</sup>[ Quest LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>quest (c)omplete <sup>1</sup>[ Quest LINK ]</strong></td>
+<td>Autocompletes (GM Approved) quests, available in database</td>
+</tr>
+<tr>
+<td><strong>repair <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Order bot to seek out armourer closeby and repair selected <strong><sup>1</sup>[ Item LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>repair all</strong></td>
+<td>Order bot(s) to seek out armourer closeby and repair all damaged items equipped, or in bags</td>
+</tr>
+<tr>
+<td><strong>reset</strong></td>
+<td>Reset states, orders and loot list</td>
+</tr>
+<tr>
+<td><strong>(s)ell <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Order bot to seek out vendor closeby and sell <strong><sup>1</sup>[ Item LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>(s)ell all</strong></td>
+<td>One off sale (command does not persist) of all low level white items.</td>
+</tr>
+<tr>
+<td><strong>skill</strong></td>
+<td>lists bot(s) <strong><sup>1</sup>[ Profession LINK ]..</strong> primary professions and weapon skills</td>
+</tr>
+<tr>
+<td><strong>skill (l)earn</strong></td>
+<td>Order bot(s) to seek out trainer closeby and list available <strong><sup>1</sup>[ Training LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>skill (l)earn <sup>1</sup>[ Training LINK ]..</strong></td>
+<td>Order bot to seek out trainer closeby and learn <strong><sup>1</sup>[ Training LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>skill (u)nlearn <sup>1</sup>[ Profession LINK ]</strong></td>
+<td>Order bot to seek out trainer closeby &amp; unlearn <strong><sup>1</sup>[ Profession LINK ]</strong> &amp; associated spells</td>
+</tr>
+<tr>
+<td><strong>spells</strong></td>
+<td>Shows all spells known to bot(s)</td>
+</tr>
+<tr>
+<td><strong>stats</strong></td>
+<td>Shows bot(s) available money, free inventory space and estimated item repair costs</td>
+</tr>
+<tr>
+<td><strong>stay</strong></td>
+<td>Order bot(s) to stand and not follow the player</td>
+</tr>
+<tr>
+<td><strong>summon</strong></td>
+<td>Teleport bot(s) near the player</td>
+</tr>
+<tr>
+<td><strong>survey</strong></td>
+<td>Shows all available <strong><sup>1</sup>[ Gameobject LINK ]..</strong>, within a local perimeter around the bot</td>
+</tr>
+<tr>
+<td><strong>use <sup>1</sup>[ Item LINK ]..</strong></td>
+<td>Use item (e.g food, drink, etc)</td>
+</tr>
+<tr>
+<td><strong>use <sup>1</sup>[ Item LINK ]</strong> <strong><em>TARGET</em></strong></td>
+<td>Use item on <strong><em>TARGET</em></strong> (e.g quest item)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="additional-bot-commands-playerbot-for-mangos">Additional Bot Commands: Playerbot for MaNGOS</h3>
+<table>
+<thead>
+<tr>
+<th>SYNTAX</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>talent</strong></td>
+<td>Lists bot(s) <strong><sup>1</sup>[ Talent LINK ]..</strong> &amp; <strong><sup>1</sup>[ Glyph LINK ]..</strong>, unspent talent points &amp; cost to reset all talents</td>
+</tr>
+<tr>
+<td><strong>talent learn <sup>1</sup>[ Talent LINK ]..</strong></td>
+<td>Learn selected talent for bot <strong>[Inspect-&gt;Talent]</strong> tab or <strong><sup>1</sup>[ Talent LINK ]..</strong></td>
+</tr>
+<tr>
+<td><strong>talent reset</strong></td>
+<td>Order bot to seek out class trainer closeby and reset all talents <strong><sup>2</sup></strong></td>
+</tr>
+<tr>
+<td><strong>talent spec</strong></td>
+<td>Lists all talent specs bot(s) can use (Indexed numerically #).</td>
+</tr>
+<tr>
+<td><strong>talent spec #</strong></td>
+<td>bot(s) will follow this talent spec.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><sup>1</sup></strong> To select <strong>[</strong> <em>name</em> <strong>LINK ], &lt;Hold Shift Key&gt;&lt;Left Mouse Click On Link&gt;</strong>.<br />
+<strong><sup>2</sup></strong> Tax increases per bot, each time talents are reset.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
