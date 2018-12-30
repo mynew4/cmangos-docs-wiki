@@ -1,0 +1,17 @@
+#
+# This project uses MkDocs: https://www.mkdocs.org/
+#
+# To build fresh copy of this project, run `mkdocs build`.
+# Deployment to Github Pages is done via `mkdocs gh-deploy`
+#
+
+site_name: 'CMaNGOS Docs'
+
+theme:
+  name: readthedocs
+
+nav:
+    - 'Main Page': 'index.md'
+    - 'Frequently Asked Questions': 'FAQ-Frequently-Asked-Questions.md'
+    - 'Installation Guide': 'Installation-Instructions.md'
+    - 'Bug Reports & Issues': 'https://github.com/cmangos/issues/issues'
