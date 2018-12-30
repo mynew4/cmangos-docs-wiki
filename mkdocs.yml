@@ -15,3 +15,6 @@ nav:
     - 'Frequently Asked Questions': 'FAQ-Frequently-Asked-Questions.md'
     - 'Installation Guide': 'Installation-Instructions.md'
     - 'Bug Reports & Issues': 'https://github.com/cmangos/issues/issues'
+
+markdown_extensions:
+    - wikilinks
