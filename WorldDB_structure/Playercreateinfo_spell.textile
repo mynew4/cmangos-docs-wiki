@@ -19,19 +19,19 @@ h3. Description of the fields
 
 h4. race
 
-The character's race. 
+The character's race. See "CharRace.dbc":https://github.com/cmangos/issues/wiki/CharRaces.dbc
 
 h4. class
 
-The character's class. 
+The character's class. See "CharClasses.dbc":https://github.com/cmangos/issues/wiki/CharClasses.dbc
 
 h4. Spell
 
-The spell ID. See Spell.dbc
+The spell ID. See "spell_template":https://github.com/cmangos/issues/wiki/spell_template
 
 h4. Note
 
-A note explaining what the spell is. This is only for reference purposes and not used by mangos.
+Name of the spell.
 
 h4. Active
 
