@@ -282,9 +282,7 @@ Video Guide::
 Step-by-step Guide::
 
 - Go to https://sourceforge.net/projects/boost/files/boost-binaries
- * Version 1.64.0 is working as of 2017-12-30.
- * You can try a more recent version if you want.
- * There have been problems reported with version 1.66.0.
+ * Version 1.69.0 is working as of 2019-01-08.
 - *Or* https://cmangos.net/archive/showthread.php?tid=7365[compile yourself]
  * boost version older than 1.66 will throw "unknown compiler" errors when using VS 2017, ignore it.
 - Download the correct version as indicated in the table below *or* the ++boost_x_xx_x-bin-msvc-all-32-64.7z++ (the x_xx_x part is the boost version). If you need the Win32 or x64 version depends on what architecture you would like your compiled server executable to use. For most people x64 is fine.
@@ -329,7 +327,7 @@ If you're experiencing issues with CMake (The following Boost libraries could no
  (boost\lib32-msvc-14.1 -> boost\lib)
 
 Compiling CMaNGOS (Windows)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 An https://youtu.be/KlRM18SVCQA[video] of the build process is now available.
 
 * Launch cmake
@@ -354,7 +352,7 @@ An https://youtu.be/KlRM18SVCQA[video] of the build process is now available.
 If you cannot solve an error, please use the official forums or IRC channels to ask for help
 
 Compiling CMaNGOS (*nix)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 * Go to your ++/home/mangos++ folder
 
  cd /home/mangos
