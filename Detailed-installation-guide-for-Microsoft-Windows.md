@@ -104,8 +104,8 @@ These are programs you will need to setup the database and compile the core. Thi
 ## Boost
 
 - Go to: http://sourceforge.net/projects/boost/files/boost-binaries/
-- Select a version number not ending in `_bX` (those are beta versions), e.g. click `1.64.0`. (Confirmed working as of 2017-12-30. **There have been problems reported with version 1.66.**)
-- Download the executable file containing `msvc-14.1-64`, e.g. `boost_1_64_0-msvc-14.1-64.exe`. (MSVC-14.1 is the Visual Studio 2017 C++ compiler, 64 stands for the 64 bit architecture)
+- Select a version number not ending in `_bX` (those are beta versions), e.g. click `1.69.0`. (Confirmed working as of 2019-01-09.)
+- Download the executable file containing `msvc-14.1-64`, e.g. `boost_1_69_0-msvc-14.1-64.exe`. (MSVC-14.1 is the Visual Studio 2017 C++ compiler, 64 stands for the 64 bit architecture)
 - Execute the downloaded file. During the installation you will be asked to set the installation path, if you change it, remember it. It is needed in the next step.
 - Add the `BOOST_ROOT` environment variable (**Note:** You might have to relog/restart afterwards, so every program can see this variable):
   - Press **WinKey+Pause** (or navigate to the **System** settings in the Control Panel).
