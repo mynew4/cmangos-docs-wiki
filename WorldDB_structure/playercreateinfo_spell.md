@@ -19,19 +19,19 @@ This table holds information on what spells newly created characters should star
 
 #### race
 
-The character's race.
+The character's race. See [CharRaces.dbc](CharRaces.dbc)
 
 #### class
 
-The character's class.
+The character's class. See [CharClasses.dbc](CharClasses.dbc)
 
 #### Spell
 
-The spell ID. See Spell.dbc
+The spell ID. See [spell_template](spell_template)
 
 #### Note
 
-A note explaining what the spell is. This is only for reference purposes and not used by mangos.
+Name of the spell.
 
 #### Active
 

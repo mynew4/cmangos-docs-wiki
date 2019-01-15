@@ -258,9 +258,7 @@ For instructions on how to compile boost from source code or general information
     -   Download the correct version as indicated in the table below **or** the `boost_x_xx_x-bin-msvc-all-32-64.7z` (the x\_xx\_x part is the boost version). If you need the Win32 or x64 version depends on what architecture you would like your compiled server executable to use. For most people x64 is fine.
         -   **Note: This has nothing to do with your Windows version**, apart from the fact that 64bit executables will not run on a 32bit Windows. It is very unlikely you have a 32bit OS but if you want to make sure that you have a 64bit one press **Win+Pause**.
         -   **Note:** You can install both the Win32 and the x64 binaries into the same directory, in case you want to switch build architectures. Visual Studio will automatically select the correct version.
-    -   Version 1.64.0 is working as of 2017-12-30.
-    -   You can try a more recent version if you want.
-    -   There have been problems reported with version 1.66.0.
+    -   Version 1.69.0 is working as of 2019-01-08.
 
 |         | Win32                         | x64                           |
 | ------- | ----------------------------- | ----------------------------- |
