@@ -116,7 +116,7 @@ The current mana that the creature has.
 
 #### DeathState
 
-The creature's death state.
+The creature's death state.<br>
 A boolean, 0 = Alive, 1 = Corpse lying dead around (no gossip possible when dead, if you need corpse-gossip use dynamicflags|32)
 
 #### MovementType

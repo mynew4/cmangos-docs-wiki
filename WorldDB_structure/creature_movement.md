@@ -27,6 +27,7 @@ To add waypoints in-game:
 ### Description of the fields
 
 #### id
+
 The guid of the creature if creature_movement. See [creature_guid](creature)
 
 #### point
@@ -55,7 +56,7 @@ Reference to [DBScripts_on_creature_movement](DBScripts_on_creature_movement)
 
 #### orientation
 
-The orientation the creature will face once it reaches the waypoint. 
+The orientation the creature will face once it reaches the waypoint.<br>
 (North = 0.0; South = pi (3.14159))
 
 

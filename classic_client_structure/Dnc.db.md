@@ -3,6 +3,7 @@
 dnc.db specifies the day-night cycle. It hasn't changed in any way from 1.0 or even 0.\*. This looks like info for outdoor lighting with respect to the day-night cycle. The colors for the differnt light types are self-explanatory. The XYZ coordinates specify a directional light source.
 
 ## Header
+
 8 bytes at the beginning of the file specify the number of rows (including head row) and columns
 
     00h    uint32 	Number of Rows

@@ -20,7 +20,7 @@ The script is called EventAI and will be referenced like this for the rest of th
 
 The first piece of information (the <u>When it happens</u>) will be referred to as the <u>event</u>.
 
-The second piece of information (the <u>What happens when</u>) will be referred to as the <u>action</u>.
+The second piece of information (the <u>What happens when</u>) will be referred to as the <u>action</u>.<br>
 Currently, a single EventAI script entry can have up to three actions.
 
 Anyone that wants to create entries for the EventAI script needs to answer the two questions above.

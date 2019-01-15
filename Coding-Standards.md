@@ -73,10 +73,10 @@ Also, please place one space before opening parenthesis. Before, but not after (
             int m_field;
     };
 
-Main points:
-a) space before and after : in class parents list and constructor body
-b) next line and indent for class field initialization list
-c) indent for public:/private:/protected: section with additional indent for section content
+Main points:<br>
+a) space before and after : in class parents list and constructor body<br>
+b) next line and indent for class field initialization list<br>
+c) indent for public:/private:/protected: section with additional indent for section content<br>
 d) empty or short function body can be at same line with declaration in in-class definition case
 
 ### Code documentation with Doxygen

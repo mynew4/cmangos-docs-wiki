@@ -1,6 +1,6 @@
 ## Introduction
 
-ADT Files contain the actual terrain information (height maps, texturing, WMOs, doodads, etc) required by the client to render the static parts of the terrain. They use a [[chunked file structure]] like [[WDT Files]]. Each ADT File contains 256 (16x16) map tiles (or map chunks).
+ADT Files contain the actual terrain information (height maps, texturing, WMOs, doodads, etc) required by the client to render the static parts of the terrain. They use a [[chunked file structure]] like [[WDT Files]]. Each ADT File contains 256 (16x16) map tiles (or map chunks).<br>
 Each map tile is 33.3333 yards on each side, making the size of the map block in an ADT file 533.3333 yards on each side in total. As every WDT File can reference 64x64 ADT map blocks, the whole map is approximately 34133.33 yards on each side.
 
 ## Chunks
@@ -244,9 +244,9 @@ This chunk has 13 bytes of unknown data at the end. The chunk size only covers t
 | ---------- | --------------------- |
 | MCLY       | 1-4 layers * 16 bytes |
 
-These are texture layer definitions for this map chunk. 16 bytes per layer, up to 4 layers. Every texture layer other than the first will have an alpha map to specify blending amounts. The first layer is rendered with full opacity. To know which alphamap is used, there is an offset into the MCAL chunk. That one is relative to MCAL.
-You can animate these by setting the flags. Only simple linear animations are possible. You can specify the direction in 45° steps and the speed.
-The textureId is just the array index of the filename array in the MTEX chunk.
+These are texture layer definitions for this map chunk. 16 bytes per layer, up to 4 layers. Every texture layer other than the first will have an alpha map to specify blending amounts. The first layer is rendered with full opacity. To know which alphamap is used, there is an offset into the MCAL chunk. That one is relative to MCAL.<br>
+You can animate these by setting the flags. Only simple linear animations are possible. You can specify the direction in 45° steps and the speed.<br>
+The textureId is just the array index of the filename array in the MTEX chunk.<br>
 The effectId links to GroundEffectTexture.dbc. It defines the little detaildoodads as well as the footstep sounds and if footprints are visible.
 
 ```
@@ -280,7 +280,7 @@ Flag     Description
 | ---------- | -------- |
 | MCRF       | variable |
 
-A uint32 list of with MCNK.nDoodadRefs + MCNK.nMapObjRefs indices into the file's MDDF and MODF chunks, saying which MCNK subchunk those particular doodads and objects are drawn within. This MCRF list contains duplicates for map doodads that overlap areas.
+A uint32 list of with MCNK.nDoodadRefs + MCNK.nMapObjRefs indices into the file's MDDF and MODF chunks, saying which MCNK subchunk those particular doodads and objects are drawn within. This MCRF list contains duplicates for map doodads that overlap areas.<br>
 As both, WMOs and M2s are referenced here, they get doodad indices first, then WMOs. If you have a doodad and a WMO in the ADT as well as the MCNK, you will have a {0,0} in MCRF with nDoodadRefs and MCNK.nMapObjRefs being 1.
 
 ***
@@ -290,7 +290,7 @@ As both, WMOs and M2s are referenced here, they get doodad indices first, then W
 | ---------- | --------- |
 | MCSH       | 512 bytes |
 
-Shadow map for static shadows on the terrain. Can be left out with the chunk&1 flag not set.
+Shadow map for static shadows on the terrain. Can be left out with the chunk&1 flag not set.<br>
 The shadow maps work as follows: the shadows are stored per bit as 0 or 1 (off or on) so we have 8 bytes (which equates to 64 values) X 64 bytes (64 values in this case) which ends up as a square 64x64 shadowmap with either white or black. Note that the shadow values come LSB first.
 
 ***
@@ -320,8 +320,8 @@ The first two floats specify the minimum and maximum liquid height level. After 
 0x04     float    height value
 ```
 
-The unknown int values might be color or transparency info, or something entirely different... Most frequently they are 0.
-Followed by 8x8 bytes of flags for every liquid "tile" between the 9x9 vertex grid. The value 0x0F means do not render. (the specific flag for this seems to be 8 but I'm not sure - but it fixes some places where there was extra "water" sticking into the rest of the scenery)
+The unknown int values might be color or transparency info, or something entirely different... Most frequently they are 0.<br>
+Followed by 8x8 bytes of flags for every liquid "tile" between the 9x9 vertex grid. The value 0x0F means do not render. (the specific flag for this seems to be 8 but I'm not sure - but it fixes some places where there was extra "water" sticking into the rest of the scenery)<br>
 Finally, 0x54 bytes of additional data, no idea what it's used for.
 
 ***

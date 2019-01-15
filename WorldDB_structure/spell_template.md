@@ -441,12 +441,12 @@ CastingTime (Id) that defines how long it takes for the spell to cast in millise
 
 #### EffectDieSides1
 
-Random Value of the Die that is rolled for the SPELL\_EFFECT
+Random Value of the Die that is rolled for the SPELL\_EFFECT<br>
 Max(EffectDieSides1) + (EffectBaseDice1 + EffectBasePoints1) = MaxValue for SPELL\_EFFECT
 
 #### EffectBaseDice1
 
-Base Value for the SPELL\_EFFECT, mostly 1
+Base Value for the SPELL\_EFFECT, mostly 1<br>
 EffectBaseDice1 + EffectBasePoints1 = MinValue for SPELL\_EFFECT
 
 #### EffectDicePerLevel1
@@ -521,7 +521,7 @@ Value added to EffectBaseDice1
 
 #### AreaId
 
-Specifies the Allowed areas for a successful cast.
+Specifies the Allowed areas for a successful cast.<br>
 IDs taken from [AreaGroup.dbc](AreaGroup.dbc)
 
 #### SchoolMask

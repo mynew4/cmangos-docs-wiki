@@ -26,5 +26,5 @@ This DBC stores IDs used in [AreaGroupId](Spell.dbc#spelldbc) in Spell.dbc and [
 
 #### Entry1-7
 
-Entry ID's taken from [AreaTable.dbc](AreaTable.dbc#content)
+Entry ID's taken from [AreaTable.dbc](AreaTable.dbc#content)<br>
 Groups several small areas into one larger area or category.

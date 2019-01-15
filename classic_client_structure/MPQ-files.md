@@ -10,11 +10,12 @@ The following summary only includes facts relevant for 1.12.X Client versions
 
 ## Technical overview
 
-All numbers in the MPQ format are in little endian byte order; signed numbers use the two's complement system. Data types are listed either as int (integer, the number of bits specified), byte (8 bits), or char (bytes which contain ASCII characters). All sizes and offsets are in bytes, unless specified otherwise. Structure members are listed in the following general form: 
+All numbers in the MPQ format are in little endian byte order; signed numbers use the two's complement system. Data types are listed either as int (integer, the number of bits specified), byte (8 bits), or char (bytes which contain ASCII characters). All sizes and offsets are in bytes, unless specified otherwise. Structure members are listed in the following general form:
 
     offset from the beginning of the structure: data type(array size) member name : member description
 
 ### General Archive Layout
+
 The physical layout of the files looks like this
 
 * Archive Header
@@ -25,48 +26,49 @@ The physical layout of the files looks like this
 In the following the components are discussed in the logical order of processing required to read and extract files from MPQ Archives
 
 ## Archive Header
+
 Header size is 32 bytes, maximum archive size is 4 GB.
 
 	00h: char(4) Magic             Indicates that the file is a MPQ archive. Must be ASCII "MPQ" 1Ah.
 	04h: int32 HeaderSize          Size of the archive header.
-	08h: int32 ArchiveSize         Size of the whole archive, including the header. 
+	08h: int32 ArchiveSize         Size of the whole archive, including the header.
 	0Ch: int16 FormatVersion       MPQ format version. 0000h for Classic WoW.
-	0Eh: int8 SectorSizeShift      Power of two exponent specifying the number of 512-byte disk sectors in each logical sector 
-								   in the archive. The size of each logical sector in the archive is 512 * 2^SectorSizeShift. 
+	0Eh: int8 SectorSizeShift      Power of two exponent specifying the number of 512-byte disk sectors in each logical sector
+								   in the archive. The size of each logical sector in the archive is 512 * 2^SectorSizeShift.
  								   Bugs in the Storm library dictate that this should always be 3 (4096 byte sectors).
 	10h: int32 HashTableOffset     Offset to the beginning of the hash table, relative to the beginning of the archive.
 	14h: int32 BlockTableOffset    Offset to the beginning of the block table, relative to the beginning of the archive.
-	18h: int32 HashTableEntries    Number of entries in the hash table. Must be a power of two, and must be less than 2^16 
+	18h: int32 HashTableEntries    Number of entries in the hash table. Must be a power of two, and must be less than 2^16
 	1Ch: int32 BlockTableEntries   Number of entries in the block table.
 
 ## Hash Table
 
-The Hash Table serves as a quick means of filename lookup without having to go through string comparisons. For each file in the archive, the full path is hashed using a proprietary algorithm (for source see <http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code>) resulting in three 32bit integers. The first of those hashes serves as primary lookup key for the Hash Table, the others are used for verification in case of a hash collision. In the case that two files have the same lookup key (hash collision), the first file is stored under that hash, and the second file is stored under the next free hash. So during lookup, if the second and third hash don't match, the algorithm goes down the list until it either finds a match of an empty entry.
+The Hash Table serves as a quick means of filename lookup without having to go through string comparisons. For each file in the archive, the full path is hashed using a proprietary algorithm (for source see <http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code>) resulting in three 32bit integers. The first of those hashes serves as primary lookup key for the Hash Table, the others are used for verification in case of a hash collision. In the case that two files have the same lookup key (hash collision), the first file is stored under that hash, and the second file is stored under the next free hash. So during lookup, if the second and third hash don't match, the algorithm goes down the list until it either finds a match of an empty entry.<br>
 Each entry in the Hash Table looks like this:
 
 	00h: int32 FilePathHashA    The hash of the file path, using method A.
 	04h: int32 FilePathHashB    The hash of the file path, using method B.
-	08h: int16 Language         The language of the file. This is a Windows LANGID data type, and uses the same values. 
+	08h: int16 Language         The language of the file. This is a Windows LANGID data type, and uses the same values.
 								0 indicates the default language (American English), or that the file is language-neutral.
-	0Ah: int8 Platform          The platform the file is used for. 0 indicates the default platform. No other values 
+	0Ah: int8 Platform          The platform the file is used for. 0 indicates the default platform. No other values
 								have been observed.
-	0Ch: int32 FileBlockIndex   If the hash table entry is valid, this is the index into the block table of the file. 
+	0Ch: int32 FileBlockIndex   If the hash table entry is valid, this is the index into the block table of the file.
 								Otherwise, one of the following two values:
 		FFFFFFFFh           	Hash table entry is empty, and has always been empty. Terminates searches for a given file.
-		FFFFFFFEh           	Hash table entry is empty, but was valid at some point (in other words, the file was deleted). 
+		FFFFFFFEh           	Hash table entry is empty, but was valid at some point (in other words, the file was deleted).
 								Does not terminate searches for a given file
 
 The Hash Table is encrypted using a proprietary encryption algorithm using "(hash table)" as key. The encryption algorithm is also documented at <http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code>
 
 ## Block Table
 
-The Block Table contains offsets into the File Data block for each File in the Archive. It also stores file attributes like compression or encryption. Hash Table FileBlockIndex points to entries in the Block Table. Like the Hash Table it is encrypted, using "(block table)" as key.
+The Block Table contains offsets into the File Data block for each File in the Archive. It also stores file attributes like compression or encryption. Hash Table FileBlockIndex points to entries in the Block Table. Like the Hash Table it is encrypted, using "(block table)" as key.<br>
 Each Block Table entry looks like this:
 
 	00h: int32 BlockOffset   Offset of the beginning of the block, relative to the beginning of the archive.
 	04h: int32 BlockSize     Size of the block in the archive.
 	08h: int32 FileSize      Size of the file data stored in the block. If the file is compressed, this is the size of the uncompressed file data.
-	0Ch: int32 Flags         Bit mask of the flags for the block. 
+	0Ch: int32 Flags         Bit mask of the flags for the block.
 
 Known flags are:
 
@@ -81,11 +83,12 @@ Known flags are:
 	MPQ_FILE_SECTOR_CRC		0x04000000	File has checksums for each sector (explained in the File Data section). Ignored if file is not compressed or imploded.
 	MPQ_FILE_EXISTS			0x80000000	Set if file exists, reset when the file was deleted
 
-## File Data 
+## File Data
 
 Block Table BlockOffset points to the beginning of a file data block. Each file data block has a header of nSectors+1 int32 values, indicating offsets to each sector start (relative to the beginning of the file data block). The final value of this list is the total (compressed) file size, including the header. The size of each block can easily be calculated from the difference between two offsets. If the block is compressed, the first byte of every sector indicates the compression method used
 
 ## Extracting a file
+
 This is a step-by-step instruction.
 
 1. Read the File Header, find the offsets to the Hash Table and Block Table

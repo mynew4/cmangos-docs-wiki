@@ -1,4 +1,4 @@
-Back to [world database](mangosdb_struct) list of tables.
+Back to [world database](mangosdb_struct) list of tables.<br>
 To link creatures by entry, please refer to [Creature\_linking\_template](Creature_linking_template)
 
 The \`creature\_linking\` table

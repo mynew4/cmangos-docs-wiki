@@ -23,7 +23,7 @@ The GUID of the character. See [characters.guid](characters#guid)
 
 #### button
 
-The ID of the button on the action bar where the action icon will be placed.
+The ID of the button on the action bar where the action icon will be placed.<br>
 Special bars are used for stances, auras, pets, stealth, and other similar special modes.
 
 | Button IDs | Set (key)                       |
@@ -55,6 +55,6 @@ The type of action:
 
 #### misc
 
-More info needed here.
-It is mostly 0 however it is sometimes 11.
+More info needed here.<br>
+It is mostly 0 however it is sometimes 11.<br>
 If it is 11, the type is always 128 and the action ID is 57xxx.

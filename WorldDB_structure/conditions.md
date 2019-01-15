@@ -259,14 +259,14 @@ The meaning of the values in [value1](Conditions#value1) / [value2](Conditions#v
         Returns the result of the current instance's instance-script function CheckConditionCriteriaMeet (which must be implemented for such an instance)
         To ''communicate'' with the instance script, there are a few instance\_condition\_id predefined, which can be used:
         for hard-mode loot (0 normal; 1,2... hard,harder... mode)
-        \*\*\*\*\* INSTANCE\_CONDITION\_ID\_NORMAL\_MODE = 0,
-        \*\*\*\*\* INSTANCE\_CONDITION\_ID\_HARD\_MODE = 1,
-        \*\*\*\*\* INSTANCE\_CONDITION\_ID\_HARD\_MODE\_2 = 2,
-        \*\*\*\*\* INSTANCE\_CONDITION\_ID\_HARD\_MODE\_3 = 3,
-        \*\*\*\*\* INSTANCE\_CONDITION\_ID\_HARD\_MODE\_4 = 4,
+        * INSTANCE\_CONDITION\_ID\_NORMAL\_MODE = 0,
+        * INSTANCE\_CONDITION\_ID\_HARD\_MODE = 1,
+        * INSTANCE\_CONDITION\_ID\_HARD\_MODE\_2 = 2,
+        * INSTANCE\_CONDITION\_ID\_HARD\_MODE\_3 = 3,
+        * INSTANCE\_CONDITION\_ID\_HARD\_MODE\_4 = 4,
         to check for which team the instance is doing scripts
-        \*\*\*\*\* INSTANCE\_CONDITION\_ID\_TEAM\_HORDE = 67,
-        \*\*\*\*\* INSTANCE\_CONDITION\_ID\_TEAM\_ALLIANCE = 469,
+        * INSTANCE\_CONDITION\_ID\_TEAM\_HORDE = 67,
+        * INSTANCE\_CONDITION\_ID\_TEAM\_ALLIANCE = 469,
 
 <!-- -->
 -   CONDITION\_QUESTAVAILABLE (19)

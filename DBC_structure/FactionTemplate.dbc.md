@@ -44,7 +44,7 @@ The third mask (hostileMask) defines what faction groups this faction is hostile
 
 For the mathematically inclined, the basic formula to test for friendliness is
 
-    (friendlyMask & other.ourMask) != 0 
+    (friendlyMask & other.ourMask) != 0
 
 ...where other is another faction. The same thing applies for hostility:
 
@@ -78,42 +78,24 @@ From all of the above calculations, we notice that if ourMask for a faction is 0
 To summarize, you should follow these steps to calculate if faction A is hostile to faction B:
 
 1.  Look for faction B in the Enemy faction list of faction A in the table below
-
-    \* If found, then faction A is hostile to faction B and you can stop
-    ====================================================================
-
-    \* If not found, then continue with the next steps
-    ==================================================
-
+    * If found, then faction A is hostile to faction B and you can stop
+    * If not found, then continue with the next steps
 2.  Look up hostileMask for faction A in table below
 3.  Look up ourMask for faction B in table below
 4.  Do the and (&) operation on the two values
-
-    \* If the result is 0, then faction A is not hostile to faction B (but not necessarily friendly either)
-    =======================================================================================================
-
-    \* If the result is not 0, then faction A IS hostile to faction B
-    =================================================================
+    * If the result is 0, then faction A is not hostile to faction B (but not necessarily friendly either)
+    * If the result is not 0, then faction A IS hostile to faction B
 
 And these steps to calculate if faction A is friendly to faction B:
 
 1.  Look for faction B in the Friend faction list of faction A in the table below
-
-    \* If found, then faction A is friendly to faction B and you can stop
-    =====================================================================
-
-    \* If not found, then continue with the next steps
-    ==================================================
-
+    * If found, then faction A is friendly to faction B and you can stop
+    * If not found, then continue with the next steps
 2.  Look up friendlyMask for faction A in table below
 3.  Look up ourMask for faction B in table below
 4.  Do the and (&) operation on the two values
-
-    \* If the result is 0, then faction A is not friendly to faction B (but not necessarily hostile either)
-    =======================================================================================================
-
-    \* If the result is not 0, then faction A IS friendly to faction B
-    ==================================================================
+    * If the result is 0, then faction A is not friendly to faction B (but not necessarily hostile either)
+    * If the result is not 0, then faction A IS friendly to faction B
 
 Content
 -------
@@ -963,5 +945,3 @@ Content
 | 2230   | Argent Crusade                      | 0           | 0                | 0               | 1107 20             | 1106                |
 | 2235   | CTF - Flag - Horde 2                | 0           | 5                | 2               |                     |                     |
 | 2236   | CTF - Flag - Alliance 2             | 0           | 3                | 4               |                     |                     |
-
-

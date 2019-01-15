@@ -41,7 +41,7 @@ Key:
 | **/invite** ***BOTNAME***   | bot will auto accept party invite   |
 | **/uninvite** ***BOTNAME*** | bot will auto accept party uninvite |
 
-**TELL/PARTY** commands:
+**TELL/PARTY** commands:<br>
 (Please refer to playerbot online help. Some commands may not be available for certain cores)
 
 | SYNTAX                                                 | DESCRIPTION                                                                                                                     |

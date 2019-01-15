@@ -193,7 +193,7 @@ This Field Defines The Type Of Creature This NPC Is.
 
 #### InhabitType
 
-This Field Controls Where The Creature Can Move Into, Chase And Attack.
+This Field Controls Where The Creature Can Move Into, Chase And Attack.<br>
 The NPC Is Limited To ONLY Movement On This:
 
 | ID  | Type                                                     |
@@ -251,10 +251,10 @@ This Field Is a Bitmask That Represents What NPC Flags The Creature Has Assigned
 | 14  | 16384     | Repairer        | Creatures with this flag can repair items.                                       |
 |     | 536870912 | Outdoor PvP     | custom flag for outdoor pvp creatures                                            |
 
-EXAMPLE:
+EXAMPLE:<br>
 So If You Want An NPC That Is a Quest Giver, a Vendor And Can Also Repair You Just Add The Specific Flags Together:
 
-2 + 4 + 16384 = 16390.
+2 + 4 + 16384 = 16390<br>
 NpcFlags = 16390
 
 #### UnitFlags
@@ -374,7 +374,7 @@ It will be send to the client in SMSG\_CREATURE\_QUERY\_RESPONSE
 
 #### SpeedWalk
 
-This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Packet Data.
+This Field Controls How Fast An NPC Moves When Walking. This Value Comes From Sniff Packet Data.<br>
 Note: This field should only be used as an override if the model's default SpeedWalk is not correct for the creature\_template.entry. ( [creature\_model\_info.SpeedWalk](creature_model_info#SpeedWalk) )
 
 \`SpeedWalk\` = (sniffed value / 2.5)
@@ -383,7 +383,7 @@ Note: This field should only be used as an override if the model's default Speed
 
 #### SpeedRun
 
-This Field Controls How Fast An NPC Moves When Running. This Value Comes From Sniff Packet Data.
+This Field Controls How Fast An NPC Moves When Running. This Value Comes From Sniff Packet Data.<br>
 Note: This field should only be used as an override if the model's default SpeedRun is not correct for the creature\_template.entry. ( [creature\_model\_info.SpeedRun](creature_model_info#SpeedRun) )
 
 \`SpeedRun\` = (sniffed value / 7)
@@ -398,10 +398,10 @@ An NPC's Unit Class Is A Corner Stone Value Used In [Creature\_Template\_Classle
 
 NPC Stats Refers To: (Health/Mana/Damage/Armor).
 
-In WOTLK and CATA There Are 4 Possible NPC Classes Available For Creatures:
+In WOTLK and CATA There Are 4 Possible NPC Classes Available For Creatures:<br>
 (Class: 1,2,4,8)
 
-In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures:
+In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures:<br>
 (Class: 1,2,8)
 
 | ID             | Name |
@@ -411,14 +411,14 @@ In Classic and TBC There Are 3 Possible NPC Classes Available For Creatures:
 | CLASS\_ROGUE   | 4    |
 | CLASS\_MAGE    | 8    |
 
-This Value is Contained in Sniff Data: UNIT\_FIELD\_BYTES\_0 located in SMSG\_UPDATE\_OBJECT
+This Value is Contained in Sniff Data: UNIT\_FIELD\_BYTES\_0 located in SMSG\_UPDATE\_OBJECT<br>
 It is a Critical Field in Determining Class Level Stats For the NPC.
 
 NOTE: Typically ONLY Vehicles Are Class=4
 
-Warriors: Do Not Have Mana and Maximum Health and Damage
-Paladins: Have a Small Amount Of Mana and Slightly Less Health and Damage From a Warrior
-Rogues: (Little is Known Currently But They All Seem To Be Vehicles)
+Warriors: Do Not Have Mana and Maximum Health and Damage<br>
+Paladins: Have a Small Amount Of Mana and Slightly Less Health and Damage From a Warrior<br>
+Rogues: (Little is Known Currently But They All Seem To Be Vehicles)<br>
 Mages: Have Lots of Mana But Have Very Low Health and Damage
 
 #### Rank
@@ -441,9 +441,9 @@ This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calc
 
 This Is The Multiplier Used Against The BaseHealthExp? Value From [Creature\_Template\_ClassLevelStats](Creature_Template_ClassLevelStats) To Calculate An NPC's Final Health Values.
 
-Formula:
-MinLevelHealth = ROUND (BaseHealthExp? \* HealthMultiplier)
-MaxLevelHealth = ROUND (BaseHealthExp? \* HealthMultiplier)
+Formula:<br>
+MinLevelHealth = ROUND (BaseHealthExp? \* HealthMultiplier)<br>
+MaxLevelHealth = ROUND (BaseHealthExp? \* HealthMultiplier)<br>
 
 Example:
 
@@ -457,14 +457,14 @@ Example:
 | [UnitClass](#UnitClass)               | 1     | (Sniff Data)      |
 | [HealthMultiplier](#HealthMultiplier) | 1.15  | (Sniff Data)      |
 
-Level 35 BaseHealthExp0: 1220
+Level 35 BaseHealthExp0: 1220<br>
 (From [Creature\_Template\_ClassLevelStats](Creature_Template_ClassLevelStats) - BaseHealth Values Calculated From Sniff Data And Extensive Research)
 
-Level 36 BaseHealthExp0: 1277
+Level 36 BaseHealthExp0: 1277<br>
 (From [Creature\_Template\_ClassLevelStats](Creature_Template_ClassLevelStats) - BaseHealth Values Calculated From Sniff Data And Extensive Research)
 
-MinLevelHealth = ROUND (1220\*1.15) = 1403 (1403)
-MaxLevelHealth = ROUND (1277\*1.15) = 1468.55 (1469)
+MinLevelHealth = ROUND (1220\*1.15) = 1403 (1403)<br>
+MaxLevelHealth = ROUND (1277\*1.15) = 1468.55 (1469)<br>
 
 #### PowerMultiplier
 
@@ -472,11 +472,11 @@ This Value Comes From WDB and Sniff Data. This Is The PRIMARY DB Value That Calc
 
 This Is The Multiplier Used Against The BaseMana Value From [Creature\_Template\_ClassLevelStats](Creature_Template_ClassLevelStats) To Calculate An NPC's Final Mana Values.
 
-Note: BaseMana Values Do NOT Scale With Expansion Values Unlike Health And Damage.
+Note: BaseMana Values Do NOT Scale With Expansion Values Unlike Health And Damage.<br>
 Note: For NPC that use Other Power then Mana it will reflect that power instead.
 
-Formula:
-MinLevelMana = ROUND (BaseMana \* ManaMultiplier)
+Formula:<br>
+MinLevelMana = ROUND (BaseMana \* ManaMultiplier)<br>
 MaxLevelMana = ROUND (BaseMana \* ManaMultiplier)
 
 Example:
@@ -491,10 +491,10 @@ Example:
 | [UnitClass](#UnitClass)            | 8     | (Sniff Data)           |
 | [PowerMultiplier](#ManaMultiplier) | 2     | (Sniff Data)           |
 
-Level 35 BaseMana: 2680
+Level 35 BaseMana: 2680<br>
 (From [Creature\_Template\_ClassLevelStats](Creature_Template_ClassLevelStats) - BaseMana Values Calculated From Sniff Data And Extensive Research)
 
-MinLevelMana = ROUND (2680\*2) = 5360 (5360)
+MinLevelMana = ROUND (2680\*2) = 5360 (5360)<br>
 MaxLevelMana = ROUND (2680\*2) = 5360 (5360)
 
 #### DamageMultiplier
@@ -516,19 +516,19 @@ I am sure people are asking... WHY is there more then just a simple Damage Multi
 Here is an Example of an NPC Melee Damage Calculation
 -----------------------------------------------------
 
-Nexus-Prince Shaffar = Unit Class 2 (BOSS)
-Level 66: BaseDamage = 78.472 / Melee AttackPower = 266 / Base Melee Attack Time = 2000
-Bestiary Min Dmg: 1136
-Bestiary Max Dmg: 1593
-Damage Variance: 1.0 (No Variance)
-Damage Multiplier: 5.83 (Calculated Value)
+Nexus-Prince Shaffar = Unit Class 2 (BOSS)<br>
+Level 66: BaseDamage = 78.472 / Melee AttackPower = 266 / Base Melee Attack Time = 2000<br>
+Bestiary Min Dmg: 1136<br>
+Bestiary Max Dmg: 1593<br>
+Damage Variance: 1.0 (No Variance)<br>
+Damage Multiplier: 5.83 (Calculated Value)<br>
 
-CalculatedMinMeleeDmg=ROUND(((BaseDamage \* Damage Variance) + (Base Melee Attackpower / 14)) \* (Base Attack Time/1000)) \* Damage Multiplier
-= ((((78.472 \* 1.0) + (266/14)) \* (2000/1000)) \* 5.83
+CalculatedMinMeleeDmg=ROUND(((BaseDamage \* Damage Variance) + (Base Melee Attackpower / 14)) \* (Base Attack Time/1000)) \* Damage Multiplier<br>
+= ((((78.472 \* 1.0) + (266/14)) \* (2000/1000)) \* 5.83<br>
 = (((78.472) + 19) \* 2) = 194.944 \* 5.83 = 1136.52352
 
-CalculatedMaxMeleeDmg=ROUND((((BaseDamage \* Damage Variance) \* 1.5) + (Base Melee Attack Power / 14)) \* (Base Attack Time/1000)) \* Damage Multiplier
-= ((((78.472 \* 1.0) \* 1.5) + (266/14)) \* (2000/1000)) \* 5.83
+CalculatedMaxMeleeDmg=ROUND((((BaseDamage \* Damage Variance) \* 1.5) + (Base Melee Attack Power / 14)) \* (Base Attack Time/1000)) \* Damage Multiplier<br>
+= ((((78.472 \* 1.0) \* 1.5) + (266/14)) \* (2000/1000)) \* 5.83<br>
 = (((117.708) + 19) \* 2) = 273.416 \* 5.83 = 1594.01528
 
 NOTE:
@@ -553,7 +553,7 @@ NOTE: This Field Is Currently Not Used By The Core (Future Implementation)
 
 #### MinLevelHealth
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 (Nice Field To Have Still)
 
 Minimum Level Health Is Now Calculated Using [HealthMultiplier](#HealthMultiplier)
@@ -562,7 +562,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### MaxLevelHealth
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 (Nice Field To Have Still)
 
 Maximum Level Health Is Now Calculated Using [HealthMultiplier](#HealthMultiplier)
@@ -571,7 +571,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### MinLevelMana
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 (Nice Field To Have Still)
 
 Minimum Level Mana Is Now Calculated Using [PowerMultiplier](#PowerMultiplier)
@@ -580,7 +580,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### MaxLevelMana
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 (Nice Field To Have Still)
 
 Maximum Level Mana Is Now Calculated Using [PowerMultiplier](#PowerMultiplier)
@@ -589,7 +589,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### MinMeleeDmg
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 (Nice Field To Have Still)
 
 Minimum Melee Damage Is Now Calculated Using [DamageMultiplier](#DamageMultiplier)
@@ -598,7 +598,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### MaxMeleeDmg
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 (Nice Field To Have Still)
 
 Maximum Melee Damage Is Now Calculated Using [DamageMultiplier](#DamageMultiplier)
@@ -607,7 +607,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### MinRangedDmg
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 (Nice Field To Have Still)
 
 Minimum Ranged Damage Is Now Calculated Using [DamageMultiplier](#DamageMultiplier)
@@ -616,7 +616,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### MaxRangedDmg
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 (Nice Field To Have Still)
 
 Maximum Ranged Damage Is Now Calculated Using [DamageMultiplier](#DamageMultiplier)
@@ -625,7 +625,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### Armor
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 DB Devs: Suggested Apply Armor Value For MaxLevel For This Field For FYI Purposes
 
 (Old System Did Not Properly Calculate Armor Values for different NPC Levels)
@@ -634,7 +634,7 @@ Core Now Automatically Calculates This Value On The Fly
 
 #### MeleeAttackPower
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes
 
 Core Now Gets Value From [Creature\_Template\_ClassLevelStats](Creature_Template_ClassLevelStats)
@@ -643,7 +643,7 @@ Core Now Gets Value From [Creature\_Template\_ClassLevelStats](Creature_Template
 
 #### RangedAttackPower
 
-NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers
+NOTE: This Field Is No Longer Used By The Core - Maintained For DB Developers<br>
 DB Devs: Suggested Apply Value For MaxLevel For This Field For FYI Purposes
 
 Core Now Gets Value From [Creature\_Template\_ClassLevelStats](Creature_Template_ClassLevelStats)
@@ -684,9 +684,9 @@ Minimum possible money that the NPC drops when killed, in copper.
 
 An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.
 
-NOTE:
-1 = 1 Copper
-100 = 1 Silver
+NOTE:<br>
+1 = 1 Copper<br>
+100 = 1 Silver<br>
 10000 = 1 Gold
 
 #### MaxLootGold
@@ -695,24 +695,24 @@ Maximum possible money that the NPC drops when killed, in copper.
 
 An NPC Will Drop Random Value Between MinLootGold and MaxLootGold.
 
-NOTE:
-1 = 1 Copper
-100 = 1 Silver
+NOTE:<br>
+1 = 1 Copper<br>
+100 = 1 Silver<br>
 10000 = 1 Gold
 
 #### LootId
 
-The ID of the Loot Template that this NPC uses to generate loot from.
+The ID of the Loot Template that this NPC uses to generate loot from.<br>
 See [creature\_loot\_template.entry](creature_loot_template#entry)
 
 #### PickpocketLootId
 
-The ID of the Pickpocketing Loot Template that this NPC should use to generate pickpocketing loot from.
+The ID of the Pickpocketing Loot Template that this NPC should use to generate pickpocketing loot from.<br>
 See [pickpocketing\_loot\_template.entry](pickpocketing_loot_template#entry)
 
 #### SkinningLootId
 
-The ID of the Skinning Loot Template that this NPC should use to generate skinning loot from.
+The ID of the Skinning Loot Template that this NPC should use to generate skinning loot from.<br>
 See [skinning\_loot\_template.entry](skinning_loot_template#entry)
 
 CreatureTypeFlags can define the profession required to loot the creature.
@@ -727,12 +727,12 @@ For These Other Types Use Skinning\_Loot\_Template For Loot To Be Generated By T
 
 #### KillCredit1
 
-Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.
+Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.<br>
 Note: Some Quests Require Additional Quest Kill Credit
 
 #### KillCredit2
 
-Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.
+Additional Creature Template Entry to Assign Quest Kill Credit on NPC Death.<br>
 Note: Some Quests Require Additional Quest Kill Credit
 
 #### MechanicImmuneMask

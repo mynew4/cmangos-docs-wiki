@@ -62,7 +62,7 @@ You can use that table for the actual value:
 
 #### condition\_id
 
-Value that represents a [condition](Conditions#condition_entry) that must be met in order for the item to drop.
+Value that represents a [condition](Conditions#condition_entry) that must be met in order for the item to drop.<br>
 See [Conditions table](Conditions) for detailed description.
 
 Note: If set != 0 it will override any meaning within the quest\_\* fields.

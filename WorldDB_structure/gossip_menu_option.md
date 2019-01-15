@@ -85,7 +85,7 @@ This is the npcflag that the NPC must have to have this option display. See [opt
 
 #### action\_menu\_id
 
-If you want to create a sub-menu, this is the ID to link to create that sub-menu.
+If you want to create a sub-menu, this is the ID to link to create that sub-menu.<br>
 This sub-menu will be displayed when you click on the current menu.
 
 NOTE: If you want gossip window to close when selecting this gossip option use -1 for this value.

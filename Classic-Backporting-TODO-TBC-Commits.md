@@ -1,10 +1,10 @@
 This has no application in classic content. Keep it here as reference in case it was needed to get code in sync!
-TBC(cleaned)_COMMIT 237f9ab  by VladimirMangos (commiter TheLuda)
+TBC(cleaned)\_COMMIT 237f9ab  by VladimirMangos (commiter TheLuda)
 ```
  [s1326] Implement in proper way ITEM_SPELLTRIGGER_ON_STORE (5)
 ```
 DestroyItemWithOnStoreSpell does not exist in Classic - Missing another backport?
-TBC(cleaned)_COMMIT 6605f7a  by VladimirMangos (commiter TheLuda)
+TBC(cleaned)\_COMMIT 6605f7a  by VladimirMangos (commiter TheLuda)
 
 ```
  [s1327] More consitence use m_target for DestroyItemWithOnStoreSpell call in aura.

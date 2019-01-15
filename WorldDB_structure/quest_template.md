@@ -391,7 +391,7 @@ Item ID that is needed indirectly by the quest. For example, the quests asks for
 
 #### ReqSourceCount
 
-The maximum number of copies of the item in ReqSourceID that can be picked up (and dropped by the core).
+The maximum number of copies of the item in ReqSourceID that can be picked up (and dropped by the core).<br>
 Setting this value to 0 means the item stack size will be the maximum amount that is dropped by core.
 
 #### ReqCreatureOrGOId
@@ -492,12 +492,12 @@ Y coordinate of quest POI.
 
 #### DetailsEmote
 
-Emote(s) played by the related NPC when you view the quest details before clicking the "Accept"-button.
+Emote(s) played by the related NPC when you view the quest details before clicking the "Accept"-button.<br>
 This is found in the SMSG\_QUEST\_GIVER\_QUEST\_DETAILS-packet in sniffs.
 
 #### DetailsEmoteDelay
 
-Delay from the last DetailsEmote before this one is played (in milliseconds)
+Delay from the last DetailsEmote before this one is played (in milliseconds)<br>
 This is found in the SMSG\_QUEST\_GIVER\_QUEST\_DETAILS-packet in sniffs.
 
 #### IncompleteEmote
@@ -506,17 +506,17 @@ Emote played by the related NPC when you view the quest details and one or more 
 
 #### CompleteEmote
 
-Emote played by the related NPC at the time all quest objects are completed.
+Emote played by the related NPC at the time all quest objects are completed.<br>
 This is found in the SMSG\_QUEST\_GIVER\_REQUEST\_ITEMS-packet in sniffs.
 
 #### OfferRewardEmote
 
-Emote played by the NPC at the time the character is rewarded for the quest.
+Emote played by the NPC at the time the character is rewarded for the quest.<br>
 This is found in the SMSG\_QUEST\_GIVER\_OFFER\_REWARD\_MESSAGE-packet in sniffs.
 
 #### OfferRewardEmoteDelay
 
-Delay from the last OfferRewardEmote before this one is played (in milliseconds)
+Delay from the last OfferRewardEmote before this one is played (in milliseconds)<br>
 This is found in the SMSG\_QUEST\_GIVER\_OFFER\_REWARD\_MESSAGE-packet in sniffs.
 
 #### StartScript

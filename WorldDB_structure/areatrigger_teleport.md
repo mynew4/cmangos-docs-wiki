@@ -82,5 +82,5 @@ Orientation the player will get when appearing at this location
 
 #### condition\_id
 
-Necessary conditions to trigger the teleport
+Necessary conditions to trigger the teleport<br>
 Note: Use the condition ID only as a last measure. The other columns have associated errors, while this one does not.

@@ -45,12 +45,12 @@ This specified entry will be automatically targeted if it is near the unit casti
 
 #### inverseEffectMask
 
-A mask value defining if the target is only applicable for specifiq effect indexes by the spell.
-This is an inverseMask, so you need to filter effects for which you don't want the target to be valid.
+A mask value defining if the target is only applicable for specifiq effect indexes by the spell.<br>
+This is an inverseMask, so you need to filter effects for which you don't want the target to be valid.<br>
 The mask is 1 << EffectIndex (EffectIndex going from 0 to 2)
 
-Example:
-(Spell, 1, NpcA, 2^0), -- NpcA will NOT be chosen for spell-effect 0, so it will be chosen for effects 1 or 2
+Example:<br>
+(Spell, 1, NpcA, 2^0), -- NpcA will NOT be chosen for spell-effect 0, so it will be chosen for effects 1 or 2<br>
 (Spell, 1, NpcB, 2^1|2^2), -- NpcB will NOT be chosen for spell-effects 1, 2, so it will be chosen for effect 0.
 
 So with this we can define targets for a spell (assuming that the targets for the effects can make use of spell\_script\_target!) in a way that Effect0 will hit NpcB, and Effect1,2 will hit NpcA

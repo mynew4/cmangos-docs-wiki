@@ -50,7 +50,7 @@ Description of the fields
 
 ### entry
 
-The ID of the loot definition (loot template). The rows with the same ID defines a single loot.
+The ID of the loot definition (loot template). The rows with the same ID defines a single loot.<br>
 It is often the same ID as the loot source (item, creature, etc) but when the [link](#Relations) is made not on **entry** field of the Related table then ID can be different. For example, when several loot sources should provide the same loot, single loot definition can be used. In this case the loot sources have the same value in the link field.
 
 It is possible also to set up **artificial loot templates** which are not used directly at all as they have ID which are not referenced from the related source. Such "support templates" can be [referenced](#Template_reference) from "normal" loot templates.
@@ -223,7 +223,7 @@ Note: core rolls chance for any loot definition entry just one time - so if a re
 
 ### condition\_id
 
-Value that represents a [condition](Conditions#condition_entry) that must be met in order for the item to drop.
+Value that represents a [condition](Conditions#condition_entry) that must be met in order for the item to drop.<br>
 See [Conditions table](Conditions) for detailed description.
 
 Note: For [reference entries](loot_template#mincountOrRef) only some conditions can be used

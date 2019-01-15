@@ -26,11 +26,11 @@ Reference to [npc\_text.id](npc_text#ID).
 
 #### script\_id
 
-If set a DBScript with this ID will be started of the selected text
-NOTE: Called when menu shown (not when clicked)
+If set a DBScript with this ID will be started of the selected text<br>
+NOTE: Called when menu shown (not when clicked)<br>
 [dbscripts\_on\_gossip](DBScripts)
 
 #### condition\_id
 
-[condition\_id](conditions)
+[condition\_id](conditions)<br>
 If the gossip\_menu has more than one text with true conditions, then the text with highest condition\_id will be shown.

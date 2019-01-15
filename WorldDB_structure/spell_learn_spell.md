@@ -27,6 +27,6 @@ The entry of the spell that will be automatically learned by the player when the
 
 #### Active
 
-Controls if the spell appears in the players spell book upon learning.
-0 - The spell does not appear in the spell book.
+Controls if the spell appears in the players spell book upon learning.<br>
+0 - The spell does not appear in the spell book.<br>
 1 - The spell does appear in the spell book.

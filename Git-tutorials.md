@@ -20,19 +20,20 @@ TODO There are some GitHub testing pages and stuff - refind link
 # Install Git
 
 ## On Windows
+
 Install [MySysGit](http://code.google.com/p/msysgit/downloads/list)
 
 Be sure to check the install with ["Git bash here" support](http://i49.tinypic.com/v45smh.jpg)
 
-## On *nix
+## On \*nix
+
 Use your package manager to install git.
 
 # Git configuration
-There are a few reasonably tweaks for configuring Git that are pretty usefull and should be done directly :)
+
+There are a few reasonably tweaks for configuring Git that are pretty usefull and should be done directly :)<br>
 TODO
 
 # CMaNGOS specific scripts and workflow with Git
 
 TODO (all already explained somewhere else)
-
-

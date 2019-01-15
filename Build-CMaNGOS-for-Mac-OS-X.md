@@ -25,7 +25,7 @@ The network part of CMaNGOS rely on boost library. You need to get it and instal
 ```
 $ DYLD_LIBRARY_PATH=/usr/local/boost/lib:DYLD_LIBRARY_PATH
 $ export DYLD_LIBRARY_PATH
-``` 
+```
 
 **MySQL Community Database Server**
 
@@ -45,13 +45,14 @@ Of course, if you have a 64-bit Mac, install the 64-bit CMake package.
 Once all these softwares are downloaded and installed on your Mac, you can move to the next step.
 
 ## 2. Building CMaNGOS - creating the world engine
+
 From now, we will assume that:
 * all the building will be done in a directory named mangos into your home directory
 * you will download CMaNGOS sources into a subdirectory of this mangos folder (which we will also name mangos)
 * you will install your server also into subdirectory of this mangos directory (which will be named run)
 * your game client is located in /Applications/World of Warcraft/
 
-First, we will download all sources for CMaNGOS and scripts.
+First, we will download all sources for CMaNGOS and scripts.<br>
 Open Terminal and enter:
 ```
 $mkdir mangos && cd mangos
@@ -112,6 +113,7 @@ $cp scriptdev2.conf.dist scriptdev2.conf
 ```
 
 ## 3. Extracting Maps and DBC - adding a world around the engine
+
 Now the server is built and installed, we will extract all the maps, objects, spells and others data from the game files. The CMaNGOS server will need them to shape the world around your characters. The extractor utility is provided with the CMaNGOS source files and we will build it:
 ```
 $cd ~/mangos/mangos
@@ -130,7 +132,8 @@ You can either remplace `f 0` by `f 1`, depending of the accuracy you want for t
 
 `$mv dbc maps ~/mangos/run/bin/`
 ## 4. Installing the vmaps (optional, but highly recommended)
-Vmaps are used by the server to determine if NPC can see/attack your characters, through walls for instance. This is also called LoS calculation (Line of Sight).
+
+Vmaps are used by the server to determine if NPC can see/attack your characters, through walls for instance. This is also called LoS calculation (Line of Sight).<br>
 We will extract the vmaps from the game data and then assemble them. CMaNGOS does not yet provide binaries for Mac but it does provide the source files, thus we will build our own binaries. First, we need to download and apply a patch written by evil-at-wow and myself:
 
 `$cd ~/mangos/mangos`
@@ -167,7 +170,7 @@ $cd ../../contrib/vmapextractor/
 $cmake -G "Unix Makefiles" -DCMAKE_OSX_ARCHITECTURES=x86_64
 $make
 ```
-When the compile process is done, a new file named vmapextractor should be in vmapextractor directory
+When the compile process is done, a new file named vmapextractor should be in vmapextractor directory<br>
 We copy to our game client directory for later use:
 
 `$cp vmapextractor/vmapextractor /Applications/World\ of\ Warcraft`
@@ -204,6 +207,7 @@ $rm -R buildings
 ```
 
 ## 5. Installing the mmaps (optional)
+
 MovementMaps (mmaps) are used by the server to determine where a NPC can go (or not) with a fine precision: slopes, tree trunks, thin walls... It also enable the nice pathfinding with much better movement for creatures.  
 We will extract the mmaps from the game data and previously extracted maps. CMaNGOS does not yet provide binary for Mac but it does provide the source files, thus we will build our own binary:
 ```
@@ -228,7 +232,7 @@ And finally, we generated the mmaps (be aware that it will take hours, litteraly
 
 `$./MoveMapGen.sh N`
 
-Where N is the number of core you want to use to extract the mmaps ranging from 1 to 4. 
+Where N is the number of core you want to use to extract the mmaps ranging from 1 to 4.<br>
 Several hours later, when the mmaps are generated, we move them to the server binay folder, along with the maps and DBC:
 
 `$mv dbc maps mmaps ~/mangos/run/bin/`

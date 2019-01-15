@@ -46,6 +46,7 @@ There are a lot of terms ahead that you may not be familiar with so let's get st
 **Query** > A query is a command being executed in SQL. When you update something on the server it sends a query just as when you pull information from the server it uses a query. Within the instructions, using a query will typically refer to entering a specific command into the command prompt or terminal you are using.
 
 ## Step-by-step
+
 So from start to finish, this is a quick summary of the steps you will take to get a server running. You may not understand many (or any) of these yet but you have to start somewhere!
 
 1. Download and install all the tools mentioned in the installation instructions (e.g. Git, Visual Studio, etc).</br>
@@ -54,7 +55,7 @@ So from start to finish, this is a quick summary of the steps you will take to g
 4. Create a folder on your hard drive to place all of your work.</br>
 5. Copy the necessary repositories from Github to said folder.</br>
 6. Compile the source code.</br>
-7. Create and populate your MySQL Server databases.
+7. Create and populate your MySQL Server databases.<br>
 8. Extract resources from your WoW client.</br>
 9. Move all necessary files and resources to your "run" folder.</br>
 10. Edit the configuration files.</br>

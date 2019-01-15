@@ -26,8 +26,8 @@ Display ID from CreatureDisplayInfo.dbc
 
 #### bounding\_radius
 
-A field scaled with size.
-Might or might not have any relation to some radius of a bowl enclosing the creature.
+A field scaled with size.<br>
+Might or might not have any relation to some radius of a bowl enclosing the creature.<br>
 Currently badly used in the above suggested way in some cases, which is false in general.
 
 #### combat\_reach
@@ -40,8 +40,8 @@ This Field Controls How Fast An NPC Moves When Walking. This speed can be overri
 
 This Value Comes From Sniff Packet Data.
 
-Divide sniffed value with 2.5.
-Example: Sniffed WalkSpeed for a specific creature is 5. Divide it by 2.5 to get our DB value.
+Divide sniffed value with 2.5.<br>
+Example: Sniffed WalkSpeed for a specific creature is 5. Divide it by 2.5 to get our DB value.<br>
 5/2.5=2
 
 (Default Value Is: 1)
@@ -52,8 +52,8 @@ This Field Controls How Fast An NPC Moves When Running. This speed can be overri
 
 This Value Comes From Sniff Packet Data.
 
-Divide sniffed value with 7.
-Example: Sniffed RunSpeed for a specific creature is 10. Divide it by 7 to get our DB value.
+Divide sniffed value with 7.<br>
+Example: Sniffed RunSpeed for a specific creature is 10. Divide it by 7 to get our DB value.<br>
 10/7=1,42857
 
 (Default Value Is: 1.14286)

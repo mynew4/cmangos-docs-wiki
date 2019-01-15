@@ -9,23 +9,23 @@ The manual reference for these tables is located in the [doc/script\_commands.tx
 
 This table format is used for different tables to control possible scripts activated by different actions:
 
--   \*\*\`dbscripts\_on\_go\_\[template\]\_use:\*\* Holds possible scripts activated by gameobjects.
+-   **\`dbscripts\_on\_go\_\[template\]\_use:** Holds possible scripts activated by gameobjects.
     Source: object user (unit); Target: gameobject.
-    \*\*\*\* dbscripts\_on\_go\_template\_use can be used for any type of gameobject.
-    \*\*\*\* dbscripts\_on\_go\_use can be used only for GAMEOBJECT\_TYPE\_DOOR (0) and GAMEOBJECT\_TYPE\_BUTTON (1)
+    * dbscripts\_on\_go\_template\_use can be used for any type of gameobject.
+    * dbscripts\_on\_go\_use can be used only for GAMEOBJECT\_TYPE\_DOOR (0) and GAMEOBJECT\_TYPE\_BUTTON (1)
 
 <!-- -->
 -   **\`dbscripts\_on\_spell:** Holds scripts that can be activated by spells with the following spell effects:
-    \*\*\*\* SPELL\_EFFECT\_DUMMY (3)
-    \*\*\*\* SPELL\_EFFECT\_TRIGGER\_SPELL (64) - only for missing triggered spells
-    \*\*\*\* SPELL\_EFFECT\_SCRIPT\_EFFECT (77)
+    * SPELL\_EFFECT\_DUMMY (3)
+    * SPELL\_EFFECT\_TRIGGER\_SPELL (64) - only for missing triggered spells
+    * SPELL\_EFFECT\_SCRIPT\_EFFECT (77)
     Source: caster; Target: target.
 
 <!-- -->
 -   **\`dbscripts\_on\_relay:** Holds scripts that can be activated by AI or other dbscripts. The usage of IDs is as following:
-    \*\*\*\* Classic - 1-9999
-    \*\*\*\* TBC - 10000-19999
-    \*\*\*\* WotLK - 20000+
+    * Classic - 1-9999
+    * TBC - 10000-19999
+    * WotLK - 20000+
     Source and Target are defined by the mechanism that launched it.
 
 <!-- -->
@@ -46,22 +46,22 @@ This table format is used for different tables to control possible scripts activ
 
 <!-- -->
 -   **\`dbscripts\_on\_event:** Holds scripts activated whenever an event is activated by spell, gameobject or taxi waypoints. The following spell effects and gameobjecs can activate an event:
-    \*\*\*\* SPELL\_EFFECT\_SEND\_EVENT (61)
-    \*\*\*\* GAMEOBJECT\_TYPE\_CHEST (3)
-    \*\*\*\* GAMEOBJECT\_TYPE\_GOOBER (10)
-    \*\*\*\* GAMEOBJECT\_TYPE\_TRANSPORT (11) \[not supported yet\]
-    \*\*\*\* GAMEOBJECT\_TYPE\_CAMERA (13)
-    \*\*\*\* GAMEOBJECT\_TYPE\_MO\_TRANSPORT (15) \[partially supported\]
-    \*\*\*\* GAMEOBJECT\_TYPE\_FLAGDROP (26) \[not supported yet\]
-    \*\*\*\* GAMEOBJECT\_TYPE\_CAPTURE\_POINT (29)
-    \*\*\*\* GAMEOBJECT\_TYPE\_DESTRUCTIBLE\_BUILDING (33)
+    * SPELL\_EFFECT\_SEND\_EVENT (61)
+    * GAMEOBJECT\_TYPE\_CHEST (3)
+    * GAMEOBJECT\_TYPE\_GOOBER (10)
+    * GAMEOBJECT\_TYPE\_TRANSPORT (11) \[not supported yet\]
+    * GAMEOBJECT\_TYPE\_CAMERA (13)
+    * GAMEOBJECT\_TYPE\_MO\_TRANSPORT (15) \[partially supported\]
+    * GAMEOBJECT\_TYPE\_FLAGDROP (26) \[not supported yet\]
+    * GAMEOBJECT\_TYPE\_CAPTURE\_POINT (29)
+    * GAMEOBJECT\_TYPE\_DESTRUCTIBLE\_BUILDING (33)
     Source, Target and Script execution can be different based on the event activation source.
 
 <!-- -->
 -   **\`dbscripts\_on\_gossip:** Holds scripts activated on gossip\_menu\_option or gossip\_menu.
-    \*\*\*\* For gossip\_menu - Source: player; Target: gossip holder (creature or gameobject); Script execution unique by target.
-    \*\*\*\* For gossip\_menu\_option when gossip holder is creature - Source: gossip holder (creature); Target: player; Script execution unique by source.
-    \*\*\*\* For gossip\_menu\_option when gossip holder is gameobject - Source: player; Target: gossip holder (gameobject); Script execution unique by target.
+    * For gossip\_menu - Source: player; Target: gossip holder (creature or gameobject); Script execution unique by target.
+    * For gossip\_menu\_option when gossip holder is creature - Source: gossip holder (creature); Target: player; Script execution unique by source.
+    * For gossip\_menu\_option when gossip holder is gameobject - Source: player; Target: gossip holder (gameobject); Script execution unique by target.
 
 NOTE: An entry in this table may have more than one row as a script may do more than just one action. Also each action the script may make can have a separate [delay](dbscripts#delay) attached to it. In that case, the core will activate the appropriate action after the correct [delay](dbscripts#delay).
 
@@ -92,23 +92,23 @@ NOTE: An entry in this table may have more than one row as a script may do more 
 
 #### id
 
-For **dbscripts\_on\_creature\_death**, it is the entry of the creature. See [creature\_template.entry](creature_template#entry).
-For **dbscripts\_on\_creature\_movement**, it is the [script id](Creature_movement#script_id) of the waypoint. The PROPER formatting for the ID field is as follows: Creature\_entry + 2-Digit Script ID (Starting at 01). Example: c.2386 has few movement\_scripts, so 2386+01 = 238601 ... 23602 ..etc
-For **dbscripts\_on\_event**, it is the event ID. There doesn't exist currently a full list of events. In any case, the event IDs are taken directly from gameobject WDB data or spell effect data. If both a gameobject and a spell activate the same event, the IDs will match.
-For **dbscripts\_on\_go\_template\_use**, it is the entry of the button/lever. See [gameobject\_template.entry](gameobject_template#entry).
-For **dbscripts\_on\_go\_use**, it is the guid of the button/lever. See [gameobject.guid](gameobject#guid).
-For **dbscripts\_on\_gossip**, it is the [action script id](Gossip_menu_option#action_script_id) of the gossip option.
-For **dbscripts\_on\_promo\_code\_use**, it is the ?
-For **dbscripts\_on\_quest\_end**, it is the ID that is used in [CompleteScript](quest_template#CompleteScript) in the quest template definition.
-For **dbscripts\_on\_quest\_start**, it is the ID that is used in [StartScript](quest_template#StartScript) in the quest template definition.
-For **dbsccripts\_on\_relay**, it is the entry of the creature. See [creature\_template.entry](creature_template#entry) + 2-Digit Script ID (Starting at 01). Example: c.21218 has few relay scripts, so 21218+01 = 2121801 ... 2121802 ..etc
+For **dbscripts\_on\_creature\_death**, it is the entry of the creature. See [creature\_template.entry](creature_template#entry).<br>
+For **dbscripts\_on\_creature\_movement**, it is the [script id](Creature_movement#script_id) of the waypoint. The PROPER formatting for the ID field is as follows: Creature\_entry + 2-Digit Script ID (Starting at 01). Example: c.2386 has few movement\_scripts, so 2386+01 = 238601 ... 23602 ..etc<br>
+For **dbscripts\_on\_event**, it is the event ID. There doesn't exist currently a full list of events. In any case, the event IDs are taken directly from gameobject WDB data or spell effect data. If both a gameobject and a spell activate the same event, the IDs will match.<br>
+For **dbscripts\_on\_go\_template\_use**, it is the entry of the button/lever. See [gameobject\_template.entry](gameobject_template#entry).<br>
+For **dbscripts\_on\_go\_use**, it is the guid of the button/lever. See [gameobject.guid](gameobject#guid).<br>
+For **dbscripts\_on\_gossip**, it is the [action script id](Gossip_menu_option#action_script_id) of the gossip option.<br>
+For **dbscripts\_on\_promo\_code\_use**, it is the ?<br>
+For **dbscripts\_on\_quest\_end**, it is the ID that is used in [CompleteScript](quest_template#CompleteScript) in the quest template definition.<br>
+For **dbscripts\_on\_quest\_start**, it is the ID that is used in [StartScript](quest_template#StartScript) in the quest template definition.<br>
+For **dbsccripts\_on\_relay**, it is the entry of the creature. See [creature\_template.entry](creature_template#entry) + 2-Digit Script ID (Starting at 01). Example: c.21218 has few relay scripts, so 21218+01 = 2121801 ... 2121802 ..etc<br>
 For **dbscripts\_on\_spell**, it is the Spell ID. See [spell\_template.Id](spell_template#Id)
 
 #### delay
 
 Delay in seconds before this current step of the script activates. 0 = instant.
 
-NOTE: Delay is Cumulative From Script to Script with same ID.
+NOTE: Delay is Cumulative From Script to Script with same ID.<br>
 Example: Script 1 Has 5 seconds delay and then if you want script 2 to trigger 3 seconds later you would use delay value 8 (5+3) for script 2 in the sequence.
 
 #### command

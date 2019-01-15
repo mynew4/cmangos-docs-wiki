@@ -28,7 +28,7 @@ The character's class.
 
 #### button
 
-The ID of the button on the action bar where the action icon will be placed.
+The ID of the button on the action bar where the action icon will be placed.<br>
 Special bars are used for stances, auras, pets, stealth, and other similar special modes.
 
 | Button IDs | Set (key)                         |

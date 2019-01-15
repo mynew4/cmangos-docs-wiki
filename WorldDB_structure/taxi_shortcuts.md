@@ -30,7 +30,7 @@ This is length of the landing sequence of the taxi flight: amount of waypoints s
 
 #### comments
 
-This is the text containing hints about this particular flight path. It is useful to include destinations, faction (if same destinations are available in faction variants), and notes about origin of this shortcut.
+This is the text containing hints about this particular flight path. It is useful to include destinations, faction (if same destinations are available in faction variants), and notes about origin of this shortcut.<br>
 Currently there are following origin markers used:
 
 -   "... verified: type of the source":
@@ -39,4 +39,3 @@ Currently there are following origin markers used:
     This shortcut was recontructed using similar nodes from verified shortcut, usually 100% faithful with no futher alterations required.
 -   "... is approximate":
     No verified sources were provided, however there are similar nodes which require only minimal guesswork. Sometimes may differ from the original by 1 or 2 nodes. Needs to be verified against some reputable source.
-

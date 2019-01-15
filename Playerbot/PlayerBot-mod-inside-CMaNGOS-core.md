@@ -3,7 +3,7 @@ What is PlayerBot
 
 The "PlayerBot Mod" is an optional core modification inside the CMaNGOS core.
 
-It lets you add additional characters from your account (normally up to 9), as bots that you control.
+It lets you add additional characters from your account (normally up to 9), as bots that you control.<br>
 The bots assist in all aspects of normal game play, combat, trading, questing and much much more....
 
 #### What can Playerbot do ?
@@ -17,4 +17,3 @@ The bots assist in all aspects of normal game play, combat, trading, questing an
 <!-- -->
 
 -   [Guide to using Playerbot](Guide-to-use-Playerbot)
-

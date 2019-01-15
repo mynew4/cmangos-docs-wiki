@@ -27,7 +27,7 @@ If it isn't 0, then it is the bag's item GUID. See [item\_instance.guid](item_in
 
 #### slot
 
-If the bag field is non-zero, then the slot is the slot in the bag where the item is kept. The range can differ depending on the number of slots the bag has.
+If the bag field is non-zero, then the slot is the slot in the bag where the item is kept. The range can differ depending on the number of slots the bag has.<br>
 If the bag field is zero, then the slot has a range of 0 to 84 and the value stands for the following:
 
 | Slot \# | Value         |

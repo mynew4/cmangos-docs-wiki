@@ -29,7 +29,7 @@ The [creature.guid](creature#guid) or [creature\_template.entry](Creature_templa
 
 #### pathId
 
-0 means that this is the default path for any creature of the specified template. Any creature summoned, which is not assigned to another path, will start moving on pathId 0.
+0 means that this is the default path for any creature of the specified template. Any creature summoned, which is not assigned to another path, will start moving on pathId 0.<br>
 Setting this field to any other value allows you to use it for setting different paths to different creatures of the same template in DBScripts and in EventAI.
 
 #### point
@@ -58,7 +58,7 @@ Reference to [DBScripts\_on\_creature\_movement](DBScripts_on_creature_movement)
 
 #### orientation
 
-The orientation the creature will face once it reaches the waypoint.
+The orientation the creature will face once it reaches the waypoint.<br>
 (North = 0.0; South = pi (3.14159))
 
 Setting this field to 100 means the creature will not change its orientation upon reaching the waypoint.

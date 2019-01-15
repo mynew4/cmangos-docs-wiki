@@ -30,5 +30,5 @@ The GUID of the friend/ignored. See [characters.guid](characters#guid)
 
 #### flags
 
-0 = Friend
+0 = Friend<br>
 1 = Ignored

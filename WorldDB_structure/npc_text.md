@@ -3,7 +3,7 @@ Back to [world database](mangosdb_struct) list of tables.
 The \`npc\_text\` table
 -----------------------
 
-This table contains the texts that are used for gossip. More research needs to be done on this table.
+This table contains the texts that are used for gossip. More research needs to be done on this table.<br>
 Text is showed in start of talk window.
 
 ### Structure
@@ -118,7 +118,7 @@ This is the probability that the NPC will say this text
 
 #### em0\_0
 
-emX\_\[0,2,6\] - Delay for emote 1,2,3
+emX\_\[0,2,6\] - Delay for emote 1,2,3<br>
 emX\_\[1,3,5\] - EmoteID 1,2,3
 
 #### em0\_1

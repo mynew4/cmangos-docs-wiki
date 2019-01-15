@@ -4,7 +4,7 @@ Your bots will interact with pretty much anything you do!
 
 ### Merchants
 
-If you talk to a vendor, your bots will sell trash items, and tell you anything else they can sell.
+If you talk to a vendor, your bots will sell trash items, and tell you anything else they can sell.<br>
 They will also buy what you tell them to buy.
 
 ### Quest Givers
@@ -12,6 +12,7 @@ They will also buy what you tell them to buy.
 If you talk to a questgiver, your bots know it, and watch to see if you take a quest.. if so they do too!
 
 ### Combat
+
 If you fight they fight, if you take a taxi ... guess what?  They do too!
 Of course they better have the cash and know the location your going to!
 
@@ -55,7 +56,7 @@ Gameobject interaction with bots:
   Gameobject list [GAMEOBJECT LINK] (Currently bots can only interact with ore, herb and needed quest items)
   ---------------
 
-  [Copper Vein][Silverleaf][Earthroot][Milly's Harvest][Battered Chest][Food Crate]
+  `[Copper Vein][Silverleaf][Earthroot][Milly's Harvest][Battered Chest][Food Crate]`
 
   Then, use the 'find' or 'get' commands to interect with the gameobject.
 
@@ -97,19 +98,18 @@ Repair with bots:
 
   The new 'stats' command provides useful information to help in the repair decision.
 
-  First: Money available to bot(s)
-  Second: Free inventory slots for bot(s)
+  First: Money available to bot(s)<br>
+  Second: Free inventory slots for bot(s)<br>
   Third: Estimated (excludes NPC reputation discount) item damage cost for bot(s).
 
 Trading with bots:
 ==================
 
-To trade items/money with your bot simply initiate a trade and the bot will tell you how much money and items are available. To request an item simple whisper the bot and shift click the link of the item you would like. You can link multiple items on the same line. You can also request money in the following manner when the trade window is open:
-/w BOTNAME 10g <-- request that the bot give you 10 gold
+To trade items/money with your bot simply initiate a trade and the bot will tell you how much money and items are available. To request an item simple whisper the bot and shift click the link of the item you would like. You can link multiple items on the same line. You can also request money in the following manner when the trade window is open:<br>
+/w BOTNAME 10g <-- request that the bot give you 10 gold<br>
 /w BOTNAME 6g500s25c <-- request 6 gold, 500 silver, and 25 copper
 
 A bot is also able to show an item in its 'Will not be traded' slot. The item can be either
 in its bags or be equipped and even be soulbound. Using this you can cast spells/enchantments
-on soulbound items ('nt' stands for 'not trading').
+on soulbound items ('nt' stands for 'not trading').<br>
 /w BOTNAME nt [Enchantable Soulbound Item]
-

@@ -19,20 +19,21 @@ Use this table to set up an infinite amount of texts or relay scripts to be rand
 
 #### id
 
-The ID of the random template.
+The ID of the random template.<br>
 Similar to dbscripts\_on\_relay the ID is assigned depending on which expansion it is used in:
-\*\*\*\* Vanilla - 1-9999
-\*\*\*\* TBC - 10000-19999
-\*\*\*\* WotLK - 20000+
+
+* Vanilla - 1-9999
+* TBC - 10000-19999
+* WotLK - 20000+
 
 #### type
 
-0 = DBScript\_string or creature\_ai\_texts string
+0 = DBScript\_string or creature\_ai\_texts string<br>
 1 = DBScripts\_on\_relay
 
 #### target\_id
 
-If type = 0: The string entry from [dbscript\_string.entry](Dbscript_string#entry) or [creature\_ai\_texts.entry](Creature_ai_texts#entry)
+If type = 0: The string entry from [dbscript\_string.entry](Dbscript_string#entry) or [creature\_ai\_texts.entry](Creature_ai_texts#entry)<br>
 If type = 1: The dbscripts\_on\_relay ID you want to randomize
 
 #### chance

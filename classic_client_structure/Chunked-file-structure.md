@@ -8,5 +8,5 @@
     04h      uint32          Chunk size
     08h      size*bytes      Chunk data
 
-The initial chunk in all of these files is an MVER chunk, specifying the version of the files in a 32-bit integer.
+The initial chunk in all of these files is an MVER chunk, specifying the version of the files in a 32-bit integer.<br>
 All files use little-endian byte order.

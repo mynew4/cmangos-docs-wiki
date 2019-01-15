@@ -24,42 +24,42 @@ Spell ID. See [Spell.dbc.](Spell.dbc).
 
 #### direct\_bonus
 
-Direct spell power damage.
-If < 0
-Calculate default spell power coefficient.
-If = 0
-Don't apply any spell power coefficient. (Don't scale damage with spellpower)
-If > 0
+Direct spell power damage.<br>
+If < 0<br>
+Calculate default spell power coefficient.<br>
+If = 0<br>
+Don't apply any spell power coefficient. (Don't scale damage with spellpower)<br>
+If > 0<br>
 Use this as new spell power coefficient.
 
 #### dot\_bonus
 
-Spell damage over time.
-If < 0
-Calculate default spell power coefficient.
-If = 0
-Don't apply any spell power coefficient. (Don't scale damage with spellpower)
-If > 0
+Spell damage over time.<br>
+If < 0<br>
+Calculate default spell power coefficient.<br>
+If = 0<br>
+Don't apply any spell power coefficient. (Don't scale damage with spellpower)<br>
+If > 0<br>
 Use this as new spell power coefficient.
 
 #### ap\_bonus
 
-Direct Melee/Ranged damage.
-If < 0
-Calculate default attack power coefficient.
-If = 0
-Don't apply any attack power coefficient. (Don't scale damage with attack power)
-If > 0
+Direct Melee/Ranged damage.<br>
+If < 0<br>
+Calculate default attack power coefficient.<br>
+If = 0<br>
+Don't apply any attack power coefficient. (Don't scale damage with attack power)<br>
+If > 0<br>
 Use this as new attack power coefficient.
 
 #### ap\_dot\_bonus
 
-Melee/Ranged damage over time.
-If < 0
-Calculate default attack power coefficient.
-If = 0
-Don't apply any attack power coefficient. (Don't scale damage with attack power)
-If > 0
+Melee/Ranged damage over time.<br>
+If < 0<br>
+Calculate default attack power coefficient.<br>
+If = 0<br>
+Don't apply any attack power coefficient. (Don't scale damage with attack power)<br>
+If > 0<br>
 Use this as new attack power coefficient.
 
 #### comments

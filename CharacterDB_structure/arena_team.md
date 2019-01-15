@@ -31,7 +31,9 @@ The character global unique identifier of leader. View Characters.guid
 
 #### type
 
-0 = 2v2 1 = 3v3 2 = 5v5
+0 = 2v2<br>
+1 = 3v3<br>
+2 = 5v5
 
 #### EmblemStyle
 

@@ -1,4 +1,4 @@
-Back to [world database](mangosdb_struct) list of tables.
+Back to [world database](mangosdb_struct) list of tables.<br>
 To link creatures by GUID, please refer to [Creature\_linking](Creature_linking)
 
 The \`Creature\_linking\_template\` table

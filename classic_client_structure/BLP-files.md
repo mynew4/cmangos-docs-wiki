@@ -1,7 +1,7 @@
 ## Introduction
 
-BLP files are used as texture storage. The textures can be stored with a 256 color palette or full 24bit RGB colors. The format supports 1, 4 and 8-bit alpha transparency and DXT compression. 
-The file format is NOT chunked.
+BLP files are used as texture storage. The textures can be stored with a 256 color palette or full 24bit RGB colors. The format supports 1, 4 and 8-bit alpha transparency and DXT compression.<br>
+The file format is NOT chunked.<br>
 Wikipedia has a nice overview over the format: <http://en.wikipedia.org/wiki/.BLP>
 
 ## Header
@@ -14,15 +14,15 @@ From <http://www.pxr.dk/wowdev/wiki/index.php?title=BLP>
     0x04     uint32          Type, always 1
     0x08     uint8           Compression: 1 for uncompressed, 2 for DXTC
     0x09     uint8           Alpha channel bit depth: 0, 1 or 8
-    0x0A     uint8           Alpha encoding 
-    0x0B     uint8           Has MipMaps? 
+    0x0A     uint8           Alpha encoding
+    0x0B     uint8           Has MipMaps?
     0x0C     uint32          X resolution (power of 2)
     0x10     uint32          Y resolution (power of 2)
     0x14     uint32[16]      offsets for every mipmap level (or 0 when there is no more mipmap level)
     0x54     uint32[16]      sizes for every mipmap level (or 0 when there is no more mipmap level)
     0x94     uint32[256]     palette of 256 BGRA Values
 
-If HasMipMaps is 0, there is only 1 mipmap level.
+If HasMipMaps is 0, there is only 1 mipmap level.<br>
 The palette is always present, even if it is not used. In that case all values are 0.
 
 ## Encoding Schemes
@@ -63,43 +63,46 @@ The image data are formatted using DXT5 compression.
 
 ## DXT Compression
 
-BLP only uses DXT 1,3 and 5.
+BLP only uses DXT 1,3 and 5.<br>
 From: <http://en.wikipedia.org/wiki/DXTn>
 
 ### DXT1
+
 DXT1 (also known as Block Compression 1 or BC1) is the smallest variation of S3TC, storing 16 input pixels in 64 bits of output, consisting of two 16-bit RGB 5:6:5 color values and a 4x4 two bit lookup table.
 
-If the first color value (c<sub>0</sub>) is numerically greater than the second color value (c<sub>1</sub>), then two other colors are calculated, such that 
+If the first color value (c<sub>0</sub>) is numerically greater than the second color value (c<sub>1</sub>), then two other colors are calculated, such that
 
 <pre>c<sub>2</sub> = 2/3 c<sub>0</sub> + 1/3 c<sub>1</sub></pre>
-and 
+and
 <pre>c<sub>3</sub> = 1/3 c<sub>0</sub> + 2/3 c<sub>1</sub></pre>
 
-Otherwise, if c<sub>0</sub> <= c<sub>1</sub>, then 
+Otherwise, if c<sub>0</sub> <= c<sub>1</sub>, then
 <pre> c<sub>2</sub> = 1/2 c<sub>0</sub> + 1/2 c<sub>1</sub></pre>
 and c<sub>3</sub> is transparent black corresponding to a premultiplied alpha format.
 
 The lookup table is then consulted to determine the color value for each pixel, with a value of 0 corresponding to  c<sub>0</sub>  and a value of 3 corresponding to c<sub>3</sub> . DXT1 does not store alpha data enabling higher compression ratios.
 
-### DXT3 
+### DXT3
+
 DXT3 (also known as Block Compression 2 or BC2) converts 16 input pixels (corresponding to a 4x4 pixel block) into 128 bits of output, consisting of 64 bits of alpha channel data (4 bits for each pixel) followed by 64 bits of color data, encoded the same way as DXT1 (with the exception that the 4 color version of the DXT1 algorithm is always used instead of deciding which version to use based on the relative values of c<sub>0</sub> and c<sub>1</sub> ).
 
 In DXT3, the color data is interpreted as not having been premultiplied by alpha. Typically DXT2/3 are well suited to images with sharp alpha transitions, between translucent and opaque areas.
 
-### DXT5 
+### DXT5
+
 DXT5 (also known as Block Compression 3 or BC3) converts 16 input pixels into 128 bits of output, consisting of 64 bits of alpha channel data (two 8 bit alpha values and a 4x4 3 bit lookup table) followed by 64 bits of color data (encoded the same way as DXT2 and DXT3).
 
-If &alpha;<sub>0</sub> > &alpha;<sub>1</sub>, then six other alpha values are calculated, such that <pre>&alpha;<sub>2</sub> = (6&alpha;<sub>0</sub> + 1&alpha;<sub>1</sub>) / 7, 
+If &alpha;<sub>0</sub> > &alpha;<sub>1</sub>, then six other alpha values are calculated, such that <pre>&alpha;<sub>2</sub> = (6&alpha;<sub>0</sub> + 1&alpha;<sub>1</sub>) / 7,
 &alpha;<sub>3</sub> = (5&alpha;<sub>0</sub> + 2&alpha;<sub>1</sub>) / 7,
-&alpha;<sub>4</sub> = (4&alpha;<sub>0</sub> + 3&alpha;<sub>1</sub>) / 7, 
-&alpha;<sub>5</sub> = (3&alpha;<sub>0</sub> + 4&alpha;<sub>1</sub>) / 7, 
-&alpha;<sub>6</sub> = (2&alpha;<sub>0</sub> + 5&alpha;<sub>1</sub>) / 7, 
+&alpha;<sub>4</sub> = (4&alpha;<sub>0</sub> + 3&alpha;<sub>1</sub>) / 7,
+&alpha;<sub>5</sub> = (3&alpha;<sub>0</sub> + 4&alpha;<sub>1</sub>) / 7,
+&alpha;<sub>6</sub> = (2&alpha;<sub>0</sub> + 5&alpha;<sub>1</sub>) / 7,
 &alpha;<sub>7</sub> = (1&alpha;<sub>0</sub> + 6&alpha;<sub>1</sub>) / 7</pre>
 
-Otherwise, if &alpha;<sub>0</sub> <= &alpha;<sub>1</sub>, four other alpha values are calculated such that 
-<pre>&alpha;<sub>2</sub> = (4&alpha;<sub>0</sub> + 1&alpha;<sub>1</sub>) / 5, 
-&alpha;<sub>3</sub> = (3&alpha;<sub>0</sub> + 2&alpha;<sub>1</sub>) / 5, 
-&alpha;<sub>4</sub> = (2&alpha;<sub>0</sub> + 3&alpha;<sub>1</sub>) / 5, 
+Otherwise, if &alpha;<sub>0</sub> <= &alpha;<sub>1</sub>, four other alpha values are calculated such that
+<pre>&alpha;<sub>2</sub> = (4&alpha;<sub>0</sub> + 1&alpha;<sub>1</sub>) / 5,
+&alpha;<sub>3</sub> = (3&alpha;<sub>0</sub> + 2&alpha;<sub>1</sub>) / 5,
+&alpha;<sub>4</sub> = (2&alpha;<sub>0</sub> + 3&alpha;<sub>1</sub>) / 5,
 &alpha;<sub>5</sub> = (1&alpha;<sub>0</sub> + 4&alpha;<sub>1</sub>) / 5,
 &alpha;<sub>6</sub> = 0,
 &alpha;<sub>7</sub> = 255</pre>

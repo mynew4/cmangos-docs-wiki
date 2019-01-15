@@ -44,17 +44,17 @@ Controls the minimum number of players that need to join the battleground on eac
 
 #### MaxPlayersPerTeam
 
-Controls how many players from each team can join the battleground.
-NOTE2: If left to be 0, mangos will use the default DBC value.
+Controls how many players from each team can join the battleground.<br>
+NOTE: If left to be 0, mangos will use the default DBC value.
 
 #### MinLvl
 
-The minimum level that players need to be in order to join the battleground.
+The minimum level that players need to be in order to join the battleground.<br>
 NOTE: If left to be 0, mangos will use the default DBC value.
 
 #### MaxLvl
 
-The maximum level that players can be to enter the battleground.
+The maximum level that players can be to enter the battleground.<br>
 NOTE: If left to be 0, mangos will use the default DBC value.
 
 #### AllianceStartLoc

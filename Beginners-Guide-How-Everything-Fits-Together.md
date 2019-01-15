@@ -4,19 +4,24 @@ So you know what Github is, what CMaNGOS stands for and you have a general idea 
 An MMO is a massively complicated piece of work and so it takes many different pieces to make it run. It's not as simple as playing a game on your local computer like The Sims or Skyrim. Why? Well in those types of games all of the information is stored on your computer and there is no need to be online to play them. They have their own databases built into the game and there is only one player so you only have to load each room or area where the player is. In an MMO, however, the entire game world is always running and there are multiple players communicating and interacting with it. Furthermore, variables throughout the world cannot be saved locally because: (1) the more information that is on the client, the more potential for hacking and exploiting there is because players have access to the client; and (2) different players interact with the same world which responds to their actions. Therefore information needs to be saved in a neutral location, otherwise information stored on one player's client would suddenly become unavailable to other players when that player disconnected from the game. All of this necessitates the concept of having a single "server" that hosts the world and multiple "clients" that connect to it.
 
 ### The Game Server
+
 The mangosd.exe application is the server which runs the realm and all the events that happen inside of it. The game server not only hosts the physical environment but also manages all non-player actions and events such as NPCs and creatures, the weather system, game events like the various seasonal festivals, and pretty much anything else you can think of that isn't your character moving around.
 
 ### The Client
+
 The wow.exe application is the client which players use to launch the game and connect to and communicate with the game server.
 
 ### The Login Server
+
 You can't just connect to a server without having created an account first and so we need a login server to manage accounts and passwords. This is the realmd.exe application which also directs connecting clients to the realm that they want to play on after authenticating the player's login credentials.
 
 ### The Database
+
 Even if we have a mangosd.exe and a realmd.exe running, there still needs to be a place to store the accounts and passwords and the objects and things in the game as well as the many variables associated with a single player; and so we have a third server called the database to store all of this information.
 
 
 # How They Work Together
+
 So you have your servers running and you are ready to try it out. You launch wow.exe...
 
 The first thing that happens is the client attempts to find a login server at the location you told it to look: the address you entered into the realmlist.wtf document. Say you want the client to look for a login server on the same computer that you are running wow.exe: you would direct it to 127.0.0.1 (a universal address for your local computer to connect to itself). Because you have realmd.exe running, the client finds it and you are now ready to login. You type in some credentials and the server tells you that they are wrong, why? Because the login server needs to have your account stored somewhere in order to accept your credentials.
