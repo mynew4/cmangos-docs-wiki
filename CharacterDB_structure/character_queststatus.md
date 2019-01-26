@@ -60,32 +60,32 @@ Remaining time left on the quest if the quest has a timer. See [quest\_template.
 
 #### mobcount1
 
-Current count of the number of kills or casts on the first creature or gameobject, if any. Corresponds with [quest\_template.ReqCreatureOrGOCount1](quest_template#ReqCreatureOrGOCount1)
+Current count of the number of kills or casts on the first creature or gameobject, if any. Corresponds with [quest\_template.ReqCreatureOrGOCount1](quest_template#ReqCreatureOrGOCount)
 
 #### mobcount2
 
-Current count of the number of kills or casts on the second creature or gameobject, if any. Corresponds with [quest\_template.ReqCreatureOrGOCount2](quest_template#ReqCreatureOrGOCount2)
+Current count of the number of kills or casts on the second creature or gameobject, if any. Corresponds with [quest\_template.ReqCreatureOrGOCount2](quest_template#ReqCreatureOrGOCount)
 
 #### mobcount3
 
-Current count of the number of kills or casts on the third creature or gameobject, if any. Corresponds with [quest\_template.ReqCreatureOrGOCount3](quest_template#ReqCreatureOrGOCount3)
+Current count of the number of kills or casts on the third creature or gameobject, if any. Corresponds with [quest\_template.ReqCreatureOrGOCount3](quest_template#ReqCreatureOrGOCount)
 
 #### mobcount4
 
-Current count of the number of kills or casts on the fourth creature or gameobject, if any. Corresponds with [quest\_template.ReqCreatureOrGOCount4](quest_template#ReqCreatureOrGOCount4)
+Current count of the number of kills or casts on the fourth creature or gameobject, if any. Corresponds with [quest\_template.ReqCreatureOrGOCount4](quest_template#ReqCreatureOrGOCount)
 
 #### itemcount1
 
-Current item count for the first item in a delivery quest, if any. Corresponds with [quest\_template.ReqItemCount1](quest_template#ReqItemCount1)
+Current item count for the first item in a delivery quest, if any. Corresponds with [quest\_template.ReqItemCount1](quest_template#ReqItemCount)
 
 #### itemcount2
 
-Current item count for the second item in a delivery quest, if any. Corresponds with [quest\_template.ReqItemCount2](quest_template#ReqItemCount2)
+Current item count for the second item in a delivery quest, if any. Corresponds with [quest\_template.ReqItemCount2](quest_template#ReqItemCount)
 
 #### itemcount3
 
-Current item count for the third item in a delivery quest, if any. Corresponds with [quest\_template.ReqItemCount3](quest_template#ReqItemCount3)
+Current item count for the third item in a delivery quest, if any. Corresponds with [quest\_template.ReqItemCount3](quest_template#ReqItemCount)
 
 #### itemcount4
 
-Current item count for the fourth item in a delivery quest, if any. Corresponds with [quest\_template.ReqItemCount4](quest_template#ReqItemCount4)
+Current item count for the fourth item in a delivery quest, if any. Corresponds with [quest\_template.ReqItemCount4](quest_template#ReqItemCount)
