@@ -12,7 +12,6 @@ Contains all the individual glyph data for each character.
 | [guid](Character_glyphs#guid)   | int(10)     | unsigned       | PRI     | NO       |             |           |             |
 | [slot](Character_glyphs#slot)   | tinyint(3)  | unsigned       | PRI     | NO       | 0           |           |             |
 | [glyph](Character_glyphs#glyph) | smallint(5) | unsigned       |         | YES      | 0           |           |             |
-|                                 |             |
 
 ### Description of the fields
 
