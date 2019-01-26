@@ -22,7 +22,7 @@ The GUID of the character. See [characters.guid](characters#guid)
 
 #### name
 
-The name of the friend/ignored. See [character.name](character#name)
+The name of the friend/ignored. See [characters.name](characters#name)
 
 #### friend
 

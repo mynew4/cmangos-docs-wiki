@@ -941,11 +941,11 @@ If the NPC is a trainer that teaches professions ([trainer\_type](creature_templ
 
 #### TrainerClass
 
-If the NPC is a class trainer or a pet trainer ([trainer\_type](creature_template#trainer_type) == 0 or 3), then the player's class must be the same as the value specified here to talk to this trainer. For pet trainers, this value must be 3 (hunter). See [character.class](character#class)
+If the NPC is a class trainer or a pet trainer ([trainer\_type](creature_template#trainer_type) == 0 or 3), then the player's class must be the same as the value specified here to talk to this trainer. For pet trainers, this value must be 3 (hunter). See [characters.class](characters#class)
 
 #### TrainerRace
 
-If the NPC is a mount trainer ([trainer\_type](creature_template#trainer_type) == 1), then the player's race must be the same as the value specified here to talk to this trainer. See [character.race](character#race)
+If the NPC is a mount trainer ([trainer\_type](creature_template#trainer_type) == 1), then the player's race must be the same as the value specified here to talk to this trainer. See [characters.race](characters#race)
 
 #### TrainerTemplateId
 

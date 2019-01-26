@@ -1,4 +1,4 @@
-The following is a table containing indices and what values they contain for [character.data](character#data). The source of this data is UpdateFields.h
+The following is a table containing indices and what values they contain for [characters.data](characters#data). The source of this data is UpdateFields.h
 
 The .getvalue and .setvalue commands deal with the indices in this table. To modify any of the values in this table in real time, use the .setvalue command with the correct index (eg. .setvalue 4 2 0 sets the target's size to 2.00 (notice that it is a float, hence the 0 at the end)).
 
