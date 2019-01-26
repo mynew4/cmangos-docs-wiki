@@ -238,6 +238,6 @@ Several hours later, when the mmaps are generated, we move them to the server bi
 `$mv dbc maps mmaps ~/mangos/run/bin/`
 
 
-You have now complete all the steps that are specific to Mac OS X. For all the remaining steps (mainly configuration, database management and server startup), you can refer to the CMaNGOS Installation guide: Installation-Instructions
+You have now complete all the steps that are specific to Mac OS X. For all the remaining steps (mainly configuration, database management and server startup), you can refer to the CMaNGOS [Installation Instructions](Installation-Instructions).
 
 *Note: for MySQL, we advice using the very nice and free front end client: Sequel Pro http://www.sequelpro.com/*
