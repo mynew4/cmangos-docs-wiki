@@ -26,18 +26,18 @@ The GUID of the character. See [characters.guid](characters#guid)
 The ID of the button on the action bar where the action icon will be placed.<br>
 Special bars are used for stances, auras, pets, stealth, and other similar special modes.
 
-| Button IDs | Set (key)                       |
-| ---------- | ------------------------------- |
-| 1-11       | 1 (SHIFT + 1)                   |
-| 12-23      | 2 (SHIFT + 2)                   |
-| 24-35      | 3 (SHIFT + 3) == Right Side Bar |
-| 36-47      | 4 (SHIFT + 4)  Right Side Bar 2 |
-| 48-59      | 5 (SHIFT + 5)  Bottom Right Bar |
-| 60-71      | 6 (SHIFT + 6)  Bottom Left Bar  |
-| 72-83      | 1 SpecialA                      |
-| 84-95      | 1 SpecialB                      |
-| 96-107     | 1 SpecialC                      |
-| 108-119    | 1 SpecialD                      |
+| Button IDs | Set (key)                         |
+| ---------- | --------------------------------- |
+| 1-11       | 1 (SHIFT + 1)                     |
+| 12-23      | 2 (SHIFT + 2)                     |
+| 24-35      | 3 (SHIFT + 3) == Right Side Bar   |
+| 36-47      | 4 (SHIFT + 4) == Right Side Bar 2 |
+| 48-59      | 5 (SHIFT + 5) == Bottom Right Bar |
+| 60-71      | 6 (SHIFT + 6) == Bottom Left Bar  |
+| 72-83      | 1 SpecialA                        |
+| 84-95      | 1 SpecialB                        |
+| 96-107     | 1 SpecialC                        |
+| 108-119    | 1 SpecialD                        |
 
 #### action
 
