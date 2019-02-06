@@ -2,7 +2,7 @@ Back to [world database](mangosdb_struct) list of tables.
 
 **This table is for [cmangos-wotlk](https://github.com/cmangos/mangos-wotlk) (3.3.5a)**
 
-**See also [creature\_template\_classic](creature_template_classic) (1.12.x)**
+**See also [creature\_template\_classic](creature_template_classic) (1.12.x)**  
 **See also [creature\_template\_tbc](creature_template_tbc) (2.4.3)**
 
 The \`creature\_template\` table
