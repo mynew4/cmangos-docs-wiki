@@ -1,4 +1,4 @@
-##Introduction
+## Introduction
 
 ZMP Files - presumably for **Z**one **M**a**p** - link map data to location info from [[AreaTable.dbc]]. There are 3 of those files in 1.12.2:
 
