@@ -294,7 +294,8 @@ If you’re experiencing issues with CMake (The following Boost libraries could 
 (boost\lib32-msvc-14.1 -> boost\lib)
 ```
 
-**Compiling CMaNGOS (Windows)**  
+## Compiling CMaNGOS (Windows)
+
 A [video](https://youtu.be/KlRM18SVCQA) of the build process is now available.
 
 -   Launch cmake
@@ -318,7 +319,7 @@ A [video](https://youtu.be/KlRM18SVCQA) of the build process is now available.
 
 If you cannot solve an error, please use the official forums or IRC channels to ask for help
 
-**Compiling CMaNGOS (\*nix)**  
+## Compiling CMaNGOS (\*nix)
 
 -   Go to your `/home/mangos` folder:<br>
     `cd /home/mangos`
