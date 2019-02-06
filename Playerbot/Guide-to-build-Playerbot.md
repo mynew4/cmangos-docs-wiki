@@ -2,9 +2,9 @@
 
 #### Build instructions
 
-In order to build the optional PlayerBot mod in CMaNGOS core, simply follow the instructions in [Installation-Instructions](Installation-Instructions)
+In order to build the optional PlayerBot mod in CMaNGOS core, simply follow the instructions in [Installation Instructions](Installation-Instructions).
 
-You only need to add an option when reaching the cmake configuration steps in the [Installation-Instructions](Installation-Instructions#compiling-cmangos)
+You only need to add an option when reaching the [cmake configuration steps in the Installation Instructions](Installation-Instructions#compiling-cmangos-nix).
 
 When invoking `cmake` you need to add the following option: `-DBUILD_PLAYERBOT=ON` along with all your other options like debug or target directory.
 
