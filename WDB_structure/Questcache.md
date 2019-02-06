@@ -112,6 +112,3 @@ This wdb contains some information of seen quests.
 | ObjectiveText2        | String   |
 | ObjectiveText3        | String   |
 | ObjectiveText4        | String   |
-|                       |          |
-
-
