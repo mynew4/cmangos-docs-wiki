@@ -9,26 +9,26 @@ This DBC contains the maps list.
 Structure
 ---------
 
-| Column | Field                                                 | Type    | Notes                                                                                                     |
-| ------ | ----------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
-| 1      | ID                                                    | Integer |                                                                                                           |
-| 2      | InternalName                                          | String  | reference to World\Map\ [...] \                                                                           |
-| 3      | Flags                                                 | Integer | 0x100 - CAN_CHANGE_PLAYER_DIFFICULTY                                                                      |
-| 4      | Type                                                  | Integer | 0: none, 1: party, 2: raid, 3: pvp, 4: arena, >=5: none (official from `IsInInstance()`)                  |
-| 5      | IsBattleground                                        | Integer | Boolean (1 = True, 0 = False)                                                                             |
-| 6-22   | Name                                                  | String  | [Localization;](Localization); displayed on World Map for example                                         |
-| 23     | [AreaTable.dbc](AreaTable.dbc)                        | Integer | Ref-ID;                                                                                                   |
-| 24-40  | MapDescriptionA                                       | String  | [Localization](Localization)                                                                              |
-| 41-57  | MapDescriptionH                                       | String  | [Localization](Localization)                                                                              |
-| 58     | [LoadingScreen](LoadingScreen)                        | Integer | Ref-ID; The LoadingScreen to Display                                                                      |
-| 59     | BGMapIconScale                                        | Float   |                                                                                                           |
-| 60     | GhostEntranceMap                                      | Integer | Ref-ID; Points to column 1, -1 if none                                                                    |
-| 61     | GhostEntranceX                                        | Float   | The X-Coord of the instance entrance                                                                      |
-| 62     | GhostEntranceY                                        | Float   | The Y-Coord of the instance entrance                                                                      |
-| 63     | TimeOfDayOverride                                     | Integer | Set to -1 for everything but Orgrimmar and Dalaran arena. For those, the time of day will change to this. |
-| 64     | Expansion                                             | Integer | Classic: 0; BC: 1; WotLK: 2                                                                               |
-| 65     | RaidOffset                                            | Integer | Instance-Reset?                                                                                           |
-| 66     | MaxPlayers                                            | Integer |                                                                                                           |
+| Column | Field                          | Type    | Notes                                                                                                     |
+| ------ | ------------------------------ | ------- | --------------------------------------------------------------------------------------------------------- |
+| 1      | ID                             | Integer |                                                                                                           |
+| 2      | InternalName                   | String  | reference to World\Map\ [...] \                                                                           |
+| 3      | Flags                          | Integer | 0x100 - CAN_CHANGE_PLAYER_DIFFICULTY                                                                      |
+| 4      | Type                           | Integer | 0: none, 1: party, 2: raid, 3: pvp, 4: arena, >=5: none (official from `IsInInstance()`)                  |
+| 5      | IsBattleground                 | Integer | Boolean (1 = True, 0 = False)                                                                             |
+| 6-22   | Name                           | String  | [Localization](Localization_lang) displayed on World Map for example                                      |
+| 23     | [AreaTable.dbc](AreaTable.dbc) | Integer | Ref-ID;                                                                                                   |
+| 24-40  | MapDescriptionA                | String  | [Localization](Localization_lang)                                                                         |
+| 41-57  | MapDescriptionH                | String  | [Localization](Localization_lang)                                                                         |
+| 58     | LoadingScreen                  | Integer | Ref-ID; The LoadingScreen to Display                                                                      |
+| 59     | BGMapIconScale                 | Float   |                                                                                                           |
+| 60     | GhostEntranceMap               | Integer | Ref-ID; Points to column 1, -1 if none                                                                    |
+| 61     | GhostEntranceX                 | Float   | The X-Coord of the instance entrance                                                                      |
+| 62     | GhostEntranceY                 | Float   | The Y-Coord of the instance entrance                                                                      |
+| 63     | TimeOfDayOverride              | Integer | Set to -1 for everything but Orgrimmar and Dalaran arena. For those, the time of day will change to this. |
+| 64     | Expansion                      | Integer | Classic: 0; BC: 1; WotLK: 2                                                                               |
+| 65     | RaidOffset                     | Integer | Instance-Reset?                                                                                           |
+| 66     | MaxPlayers                     | Integer |                                                                                                           |
 
 Content
 -------

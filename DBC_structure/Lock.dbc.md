@@ -2,7 +2,7 @@ Back to [dbc files](dbc_files) list.
 
 ### Lock.dbc
 
-This DBC contains data used with [Lock.dbc](LockType.dbc) and [gameobject\_template](gameobject_template)
+This DBC contains data used with [LockType.dbc](LockType.dbc) and [gameobject\_template](gameobject_template)
 
 **Version is : 3.3.5a**
 
@@ -11,8 +11,8 @@ This DBC contains data used with [Lock.dbc](LockType.dbc) and [gameobject\_templ
 | **Field Nb** | **Name**       | **Type** | **Comment**                                        |
 |--------------|----------------|----------|----------------------------------------------------|
 | 1            | ID             | Int      |                                                    |
-| 2            | Type           | Int      | LockType.dbc\]\]                                   |
-| 10           | LockProperties | Int      | LockType.dbc\]\]                                   |
+| 2            | Type           | Int      | [LockType.dbc](LockType.dbc)                       |
+| 10           | LockProperties | Int      | [LockType.dbc](LockType.dbc)                       |
 | 18           | RequiredSkill  | Int      | Skill needed for LockProperties                    |
 | 26           | Action         | Int      | Something to do with direction / opening / closing |
 
