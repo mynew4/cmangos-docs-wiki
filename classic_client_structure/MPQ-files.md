@@ -4,7 +4,7 @@
 
 All of the game data for WoW are stored in MPQ Archives. The format's capabilities include compression, encryption, file segmentation, extensible file metadata, cryptographic signature and the ability to store multiple versions of the same file for internationalization and platform-specific differences. MPQ archives can use a variety of compression algorithms which may also be combined.
 
-The definitive source for information on MPQ Files is <http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format>.
+The definitive source for information on MPQ Files is [http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format](http://web.archive.org/web/20120222093346/http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format).
 
 The following summary only includes facts relevant for 1.12.X Client versions
 
@@ -43,7 +43,7 @@ Header size is 32 bytes, maximum archive size is 4 GB.
 
 ## Hash Table
 
-The Hash Table serves as a quick means of filename lookup without having to go through string comparisons. For each file in the archive, the full path is hashed using a proprietary algorithm (for source see <http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code>) resulting in three 32bit integers. The first of those hashes serves as primary lookup key for the Hash Table, the others are used for verification in case of a hash collision. In the case that two files have the same lookup key (hash collision), the first file is stored under that hash, and the second file is stored under the next free hash. So during lookup, if the second and third hash don't match, the algorithm goes down the list until it either finds a match of an empty entry.<br>
+The Hash Table serves as a quick means of filename lookup without having to go through string comparisons. For each file in the archive, the full path is hashed using a proprietary algorithm (for source see [http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code](http://web.archive.org/web/20120222093346/http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code)) resulting in three 32bit integers. The first of those hashes serves as primary lookup key for the Hash Table, the others are used for verification in case of a hash collision. In the case that two files have the same lookup key (hash collision), the first file is stored under that hash, and the second file is stored under the next free hash. So during lookup, if the second and third hash don't match, the algorithm goes down the list until it either finds a match of an empty entry.<br>
 Each entry in the Hash Table looks like this:
 
 	00h: int32 FilePathHashA    The hash of the file path, using method A.
@@ -58,7 +58,7 @@ Each entry in the Hash Table looks like this:
 		FFFFFFFEh           	Hash table entry is empty, but was valid at some point (in other words, the file was deleted).
 								Does not terminate searches for a given file
 
-The Hash Table is encrypted using a proprietary encryption algorithm using "(hash table)" as key. The encryption algorithm is also documented at <http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code>
+The Hash Table is encrypted using a proprietary encryption algorithm using "(hash table)" as key. The encryption algorithm is also documented at [http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code](http://web.archive.org/web/20120222093346/http://wiki.devklog.net/index.php?title=The_MoPaQ_Archive_Format#Algorithm_Source_Code)
 
 ## Block Table
 
