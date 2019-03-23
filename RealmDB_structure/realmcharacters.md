@@ -27,4 +27,4 @@ The account ID. See [account.id](account#id)
 
 The number of characters the account has on the realm.
 
-[Category: Realm database tables](Category): Realm database tables
+Back to [realm database](realmdb_struct) list of tables.

@@ -97,4 +97,4 @@ The minimum account [gmlevel](account#gmlevel) required for accounts to log in t
 
 This field is automatically updated at regular intervals and will have the current population. The formula to calculate the value in this field is: playerCount / maxPlayerCount \* 2. In the realm list in-game, the thresholds for low, medium, and high population are 0.5, 1.0, and 2.0 respectively.
 
-[Category: Realm database tables](Category): Realm database tables
+Back to [realm database](realmdb_struct) list of tables.

@@ -42,4 +42,4 @@ The reason for the ban.
 
 Boolean 0 or 1 controlling if the ban is currently active or not.
 
-[Category: Realm database tables](Category): Realm database tables
+Back to [realm database](realmdb_struct) list of tables.

@@ -37,4 +37,4 @@ The name of the character that banned the IP. The character should belong to an 
 
 The reason given for the IP ban.
 
-[Category: Realm database tables](Category): Realm database tables
+Back to [realm database](realmdb_struct) list of tables.

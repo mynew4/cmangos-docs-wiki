@@ -101,4 +101,4 @@ The time, in Unix time, when the account will be unmuted.
 
 The locale used by the client logged into this account. If multiple locale data has been configured and added to the world servers, the world servers will return the proper locale strings to the client. See [localization IDs](localization_lang)
 
-[Category: Realm database tables](Category): Realm database tables
+Back to [realm database](realmdb_struct) list of tables.
