@@ -57,29 +57,29 @@ Depending on what Type was set, the meaning and use for the following fields var
     -   value1: Target creature\_template.[entry](creature_template#entry)
 
 <!-- -->
--   '''TYPE\_T\_PLAYER\_CLASS\_RACE = 2 '''
+-   **TYPE\_T\_PLAYER\_CLASS\_RACE = 2**
     -   value1: Target Player class
     -   value2: Target Player race
 
 <!-- -->
--   '''TYPE\_T\_PLAYER\_LESS\_HEALTH = 3 '''
+-   **TYPE\_T\_PLAYER\_LESS\_HEALTH = 3**
     -   value1: Target Health percentage
 
 <!-- -->
--   '''TYPE\_T\_PLAYER\_DEAD = 4 '''
+-   **TYPE\_T\_PLAYER\_DEAD = 4**
     -   value1: Team value the source player and target dead player must both meet
 
 <!-- -->
--   '''TYPE\_S\_AURA = 5 '''
+-   **TYPE\_S\_AURA = 5**
     -   value1: Spell ID
     -   value2: Effect index
 
 <!-- -->
--   '''TYPE\_S\_AREA = 6 '''
+-   **TYPE\_S\_AREA = 6**
     -   value1: Area ID from [AreaTable.dbc](AreaTable.dbc)
 
 <!-- -->
--   '''TYPE\_T\_AURA = 7 '''
+-   **TYPE\_T\_AURA = 7**
     -   value1: Spell ID
     -   value2: Effect index
 
@@ -128,25 +128,24 @@ Used to prevent achievement criteria to complete if not all requirements are imp
     -   value1: Holiday ID which must be active from Holiday.dbc and [game\_event](Game_event#holiday)
 
 <!-- -->
--   '''TYPE\_BG\_LOSS\_TEAM\_SCORE = 17 '''
+-   **TYPE\_BG\_LOSS\_TEAM\_SCORE = 17**
     -   value1: min\_score
     -   value2: max\_score
 
 <!-- -->
--   '''TYPE\_INSTANCE\_SCRIPT = 18 '''
+-   **TYPE\_INSTANCE\_SCRIPT = 18**
 
 Make instance script call for check current criteria requirements fit
 
--   '''TYPE\_S\_EQUIPED\_ITEM\_LVL = 19 '''
+-   **TYPE\_S\_EQUIPED\_ITEM\_LVL = 19**
     -   value1: item\_level
     -   value2: item\_quality
 
 For equipped item in slot \`misc1\` to item level and quality
 
--   '''TYPE\_REQUIRE\_NTH\_BIRTHDAY = 20 '''
+-   **TYPE\_REQUIRE\_NTH\_BIRTHDAY = 20**
     -   value1: nth-birthday
 
 <!-- -->
--   '''TYPE\_CRITERIA\_REQUIRE\_KNOWN\_TITLE = 21 '''
+-   **TYPE\_CRITERIA\_REQUIRE\_KNOWN\_TITLE = 21**
     -   value1: [title\_id](CharTitles.dbc)
-
