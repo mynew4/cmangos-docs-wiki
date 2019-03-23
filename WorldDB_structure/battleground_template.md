@@ -12,7 +12,6 @@ Contains information about the different battlegrounds, like how many players ar
 | [id](Battleground_template#id)                               | mediumint(8) unsigned | NO       | PRI     |             |           |
 | [MinPlayersPerTeam](Battleground_template#minplayersperteam) | smallint(5) unsigned  | NO       |         | 0           |           |
 | [MaxPlayersPerTeam](Battleground_template#maxplayersperteam) | smallint(5) unsigned  | NO       |         | 0           |           |
-|                                                              |                       |
 | [AllianceStartLoc](Battleground_template#alliancestartloc)   | mediumint(8) unsigned | NO       |         |             |           |
 | [AllianceStartO](Battleground_template#alliancestarto)       | float                 | NO       |         |             |           |
 | [HordeStartLoc](Battleground_template#hordestartloc)         | mediumint(8) unsigned | NO       |         |             |           |

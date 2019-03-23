@@ -13,7 +13,6 @@ This table holds information on sent mails when a character levels up. Can be sp
 | [raceMask](Mail_level_reward#racemask)             | mediumint(8) unsigned | NO       | PRI     | 0           |           |
 | [mailTemplateId](Mail_level_reward#mailtemplateid) | mediumint(8) unsigned | NO       |         | 0           |           |
 | [senderEntry](Mail_level_reward#senderentry)       | mediumint(8) unsigned | NO       |         | 0           |           |
-|                                                    |                       |
 
 ### Description of the fields
 

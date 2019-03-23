@@ -14,7 +14,6 @@ This table controls what spells a tameable beast will have once tamed. It also c
 | [Spell2](Petcreateinfo_spell#spelln) | int(11) unsigned | NO       |         | 0           |           |
 | [Spell3](Petcreateinfo_spell#spelln) | int(11) unsigned | NO       |         | 0           |           |
 | [Spell4](Petcreateinfo_spell#spelln) | int(11) unsigned | NO       |         | 0           |           |
-|                                      |                  |
 
 ### Description of the fields
 

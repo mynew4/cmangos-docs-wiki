@@ -20,7 +20,6 @@ This table is the link between NPCs and gossip text. When you click on an NPC th
 |----------------------------------|------------------|----------|---------|-------------|-----------|
 | [npc\_guid](Npc_gossip#npc_guid) | int(11) unsigned | NO       | PRI     | 0           |           |
 | [textid](Npc_gossip#textid)      | int(11) unsigned | NO       |         | 0           |           |
-|                                  |                  |
 
 ### Description of the fields
 
