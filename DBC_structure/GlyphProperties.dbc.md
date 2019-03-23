@@ -2,7 +2,7 @@ Back to [dbc files](dbc_files) list.
 
 ### GlyphProperties.dbc
 
-This DBC stores Glyph IDs used in [Character\_glyphs](Character) glyphs table.
+This DBC stores Glyph IDs used in [character\_glyphs](character_glyphs) table.
 
 **Version is : 3.3.5a**
 
@@ -384,7 +384,7 @@ This DBC stores Glyph IDs used in [Character\_glyphs](Character) glyphs table.
 
 #### Entry
 
-Entry of glyph in DBC (used in [Character\_glyphs](Character) glyphs).
+Entry of glyph in DBC (used in [character\_glyphs](character_glyphs)).
 
 #### Spell ID
 
