@@ -8,23 +8,23 @@ This dbc contains cost in item/honor/arena point or rating for items not sold wi
 
 ### **Structure**
 
-| **Field Nb** | **Name**               | **Type** | **Description**                          |
-|--------------|------------------------|----------|------------------------------------------|
-| 1            | ID                     | int      | npc\_vendor.ExtendedCost\]\]             |
-| 2            | ReqHonorPoints         | int      | Honor cost                               |
-| 3            | ReqArenaPoints         | int      | Arena points cost                        |
-| 4            | ReqArenaSlot           | int      | 0 for 2v2, 1 for 3v3/5v5, 2 for 5v5 only |
-| 5            | ReqItemId1             | int      | Entry\]\] of item required to buy \#1    |
-| 6            | ReqItemId2             | int      | Entry\]\] of item required to buy \#2    |
-| 7            | ReqItemId3             | int      | Entry\]\] of item required to buy \#3    |
-| 8            | ReqItemId4             | int      | Entry\]\] of item required to buy \#4    |
-| 9            | ReqItemId5             | int      | Entry\]\] of item required to buy \#5    |
-| 10           | ReqItemCount1          | int      | Item count for column 5                  |
-| 11           | ReqItemCount2          | int      | Item count for column 6                  |
-| 12           | ReqItemCount3          | int      | Item count for column 7                  |
-| 13           | ReqItemCount4          | int      | Item count for column 8                  |
-| 14           | ReqItemCount5          | int      | Item count for column 9                  |
-| 15           | ReqPersonalArenaRating | int      | Required personal arena rating           |
+| **Field Nb** | **Name**               | **Type** | **Description**                                              |
+| ------------ | ---------------------- | -------- | ------------------------------------------------------------ |
+| 1            | ID                     | int      | [npc\_vendor.ExtendedCost](npc_vendor_template#extendedcost) |
+| 2            | ReqHonorPoints         | int      | Honor cost                                                   |
+| 3            | ReqArenaPoints         | int      | Arena points cost                                            |
+| 4            | ReqArenaSlot           | int      | 0 for 2v2, 1 for 3v3/5v5, 2 for 5v5 only                     |
+| 5            | ReqItemId1             | int      | [Entry](item_template#entry) of item required to buy \#1     |
+| 6            | ReqItemId2             | int      | [Entry](item_template#entry) of item required to buy \#2     |
+| 7            | ReqItemId3             | int      | [Entry](item_template#entry) of item required to buy \#3     |
+| 8            | ReqItemId4             | int      | [Entry](item_template#entry) of item required to buy \#4     |
+| 9            | ReqItemId5             | int      | [Entry](item_template#entry) of item required to buy \#5     |
+| 10           | ReqItemCount1          | int      | Item count for column 5                                      |
+| 11           | ReqItemCount2          | int      | Item count for column 6                                      |
+| 12           | ReqItemCount3          | int      | Item count for column 7                                      |
+| 13           | ReqItemCount4          | int      | Item count for column 8                                      |
+| 14           | ReqItemCount5          | int      | Item count for column 9                                      |
+| 15           | ReqPersonalArenaRating | int      | Required personal arena rating                               |
 
 ### **Content**
 
