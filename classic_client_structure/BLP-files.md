@@ -6,7 +6,7 @@ Wikipedia has a nice overview over the format: <http://en.wikipedia.org/wiki/.BL
 
 ## Header
 
-From <http://www.pxr.dk/wowdev/wiki/index.php?title=BLP>
+From [http://www.pxr.dk/wowdev/wiki/index.php?title=BLP](http://web.archive.org/web/20130508015046/http://www.pxr.dk/wowdev/wiki/index.php?title=BLP)
 
     Offset   Type            Description
     -------------------------------------------------------------------------------------------------------
