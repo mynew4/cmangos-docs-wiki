@@ -80,16 +80,15 @@ Quickstart: Building Boost library for use with your MinGW toolchain on Windows
 
 In this example we will use Boost 1.64.0.
 
-1.  Unzip downloaded Windows boost sources (“boost\_1\_64\_0.zip” in our case) to a folder of choice.
-2.  Open Command Line (cmd.exe), navigate to the root folder of the extracted boost source (it must have file “bootstrap.bat” in it).
-3.  Add the “bin” folder of your MinGW toolchain to your PATH environment, example:
-    set PATH=%PATH%;C:\\Path\\To\\Your\\MinGW\\bin
-4.  Configure boost for GCC with the following command:
-    start /b /wait bootstrap.bat gcc
-5.  Once configuration is complete, let's build a static Boost library into a fresh clean folder, let's say “C:\\Boost”:
-    start /b /wait b2 install --prefix=“C:\\Boost” --build-type=complete toolset=gcc variant=release link=static threading=multi runtime-link=static
-6.  After build is successfully done, you need to add it to your MinGW:
-    Move “boost” directory from “C:\\Boost\\include\\boost-1\_64” into “include” subdirectory of your MinGW toolchain;
-    Move all library files (\*.a) from “C:\\Boost\\lib” into “lib” subdirectory of your MinGW toolchain.
-7.  Done. Your MinGW toolchain now contains a ready-to-use Boost library. You can now safely remove the now empty folder we used to built into (“C:\\Boost”).
-
+1.  Unzip downloaded Windows boost sources (`boost_1_64_0.zip` in our case) to a folder of choice.
+2.  Open Command Line (`cmd.exe`), navigate to the root folder of the extracted boost source (it must have file `bootstrap.bat` in it).
+3.  Add the `bin` folder of your MinGW toolchain to your PATH environment, example:<br>
+    `set PATH=%PATH%;C:\Path\To\Your\MinGW\bin`
+4.  Configure boost for GCC with the following command:<br>
+    `start /b /wait bootstrap.bat gcc`
+5.  Once configuration is complete, let's build a static Boost library into a fresh clean folder, let's say “C:\\Boost”:<br>
+    `start /b /wait b2 install --prefix="C:\Boost" --build-type=complete toolset=gcc variant=release link=static threading=multi runtime-link=static`
+6.  After build is successfully done, you need to add it to your MinGW:<br>
+    Move `boost` directory from `C:\Boost\include\boost-1_64` into `include` subdirectory of your MinGW toolchain;<br>
+    Move all library files (`*.a`) from `C:\Boost\lib` into `lib` subdirectory of your MinGW toolchain.
+7.  Done. Your MinGW toolchain now contains a ready-to-use Boost library. You can now safely remove the now empty folder we used to built into (`C:\Boost`).
