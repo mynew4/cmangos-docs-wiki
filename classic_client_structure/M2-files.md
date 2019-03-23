@@ -1,7 +1,7 @@
 ## Introduction
 
 M2 or MDX files are used to store polygon models along with their animations and other information. The file format is plain binary - no chunks.<br>
-Information is mainly from <http://www.pxr.dk/wowdev/wiki/index.php?title=M2> as well as from PseuWoW source.
+Information is mainly from [http://www.pxr.dk/wowdev/wiki/index.php?title=M2](http://web.archive.org/web/20130508015716/http://www.pxr.dk/wowdev/wiki/index.php?title=M2) as well as from PseuWoW source.
 
 ## A note on coordinates
 
